@@ -134,7 +134,10 @@ gx_methods = {
 
         Method('ExportAllInView_MAP', module='geoengine.map', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="Export the entire map in view units to an external format.",
+               doc="""
+               Export the entire map in view units to an external format. View and Group names are
+               removed and plane spatial coordinates will be in the units of the
+               """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MAP",
@@ -219,7 +222,7 @@ gx_methods = {
 
         Method('ExportAreaRaster_MAP', module='geoengine.map', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="Export an area of a map to a non-geo raster format",
+               doc="Export an area of a map to a non-geo raster format.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MAP",
@@ -421,7 +424,7 @@ gx_methods = {
                Unicode in the core montaj engine that eliminated the need for such a setting and
                greatly increased the number of symbols that can be used. The only caveat
                of the new system is that text may appear corrupted (especially with GFN fonts) in
-               versions prior to 6.2. for maps that was created with a version after the port.
+               versions prior to 6.2. that render maps created in version 6.2 and later.
                The constant :def_val:`DUPMAP_COPY_PRE62` provides a way to create maps that can be
                distributed to versions prior to 6.2.
                """,
