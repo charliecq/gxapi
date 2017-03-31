@@ -42,73 +42,73 @@ gx_defines = [
            Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.
            """,
            constants=[
-               Constant('DB_CATEGORY_CHAN_BYTE', value='GS_BYTE', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_USHORT', value='GS_USHORT', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_SHORT', value='GS_SHORT', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_LONG', value='GS_LONG', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_FLOAT', value='GS_FLOAT', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_DOUBLE', value='GS_DOUBLE', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_UBYTE', value='GS_UBYTE', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_ULONG', value='GS_ULONG', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_LONG64', value='GS_LONG64', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_CHAN_ULONG64', value='GS_ULONG64', type=Type.INT32_T)                        
+               Constant('DB_CATEGORY_CHAN_BYTE', value='GS_BYTE', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_USHORT', value='GS_USHORT', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_SHORT', value='GS_SHORT', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_LONG', value='GS_LONG', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_FLOAT', value='GS_FLOAT', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_DOUBLE', value='GS_DOUBLE', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_UBYTE', value='GS_UBYTE', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_ULONG', value='GS_ULONG', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_LONG64', value='GS_LONG64', type=Type.INT32_T),
+               Constant('DB_CATEGORY_CHAN_ULONG64', value='GS_ULONG64', type=Type.INT32_T)
            ]),
 
     Define('DB_CATEGORY_LINE',
            doc="Line Categories",
            constants=[
-               Constant('DB_CATEGORY_LINE_FLIGHT', value='100', type=Type.INT32_T)                        ,
-               Constant('DB_CATEGORY_LINE_GROUP', value='200', type=Type.INT32_T)                        ,
+               Constant('DB_CATEGORY_LINE_FLIGHT', value='100', type=Type.INT32_T),
+               Constant('DB_CATEGORY_LINE_GROUP', value='200', type=Type.INT32_T),
                Constant('DB_CATEGORY_LINE_NORMAL', value='DB_CATEGORY_LINE_FLIGHT', type=Type.INT32_T,
-                        doc="Same as :def_val:`DB_CATEGORY_LINE_FLIGHT`")                        
+                        doc="Same as :def_val:`DB_CATEGORY_LINE_FLIGHT`")
            ]),
 
     Define('DB_CATEGORY_USER',
            doc="User Categories",
            constants=[
-               Constant('DB_CATEGORY_USER_NORMAL', value='0', type=Type.INT32_T)                        
+               Constant('DB_CATEGORY_USER_NORMAL', value='0', type=Type.INT32_T)
            ]),
 
     Define('DB_CHAN_FORMAT',
            doc="Channel formats",
            constants=[
-               Constant('DB_CHAN_FORMAT_NORMAL', value='FORMAT_DECIMAL', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_FORMAT_EXP', value='FORMAT_EXP', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_FORMAT_TIME', value='FORMAT_TIME_COLON', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_FORMAT_DATE', value='FORMAT_DATE_YYYYMMDD', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_FORMAT_GEOGR', value='FORMAT_GEOGRAPHIC', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_FORMAT_SIGDIG', value='FORMAT_SIG_DIG', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_FORMAT_HEX', value='6', type=Type.INT32_T)                        
+               Constant('DB_CHAN_FORMAT_NORMAL', value='FORMAT_DECIMAL', type=Type.INT32_T),
+               Constant('DB_CHAN_FORMAT_EXP', value='FORMAT_EXP', type=Type.INT32_T),
+               Constant('DB_CHAN_FORMAT_TIME', value='FORMAT_TIME_COLON', type=Type.INT32_T),
+               Constant('DB_CHAN_FORMAT_DATE', value='FORMAT_DATE_YYYYMMDD', type=Type.INT32_T),
+               Constant('DB_CHAN_FORMAT_GEOGR', value='FORMAT_GEOGRAPHIC', type=Type.INT32_T),
+               Constant('DB_CHAN_FORMAT_SIGDIG', value='FORMAT_SIG_DIG', type=Type.INT32_T),
+               Constant('DB_CHAN_FORMAT_HEX', value='6', type=Type.INT32_T)
            ]),
 
     Define('DB_CHAN_PROTECTION',
            doc="Channel Read-only Protection Status",
            constants=[
-               Constant('DB_CHAN_UNPROTECTED', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_PROTECTED', value='1', type=Type.INT32_T)                        
+               Constant('DB_CHAN_UNPROTECTED', value='0', type=Type.INT32_T),
+               Constant('DB_CHAN_PROTECTED', value='1', type=Type.INT32_T)
            ]),
 
     Define('DB_CHAN_SYMBOL',
            doc="Channel symbol for special channels",
            constants=[
-               Constant('DB_CHAN_X', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_Y', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_CHAN_Z', value='2', type=Type.INT32_T)                        
+               Constant('DB_CHAN_X', value='0', type=Type.INT32_T),
+               Constant('DB_CHAN_Y', value='1', type=Type.INT32_T),
+               Constant('DB_CHAN_Z', value='2', type=Type.INT32_T)
            ]),
 
     Define('DB_COMP',
            doc="Supported compression levels",
            constants=[
-               Constant('DB_COMP_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_COMP_SPEED', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_COMP_SIZE', value='2', type=Type.INT32_T)                        
+               Constant('DB_COMP_NONE', value='0', type=Type.INT32_T),
+               Constant('DB_COMP_SPEED', value='1', type=Type.INT32_T),
+               Constant('DB_COMP_SIZE', value='2', type=Type.INT32_T)
            ]),
 
     Define('DB_COORDPAIR',
            constants=[
-               Constant('DB_COORDPAIR_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_COORDPAIR_X', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_COORDPAIR_Y', value='2', type=Type.INT32_T)                        
+               Constant('DB_COORDPAIR_NONE', value='0', type=Type.INT32_T),
+               Constant('DB_COORDPAIR_X', value='1', type=Type.INT32_T),
+               Constant('DB_COORDPAIR_Y', value='2', type=Type.INT32_T)
            ]),
 
     Define('DB_GROUP_CLASS_SIZE',
@@ -116,94 +116,94 @@ gx_defines = [
            is_single_constant=True,
            doc="Class name max size",
            constants=[
-               Constant('DB_GROUP_CLASS_SIZE', value='16', type=Type.INT32_T)                        
+               Constant('DB_GROUP_CLASS_SIZE', value='16', type=Type.INT32_T)
            ]),
 
     Define('DB_INFO',
            doc="Integer Database Information",
            constants=[
                Constant('DB_INFO_BLOBS_MAX', value='0', type=Type.INT32_T,
-                        doc="Maximum Number of Blobs in the Database")                        ,
+                        doc="Maximum Number of Blobs in the Database"),
                Constant('DB_INFO_LINES_MAX', value='1', type=Type.INT32_T,
-                        doc="Maximum number of lines in the database")                        ,
+                        doc="Maximum number of lines in the database"),
                Constant('DB_INFO_CHANS_MAX', value='2', type=Type.INT32_T,
-                        doc="Maximum Number of Channels in the Database")                        ,
+                        doc="Maximum Number of Channels in the Database"),
                Constant('DB_INFO_USERS_MAX', value='3', type=Type.INT32_T,
-                        doc="Maximum number of Users")                        ,
+                        doc="Maximum number of Users"),
                Constant('DB_INFO_BLOBS_USED', value='4', type=Type.INT32_T,
-                        doc="Number of Blobs currently used")                        ,
+                        doc="Number of Blobs currently used"),
                Constant('DB_INFO_LINES_USED', value='5', type=Type.INT32_T,
-                        doc="Number of Lines currently used")                        ,
+                        doc="Number of Lines currently used"),
                Constant('DB_INFO_CHANS_USED', value='6', type=Type.INT32_T,
-                        doc="Number of Channels currently used")                        ,
+                        doc="Number of Channels currently used"),
                Constant('DB_INFO_USERS_USED', value='7', type=Type.INT32_T,
-                        doc="Number of Users in the database")                        ,
+                        doc="Number of Users in the database"),
                Constant('DB_INFO_PAGE_SIZE', value='8', type=Type.INT32_T,
-                        doc="Size of the smallest database block in bytes")                        ,
+                        doc="Size of the smallest database block in bytes"),
                Constant('DB_INFO_DATA_SIZE', value='9', type=Type.INT32_T,
-                        doc="Number of Blocks in Entire Database")                        ,
+                        doc="Number of Blocks in Entire Database"),
                Constant('DB_INFO_LOST_SIZE', value='10', type=Type.INT32_T,
-                        doc="Number of Lost Blocks in the Database")                        ,
+                        doc="Number of Lost Blocks in the Database"),
                Constant('DB_INFO_FREE_SIZE', value='11', type=Type.INT32_T,
-                        doc="Number of Free Blocks in the Database")                        ,
+                        doc="Number of Free Blocks in the Database"),
                Constant('DB_INFO_COMP_LEVEL', value='16', type=Type.INT32_T,
-                        doc="Compression Level in use")                        ,
+                        doc="Compression Level in use"),
                Constant('DB_INFO_BLOB_SIZE', value='19', type=Type.INT32_T,
-                        doc="Number of pages given to blobs")                        ,
+                        doc="Number of pages given to blobs"),
                Constant('DB_INFO_FILE_SIZE', value='17', type=Type.INT32_T,
-                        doc="Entire Size of File (in kbytes)")                        ,
+                        doc="Entire Size of File (in kbytes)"),
                Constant('DB_INFO_INDEX_SIZE', value='18', type=Type.INT32_T,
-                        doc="Size of Index (in kbytes)")                        ,
+                        doc="Size of Index (in kbytes)"),
                Constant('DB_INFO_MAX_BLOCK_SIZE', value='20', type=Type.INT32_T,
-                        doc="Naximum number of bytes in a block")                        ,
+                        doc="Naximum number of bytes in a block"),
                Constant('DB_INFO_CHANGESLOST', value='21', type=Type.INT32_T,
-                        doc="Will changes to this database be lost when this database is closed?")                        
+                        doc="Will changes to this database be lost when this database is closed?")
            ]),
 
     Define('DB_LINE_LABEL_FORMAT',
            doc="Line Label Formats",
            constants=[
-               Constant('DB_LINE_LABEL_FORMAT_LINE', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_LABEL_FORMAT_VERSION', value='2', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_LABEL_FORMAT_TYPE', value='4', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_LABEL_FORMAT_FLIGHT', value='8', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_LABEL_FORMAT_FULL', value='15', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_LABEL_FORMAT_DATE', value='16', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_LABEL_FORMAT_LINK', value='7', type=Type.INT32_T)                        
+               Constant('DB_LINE_LABEL_FORMAT_LINE', value='1', type=Type.INT32_T),
+               Constant('DB_LINE_LABEL_FORMAT_VERSION', value='2', type=Type.INT32_T),
+               Constant('DB_LINE_LABEL_FORMAT_TYPE', value='4', type=Type.INT32_T),
+               Constant('DB_LINE_LABEL_FORMAT_FLIGHT', value='8', type=Type.INT32_T),
+               Constant('DB_LINE_LABEL_FORMAT_FULL', value='15', type=Type.INT32_T),
+               Constant('DB_LINE_LABEL_FORMAT_DATE', value='16', type=Type.INT32_T),
+               Constant('DB_LINE_LABEL_FORMAT_LINK', value='7', type=Type.INT32_T)
            ]),
 
     Define('DB_LINE_SELECT',
            doc="Select modes",
            constants=[
-               Constant('DB_LINE_SELECT_INCLUDE', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_SELECT_EXCLUDE', value='1', type=Type.INT32_T)                        
+               Constant('DB_LINE_SELECT_INCLUDE', value='0', type=Type.INT32_T),
+               Constant('DB_LINE_SELECT_EXCLUDE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DB_LINE_TYPE',
            doc="Line types",
            constants=[
-               Constant('DB_LINE_TYPE_NORMAL', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_TYPE_BASE', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_TYPE_TIE', value='2', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_TYPE_TEST', value='3', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_TYPE_TREND', value='4', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_TYPE_SPECIAL', value='5', type=Type.INT32_T)                        ,
-               Constant('DB_LINE_TYPE_RANDOM', value='6', type=Type.INT32_T)                        
+               Constant('DB_LINE_TYPE_NORMAL', value='0', type=Type.INT32_T),
+               Constant('DB_LINE_TYPE_BASE', value='1', type=Type.INT32_T),
+               Constant('DB_LINE_TYPE_TIE', value='2', type=Type.INT32_T),
+               Constant('DB_LINE_TYPE_TEST', value='3', type=Type.INT32_T),
+               Constant('DB_LINE_TYPE_TREND', value='4', type=Type.INT32_T),
+               Constant('DB_LINE_TYPE_SPECIAL', value='5', type=Type.INT32_T),
+               Constant('DB_LINE_TYPE_RANDOM', value='6', type=Type.INT32_T)
            ]),
 
     Define('DB_LOCK',
            doc="Lock Modes",
            constants=[
                Constant('DB_LOCK_NONE', value='-1', type=Type.INT32_T,
-                        doc="Used only by GetSymbLock_DB")                        ,
-               Constant('DB_LOCK_READONLY', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_LOCK_READWRITE', value='1', type=Type.INT32_T)                        
+                        doc="Used only by GetSymbLock_DB"),
+               Constant('DB_LOCK_READONLY', value='0', type=Type.INT32_T),
+               Constant('DB_LOCK_READWRITE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DB_NAME',
            doc="Get Database file names",
            constants=[
-               Constant('DB_NAME_FILE', value='0', type=Type.INT32_T)                        
+               Constant('DB_NAME_FILE', value='0', type=Type.INT32_T)
            ]),
 
     Define('DB_NULL',
@@ -213,17 +213,17 @@ gx_defines = [
     Define('DB_OWN',
            doc="Symbol Ownership",
            constants=[
-               Constant('DB_OWN_SHARED', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_OWN_USER', value='1', type=Type.INT32_T)                        
+               Constant('DB_OWN_SHARED', value='0', type=Type.INT32_T),
+               Constant('DB_OWN_USER', value='1', type=Type.INT32_T)
            ]),
 
     Define('DB_SYMB_TYPE',
            doc="Symbol types",
            constants=[
-               Constant('DB_SYMB_BLOB', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_SYMB_LINE', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_SYMB_CHAN', value='2', type=Type.INT32_T)                        ,
-               Constant('DB_SYMB_USER', value='3', type=Type.INT32_T)                        
+               Constant('DB_SYMB_BLOB', value='0', type=Type.INT32_T),
+               Constant('DB_SYMB_LINE', value='1', type=Type.INT32_T),
+               Constant('DB_SYMB_CHAN', value='2', type=Type.INT32_T),
+               Constant('DB_SYMB_USER', value='3', type=Type.INT32_T)
            ]),
 
     Define('DB_SYMB_NAME_SIZE',
@@ -232,25 +232,25 @@ gx_defines = [
            doc="Size of Symbol Names",
            constants=[
                Constant('DB_SYMB_NAME_SIZE', value='STR_DB_SYMBOL', type=Type.INT32_T,
-                        doc="Same :def_val:`STR_DB_SYMBOL`")                        
+                        doc="Same :def_val:`STR_DB_SYMBOL`")
            ]),
 
     Define('DB_WAIT',
            doc="Wait Times",
            constants=[
-               Constant('DB_WAIT_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_WAIT_INFINITY', value='-1', type=Type.INT32_T)                        
+               Constant('DB_WAIT_NONE', value='0', type=Type.INT32_T),
+               Constant('DB_WAIT_INFINITY', value='-1', type=Type.INT32_T)
            ]),
 
     Define('DB_ARRAY_BASETYPE',
            constants=[
-               Constant('DB_ARRAY_BASETYPE_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_ARRAY_BASETYPE_TIME_WINDOWS', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_ARRAY_BASETYPE_TIMES', value='2', type=Type.INT32_T)                        ,
-               Constant('DB_ARRAY_BASETYPE_FREQUENCIES', value='3', type=Type.INT32_T)                        ,
-               Constant('DB_ARRAY_BASETYPE_ELEVATIONS', value='4', type=Type.INT32_T)                        ,
-               Constant('DB_ARRAY_BASETYPE_DEPTHS', value='5', type=Type.INT32_T)                        ,
-               Constant('DB_ARRAY_BASETYPE_VELOCITIES', value='6', type=Type.INT32_T)                        ,
+               Constant('DB_ARRAY_BASETYPE_NONE', value='0', type=Type.INT32_T),
+               Constant('DB_ARRAY_BASETYPE_TIME_WINDOWS', value='1', type=Type.INT32_T),
+               Constant('DB_ARRAY_BASETYPE_TIMES', value='2', type=Type.INT32_T),
+               Constant('DB_ARRAY_BASETYPE_FREQUENCIES', value='3', type=Type.INT32_T),
+               Constant('DB_ARRAY_BASETYPE_ELEVATIONS', value='4', type=Type.INT32_T),
+               Constant('DB_ARRAY_BASETYPE_DEPTHS', value='5', type=Type.INT32_T),
+               Constant('DB_ARRAY_BASETYPE_VELOCITIES', value='6', type=Type.INT32_T),
                Constant('DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS', value='7', type=Type.INT32_T)                        
            ]),
 
