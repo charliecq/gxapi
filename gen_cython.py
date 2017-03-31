@@ -17,26 +17,6 @@ class CythonDefine(Define):
     def __init__(self, other):
         super().construct_copy(other)
 
-    def render(self):
-        return self.generator.get_template("""
-//===========================================================================================================
-//
-// Define {{ define.name }}
-//
-// {% if define.doc %}{{ define.doc | doc_sanitize | comment }}{% endif %}
-//
-{%- for constant in define.constants %}
-// {{ constant.name }}
-// {% if constant.doc %}{{ constant.doc | doc_sanitize | comment }}{% endif %}
-//
-{%- endfor %}
-//===========================================================================================================
-{% for constant in define.constants %}
-{{ constant.render() }}
-{%- endfor %}
-
-""").render(define=self)
-
 def get_c_type(type):
     if type == Type.VOID:
         return "void"
@@ -51,7 +31,6 @@ def get_c_type(type):
     else:
         return "int32_t"
 
-
 class CythonParameter(Parameter):
     def __init__(self, other):
         super().construct_copy(other)
@@ -65,37 +44,29 @@ class CythonParameter(Parameter):
         else:
             return 'const {}*'.format(get_c_type(self.type))
 
-    def render_c_doc(self, indent_spaces):
-        if self.doc:
-            return self.generator.get_template(
-                '{% set type_len = param.c_type|length %}{{ param.doc | doc_sanitize | comment(comment_first_line=True) | indent(indent_spaces-type_len, True) | indent(indent_spaces+1) }}'
-            ).render(param=self, indent_spaces=indent_spaces)
-        else:
-            return self.generator.get_template(
-                '{% set type_len = param.c_type|length %}{{ "//" | indent(indent_spaces-type_len, True) }}').render(param=self, indent_spaces=indent_spaces)
-
-
 
 class CythonMethod(Method):
     def __init__(self, other):
         super().construct_copy(other)
 
-    def render(self):
+    def render_c(self):
         return self.generator.get_template("""
-cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render_parameters() }}""").render(method=self)
+cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render_c_parameters() }}""").render(method=self)
 
-    @property
-    def exposed_name(self):
-        if self.external_name:
-            return self.external_name
+    def render_wrapper(self):
+        if self.is_destroy_method:
+            return ""
         else:
-            if self.is_app:
-                return 'App_{}'.format(self.name)
-            else:
-                return self.name
-
-    def render_parameters(self):
+            return self.generator.get_template("""
+    def {{ method.ext_method_name }}({{ method.render_wrap_parameters() }}):
+        pass
+""").render(method=self)
+    
+    def render_c_parameters(self):
         return self.generator.get_template("""(void*{% for param in parameters %}, {{ param.c_type }}{% endfor %});""").render(parameters=self.parameters)
+
+    def render_wrap_parameters(self):
+        return self.generator.get_template("{% for param in parameters %}p{{ loop.index }}{% if not loop.last %}, {% endif %}{% endfor %}").render(parameters=self.parameters)
 
     @property
     def c_return_type(self):
@@ -115,20 +86,23 @@ class CythonClass(Class):
 
     @property
     def class_wrapper(self):
-        return self.generator.get_template("""
+        if not self.has_methods:
+            return ""
+        else:
+            return self.generator.get_template("""
 
 cdef class Wrap{{ cl.name }}:
     
-    {{ cl.init_dealloc }}
+{{ cl.init_dealloc }}
+
+{{ cl.wrap_methods }}
 
 """).render(cl=self)
 
     @property
     def init_dealloc(self):
         if self.is_static:
-            return """
-    pass
-"""
+            return ""
         else:
             return self.generator.get_template("""
 
@@ -155,23 +129,44 @@ cdef class Wrap{{ cl.name }}:
     def c_methods(self):
         if len(self.method_groups) == 1:
             method_group = next(iter(self.method_groups.values()))
-            return self.render_method_group(method_group)
+            return self.render_c_method_group(method_group)
         else:
             return self.generator.get_template("""
 {% for key, method_group in cl.method_groups.items() %}
 # {{ key }}
 
-{{ cl.render_method_group(method_group) }}
+{{ cl.render_c_method_group(method_group) }}
 {% endfor %}
 """).render(cl=self)
 
-    def render_method_group(self, method_group):
+    def render_c_method_group(self, method_group):
         return self.generator.get_template("""
 {% for method in methods %}
-{{ method.render() }}
+{{ method.render_c() }}
 {% endfor %}
 """).render(methods=method_group)
 
+
+    @property
+    def wrap_methods(self):
+        if len(self.method_groups) == 1:
+            method_group = next(iter(self.method_groups.values()))
+            return self.render_wrap_method_group(method_group)
+        else:
+            return self.generator.get_template("""
+{% for key, method_group in cl.method_groups.items() %}
+# {{ key }}
+
+{{ cl.render_wrap_method_group(method_group) }}
+{% endfor %}
+""").render(cl=self)
+
+    def render_wrap_method_group(self, method_group):
+        return self.generator.get_template("""
+{% for method in methods %}
+{{ method.render_wrapper() }}
+{% endfor %}
+""").render(methods=method_group)
 
 class CythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
@@ -261,12 +256,6 @@ cdef class WrapPGeo:
                     if err != NULL:
                         free(err)
     
-    def dot_product(self, p1, p2, p3, p4, p5, p6):
-        cdef double dp1 = p1, dp2 = p2, dp3 = p3, dp4 = p4, dp5 = p5, dp6 = p6
-        retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)
-        self._raise_on_gx_errors(self.p_geo)
-        return retval
-
 cdef void* get_p_geo():
     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
     if not tls_geo is None:
@@ -283,4 +272,5 @@ cdef void* get_p_geo():
 # running as stand-alone program
 if __name__ == "__main__":
     gen = CythonCodeGenerator()
+    #print (gen.classes['3DN'].method_groups['Miscellaneous'][0].ext_method_name)
     print(gen.render_pyx())

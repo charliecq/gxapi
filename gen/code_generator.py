@@ -104,6 +104,7 @@ class CodeGeneratorBase:
                 cl.defines[d.name] = define
 
             cl.is_static = True
+            cl.has_methods = False
             default_destr_name = 'Destroy_{}'.format(cl.name)
             default_destrex_name = 'DestroyEx_{}'.format(cl.name)
 
@@ -131,7 +132,7 @@ class CodeGeneratorBase:
                         if not method.is_static:
                             cl.is_static = False
 
-                        method.is_destroy_method = method.name == default_destrex_name or method.name == default_destrex_name
+                        method.is_destroy_method = method.name == default_destr_name or method.name == default_destrex_name
 
                         if cl.name == 'BF':
                             # We only use the DestroyEx in BF
@@ -142,6 +143,7 @@ class CodeGeneratorBase:
                                 cl.default_destroy_method = 'App_{}'.format(default_destr_name)
                             else:
                                 cl.default_destroy_method = default_destr_name
+                        cl.has_methods = True
                         methods.append(method)
                 if len(methods) > 0:
                     cl.method_groups[g_k] = methods

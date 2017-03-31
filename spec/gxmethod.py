@@ -25,7 +25,7 @@ class Method(SpecBase):
         self.name = name
         self.module = module
         self.version = StrictVersion(version)
-        self.external_name = external_name
+        self.external_name = external_name if external_name else self.name
         self.availability = availability
         self.is_obsolete = is_obsolete
         self.is_app = is_app
@@ -41,5 +41,9 @@ class Method(SpecBase):
         self.parameters = parameters
         self.is_static = True
         self.is_destroy_method = False
+        self.exposed_name = external_name if external_name else 'App_{}'.format(self.name) if self.is_app else self.name
 
-
+    @property
+    def ext_method_name(self):
+        #parent is assigned in code_generator.py
+        return self.parent._ext_method_name(self)

@@ -10447,12 +10447,6 @@ cdef class WrapPGeo:
                     if err != NULL:
                         free(err)
     
-    def dot_product(self, p1, p2, p3, p4, p5, p6):
-        cdef double dp1 = p1, dp2 = p2, dp3 = p3, dp4 = p4, dp5 = p5, dp6 = p6
-        retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)
-        self._raise_on_gx_errors(self.p_geo)
-        return retval
-
 cdef void* get_p_geo():
     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
     if not tls_geo is None:
@@ -10464,7 +10458,7 @@ cdef void* get_p_geo():
 
 cdef class Wrap3DN:
     
-    
+
 
     cdef int32_t handle
     
@@ -10479,9 +10473,78 @@ cdef class Wrap3DN:
 
 
 
+    def copy(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def get_point_of_view(p1, p2, p3, p4):
+        pass
+
+
+    def get_scale(p1, p2, p3, p4):
+        pass
+
+
+    def get_axis_color(p1):
+        pass
+
+
+    def get_axis_font(p1, p2, p3):
+        pass
+
+
+    def get_background_color(p1):
+        pass
+
+
+    def get_render_controls(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_shading(p1):
+        pass
+
+
+    def set_axis_color(p1, p2):
+        pass
+
+
+    def set_axis_font(p1, p2):
+        pass
+
+
+    def set_background_color(p1, p2):
+        pass
+
+
+    def set_point_of_view(p1, p2, p3, p4):
+        pass
+
+
+    def set_render_controls(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_scale(p1, p2, p3, p4):
+        pass
+
+
+    def set_shading(p1, p2):
+        pass
+
+
+
+
+
 cdef class Wrap3DV:
     
-    
+
 
     cdef int32_t handle
     
@@ -10496,9 +10559,36 @@ cdef class Wrap3DV:
 
 
 
+    def open_mview(p1, p2):
+        pass
+
+
+    def copy_to_map(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def create_new(p1, p2):
+        pass
+
+
+    def open(p1):
+        pass
+
+
+    def from_map(p1):
+        pass
+
+
+    def crc_3dv(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapAGG:
     
-    
+
 
     cdef int32_t handle
     
@@ -10513,9 +10603,66 @@ cdef class WrapAGG:
 
 
 
+    def set_model(p1, p2):
+        pass
+
+
+    def change_brightness(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_map(p1, p2):
+        pass
+
+
+
+
+    def get_layer_itr(p1, p2, p3):
+        pass
+
+
+    def list_img(p1, p2):
+        pass
+
+
+    def num_layers(p1):
+        pass
+
+
+    def layer_img(p1, p2, p3, p4, p5):
+        pass
+
+
+    def layer_img_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def layer_shade_img(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_brightness(p1):
+        pass
+
+
+    def set_layer_itr(p1, p2, p3):
+        pass
+
+
+    def set_render_method(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapBF:
     
-    
+
 
     cdef int32_t handle
     
@@ -10530,9 +10677,112 @@ cdef class WrapBF:
 
 
 
+    def read_buff(p1, p2, p3):
+        pass
+
+
+    def write_buff(p1, p2, p3):
+        pass
+
+
+    def ch_size(p1, p2):
+        pass
+
+
+    def seek(p1, p2, p3):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def crc(p1, p2, p3):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+    def create_sbf(p1, p2, p3):
+        pass
+
+
+
+
+
+
+    def eof(p1):
+        pass
+
+
+    def query_write(p1):
+        pass
+
+
+    def read_binary_string(p1, p2, p3, p4, p5):
+        pass
+
+
+    def size(p1):
+        pass
+
+
+    def tell(p1):
+        pass
+
+
+    def read_int(p1, p2, p3):
+        pass
+
+
+    def read_double(p1, p2, p3):
+        pass
+
+
+    def read_vm(p1, p2, p3):
+        pass
+
+
+    def read_vv(p1, p2, p3):
+        pass
+
+
+    def set_destroy_status(p1, p2):
+        pass
+
+
+    def write_binary_string(p1, p2, p3):
+        pass
+
+
+    def write_data_null(p1):
+        pass
+
+
+    def write_int(p1, p2, p3):
+        pass
+
+
+    def write_double(p1, p2, p3):
+        pass
+
+
+    def write_vm(p1, p2, p3):
+        pass
+
+
+    def write_vv(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapDAT:
     
-    
+
 
     cdef int32_t handle
     
@@ -10547,9 +10797,30 @@ cdef class WrapDAT:
 
 
 
+    def create_db(p1, p2, p3, p4):
+        pass
+
+
+    def create_xgd(p1, p2):
+        pass
+
+
+
+
+    def get_lst(p1, p2, p3, p4):
+        pass
+
+
+    def range_xyz(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+
+
+
 cdef class WrapDATALINKD:
     
-    
+
 
     cdef int32_t handle
     
@@ -10564,10 +10835,52 @@ cdef class WrapDATALINKD:
 
 
 
+    def create_arc_lyr(p1):
+        pass
+
+
+    def create_arc_lyr_ex(p1, p2):
+        pass
+
+
+    def create_arc_lyr_from_tmp(p1):
+        pass
+
+
+    def create_arc_lyr_from_tmp_ex(p1, p2):
+        pass
+
+
+    def create_bing(p1):
+        pass
+
+
+
+
+    def get_extents(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapDATAMINE:
     
-    
-    pass
+
+
+
+
+
+    def create_voxel(p1, p2, p3, p4, p5):
+        pass
+
+
+    def numeric_field_lst(p1, p2):
+        pass
 
 
 
@@ -10575,7 +10888,7 @@ cdef class WrapDATAMINE:
 
 cdef class WrapDB:
     
-    
+
 
     cdef int32_t handle
     
@@ -10589,10 +10902,766 @@ cdef class WrapDB:
 
 
 
+# Channel
+
+
+
+
+    def create_dup(p1, p2):
+        pass
+
+
+    def create_dup_comp(p1, p2, p3):
+        pass
+
+
+    def dup_symb_across(p1, p2, p3):
+        pass
+
+
+    def easy_maker_symb(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_str(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_chan_vv(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_vv_expanded(p1, p2, p3, p4):
+        pass
+
+
+    def get_ipj(p1, p2, p3):
+        pass
+
+
+    def get_itr(p1, p2, p3):
+        pass
+
+
+    def get_reg_symb(p1, p2, p3):
+        pass
+
+
+    def get_reg_symb_setting(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_va_chan_vv(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def blobs_max(p1):
+        pass
+
+
+    def chans_max(p1):
+        pass
+
+
+    def format_chan(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_chan_array_size(p1, p2):
+        pass
+
+
+    def get_chan_class(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_decimal(p1, p2):
+        pass
+
+
+    def get_chan_format(p1, p2):
+        pass
+
+
+    def get_chan_int(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_label(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_name(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_protect(p1, p2):
+        pass
+
+
+    def get_chan_type(p1, p2):
+        pass
+
+
+    def get_chan_unit(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_width(p1, p2):
+        pass
+
+
+    def get_name(p1, p2, p3, p4):
+        pass
+
+
+    def get_reg_symb_setting(p1, p2, p3):
+        pass
+
+
+    def get_symb_name(p1, p2, p3, p4):
+        pass
+
+
+    def have_itr(p1, p2):
+        pass
+
+
+    def coord_pair(p1, p2, p3, p4):
+        pass
+
+
+    def lines_max(p1):
+        pass
+
+
+    def users_max(p1):
+        pass
+
+
+    def maker_symb(p1, p2, p3, p4, p5):
+        pass
+
+
+    def put_chan_vv(p1, p2, p3, p4):
+        pass
+
+
+    def put_va_chan_vv(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def read_blob_bf(p1, p2, p3):
+        pass
+
+
+    def get_chan_double(p1, p2, p3, p4):
+        pass
+
+
+    def get_reg_symb_setting(p1, p2, p3):
+        pass
+
+
+    def set_all_chan_protect(p1, p2):
+        pass
+
+
+    def set_chan_class(p1, p2, p3):
+        pass
+
+
+    def set_chan_decimal(p1, p2, p3):
+        pass
+
+
+    def set_chan_format(p1, p2, p3):
+        pass
+
+
+    def set_chan_int(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_chan_label(p1, p2, p3):
+        pass
+
+
+    def set_chan_name(p1, p2, p3):
+        pass
+
+
+    def set_chan_protect(p1, p2, p3):
+        pass
+
+
+    def set_chan_double(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_chan_str(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_chan_unit(p1, p2, p3):
+        pass
+
+
+    def set_chan_width(p1, p2, p3):
+        pass
+
+
+    def set_ipj(p1, p2, p3, p4):
+        pass
+
+
+    def set_itr(p1, p2, p3):
+        pass
+
+
+    def set_reg_symb(p1, p2, p3):
+        pass
+
+
+    def set_reg_symb_setting(p1, p2, p3, p4):
+        pass
+
+
+    def write_blob_bf(p1, p2, p3):
+        pass
+
+
+# Control
+
+
+
+
+    def commit(p1):
+        pass
+
+
+    def compact(p1):
+        pass
+
+
+    def create(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def create_comp(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def create_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def del_line0(p1):
+        pass
+
+
+
+
+    def discard(p1):
+        pass
+
+
+    def grow(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def can_open(p1, p2, p3):
+        pass
+
+
+    def can_open_read_only(p1, p2, p3):
+        pass
+
+
+    def check(p1):
+        pass
+
+
+    def is_empty(p1):
+        pass
+
+
+    def is_line_empty(p1, p2):
+        pass
+
+
+    def open(p1, p2, p3):
+        pass
+
+
+    def open_read_only(p1, p2, p3):
+        pass
+
+
+    def repair(p1):
+        pass
+
+
+    def sync(p1):
+        pass
+
+
+# Data
+
+
+
+
+    def copy_data(p1, p2, p3, p4):
+        pass
+
+
+    def get_col_va(p1, p2):
+        pass
+
+
+    def get_channel_length(p1, p2, p3):
+        pass
+
+
+    def get_fid_incr(p1, p2, p3):
+        pass
+
+
+    def get_fid_start(p1, p2, p3):
+        pass
+
+
+    def set_fid(p1, p2, p3, p4, p5):
+        pass
+
+
+    def window_va_ch(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def window_va_ch2(p1, p2, p3, p4, p5):
+        pass
+
+
+# Line
+
+
+
+
+    def set_line_selection(p1, p2, p3):
+        pass
+
+
+    def get_line_selection(p1, p2):
+        pass
+
+
+    def first_sel_line(p1):
+        pass
+
+
+    def get_line_map_fid(p1, p2, p3, p4):
+        pass
+
+
+    def get_select(p1):
+        pass
+
+
+    def count_sel_lines(p1):
+        pass
+
+
+    def is_chan_name(p1):
+        pass
+
+
+    def is_chan_valid(p1, p2):
+        pass
+
+
+    def is_line_name(p1):
+        pass
+
+
+    def is_line_valid(p1, p2):
+        pass
+
+
+    def line_category(p1, p2):
+        pass
+
+
+    def line_flight(p1, p2):
+        pass
+
+
+    def line_label(p1, p2, p3, p4, p5):
+        pass
+
+
+    def line_number(p1, p2):
+        pass
+
+
+    def line_number2(p1, p2, p3, p4):
+        pass
+
+
+    def line_type(p1, p2):
+        pass
+
+
+    def line_version(p1, p2):
+        pass
+
+
+    def set_line_name(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_line_name2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def load_select(p1, p2):
+        pass
+
+
+    def next_sel_line(p1, p2):
+        pass
+
+
+    def line_bearing(p1, p2):
+        pass
+
+
+    def line_date(p1, p2):
+        pass
+
+
+    def save_select(p1, p2):
+        pass
+
+
+    def select(p1, p2, p3):
+        pass
+
+
+    def set_line_bearing(p1, p2, p3):
+        pass
+
+
+    def set_line_date(p1, p2, p3):
+        pass
+
+
+    def set_line_flight(p1, p2, p3):
+        pass
+
+
+    def set_line_map_fid(p1, p2, p3, p4):
+        pass
+
+
+    def set_line_num(p1, p2, p3):
+        pass
+
+
+    def set_line_type(p1, p2, p3):
+        pass
+
+
+    def set_line_ver(p1, p2, p3):
+        pass
+
+
+    def set_select(p1, p2):
+        pass
+
+
+# META
+
+
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+# Symbols
+
+
+
+
+    def array_lst(p1, p2):
+        pass
+
+
+    def array_size_lst(p1, p2, p3):
+        pass
+
+
+    def chan_lst(p1, p2):
+        pass
+
+
+    def normal_chan_lst(p1, p2):
+        pass
+
+
+    def class_chan_lst(p1, p2, p3):
+        pass
+
+
+    def class_group_lst(p1, p2, p3):
+        pass
+
+
+    def create_symb(p1, p2, p3, p4, p5):
+        pass
+
+
+    def create_symb_ex(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def csv_chan_lst(p1, p2, p3):
+        pass
+
+
+    def delete_symb(p1, p2):
+        pass
+
+
+    def dup_line_symb(p1, p2, p3):
+        pass
+
+
+    def dup_symb(p1, p2, p3):
+        pass
+
+
+    def dup_symb_no_lock(p1, p2, p3):
+        pass
+
+
+    def find_chan(p1, p2):
+        pass
+
+
+    def find_symb(p1, p2, p3):
+        pass
+
+
+    def get_chan_order_lst(p1, p2):
+        pass
+
+
+    def get_xyz_chan_symb(p1, p2):
+        pass
+
+
+    def class_chan_list(p1, p2, p3):
+        pass
+
+
+    def exist_chan(p1, p2):
+        pass
+
+
+    def exist_symb(p1, p2, p3):
+        pass
+
+
+    def valid_symb(p1, p2, p3):
+        pass
+
+
+    def get_symb_lock(p1, p2):
+        pass
+
+
+    def get_xyz_chan(p1, p2, p3, p4):
+        pass
+
+
+    def symb_list(p1, p2, p3):
+        pass
+
+
+    def line_lst(p1, p2):
+        pass
+
+
+    def lock_symb(p1, p2, p3, p4):
+        pass
+
+
+    def mask_chan_lst(p1, p2):
+        pass
+
+
+    def selected_line_lst(p1, p2):
+        pass
+
+
+    def set_chan_order_lst(p1, p2):
+        pass
+
+
+    def set_xyz_chan(p1, p2, p3):
+        pass
+
+
+    def string_chan_lst(p1, p2):
+        pass
+
+
+    def symb_lst(p1, p2, p3):
+        pass
+
+
+    def un_lock_all_symb(p1):
+        pass
+
+
+    def un_lock_symb(p1, p2):
+        pass
+
+
+# VA Channels
+
+
+
+
+    def add_associated_load(p1, p2, p3):
+        pass
+
+
+    def add_comment(p1, p2, p3, p4):
+        pass
+
+
+    def add_int_comment(p1, p2, p3, p4):
+        pass
+
+
+    def add_double_comment(p1, p2, p3, p4):
+        pass
+
+
+    def add_time_comment(p1, p2, p3):
+        pass
+
+
+    def associate(p1, p2, p3):
+        pass
+
+
+    def associate_all(p1, p2):
+        pass
+
+
+    def associate_class(p1, p2, p3):
+        pass
+
+
+    def gen_valid_chan_symb(p1, p2, p3):
+        pass
+
+
+    def gen_valid_line_symb(p1, p2, p3):
+        pass
+
+
+    def get_chan_va(p1, p2, p3, p4):
+        pass
+
+
+    def get_va_scaling(p1, p2, p3, p4):
+        pass
+
+
+    def get_va_windows(p1, p2, p3, p4):
+        pass
+
+
+    def set_va_base_coordinate_info(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_va_base_coordinate_info(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_group_class(p1, p2, p3, p4):
+        pass
+
+
+    def get_info(p1, p2):
+        pass
+
+
+    def get_va_prof_color_file(p1, p2, p3, p4):
+        pass
+
+
+    def get_va_prof_sect_option(p1, p2, p3, p4):
+        pass
+
+
+    def get_va_sect_color_file(p1, p2, p3, p4):
+        pass
+
+
+    def is_associated(p1, p2, p3):
+        pass
+
+
+    def is_wholeplot(p1):
+        pass
+
+
+    def put_chan_va(p1, p2, p3, p4):
+        pass
+
+
+    def set_group_class(p1, p2, p3):
+        pass
+
+
+    def set_va_prof_color_file(p1, p2, p3):
+        pass
+
+
+    def set_va_prof_sect_option(p1, p2, p3):
+        pass
+
+
+    def set_va_scaling(p1, p2, p3, p4):
+        pass
+
+
+    def set_va_sect_color_file(p1, p2, p3):
+        pass
+
+
+    def set_va_windows(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 
 cdef class WrapDBREAD:
     
-    
+
 
     cdef int32_t handle
     
@@ -10606,10 +11675,78 @@ cdef class WrapDBREAD:
 
 
 
+# Create Methods
+
+
+
+
+    def create(p1, p2):
+        pass
+
+
+    def create_xy(p1, p2):
+        pass
+
+
+    def create_xyz(p1, p2):
+        pass
+
+
+
+
+    def add_channel(p1, p2):
+        pass
+
+
+# Data Access Methods
+
+
+
+
+    def get_vv(p1, p2):
+        pass
+
+
+    def get_va(p1, p2):
+        pass
+
+
+    def get_v_vx(p1):
+        pass
+
+
+    def get_v_vy(p1):
+        pass
+
+
+    def get_v_vz(p1):
+        pass
+
+
+    def get_chan_array_size(p1, p2):
+        pass
+
+
+    def get_number_of_blocks_to_process(p1):
+        pass
+
+
+# Processing
+
+
+
+
+    def get_next_block(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 
 cdef class WrapDBWRITE:
     
-    
+
 
     cdef int32_t handle
     
@@ -10623,10 +11760,86 @@ cdef class WrapDBWRITE:
 
 
 
+# Create Methods
+
+
+
+
+    def create(p1):
+        pass
+
+
+    def create_xy(p1):
+        pass
+
+
+    def create_xyz(p1):
+        pass
+
+
+
+
+    def add_channel(p1, p2):
+        pass
+
+
+# Data Access Methods
+
+
+
+
+    def get_db(p1):
+        pass
+
+
+    def get_vv(p1, p2):
+        pass
+
+
+    def get_va(p1, p2):
+        pass
+
+
+    def get_v_vx(p1):
+        pass
+
+
+    def get_v_vy(p1):
+        pass
+
+
+    def get_v_vz(p1):
+        pass
+
+
+    def get_chan_array_size(p1, p2):
+        pass
+
+
+# Processing
+
+
+
+
+    def add_block(p1, p2):
+        pass
+
+
+    def commit(p1):
+        pass
+
+
+    def test_func(p1, p2):
+        pass
+
+
+
+
+
 
 cdef class WrapDSEL:
     
-    
+
 
     cdef int32_t handle
     
@@ -10641,10 +11854,68 @@ cdef class WrapDSEL:
 
 
 
+    def create():
+        pass
+
+
+    def data_significant_figures(p1, p2):
+        pass
+
+
+
+
+    def meta_query(p1, p2):
+        pass
+
+
+    def picture_quality(p1, p2):
+        pass
+
+
+    def request_all_info(p1, p2):
+        pass
+
+
+    def select_area(p1, p2):
+        pass
+
+
+    def select_rect(p1, p2, p3, p4, p5):
+        pass
+
+
+    def select_resolution(p1, p2, p3):
+        pass
+
+
+    def select_size(p1, p2, p3):
+        pass
+
+
+    def set_extract_as_document(p1, p2):
+        pass
+
+
+    def set_ipj(p1, p2, p3):
+        pass
+
+
+    def spatial_accuracy(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapEXT:
     
-    
-    pass
+
+
+
+
+
+    def get_info(p1, p2, p3, p4, p5, p6):
+        pass
 
 
 
@@ -10652,17 +11923,51 @@ cdef class WrapEXT:
 
 cdef class WrapGEO:
     
-    
-    pass
 
 
 
 
 
-cdef class WrapGEOSOFT:
-    
-    
-    pass
+    def check_error():
+        pass
+
+
+    def check_terminate_sys(p1):
+        pass
+
+
+    def show_error():
+        pass
+
+
+    def s_get_error(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_ptr_vm(p1):
+        pass
+
+
+    def get_ptr_vv(p1):
+        pass
+
+
+    def p_get_internal_gxx_pointer(p1):
+        pass
+
+
+    def s_check_terminate():
+        pass
+
+
+    def register_resource_tracking(p1, p2, p3):
+        pass
+
+
+    def unregister_resource_tracking(p1, p2, p3):
+        pass
+
+
 
 
 
@@ -10670,7 +11975,7 @@ cdef class WrapGEOSOFT:
 
 cdef class WrapGEOSTRING:
     
-    
+
 
     cdef int32_t handle
     
@@ -10685,9 +11990,58 @@ cdef class WrapGEOSTRING:
 
 
 
+    def open(p1, p2):
+        pass
+
+
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_features(p1, p2):
+        pass
+
+
+    def get_sections(p1, p2):
+        pass
+
+
+    def get_all_shapes(p1, p2):
+        pass
+
+
+    def get_shapes_for_feature(p1, p2, p3):
+        pass
+
+
+    def get_shapes_for_section(p1, p2, p3):
+        pass
+
+
+    def get_shapes_for_feature_and_section(p1, p2, p3, p4):
+        pass
+
+
+    def get_feature_properties(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def get_section_properties(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def get_shape_properties(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+
+
+
 cdef class WrapGIS:
     
-    
+
 
     cdef int32_t handle
     
@@ -10702,9 +12056,126 @@ cdef class WrapGIS:
 
 
 
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_map2_d(p1, p2, p3, p4, p5):
+        pass
+
+
+
+
+    def get_bpr_models_lst(p1, p2, p3):
+        pass
+
+
+    def get_ipj(p1):
+        pass
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def get_range(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def datamine_type(p1):
+        pass
+
+
+    def get_file_name(p1, p2, p3):
+        pass
+
+
+    def is_mi_map_file(p1):
+        pass
+
+
+    def is_mi_raster_tab_file(p1):
+        pass
+
+
+    def is_mi_rotated_raster_tab_file(p1):
+        pass
+
+
+    def is_shp_file_3d(p1):
+        pass
+
+
+    def is_shp_file_point(p1):
+        pass
+
+
+    def num_attribs(p1):
+        pass
+
+
+    def num_shapes(p1):
+        pass
+
+
+    def scan_mi_raster_tab_file(p1, p2, p3, p4):
+        pass
+
+
+    def load_ascii(p1, p2):
+        pass
+
+
+    def load_gdb(p1, p2):
+        pass
+
+
+    def load_map(p1, p2):
+        pass
+
+
+    def load_map_ex(p1, p2, p3):
+        pass
+
+
+    def load_meta_groups_map(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def load_ply(p1, p2):
+        pass
+
+
+    def load_shapes_gdb(p1, p2):
+        pass
+
+
+    def set_dm_wireframe_pt_file(p1, p2):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_lst(p1, p2):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+    def set_triangulation_object_index(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapHGD:
     
-    
+
 
     cdef int32_t handle
     
@@ -10719,9 +12190,34 @@ cdef class WrapHGD:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def export_img(p1, p2):
+        pass
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def h_create_img(p1, p2):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapHXYZ:
     
-    
+
 
     cdef int32_t handle
     
@@ -10736,9 +12232,34 @@ cdef class WrapHXYZ:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def h_create_db(p1, p2, p3):
+        pass
+
+
+    def h_create_sql(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapIGRF:
     
-    
+
 
     cdef int32_t handle
     
@@ -10753,9 +12274,30 @@ cdef class WrapIGRF:
 
 
 
+    def calc(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def calc_vv(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+    def date_range(p1, p2, p3):
+        pass
+
+
+
+
+
+
+
 cdef class WrapIMG:
     
-    
+
 
     cdef int32_t handle
     
@@ -10770,10 +12312,488 @@ cdef class WrapIMG:
 
 
 
+    def average2(p1, p2):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create(p1, p2, p3, p4):
+        pass
+
+
+    def create_file(p1, p2, p3):
+        pass
+
+
+    def create_mem(p1, p2, p3, p4):
+        pass
+
+
+    def create_new_file(p1, p2, p3, p4, p5):
+        pass
+
+
+    def create_out_file(p1, p2, p3):
+        pass
+
+
+    def create_projected(p1, p2):
+        pass
+
+
+    def create_projected2(p1, p2, p3):
+        pass
+
+
+    def create_projected3(p1, p2, p3, p4):
+        pass
+
+
+
+
+    def geth_pg(p1):
+        pass
+
+
+    def get_info(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def get_pg(p1, p2):
+        pass
+
+
+    def get_projected_cell_size(p1, p2, p3):
+        pass
+
+
+    def get_tr(p1, p2):
+        pass
+
+
+    def element_type(p1, p2):
+        pass
+
+
+    def e_type(p1):
+        pass
+
+
+    def get_def_itr(p1, p2):
+        pass
+
+
+    def is_colour(p1):
+        pass
+
+
+    def is_valid_img_file(p1):
+        pass
+
+
+    def is_valid_img_file_ex(p1, p2, p3):
+        pass
+
+
+    def ne(p1):
+        pass
+
+
+    def inherit(p1, p2, p3):
+        pass
+
+
+    def inherit_img(p1, p2):
+        pass
+
+
+    def nv(p1):
+        pass
+
+
+    def nx(p1):
+        pass
+
+
+    def ny(p1):
+        pass
+
+
+    def query(p1, p2):
+        pass
+
+
+    def query_kx(p1):
+        pass
+
+
+    def set_def_itr(p1, p2):
+        pass
+
+
+    def user_preference_to_plot_as_colour_shaded_grid():
+        pass
+
+
+    def load_img(p1, p2):
+        pass
+
+
+    def load_into_pager(p1):
+        pass
+
+
+    def opt_kx(p1, p2):
+        pass
+
+
+    def read_v(p1, p2, p3, p4, p5):
+        pass
+
+
+    def read_x(p1, p2, p3, p4, p5):
+        pass
+
+
+    def read_y(p1, p2, p3, p4, p5):
+        pass
+
+
+    def refresh_gi(p1):
+        pass
+
+
+    def relocate(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def report(p1, p2, p3, p4, p5):
+        pass
+
+
+    def report_csv(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_z(p1, p2, p3):
+        pass
+
+
+    def query(p1, p2):
+        pass
+
+
+    def set_grid_unchanged(p1):
+        pass
+
+
+    def set_info(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+    def set_pg(p1, p2):
+        pass
+
+
+    def set_tr(p1, p2):
+        pass
+
+
+    def sync(p1):
+        pass
+
+
+    def write_v(p1, p2, p3, p4, p5):
+        pass
+
+
+    def write_x(p1, p2, p3, p4, p5):
+        pass
+
+
+    def write_y(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_double_parameter(p1, p2, p3):
+        pass
+
+
+    def get_double_parameter(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapIMU:
     
-    
-    pass
+
+
+
+
+
+    def agg_to_geo_color(p1, p2, p3, p4):
+        pass
+
+
+    def crc(p1, p2):
+        pass
+
+
+    def crc_grid(p1, p2):
+        pass
+
+
+    def crc_grid_inexact(p1, p2, p3, p4):
+        pass
+
+
+    def crc_inexact(p1, p2, p3, p4):
+        pass
+
+
+    def export_grid_without_data_section_xml(p1, p2, p3):
+        pass
+
+
+    def export_grid_xml(p1, p2, p3):
+        pass
+
+
+    def export_raw_xml(p1, p2, p3):
+        pass
+
+
+    def export_xml(p1, p2, p3):
+        pass
+
+
+    def get_zvv(p1, p2, p3, p4):
+        pass
+
+
+    def get_z_peaks_vv(p1, p2, p3, p4):
+        pass
+
+
+    def grid_add(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_agc(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_bool(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def grid_edge(p1, p2, p3):
+        pass
+
+
+    def grid_edge_ply(p1, p2, p3):
+        pass
+
+
+    def grid_expand(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def grid_exp_fill(p1, p2, p3, p4):
+        pass
+
+
+    def grid_fill(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def grid_filt(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def grid_head(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def grid_in_fill(p1, p2, p3, p4):
+        pass
+
+
+    def grid_mask(p1, p2, p3, p4):
+        pass
+
+
+    def grid_peak(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_ply(p1, p2, p3):
+        pass
+
+
+    def grid_ply_ex(p1, p2, p3, p4):
+        pass
+
+
+    def grid_reproject_and_window(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def grid_resample(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def grid_resize(p1, p2):
+        pass
+
+
+    def grid_shad(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_st(p1, p2):
+        pass
+
+
+    def grid_stat(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def grid_stat_comp(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def grid_stat_ext(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def grid_stat_trend(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_stat_trend_ext(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def slope_standard_deviation(p1):
+        pass
+
+
+    def grid_stitch(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def grid_stitch_ctl(p1):
+        pass
+
+
+    def grid_tiff(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def grid_trnd(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def grid_trns(p1, p2):
+        pass
+
+
+    def grid_vd(p1, p2):
+        pass
+
+
+    def grid_vol(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def grid_wind(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def grid_wind2(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def grid_xyz(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def grid_type(p1):
+        pass
+
+
+    def make_mi_tab_file(p1):
+        pass
+
+
+    def make_mi_tabfrom_grid(p1):
+        pass
+
+
+    def make_mi_tabfrom_map(p1):
+        pass
+
+
+    def mosaic(p1, p2, p3, p4):
+        pass
+
+
+    def peak_size(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def peak_size2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def pigeon_hole(p1, p2, p3, p4):
+        pass
+
+
+    def profile(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def profile_vv(p1, p2, p3, p4):
+        pass
+
+
+    def range_grids(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def range_ll(p1, p2, p3, p4, p5):
+        pass
+
+
+    def stat_window(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def update_ply(p1, p2):
+        pass
 
 
 
@@ -10781,7 +12801,7 @@ cdef class WrapIMU:
 
 cdef class WrapIPJ:
     
-    
+
 
     cdef int32_t handle
     
@@ -10796,9 +12816,342 @@ cdef class WrapIPJ:
 
 
 
+    def clear_warp(p1):
+        pass
+
+
+    def make_geographic(p1):
+        pass
+
+
+    def make_wgs84(p1):
+        pass
+
+
+    def set_units(p1, p2, p3):
+        pass
+
+
+    def add_exagg_warp(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def add_log_warp(p1, p2, p3):
+        pass
+
+
+    def add_matrix_warp(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def add_warp(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def clear_coordinate_system(p1):
+        pass
+
+
+    def clear_orientation(p1):
+        pass
+
+
+    def convert_orientation_warp_vv(p1, p2, p3, p4, p5):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def copy_projection(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+    def create_xml(p1):
+        pass
+
+
+
+
+    def get_3d_view(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def get_3d_view_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def get_crooked_section_view_v_vs(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_list(p1, p2, p3):
+        pass
+
+
+    def get_orientation_info(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_plane_equation(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def get_plane_equation2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def compare_datums(p1, p2):
+        pass
+
+
+    def convert_warp(p1, p2, p3, p4, p5):
+        pass
+
+
+    def convert_warp_vv(p1, p2, p3, p4):
+        pass
+
+
+    def coordinate_systems_are_the_same(p1, p2):
+        pass
+
+
+    def coordinate_systems_are_the_same_within_a_small_tolerance(p1, p2):
+        pass
+
+
+    def get_display_name(p1, p2, p3):
+        pass
+
+
+    def get_esri(p1, p2, p3):
+        pass
+
+
+    def get_gxf(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_mi_coord_sys(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_name(p1, p2, p3, p4):
+        pass
+
+
+    def get_orientation(p1):
+        pass
+
+
+    def get_orientation_name(p1, p2, p3):
+        pass
+
+
+    def get_units(p1, p2, p3, p4):
+        pass
+
+
+    def get_xml(p1, p2, p3):
+        pass
+
+
+    def has_projection(p1):
+        pass
+
+
+    def is_3d_inverted(p1):
+        pass
+
+
+    def is_3d_inverted_angles(p1):
+        pass
+
+
+    def is_geographic(p1):
+        pass
+
+
+    def orientations_are_the_same(p1, p2):
+        pass
+
+
+    def orientations_are_the_same_within_a_small_tolerance(p1, p2):
+        pass
+
+
+    def has_section_orientation(p1):
+        pass
+
+
+    def projection_type_is_fully_supported(p1):
+        pass
+
+
+    def set_gxf(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def source_type(p1):
+        pass
+
+
+    def support_datum_transform(p1, p2):
+        pass
+
+
+    def unit_name(p1, p2, p3, p4):
+        pass
+
+
+    def warped(p1):
+        pass
+
+
+    def warps_are_the_same(p1, p2):
+        pass
+
+
+    def warps_are_the_same_within_a_small_tolerance(p1, p2):
+        pass
+
+
+    def warp_type(p1):
+        pass
+
+
+    def make_projected(p1, p2, p3, p4, p5):
+        pass
+
+
+    def new_box_resolution(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def read(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_method_parm(p1, p2):
+        pass
+
+
+    def get_north_azimuth(p1, p2, p3):
+        pass
+
+
+    def unit_scale(p1, p2):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def serial_fgdcxml(p1, p2):
+        pass
+
+
+    def serial_isoxml(p1, p2):
+        pass
+
+
+    def serial_xml(p1, p2):
+        pass
+
+
+    def set_3d_inverted(p1, p2):
+        pass
+
+
+    def set_3d_inverted_angles(p1, p2):
+        pass
+
+
+    def set_3d_view(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def set_3d_view_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def set_3d_view_from_axes(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def set_crooked_section_view(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_depth_section_view(p1, p2):
+        pass
+
+
+    def set_esri(p1, p2):
+        pass
+
+
+    def set_gxf(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_method_parm(p1, p2, p3):
+        pass
+
+
+    def set_mi_coord_sys(p1, p2, p3):
+        pass
+
+
+    def set_normal_section_view(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_plan_view(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_section_view(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_wms_coord_sys(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_xml(p1, p2):
+        pass
+
+
+    def get_3d_matrix_orientation(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def set_3d_matrix_orientation(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def reproject_section_grid(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+
+
+
 cdef class WrapITR:
     
-    
+
 
     cdef int32_t handle
     
@@ -10813,9 +13166,142 @@ cdef class WrapITR:
 
 
 
+    def change_brightness(p1, p2):
+        pass
+
+
+    def color_vv(p1, p2, p3):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_file(p1):
+        pass
+
+
+    def create_img(p1, p2, p3, p4):
+        pass
+
+
+    def create_map(p1, p2):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def equal_area(p1, p2, p3):
+        pass
+
+
+    def get_data_limits(p1, p2, p3):
+        pass
+
+
+    def get_reg(p1):
+        pass
+
+
+    def get_zone_color(p1, p2, p3):
+        pass
+
+
+    def color_value(p1, p2):
+        pass
+
+
+    def get_size(p1):
+        pass
+
+
+    def get_zone_model_type(p1):
+        pass
+
+
+    def linear(p1, p2, p3, p4):
+        pass
+
+
+    def load_a(p1, p2):
+        pass
+
+
+    def log_linear(p1, p2, p3, p4):
+        pass
+
+
+    def normal(p1, p2, p3, p4, p5):
+        pass
+
+
+    def power_zone(p1, p2):
+        pass
+
+
+    def get_brightness(p1):
+        pass
+
+
+    def get_zone_value(p1, p2):
+        pass
+
+
+    def save_a(p1, p2):
+        pass
+
+
+    def save_file(p1, p2):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def set_agg_map(p1, p2, p3):
+        pass
+
+
+    def set_bright_contrast(p1, p2, p3):
+        pass
+
+
+    def set_color_model(p1, p2):
+        pass
+
+
+    def set_data_limits(p1, p2, p3):
+        pass
+
+
+    def set_size(p1, p2):
+        pass
+
+
+    def set_zone_color(p1, p2, p3):
+        pass
+
+
+    def set_zone_value(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapLAYOUT:
     
-    
+
 
     cdef int32_t handle
     
@@ -10830,9 +13316,58 @@ cdef class WrapLAYOUT:
 
 
 
+    def calculate_rects(p1, p2, p3, p4, p5):
+        pass
+
+
+    def clear_all(p1):
+        pass
+
+
+    def clear_constraints(p1):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+
+
+    def get_rectangle(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_rect_name(p1, p2, p3, p4):
+        pass
+
+
+    def add_constraint(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def add_rectangle(p1, p2, p3, p4, p5):
+        pass
+
+
+    def num_rectangles(p1):
+        pass
+
+
+    def set_rectangle(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_rectangle_name(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapLL2:
     
-    
+
 
     cdef int32_t handle
     
@@ -10847,9 +13382,26 @@ cdef class WrapLL2:
 
 
 
+    def create(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+
+
+    def save(p1, p2):
+        pass
+
+
+    def set_row(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 cdef class WrapLPT:
     
-    
+
 
     cdef int32_t handle
     
@@ -10864,9 +13416,26 @@ cdef class WrapLPT:
 
 
 
+    def create():
+        pass
+
+
+
+
+    def get_lst(p1, p2):
+        pass
+
+
+    def get_standard_lst(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapLST:
     
-    
+
 
     cdef int32_t handle
     
@@ -10881,9 +13450,130 @@ cdef class WrapLST:
 
 
 
+    def add_item(p1, p2, p3):
+        pass
+
+
+    def add_symb_item(p1, p2, p3):
+        pass
+
+
+    def add_unique_item(p1, p2, p3):
+        pass
+
+
+    def append(p1, p2):
+        pass
+
+
+    def assay_channel():
+        pass
+
+
+    def clear(p1):
+        pass
+
+
+    def convert_from_csv_string(p1, p2):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create(p1):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+    def del_item(p1, p2):
+        pass
+
+
+
+
+    def find_items(p1, p2, p3, p4):
+        pass
+
+
+    def gt_item(p1, p2, p3, p4, p5):
+        pass
+
+
+    def gt_symb_item(p1, p2, p3, p4, p5):
+        pass
+
+
+    def convert_to_csv_string(p1, p2, p3):
+        pass
+
+
+    def find_item(p1, p2, p3):
+        pass
+
+
+    def find_item_mask(p1, p2, p3):
+        pass
+
+
+    def get_int(p1, p2, p3):
+        pass
+
+
+    def insert_item(p1, p2, p3, p4):
+        pass
+
+
+    def size(p1):
+        pass
+
+
+    def load_csv(p1, p2, p3, p4):
+        pass
+
+
+    def load_file(p1, p2):
+        pass
+
+
+    def resource(p1, p2):
+        pass
+
+
+    def get_double(p1, p2, p3):
+        pass
+
+
+    def save_file(p1, p2):
+        pass
+
+
+    def select_csv_string_items(p1, p2, p3):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def set_item(p1, p2, p3, p4):
+        pass
+
+
+    def sort(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapLTB:
     
-    
+
 
     cdef int32_t handle
     
@@ -10898,9 +13588,114 @@ cdef class WrapLTB:
 
 
 
+    def add_record(p1, p2, p3):
+        pass
+
+
+    def contract(p1, p2):
+        pass
+
+
+    def create(p1, p2, p3, p4):
+        pass
+
+
+    def create_crypt(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def create_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+    def delete_record(p1, p2):
+        pass
+
+
+
+
+    def get_con_lst(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_lst(p1, p2, p3):
+        pass
+
+
+    def get_lst2(p1, p2, p3, p4):
+        pass
+
+
+    def fields(p1):
+        pass
+
+
+    def find_field(p1, p2):
+        pass
+
+
+    def find_key(p1, p2):
+        pass
+
+
+    def get_field(p1, p2, p3, p4):
+        pass
+
+
+    def get_int(p1, p2, p3):
+        pass
+
+
+    def get_string(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_english_string(p1, p2, p3, p4, p5):
+        pass
+
+
+    def records(p1):
+        pass
+
+
+    def search(p1, p2, p3, p4):
+        pass
+
+
+    def merge(p1, p2):
+        pass
+
+
+    def get_double(p1, p2, p3):
+        pass
+
+
+    def save(p1, p2):
+        pass
+
+
+    def save_crypt(p1, p2, p3):
+        pass
+
+
+    def set_int(p1, p2, p3, p4):
+        pass
+
+
+    def set_double(p1, p2, p3, p4):
+        pass
+
+
+    def set_string(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 cdef class WrapMAP:
     
-    
+
 
     cdef int32_t handle
     
@@ -10914,10 +13709,217 @@ cdef class WrapMAP:
 
 
 
+# Export
+
+
+
+
+    def export_all_in_view(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def export_all_raster(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def export_area_in_view(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def export_area_raster(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def render_bitmap(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+# Miscellaneous
+
+
+
+
+    def agg_list(p1, p2, p3):
+        pass
+
+
+    def agg_list_ex(p1, p2, p3, p4):
+        pass
+
+
+    def clean(p1):
+        pass
+
+
+    def commit(p1):
+        pass
+
+
+    def copy_map_to_view(p1, p2, p3):
+        pass
+
+
+    def crc_map(p1, p2, p3):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+    def current():
+        pass
+
+
+    def delete_view(p1, p2):
+        pass
+
+
+
+
+    def discard(p1):
+        pass
+
+
+    def dup_map(p1, p2, p3):
+        pass
+
+
+    def get_lpt(p1):
+        pass
+
+
+    def get_map_size(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_meta(p1):
+        pass
+
+
+    def get_reg(p1):
+        pass
+
+
+    def group_list(p1, p2):
+        pass
+
+
+    def group_list_ex(p1, p2, p3):
+        pass
+
+
+    def duplicate_view(p1, p2, p3, p4, p5):
+        pass
+
+
+    def exist_view(p1, p2):
+        pass
+
+
+    def get_class_name(p1, p2, p3, p4):
+        pass
+
+
+    def get_file_name(p1, p2, p3):
+        pass
+
+
+    def get_map_name(p1, p2, p3):
+        pass
+
+
+    def packed_files(p1):
+        pass
+
+
+    def un_pack_files_ex(p1, p2, p3, p4):
+        pass
+
+
+    def un_pack_files_to_folder(p1, p2, p3, p4, p5):
+        pass
+
+
+    def pack_files(p1):
+        pass
+
+
+    def render(p1, p2):
+        pass
+
+
+    def resize_all(p1):
+        pass
+
+
+    def resize_all_ex(p1, p2):
+        pass
+
+
+    def get_map_scale(p1):
+        pass
+
+
+    def save_as_mxd(p1, p2):
+        pass
+
+
+    def set_class_name(p1, p2, p3):
+        pass
+
+
+    def set_current(p1):
+        pass
+
+
+    def set_map_name(p1, p2):
+        pass
+
+
+    def set_map_scale(p1, p2):
+        pass
+
+
+    def set_map_size(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+    def set_reg(p1, p2):
+        pass
+
+
+    def sync(p1):
+        pass
+
+
+    def un_pack_files(p1):
+        pass
+
+
+    def view_list(p1, p2):
+        pass
+
+
+    def view_list_ex(p1, p2, p3):
+        pass
+
+
+    def get_data_proj(p1):
+        pass
+
+
+
+
+
 
 cdef class WrapMAPL:
     
-    
+
 
     cdef int32_t handle
     
@@ -10932,9 +13934,30 @@ cdef class WrapMAPL:
 
 
 
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_reg(p1, p2, p3, p4):
+        pass
+
+
+
+
+    def process(p1, p2):
+        pass
+
+
+    def replace_string(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapMAPTEMPLATE:
     
-    
+
 
     cdef int32_t handle
     
@@ -10948,11 +13971,225 @@ cdef class WrapMAPTEMPLATE:
 
 
 
+# Content Manipulation Methods
+
+
+
+
+    def get_tmp_copy(p1, p2, p3):
+        pass
+
+
+    def update_from_tmp_copy(p1, p2):
+        pass
+
+
+# File Methods
+
+
+
+
+    def commit(p1):
+        pass
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+
+
+    def discard(p1):
+        pass
+
+
+    def get_file_name(p1, p2, p3):
+        pass
+
+
+# Map Making
+
+
+
+
+    def create_map(p1, p2, p3):
+        pass
+
+
+# Render/Preview
+
+
+
+
+    def refresh(p1):
+        pass
+
+
+    def render_preview(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def render_preview_map_production(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+
+
+
 
 cdef class WrapMATH:
     
-    
-    pass
+
+
+
+
+
+    def cross_product_(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def abs_(p1):
+        pass
+
+
+    def and_(p1, p2):
+        pass
+
+
+    def mod_(p1, p2):
+        pass
+
+
+    def or_(p1, p2):
+        pass
+
+
+    def round_(p1):
+        pass
+
+
+    def xor_(p1, p2):
+        pass
+
+
+    def nicer_log_scale_(p1, p2, p3):
+        pass
+
+
+    def nicer_scale_(p1, p2, p3, p4):
+        pass
+
+
+    def normalise_3d_(p1, p2, p3):
+        pass
+
+
+    def abs_(p1):
+        pass
+
+
+    def arc_cos_(p1):
+        pass
+
+
+    def arc_sin_(p1):
+        pass
+
+
+    def arc_tan_(p1):
+        pass
+
+
+    def arc_tan2_(p1, p2):
+        pass
+
+
+    def ceil_(p1):
+        pass
+
+
+    def cos_(p1):
+        pass
+
+
+    def dot_product_3d_(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def exp_(p1):
+        pass
+
+
+    def floor_(p1):
+        pass
+
+
+    def hypot_(p1, p2):
+        pass
+
+
+    def lambda_trans_(p1, p2):
+        pass
+
+
+    def lambda_trans_rev_(p1, p2):
+        pass
+
+
+    def log_(p1):
+        pass
+
+
+    def log10_(p1):
+        pass
+
+
+    def log_z_(p1, p2, p3):
+        pass
+
+
+    def mod_(p1, p2):
+        pass
+
+
+    def rotate_vector_(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def pow_(p1, p2):
+        pass
+
+
+    def rand_():
+        pass
+
+
+    def round_(p1, p2):
+        pass
+
+
+    def sign_(p1, p2):
+        pass
+
+
+    def sin_(p1):
+        pass
+
+
+    def sqrt_(p1):
+        pass
+
+
+    def tan_(p1):
+        pass
+
+
+    def un_log_z_(p1, p2, p3):
+        pass
+
+
+    def s_rand_():
+        pass
 
 
 
@@ -10960,7 +14197,7 @@ cdef class WrapMATH:
 
 cdef class WrapMETA:
     
-    
+
 
     cdef int32_t handle
     
@@ -10974,10 +14211,247 @@ cdef class WrapMETA:
 
 
 
+# Attribute
+
+
+
+
+    def create_attrib(p1, p2, p3, p4):
+        pass
+
+
+    def delete_attrib(p1, p2):
+        pass
+
+
+# Browser
+
+
+
+
+    def set_attribute_editable(p1, p2, p3):
+        pass
+
+
+    def set_attribute_visible(p1, p2, p3):
+        pass
+
+
+# Class
+
+
+
+
+    def create_class(p1, p2, p3):
+        pass
+
+
+    def delete_class(p1, p2):
+        pass
+
+
+# Core
+
+
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def serial(p1, p2):
+        pass
+
+
+# Get Data
+
+
+
+
+    def find_data(p1, p2, p3):
+        pass
+
+
+    def get_attrib_bool(p1, p2, p3, p4):
+        pass
+
+
+    def get_attrib_enum(p1, p2, p3, p4):
+        pass
+
+
+    def get_attrib_int(p1, p2, p3, p4):
+        pass
+
+
+    def get_attrib_double(p1, p2, p3, p4):
+        pass
+
+
+    def get_attrib_string(p1, p2, p3, p4, p5):
+        pass
+
+
+    def has_value(p1, p2, p3):
+        pass
+
+
+# Import/Export
+
+
+
+
+    def export_table_csv(p1, p2, p3):
+        pass
+
+
+    def import_table_csv(p1, p2, p3):
+        pass
+
+
+    def write_text(p1, p2):
+        pass
+
+
+# Item
+
+
+
+
+    def delete_all_items(p1, p2):
+        pass
+
+
+    def delete_item(p1, p2):
+        pass
+
+
+    def h_creat_item(p1, p2, p3):
+        pass
+
+
+    def h_get_next_item(p1, p2, p3):
+        pass
+
+
+# Object
+
+
+
+
+    def get_attrib_obj(p1, p2, p3, p4):
+        pass
+
+
+    def set_attrib_obj(p1, p2, p3, p4):
+        pass
+
+
+# Set Data
+
+
+
+
+    def set_attrib_bool(p1, p2, p3, p4):
+        pass
+
+
+    def set_attrib_enum(p1, p2, p3, p4):
+        pass
+
+
+    def set_attrib_int(p1, p2, p3, p4):
+        pass
+
+
+    def set_attrib_double(p1, p2, p3, p4):
+        pass
+
+
+    def set_attrib_string(p1, p2, p3, p4):
+        pass
+
+
+    def set_empty_attrib(p1, p2, p3):
+        pass
+
+
+# Transfer
+
+
+
+
+    def h_copy_across_attribute(p1, p2, p3):
+        pass
+
+
+    def h_copy_across_class(p1, p2, p3):
+        pass
+
+
+    def h_copy_across_data(p1, p2, p3):
+        pass
+
+
+    def h_copy_across_item(p1, p2, p3):
+        pass
+
+
+    def h_copy_across_type(p1, p2, p3):
+        pass
+
+
+    def move_datas_across(p1, p2, p3, p4):
+        pass
+
+
+# Type
+
+
+
+
+    def create_type(p1, p2, p3, p4):
+        pass
+
+
+    def delete_data(p1, p2):
+        pass
+
+
+    def delete_type(p1, p2):
+        pass
+
+
+# UMN
+
+
+
+
+    def get_obj_name(p1, p2, p3, p4):
+        pass
+
+
+    def resolve_umn(p1, p2):
+        pass
+
+
+
+
+
 
 cdef class WrapMVIEW:
     
-    
+
 
     cdef int32_t handle
     
@@ -10991,11 +14465,1155 @@ cdef class WrapMVIEW:
 
 
 
+# 3D Entity
+
+
+
+
+    def box_3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def crc_view(p1, p2, p3):
+        pass
+
+
+    def crc_view_group(p1, p2, p3, p4):
+        pass
+
+
+    def cylinder_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def draw_object_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def draw_surface_3d_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def draw_surface_3d_from_file(p1, p2, p3):
+        pass
+
+
+    def font_weight_lst(p1):
+        pass
+
+
+    def get_agg_file_names(p1, p2, p3):
+        pass
+
+
+    def get_meta(p1, p2, p3, p4):
+        pass
+
+
+    def measure_text(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def point_3d(p1, p2, p3, p4):
+        pass
+
+
+    def poly_line_3d(p1, p2, p3, p4):
+        pass
+
+
+    def relocate_group(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_meta(p1, p2, p3, p4):
+        pass
+
+
+    def sphere_3d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def update_met_afrom_group(p1, p2, p3):
+        pass
+
+
+# 3D Plane
+
+
+
+
+    def delete_plane(p1, p2, p3):
+        pass
+
+
+    def get_plane_clip_ply(p1, p2, p3):
+        pass
+
+
+    def get_plane_equation(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def get_view_plane_equation(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def create_plane(p1, p2):
+        pass
+
+
+    def find_plane(p1, p2):
+        pass
+
+
+    def get_def_plane(p1, p2, p3):
+        pass
+
+
+    def is_view_3d(p1):
+        pass
+
+
+    def is_section(p1):
+        pass
+
+
+    def list_plane_groups(p1, p2, p3):
+        pass
+
+
+    def list_planes(p1, p2):
+        pass
+
+
+    def set_all_groups_to_plane(p1, p2):
+        pass
+
+
+    def set_all_new_groups_to_plane(p1, p2):
+        pass
+
+
+    def set_def_plane(p1, p2):
+        pass
+
+
+    def set_group_to_plane(p1, p2, p3):
+        pass
+
+
+    def set_h_3dn(p1, p2):
+        pass
+
+
+    def set_plane_clip_ply(p1, p2, p3):
+        pass
+
+
+    def set_plane_equation(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def set_plane_surface(p1, p2, p3):
+        pass
+
+
+    def set_plane_surf_info(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+# 3D Rendering 2D
+
+
+
+
+    def define_plane_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def define_viewer_axis_3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def define_viewer_plane_3d(p1, p2, p3, p4):
+        pass
+
+
+# Clipping
+
+
+
+
+    def clip_poly_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+    def clip_rect_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def clip_clear(p1):
+        pass
+
+
+    def clip_groups(p1, p2):
+        pass
+
+
+    def clip_marked_groups(p1, p2):
+        pass
+
+
+    def clip_poly(p1, p2, p3, p4):
+        pass
+
+
+    def clip_rect(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def delete_ext_clip_ply(p1, p2):
+        pass
+
+
+    def ext_clip_ply_list(p1, p2):
+        pass
+
+
+    def get_clip_ply(p1, p2):
+        pass
+
+
+    def get_ext_clip_ply(p1, p2, p3):
+        pass
+
+
+    def get_group_ext_clip_ply(p1, p2, p3):
+        pass
+
+
+    def get_ply(p1, p2):
+        pass
+
+
+    def group_clip_mode(p1, p2):
+        pass
+
+
+    def get_name_ext_clip_ply(p1, p2, p3, p4):
+        pass
+
+
+    def num_ext_clip_ply(p1):
+        pass
+
+
+    def set_ext_clip_ply(p1, p2, p3, p4):
+        pass
+
+
+    def set_clip_ply(p1, p2):
+        pass
+
+
+    def set_group_ext_clip_ply(p1, p2, p3):
+        pass
+
+
+# Color
+
+
+
+
+    def color2_rgb(p1, p2, p3, p4):
+        pass
+
+
+    def color_descr(p1, p2, p3):
+        pass
+
+
+    def color(p1):
+        pass
+
+
+    def color_cmy(p1, p2, p3):
+        pass
+
+
+    def color_hsv(p1, p2, p3):
+        pass
+
+
+    def color_rgb(p1, p2, p3):
+        pass
+
+
+# Drawing Attribute
+
+
+
+
+    def clip_mode(p1, p2):
+        pass
+
+
+    def fill_color(p1, p2):
+        pass
+
+
+    def line_color(p1, p2):
+        pass
+
+
+    def line_smooth(p1, p2):
+        pass
+
+
+    def line_style(p1, p2, p3):
+        pass
+
+
+    def line_thick(p1, p2):
+        pass
+
+
+    def pat_angle(p1, p2):
+        pass
+
+
+    def pat_density(p1, p2):
+        pass
+
+
+    def pat_number(p1, p2):
+        pass
+
+
+    def pat_size(p1, p2):
+        pass
+
+
+    def pat_style(p1, p2):
+        pass
+
+
+    def pat_thick(p1, p2):
+        pass
+
+
+    def symb_angle(p1, p2):
+        pass
+
+
+    def symb_color(p1, p2):
+        pass
+
+
+    def symb_fill_color(p1, p2):
+        pass
+
+
+    def symb_font(p1, p2, p3, p4, p5):
+        pass
+
+
+    def symb_number(p1, p2):
+        pass
+
+
+    def symb_size(p1, p2):
+        pass
+
+
+    def text_angle(p1, p2):
+        pass
+
+
+    def text_color(p1, p2):
+        pass
+
+
+    def text_font(p1, p2, p3, p4, p5):
+        pass
+
+
+    def text_ref(p1, p2):
+        pass
+
+
+    def text_size(p1, p2):
+        pass
+
+
+    def transparency(p1, p2):
+        pass
+
+
+    def z_value(p1, p2):
+        pass
+
+
+# Drawing Entity
+
+
+
+
+    def arc(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def chord(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def classified_symbols(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def complex_polygon(p1, p2, p3, p4):
+        pass
+
+
+    def ellipse(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def line(p1, p2, p3, p4, p5):
+        pass
+
+
+    def line_vv(p1, p2):
+        pass
+
+
+    def polygon_dm(p1, p2, p3):
+        pass
+
+
+    def polygon_ply(p1, p2):
+        pass
+
+
+    def poly_line(p1, p2, p3, p4):
+        pass
+
+
+    def poly_line_dm(p1, p2, p3):
+        pass
+
+
+    def poly_wrap(p1, p2, p3):
+        pass
+
+
+    def rectangle(p1, p2, p3, p4, p5):
+        pass
+
+
+    def segment(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def size_symbols(p1, p2, p3, p4):
+        pass
+
+
+    def symbol(p1, p2, p3):
+        pass
+
+
+    def symbols(p1, p2, p3):
+        pass
+
+
+    def symbols_itr(p1, p2, p3, p4, p5):
+        pass
+
+
+    def text(p1, p2, p3, p4):
+        pass
+
+
+# Drawing Object
+
+
+
+
+    def aggregate(p1, p2, p3):
+        pass
+
+
+    def change_line_message(p1, p2):
+        pass
+
+
+    def col_symbol(p1, p2, p3):
+        pass
+
+
+    def datalinkd(p1, p2, p3):
+        pass
+
+
+    def easy_maker(p1, p2, p3):
+        pass
+
+
+    def emf_object(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def external_string_object(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def link(p1, p2, p3):
+        pass
+
+
+    def maker(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def meta(p1, p2, p3):
+        pass
+
+
+    def voxd(p1, p2, p3):
+        pass
+
+
+    def get_voxd(p1, p2):
+        pass
+
+
+    def draw_vector_voxel_vectors(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def draw_vectors_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+# Group Methods
+
+
+
+
+    def copy_marked_groups(p1, p2):
+        pass
+
+
+    def copy_raw_marked_groups(p1, p2):
+        pass
+
+
+    def crc_group(p1, p2, p3):
+        pass
+
+
+    def delete_group(p1, p2):
+        pass
+
+
+    def del_marked_groups(p1):
+        pass
+
+
+    def get_group_extent(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_group_transparency(p1, p2, p3):
+        pass
+
+
+    def group_to_ply(p1, p2, p3):
+        pass
+
+
+    def hide_marked_groups(p1, p2):
+        pass
+
+
+    def hide_shadow2_d_interpretations(p1, p2):
+        pass
+
+
+    def exist_group(p1, p2):
+        pass
+
+
+    def gen_new_group_name(p1, p2, p3, p4):
+        pass
+
+
+    def is_group(p1, p2, p3):
+        pass
+
+
+    def is_group_empty(p1, p2):
+        pass
+
+
+    def is_movable(p1):
+        pass
+
+
+    def is_visible(p1):
+        pass
+
+
+    def list_groups(p1, p2, p3):
+        pass
+
+
+    def render_order(p1):
+        pass
+
+
+    def mark_all_groups(p1, p2):
+        pass
+
+
+    def mark_empty_groups(p1, p2):
+        pass
+
+
+    def mark_group(p1, p2, p3):
+        pass
+
+
+    def move_group_backward(p1, p2):
+        pass
+
+
+    def move_group_forward(p1, p2):
+        pass
+
+
+    def move_group_to_back(p1, p2):
+        pass
+
+
+    def move_group_to_front(p1, p2):
+        pass
+
+
+    def rename_group(p1, p2, p3):
+        pass
+
+
+    def set_group_moveable(p1, p2, p3):
+        pass
+
+
+    def set_group_transparency(p1, p2, p3):
+        pass
+
+
+    def set_mark_moveable(p1, p2):
+        pass
+
+
+    def set_movability(p1, p2):
+        pass
+
+
+    def set_render_order(p1, p2):
+        pass
+
+
+    def set_visibility(p1, p2):
+        pass
+
+
+    def start_group(p1, p2, p3):
+        pass
+
+
+# Projection
+
+
+
+
+    def set_working_ipj(p1, p2):
+        pass
+
+
+    def clear_esrild_ts(p1):
+        pass
+
+
+    def is_projection_empty(p1):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_user_ipj(p1, p2):
+        pass
+
+
+    def mode_pj(p1, p2):
+        pass
+
+
+    def north(p1):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_user_ipj(p1, p2):
+        pass
+
+
+# Render
+
+
+
+
+    def get_3d_group_flags(p1, p2):
+        pass
+
+
+    def set_3d_group_flags(p1, p2, p3):
+        pass
+
+
+    def get_group_freeze_scale(p1, p2, p3):
+        pass
+
+
+    def set_freeze_scale(p1, p2):
+        pass
+
+
+    def set_group_freeze_scale(p1, p2, p3):
+        pass
+
+
+    def find_group(p1, p2):
+        pass
+
+
+    def group_name(p1, p2, p3, p4):
+        pass
+
+
+    def render(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+# Utility Drawing
+
+
+
+
+    def set_u_fac(p1, p2):
+        pass
+
+
+    def axis_x(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def axis_y(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def grid(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def label_fid(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def label_x(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def label_y(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def optimum_tick(p1, p2, p3):
+        pass
+
+
+# View
+
+
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_crooked_section(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def create_crooked_section_data_profile(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+
+
+    def extent(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_map(p1):
+        pass
+
+
+    def get_reg(p1):
+        pass
+
+
+    def get_name(p1, p2, p3):
+        pass
+
+
+# View Control
+
+
+
+
+    def plot_to_view(p1, p2, p3):
+        pass
+
+
+    def set_thin_res(p1, p2):
+        pass
+
+
+    def view_to_plot(p1, p2, p3):
+        pass
+
+
+    def best_fit_window(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def fit_map_window_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def fit_window(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_class_name(p1, p2, p3, p4):
+        pass
+
+
+    def map_origin(p1, p2, p3):
+        pass
+
+
+    def re_scale(p1, p2):
+        pass
+
+
+    def get_map_scale(p1):
+        pass
+
+
+    def scale_mm(p1):
+        pass
+
+
+    def scale_pj_mm(p1):
+        pass
+
+
+    def scale_ymm(p1):
+        pass
+
+
+    def scale_all_group(p1, p2, p3):
+        pass
+
+
+    def scale_window(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def set_class_name(p1, p2, p3):
+        pass
+
+
+    def set_window(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def tran_scale(p1, p2, p3, p4, p5):
+        pass
+
+
+    def user_to_view(p1, p2, p3):
+        pass
+
+
+    def view_to_user(p1, p2, p3):
+        pass
+
+
+
+
+
 
 cdef class WrapMVU:
     
-    
-    pass
+
+
+
+
+
+    def arrow(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def arrow_vector_vv(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def bar_chart(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28):
+        pass
+
+
+    def cdi_pixel_plot(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def cdi_pixel_plot_3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def color_bar(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def color_bar2(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def color_bar2_style(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def color_bar_hor(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def color_bar_hor2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def color_bar_hor2_style(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def color_bar_hor_style(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def color_bar_style(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def color_bar_reg(p1, p2, p3, p4):
+        pass
+
+
+    def contour(p1, p2, p3):
+        pass
+
+
+    def contour_ply(p1, p2, p3, p4):
+        pass
+
+
+    def c_symb_legend(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def decay_curve(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
+        pass
+
+
+    def direction_plot(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def em_forward(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+        pass
+
+
+    def export_datamine_string(p1, p2, p3):
+        pass
+
+
+    def export_dxf_3d(p1, p2, p3):
+        pass
+
+
+    def export_surpac_str(p1, p2, p3, p4):
+        pass
+
+
+    def flight_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def gen_areas(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_range_gocad_surface(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def histogram(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+        pass
+
+
+    def histogram2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23):
+        pass
+
+
+    def histogram3(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def histogram4(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
+        pass
+
+
+    def histogram5(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23):
+        pass
+
+
+    def exportable_dxf_3d_groups_lst(p1, p2):
+        pass
+
+
+    def mapset_test(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def mapset2_test(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def import_gocad_surface(p1, p2, p3):
+        pass
+
+
+    def load_plot(p1, p2):
+        pass
+
+
+    def map_from_plt(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def map_mdf(p1, p2, p3):
+        pass
+
+
+    def mapset(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def mapset2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+        pass
+
+
+    def mdf(p1, p2, p3, p4):
+        pass
+
+
+    def path_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def path_plot_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def path_plot_ex2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def plot_voxel_surface(p1, p2, p3, p4, p5):
+        pass
+
+
+    def plot_voxel_surface2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def generate_surface_from_voxel(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def post(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def post_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def probability(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+        pass
+
+
+    def profile_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def profile_plot_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def prop_symb_legend(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def re_gen_areas(p1, p2):
+        pass
+
+
+    def symb_off(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def text_box(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def tick(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def tick_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def trnd_path(p1, p2, p3, p4, p5):
+        pass
 
 
 
@@ -11003,8 +15621,21 @@ cdef class WrapMVU:
 
 cdef class WrapMXD:
     
-    
-    pass
+
+
+
+
+
+    def create_metadata(p1):
+        pass
+
+
+    def convert_to_map(p1, p2):
+        pass
+
+
+    def sync(p1):
+        pass
 
 
 
@@ -11012,7 +15643,7 @@ cdef class WrapMXD:
 
 cdef class WrapPAT:
     
-    
+
 
     cdef int32_t handle
     
@@ -11027,9 +15658,22 @@ cdef class WrapPAT:
 
 
 
+    def create():
+        pass
+
+
+
+
+    def get_lst(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapPG:
     
-    
+
 
     cdef int32_t handle
     
@@ -11043,10 +15687,154 @@ cdef class WrapPG:
 
 
 
+# 2D Methods
+
+
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def copy_subset(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def dummy(p1):
+        pass
+
+
+    def e_type(p1):
+        pass
+
+
+    def n_cols(p1):
+        pass
+
+
+    def n_rows(p1):
+        pass
+
+
+    def n_slices(p1):
+        pass
+
+
+    def range(p1, p2, p3):
+        pass
+
+
+    def get(p1, p2, p3):
+        pass
+
+
+    def read_col(p1, p2, p3, p4, p5):
+        pass
+
+
+    def read_row(p1, p2, p3, p4, p5):
+        pass
+
+
+    def re_allocate(p1, p2, p3):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def statistics(p1, p2):
+        pass
+
+
+    def write_col(p1, p2, p3, p4, p5):
+        pass
+
+
+    def write_row(p1, p2, p3, p4, p5):
+        pass
+
+
+# 3D Methods
+
+
+
+
+    def copy_subset_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def create_3d(p1, p2, p3, p4):
+        pass
+
+
+    def read_col_3d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def read_row_3d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def read_trace_3d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def re_allocate_3d(p1, p2, p3, p4):
+        pass
+
+
+    def write_col_3d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def write_row_3d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def write_trace_3d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+# Utility Methods
+
+
+
+
+    def read_bf(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def read_ra(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def write_bf(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def write_wa(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+
+
+
 
 cdef class WrapPJ:
     
-    
+
 
     cdef int32_t handle
     
@@ -11061,9 +15849,86 @@ cdef class WrapPJ:
 
 
 
+    def clip_ply(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def convert_vv(p1, p2, p3):
+        pass
+
+
+    def convert_vv3(p1, p2, p3, p4):
+        pass
+
+
+    def convert_xy(p1, p2, p3):
+        pass
+
+
+    def convert_xy_from_xyz(p1, p2, p3, p4):
+        pass
+
+
+    def convert_xyz(p1, p2, p3, p4):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+    def create_ipj(p1, p2):
+        pass
+
+
+    def create_rectified(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+
+
+    def elevation(p1):
+        pass
+
+
+    def is_input_ll(p1):
+        pass
+
+
+    def is_output_ll(p1):
+        pass
+
+
+    def project_bounding_rectangle(p1, p2, p3, p4, p5):
+        pass
+
+
+    def project_bounding_rectangle2(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def project_bounding_rectangle_res(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def project_bounding_rectangle_res2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def project_limited_bounding_rectangle(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def setup_ldt(p1):
+        pass
+
+
+
+
+
 cdef class WrapPLY:
     
-    
+
 
     cdef int32_t handle
     
@@ -11078,9 +15943,114 @@ cdef class WrapPLY:
 
 
 
+    def add_polygon(p1, p2, p3):
+        pass
+
+
+    def add_polygon_ex(p1, p2, p3, p4):
+        pass
+
+
+    def change_ipj(p1, p2):
+        pass
+
+
+    def clear(p1):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def extent(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_polygon(p1, p2, p3, p4):
+        pass
+
+
+    def get_polygon_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+    def clip_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def clip_line_int(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def clip_ply(p1, p2, p3):
+        pass
+
+
+    def get_description(p1, p2, p3):
+        pass
+
+
+    def num_poly(p1):
+        pass
+
+
+    def load_table(p1, p2):
+        pass
+
+
+    def area(p1):
+        pass
+
+
+    def rectangle(p1, p2, p3, p4, p5):
+        pass
+
+
+    def rotate(p1, p2, p3, p4):
+        pass
+
+
+    def save_table(p1, p2):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def set_description(p1, p2):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def thin(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapRA:
     
-    
+
 
     cdef int32_t handle
     
@@ -11095,9 +16065,38 @@ cdef class WrapRA:
 
 
 
+    def create(p1):
+        pass
+
+
+    def create_sbf(p1, p2):
+        pass
+
+
+
+
+    def gets(p1, p2, p3):
+        pass
+
+
+    def len(p1):
+        pass
+
+
+    def line(p1):
+        pass
+
+
+    def seek(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapREG:
     
-    
+
 
     cdef int32_t handle
     
@@ -11112,9 +16111,82 @@ cdef class WrapREG:
 
 
 
+    def clear(p1):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create(p1):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def get(p1, p2, p3, p4):
+        pass
+
+
+    def get_int(p1, p2, p3):
+        pass
+
+
+    def get_one(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_double(p1, p2, p3):
+        pass
+
+
+    def entries(p1):
+        pass
+
+
+    def load_ini(p1, p2):
+        pass
+
+
+    def match_string(p1, p2, p3, p4):
+        pass
+
+
+    def merge(p1, p2, p3):
+        pass
+
+
+    def save_ini(p1, p2):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def set(p1, p2, p3):
+        pass
+
+
+    def set_int(p1, p2, p3):
+        pass
+
+
+    def set_double(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapSBF:
     
-    
+
 
     cdef int32_t handle
     
@@ -11129,9 +16201,54 @@ cdef class WrapSBF:
 
 
 
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_obj_list(p1, p2, p3):
+        pass
+
+
+    def del_dir(p1, p2):
+        pass
+
+
+    def del_file(p1, p2):
+        pass
+
+
+
+
+    def h_get_db(p1):
+        pass
+
+
+    def h_get_map(p1):
+        pass
+
+
+    def h_get_sys():
+        pass
+
+
+    def exist_dir(p1, p2):
+        pass
+
+
+    def exist_file(p1, p2):
+        pass
+
+
+    def save_log(p1, p2, p3, p4, p5):
+        pass
+
+
+
+
+
 cdef class WrapST:
     
-    
+
 
     cdef int32_t handle
     
@@ -11146,9 +16263,74 @@ cdef class WrapST:
 
 
 
+    def create():
+        pass
+
+
+    def create_exact():
+        pass
+
+
+    def data(p1, p2):
+        pass
+
+
+    def data_vv(p1, p2):
+        pass
+
+
+
+
+    def get_histogram_bins(p1, p2):
+        pass
+
+
+    def get_histogram_info(p1, p2, p3, p4):
+        pass
+
+
+    def histogram(p1, p2):
+        pass
+
+
+    def histogram2(p1, p2, p3, p4):
+        pass
+
+
+    def equivalent_percentile(p1, p2):
+        pass
+
+
+    def equivalent_value(p1, p2):
+        pass
+
+
+    def reset(p1):
+        pass
+
+
+    def get_info(p1, p2):
+        pass
+
+
+    def get_norm_prob(p1):
+        pass
+
+
+    def get_norm_prob_x(p1):
+        pass
+
+
+    def normal_test(p1):
+        pass
+
+
+
+
+
 cdef class WrapST2:
     
-    
+
 
     cdef int32_t handle
     
@@ -11163,10 +16345,294 @@ cdef class WrapST2:
 
 
 
+    def create():
+        pass
+
+
+    def data_vv(p1, p2, p3):
+        pass
+
+
+
+
+    def items(p1):
+        pass
+
+
+    def reset(p1):
+        pass
+
+
+    def get(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapSTR:
     
-    
-    pass
+
+
+
+
+# Data Input
+
+
+
+
+    def scan_i(p1):
+        pass
+
+
+    def scan_date(p1, p2):
+        pass
+
+
+    def scan_form(p1, p2):
+        pass
+
+
+    def scan_r(p1):
+        pass
+
+
+    def scan_time(p1, p2):
+        pass
+
+
+# File Name
+
+
+
+
+    def file_combine_parts(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def file_ext(p1, p2, p3, p4, p5):
+        pass
+
+
+    def file_name_part(p1, p2, p3, p4):
+        pass
+
+
+    def get_m_file(p1, p2, p3, p4):
+        pass
+
+
+    def remove_qualifiers(p1, p2, p3):
+        pass
+
+
+# Formating
+
+
+
+
+    def format_crc(p1, p2, p3, p4):
+        pass
+
+
+    def format_date(p1, p2, p3, p4, p5):
+        pass
+
+
+    def format_i(p1, p2, p3, p4):
+        pass
+
+
+    def format_r(p1, p2, p3, p4, p5):
+        pass
+
+
+    def format_r2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def format_double(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def format_time(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+# General
+
+
+
+
+    def escape(p1, p2, p3):
+        pass
+
+
+    def char_(p1):
+        pass
+
+
+    def char_n(p1, p2, p3):
+        pass
+
+
+    def justify(p1, p2, p3, p4, p5):
+        pass
+
+
+    def replacei_match_string(p1, p2, p3, p4):
+        pass
+
+
+    def replace_match_string(p1, p2, p3, p4):
+        pass
+
+
+    def set_char_n(p1, p2, p3, p4):
+        pass
+
+
+    def split_string(p1, p2, p3, p4):
+        pass
+
+
+    def strcat(p1, p2, p3):
+        pass
+
+
+    def strcmp(p1, p2, p3):
+        pass
+
+
+    def strcpy(p1, p2, p3):
+        pass
+
+
+    def stri_mask(p1, p2):
+        pass
+
+
+    def strins(p1, p2, p3, p4):
+        pass
+
+
+    def strlen(p1):
+        pass
+
+
+    def str_mask(p1, p2):
+        pass
+
+
+    def str_min(p1):
+        pass
+
+
+    def str_min2(p1):
+        pass
+
+
+    def strncmp(p1, p2, p3, p4):
+        pass
+
+
+    def str_str(p1, p2, p3):
+        pass
+
+
+    def substr(p1, p2, p3, p4, p5):
+        pass
+
+
+    def to_lower(p1, p2):
+        pass
+
+
+    def to_upper(p1, p2):
+        pass
+
+
+    def xyz_line(p1, p2, p3):
+        pass
+
+
+    def make_alpha(p1):
+        pass
+
+
+    def printf(p1, p2, p3):
+        pass
+
+
+    def replace_char(p1, p2, p3):
+        pass
+
+
+    def replace_char2(p1, p2, p3):
+        pass
+
+
+    def replace_multi_char(p1, p2, p3):
+        pass
+
+
+    def replace_non_ascii(p1, p2):
+        pass
+
+
+    def set_char(p1, p2):
+        pass
+
+
+    def trim_quotes(p1):
+        pass
+
+
+    def trim_space(p1, p2):
+        pass
+
+
+    def un_quote(p1):
+        pass
+
+
+# Misc
+
+
+
+
+    def gen_group_name(p1, p2, p3, p4, p5):
+        pass
+
+
+# Tokenizing
+
+
+
+
+    def count_tokens(p1, p2):
+        pass
+
+
+    def get_token(p1, p2, p3, p4):
+        pass
+
+
+    def tokenize(p1, p2, p3, p4, p5):
+        pass
+
+
+    def tokens(p1, p2):
+        pass
+
+
+    def tokens2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def parse_list(p1, p2):
+        pass
+
 
 
 
@@ -11174,7 +16640,7 @@ cdef class WrapSTR:
 
 cdef class WrapSURFACE:
     
-    
+
 
     cdef int32_t handle
     
@@ -11189,9 +16655,74 @@ cdef class WrapSURFACE:
 
 
 
+    def create(p1, p2):
+        pass
+
+
+    def open(p1, p2):
+        pass
+
+
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def get_surface_items(p1, p2):
+        pass
+
+
+    def get_surface_item(p1, p2):
+        pass
+
+
+    def add_surface_item(p1, p2):
+        pass
+
+
+    def get_surface_names(p1, p2):
+        pass
+
+
+    def get_closed_surface_names(p1, p2):
+        pass
+
+
+    def get_extents(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def crc(p1, p2, p3):
+        pass
+
+
+    def sync(p1):
+        pass
+
+
+    def create_from_dxf(p1, p2, p3):
+        pass
+
+
+    def create_from_vulcan_triangulation(p1, p2, p3):
+        pass
+
+
+    def append_vulcan_triangulation(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapSURFACEITEM:
     
-    
+
 
     cdef int32_t handle
     
@@ -11206,10 +16737,890 @@ cdef class WrapSURFACEITEM:
 
 
 
+    def create(p1, p2):
+        pass
+
+
+
+
+    def get_guid(p1, p2, p3):
+        pass
+
+
+    def set_properties(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def set_properties_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def get_properties(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def get_properties_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def set_default_render_properties(p1, p2, p3, p4):
+        pass
+
+
+    def get_default_render_properties(p1, p2, p3, p4):
+        pass
+
+
+    def num_components(p1):
+        pass
+
+
+    def add_mesh(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_mesh(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_extents(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_mesh_info(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_info(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_geometry_info(p1, p2, p3):
+        pass
+
+
+    def compute_extended_info(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+
+
+
 cdef class WrapSYS:
     
-    
-    pass
+
+
+
+
+# Date/Time
+
+
+
+
+    def break_date(p1, p2, p3, p4):
+        pass
+
+
+    def dateto_long(p1):
+        pass
+
+
+    def timeto_long(p1):
+        pass
+
+
+    def date():
+        pass
+
+
+    def longto_date(p1):
+        pass
+
+
+    def longto_time(p1):
+        pass
+
+
+    def make_date(p1, p2, p3):
+        pass
+
+
+    def secondsto_time(p1):
+        pass
+
+
+    def time():
+        pass
+
+
+    def timeto_seconds(p1):
+        pass
+
+
+    def utc_date():
+        pass
+
+
+    def utc_time():
+        pass
+
+
+# Environment
+
+
+
+
+    def exist_env(p1):
+        pass
+
+
+    def get_env(p1, p2, p3):
+        pass
+
+
+    def set_env(p1, p2):
+        pass
+
+
+# Error Handling
+
+
+
+
+    def clear_err_ap():
+        pass
+
+
+    def get_top_error_ap():
+        pass
+
+
+    def get_error_message_ap(p1, p2, p3):
+        pass
+
+
+    def num_errors_ap():
+        pass
+
+
+    def set_server_messages_ap(p1):
+        pass
+
+
+# Execution
+
+
+
+
+    def run(p1, p2, p3):
+        pass
+
+
+    def run_gs(p1):
+        pass
+
+
+    def run_gx(p1):
+        pass
+
+
+    def run_gx_ex(p1, p2):
+        pass
+
+
+    def run_pdf(p1, p2):
+        pass
+
+
+    def shell_execute(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_return(p1):
+        pass
+
+
+# External DLL
+
+
+
+
+    def do_command(p1):
+        pass
+
+
+    def error(p1, p2, p3):
+        pass
+
+
+    def error_tag(p1, p2):
+        pass
+
+
+    def assert_gx(p1, p2, p3):
+        pass
+
+
+    def ole_automation(p1, p2, p3):
+        pass
+
+
+    def save_log(p1):
+        pass
+
+
+    def show_error():
+        pass
+
+
+    def terminate(p1):
+        pass
+
+
+# File System
+
+
+
+
+    def crc_file(p1):
+        pass
+
+
+    def crc_file_offset(p1, p2):
+        pass
+
+
+    def file_ren(p1, p2):
+        pass
+
+
+    def find_files_vv(p1, p2):
+        pass
+
+
+    def absolute_file_name(p1, p2, p3):
+        pass
+
+
+    def copy_file(p1, p2):
+        pass
+
+
+    def delete_file(p1):
+        pass
+
+
+    def delete_gi_file(p1):
+        pass
+
+
+    def delete_grid_file(p1):
+        pass
+
+
+    def dir_exist(p1):
+        pass
+
+
+    def file_exist(p1):
+        pass
+
+
+    def file_size(p1):
+        pass
+
+
+    def file_writable(p1):
+        pass
+
+
+    def find_path(p1, p2, p3, p4):
+        pass
+
+
+    def find_path_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_directory(p1, p2, p3):
+        pass
+
+
+    def get_path(p1, p2, p3):
+        pass
+
+
+    def get_windows_dir(p1, p2):
+        pass
+
+
+    def make_dir(p1):
+        pass
+
+
+    def make_file_readonly(p1):
+        pass
+
+
+    def make_file_writable(p1):
+        pass
+
+
+    def relative_file_name(p1, p2, p3):
+        pass
+
+
+    def short_path_file_name(p1, p2, p3):
+        pass
+
+
+    def temp_file_ext(p1, p2, p3):
+        pass
+
+
+    def temp_file_name(p1, p2, p3):
+        pass
+
+
+    def transfer_path(p1, p2, p3):
+        pass
+
+
+    def valid_file_name(p1):
+        pass
+
+
+    def write_in_dir(p1):
+        pass
+
+
+    def file_date(p1):
+        pass
+
+
+    def file_time(p1):
+        pass
+
+
+    def utc_file_date(p1):
+        pass
+
+
+    def utc_file_time(p1):
+        pass
+
+
+# Global Parameter
+
+
+
+
+    def get_settings_meta(p1):
+        pass
+
+
+    def global_reset(p1):
+        pass
+
+
+    def global_set(p1, p2):
+        pass
+
+
+    def global_write(p1):
+        pass
+
+
+    def global_(p1, p2, p3):
+        pass
+
+
+    def reset_settings():
+        pass
+
+
+    def set_settings_meta(p1):
+        pass
+
+
+# Licensing
+
+
+
+
+    def check_arc_license():
+        pass
+
+
+    def check_arc_license_ex(p1, p2):
+        pass
+
+
+    def check_intrinsic(p1, p2):
+        pass
+
+
+    def get_geodist():
+        pass
+
+
+    def get_license_class(p1, p2):
+        pass
+
+
+    def get_licensed_user(p1, p2, p3, p4):
+        pass
+
+
+# Lineage
+
+
+
+
+    def add_lineage_parameter(p1, p2):
+        pass
+
+
+    def add_lineage_source(p1, p2):
+        pass
+
+
+    def clear_lineage_parameters():
+        pass
+
+
+    def clear_lineage_sources():
+        pass
+
+
+    def copy_geo_file(p1, p2):
+        pass
+
+
+    def backup_geo_file(p1, p2, p3):
+        pass
+
+
+    def remove_lineage_output(p1):
+        pass
+
+
+    def remove_lineage_parameter(p1):
+        pass
+
+
+    def remove_lineage_source(p1):
+        pass
+
+
+    def restore_geo_file(p1, p2):
+        pass
+
+
+    def set_lineage_description(p1):
+        pass
+
+
+    def set_lineage_display_name(p1):
+        pass
+
+
+    def set_lineage_name(p1):
+        pass
+
+
+# Menus and Toolbar
+
+
+
+
+    def clear_menus(p1):
+        pass
+
+
+    def get_loaded_menus(p1, p2, p3):
+        pass
+
+
+    def set_loaded_menus(p1, p2, p3):
+        pass
+
+
+    def get_entitlement_rights(p1):
+        pass
+
+
+# Misc
+
+
+
+
+    def generate_guid(p1, p2):
+        pass
+
+
+    def clipboard_to_file(p1):
+        pass
+
+
+    def create_clipboard_ra():
+        pass
+
+
+    def create_clipboard_wa():
+        pass
+
+
+    def destr(p1):
+        pass
+
+
+    def emf_object_size(p1, p2, p3):
+        pass
+
+
+    def file_to_clipboard(p1):
+        pass
+
+
+    def font_lst(p1, p2):
+        pass
+
+
+    def get_dot_net_gx_entries(p1, p2, p3):
+        pass
+
+
+    def send_general_message(p1, p2):
+        pass
+
+
+    def write_debug_log(p1):
+        pass
+
+
+# Multithreading
+
+
+
+
+    def get_thread_id():
+        pass
+
+
+    def run_multi_user_script(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+# Parameter
+
+
+
+
+    def clear_group(p1):
+        pass
+
+
+    def clear_group_parm(p1):
+        pass
+
+
+    def clear_parm():
+        pass
+
+
+    def default_int(p1, p2, p3):
+        pass
+
+
+    def default_double(p1, p2, p3):
+        pass
+
+
+    def default_string(p1, p2, p3):
+        pass
+
+
+    def get_pattern(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_reg(p1, p2):
+        pass
+
+
+    def gt_string(p1, p2, p3, p4):
+        pass
+
+
+    def exist_int(p1, p2):
+        pass
+
+
+    def exist_double(p1, p2):
+        pass
+
+
+    def exist_string(p1, p2):
+        pass
+
+
+    def get_int(p1, p2):
+        pass
+
+
+    def get_yes_no(p1, p2):
+        pass
+
+
+    def replace_string(p1, p2, p3, p4):
+        pass
+
+
+    def load_parm(p1, p2):
+        pass
+
+
+    def get_double(p1, p2):
+        pass
+
+
+    def save_parm(p1, p2, p3):
+        pass
+
+
+    def filter_parm_group(p1, p2):
+        pass
+
+
+    def set_int(p1, p2, p3):
+        pass
+
+
+    def set_pattern(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_double(p1, p2, p3):
+        pass
+
+
+    def set_reg(p1):
+        pass
+
+
+    def set_string(p1, p2, p3):
+        pass
+
+
+# Progress Control
+
+
+
+
+    def check_stop():
+        pass
+
+
+    def prog_state():
+        pass
+
+
+    def prog_name(p1, p2):
+        pass
+
+
+    def progress(p1):
+        pass
+
+
+    def prog_update(p1):
+        pass
+
+
+    def prog_update_l(p1, p2):
+        pass
+
+
+# Registry
+
+
+
+
+    def get_sys_info(p1, p2, p3):
+        pass
+
+
+    def registry_get_val(p1, p2, p3, p4, p5):
+        pass
+
+
+    def registry_delete_key(p1, p2):
+        pass
+
+
+    def registry_delete_val(p1, p2, p3):
+        pass
+
+
+    def registry_set_val(p1, p2, p3, p4):
+        pass
+
+
+# Temporary File
+
+
+
+
+    def destroy_ptmp(p1):
+        pass
+
+
+    def get_ptmp(p1):
+        pass
+
+
+    def save_ptmp(p1):
+        pass
+
+
+# Termination
+
+
+
+
+    def abort(p1):
+        pass
+
+
+    def assert_(p1):
+        pass
+
+
+    def exit_():
+        pass
+
+
+    def cancel_():
+        pass
+
+
+# Timing
+
+
+
+
+    def delay(p1):
+        pass
+
+
+    def get_timer(p1, p2, p3):
+        pass
+
+
+# User Interaction
+
+
+
+
+    def display_help(p1, p2):
+        pass
+
+
+    def display_help_topic(p1, p2):
+        pass
+
+
+    def display_int(p1, p2):
+        pass
+
+
+    def display_message(p1, p2):
+        pass
+
+
+    def display_double(p1, p2):
+        pass
+
+
+    def display_question(p1, p2):
+        pass
+
+
+    def display_question_with_cancel(p1, p2):
+        pass
+
+
+    def interactive():
+        pass
+
+
+    def prompt(p1, p2, p3):
+        pass
+
+
+    def script():
+        pass
+
+
+    def script_record():
+        pass
+
+
+    def set_cursor(p1):
+        pass
+
+
+    def set_info_line(p1):
+        pass
+
+
+    def set_interactive(p1):
+        pass
+
+
+# Workspace
+
+
+
+
+    def get_workspace_reg(p1):
+        pass
+
+
+    def set_workspace_reg(p1):
+        pass
+
+
+# String Encryption
+
+
+
+
+    def encrypt_string(p1, p2, p3, p4):
+        pass
+
+
+    def decrypt_string(p1, p2, p3, p4):
+        pass
+
+
+    def is_encrypted_string(p1):
+        pass
+
+
+# GX Debugger
+
+
+
+
+    def disable_gx_debugger():
+        pass
+
+
+    def enable_gx_debugger(p1, p2):
+        pass
+
 
 
 
@@ -11217,7 +17628,7 @@ cdef class WrapSYS:
 
 cdef class WrapTB:
     
-    
+
 
     cdef int32_t handle
     
@@ -11232,9 +17643,102 @@ cdef class WrapTB:
 
 
 
+    def set_search_mode(p1, p2):
+        pass
+
+
+    def create(p1):
+        pass
+
+
+    def create_db(p1):
+        pass
+
+
+    def create_ltb(p1):
+        pass
+
+
+
+
+    def field(p1, p2):
+        pass
+
+
+    def get_string(p1, p2, p3, p4, p5):
+        pass
+
+
+    def data_type(p1, p2):
+        pass
+
+
+    def find_col_by_index(p1, p2, p3, p4):
+        pass
+
+
+    def find_col_by_name(p1, p2):
+        pass
+
+
+    def format(p1, p2):
+        pass
+
+
+    def get_int(p1, p2, p3):
+        pass
+
+
+    def num_columns(p1):
+        pass
+
+
+    def num_rows(p1):
+        pass
+
+
+    def load_db(p1, p2, p3):
+        pass
+
+
+    def get_double(p1, p2, p3):
+        pass
+
+
+    def save(p1, p2):
+        pass
+
+
+    def save_db(p1, p2, p3):
+        pass
+
+
+    def save_to_ascii(p1, p2):
+        pass
+
+
+    def set_int(p1, p2, p3, p4):
+        pass
+
+
+    def set_double(p1, p2, p3, p4):
+        pass
+
+
+    def set_string(p1, p2, p3, p4):
+        pass
+
+
+    def sort(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapTPAT:
     
-    
+
 
     cdef int32_t handle
     
@@ -11249,9 +17753,42 @@ cdef class WrapTPAT:
 
 
 
+    def add_color(p1, p2, p3, p4, p5):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def code(p1, p2):
+        pass
+
+
+    def get_solid_pattern(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def size(p1):
+        pass
+
+
+    def load_csv(p1, p2):
+        pass
+
+
+    def setup_translation_vv(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 cdef class WrapTR:
     
-    
+
 
     cdef int32_t handle
     
@@ -11266,9 +17803,22 @@ cdef class WrapTR:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def copy(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapUSERMETA:
     
-    
+
 
     cdef int32_t handle
     
@@ -11283,9 +17833,126 @@ cdef class WrapUSERMETA:
 
 
 
+    def create(p1):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def get_data_creation_date(p1, p2):
+        pass
+
+
+    def get_extents2d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_extents3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_meta_creation_date(p1, p2):
+        pass
+
+
+    def get_xml_format(p1, p2):
+        pass
+
+
+    def compare(p1, p2):
+        pass
+
+
+    def get_data_creator(p1, p2, p3):
+        pass
+
+
+    def get_format(p1, p2, p3):
+        pass
+
+
+    def get_meta_creator(p1, p2, p3):
+        pass
+
+
+    def get_project(p1, p2, p3):
+        pass
+
+
+    def get_title(p1, p2, p3):
+        pass
+
+
+    def serial(p1, p2, p3):
+        pass
+
+
+    def set_data_creation_date(p1, p2):
+        pass
+
+
+    def set_data_creator(p1, p2):
+        pass
+
+
+    def set_extents2d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_extents3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_format(p1, p2):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_meta_creation_date(p1, p2):
+        pass
+
+
+    def set_meta_creator(p1, p2):
+        pass
+
+
+    def set_project(p1, p2):
+        pass
+
+
+    def set_title(p1, p2):
+        pass
+
+
+    def update_extents2_d(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def update_file_type(p1, p2):
+        pass
+
+
+    def save_file_lineage(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapVA:
     
-    
+
 
     cdef int32_t handle
     
@@ -11300,9 +17967,158 @@ cdef class WrapVA:
 
 
 
+    def get_array(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_array(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def add_elevations_vv_to_depths(p1, p2, p3):
+        pass
+
+
+    def append(p1, p2):
+        pass
+
+
+    def average(p1, p2, p3):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def copy2(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_ext(p1, p2, p3):
+        pass
+
+
+    def create_vv(p1, p2, p3):
+        pass
+
+
+
+
+    def get_full_vv(p1):
+        pass
+
+
+    def get_vv(p1, p2, p3, p4):
+        pass
+
+
+    def col(p1):
+        pass
+
+
+    def get_int(p1, p2, p3):
+        pass
+
+
+    def get_string(p1, p2, p3, p4, p5):
+        pass
+
+
+    def len(p1):
+        pass
+
+
+    def index_order(p1, p2):
+        pass
+
+
+    def lookup_index(p1, p2, p3):
+        pass
+
+
+    def range_double(p1, p2, p3):
+        pass
+
+
+    def re_fid(p1, p2, p3, p4):
+        pass
+
+
+    def reverse(p1):
+        pass
+
+
+    def get_fid_incr(p1):
+        pass
+
+
+    def get_fid_start(p1):
+        pass
+
+
+    def get_double(p1, p2, p3):
+        pass
+
+
+    def set_fid_incr(p1, p2):
+        pass
+
+
+    def set_fid_start(p1, p2):
+        pass
+
+
+    def set_int(p1, p2, p3, p4):
+        pass
+
+
+    def set_ln(p1, p2):
+        pass
+
+
+    def set_double(p1, p2, p3, p4):
+        pass
+
+
+    def set_string(p1, p2, p3, p4):
+        pass
+
+
+    def set_vv(p1, p2, p3, p4):
+        pass
+
+
+    def trans(p1, p2, p3):
+        pass
+
+
+    def window(p1, p2, p3, p4):
+        pass
+
+
+    def window2(p1, p2, p3, p4):
+        pass
+
+
+    def check_for_repeating(p1, p2, p3, p4, p5):
+        pass
+
+
+    def check_for_repeating2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+
+
+
 cdef class WrapVM:
     
-    
+
 
     cdef int32_t handle
     
@@ -11317,9 +18133,54 @@ cdef class WrapVM:
 
 
 
+    def create(p1, p2):
+        pass
+
+
+    def create_ext(p1, p2):
+        pass
+
+
+
+
+    def get_int(p1, p2):
+        pass
+
+
+    def get_string(p1, p2, p3, p4):
+        pass
+
+
+    def length(p1):
+        pass
+
+
+    def re_size(p1, p2):
+        pass
+
+
+    def get_double(p1, p2):
+        pass
+
+
+    def set_int(p1, p2, p3):
+        pass
+
+
+    def set_double(p1, p2, p3):
+        pass
+
+
+    def set_string(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapVOX:
     
-    
+
 
     cdef int32_t handle
     
@@ -11334,9 +18195,342 @@ cdef class WrapVOX:
 
 
 
+    def calc_stats(p1, p2):
+        pass
+
+
+    def create(p1):
+        pass
+
+
+    def create_pg(p1):
+        pass
+
+
+    def create_type_pg(p1, p2):
+        pass
+
+
+
+
+    def dump(p1, p2):
+        pass
+
+
+    def export_db(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def export_img(p1, p2, p3):
+        pass
+
+
+    def export_to_grids(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def export_xml(p1, p2, p3):
+        pass
+
+
+    def export_seg_y(p1, p2, p3):
+        pass
+
+
+    def export_ji_gs_xml(p1, p2):
+        pass
+
+
+    def export_xyz(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def filter(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def generate_db(p1, p2, p3):
+        pass
+
+
+    def generate_vector_voxel_from_db(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def generate_gocad(p1, p2, p3, p4):
+        pass
+
+
+    def generate_oriented_gocad(p1, p2, p3, p4, p5):
+        pass
+
+
+    def generate_pg(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def generate_constant_value(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def generate_pgvv(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def generate_constant_value_vv(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def generate_ubc(p1, p2, p3, p4, p5):
+        pass
+
+
+    def generate_xyz(p1, p2, p3, p4):
+        pass
+
+
+    def init_generate_by_subset_pg(p1, p2, p3, p4):
+        pass
+
+
+    def add_generate_by_subset_pg(p1, p2, p3, p4):
+        pass
+
+
+    def end_generate_by_subset_pg(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def get_area(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_gocad_location(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def get_grid_section_cell_sizes(p1, p2, p3, p4):
+        pass
+
+
+    def get_info(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_limits(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_limits_xyz(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_location(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_location_points(p1, p2, p3, p4):
+        pass
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def get_double_location(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def get_simple_location(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_stats(p1):
+        pass
+
+
+    def get_tpat(p1, p2):
+        pass
+
+
+    def grid_points(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def grid_points_z(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
+        pass
+
+
+    def grid_points_z_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26):
+        pass
+
+
+    def can_append_to(p1, p2):
+        pass
+
+
+    def get_cell_size_strings(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def is_thematic(p1):
+        pass
+
+
+    def is_vector_voxel(p1):
+        pass
+
+
+    def set_cell_size_strings(p1, p2, p3, p4):
+        pass
+
+
+    def list_gocad_properties(p1, p2):
+        pass
+
+
+    def log_grid_points_z_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28):
+        pass
+
+
+    def krig(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def math(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def merge(p1, p2, p3, p4):
+        pass
+
+
+    def nearest_neighbour_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def compute_cell_size(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def re_grid(p1, p2, p3, p4):
+        pass
+
+
+    def resample_pg(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def rescale_cell_sizes(p1, p2):
+        pass
+
+
+    def sample_cdi(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def sample_cdi_to_topography(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def sample_vv(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_location(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+    def set_origin(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_simple_location(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_tpat(p1, p2):
+        pass
+
+
+    def slice_ipj(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def slice_multi_layer_ipj(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def subset_to_double_extents(p1, p2):
+        pass
+
+
+    def sync(p1):
+        pass
+
+
+    def window_ply(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def window_xyz(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def write_xml(p1, p2):
+        pass
+
+
+    def convert_numeric_to_thematic(p1, p2, p3):
+        pass
+
+
+    def convert_thematic_to_numeric(p1, p2, p3):
+        pass
+
+
+    def convert_velocity_to_density(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def convert_velocity_in_range_to_density(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def convert_density_to_velocity(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def invert_z(p1, p2):
+        pass
+
+
+    def dw_grid_db(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def tin_grid_db(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+
+
+
 cdef class WrapVOXD:
     
-    
+
 
     cdef int32_t handle
     
@@ -11351,9 +18545,54 @@ cdef class WrapVOXD:
 
 
 
+    def create(p1, p2, p3, p4):
+        pass
+
+
+    def create_itr(p1, p2):
+        pass
+
+
+    def create_thematic(p1):
+        pass
+
+
+
+
+    def get_draw_controls(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_name(p1, p2, p3):
+        pass
+
+
+    def get_itr(p1, p2):
+        pass
+
+
+    def get_shell_controls(p1, p2, p3):
+        pass
+
+
+    def set_draw_controls(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def set_itr(p1, p2):
+        pass
+
+
+    def set_shell_controls(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapVOXE:
     
-    
+
 
     cdef int32_t handle
     
@@ -11368,10 +18607,56 @@ cdef class WrapVOXE:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def profile(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def value(p1, p2, p3, p4, p5):
+        pass
+
+
+    def vector(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+
+
+
 cdef class WrapVULCAN:
     
-    
-    pass
+
+
+
+
+
+    def is_valid_triangulation_file(p1):
+        pass
+
+
+    def is_valid_block_model_file(p1):
+        pass
+
+
+    def triangulation_to_view(p1, p2, p3, p4):
+        pass
+
+
+    def get_block_model_variable_info(p1, p2, p3):
+        pass
+
+
+    def get_block_model_string_variable_values(p1, p2, p3):
+        pass
+
+
+    def block_model_to_voxel(p1, p2, p3, p4, p5, p6):
+        pass
 
 
 
@@ -11379,7 +18664,7 @@ cdef class WrapVULCAN:
 
 cdef class WrapVV:
     
-    
+
 
     cdef int32_t handle
     
@@ -11394,9 +18679,346 @@ cdef class WrapVV:
 
 
 
+    def get_data(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_data(p1, p2, p3, p4, p5):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def copy2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def log(p1, p2, p3, p4):
+        pass
+
+
+    def log_linear(p1, p2):
+        pass
+
+
+    def mask(p1, p2):
+        pass
+
+
+    def reverse(p1):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def trans(p1, p2, p3):
+        pass
+
+
+    def abs(p1):
+        pass
+
+
+    def add(p1, p2, p3):
+        pass
+
+
+    def add2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def append(p1, p2):
+        pass
+
+
+    def copy_v_mto_vv(p1, p2):
+        pass
+
+
+    def copy_v_vto_vm(p1, p2):
+        pass
+
+
+    def crc(p1, p2):
+        pass
+
+
+    def crc_inexact(p1, p2, p3, p4):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+    def create_ext(p1, p2):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def diff(p1, p2):
+        pass
+
+
+    def divide(p1, p2, p3):
+        pass
+
+
+    def fid_norm(p1, p2):
+        pass
+
+
+    def fill_int(p1, p2):
+        pass
+
+
+    def fill_double(p1, p2):
+        pass
+
+
+    def fill_string(p1, p2):
+        pass
+
+
+    def get_vm(p1, p2, p3):
+        pass
+
+
+    def count_dummies(p1, p2, p3):
+        pass
+
+
+    def find_dum(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_fid_expansion(p1):
+        pass
+
+
+    def get_int(p1, p2):
+        pass
+
+
+    def get_string(p1, p2, p3, p4):
+        pass
+
+
+    def index_max(p1, p2):
+        pass
+
+
+    def length(p1):
+        pass
+
+
+    def index_insert(p1, p2, p3):
+        pass
+
+
+    def index_order(p1, p2):
+        pass
+
+
+    def init_index(p1, p2):
+        pass
+
+
+    def inv_log(p1, p2, p3, p4):
+        pass
+
+
+    def order(p1, p2):
+        pass
+
+
+    def lines_to_xy(p1, p2, p3):
+        pass
+
+
+    def lookup_index(p1, p2, p3):
+        pass
+
+
+    def make_mem_based(p1):
+        pass
+
+
+    def mask_and(p1, p2, p3):
+        pass
+
+
+    def mask_or(p1, p2, p3):
+        pass
+
+
+    def mask_str(p1, p2, p3):
+        pass
+
+
+    def multiply(p1, p2, p3):
+        pass
+
+
+    def amplitude_3d(p1, p2, p3, p4):
+        pass
+
+
+    def polygon_mask(p1, p2, p3, p4, p5):
+        pass
+
+
+    def project(p1, p2, p3):
+        pass
+
+
+    def project_3d(p1, p2, p3, p4):
+        pass
+
+
+    def range_double(p1, p2, p3):
+        pass
+
+
+    def re_fid(p1, p2, p3, p4):
+        pass
+
+
+    def re_fid_vv(p1, p2):
+        pass
+
+
+    def re_sample(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_fid_incr(p1):
+        pass
+
+
+    def get_fid_start(p1):
+        pass
+
+
+    def get_double(p1, p2):
+        pass
+
+
+    def sum(p1):
+        pass
+
+
+    def weighted_mean(p1, p2):
+        pass
+
+
+    def set_fid_expansion(p1, p2):
+        pass
+
+
+    def set_fid_incr(p1, p2):
+        pass
+
+
+    def set_fid_start(p1, p2):
+        pass
+
+
+    def set_int(p1, p2, p3):
+        pass
+
+
+    def set_int_n(p1, p2, p3, p4):
+        pass
+
+
+    def set_len(p1, p2):
+        pass
+
+
+    def set_double(p1, p2, p3):
+        pass
+
+
+    def set_double_n(p1, p2, p3, p4):
+        pass
+
+
+    def set_string(p1, p2, p3):
+        pass
+
+
+    def set_string_n(p1, p2, p3, p4):
+        pass
+
+
+    def setup_index(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_vm(p1, p2, p3):
+        pass
+
+
+    def sort(p1, p2):
+        pass
+
+
+    def sort_index(p1, p2):
+        pass
+
+
+    def sort_index1(p1, p2, p3):
+        pass
+
+
+    def sort_index2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def sort_index3(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def sort_index4(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def statistics(p1, p2):
+        pass
+
+
+    def subtract(p1, p2, p3):
+        pass
+
+
+    def swap(p1):
+        pass
+
+
+    def window(p1, p2, p3, p4):
+        pass
+
+
+    def write_xml(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 cdef class WrapWA:
     
-    
+
 
     cdef int32_t handle
     
@@ -11411,9 +19033,38 @@ cdef class WrapWA:
 
 
 
+    def puts(p1, p2):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+    def create_ex(p1, p2, p3):
+        pass
+
+
+    def create_sbf(p1, p2, p3):
+        pass
+
+
+    def create_sbf_ex(p1, p2, p3, p4):
+        pass
+
+
+
+
+    def new_line(p1):
+        pass
+
+
+
+
+
 cdef class WrapACQUIRE:
     
-    
+
 
     cdef int32_t handle
     
@@ -11428,9 +19079,34 @@ cdef class WrapACQUIRE:
 
 
 
+    def create():
+        pass
+
+
+    def delete_empty_chan(p1, p2):
+        pass
+
+
+
+
+    def import_hole(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def import_point(p1, p2, p3, p4):
+        pass
+
+
+    def selection_tool(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapARCDB:
     
-    
+
 
     cdef int32_t handle
     
@@ -11445,10 +19121,102 @@ cdef class WrapARCDB:
 
 
 
+    def create_dat(p1, p2, p3, p4):
+        pass
+
+
+    def create_dat_3d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def current():
+        pass
+
+
+    def export_to_db(p1, p2, p3, p4):
+        pass
+
+
+    def field_lst(p1, p2):
+        pass
+
+
+    def from_i_unknown(p1):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def exist_field(p1, p2):
+        pass
+
+
+    def get_i_unknown(p1):
+        pass
+
+
+    def import_chem_database_wizard(p1, p2, p3):
+        pass
+
+
+    def sel_tbl_ex_gui(p1):
+        pass
+
+
+    def sel_tbl_gui():
+        pass
+
+
+
+
+
 cdef class WrapARCDH:
     
-    
-    pass
+
+
+
+
+
+    def close_project():
+        pass
+
+
+    def set_project(p1, p2):
+        pass
+
+
+    def set_string_file_gdb(p1):
+        pass
+
+
+    def stop_editing_string_file_gdb():
+        pass
+
+
+    def has_string_file_gdb_edits():
+        pass
+
+
+    def geostrings_extension_available():
+        pass
+
+
+    def get_current_string_file_gdb(p1, p2):
+        pass
+
+
+    def is_valid_fgdb_file_name(p1):
+        pass
+
+
+    def is_valid_feature_class_name(p1):
+        pass
+
+
+    def s_prompt_for_esri_symbol(p1, p2, p3, p4, p5, p6, p7):
+        pass
 
 
 
@@ -11456,8 +19224,97 @@ cdef class WrapARCDH:
 
 cdef class WrapARCMAP:
     
-    
-    pass
+
+
+
+
+
+    def change_size(p1, p2):
+        pass
+
+
+    def display_in_3d_view(p1):
+        pass
+
+
+    def export_feature_layer_by_name_to_3d_file(p1, p2, p3, p4):
+        pass
+
+
+    def export_selected_feature_layer_to_3d_file(p1):
+        pass
+
+
+    def get_current_document_info(p1, p2, p3, p4):
+        pass
+
+
+    def get_selected_layer_info(p1, p2, p3, p4):
+        pass
+
+
+    def get_number_of_selected_layers():
+        pass
+
+
+    def load_map(p1, p2, p3, p4):
+        pass
+
+
+    def load_map_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+    def load_shape(p1, p2):
+        pass
+
+
+    def load_spf(p1, p2):
+        pass
+
+
+    def load_lyr(p1):
+        pass
+
+
+    def load_map(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def load_map_view(p1, p2, p3, p4):
+        pass
+
+
+    def load_raster(p1):
+        pass
+
+
+    def load_shape(p1, p2, p3):
+        pass
+
+
+    def map_view_to_shape(p1, p2, p3, p4):
+        pass
+
+
+    def query_size(p1, p2):
+        pass
+
+
+    def show_layer_by_name_in_3d(p1, p2, p3):
+        pass
+
+
+    def show_selected_layers_in_3d():
+        pass
+
+
+    def get_ipj_for_predefined_esri_gcs(p1, p2):
+        pass
+
+
+    def get_ipj_for_predefined_esri_pcs(p1, p2):
+        pass
 
 
 
@@ -11465,8 +19322,21 @@ cdef class WrapARCMAP:
 
 cdef class WrapARCSYS:
     
-    
-    pass
+
+
+
+
+
+    def get_browse_loc(p1, p2):
+        pass
+
+
+    def get_current_doc(p1, p2):
+        pass
+
+
+    def set_browse_loc(p1):
+        pass
 
 
 
@@ -11474,7 +19344,7 @@ cdef class WrapARCSYS:
 
 cdef class WrapBIGRID:
     
-    
+
 
     cdef int32_t handle
     
@@ -11489,10 +19359,192 @@ cdef class WrapBIGRID:
 
 
 
+    def clear(p1):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def load_parms(p1, p2):
+        pass
+
+
+    def load_warp(p1, p2, p3, p4):
+        pass
+
+
+    def run(p1, p2, p3, p4):
+        pass
+
+
+    def run2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def save_parms(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapCHIMERA:
     
-    
-    pass
+
+
+
+
+
+    def bar_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def categorize_by_value(p1, p2, p3):
+        pass
+
+
+    def categorize_by_value_det_limit(p1, p2, p3, p4):
+        pass
+
+
+    def clip_to_detect_limit(p1, p2, p3):
+        pass
+
+
+    def draw_circle_offset_markers(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def draw_rectangle_offset_markers(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def duplicate_chem(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def duplicate_chem_view(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def get_expression_data_vv(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_lithogeochem_data(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def get_transform(p1, p2, p3, p4, p5):
+        pass
+
+
+    def is_acquire_chan(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def is_element(p1, p2):
+        pass
+
+
+    def launch_histogram(p1, p2):
+        pass
+
+
+    def launch_probability(p1, p2):
+        pass
+
+
+    def launch_scatter(p1):
+        pass
+
+
+    def launch_triplot(p1):
+        pass
+
+
+    def mask_chan_lst(p1, p2):
+        pass
+
+
+    def ordered_channel_lst(p1, p2):
+        pass
+
+
+    def pie_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def pie_plot2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def plot_string_classified_symbols_legend_from_class_file(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def atomic_weight(p1):
+        pass
+
+
+    def rose_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def rose_plot2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def scatter2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31):
+        pass
+
+
+    def fixed_symbol_scatter_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31):
+        pass
+
+
+    def zone_coloured_scatter_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34):
+        pass
+
+
+    def string_classified_scatter_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28):
+        pass
+
+
+    def set_lithogeochem_data(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def stacked_bar_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def standard(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def standard_view(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+        pass
+
+
+    def tri_plot2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32):
+        pass
+
+
+    def fixed_symbol_tri_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26):
+        pass
+
+
+    def zone_coloured_tri_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29):
+        pass
+
+
+    def string_classified_tri_plot(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23):
+        pass
 
 
 
@@ -11500,7 +19552,7 @@ cdef class WrapCHIMERA:
 
 cdef class WrapCOM:
     
-    
+
 
     cdef int32_t handle
     
@@ -11515,9 +19567,70 @@ cdef class WrapCOM:
 
 
 
+    def create(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def create_no_terminate(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+
+
+    def read_line_no_terminate(p1, p2, p3):
+        pass
+
+
+    def read_chars_no_terminate(p1, p2, p3):
+        pass
+
+
+    def read_line(p1, p2, p3):
+        pass
+
+
+    def write_chars_no_terminate(p1, p2):
+        pass
+
+
+    def purge_comm(p1):
+        pass
+
+
+    def read_chars(p1, p2, p3):
+        pass
+
+
+    def read_em61_lines_wa(p1, p2, p3):
+        pass
+
+
+    def read_file2_wa(p1, p2):
+        pass
+
+
+    def read_lines_wa(p1, p2, p3):
+        pass
+
+
+    def set_time_out(p1, p2):
+        pass
+
+
+    def write_chars(p1, p2):
+        pass
+
+
+    def write_line(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapCSYMB:
     
-    
+
 
     cdef int32_t handle
     
@@ -11532,9 +19645,54 @@ cdef class WrapCSYMB:
 
 
 
+    def set_angle(p1, p2):
+        pass
+
+
+    def set_base(p1, p2):
+        pass
+
+
+    def set_dynamic_col(p1, p2):
+        pass
+
+
+    def set_fixed(p1, p2):
+        pass
+
+
+    def set_number(p1, p2):
+        pass
+
+
+    def set_scale(p1, p2):
+        pass
+
+
+    def add_data(p1, p2, p3, p4):
+        pass
+
+
+    def create(p1):
+        pass
+
+
+
+
+    def set_font(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_static_col(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapDGW:
     
-    
+
 
     cdef int32_t handle
     
@@ -11549,9 +19707,54 @@ cdef class WrapDGW:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def get_info_meta(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_info_sys(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_list(p1, p2):
+        pass
+
+
+    def gt_info(p1, p2, p3, p4, p5):
+        pass
+
+
+    def run_dialogue(p1):
+        pass
+
+
+    def set_info(p1, p2, p3, p4):
+        pass
+
+
+    def set_info_meta(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_info_sys(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_title(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapDH:
     
-    
+
 
     cdef int32_t handle
     
@@ -11565,10 +19768,670 @@ cdef class WrapDH:
 
 
 
+# ArcGIS Target Functions
+
+
+
+
+    def is_esri():
+        pass
+
+
+# Data processing/conversion methods
+
+
+
+
+    def creat_chan_lst(p1, p2):
+        pass
+
+
+    def depth_data_lst(p1, p2):
+        pass
+
+
+    def from_to_data_lst(p1, p2, p3):
+        pass
+
+
+    def get_geology_contacts(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_oriented_core_dip_dir(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_unique_channel_items(p1, p2, p3, p4):
+        pass
+
+
+    def get_unique_channel_items_from_collar(p1, p2, p3, p4):
+        pass
+
+
+    def chan_type(p1, p2):
+        pass
+
+
+    def find_hole_intersection(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_chan_code_info(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_intersection(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def litho_grid_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def numeric_chan_lst(p1, p2):
+        pass
+
+
+    def numeric_from_to_data_lst(p1, p2, p3):
+        pass
+
+
+    def punch_grid_holes(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def string_chan_lst(p1, p2):
+        pass
+
+
+    def string_from_to_data_lst(p1, p2, p3):
+        pass
+
+
+# Miscellaneous
+
+
+
+
+    def h_assay_db(p1, p2):
+        pass
+
+
+    def h_assay_symb(p1, p2, p3):
+        pass
+
+
+    def h_collar_db(p1):
+        pass
+
+
+    def h_collar_symb(p1):
+        pass
+
+
+    def h_dip_az_survey_db(p1):
+        pass
+
+
+    def h_dip_az_survey_symb(p1, p2):
+        pass
+
+
+    def h_en_survey_db(p1):
+        pass
+
+
+    def h_en_survey_symb(p1, p2):
+        pass
+
+
+    def add_survey_table(p1, p2):
+        pass
+
+
+    def assay_hole_lst(p1, p2, p3):
+        pass
+
+
+    def assay_lst(p1, p2):
+        pass
+
+
+    def auto_select_holes(p1):
+        pass
+
+
+    def clean(p1):
+        pass
+
+
+    def composite_db(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def compute_hole_xyz(p1, p2):
+        pass
+
+
+    def compute_sel_extent(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def compute_xyz(p1):
+        pass
+
+
+    def convert_old_line_names(p1, p2):
+        pass
+
+
+    def create(p1):
+        pass
+
+
+    def create_default_job(p1, p2, p3):
+        pass
+
+
+    def create_external(p1):
+        pass
+
+
+    def current():
+        pass
+
+
+    def datamine_to_csv(p1, p2):
+        pass
+
+
+    def delete_holes(p1, p2):
+        pass
+
+
+
+
+    def export(p1, p2, p3):
+        pass
+
+
+    def export_geodatabase_lst(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def export_las(p1, p2, p3, p4, p5):
+        pass
+
+
+    def export_lst(p1, p2, p3, p4):
+        pass
+
+
+    def flush_select(p1):
+        pass
+
+
+    def get_databases_vv(p1, p2):
+        pass
+
+
+    def get_databases_sorted_vv(p1, p2):
+        pass
+
+
+    def get_data_type(p1, p2, p3):
+        pass
+
+
+    def get_default_section(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_hole_group(p1, p2, p3):
+        pass
+
+
+    def get_hole_survey(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_map_names_vv(p1, p2):
+        pass
+
+
+    def get_map(p1, p2):
+        pass
+
+
+    def get_num_maps(p1):
+        pass
+
+
+    def get_reg(p1):
+        pass
+
+
+    def get_selected_holes_vv(p1, p2):
+        pass
+
+
+    def get_table_default_chan_lst(p1, p2):
+        pass
+
+
+    def hole_lst(p1, p2):
+        pass
+
+
+    def hole_lst2(p1, p2):
+        pass
+
+
+    def add_hole(p1, p2):
+        pass
+
+
+    def clean_will_delete_db(p1):
+        pass
+
+
+    def compositing_tool_gui(p1, p2, p3, p4, p5):
+        pass
+
+
+    def create_collar_table(p1, p2, p3, p4):
+        pass
+
+
+    def create_collar_table_dir(p1, p2, p3, p4, p5):
+        pass
+
+
+    def delete_will_delete_db(p1, p2):
+        pass
+
+
+    def find_hole(p1, p2):
+        pass
+
+
+    def get_collar_table_db(p1, p2, p3):
+        pass
+
+
+    def get_info(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_project_name(p1, p2, p3):
+        pass
+
+
+    def get_section_id(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_template_blob(p1, p2, p3):
+        pass
+
+
+    def get_template_info(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_template_info_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_units(p1, p2, p3, p4):
+        pass
+
+
+    def have_current():
+        pass
+
+
+    def have_current2(p1, p2):
+        pass
+
+
+    def holes(p1):
+        pass
+
+
+    def hole_select_from_list_gui(p1, p2):
+        pass
+
+
+    def hole_selection_tool_gui(p1):
+        pass
+
+
+    def modify3d_gui(p1, p2, p3):
+        pass
+
+
+    def modify_crooked_section_holes_gui(p1, p2, p3):
+        pass
+
+
+    def modify_fence_gui(p1, p2, p3):
+        pass
+
+
+    def modify_hole_traces_3dgui(p1, p2, p3):
+        pass
+
+
+    def modify_hole_traces_gui(p1, p2, p3):
+        pass
+
+
+    def modify_hole_traces_gui2(p1, p2, p3, p4):
+        pass
+
+
+    def modify_plan_gui(p1, p2, p3):
+        pass
+
+
+    def modify_plan_holes_gui(p1, p2, p3):
+        pass
+
+
+    def modify_rock_codes_gui(p1):
+        pass
+
+
+    def modify_rock_codes_gui2(p1, p2):
+        pass
+
+
+    def modify_section_gui(p1, p2, p3):
+        pass
+
+
+    def modify_section_holes_gui(p1, p2, p3):
+        pass
+
+
+    def modify_stacked_section_gui(p1, p2, p3):
+        pass
+
+
+    def modify_strip_log_gui(p1, p2, p3):
+        pass
+
+
+    def modify_structure_codes_gui(p1):
+        pass
+
+
+    def modify_structure_codes_gui2(p1, p2):
+        pass
+
+
+    def import2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def import_las(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def num_assays(p1):
+        pass
+
+
+    def num_selected_holes(p1):
+        pass
+
+
+    def qa_dip_az_curvature_lst(p1, p2, p3, p4):
+        pass
+
+
+    def qa_dip_az_survey_lst(p1, p2, p3):
+        pass
+
+
+    def qa_east_north_curvature_lst(p1, p2, p3, p4):
+        pass
+
+
+    def qa_east_north_survey_lst(p1, p2, p3):
+        pass
+
+
+    def slice_selection_tool_gui(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def update_survey_from_collar(p1, p2):
+        pass
+
+
+    def load_data_parameters_ini(p1, p2, p3):
+        pass
+
+
+    def load_plot_parameters(p1, p2, p3):
+        pass
+
+
+    def load_select(p1, p2):
+        pass
+
+
+    def mask_ply(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def open(p1):
+        pass
+
+
+    def open_job(p1, p2, p3):
+        pass
+
+
+    def plot_hole_traces(p1, p2, p3):
+        pass
+
+
+    def plot_hole_traces_3d(p1, p2, p3):
+        pass
+
+
+    def plot_symbols_3d(p1, p2, p3):
+        pass
+
+
+    def qa_collar(p1, p2):
+        pass
+
+
+    def qa_collar_lst(p1, p2, p3):
+        pass
+
+
+    def qa_dip_az_curvature(p1, p2, p3):
+        pass
+
+
+    def qa_dip_az_curvature2(p1, p2, p3, p4):
+        pass
+
+
+    def qa_dip_az_survey(p1, p2, p3, p4, p5):
+        pass
+
+
+    def qa_east_north_curvature(p1, p2, p3):
+        pass
+
+
+    def qa_east_north_curvature2(p1, p2, p3, p4):
+        pass
+
+
+    def qa_east_north_survey(p1, p2, p3, p4, p5):
+        pass
+
+
+    def qa_from_to_data(p1, p2, p3, p4, p5):
+        pass
+
+
+    def qa_point_data(p1, p2, p3, p4, p5):
+        pass
+
+
+    def qa_write_unregistered_holes(p1, p2, p3):
+        pass
+
+
+    def replot_holes(p1, p2, p3):
+        pass
+
+
+    def plot_holes_on_section(p1, p2, p3, p4):
+        pass
+
+
+    def re_survey_east_north(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def re_survey_pol_fit(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def re_survey_rad_curve(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def re_survey_straight(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def re_survey_straight_seg(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def save_data_parameters_ini(p1, p2, p3):
+        pass
+
+
+    def save_job(p1, p2, p3):
+        pass
+
+
+    def save_select(p1, p2):
+        pass
+
+
+    def section_window_size_mm(p1, p2, p3):
+        pass
+
+
+    def select_all_holes(p1):
+        pass
+
+
+    def select_holes(p1, p2, p3):
+        pass
+
+
+    def select_name(p1, p2, p3, p4):
+        pass
+
+
+    def select_ply(p1, p2):
+        pass
+
+
+    def select_ply2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_crooked_section_ipj(p1, p2):
+        pass
+
+
+    def set_current_view_name(p1, p2):
+        pass
+
+
+    def set_info(p1, p2, p3, p4):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_map(p1, p2):
+        pass
+
+
+    def set_new_ipj(p1, p2):
+        pass
+
+
+    def set_selected_holes_vv(p1, p2, p3):
+        pass
+
+
+    def set_template_blob(p1, p2, p3):
+        pass
+
+
+    def significant_intersections_db(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def test_import_las(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def un_select_all_holes(p1):
+        pass
+
+
+    def un_selected_hole_lst(p1, p2):
+        pass
+
+
+    def update_collar_table(p1):
+        pass
+
+
+    def update_hole_extent(p1, p2):
+        pass
+
+
+    def wholeplot(p1, p2, p3):
+        pass
+
+
+    def surface_intersections(p1, p2, p3, p4):
+        pass
+
+
+
+
+
 
 cdef class WrapDMPPLY:
     
-    
+
 
     cdef int32_t handle
     
@@ -11583,9 +20446,90 @@ cdef class WrapDMPPLY:
 
 
 
+    def clear(p1):
+        pass
+
+
+    def copy(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def get_azimuth(p1, p2, p3):
+        pass
+
+
+    def get_extents(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_joins(p1, p2, p3):
+        pass
+
+
+    def get_normal_vectors(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def get_poly(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_swing(p1, p2, p3):
+        pass
+
+
+    def get_vertex(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def num_joins(p1):
+        pass
+
+
+    def num_polys(p1):
+        pass
+
+
+    def num_vertices(p1, p2):
+        pass
+
+
+    def load(p1, p2):
+        pass
+
+
+    def move_vertex(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def project_poly(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def re_project_poly(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def save(p1, p2):
+        pass
+
+
+    def set_poly(p1, p2, p3, p4, p5):
+        pass
+
+
+
+
+
 cdef class WrapDOCU:
     
-    
+
 
     cdef int32_t handle
     
@@ -11600,10 +20544,680 @@ cdef class WrapDOCU:
 
 
 
+    def copy(p1, p2):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def get_file(p1, p2):
+        pass
+
+
+    def get_file_meta(p1, p2):
+        pass
+
+
+    def get_meta(p1, p2):
+        pass
+
+
+    def doc_name(p1, p2, p3):
+        pass
+
+
+    def file_name(p1, p2, p3):
+        pass
+
+
+    def have_meta(p1):
+        pass
+
+
+    def is_reference(p1):
+        pass
+
+
+    def open(p1, p2):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def set_file(p1, p2, p3, p4):
+        pass
+
+
+    def set_file_meta(p1, p2, p3, p4):
+        pass
+
+
+    def set_meta(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapDU:
     
-    
-    pass
+
+
+
+
+
+    def table_look1(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def table_look2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def table_look_i2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def table_look_r2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def ado_table_names(p1, p2):
+        pass
+
+
+    def an_sig(p1, p2, p3, p4):
+        pass
+
+
+    def append(p1, p2, p3):
+        pass
+
+
+    def avg_azimuth(p1, p2, p3):
+        pass
+
+
+    def base_data(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def base_data_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def bound_line(p1, p2, p3, p4, p5):
+        pass
+
+
+    def bp_filt(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def break_line(p1, p2, p3):
+        pass
+
+
+    def break_line2(p1, p2, p3, p4):
+        pass
+
+
+    def break_line_to_groups(p1, p2, p3, p4):
+        pass
+
+
+    def break_line_to_groups2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def b_spline(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def closest_point(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def copy_line(p1, p2, p3):
+        pass
+
+
+    def copy_line_across(p1, p2, p3, p4):
+        pass
+
+
+    def copy_line_chan_across(p1, p2, p3, p4, p5):
+        pass
+
+
+    def copy_line_masked(p1, p2, p3, p4, p5):
+        pass
+
+
+    def dao_table_names(p1, p2, p3):
+        pass
+
+
+    def decimate(p1, p2, p3, p4, p5):
+        pass
+
+
+    def diff(p1, p2, p3, p4, p5):
+        pass
+
+
+    def distance(p1, p2, p3, p4, p5):
+        pass
+
+
+    def distance_3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def distline(p1, p2, p3, p4, p5):
+        pass
+
+
+    def dup_chan_locks(p1, p2):
+        pass
+
+
+    def dup_chans(p1, p2):
+        pass
+
+
+    def edit_duplicates(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def export(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def export2(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def export_amira(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def export_aseg(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def export_aseg_proj(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def export_chan_crc(p1, p2, p3, p4):
+        pass
+
+
+    def export_csv(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def export_database_crc(p1, p2, p3):
+        pass
+
+
+    def export_gbn(p1, p2, p3):
+        pass
+
+
+    def export_mdb(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def export_geodatabase(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_existing_feature_classes_in_geodatabase(p1, p2, p3, p4):
+        pass
+
+
+    def export_shp(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def export_xyz(p1, p2, p3):
+        pass
+
+
+    def export_xyz2(p1, p2, p3):
+        pass
+
+
+    def fft(p1, p2, p3, p4, p5):
+        pass
+
+
+    def filter(p1, p2, p3, p4, p5):
+        pass
+
+
+    def gen_lev(p1, p2, p3, p4, p5):
+        pass
+
+
+    def gen_lev_db(p1, p2, p3, p4):
+        pass
+
+
+    def gen_xyz_temp(p1, p2):
+        pass
+
+
+    def get_xyz_num_fields(p1, p2):
+        pass
+
+
+    def get_chan_data_lst(p1, p2, p3, p4):
+        pass
+
+
+    def get_chan_data_vv(p1, p2, p3, p4):
+        pass
+
+
+    def gradient(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def grav_drift(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def grav_tide(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def grid_load(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def grid_load_xyz(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def head(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_bin3(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def imp_cb_ply(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_ado(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_all_ado(p1, p2, p3):
+        pass
+
+
+    def import_all_dao(p1, p2, p3, p4):
+        pass
+
+
+    def import_amira(p1, p2, p3):
+        pass
+
+
+    def import_aseg(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_aseg_proj(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def import_bin(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_bin2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def import_bin4(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def import_daarc500_serial(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_daarc500_serial_gps(p1, p2, p3, p4):
+        pass
+
+
+    def import_dao(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_esri(p1, p2, p3, p4):
+        pass
+
+
+    def import_gbn(p1, p2):
+        pass
+
+
+    def import_oddf(p1, p2):
+        pass
+
+
+    def import_pico(p1, p2, p3, p4):
+        pass
+
+
+    def import_ubc_mod_msh(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_usgs_post(p1, p2):
+        pass
+
+
+    def import_xyz(p1, p2, p3, p4):
+        pass
+
+
+    def import_xyz2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_io_gas(p1, p2, p3):
+        pass
+
+
+    def index_order(p1, p2, p3, p4):
+        pass
+
+
+    def interp(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def interp_gap(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def intersect(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def intersect_all(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def intersect_gd_bto_tbl(p1, p2):
+        pass
+
+
+    def intersect_old(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def intersect_tb_lto_gdb(p1, p2):
+        pass
+
+
+    def lab_template(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def load_gravity(p1, p2, p3, p4):
+        pass
+
+
+    def load_ltb(p1, p2, p3, p4):
+        pass
+
+
+    def make_fid(p1, p2, p3, p4):
+        pass
+
+
+    def mask(p1, p2, p3, p4):
+        pass
+
+
+    def math(p1, p2, p3):
+        pass
+
+
+    def merge_line(p1, p2, p3, p4, p5):
+        pass
+
+
+    def mod_fid_range(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def move(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def nl_filt(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def normal(p1, p2, p3):
+        pass
+
+
+    def poly_fill(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def poly_mask(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def project_data(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def project_xyz(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def proj_points(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def qc_init_separation(p1, p2, p3):
+        pass
+
+
+    def qc_survey_plan(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18):
+        pass
+
+
+    def direction(p1, p2, p3, p4):
+        pass
+
+
+    def re_fid(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def re_fid_all_ch(p1, p2, p3):
+        pass
+
+
+    def re_fid_ch(p1, p2, p3, p4):
+        pass
+
+
+    def rotate(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def sample_gd(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def sample_img(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def sample_img_line_lst(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def scan_ado(p1, p2, p3):
+        pass
+
+
+    def scan_aseg(p1, p2, p3, p4):
+        pass
+
+
+    def scan_dao(p1, p2, p3, p4):
+        pass
+
+
+    def scan_pico(p1, p2):
+        pass
+
+
+    def sort(p1, p2, p3, p4):
+        pass
+
+
+    def sort_index(p1, p2, p3, p4, p5):
+        pass
+
+
+    def sort_index2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def split_line(p1, p2, p3, p4):
+        pass
+
+
+    def split_line2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def split_line_xy(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def split_line_xy2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def split_line_xy3(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def split_line_by_direction(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def split_line_by_direction2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def stat(p1, p2, p3, p4):
+        pass
+
+
+    def table_line_fid(p1, p2, p3, p4, p5):
+        pass
+
+
+    def table_selected_lines_fid(p1, p2, p3, p4, p5):
+        pass
+
+
+    def time_constant(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def trend(p1, p2, p3, p4, p5):
+        pass
+
+
+    def update_intersect_db(p1, p2, p3, p4):
+        pass
+
+
+    def voxel_section(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def write_wa(p1, p2, p3, p4):
+        pass
+
+
+    def xyz_line(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def xyz_line2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def xyz_line3(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def z_mask(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def range_xy(p1, p2, p3, p4, p5):
+        pass
+
+
+    def range_xyz(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def range_xyz_data(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def create_drillhole_parameter_weight_constraint_database(p1, p2, p3, p4):
+        pass
+
+
+    def calculate_draped_survey_altitude(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def calculate_draped_survey_altitude2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def direct_grid_data_to_voxel(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def direct_grid_item_counts_to_voxel(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
 
 
 
@@ -11611,7 +21225,7 @@ cdef class WrapDU:
 
 cdef class WrapDXFI:
     
-    
+
 
     cdef int32_t handle
     
@@ -11626,9 +21240,30 @@ cdef class WrapDXFI:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def dxf2_ply(p1, p2):
+        pass
+
+
+    def dxf2_view_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_range(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+
+
+
 cdef class WrapEDB:
     
-    
+
 
     cdef int32_t handle
     
@@ -11642,10 +21277,397 @@ cdef class WrapEDB:
 
 
 
+# Miscellaneous
+
+
+
+
+    def apply_formula_internal(p1, p2):
+        pass
+
+
+    def current():
+        pass
+
+
+    def current_no_activate():
+        pass
+
+
+    def current_if_exists():
+        pass
+
+
+    def del_line0(p1):
+        pass
+
+
+
+
+    def destroy_view(p1, p2):
+        pass
+
+
+    def get_cur_chan_symb(p1):
+        pass
+
+
+    def get_cur_line_symb(p1):
+        pass
+
+
+    def get_displ_fid_range(p1, p2, p3):
+        pass
+
+
+    def get_fid_range(p1, p2, p3, p4):
+        pass
+
+
+    def get_next_line_symb(p1):
+        pass
+
+
+    def get_prev_line_symb(p1):
+        pass
+
+
+    def get_profile_range_x(p1, p2, p3, p4):
+        pass
+
+
+    def get_profile_range_y(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_profile_split(p1, p2, p3):
+        pass
+
+
+    def get_profile_split5(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_profile_split_vv(p1, p2):
+        pass
+
+
+    def get_profile_vertical_grid_lines(p1, p2, p3):
+        pass
+
+
+    def get_profile_window(p1, p2, p3, p4):
+        pass
+
+
+    def goto_column(p1, p2):
+        pass
+
+
+    def goto_elem(p1, p2):
+        pass
+
+
+    def goto_line(p1, p2):
+        pass
+
+
+    def histogram(p1, p2, p3, p4, p5):
+        pass
+
+
+    def all_chan_list(p1, p2):
+        pass
+
+
+    def channels(p1):
+        pass
+
+
+    def disp_chan_list(p1, p2):
+        pass
+
+
+    def disp_chan_lst(p1, p2):
+        pass
+
+
+    def disp_class_chan_lst(p1, p2, p3):
+        pass
+
+
+    def find_channel_column(p1, p2):
+        pass
+
+
+    def find_nearest(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_cur_chan(p1, p2, p3):
+        pass
+
+
+    def get_cur_fid_string(p1, p2, p3):
+        pass
+
+
+    def get_cur_line(p1, p2, p3):
+        pass
+
+
+    def get_cur_mark(p1, p2, p3, p4):
+        pass
+
+
+    def get_current_selection(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_databases_lst(p1, p2):
+        pass
+
+
+    def get_mark_chan_vv(p1, p2, p3):
+        pass
+
+
+    def get_mark_chan_va(p1, p2, p3):
+        pass
+
+
+    def get_name(p1, p2, p3):
+        pass
+
+
+    def get_profile_parm(p1, p2, p3, p4):
+        pass
+
+
+    def get_window_state(p1):
+        pass
+
+
+    def have_current():
+        pass
+
+
+    def is_locked(p1):
+        pass
+
+
+    def loaded(p1):
+        pass
+
+
+    def profile_open(p1, p2):
+        pass
+
+
+    def read_only(p1):
+        pass
+
+
+    def get_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def show_profile_name(p1, p2, p3):
+        pass
+
+
+    def get_window_y_axis_direction(p1, p2):
+        pass
+
+
+    def window_profiles(p1, p2):
+        pass
+
+
+    def launch_histogram(p1, p2):
+        pass
+
+
+    def launch_scatter(p1):
+        pass
+
+
+    def load(p1):
+        pass
+
+
+    def load_no_activate(p1):
+        pass
+
+
+    def load_all_chans(p1):
+        pass
+
+
+    def load_chan(p1, p2):
+        pass
+
+
+    def load_new(p1):
+        pass
+
+
+    def load_pass(p1, p2, p3):
+        pass
+
+
+    def load_with_view(p1, p2):
+        pass
+
+
+    def lock(p1):
+        pass
+
+
+    def make_current(p1):
+        pass
+
+
+    def remove_profile(p1, p2, p3):
+        pass
+
+
+    def get_cur_fid(p1):
+        pass
+
+
+    def get_profile_parm(p1, p2, p3, p4):
+        pass
+
+
+    def get_split(p1):
+        pass
+
+
+    def run_channel_maker(p1, p2):
+        pass
+
+
+    def run_channel_makers(p1):
+        pass
+
+
+    def set_cur_line(p1, p2):
+        pass
+
+
+    def set_cur_line_no_message(p1, p2):
+        pass
+
+
+    def set_cur_mark(p1, p2, p3):
+        pass
+
+
+    def set_profile_parm_i(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_profile_parm_r(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_profile_range_x(p1, p2, p3, p4):
+        pass
+
+
+    def set_profile_range_y(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_profile_split(p1, p2, p3):
+        pass
+
+
+    def set_profile_split5(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_profile_split_vv(p1, p2):
+        pass
+
+
+    def set_split(p1, p2):
+        pass
+
+
+    def set_window_state(p1, p2):
+        pass
+
+
+    def show_profile(p1, p2, p3):
+        pass
+
+
+    def statistics(p1, p2):
+        pass
+
+
+    def un_load(p1):
+        pass
+
+
+    def un_load_all():
+        pass
+
+
+    def un_load_all_chans(p1):
+        pass
+
+
+    def un_load_chan(p1, p2):
+        pass
+
+
+    def un_load_discard(p1):
+        pass
+
+
+    def un_load_verify(p1, p2):
+        pass
+
+
+    def un_lock(p1):
+        pass
+
+
+# External Window
+
+
+
+
+    def load_control(p1, p2):
+        pass
+
+
+    def load_new_control(p1, p2):
+        pass
+
+
+    def load_pass_control(p1, p2, p3, p4):
+        pass
+
+
+    def load_with_view_control(p1, p2, p3):
+        pass
+
+
+
+
+
 
 cdef class WrapEDOC:
     
-    
+
 
     cdef int32_t handle
     
@@ -11659,10 +21681,113 @@ cdef class WrapEDOC:
 
 
 
+# GMSYS 3D Models
+
+
+
+
+    def create_new_gms_3d(p1, p2, p3, p4):
+        pass
+
+
+# Miscellaneous
+
+
+
+
+    def current(p1):
+        pass
+
+
+    def current_no_activate(p1):
+        pass
+
+
+    def current_if_exists(p1):
+        pass
+
+
+
+
+    def get_documents_lst(p1, p2, p3):
+        pass
+
+
+    def get_name(p1, p2, p3):
+        pass
+
+
+    def get_window_state(p1):
+        pass
+
+
+    def have_current(p1):
+        pass
+
+
+    def loaded(p1, p2):
+        pass
+
+
+    def get_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def read_only(p1):
+        pass
+
+
+    def load(p1, p2):
+        pass
+
+
+    def load_no_activate(p1, p2):
+        pass
+
+
+    def make_current(p1):
+        pass
+
+
+    def set_window_state(p1, p2):
+        pass
+
+
+    def sync(p1, p2):
+        pass
+
+
+    def sync_open(p1):
+        pass
+
+
+    def un_load(p1, p2):
+        pass
+
+
+    def un_load_all(p1):
+        pass
+
+
+    def un_load_discard(p1, p2):
+        pass
+
+
+    def un_load_verify(p1, p2, p3):
+        pass
+
+
+
+
+
 
 cdef class WrapEMAP:
     
-    
+
 
     cdef int32_t handle
     
@@ -11676,10 +21801,391 @@ cdef class WrapEMAP:
 
 
 
+# Drag-and-drop methods
+
+
+
+
+    def drop_map_clip_data(p1, p2):
+        pass
+
+
+    def drag_drop_enabled(p1):
+        pass
+
+
+    def set_drag_drop_enabled(p1, p2):
+        pass
+
+
+# Drawing
+
+
+
+
+    def copy_to_clip(p1):
+        pass
+
+
+    def draw_line(p1, p2, p3, p4, p5):
+        pass
+
+
+    def draw_rect(p1, p2, p3, p4, p5):
+        pass
+
+
+    def draw_rect_3d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_display_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_display_area_raw(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_map_layout_props(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_map_snap(p1, p2):
+        pass
+
+
+    def get_window_state(p1):
+        pass
+
+
+    def set_display_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_map_layout_props(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def set_map_snap(p1, p2):
+        pass
+
+
+    def set_window_state(p1, p2):
+        pass
+
+
+# General
+
+
+
+
+    def activate_group(p1, p2):
+        pass
+
+
+    def activate_view(p1, p2):
+        pass
+
+
+    def current():
+        pass
+
+
+    def current_no_activate():
+        pass
+
+
+    def current_if_exists():
+        pass
+
+
+
+
+    def destroy_view(p1, p2):
+        pass
+
+
+    def font_lst(p1, p2, p3):
+        pass
+
+
+    def change_current_view(p1, p2):
+        pass
+
+
+    def create_group_snapshot(p1, p2):
+        pass
+
+
+    def get_3d_view_name(p1, p2, p3):
+        pass
+
+
+    def get_current_group(p1, p2, p3):
+        pass
+
+
+    def get_current_view(p1, p2, p3):
+        pass
+
+
+    def get_maps_lst(p1, p2):
+        pass
+
+
+    def get_name(p1, p2, p3):
+        pass
+
+
+    def have_current():
+        pass
+
+
+    def i_get_specified_map_name(p1, p2, p3, p4):
+        pass
+
+
+    def is_grid(p1):
+        pass
+
+
+    def reload_grid(p1):
+        pass
+
+
+    def is_3d_view(p1):
+        pass
+
+
+    def is_locked(p1):
+        pass
+
+
+    def loaded(p1):
+        pass
+
+
+    def read_only(p1):
+        pass
+
+
+    def get_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def doubleize_group_snapshot(p1, p2):
+        pass
+
+
+    def set_current_view(p1, p2):
+        pass
+
+
+    def get_view_ipj(p1, p2, p3):
+        pass
+
+
+    def load(p1):
+        pass
+
+
+    def load_no_activate(p1):
+        pass
+
+
+    def load_with_view(p1, p2):
+        pass
+
+
+    def lock(p1):
+        pass
+
+
+    def make_current(p1):
+        pass
+
+
+    def print_(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def redraw(p1):
+        pass
+
+
+    def select_group(p1, p2):
+        pass
+
+
+    def set_redraw_flag(p1, p2):
+        pass
+
+
+    def un_load(p1):
+        pass
+
+
+    def un_load_all():
+        pass
+
+
+    def un_load_verify(p1, p2):
+        pass
+
+
+    def un_lock(p1):
+        pass
+
+
+# Input
+
+
+
+
+    def get_cur_point(p1, p2, p3):
+        pass
+
+
+    def get_cur_point_mm(p1, p2, p3):
+        pass
+
+
+    def get_cursor(p1, p2, p3):
+        pass
+
+
+    def get_cursor_mm(p1, p2, p3):
+        pass
+
+
+    def digitize(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def digitize2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def digitize_peaks(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def digitize_polygon(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_box(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_box2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def get_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_line(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_line_ex(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_line_xyz(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_point(p1, p2, p3, p4):
+        pass
+
+
+    def get_point_ex(p1, p2, p3, p4):
+        pass
+
+
+    def get_point_3d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_poly_line(p1, p2, p3, p4):
+        pass
+
+
+    def get_poly_line_xyz(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_rect(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def track_point(p1, p2, p3, p4):
+        pass
+
+
+# Map Viewport Mode Methods
+
+
+
+
+    def get_aoi_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_aoi_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_viewport_mode(p1, p2):
+        pass
+
+
+# Tracking Methods
+
+
+
+
+    def get_selected_vertices(p1, p2, p3):
+        pass
+
+
+# Virtual
+
+
+
+
+    def create_virtual(p1):
+        pass
+
+
+# External Window
+
+
+
+
+    def load_control(p1, p2):
+        pass
+
+
+    def load_with_view_control(p1, p2, p3):
+        pass
+
+
+
+
+
 
 cdef class WrapEMAPTEMPLATE:
     
-    
+
 
     cdef int32_t handle
     
@@ -11693,10 +22199,189 @@ cdef class WrapEMAPTEMPLATE:
 
 
 
+# Drag-and-drop methods
+
+
+
+
+    def drag_drop_enabled(p1):
+        pass
+
+
+    def set_drag_drop_enabled(p1, p2):
+        pass
+
+
+# General
+
+
+
+
+    def current():
+        pass
+
+
+    def current_no_activate():
+        pass
+
+
+    def current_if_exists():
+        pass
+
+
+
+
+    def get_map_templates_lst(p1, p2):
+        pass
+
+
+    def get_name(p1, p2, p3):
+        pass
+
+
+    def have_current():
+        pass
+
+
+    def i_get_specified_map_name(p1, p2, p3, p4):
+        pass
+
+
+    def is_locked(p1):
+        pass
+
+
+    def loaded(p1):
+        pass
+
+
+    def get_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_window_position(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def read_only(p1):
+        pass
+
+
+    def load(p1):
+        pass
+
+
+    def load_no_activate(p1):
+        pass
+
+
+    def lock(p1):
+        pass
+
+
+    def make_current(p1):
+        pass
+
+
+    def un_load(p1):
+        pass
+
+
+    def un_load_all():
+        pass
+
+
+    def un_load_verify(p1, p2):
+        pass
+
+
+    def un_lock(p1):
+        pass
+
+
+# Input
+
+
+
+
+    def get_box(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_line(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_point(p1, p2, p3, p4):
+        pass
+
+
+    def get_rect(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def track_point(p1, p2, p3, p4):
+        pass
+
+
+# Selection Methods
+
+
+
+
+    def get_item_selection(p1, p2, p3):
+        pass
+
+
+    def set_item_selection(p1, p2):
+        pass
+
+
+# View Window
+
+
+
+
+    def get_display_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_template_layout_props(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_window_state(p1):
+        pass
+
+
+    def set_display_area(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_template_layout_props(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def set_window_state(p1, p2):
+        pass
+
+
+# Virtual
+
+
+
+
+    def create_virtual(p1):
+        pass
+
+
+
+
+
 
 cdef class WrapEUL3:
     
-    
+
 
     cdef int32_t handle
     
@@ -11711,9 +22396,36 @@ cdef class WrapEUL3:
 
 
 
+    def destr(p1):
+        pass
+
+
+    def creat(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def get_result(p1, p2, p3):
+        pass
+
+
+    def write(p1, p2):
+        pass
+
+
+    def ex_euler_derive(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def ex_euler_calc(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+
+
+
 cdef class WrapEXP:
     
-    
+
 
     cdef int32_t handle
     
@@ -11728,9 +22440,22 @@ cdef class WrapEXP:
 
 
 
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_file(p1, p2):
+        pass
+
+
+
+
+
+
+
 cdef class WrapFFT:
     
-    
+
 
     cdef int32_t handle
     
@@ -11745,10 +22470,164 @@ cdef class WrapFFT:
 
 
 
+    def app_dens(p1, p2, p3):
+        pass
+
+
+    def app_susc(p1, p2):
+        pass
+
+
+    def band_pass(p1, p2, p3, p4):
+        pass
+
+
+    def b_worth(p1, p2, p3, p4):
+        pass
+
+
+    def rc_filter(p1, p2, p3):
+        pass
+
+
+    def contin(p1, p2):
+        pass
+
+
+    def cos_roll(p1, p2, p3, p4, p5):
+        pass
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_ex(p1, p2, p3, p4):
+        pass
+
+
+    def create_ref(p1, p2, p3):
+        pass
+
+
+    def create_ref_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+
+
+    def gaus(p1, p2, p3):
+        pass
+
+
+    def get_vv(p1, p2, p3):
+        pass
+
+
+    def h_drv(p1, p2):
+        pass
+
+
+    def high_pass(p1, p2, p3):
+        pass
+
+
+    def h_int(p1):
+        pass
+
+
+    def inverse(p1, p2, p3):
+        pass
+
+
+    def low_pass(p1, p2):
+        pass
+
+
+    def red_pol(p1, p2, p3, p4, p5):
+        pass
+
+
+    def nyquist(p1):
+        pass
+
+
+    def samp_incr(p1):
+        pass
+
+
+    def wave_incr(p1):
+        pass
+
+
+    def set_vv(p1, p2, p3):
+        pass
+
+
+    def spectrum(p1, p2):
+        pass
+
+
+    def v_drv(p1, p2):
+        pass
+
+
+    def v_int(p1):
+        pass
+
+
+    def write_spectrum(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapFFT2:
     
-    
-    pass
+
+
+
+
+
+    def fft2_in(p1, p2, p3):
+        pass
+
+
+    def filter_pg(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def flt(p1, p2, p3):
+        pass
+
+
+    def flt_inv(p1, p2, p3):
+        pass
+
+
+    def pow_spc(p1, p2):
+        pass
+
+
+    def rad_spc(p1, p2):
+        pass
+
+
+    def rad_spc1(p1, p2):
+        pass
+
+
+    def rad_spc2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def td_xd_y(p1, p2, p3, p4):
+        pass
+
+
+    def trans_pg(p1, p2):
+        pass
 
 
 
@@ -11756,8 +22635,19 @@ cdef class WrapFFT2:
 
 cdef class WrapFLT:
     
-    
-    pass
+
+
+
+
+
+    def create(p1):
+        pass
+
+
+
+
+    def load(p1):
+        pass
 
 
 
@@ -11765,7 +22655,7 @@ cdef class WrapFLT:
 
 cdef class WrapGD:
     
-    
+
 
     cdef int32_t handle
     
@@ -11780,9 +22670,18 @@ cdef class WrapGD:
 
 
 
+    def create(p1, p2):
+        pass
+
+
+
+
+
+
+
 cdef class WrapGER:
     
-    
+
 
     cdef int32_t handle
     
@@ -11797,10 +22696,40 @@ cdef class WrapGER:
 
 
 
+    def create(p1):
+        pass
+
+
+
+
+    def get(p1, p2, p3, p4):
+        pass
+
+
+    def set_int(p1, p2, p3):
+        pass
+
+
+    def set_double(p1, p2, p3):
+        pass
+
+
+    def set_string(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapGMSYS:
     
-    
-    pass
+
+
+
+
+
+    def launch(p1):
+        pass
 
 
 
@@ -11808,8 +22737,113 @@ cdef class WrapGMSYS:
 
 cdef class WrapGU:
     
-    
-    pass
+
+
+
+
+
+    def dipole_mag(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def em_half_space_inv(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def em_half_space_vv(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def geometrics2_db(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def geometrics2_tbl(p1, p2, p3):
+        pass
+
+
+    def geometrics_qc(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def geonics3138_dump2_db(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def geonics61_dump2_db(p1, p2, p3, p4, p5):
+        pass
+
+
+    def geonics_dat2_db(p1, p2, p3, p4, p5):
+        pass
+
+
+    def gr_curv_cor(p1, p2, p3):
+        pass
+
+
+    def gr_curv_cor_ex(p1, p2, p3, p4):
+        pass
+
+
+    def gr_demvv(p1, p2, p3, p4):
+        pass
+
+
+    def gr_test(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def gravity_still_reading_correction(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def em_layer(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def em_plate(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21):
+        pass
+
+
+    def gen_ux_detect_symbols_group_name(p1, p2, p3, p4):
+        pass
+
+
+    def import_daarc500_ethernet(p1, p2, p3):
+        pass
+
+
+    def import_daarc500_serial(p1, p2, p3, p4):
+        pass
+
+
+    def import_p190(p1, p2, p3, p4):
+        pass
+
+
+    def lag_daarc500_gps(p1, p2, p3):
+        pass
+
+
+    def maxwell_plate_corners(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def scan_daarc500_ethernet(p1, p2, p3):
+        pass
+
+
+    def scan_daarc500_serial(p1, p2, p3):
+        pass
+
+
+    def vv_euler(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def vv_euler2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
 
 
 
@@ -11817,8 +22851,325 @@ cdef class WrapGU:
 
 cdef class WrapGUI:
     
-    
-    pass
+
+
+
+
+
+    def create_wnd_from_hwnd(p1):
+        pass
+
+
+    def fft2_spec_filter(p1, p2):
+        pass
+
+
+    def get_parent_wnd():
+        pass
+
+
+    def get_printer_lst(p1):
+        pass
+
+
+    def get_window_state():
+        pass
+
+
+    def set_window_state(p1):
+        pass
+
+
+    def get_window_position(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_window_position(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_client_window_area(p1, p2, p3, p4):
+        pass
+
+
+    def grid_stat_hist(p1):
+        pass
+
+
+    def voxel_stat_hist(p1):
+        pass
+
+
+    def color_form(p1, p2):
+        pass
+
+
+    def color_transform(p1, p2):
+        pass
+
+
+    def coord_sys_wizard(p1, p2, p3, p4, p5):
+        pass
+
+
+    def coord_sys_wizard_licensed(p1, p2, p3, p4, p5):
+        pass
+
+
+    def coord_sys_wizard_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def database_type(p1, p2, p3):
+        pass
+
+
+    def datamine_type(p1, p2):
+        pass
+
+
+    def export_xyz_template_editor(p1, p2, p3):
+        pass
+
+
+    def export_xyz_template_editor_ex(p1, p2, p3):
+        pass
+
+
+    def file_filter_index(p1):
+        pass
+
+
+    def gcs_datum_warning_shp(p1, p2):
+        pass
+
+
+    def gcs_datum_warning_shpdb_ex(p1, p2, p3, p4):
+        pass
+
+
+    def gcs_datum_warning_shp_ex(p1, p2, p3, p4):
+        pass
+
+
+    def get_area_of_interest(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_area_of_interest_3d(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_dat_defaults(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def get_file_filter(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_gs_directory(p1, p2, p3):
+        pass
+
+
+    def browse_dir(p1, p2, p3, p4):
+        pass
+
+
+    def color_transform_ex(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def cumulative_percent(p1, p2, p3):
+        pass
+
+
+    def dat_file_form(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def gen_file_form(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def import_drill_database_ado2(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def import_drill_database_esri(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def import_drill_database_odbc(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def import_drill_database_odbc_maxwell(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def import_ascii_wizard(p1, p2):
+        pass
+
+
+    def import_chem_database(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_chem_database_ado(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_database(p1, p2, p3, p4):
+        pass
+
+
+    def import_database_ado(p1, p2, p3, p4):
+        pass
+
+
+    def import_database_sql(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_database_sqlado(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_drill_database_ado(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_template_sql(p1, p2, p3, p4):
+        pass
+
+
+    def import_template_sqlado(p1, p2, p3, p4):
+        pass
+
+
+    def import_xyz_template_editor(p1, p2, p3, p4):
+        pass
+
+
+    def odbc_file_connect(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def symbol_form(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def meta_data_tool(p1, p2, p3):
+        pass
+
+
+    def import_chem_wizard(p1, p2, p3):
+        pass
+
+
+    def import_drill_wizard(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def internet_trust():
+        pass
+
+
+    def pattern_form(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def line_pattern_form(p1, p2, p3, p4):
+        pass
+
+
+    def two_panel_selection(p1, p2, p3):
+        pass
+
+
+    def two_panel_selection2(p1, p2, p3):
+        pass
+
+
+    def two_panel_selection_ex(p1, p2, p3, p4, p5):
+        pass
+
+
+    def two_panel_selection_ex2(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def launch_single_geo_dotnetx_tool(p1, p2, p3):
+        pass
+
+
+    def launch_geo_dotnetx_tool(p1, p2, p3):
+        pass
+
+
+    def launch_geo_x_tool(p1, p2, p3):
+        pass
+
+
+    def launch_single_geo_dotnetx_tool_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def launch_geo_dotnetx_tool_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def launch_geo_x_tool_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def meta_data_viewer(p1, p2, p3):
+        pass
+
+
+    def print_file(p1):
+        pass
+
+
+    def render_pattern(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def render_line_pattern(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def set_parent_wnd(p1):
+        pass
+
+
+    def set_printer(p1):
+        pass
+
+
+    def set_prog_always_on(p1):
+        pass
+
+
+    def show_direct_hist(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def show_hist(p1):
+        pass
+
+
+    def simple_map_dialog(p1, p2, p3):
+        pass
+
+
+    def thematic_voxel_info(p1):
+        pass
+
+
+    def show_3d_viewer_dialog(p1, p2, p3):
+        pass
 
 
 
@@ -11826,7 +23177,7 @@ cdef class WrapGUI:
 
 cdef class WrapHTTP:
     
-    
+
 
     cdef int32_t handle
     
@@ -11841,9 +23192,38 @@ cdef class WrapHTTP:
 
 
 
+    def create(p1, p2, p3, p4):
+        pass
+
+
+
+
+    def download(p1, p2, p3, p4):
+        pass
+
+
+    def silent_download(p1, p2, p3, p4):
+        pass
+
+
+    def get(p1, p2, p3, p4, p5):
+        pass
+
+
+    def post(p1, p2, p3, p4):
+        pass
+
+
+    def set_proxy_credentials(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapIEXP:
     
-    
+
 
     cdef int32_t handle
     
@@ -11858,10 +23238,36 @@ cdef class WrapIEXP:
 
 
 
+    def add_grid(p1, p2, p3):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def do_formula(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapINTERNET:
     
-    
-    pass
+
+
+
+
+
+    def download_http(p1, p2, p3):
+        pass
+
+
+    def send_mail(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
 
 
 
@@ -11869,7 +23275,7 @@ cdef class WrapINTERNET:
 
 cdef class WrapIP:
     
-    
+
 
     cdef int32_t handle
     
@@ -11883,11 +23289,311 @@ cdef class WrapIP:
 
 
 
+# Plot Jobs
+
+
+
+
+    def convert_ubcip2_d_to_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def create_default_job(p1, p2, p3):
+        pass
+
+
+    def export_ubcip3(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def export_ubcip_control(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def export_ubcip_control_v5(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def export_ubc_res3(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def export_ubc_res_control(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def export_ubc_res_control_v5(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def export_data_to_ubc_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def import_ubc2_dmod(p1, p2):
+        pass
+
+
+    def import_ubc2_dmsh(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_ubc2_d_topo(p1, p2, p3, p4):
+        pass
+
+
+    def open_job(p1, p2, p3):
+        pass
+
+
+    def save_job(p1, p2, p3):
+        pass
+
+
+    def trim_ubc2_d_model(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def write_distant_electrodes(p1, p2):
+        pass
+
+
+    def write_distant_electrodes_lst(p1, p2, p3):
+        pass
+
+
+# Miscellaneous
+
+
+
+
+    def average_duplicates_qc(p1, p2, p3, p4, p5):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def export_i2_x(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def export_ipdata(p1, p2, p3, p4):
+        pass
+
+
+    def export_ipdata_dir(p1, p2, p3, p4, p5):
+        pass
+
+
+    def export_ipred(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def export_ipred_dir(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def export_line_ipdata(p1, p2, p3, p4, p5):
+        pass
+
+
+    def export_sgdf(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_n_value_lst(p1, p2, p3):
+        pass
+
+
+    def get_topo_line(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_chan_domain(p1, p2, p3):
+        pass
+
+
+    def get_chan_label(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_channel_info(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_channel_info(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def import_dump(p1, p2, p3, p4):
+        pass
+
+
+    def import_grid(p1, p2, p3, p4):
+        pass
+
+
+    def import_i2_x(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def import_i2_x_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def import_instrumentation_gdd(p1, p2, p3):
+        pass
+
+
+    def import_ipdata(p1, p2, p3, p4):
+        pass
+
+
+    def import_ipdata2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def import_ipred(p1, p2, p3, p4):
+        pass
+
+
+    def import_merge_ipred(p1, p2, p3, p4):
+        pass
+
+
+    def import_sgdf(p1, p2, p3):
+        pass
+
+
+    def import_topo_csv(p1, p2, p3):
+        pass
+
+
+    def import_topo_grid(p1, p2, p3):
+        pass
+
+
+    def import_zonge_avg(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_zonge_fld(p1, p2, p3, p4, p5):
+        pass
+
+
+    def new_xy_database(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def pseudo_plot(p1, p2, p3, p4, p5):
+        pass
+
+
+    def pseudo_plot2(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def pseudo_plot2_dir(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def ps_stack(p1, p2, p3, p4, p5):
+        pass
+
+
+    def ps_stack2(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def ps_stack2_dir(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def qc_chan_lst(p1, p2, p3):
+        pass
+
+
+    def recalculate(p1, p2):
+        pass
+
+
+    def recalculate_ex(p1, p2, p3):
+        pass
+
+
+    def recalculate_z(p1, p2):
+        pass
+
+
+    def set_import_mode(p1, p2):
+        pass
+
+
+    def window(p1, p2, p3, p4, p5):
+        pass
+
+
+    def winnow_chan_list(p1):
+        pass
+
+
+    def winnow_chan_list2(p1, p2):
+        pass
+
+
+    def is_valid_line(p1, p2, p3):
+        pass
+
+
+    def line_array_type(p1, p2, p3):
+        pass
+
+
+    def a_spacing(p1, p2, p3):
+        pass
+
+
+    def pldp_convention(p1):
+        pass
+
+
+    def get_electrode_locations_and_mask_values(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def set_electrode_mask_values(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+
+
+
 
 cdef class WrapIPGUI:
     
-    
-    pass
+
+
+
+
+
+    def modify_job(p1, p2, p3, p4, p5):
+        pass
+
+
+    def launch_ipqc_tool(p1, p2, p3):
+        pass
+
+
+    def launch_offset_ipqc_tool(p1, p2, p3):
+        pass
+
+
+    def ipqc_tool_exists():
+        pass
 
 
 
@@ -11895,7 +23601,7 @@ cdef class WrapIPGUI:
 
 cdef class WrapKGRD:
     
-    
+
 
     cdef int32_t handle
     
@@ -11910,10 +23616,52 @@ cdef class WrapKGRD:
 
 
 
+    def clear(p1):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def load_parms(p1, p2):
+        pass
+
+
+    def run(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def run2(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def run3(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def save_parms(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapLMSG:
     
-    
-    pass
+
+
+
+
+
+    def goto_point(p1, p2, p3, p4):
+        pass
+
+
+    def view_area(p1, p2, p3, p4, p5):
+        pass
 
 
 
@@ -11921,8 +23669,21 @@ cdef class WrapLMSG:
 
 cdef class WrapMISC:
     
-    
-    pass
+
+
+
+
+
+    def convert_cg3to_raw(p1, p2, p3):
+        pass
+
+
+    def convert_cg5to_raw(p1, p2, p3):
+        pass
+
+
+    def ukoa2_tbl(p1, p2, p3):
+        pass
 
 
 
@@ -11930,7 +23691,7 @@ cdef class WrapMISC:
 
 cdef class WrapMSTK:
     
-    
+
 
     cdef int32_t handle
     
@@ -11945,9 +23706,62 @@ cdef class WrapMSTK:
 
 
 
+    def add_stk(p1):
+        pass
+
+
+    def chan_list_vv(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def draw_profile(p1, p2, p3, p4):
+        pass
+
+
+    def set_y_axis_direction(p1, p2):
+        pass
+
+
+    def find_stk2(p1, p2, p3, p4):
+        pass
+
+
+    def get_stk(p1, p2):
+        pass
+
+
+    def delete(p1, p2):
+        pass
+
+
+    def find_stk(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_num_stk(p1):
+        pass
+
+
+    def read_ini(p1, p2):
+        pass
+
+
+    def save_profile(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapMVG:
     
-    
+
 
     cdef int32_t handle
     
@@ -11962,10 +23776,72 @@ cdef class WrapMVG:
 
 
 
+    def axis_x(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def axis_y(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def create(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+
+
+    def get_mview(p1):
+        pass
+
+
+    def grid(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def label_x(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def label_y(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def poly_line_va(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def poly_line_vv(p1, p2, p3, p4, p5):
+        pass
+
+
+    def rescale_x_range(p1, p2, p3, p4, p5):
+        pass
+
+
+    def rescale_y_range(p1, p2, p3, p4, p5):
+        pass
+
+
+
+
+
 cdef class WrapPDF3D:
     
-    
-    pass
+
+
+
+
+
+    def render(p1, p2, p3, p4):
+        pass
+
+
+    def render_to_page(p1, p2, p3, p4, p5):
+        pass
+
+
+    def export2_d(p1, p2, p3, p4, p5):
+        pass
 
 
 
@@ -11973,7 +23849,7 @@ cdef class WrapPDF3D:
 
 cdef class WrapPGEXP:
     
-    
+
 
     cdef int32_t handle
     
@@ -11988,10 +23864,233 @@ cdef class WrapPGEXP:
 
 
 
+    def add_pager(p1, p2, p3):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def do_formula(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapPGU:
     
-    
-    pass
+
+
+
+
+# General
+
+
+
+
+    def bool(p1, p2):
+        pass
+
+
+    def direct_gridding_dat(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def direct_gridding_dat_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def direct_gridding_db(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def direct_gridding_db_3d(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def direct_gridding_vv(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def expand(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def fill(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def fill_value(p1, p2):
+        pass
+
+
+    def filt_sym(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def filt_sym5(p1, p2, p3, p4, p5):
+        pass
+
+
+    def grid_peak(p1, p2, p3, p4, p5):
+        pass
+
+
+    def dw_gridding_dat(p1, p2, p3):
+        pass
+
+
+    def dw_gridding_dat_3d(p1, p2, p3):
+        pass
+
+
+    def dw_gridding_db(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def dw_gridding_db_3d(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def dw_gridding_vv(p1, p2, p3, p4, p5):
+        pass
+
+
+    def numeric_to_thematic(p1, p2, p3):
+        pass
+
+
+    def peakedness(p1, p2, p3, p4, p5):
+        pass
+
+
+    def peakedness_grid(p1, p2, p3, p4):
+        pass
+
+
+    def ref_file(p1, p2):
+        pass
+
+
+    def save_file(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def thematic_to_numeric(p1, p2, p3):
+        pass
+
+
+    def trend(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+# Math Operations
+
+
+
+
+    def add_scalar(p1, p2):
+        pass
+
+
+    def multiply_scalar(p1, p2):
+        pass
+
+
+# Matrix Operation
+
+
+
+
+    def correlation_matrix(p1, p2):
+        pass
+
+
+    def correlation_matrix2(p1, p2, p3):
+        pass
+
+
+    def invert_matrix(p1, p2):
+        pass
+
+
+    def jacobi(p1, p2, p3):
+        pass
+
+
+    def lu_back_sub(p1, p2, p3, p4):
+        pass
+
+
+    def lu_decomp(p1, p2, p3):
+        pass
+
+
+    def matrix_mult(p1, p2, p3, p4, p5):
+        pass
+
+
+    def matrix_vector_mult(p1, p2, p3):
+        pass
+
+
+    def sv_decompose(p1, p2, p3, p4):
+        pass
+
+
+    def sv_recompose(p1, p2, p3, p4, p5):
+        pass
+
+
+# Principal Component Analysis
+
+
+
+
+    def pc_communality(p1, p2):
+        pass
+
+
+    def pc_loadings(p1, p2):
+        pass
+
+
+    def pc_loadings2(p1, p2):
+        pass
+
+
+    def pc_scores(p1, p2, p3):
+        pass
+
+
+    def pc_standardize(p1, p2, p3, p4):
+        pass
+
+
+    def pc_standardize2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def pc_transform(p1, p2, p3, p4, p5):
+        pass
+
+
+    def pc_varimax(p1, p2):
+        pass
+
+
+# Specialized Operations
+
+
+
+
+    def maximum_terrain_steepness(p1, p2):
+        pass
+
 
 
 
@@ -11999,8 +24098,13 @@ cdef class WrapPGU:
 
 cdef class WrapPRAGA3:
     
-    
-    pass
+
+
+
+
+
+    def launch():
+        pass
 
 
 
@@ -12008,8 +24112,59 @@ cdef class WrapPRAGA3:
 
 cdef class WrapPROJ:
     
-    
-    pass
+
+
+
+
+# Drag-and-drop methods
+
+
+
+
+    def drop_map_clip_data(p1):
+        pass
+
+
+# Miscellaneous
+
+
+
+
+    def add_document(p1, p2, p3):
+        pass
+
+
+    def add_document_without_opening(p1, p2):
+        pass
+
+
+    def get_command_environment():
+        pass
+
+
+    def list_documents(p1, p2):
+        pass
+
+
+    def list_tools(p1, p2):
+        pass
+
+
+    def remove_document(p1):
+        pass
+
+
+    def remove_tool(p1):
+        pass
+
+
+    def save_close_documents(p1):
+        pass
+
+
+    def get_name(p1, p2):
+        pass
+
 
 
 
@@ -12017,7 +24172,7 @@ cdef class WrapPROJ:
 
 cdef class WrapRGRD:
     
-    
+
 
     cdef int32_t handle
     
@@ -12032,10 +24187,248 @@ cdef class WrapRGRD:
 
 
 
+    def clear(p1):
+        pass
+
+
+    def create():
+        pass
+
+
+    def create_img(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+
+
+    def default(p1, p2, p3):
+        pass
+
+
+    def load_parms(p1, p2):
+        pass
+
+
+    def run(p1, p2, p3):
+        pass
+
+
+    def run2(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def save_parms(p1, p2):
+        pass
+
+
+    def run_vv(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+
+
+
 cdef class WrapSEMPLOT:
     
-    
-    pass
+
+
+
+
+
+    def apply_filter_to_mask(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def convert_dummies(p1, p2):
+        pass
+
+
+    def create_groups(p1, p2):
+        pass
+
+
+    def default_groups(p1):
+        pass
+
+
+    def edit_map_plot_parameters(p1, p2, p3, p4, p5):
+        pass
+
+
+    def edit_plot_components(p1, p2):
+        pass
+
+
+    def edit_plot_parameters(p1, p2):
+        pass
+
+
+    def export_overlay(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def export_view(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def export_view2(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def filter_lst(p1):
+        pass
+
+
+    def filter_mineral_pos_data(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_associated_lst(p1, p2, p3):
+        pass
+
+
+    def get_current_mineral_lst(p1, p2, p3):
+        pass
+
+
+    def get_current_position_lst(p1, p2):
+        pass
+
+
+    def get_full_mineral_lst(p1):
+        pass
+
+
+    def get_full_position_lst(p1):
+        pass
+
+
+    def get_grouping_lst(p1, p2):
+        pass
+
+
+    def create_ascii_template(p1, p2):
+        pass
+
+
+    def create_database_template(p1, p2):
+        pass
+
+
+    def edit_filter(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_mineral_channel_name(p1, p2, p3):
+        pass
+
+
+    def import_ascii_wizard(p1, p2, p3, p4):
+        pass
+
+
+    def import_database_odbc(p1, p2, p3, p4):
+        pass
+
+
+    def import_bin(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def import_database_ado(p1, p2):
+        pass
+
+
+    def init_group_symbols_used(p1):
+        pass
+
+
+    def template_type(p1):
+        pass
+
+
+    def view_type(p1, p2):
+        pass
+
+
+    def mineral_id(p1, p2, p3, p4):
+        pass
+
+
+    def new_filter(p1, p2):
+        pass
+
+
+    def new_template(p1, p2, p3):
+        pass
+
+
+    def overlay_lst(p1, p2, p3):
+        pass
+
+
+    def plot(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def plot_symbol_legend(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def prop_symb(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def replot(p1, p2, p3, p4, p5):
+        pass
+
+
+    def re_plot_symbol_legend(p1, p2):
+        pass
+
+
+    def reset_groups(p1, p2):
+        pass
+
+
+    def reset_used_channel(p1):
+        pass
+
+
+    def select_poly(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def set_channel_order(p1, p2):
+        pass
+
+
+    def set_channel_units(p1):
+        pass
+
+
+    def set_itr(p1, p2, p3):
+        pass
+
+
+    def set_mask(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def sort_data(p1, p2, p3):
+        pass
+
+
+    def template_lst(p1, p2):
+        pass
+
+
+    def tile_windows():
+        pass
+
+
+    def total_oxides(p1, p2):
+        pass
 
 
 
@@ -12043,7 +24436,7 @@ cdef class WrapSEMPLOT:
 
 cdef class WrapSHP:
     
-    
+
 
     cdef int32_t handle
     
@@ -12058,10 +24451,128 @@ cdef class WrapSHP:
 
 
 
+    def append_item(p1):
+        pass
+
+
+    def create(p1, p2):
+        pass
+
+
+
+
+    def add_int_field(p1, p2):
+        pass
+
+
+    def add_double_field(p1, p2, p3):
+        pass
+
+
+    def add_string_field(p1, p2, p3):
+        pass
+
+
+    def find_field(p1, p2):
+        pass
+
+
+    def max_id_num(p1):
+        pass
+
+
+    def num_fields(p1):
+        pass
+
+
+    def num_records(p1):
+        pass
+
+
+    def type(p1):
+        pass
+
+
+    def open(p1):
+        pass
+
+
+    def set_arc(p1, p2, p3):
+        pass
+
+
+    def set_arc_z(p1, p2, p3, p4):
+        pass
+
+
+    def set_int(p1, p2, p3):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+    def set_point(p1, p2, p3):
+        pass
+
+
+    def set_point_z(p1, p2, p3, p4):
+        pass
+
+
+    def set_polygon(p1, p2, p3, p4):
+        pass
+
+
+    def set_polygon_z(p1, p2, p3, p4, p5):
+        pass
+
+
+    def set_double(p1, p2, p3):
+        pass
+
+
+    def set_string(p1, p2, p3):
+        pass
+
+
+    def write_item(p1):
+        pass
+
+
+
+
+
 cdef class WrapSQLSRV:
     
-    
-    pass
+
+
+
+
+
+    def attach_mdf(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def detach_db(p1, p2, p3, p4):
+        pass
+
+
+    def get_database_languages_lst(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_databases_lst(p1, p2, p3, p4, p5):
+        pass
+
+
+    def get_login_gui(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def get_servers_lst(p1):
+        pass
 
 
 
@@ -12069,7 +24580,7 @@ cdef class WrapSQLSRV:
 
 cdef class WrapSTK:
     
-    
+
 
     cdef int32_t handle
     
@@ -12084,10 +24595,126 @@ cdef class WrapSTK:
 
 
 
+    def get_trans_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_axis_format(p1, p2):
+        pass
+
+
+    def get_axis_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def get_fid_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def get_flag(p1, p2):
+        pass
+
+
+    def get_gen_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def get_grid_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def get_label_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14):
+        pass
+
+
+    def get_profile(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19):
+        pass
+
+
+    def get_profile_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def get_symb_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
+        pass
+
+
+    def get_title_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17):
+        pass
+
+
+    def set_flag(p1, p2, p3):
+        pass
+
+
+    def set_array_colors(p1, p2):
+        pass
+
+
+    def set_axis_format(p1, p2, p3):
+        pass
+
+
+    def set_axis_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+    def set_fid_parms(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def set_gen_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def set_grid_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def set_label_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12):
+        pass
+
+
+    def set_line_parm(p1, p2):
+        pass
+
+
+    def set_profile(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def set_profile_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16):
+        pass
+
+
+    def set_symb_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15):
+        pass
+
+
+    def set_title_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13):
+        pass
+
+
+    def set_trans_parms(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def set_va_index_start(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapSTRINGS:
     
-    
-    pass
+
+
+
+
+
+    def launch_digitization_ui(p1, p2):
+        pass
 
 
 
@@ -12095,7 +24722,7 @@ cdef class WrapSTRINGS:
 
 cdef class WrapTC:
     
-    
+
 
     cdef int32_t handle
     
@@ -12110,10 +24737,60 @@ cdef class WrapTC:
 
 
 
+    def create(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def create_ex(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11):
+        pass
+
+
+
+
+    def grregter(p1, p2, p3):
+        pass
+
+
+    def grterain(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def grterain2(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def g_gterain(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+
+
+
 cdef class WrapTEST:
     
-    
-    pass
+
+
+
+
+
+    def enable_disable_arc_engine_license(p1):
+        pass
+
+
+    def arc_engine_license():
+        pass
+
+
+    def test_mode():
+        pass
+
+
+    def wrapper_test(p1, p2):
+        pass
+
+
+    def core_class(p1, p2):
+        pass
 
 
 
@@ -12121,7 +24798,7 @@ cdef class WrapTEST:
 
 cdef class WrapTIN:
     
-    
+
 
     cdef int32_t handle
     
@@ -12136,10 +24813,116 @@ cdef class WrapTIN:
 
 
 
+    def copy(p1, p2):
+        pass
+
+
+    def create(p1, p2, p3):
+        pass
+
+
+    def create_s(p1):
+        pass
+
+
+
+
+    def export_xml(p1, p2, p3):
+        pass
+
+
+    def get_convex_hull(p1, p2):
+        pass
+
+
+    def get_ipj(p1, p2):
+        pass
+
+
+    def get_joins(p1, p2, p3, p4):
+        pass
+
+
+    def get_mesh(p1, p2):
+        pass
+
+
+    def get_nodes(p1, p2, p3, p4):
+        pass
+
+
+    def get_triangles(p1, p2, p3, p4):
+        pass
+
+
+    def get_triangle(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_voronoi_edges(p1, p2):
+        pass
+
+
+    def is_z_valued(p1):
+        pass
+
+
+    def locate_triangle(p1, p2, p3, p4):
+        pass
+
+
+    def nodes(p1):
+        pass
+
+
+    def interp_vv(p1, p2, p3, p4):
+        pass
+
+
+    def triangles(p1):
+        pass
+
+
+    def linear_interp_vv(p1, p2, p3, p4):
+        pass
+
+
+    def nearest_vv(p1, p2, p3, p4):
+        pass
+
+
+    def range_xy(p1, p2, p3, p4, p5):
+        pass
+
+
+    def serial(p1, p2):
+        pass
+
+
+    def set_ipj(p1, p2):
+        pass
+
+
+
+
+
 cdef class WrapTRND:
     
-    
-    pass
+
+
+
+
+
+    def get_max_min(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def get_mesh(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def trnd_db(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
 
 
 
@@ -12147,8 +24930,25 @@ cdef class WrapTRND:
 
 cdef class WrapUNC:
     
-    
-    pass
+
+
+
+
+
+    def is_valid_utf16_char(p1):
+        pass
+
+
+    def valid_symbol(p1, p2, p3):
+        pass
+
+
+    def utf16_val_to_str(p1, p2, p3):
+        pass
+
+
+    def validate_symbols(p1, p2, p3):
+        pass
 
 
 
@@ -12156,8 +24956,17 @@ cdef class WrapUNC:
 
 cdef class WrapVAU:
     
-    
-    pass
+
+
+
+
+
+    def prune(p1, p2, p3):
+        pass
+
+
+    def total_vector(p1, p2, p3, p4):
+        pass
 
 
 
@@ -12165,7 +24974,7 @@ cdef class WrapVAU:
 
 cdef class WrapVVEXP:
     
-    
+
 
     cdef int32_t handle
     
@@ -12180,10 +24989,324 @@ cdef class WrapVVEXP:
 
 
 
+    def add_vv(p1, p2, p3):
+        pass
+
+
+    def create():
+        pass
+
+
+
+
+    def do_formula(p1, p2, p3):
+        pass
+
+
+
+
+
 cdef class WrapVVU:
     
-    
-    pass
+
+
+
+
+
+    def average_repeat(p1, p2):
+        pass
+
+
+    def average_repeat_ex(p1, p2, p3):
+        pass
+
+
+    def average_repeat2(p1, p2, p3):
+        pass
+
+
+    def average_repeat2_ex(p1, p2, p3, p4):
+        pass
+
+
+    def binary_search(p1, p2, p3, p4):
+        pass
+
+
+    def box_cox(p1, p2):
+        pass
+
+
+    def bp_filt(p1, p2, p3, p4, p5):
+        pass
+
+
+    def clip(p1, p2, p3, p4):
+        pass
+
+
+    def clip_to_detect_limit(p1, p2, p3):
+        pass
+
+
+    def decimate(p1, p2):
+        pass
+
+
+    def deviation(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def distance(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def distance_non_cumulative(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def distance_3d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def find_gaps_3d(p1, p2, p3, p4, p5):
+        pass
+
+
+    def dummy_range(p1, p2, p3, p4, p5):
+        pass
+
+
+    def dummy_range_ex(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def dummy_repeat(p1, p2):
+        pass
+
+
+    def dup_stats(p1, p2, p3, p4):
+        pass
+
+
+    def exp_dist(p1, p2, p3, p4):
+        pass
+
+
+    def filter(p1, p2, p3):
+        pass
+
+
+    def find_string_items(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def fractal_filter(p1, p2, p3, p4):
+        pass
+
+
+    def close_xy(p1, p2, p3, p4):
+        pass
+
+
+    def close_xym(p1, p2, p3, p4, p5):
+        pass
+
+
+    def close_xyz(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def close_xyzm(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def dummy_back_tracks(p1):
+        pass
+
+
+    def find_dummy(p1, p2, p3, p4, p5):
+        pass
+
+
+    def interp(p1, p2, p3):
+        pass
+
+
+    def qc_fill_gaps(p1, p2, p3, p4, p5):
+        pass
+
+
+    def search_text(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def mask(p1, p2):
+        pass
+
+
+    def mask_and(p1, p2, p3):
+        pass
+
+
+    def mask_or(p1, p2, p3):
+        pass
+
+
+    def nl_filt(p1, p2, p3, p4):
+        pass
+
+
+    def noise_check(p1, p2, p3, p4):
+        pass
+
+
+    def noise_check2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def normal_dist(p1, p2, p3, p4, p5):
+        pass
+
+
+    def offset_circles(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def offset_correct(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def offset_correct2(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def offset_correct3(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def offset_correct_xyz(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+        pass
+
+
+    def offset_rectangles(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def pick_peak(p1, p2, p3, p4):
+        pass
+
+
+    def pick_peak2(p1, p2, p3, p4):
+        pass
+
+
+    def pick_peak3(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def poly_fill(p1, p2, p3):
+        pass
+
+
+    def poly_fill2(p1, p2, p3, p4):
+        pass
+
+
+    def polygon_mask(p1, p2, p3, p4, p5):
+        pass
+
+
+    def prune(p1, p2, p3):
+        pass
+
+
+    def qc(p1, p2, p3, p4, p5, p6, p7, p8):
+        pass
+
+
+    def range_vector_mag(p1, p2, p3, p4):
+        pass
+
+
+    def regress(p1, p2, p3, p4):
+        pass
+
+
+    def rel_var_dup(p1, p2, p3, p4):
+        pass
+
+
+    def remove_dummy(p1):
+        pass
+
+
+    def remove_dummy2(p1, p2):
+        pass
+
+
+    def remove_dummy3(p1, p2, p3):
+        pass
+
+
+    def remove_dummy4(p1, p2, p3, p4):
+        pass
+
+
+    def remove_dup(p1, p2, p3):
+        pass
+
+
+    def remove_xy_dup(p1, p2, p3, p4):
+        pass
+
+
+    def remove_xy_dup_index(p1, p2, p3):
+        pass
+
+
+    def rolling_stats(p1, p2, p3, p4, p5):
+        pass
+
+
+    def search_replace(p1, p2, p3):
+        pass
+
+
+    def search_replace_text(p1, p2, p3, p4, p5, p6):
+        pass
+
+
+    def search_replace_text_ex(p1, p2, p3, p4, p5, p6, p7):
+        pass
+
+
+    def spline(p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        pass
+
+
+    def spline2(p1, p2, p3, p4, p5):
+        pass
+
+
+    def tokenize_to_values(p1, p2):
+        pass
+
+
+    def translate(p1, p2, p3):
+        pass
+
+
+    def trend(p1, p2, p3):
+        pass
+
+
+    def trend2(p1, p2, p3, p4):
+        pass
+
+
+    def uniform_dist(p1, p2, p3, p4, p5):
+        pass
 
 
 
