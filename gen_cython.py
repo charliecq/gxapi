@@ -89,7 +89,10 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         if self.external_name:
             return self.external_name
         else:
-            return self.name
+            if self.is_app:
+                return 'App_{}'.format(self.name)
+            else:
+                return self.name
 
     def render_parameters(self):
         return self.generator.get_template("""(void*{% for param in parameters %}, {{ param.c_type }}{% endfor %});""").render(parameters=self.parameters)
@@ -109,6 +112,37 @@ class CythonClass(Class):
 {{- cl.header -}}
 {{- cl.c_methods -}}
 """).render(cl=self)
+
+    @property
+    def class_wrapper(self):
+        return self.generator.get_template("""
+
+cdef class Wrap{{ cl.name }}:
+    
+    {{ cl.init_dealloc }}
+
+""").render(cl=self)
+
+    @property
+    def init_dealloc(self):
+        if self.is_static:
+            return """
+    pass
+"""
+        else:
+            return self.generator.get_template("""
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            {{ cl.default_destroy_method }}(get_p_geo(), &self.handle)
+
+""").render(cl=self)
+
 
     @property
     def header(self):
@@ -151,6 +185,11 @@ class CythonCodeGenerator(CodeGeneratorBase):
 from libc.stdint cimport int32_t, int16_t
 from libc.stdlib cimport malloc, free
 
+import threading
+from threading import current_thread
+
+thread_local = threading.local()
+
 from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
 {% for key, cl in classes.items() %}
@@ -174,22 +213,27 @@ cdef unicode tounicode_with_length_and_free(
     finally:
         free(s)
 
-cdef class Geo:
+cdef class WrapPGeo:
     cdef void* p_geo
     
     def __cinit__(self, const char* app, const char* ver, wind_id=0):
         cdef void* hParentWnd = <void *>wind_id
         cdef char* err = <char*>malloc(4096)
         try:
+            tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+            if not tls_geo is None:
+                raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
             if self.p_geo == NULL:
-                raise GXAPIError(tounicode(err));
+                raise GXAPIError(tounicode(err))
+            thread_local.gxapi_cy_geo = <size_t>self.p_geo
         finally:
             free(err)
         
     def __dealloc__(self):
         if self.p_geo != NULL:
             Destroy_GEO(self.p_geo)
+        thread_local.gxapi_cy_geo = None
 
     cdef _raise_on_gx_errors(self, void* p_geo):
         cdef int32_t term
@@ -205,9 +249,7 @@ cdef class Geo:
                 module = <char*>malloc(1024)
                 err = <char*>malloc(4096)
                 try:
-                    
                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
-            
                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
                         raise GXAPIError(tounicode(err));
@@ -225,7 +267,18 @@ cdef class Geo:
         self._raise_on_gx_errors(self.p_geo)
         return retval
 
+cdef void* get_p_geo():
+    tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+    if not tls_geo is None:
+        raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
+    return <void*>tls_geo
+
+{% for key, cl in classes.items() %}
+{{ cl.class_wrapper }}
+{% endfor %}
+
 ''').render(classes=self.classes)
+
 
 # running as stand-alone program
 if __name__ == "__main__":

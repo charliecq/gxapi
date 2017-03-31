@@ -4,7 +4,7 @@ import os
 import re
 import copy
 import itertools
-from jinja2 import Environment
+from jinja2 import Environment, StrictUndefined
 
 from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
@@ -73,6 +73,7 @@ class CodeGeneratorBase:
 
         self.j2env = Environment() #trim_blocks=True, lstrip_blocks=True)
         self.j2env.filters['comment'] = do_comment
+        self.j2env.undefined = StrictUndefined
 
         # Some regular expressions to sanitize documentation
         self.re_class = re.compile(':class:`(.*?)`')
@@ -102,6 +103,11 @@ class CodeGeneratorBase:
                 define.constants = gen_constants
                 cl.defines[d.name] = define
 
+            cl.is_static = True
+            default_destr_name = 'Destroy_{}'.format(cl.name)
+            default_destrex_name = 'DestroyEx_{}'.format(cl.name)
+
+
             # method groups
             for g_k, g in _class_method_groups[c_name].items():
                 # methods within each group
@@ -112,6 +118,7 @@ class CodeGeneratorBase:
                         method.parent = cl
                         method.generator = self
 
+
                         # parameters within method
                         parameters = []
                         for p in m.parameters:
@@ -120,7 +127,21 @@ class CodeGeneratorBase:
                             parameter.generator = self
                             parameters.append(parameter)
                         method.parameters = parameters
+                        method.is_static = len(parameters) == 0 or not parameters[0].type == cl.name
+                        if not method.is_static:
+                            cl.is_static = False
 
+                        method.is_destroy_method = method.name == default_destrex_name or method.name == default_destrex_name
+
+                        if cl.name == 'BF':
+                            # We only use the DestroyEx in BF
+                            if method.name == default_destrex_name:
+                                cl.default_destroy_method = default_destrex_name
+                        elif method.name == default_destr_name:
+                            if method.is_app:
+                                cl.default_destroy_method = 'App_{}'.format(default_destr_name)
+                            else:
+                                cl.default_destroy_method = default_destr_name
                         methods.append(method)
                 if len(methods) > 0:
                     cl.method_groups[g_k] = methods

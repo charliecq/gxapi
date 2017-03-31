@@ -39,5 +39,7 @@ class Method(SpecBase):
         self.notes = notes
         self.see_also = see_also
         self.parameters = parameters
+        self.is_static = True
+        self.is_destroy_method = False
 
 

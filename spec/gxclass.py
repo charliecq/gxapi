@@ -14,3 +14,5 @@ class Class(SpecBase):
         self.doc = doc
         self.notes = notes
         self.verbatim_gxh_defines = verbatim_gxh_defines
+        self.is_static = True
+        self.default_destroy_method = "Destr_SYS"

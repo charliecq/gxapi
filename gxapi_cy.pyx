@@ -4,6 +4,11 @@
 from libc.stdint cimport int32_t, int16_t
 from libc.stdlib cimport malloc, free
 
+import threading
+from threading import current_thread
+
+thread_local = threading.local()
+
 from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
 
@@ -2270,7 +2275,7 @@ cdef extern void CRCMap_MAP(void*, const int32_t*, int32_t*, const void*);
 cdef extern int32_t Create_MAP(void*, const void*, const int32_t*);
 
 
-cdef extern int32_t Current_MAP(void*);
+cdef extern int32_t App_Current_MAP(void*);
 
 
 cdef extern void DeleteView_MAP(void*, const int32_t*, const void*);
@@ -2348,7 +2353,7 @@ cdef extern void SaveAsMXD_MAP(void*, const int32_t*, const void*);
 cdef extern void SetClassName_MAP(void*, const int32_t*, const void*, const void*);
 
 
-cdef extern void SetCurrent_MAP(void*, const int32_t*);
+cdef extern void App_SetCurrent_MAP(void*, const int32_t*);
 
 
 cdef extern void SetMapName_MAP(void*, const int32_t*, const void*);
@@ -4536,7 +4541,7 @@ cdef extern int32_t iRunGX_SYS(void*, const void*);
 cdef extern int32_t iRunGXEx_SYS(void*, const void*, int32_t*);
 
 
-cdef extern int32_t iRunPDF_SYS(void*, const void*, const void*);
+cdef extern int32_t App_iRunPDF_SYS(void*, const void*, const void*);
 
 
 cdef extern int32_t iShellExecute_SYS(void*, const void*, const void*, const void*, const void*, const int32_t*);
@@ -4550,7 +4555,7 @@ cdef extern void SetReturn_SYS(void*, const int32_t*);
 
 
 
-cdef extern void DoCommand_SYS(void*, const void*);
+cdef extern void App_DoCommand_SYS(void*, const void*);
 
 
 cdef extern void Error_SYS(void*, const void*, const void*, const int32_t*);
@@ -4562,13 +4567,13 @@ cdef extern void ErrorTag_SYS(void*, const void*, const void*);
 cdef extern int32_t iAssertGX_SYS(void*, const int32_t*, const void*, const void*);
 
 
-cdef extern int32_t iOLEAutomation_SYS(void*, const void*, const void*, const int32_t*);
+cdef extern int32_t App_iOLEAutomation_SYS(void*, const void*, const void*, const int32_t*);
 
 
-cdef extern void SaveLog_SYS(void*, const void*);
+cdef extern void App_SaveLog_SYS(void*, const void*);
 
 
-cdef extern void ShowError_SYS(void*);
+cdef extern void App_ShowError_SYS(void*);
 
 
 cdef extern void Terminate_SYS(void*, const void*);
@@ -4695,7 +4700,7 @@ cdef extern void GlobalWrite_SYS(void*, const void*);
 cdef extern int32_t IiGlobal_SYS(void*, const void*, void*, const int32_t*);
 
 
-cdef extern void ResetSettings_SYS(void*);
+cdef extern void App_ResetSettings_SYS(void*);
 
 
 cdef extern void SetSettingsMETA_SYS(void*, const int32_t*);
@@ -4773,13 +4778,13 @@ cdef extern void SetLineageName_SYS(void*, const void*);
 
 
 
-cdef extern void ClearMenus_SYS(void*, const int32_t*);
+cdef extern void App_ClearMenus_SYS(void*, const int32_t*);
 
 
-cdef extern void GetLoadedMenus_SYS(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_GetLoadedMenus_SYS(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetLoadedMenus_SYS(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetLoadedMenus_SYS(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
 cdef extern void GetEntitlementRights_SYS(void*, const int32_t*);
@@ -5001,31 +5006,31 @@ cdef extern int32_t iGetTimer_SYS(void*, const int32_t*, double*, double*);
 
 
 
-cdef extern void DisplayHelp_SYS(void*, const void*, const void*);
+cdef extern void App_DisplayHelp_SYS(void*, const void*, const void*);
 
 
-cdef extern void DisplayHelpTopic_SYS(void*, const void*, const void*);
+cdef extern void App_DisplayHelpTopic_SYS(void*, const void*, const void*);
 
 
-cdef extern void DisplayInt_SYS(void*, const void*, const int32_t*);
+cdef extern void App_DisplayInt_SYS(void*, const void*, const int32_t*);
 
 
-cdef extern void DisplayMessage_SYS(void*, const void*, const void*);
+cdef extern void App_DisplayMessage_SYS(void*, const void*, const void*);
 
 
-cdef extern void DisplayReal_SYS(void*, const void*, const double*);
+cdef extern void App_DisplayReal_SYS(void*, const void*, const double*);
 
 
-cdef extern int32_t iDisplayQuestion_SYS(void*, const void*, const void*);
+cdef extern int32_t App_iDisplayQuestion_SYS(void*, const void*, const void*);
 
 
-cdef extern int32_t iDisplayQuestionWithCancel_SYS(void*, const void*, const void*);
+cdef extern int32_t App_iDisplayQuestionWithCancel_SYS(void*, const void*, const void*);
 
 
 cdef extern int32_t iInteractive_SYS(void*);
 
 
-cdef extern int32_t IiPrompt_SYS(void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_IiPrompt_SYS(void*, const void*, void*, const int32_t*);
 
 
 cdef extern int32_t iScript_SYS(void*);
@@ -5034,10 +5039,10 @@ cdef extern int32_t iScript_SYS(void*);
 cdef extern int32_t iScriptRecord_SYS(void*);
 
 
-cdef extern void SetCursor_SYS(void*, const void*);
+cdef extern void App_SetCursor_SYS(void*, const void*);
 
 
-cdef extern void SetInfoLine_SYS(void*, const void*);
+cdef extern void App_SetInfoLine_SYS(void*, const void*);
 
 
 cdef extern void SetInteractive_SYS(void*, const int32_t*);
@@ -6461,37 +6466,37 @@ cdef extern void SetStaticCol_CSYMB(void*, const int32_t*, const int32_t*, const
 # Class DGW
 
 
-cdef extern int32_t Create_DGW(void*, const void*);
+cdef extern int32_t App_Create_DGW(void*, const void*);
 
 
-cdef extern void Destroy_DGW(void*, const int32_t*);
+cdef extern void App_Destroy_DGW(void*, const int32_t*);
 
 
-cdef extern void GetInfoMETA_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_GetInfoMETA_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void GetInfoSYS_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
+cdef extern void App_GetInfoSYS_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
 
 
-cdef extern int32_t GetList_DGW(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_GetList_DGW(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void GtInfo_DGW(void*, const int32_t*, const int32_t*, const int32_t*, void*, const int32_t*);
+cdef extern void App_GtInfo_DGW(void*, const int32_t*, const int32_t*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iRunDialogue_DGW(void*, const int32_t*);
+cdef extern int32_t App_iRunDialogue_DGW(void*, const int32_t*);
 
 
-cdef extern void SetInfo_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const void*);
+cdef extern void App_SetInfo_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern void SetInfoMETA_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetInfoMETA_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetInfoSYS_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
+cdef extern void App_SetInfoSYS_DGW(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
 
 
-cdef extern void SetTitle_DGW(void*, const int32_t*, const void*);
+cdef extern void App_SetTitle_DGW(void*, const int32_t*, const void*);
 
 
 
@@ -7596,160 +7601,160 @@ cdef extern void GetRange_DXFI(void*, const int32_t*, double*, double*, double*,
 
 
 
-cdef extern void ApplyFormulaInternal_EDB(void*, const int32_t*, const void*);
+cdef extern void App_ApplyFormulaInternal_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern int32_t Current_EDB(void*);
+cdef extern int32_t App_Current_EDB(void*);
 
 
-cdef extern int32_t CurrentNoActivate_EDB(void*);
+cdef extern int32_t App_CurrentNoActivate_EDB(void*);
 
 
-cdef extern int32_t CurrentIfExists_EDB(void*);
+cdef extern int32_t App_CurrentIfExists_EDB(void*);
 
 
-cdef extern void DelLine0_EDB(void*, const int32_t*);
+cdef extern void App_DelLine0_EDB(void*, const int32_t*);
 
 
-cdef extern void Destroy_EDB(void*, const int32_t*);
+cdef extern void App_Destroy_EDB(void*, const int32_t*);
 
 
-cdef extern void DestroyView_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_DestroyView_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t GetCurChanSymb_EDB(void*, const int32_t*);
+cdef extern int32_t App_GetCurChanSymb_EDB(void*, const int32_t*);
 
 
-cdef extern int32_t GetCurLineSymb_EDB(void*, const int32_t*);
+cdef extern int32_t App_GetCurLineSymb_EDB(void*, const int32_t*);
 
 
-cdef extern void GetDisplFidRange_EDB(void*, const int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetDisplFidRange_EDB(void*, const int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void GetFidRange_EDB(void*, const int32_t*, double*, double*, int32_t*);
+cdef extern void App_GetFidRange_EDB(void*, const int32_t*, double*, double*, int32_t*);
 
 
-cdef extern int32_t GetNextLineSymb_EDB(void*, const int32_t*);
+cdef extern int32_t App_GetNextLineSymb_EDB(void*, const int32_t*);
 
 
-cdef extern int32_t GetPrevLineSymb_EDB(void*, const int32_t*);
+cdef extern int32_t App_GetPrevLineSymb_EDB(void*, const int32_t*);
 
 
-cdef extern void GetProfileRangeX_EDB(void*, const int32_t*, double*, double*, int32_t*);
+cdef extern void App_GetProfileRangeX_EDB(void*, const int32_t*, double*, double*, int32_t*);
 
 
-cdef extern void GetProfileRangeY_EDB(void*, const int32_t*, const int32_t*, const int32_t*, double*, double*, int32_t*);
+cdef extern void App_GetProfileRangeY_EDB(void*, const int32_t*, const int32_t*, const int32_t*, double*, double*, int32_t*);
 
 
-cdef extern void GetProfileSplit_EDB(void*, const int32_t*, double*, double*);
+cdef extern void App_GetProfileSplit_EDB(void*, const int32_t*, double*, double*);
 
 
-cdef extern void GetProfileSplit5_EDB(void*, const int32_t*, double*, double*, double*, double*);
+cdef extern void App_GetProfileSplit5_EDB(void*, const int32_t*, double*, double*, double*, double*);
 
 
-cdef extern void GetProfileSplitVV_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_GetProfileSplitVV_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void GetProfileVerticalGridLines_EDB(void*, const int32_t*, int32_t*, double*);
+cdef extern void App_GetProfileVerticalGridLines_EDB(void*, const int32_t*, int32_t*, double*);
 
 
-cdef extern void GetProfileWindow_EDB(void*, const int32_t*, const int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetProfileWindow_EDB(void*, const int32_t*, const int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void GotoColumn_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_GotoColumn_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void GotoElem_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_GotoElem_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void GotoLine_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_GotoLine_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void Histogram_EDB(void*, const int32_t*, const int32_t*, const double*, const double*, const int32_t*);
+cdef extern void App_Histogram_EDB(void*, const int32_t*, const int32_t*, const double*, const double*, const int32_t*);
 
 
-cdef extern int32_t iAllChanList_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iAllChanList_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iChannels_EDB(void*, const int32_t*);
+cdef extern int32_t App_iChannels_EDB(void*, const int32_t*);
 
 
-cdef extern int32_t iDispChanList_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iDispChanList_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iDispChanLST_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iDispChanLST_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iDispClassChanLST_EDB(void*, const int32_t*, const int32_t*, const void*);
+cdef extern int32_t App_iDispClassChanLST_EDB(void*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern int32_t iFindChannelColumn_EDB(void*, const int32_t*, const void*);
+cdef extern int32_t App_iFindChannelColumn_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern int32_t iFindNearest_EDB(void*, const int32_t*, double*, double*, double*, const int32_t*);
+cdef extern int32_t App_iFindNearest_EDB(void*, const int32_t*, double*, double*, double*, const int32_t*);
 
 
-cdef extern void IGetCurChan_EDB(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetCurChan_EDB(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern void IGetCurFidString_EDB(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetCurFidString_EDB(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern void IGetCurLine_EDB(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetCurLine_EDB(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iGetCurMark_EDB(void*, const int32_t*, double*, double*, double*);
+cdef extern int32_t App_iGetCurMark_EDB(void*, const int32_t*, double*, double*, double*);
 
 
-cdef extern void IGetCurrentSelection_EDB(void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetCurrentSelection_EDB(void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iGetDatabasesLST_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetDatabasesLST_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetMarkChanVV_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetMarkChanVV_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetMarkChanVA_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetMarkChanVA_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void IGetName_EDB(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetName_EDB(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iGetProfileParm_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetProfileParm_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetWindowState_EDB(void*, const int32_t*);
+cdef extern int32_t App_iGetWindowState_EDB(void*, const int32_t*);
 
 
-cdef extern int32_t iHaveCurrent_EDB(void*);
+cdef extern int32_t App_iHaveCurrent_EDB(void*);
 
 
-cdef extern int32_t iIsLocked_EDB(void*, const int32_t*);
+cdef extern int32_t App_iIsLocked_EDB(void*, const int32_t*);
 
 
-cdef extern int32_t iLoaded_EDB(void*, const void*);
+cdef extern int32_t App_iLoaded_EDB(void*, const void*);
 
 
-cdef extern int32_t iProfileOpen_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iProfileOpen_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iReadOnly_EDB(void*, const int32_t*);
+cdef extern int32_t App_iReadOnly_EDB(void*, const int32_t*);
 
 
-cdef extern void GetWindowPosition_EDB(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetWindowPosition_EDB(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void SetWindowPosition_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowPosition_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iShowProfileName_EDB(void*, const int32_t*, const int32_t*, const void*);
+cdef extern int32_t App_iShowProfileName_EDB(void*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern int32_t iGetWindowYAxisDirection_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetWindowYAxisDirection_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iWindowProfiles_EDB(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iWindowProfiles_EDB(void*, const int32_t*, const int32_t*);
 
 
 cdef extern void LaunchHistogram_EDB(void*, const int32_t*, const void*);
@@ -7758,112 +7763,112 @@ cdef extern void LaunchHistogram_EDB(void*, const int32_t*, const void*);
 cdef extern void LaunchScatter_EDB(void*, const int32_t*);
 
 
-cdef extern int32_t Load_EDB(void*, const void*);
+cdef extern int32_t App_Load_EDB(void*, const void*);
 
 
-cdef extern int32_t LoadNoActivate_EDB(void*, const void*);
+cdef extern int32_t App_LoadNoActivate_EDB(void*, const void*);
 
 
-cdef extern void LoadAllChans_EDB(void*, const int32_t*);
+cdef extern void App_LoadAllChans_EDB(void*, const int32_t*);
 
 
-cdef extern void LoadChan_EDB(void*, const int32_t*, const void*);
+cdef extern void App_LoadChan_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern int32_t LoadNew_EDB(void*, const void*);
+cdef extern int32_t App_LoadNew_EDB(void*, const void*);
 
 
-cdef extern int32_t LoadPass_EDB(void*, const void*, const void*, const void*);
+cdef extern int32_t App_LoadPass_EDB(void*, const void*, const void*, const void*);
 
 
-cdef extern int32_t LoadWithView_EDB(void*, const void*, const int32_t*);
+cdef extern int32_t App_LoadWithView_EDB(void*, const void*, const int32_t*);
 
 
-cdef extern int32_t Lock_EDB(void*, const int32_t*);
+cdef extern int32_t App_Lock_EDB(void*, const int32_t*);
 
 
-cdef extern void MakeCurrent_EDB(void*, const int32_t*);
+cdef extern void App_MakeCurrent_EDB(void*, const int32_t*);
 
 
-cdef extern void RemoveProfile_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_RemoveProfile_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern double rGetCurFid_EDB(void*, const int32_t*);
+cdef extern double App_rGetCurFid_EDB(void*, const int32_t*);
 
 
-cdef extern double rGetProfileParm_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern double App_rGetProfileParm_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern double rGetSplit_EDB(void*, const int32_t*);
+cdef extern double App_rGetSplit_EDB(void*, const int32_t*);
 
 
-cdef extern void RunChannelMaker_EDB(void*, const int32_t*, const void*);
+cdef extern void App_RunChannelMaker_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern void RunChannelMakers_EDB(void*, const int32_t*);
+cdef extern void App_RunChannelMakers_EDB(void*, const int32_t*);
 
 
-cdef extern void SetCurLine_EDB(void*, const int32_t*, const void*);
+cdef extern void App_SetCurLine_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern void SetCurLineNoMessage_EDB(void*, const int32_t*, const void*);
+cdef extern void App_SetCurLineNoMessage_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern void SetCurMark_EDB(void*, const int32_t*, const double*, const double*);
+cdef extern void App_SetCurMark_EDB(void*, const int32_t*, const double*, const double*);
 
 
-cdef extern void SetProfileParmI_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetProfileParmI_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetProfileParmR_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*);
+cdef extern void App_SetProfileParmR_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*);
 
 
-cdef extern void SetProfileRangeX_EDB(void*, const int32_t*, const double*, const double*, const int32_t*);
+cdef extern void App_SetProfileRangeX_EDB(void*, const int32_t*, const double*, const double*, const int32_t*);
 
 
-cdef extern void SetProfileRangeY_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const double*, const double*, const int32_t*);
+cdef extern void App_SetProfileRangeY_EDB(void*, const int32_t*, const int32_t*, const int32_t*, const double*, const double*, const int32_t*);
 
 
-cdef extern void SetProfileSplit_EDB(void*, const int32_t*, const double*, const double*);
+cdef extern void App_SetProfileSplit_EDB(void*, const int32_t*, const double*, const double*);
 
 
-cdef extern void SetProfileSplit5_EDB(void*, const int32_t*, const double*, const double*, const double*, const double*);
+cdef extern void App_SetProfileSplit5_EDB(void*, const int32_t*, const double*, const double*, const double*, const double*);
 
 
-cdef extern void SetProfileSplitVV_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetProfileSplitVV_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetSplit_EDB(void*, const int32_t*, const double*);
+cdef extern void App_SetSplit_EDB(void*, const int32_t*, const double*);
 
 
-cdef extern void SetWindowState_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowState_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void ShowProfile_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_ShowProfile_EDB(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void Statistics_EDB(void*, const int32_t*, const int32_t*);
+cdef extern void App_Statistics_EDB(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void UnLoad_EDB(void*, const void*);
+cdef extern void App_UnLoad_EDB(void*, const void*);
 
 
-cdef extern void UnLoadAll_EDB(void*);
+cdef extern void App_UnLoadAll_EDB(void*);
 
 
-cdef extern void UnLoadAllChans_EDB(void*, const int32_t*);
+cdef extern void App_UnLoadAllChans_EDB(void*, const int32_t*);
 
 
-cdef extern void UnLoadChan_EDB(void*, const int32_t*, const void*);
+cdef extern void App_UnLoadChan_EDB(void*, const int32_t*, const void*);
 
 
-cdef extern void UnLoadDiscard_EDB(void*, const void*);
+cdef extern void App_UnLoadDiscard_EDB(void*, const void*);
 
 
-cdef extern void UnLoadVerify_EDB(void*, const void*, const int32_t*);
+cdef extern void App_UnLoadVerify_EDB(void*, const void*, const int32_t*);
 
 
-cdef extern void UnLock_EDB(void*, const int32_t*);
+cdef extern void App_UnLock_EDB(void*, const int32_t*);
 
 
 # External Window
@@ -7871,16 +7876,16 @@ cdef extern void UnLock_EDB(void*, const int32_t*);
 
 
 
-cdef extern void LoadControl_EDB(void*, const void*, int32_t);
+cdef extern void App_LoadControl_EDB(void*, const void*, int32_t);
 
 
-cdef extern void LoadNewControl_EDB(void*, const void*, int32_t);
+cdef extern void App_LoadNewControl_EDB(void*, const void*, int32_t);
 
 
-cdef extern void LoadPassControl_EDB(void*, const void*, const void*, const void*, int32_t);
+cdef extern void App_LoadPassControl_EDB(void*, const void*, const void*, const void*, int32_t);
 
 
-cdef extern void LoadWithViewControl_EDB(void*, const void*, const int32_t*, int32_t);
+cdef extern void App_LoadWithViewControl_EDB(void*, const void*, const int32_t*, int32_t);
 
 
 
@@ -7892,7 +7897,7 @@ cdef extern void LoadWithViewControl_EDB(void*, const void*, const int32_t*, int
 
 
 
-cdef extern int32_t CreateNewGMS3D_EDOC(void*, const void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_CreateNewGMS3D_EDOC(void*, const void*, const int32_t*, const int32_t*, const int32_t*);
 
 
 # Miscellaneous
@@ -7900,70 +7905,70 @@ cdef extern int32_t CreateNewGMS3D_EDOC(void*, const void*, const int32_t*, cons
 
 
 
-cdef extern int32_t Current_EDOC(void*, const int32_t*);
+cdef extern int32_t App_Current_EDOC(void*, const int32_t*);
 
 
-cdef extern int32_t CurrentNoActivate_EDOC(void*, const int32_t*);
+cdef extern int32_t App_CurrentNoActivate_EDOC(void*, const int32_t*);
 
 
-cdef extern int32_t CurrentIfExists_EDOC(void*, const int32_t*);
+cdef extern int32_t App_CurrentIfExists_EDOC(void*, const int32_t*);
 
 
-cdef extern void Destroy_EDOC(void*, const int32_t*);
+cdef extern void App_Destroy_EDOC(void*, const int32_t*);
 
 
-cdef extern int32_t iGetDocumentsLST_EDOC(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetDocumentsLST_EDOC(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void IGetName_EDOC(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetName_EDOC(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iGetWindowState_EDOC(void*, const int32_t*);
+cdef extern int32_t App_iGetWindowState_EDOC(void*, const int32_t*);
 
 
-cdef extern int32_t iHaveCurrent_EDOC(void*, const int32_t*);
+cdef extern int32_t App_iHaveCurrent_EDOC(void*, const int32_t*);
 
 
-cdef extern int32_t iLoaded_EDOC(void*, const void*, const int32_t*);
+cdef extern int32_t App_iLoaded_EDOC(void*, const void*, const int32_t*);
 
 
-cdef extern void GetWindowPosition_EDOC(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetWindowPosition_EDOC(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void SetWindowPosition_EDOC(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowPosition_EDOC(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iReadOnly_EDOC(void*, const int32_t*);
+cdef extern int32_t App_iReadOnly_EDOC(void*, const int32_t*);
 
 
-cdef extern int32_t Load_EDOC(void*, const void*, const int32_t*);
+cdef extern int32_t App_Load_EDOC(void*, const void*, const int32_t*);
 
 
-cdef extern int32_t LoadNoActivate_EDOC(void*, const void*, const int32_t*);
+cdef extern int32_t App_LoadNoActivate_EDOC(void*, const void*, const int32_t*);
 
 
-cdef extern void MakeCurrent_EDOC(void*, const int32_t*);
+cdef extern void App_MakeCurrent_EDOC(void*, const int32_t*);
 
 
-cdef extern void SetWindowState_EDOC(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowState_EDOC(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void Sync_EDOC(void*, const void*, const int32_t*);
+cdef extern void App_Sync_EDOC(void*, const void*, const int32_t*);
 
 
-cdef extern void SyncOpen_EDOC(void*, const int32_t*);
+cdef extern void App_SyncOpen_EDOC(void*, const int32_t*);
 
 
-cdef extern void UnLoad_EDOC(void*, const void*, const int32_t*);
+cdef extern void App_UnLoad_EDOC(void*, const void*, const int32_t*);
 
 
-cdef extern void UnLoadAll_EDOC(void*, const int32_t*);
+cdef extern void App_UnLoadAll_EDOC(void*, const int32_t*);
 
 
-cdef extern void UnLoadDiscard_EDOC(void*, const void*, const int32_t*);
+cdef extern void App_UnLoadDiscard_EDOC(void*, const void*, const int32_t*);
 
 
-cdef extern void UnLoadVerify_EDOC(void*, const void*, const int32_t*, const int32_t*);
+cdef extern void App_UnLoadVerify_EDOC(void*, const void*, const int32_t*, const int32_t*);
 
 
 
@@ -7975,13 +7980,13 @@ cdef extern void UnLoadVerify_EDOC(void*, const void*, const int32_t*, const int
 
 
 
-cdef extern void DropMapClipData_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern void App_DropMapClipData_EMAP(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iDragDropEnabled_EMAP(void*, const int32_t*);
+cdef extern int32_t App_iDragDropEnabled_EMAP(void*, const int32_t*);
 
 
-cdef extern void SetDragDropEnabled_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetDragDropEnabled_EMAP(void*, const int32_t*, const int32_t*);
 
 
 # Drawing
@@ -7989,43 +7994,43 @@ cdef extern void SetDragDropEnabled_EMAP(void*, const int32_t*, const int32_t*);
 
 
 
-cdef extern void CopyToClip_EMAP(void*, const int32_t*);
+cdef extern void App_CopyToClip_EMAP(void*, const int32_t*);
 
 
-cdef extern void DrawLine_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
+cdef extern void App_DrawLine_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
 
 
-cdef extern void DrawRect_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
+cdef extern void App_DrawRect_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
 
 
-cdef extern void DrawRect3D_EMAP(void*, const int32_t*, const double*, const double*, const double*, const int32_t*);
+cdef extern void App_DrawRect3D_EMAP(void*, const int32_t*, const double*, const double*, const double*, const int32_t*);
 
 
-cdef extern void GetDisplayArea_EMAP(void*, const int32_t*, double*, double*, double*, double*);
+cdef extern void App_GetDisplayArea_EMAP(void*, const int32_t*, double*, double*, double*, double*);
 
 
-cdef extern void GetDisplayAreaRaw_EMAP(void*, const int32_t*, double*, double*, double*, double*);
+cdef extern void App_GetDisplayAreaRaw_EMAP(void*, const int32_t*, double*, double*, double*, double*);
 
 
-cdef extern void GetMapLayoutProps_EMAP(void*, const int32_t*, int32_t*, double*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetMapLayoutProps_EMAP(void*, const int32_t*, int32_t*, double*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void GetMapSnap_EMAP(void*, const int32_t*, double*);
+cdef extern void App_GetMapSnap_EMAP(void*, const int32_t*, double*);
 
 
-cdef extern int32_t iGetWindowState_EMAP(void*, const int32_t*);
+cdef extern int32_t App_iGetWindowState_EMAP(void*, const int32_t*);
 
 
-cdef extern void SetDisplayArea_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
+cdef extern void App_SetDisplayArea_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
 
 
-cdef extern void SetMapLayoutProps_EMAP(void*, const int32_t*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetMapLayoutProps_EMAP(void*, const int32_t*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetMapSnap_EMAP(void*, const int32_t*, const double*);
+cdef extern void App_SetMapSnap_EMAP(void*, const int32_t*, const double*);
 
 
-cdef extern void SetWindowState_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowState_EMAP(void*, const int32_t*, const int32_t*);
 
 
 # General
@@ -8033,127 +8038,127 @@ cdef extern void SetWindowState_EMAP(void*, const int32_t*, const int32_t*);
 
 
 
-cdef extern void ActivateGroup_EMAP(void*, const int32_t*, const void*);
+cdef extern void App_ActivateGroup_EMAP(void*, const int32_t*, const void*);
 
 
-cdef extern void ActivateView_EMAP(void*, const int32_t*, const void*);
+cdef extern void App_ActivateView_EMAP(void*, const int32_t*, const void*);
 
 
-cdef extern int32_t Current_EMAP(void*);
+cdef extern int32_t App_Current_EMAP(void*);
 
 
-cdef extern int32_t CurrentNoActivate_EMAP(void*);
+cdef extern int32_t App_CurrentNoActivate_EMAP(void*);
 
 
-cdef extern int32_t CurrentIfExists_EMAP(void*);
+cdef extern int32_t App_CurrentIfExists_EMAP(void*);
 
 
-cdef extern void Destroy_EMAP(void*, const int32_t*);
+cdef extern void App_Destroy_EMAP(void*, const int32_t*);
 
 
-cdef extern void DestroyView_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern void App_DestroyView_EMAP(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void FontLST_EMAP(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_FontLST_EMAP(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iChangeCurrentView_EMAP(void*, const int32_t*, const void*);
+cdef extern int32_t App_iChangeCurrentView_EMAP(void*, const int32_t*, const void*);
 
 
-cdef extern int32_t iCreateGroupSnapshot_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iCreateGroupSnapshot_EMAP(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void IGet3DViewName_EMAP(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGet3DViewName_EMAP(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern void IGetCurrentGroup_EMAP(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetCurrentGroup_EMAP(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern void IGetCurrentView_EMAP(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetCurrentView_EMAP(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iGetMapsLST_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetMapsLST_EMAP(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void IGetName_EMAP(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetName_EMAP(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iHaveCurrent_EMAP(void*);
+cdef extern int32_t App_iHaveCurrent_EMAP(void*);
 
 
-cdef extern int32_t iIGetSpecifiedMapName_EMAP(void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iIGetSpecifiedMapName_EMAP(void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iIsGrid_EMAP(void*, const int32_t*);
+cdef extern int32_t App_iIsGrid_EMAP(void*, const int32_t*);
 
 
-cdef extern void ReloadGrid_EMAP(void*, const void*);
+cdef extern void App_ReloadGrid_EMAP(void*, const void*);
 
 
-cdef extern int32_t iIs3DView_EMAP(void*, const int32_t*);
+cdef extern int32_t App_iIs3DView_EMAP(void*, const int32_t*);
 
 
-cdef extern int32_t iIsLocked_EMAP(void*, const int32_t*);
+cdef extern int32_t App_iIsLocked_EMAP(void*, const int32_t*);
 
 
-cdef extern int32_t iLoaded_EMAP(void*, const void*);
+cdef extern int32_t App_iLoaded_EMAP(void*, const void*);
 
 
-cdef extern int32_t iReadOnly_EMAP(void*, const int32_t*);
+cdef extern int32_t App_iReadOnly_EMAP(void*, const int32_t*);
 
 
-cdef extern void GetWindowPosition_EMAP(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetWindowPosition_EMAP(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void SetWindowPosition_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowPosition_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iRealizeGroupSnapshot_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iRealizeGroupSnapshot_EMAP(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iSetCurrentView_EMAP(void*, const int32_t*, const void*);
+cdef extern int32_t App_iSetCurrentView_EMAP(void*, const int32_t*, const void*);
 
 
-cdef extern void GetViewIPJ_EMAP(void*, const int32_t*, const void*, const int32_t*);
+cdef extern void App_GetViewIPJ_EMAP(void*, const int32_t*, const void*, const int32_t*);
 
 
-cdef extern int32_t Load_EMAP(void*, const void*);
+cdef extern int32_t App_Load_EMAP(void*, const void*);
 
 
-cdef extern int32_t LoadNoActivate_EMAP(void*, const void*);
+cdef extern int32_t App_LoadNoActivate_EMAP(void*, const void*);
 
 
-cdef extern int32_t LoadWithView_EMAP(void*, const void*, const int32_t*);
+cdef extern int32_t App_LoadWithView_EMAP(void*, const void*, const int32_t*);
 
 
-cdef extern int32_t Lock_EMAP(void*, const int32_t*);
+cdef extern int32_t App_Lock_EMAP(void*, const int32_t*);
 
 
-cdef extern void MakeCurrent_EMAP(void*, const int32_t*);
+cdef extern void App_MakeCurrent_EMAP(void*, const int32_t*);
 
 
-cdef extern void Print_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const void*);
+cdef extern void App_Print_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern void Redraw_EMAP(void*, const int32_t*);
+cdef extern void App_Redraw_EMAP(void*, const int32_t*);
 
 
-cdef extern void SelectGroup_EMAP(void*, const int32_t*, const void*);
+cdef extern void App_SelectGroup_EMAP(void*, const int32_t*, const void*);
 
 
-cdef extern void SetRedrawFlag_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetRedrawFlag_EMAP(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void UnLoad_EMAP(void*, const void*);
+cdef extern void App_UnLoad_EMAP(void*, const void*);
 
 
-cdef extern void UnLoadAll_EMAP(void*);
+cdef extern void App_UnLoadAll_EMAP(void*);
 
 
-cdef extern void UnLoadVerify_EMAP(void*, const void*, const int32_t*);
+cdef extern void App_UnLoadVerify_EMAP(void*, const void*, const int32_t*);
 
 
-cdef extern void UnLock_EMAP(void*, const int32_t*);
+cdef extern void App_UnLock_EMAP(void*, const int32_t*);
 
 
 # Input
@@ -8161,67 +8166,67 @@ cdef extern void UnLock_EMAP(void*, const int32_t*);
 
 
 
-cdef extern void GetCurPoint_EMAP(void*, const int32_t*, double*, double*);
+cdef extern void App_GetCurPoint_EMAP(void*, const int32_t*, double*, double*);
 
 
-cdef extern void GetCurPointMM_EMAP(void*, const int32_t*, double*, double*);
+cdef extern void App_GetCurPointMM_EMAP(void*, const int32_t*, double*, double*);
 
 
-cdef extern void GetCursor_EMAP(void*, const int32_t*, double*, double*);
+cdef extern void App_GetCursor_EMAP(void*, const int32_t*, double*, double*);
 
 
-cdef extern void GetCursorMM_EMAP(void*, const int32_t*, double*, double*);
+cdef extern void App_GetCursorMM_EMAP(void*, const int32_t*, double*, double*);
 
 
-cdef extern int32_t iDigitize_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*, const void*, const int32_t*);
+cdef extern int32_t App_iDigitize_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*, const void*, const int32_t*);
 
 
-cdef extern int32_t iDigitize2_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const int32_t*);
+cdef extern int32_t App_iDigitize2_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const int32_t*);
 
 
-cdef extern int32_t iDigitizePeaks_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const int32_t*);
+cdef extern int32_t App_iDigitizePeaks_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const int32_t*);
 
 
-cdef extern int32_t iDigitizePolygon_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iDigitizePolygon_EMAP(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetBox_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetBox_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetBox2_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetBox2_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetGrid_EMAP(void*, const int32_t*, const void*, const int32_t*, const int32_t*, double*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetGrid_EMAP(void*, const int32_t*, const void*, const int32_t*, const int32_t*, double*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetLine_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetLine_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetLineEx_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetLineEx_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetLineXYZ_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetLineXYZ_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetPoint_EMAP(void*, const int32_t*, const void*, double*, double*);
+cdef extern int32_t App_iGetPoint_EMAP(void*, const int32_t*, const void*, double*, double*);
 
 
-cdef extern int32_t iGetPointEx_EMAP(void*, const int32_t*, const void*, double*, double*);
+cdef extern int32_t App_iGetPointEx_EMAP(void*, const int32_t*, const void*, double*, double*);
 
 
-cdef extern int32_t iGetPoint3D_EMAP(void*, const int32_t*, const void*, double*, double*, double*);
+cdef extern int32_t App_iGetPoint3D_EMAP(void*, const int32_t*, const void*, double*, double*, double*);
 
 
-cdef extern int32_t iGetPolyLine_EMAP(void*, const int32_t*, const void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetPolyLine_EMAP(void*, const int32_t*, const void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetPolyLineXYZ_EMAP(void*, const int32_t*, const void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetPolyLineXYZ_EMAP(void*, const int32_t*, const void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetRect_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetRect_EMAP(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iTrackPoint_EMAP(void*, const int32_t*, const int32_t*, double*, double*);
+cdef extern int32_t App_iTrackPoint_EMAP(void*, const int32_t*, const int32_t*, double*, double*);
 
 
 # Map Viewport Mode Methods
@@ -8229,13 +8234,13 @@ cdef extern int32_t iTrackPoint_EMAP(void*, const int32_t*, const int32_t*, doub
 
 
 
-cdef extern void GetAOIArea_EMAP(void*, const int32_t*, double*, double*, double*, double*);
+cdef extern void App_GetAOIArea_EMAP(void*, const int32_t*, double*, double*, double*, double*);
 
 
-cdef extern void SetAOIArea_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
+cdef extern void App_SetAOIArea_EMAP(void*, const int32_t*, const double*, const double*, const double*, const double*);
 
 
-cdef extern void SetViewportMode_EMAP(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetViewportMode_EMAP(void*, const int32_t*, const int32_t*);
 
 
 # Tracking Methods
@@ -8243,7 +8248,7 @@ cdef extern void SetViewportMode_EMAP(void*, const int32_t*, const int32_t*);
 
 
 
-cdef extern void GetSelectedVertices_EMAP(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_GetSelectedVertices_EMAP(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
 # Virtual
@@ -8251,7 +8256,7 @@ cdef extern void GetSelectedVertices_EMAP(void*, const int32_t*, const int32_t*,
 
 
 
-cdef extern int32_t CreateVirtual_EMAP(void*, const void*);
+cdef extern int32_t App_CreateVirtual_EMAP(void*, const void*);
 
 
 # External Window
@@ -8259,10 +8264,10 @@ cdef extern int32_t CreateVirtual_EMAP(void*, const void*);
 
 
 
-cdef extern void LoadControl_EMAP(void*, const void*, int32_t);
+cdef extern void App_LoadControl_EMAP(void*, const void*, int32_t);
 
 
-cdef extern void LoadWithViewControl_EMAP(void*, const void*, const int32_t*, int32_t);
+cdef extern void App_LoadWithViewControl_EMAP(void*, const void*, const int32_t*, int32_t);
 
 
 
@@ -8274,10 +8279,10 @@ cdef extern void LoadWithViewControl_EMAP(void*, const void*, const int32_t*, in
 
 
 
-cdef extern int32_t iDragDropEnabled_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern int32_t App_iDragDropEnabled_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern void SetDragDropEnabled_EMAPTEMPLATE(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetDragDropEnabled_EMAPTEMPLATE(void*, const int32_t*, const int32_t*);
 
 
 # General
@@ -8285,67 +8290,67 @@ cdef extern void SetDragDropEnabled_EMAPTEMPLATE(void*, const int32_t*, const in
 
 
 
-cdef extern int32_t Current_EMAPTEMPLATE(void*);
+cdef extern int32_t App_Current_EMAPTEMPLATE(void*);
 
 
-cdef extern int32_t CurrentNoActivate_EMAPTEMPLATE(void*);
+cdef extern int32_t App_CurrentNoActivate_EMAPTEMPLATE(void*);
 
 
-cdef extern int32_t CurrentIfExists_EMAPTEMPLATE(void*);
+cdef extern int32_t App_CurrentIfExists_EMAPTEMPLATE(void*);
 
 
-cdef extern void Destroy_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern void App_Destroy_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern int32_t iGetMapTemplatesLST_EMAPTEMPLATE(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetMapTemplatesLST_EMAPTEMPLATE(void*, const int32_t*, const int32_t*);
 
 
-cdef extern void IGetName_EMAPTEMPLATE(void*, const int32_t*, void*, const int32_t*);
+cdef extern void App_IGetName_EMAPTEMPLATE(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t iHaveCurrent_EMAPTEMPLATE(void*);
+cdef extern int32_t App_iHaveCurrent_EMAPTEMPLATE(void*);
 
 
-cdef extern int32_t iIGetSpecifiedMapName_EMAPTEMPLATE(void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iIGetSpecifiedMapName_EMAPTEMPLATE(void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iIsLocked_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern int32_t App_iIsLocked_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern int32_t iLoaded_EMAPTEMPLATE(void*, const void*);
+cdef extern int32_t App_iLoaded_EMAPTEMPLATE(void*, const void*);
 
 
-cdef extern void GetWindowPosition_EMAPTEMPLATE(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetWindowPosition_EMAPTEMPLATE(void*, const int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void SetWindowPosition_EMAPTEMPLATE(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowPosition_EMAPTEMPLATE(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iReadOnly_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern int32_t App_iReadOnly_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern int32_t Load_EMAPTEMPLATE(void*, const void*);
+cdef extern int32_t App_Load_EMAPTEMPLATE(void*, const void*);
 
 
-cdef extern int32_t LoadNoActivate_EMAPTEMPLATE(void*, const void*);
+cdef extern int32_t App_LoadNoActivate_EMAPTEMPLATE(void*, const void*);
 
 
-cdef extern int32_t Lock_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern int32_t App_Lock_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern void MakeCurrent_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern void App_MakeCurrent_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern void UnLoad_EMAPTEMPLATE(void*, const void*);
+cdef extern void App_UnLoad_EMAPTEMPLATE(void*, const void*);
 
 
-cdef extern void UnLoadAll_EMAPTEMPLATE(void*);
+cdef extern void App_UnLoadAll_EMAPTEMPLATE(void*);
 
 
-cdef extern void UnLoadVerify_EMAPTEMPLATE(void*, const void*, const int32_t*);
+cdef extern void App_UnLoadVerify_EMAPTEMPLATE(void*, const void*, const int32_t*);
 
 
-cdef extern void UnLock_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern void App_UnLock_EMAPTEMPLATE(void*, const int32_t*);
 
 
 # Input
@@ -8353,19 +8358,19 @@ cdef extern void UnLock_EMAPTEMPLATE(void*, const int32_t*);
 
 
 
-cdef extern int32_t iGetBox_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetBox_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetLine_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetLine_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iGetPoint_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*);
+cdef extern int32_t App_iGetPoint_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*);
 
 
-cdef extern int32_t iGetRect_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*, double*, double*);
+cdef extern int32_t App_iGetRect_EMAPTEMPLATE(void*, const int32_t*, const void*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iTrackPoint_EMAPTEMPLATE(void*, const int32_t*, const int32_t*, double*, double*);
+cdef extern int32_t App_iTrackPoint_EMAPTEMPLATE(void*, const int32_t*, const int32_t*, double*, double*);
 
 
 # Selection Methods
@@ -8373,10 +8378,10 @@ cdef extern int32_t iTrackPoint_EMAPTEMPLATE(void*, const int32_t*, const int32_
 
 
 
-cdef extern int32_t iGetItemSelection_EMAPTEMPLATE(void*, const int32_t*, void*, const int32_t*);
+cdef extern int32_t App_iGetItemSelection_EMAPTEMPLATE(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern void SetItemSelection_EMAPTEMPLATE(void*, const int32_t*, const void*);
+cdef extern void App_SetItemSelection_EMAPTEMPLATE(void*, const int32_t*, const void*);
 
 
 # View Window
@@ -8384,22 +8389,22 @@ cdef extern void SetItemSelection_EMAPTEMPLATE(void*, const int32_t*, const void
 
 
 
-cdef extern void GetDisplayArea_EMAPTEMPLATE(void*, const int32_t*, double*, double*, double*, double*);
+cdef extern void App_GetDisplayArea_EMAPTEMPLATE(void*, const int32_t*, double*, double*, double*, double*);
 
 
-cdef extern void GetTemplateLayoutProps_EMAPTEMPLATE(void*, const int32_t*, int32_t*, double*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetTemplateLayoutProps_EMAPTEMPLATE(void*, const int32_t*, int32_t*, double*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern int32_t iGetWindowState_EMAPTEMPLATE(void*, const int32_t*);
+cdef extern int32_t App_iGetWindowState_EMAPTEMPLATE(void*, const int32_t*);
 
 
-cdef extern void SetDisplayArea_EMAPTEMPLATE(void*, const int32_t*, const double*, const double*, const double*, const double*);
+cdef extern void App_SetDisplayArea_EMAPTEMPLATE(void*, const int32_t*, const double*, const double*, const double*, const double*);
 
 
-cdef extern void SetTemplateLayoutProps_EMAPTEMPLATE(void*, const int32_t*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetTemplateLayoutProps_EMAPTEMPLATE(void*, const int32_t*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetWindowState_EMAPTEMPLATE(void*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowState_EMAPTEMPLATE(void*, const int32_t*, const int32_t*);
 
 
 # Virtual
@@ -8407,7 +8412,7 @@ cdef extern void SetWindowState_EMAPTEMPLATE(void*, const int32_t*, const int32_
 
 
 
-cdef extern int32_t CreateVirtual_EMAPTEMPLATE(void*, const void*);
+cdef extern int32_t App_CreateVirtual_EMAPTEMPLATE(void*, const void*);
 
 
 
@@ -8706,64 +8711,64 @@ cdef extern void VVEuler2_GU(void*, const int32_t*, const int32_t*, const int32_
 # Class GUI
 
 
-cdef extern int32_t CreateWNDFromHWND_GUI(void*, int32_t);
+cdef extern int32_t App_CreateWNDFromHWND_GUI(void*, int32_t);
 
 
-cdef extern void Fft2SpecFilter_GUI(void*, const void*, const void*);
+cdef extern void App_Fft2SpecFilter_GUI(void*, const void*, const void*);
 
 
-cdef extern int32_t GetParentWND_GUI(void*);
+cdef extern int32_t App_GetParentWND_GUI(void*);
 
 
-cdef extern void GetPrinterLST_GUI(void*, const int32_t*);
+cdef extern void App_GetPrinterLST_GUI(void*, const int32_t*);
 
 
-cdef extern int32_t iGetWindowState_GUI(void*);
+cdef extern int32_t App_iGetWindowState_GUI(void*);
 
 
-cdef extern void SetWindowState_GUI(void*, const int32_t*);
+cdef extern void App_SetWindowState_GUI(void*, const int32_t*);
 
 
-cdef extern void GetWindowPosition_GUI(void*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetWindowPosition_GUI(void*, int32_t*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void SetWindowPosition_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_SetWindowPosition_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void GetClientWindowArea_GUI(void*, int32_t*, int32_t*, int32_t*, int32_t*);
+cdef extern void App_GetClientWindowArea_GUI(void*, int32_t*, int32_t*, int32_t*, int32_t*);
 
 
-cdef extern void GridStatHist_GUI(void*, const void*);
+cdef extern void App_GridStatHist_GUI(void*, const void*);
 
 
-cdef extern void VoxelStatHist_GUI(void*, const void*);
+cdef extern void App_VoxelStatHist_GUI(void*, const void*);
 
 
-cdef extern int32_t iColorForm_GUI(void*, int32_t*, const int32_t*);
+cdef extern int32_t App_iColorForm_GUI(void*, int32_t*, const int32_t*);
 
 
-cdef extern int32_t iColorTransform_GUI(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iColorTransform_GUI(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iCoordSysWizard_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
+cdef extern int32_t App_iCoordSysWizard_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
 
 
-cdef extern int32_t iCoordSysWizardLicensed_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
+cdef extern int32_t App_iCoordSysWizardLicensed_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
 
 
-cdef extern int32_t iCoordSysWizardGrid_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*, const int32_t*, const int32_t*, double*, double*, double*, double*, double*);
+cdef extern int32_t App_iCoordSysWizardGrid_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*, const int32_t*, const int32_t*, double*, double*, double*, double*, double*);
 
 
-cdef extern int32_t iDatabaseType_GUI(void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iDatabaseType_GUI(void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iDatamineType_GUI(void*, const void*, int32_t*);
+cdef extern int32_t App_iDatamineType_GUI(void*, const void*, int32_t*);
 
 
-cdef extern int32_t iExportXYZTemplateEditor_GUI(void*, const int32_t*, const void*, const int32_t*);
+cdef extern int32_t App_iExportXYZTemplateEditor_GUI(void*, const int32_t*, const void*, const int32_t*);
 
 
-cdef extern int32_t iExportXYZTemplateEditorEx_GUI(void*, const int32_t*, void*, const int32_t*);
+cdef extern int32_t App_iExportXYZTemplateEditorEx_GUI(void*, const int32_t*, void*, const int32_t*);
 
 
 cdef extern int32_t iFileFilterIndex_GUI(void*, const void*);
@@ -8778,10 +8783,10 @@ cdef extern int32_t iGCSDatumWarningSHPDBEx_GUI(void*, const int32_t*, const int
 cdef extern int32_t iGCSDatumWarningSHPEx_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetAreaOfInterest_GUI(void*, double*, double*, double*, double*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetAreaOfInterest_GUI(void*, double*, double*, double*, double*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iGetAreaOfInterest3D_GUI(void*, double*, double*, double*, double*, double*, double*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iGetAreaOfInterest3D_GUI(void*, double*, double*, double*, double*, double*, double*, const int32_t*, const int32_t*);
 
 
 cdef extern void IGetDATDefaults_GUI(void*, const int32_t*, const int32_t*, void*, const int32_t*, void*, const int32_t*);
@@ -8793,154 +8798,154 @@ cdef extern void IGetFileFilter_GUI(void*, const int32_t*, void*, const int32_t*
 cdef extern void IGetGSDirectory_GUI(void*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t IiBrowseDir_GUI(void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_IiBrowseDir_GUI(void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t IiColorTransformEx_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, void*, const int32_t*);
+cdef extern int32_t App_IiColorTransformEx_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t IiCumulativePercent_GUI(void*, void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_IiCumulativePercent_GUI(void*, void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t IiDatFileForm_GUI(void*, const void*, const void*, void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_IiDatFileForm_GUI(void*, const void*, const void*, void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t IiGenFileForm_GUI(void*, const void*, const int32_t*, const int32_t*, const void*, void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_IiGenFileForm_GUI(void*, const void*, const int32_t*, const int32_t*, const void*, void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t IiImportDrillDatabaseADO2_GUI(void*, const void*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*);
+cdef extern int32_t App_IiImportDrillDatabaseADO2_GUI(void*, const void*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*);
 
 
-cdef extern int32_t IiImportDrillDatabaseESRI_GUI(void*, const void*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_IiImportDrillDatabaseESRI_GUI(void*, const void*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t IiImportDrillDatabaseODBC_GUI(void*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*);
+cdef extern int32_t App_IiImportDrillDatabaseODBC_GUI(void*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*);
 
 
-cdef extern int32_t IiImportDrillDatabaseODBCMaxwell_GUI(void*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*);
+cdef extern int32_t App_IiImportDrillDatabaseODBCMaxwell_GUI(void*, void*, const int32_t*, void*, const int32_t*, void*, const int32_t*, int32_t*, const int32_t*);
 
 
-cdef extern int32_t iImportAsciiWizard_GUI(void*, const void*, const void*);
+cdef extern int32_t App_iImportAsciiWizard_GUI(void*, const void*, const void*);
 
 
-cdef extern int32_t iImportChemDatabase_GUI(void*, const void*, const void*, void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iImportChemDatabase_GUI(void*, const void*, const void*, void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iImportChemDatabaseADO_GUI(void*, const void*, const void*, void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iImportChemDatabaseADO_GUI(void*, const void*, const void*, void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iImportDatabase_GUI(void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iImportDatabase_GUI(void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iImportDatabaseADO_GUI(void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iImportDatabaseADO_GUI(void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iImportDatabaseSQL_GUI(void*, const void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iImportDatabaseSQL_GUI(void*, const void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iImportDatabaseSQLADO_GUI(void*, const void*, const void*, const void*, void*, const int32_t*);
+cdef extern int32_t App_iImportDatabaseSQLADO_GUI(void*, const void*, const void*, const void*, void*, const int32_t*);
 
 
-cdef extern int32_t iImportDrillDatabaseADO_GUI(void*, const void*, const void*, void*, const int32_t*, int32_t*, const int32_t*);
+cdef extern int32_t App_iImportDrillDatabaseADO_GUI(void*, const void*, const void*, void*, const int32_t*, int32_t*, const int32_t*);
 
 
-cdef extern int32_t iImportTemplateSQL_GUI(void*, const void*, const void*, const void*, const void*);
+cdef extern int32_t App_iImportTemplateSQL_GUI(void*, const void*, const void*, const void*, const void*);
 
 
-cdef extern int32_t iImportTemplateSQLADO_GUI(void*, const void*, const void*, const void*, const void*);
+cdef extern int32_t App_iImportTemplateSQLADO_GUI(void*, const void*, const void*, const void*, const void*);
 
 
-cdef extern int32_t iImportXYZTemplateEditor_GUI(void*, const int32_t*, const void*, const int32_t*, const void*);
+cdef extern int32_t App_iImportXYZTemplateEditor_GUI(void*, const int32_t*, const void*, const int32_t*, const void*);
 
 
-cdef extern int32_t IiODBCFileConnect_GUI(void*, const void*, void*, const int32_t*, const int32_t*, void*, const int32_t*);
+cdef extern int32_t App_IiODBCFileConnect_GUI(void*, const void*, void*, const int32_t*, const int32_t*, void*, const int32_t*);
 
 
-cdef extern int32_t IiSymbolForm_GUI(void*, void*, const int32_t*, int32_t*, int32_t*, int32_t*, double*, double*, int32_t*, int32_t*);
+cdef extern int32_t App_IiSymbolForm_GUI(void*, void*, const int32_t*, int32_t*, int32_t*, int32_t*, double*, double*, int32_t*, int32_t*);
 
 
-cdef extern int32_t iMetaDataTool_GUI(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iMetaDataTool_GUI(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void ImportChemWizard_GUI(void*, const void*, const void*, const int32_t*);
+cdef extern void App_ImportChemWizard_GUI(void*, const void*, const void*, const int32_t*);
 
 
-cdef extern void ImportDrillWizard_GUI(void*, const void*, const void*, const void*, const int32_t*, int32_t*, const int32_t*);
+cdef extern void App_ImportDrillWizard_GUI(void*, const void*, const void*, const void*, const int32_t*, int32_t*, const int32_t*);
 
 
-cdef extern void InternetTrust_GUI(void*);
+cdef extern void App_InternetTrust_GUI(void*);
 
 
-cdef extern int32_t iPatternForm_GUI(void*, int32_t*, double*, int32_t*, double*, int32_t*, int32_t*);
+cdef extern int32_t App_iPatternForm_GUI(void*, int32_t*, double*, int32_t*, double*, int32_t*, int32_t*);
 
 
-cdef extern int32_t iLinePatternForm_GUI(void*, int32_t*, double*, double*, int32_t*);
+cdef extern int32_t App_iLinePatternForm_GUI(void*, int32_t*, double*, double*, int32_t*);
 
 
-cdef extern int32_t iTwoPanelSelection_GUI(void*, const int32_t*, const int32_t*, const void*);
+cdef extern int32_t App_iTwoPanelSelection_GUI(void*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern int32_t iTwoPanelSelection2_GUI(void*, const int32_t*, const int32_t*, const void*);
+cdef extern int32_t App_iTwoPanelSelection2_GUI(void*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern int32_t iTwoPanelSelectionEx_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*);
+cdef extern int32_t App_iTwoPanelSelectionEx_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*);
 
 
-cdef extern int32_t iTwoPanelSelectionEx2_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
+cdef extern int32_t App_iTwoPanelSelectionEx2_GUI(void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const void*, const void*);
 
 
-cdef extern void LaunchSingleGeoDOTNETXTool_GUI(void*, const void*, const void*, const int32_t*);
+cdef extern void App_LaunchSingleGeoDOTNETXTool_GUI(void*, const void*, const void*, const int32_t*);
 
 
-cdef extern void LaunchGeoDOTNETXTool_GUI(void*, const void*, const void*, const int32_t*);
+cdef extern void App_LaunchGeoDOTNETXTool_GUI(void*, const void*, const void*, const int32_t*);
 
 
-cdef extern void LaunchGeoXTool_GUI(void*, const void*, const void*, const int32_t*);
+cdef extern void App_LaunchGeoXTool_GUI(void*, const void*, const void*, const int32_t*);
 
 
-cdef extern void LaunchSingleGeoDOTNETXToolEx_GUI(void*, const void*, const void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_LaunchSingleGeoDOTNETXToolEx_GUI(void*, const void*, const void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void LaunchGeoDOTNETXToolEx_GUI(void*, const void*, const void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_LaunchGeoDOTNETXToolEx_GUI(void*, const void*, const void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void LaunchGeoXToolEx_GUI(void*, const void*, const void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_LaunchGeoXToolEx_GUI(void*, const void*, const void*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void MetaDataViewer_GUI(void*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_MetaDataViewer_GUI(void*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void PrintFile_GUI(void*, const void*);
+cdef extern void App_PrintFile_GUI(void*, const void*);
 
 
-cdef extern void RenderPattern_GUI(void*, int32_t, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_RenderPattern_GUI(void*, int32_t, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*, const int32_t*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void RenderLinePattern_GUI(void*, int32_t, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
+cdef extern void App_RenderLinePattern_GUI(void*, int32_t, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const int32_t*, const double*, const double*, const int32_t*, const int32_t*, const int32_t*, const int32_t*);
 
 
-cdef extern void SetParentWND_GUI(void*, const int32_t*);
+cdef extern void App_SetParentWND_GUI(void*, const int32_t*);
 
 
-cdef extern void SetPrinter_GUI(void*, const void*);
+cdef extern void App_SetPrinter_GUI(void*, const void*);
 
 
-cdef extern void SetProgAlwaysOn_GUI(void*, const int32_t*);
+cdef extern void App_SetProgAlwaysOn_GUI(void*, const int32_t*);
 
 
-cdef extern void ShowDirectHist_GUI(void*, const double*, const double*, const double*, const double*, const double*, const int32_t*, const int32_t*);
+cdef extern void App_ShowDirectHist_GUI(void*, const double*, const double*, const double*, const double*, const double*, const int32_t*, const int32_t*);
 
 
-cdef extern void ShowHist_GUI(void*, const int32_t*);
+cdef extern void App_ShowHist_GUI(void*, const int32_t*);
 
 
-cdef extern void SimpleMapDialog_GUI(void*, const int32_t*, const void*, const void*);
+cdef extern void App_SimpleMapDialog_GUI(void*, const int32_t*, const void*, const void*);
 
 
-cdef extern void ThematicVoxelInfo_GUI(void*, const int32_t*);
+cdef extern void App_ThematicVoxelInfo_GUI(void*, const int32_t*);
 
 
-cdef extern void Show3DViewerDialog_GUI(void*, const void*, const void*, const void*);
+cdef extern void App_Show3DViewerDialog_GUI(void*, const void*, const void*, const void*);
 
 
 
@@ -9570,7 +9575,7 @@ cdef extern int32_t iLaunch_PRAGA3(void*);
 
 
 
-cdef extern void DropMapClipData_PROJ(void*, const int32_t*);
+cdef extern void App_DropMapClipData_PROJ(void*, const int32_t*);
 
 
 # Miscellaneous
@@ -9578,31 +9583,31 @@ cdef extern void DropMapClipData_PROJ(void*, const int32_t*);
 
 
 
-cdef extern int32_t iAddDocument_PROJ(void*, const void*, const void*, const int32_t*);
+cdef extern int32_t App_iAddDocument_PROJ(void*, const void*, const void*, const int32_t*);
 
 
-cdef extern int32_t iAddDocumentWithoutOpening_PROJ(void*, const void*, const void*);
+cdef extern int32_t App_iAddDocumentWithoutOpening_PROJ(void*, const void*, const void*);
 
 
-cdef extern int32_t iGetCommandEnvironment_PROJ(void*);
+cdef extern int32_t App_iGetCommandEnvironment_PROJ(void*);
 
 
-cdef extern int32_t iListDocuments_PROJ(void*, const int32_t*, const void*);
+cdef extern int32_t App_iListDocuments_PROJ(void*, const int32_t*, const void*);
 
 
-cdef extern int32_t iListTools_PROJ(void*, const int32_t*, const int32_t*);
+cdef extern int32_t App_iListTools_PROJ(void*, const int32_t*, const int32_t*);
 
 
-cdef extern int32_t iRemoveDocument_PROJ(void*, const void*);
+cdef extern int32_t App_iRemoveDocument_PROJ(void*, const void*);
 
 
-cdef extern int32_t iRemoveTool_PROJ(void*, const void*);
+cdef extern int32_t App_iRemoveTool_PROJ(void*, const void*);
 
 
-cdef extern int32_t iSaveCloseDocuments_PROJ(void*, const void*);
+cdef extern int32_t App_iSaveCloseDocuments_PROJ(void*, const void*);
 
 
-cdef extern void IGetName_PROJ(void*, void*, const int32_t*);
+cdef extern void App_IGetName_PROJ(void*, void*, const int32_t*);
 
 
 
@@ -10394,22 +10399,27 @@ cdef unicode tounicode_with_length_and_free(
     finally:
         free(s)
 
-cdef class Geo:
+cdef class WrapPGeo:
     cdef void* p_geo
     
     def __cinit__(self, const char* app, const char* ver, wind_id=0):
         cdef void* hParentWnd = <void *>wind_id
         cdef char* err = <char*>malloc(4096)
         try:
+            tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+            if not tls_geo is None:
+                raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
             if self.p_geo == NULL:
-                raise GXAPIError(tounicode(err));
+                raise GXAPIError(tounicode(err))
+            thread_local.gxapi_cy_geo = <size_t>self.p_geo
         finally:
             free(err)
         
     def __dealloc__(self):
         if self.p_geo != NULL:
             Destroy_GEO(self.p_geo)
+        thread_local.gxapi_cy_geo = None
 
     cdef _raise_on_gx_errors(self, void* p_geo):
         cdef int32_t term
@@ -10425,9 +10435,7 @@ cdef class Geo:
                 module = <char*>malloc(1024)
                 err = <char*>malloc(4096)
                 try:
-                    
                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
-            
                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
                         raise GXAPIError(tounicode(err));
@@ -10444,4 +10452,1739 @@ cdef class Geo:
         retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)
         self._raise_on_gx_errors(self.p_geo)
         return retval
+
+cdef void* get_p_geo():
+    tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+    if not tls_geo is None:
+        raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
+    return <void*>tls_geo
+
+
+
+
+cdef class Wrap3DN:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_3DN(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class Wrap3DV:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destr_SYS(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapAGG:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_AGG(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapBF:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            DestroyEx_BF(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDAT:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DAT(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDATALINKD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DATALINKD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDATAMINE:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapDB:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DB(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDBREAD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DBREAD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDBWRITE:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DBWRITE(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDSEL:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DSEL(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEXT:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapGEO:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapGEOSOFT:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapGEOSTRING:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_GEOSTRING(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapGIS:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_GIS(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapHGD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_HGD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapHXYZ:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_HXYZ(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapIGRF:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_IGRF(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapIMG:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_IMG(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapIMU:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapIPJ:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_IPJ(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapITR:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_ITR(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapLAYOUT:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_LAYOUT(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapLL2:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_LL2(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapLPT:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_LPT(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapLST:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_LST(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapLTB:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_LTB(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMAP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_MAP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMAPL:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_MAPL(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMAPTEMPLATE:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_MAPTEMPLATE(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMATH:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapMETA:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_META(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMVIEW:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_MVIEW(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMVU:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapMXD:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapPAT:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_PAT(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapPG:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_PG(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapPJ:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_PJ(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapPLY:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_PLY(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapRA:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_RA(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapREG:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_REG(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSBF:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_SBF(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapST:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_ST(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapST2:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_ST2(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSTR:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapSURFACE:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_SURFACE(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSURFACEITEM:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_SURFACEITEM(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSYS:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapTB:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_TB(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapTPAT:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_TPAT(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapTR:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_TR(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapUSERMETA:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_USERMETA(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVA:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VA(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVM:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VM(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVOX:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VOX(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVOXD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VOXD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVOXE:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VOXE(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVULCAN:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapVV:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VV(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapWA:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_WA(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapACQUIRE:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_ACQUIRE(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapARCDB:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destr_SYS(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapARCDH:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapARCMAP:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapARCSYS:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapBIGRID:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_BIGRID(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapCHIMERA:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapCOM:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_COM(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapCSYMB:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_CSYMB(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDGW:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            App_Destroy_DGW(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDH:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DH(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDMPPLY:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DMPPLY(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDOCU:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DOCU(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapDU:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapDXFI:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_DXFI(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEDB:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            App_Destroy_EDB(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEDOC:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            App_Destroy_EDOC(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEMAP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            App_Destroy_EMAP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEMAPTEMPLATE:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            App_Destroy_EMAPTEMPLATE(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEUL3:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destr_SYS(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapEXP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_EXP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapFFT:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_FFT(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapFFT2:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapFLT:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapGD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_GD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapGER:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_GER(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapGMSYS:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapGU:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapGUI:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapHTTP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_HTTP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapIEXP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_IEXP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapINTERNET:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapIP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_IP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapIPGUI:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapKGRD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_KGRD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapLMSG:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapMISC:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapMSTK:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_MSTK(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapMVG:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_MVG(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapPDF3D:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapPGEXP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_PGEXP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapPGU:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapPRAGA3:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapPROJ:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapRGRD:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_RGRD(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSEMPLOT:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapSHP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_SHP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSQLSRV:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapSTK:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destr_SYS(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapSTRINGS:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapTC:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_TC(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapTEST:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapTIN:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_TIN(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapTRND:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapUNC:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapVAU:
+    
+    
+    pass
+
+
+
+
+
+cdef class WrapVVEXP:
+    
+    
+
+    cdef int32_t handle
+    
+    def __cinit__(self, handle):
+        self.handle = handle
+        
+    def __dealloc__(self):
+        if self.handle != 0:
+            Destroy_VVEXP(get_p_geo(), &self.handle)
+
+
+
+
+
+cdef class WrapVVU:
+    
+    
+    pass
+
+
+
 

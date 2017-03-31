@@ -5,6 +5,7 @@
     "distutils": {
         "depends": [],
         "libraries": [
+            "geogx_utf8",
             "geoengine.core.gx_utf8",
             "geodist"
         ]
@@ -644,27 +645,1664 @@ static const char *__pyx_f[] = {
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_8gxapi_cy_Geo;
+struct __pyx_obj_8gxapi_cy_WrapPGeo;
+struct __pyx_obj_8gxapi_cy_Wrap3DN;
+struct __pyx_obj_8gxapi_cy_Wrap3DV;
+struct __pyx_obj_8gxapi_cy_WrapAGG;
+struct __pyx_obj_8gxapi_cy_WrapBF;
+struct __pyx_obj_8gxapi_cy_WrapDAT;
+struct __pyx_obj_8gxapi_cy_WrapDATALINKD;
+struct __pyx_obj_8gxapi_cy_WrapDATAMINE;
+struct __pyx_obj_8gxapi_cy_WrapDB;
+struct __pyx_obj_8gxapi_cy_WrapDBREAD;
+struct __pyx_obj_8gxapi_cy_WrapDBWRITE;
+struct __pyx_obj_8gxapi_cy_WrapDSEL;
+struct __pyx_obj_8gxapi_cy_WrapEXT;
+struct __pyx_obj_8gxapi_cy_WrapGEO;
+struct __pyx_obj_8gxapi_cy_WrapGEOSOFT;
+struct __pyx_obj_8gxapi_cy_WrapGEOSTRING;
+struct __pyx_obj_8gxapi_cy_WrapGIS;
+struct __pyx_obj_8gxapi_cy_WrapHGD;
+struct __pyx_obj_8gxapi_cy_WrapHXYZ;
+struct __pyx_obj_8gxapi_cy_WrapIGRF;
+struct __pyx_obj_8gxapi_cy_WrapIMG;
+struct __pyx_obj_8gxapi_cy_WrapIMU;
+struct __pyx_obj_8gxapi_cy_WrapIPJ;
+struct __pyx_obj_8gxapi_cy_WrapITR;
+struct __pyx_obj_8gxapi_cy_WrapLAYOUT;
+struct __pyx_obj_8gxapi_cy_WrapLL2;
+struct __pyx_obj_8gxapi_cy_WrapLPT;
+struct __pyx_obj_8gxapi_cy_WrapLST;
+struct __pyx_obj_8gxapi_cy_WrapLTB;
+struct __pyx_obj_8gxapi_cy_WrapMAP;
+struct __pyx_obj_8gxapi_cy_WrapMAPL;
+struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE;
+struct __pyx_obj_8gxapi_cy_WrapMATH;
+struct __pyx_obj_8gxapi_cy_WrapMETA;
+struct __pyx_obj_8gxapi_cy_WrapMVIEW;
+struct __pyx_obj_8gxapi_cy_WrapMVU;
+struct __pyx_obj_8gxapi_cy_WrapMXD;
+struct __pyx_obj_8gxapi_cy_WrapPAT;
+struct __pyx_obj_8gxapi_cy_WrapPG;
+struct __pyx_obj_8gxapi_cy_WrapPJ;
+struct __pyx_obj_8gxapi_cy_WrapPLY;
+struct __pyx_obj_8gxapi_cy_WrapRA;
+struct __pyx_obj_8gxapi_cy_WrapREG;
+struct __pyx_obj_8gxapi_cy_WrapSBF;
+struct __pyx_obj_8gxapi_cy_WrapST;
+struct __pyx_obj_8gxapi_cy_WrapST2;
+struct __pyx_obj_8gxapi_cy_WrapSTR;
+struct __pyx_obj_8gxapi_cy_WrapSURFACE;
+struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM;
+struct __pyx_obj_8gxapi_cy_WrapSYS;
+struct __pyx_obj_8gxapi_cy_WrapTB;
+struct __pyx_obj_8gxapi_cy_WrapTPAT;
+struct __pyx_obj_8gxapi_cy_WrapTR;
+struct __pyx_obj_8gxapi_cy_WrapUSERMETA;
+struct __pyx_obj_8gxapi_cy_WrapVA;
+struct __pyx_obj_8gxapi_cy_WrapVM;
+struct __pyx_obj_8gxapi_cy_WrapVOX;
+struct __pyx_obj_8gxapi_cy_WrapVOXD;
+struct __pyx_obj_8gxapi_cy_WrapVOXE;
+struct __pyx_obj_8gxapi_cy_WrapVULCAN;
+struct __pyx_obj_8gxapi_cy_WrapVV;
+struct __pyx_obj_8gxapi_cy_WrapWA;
+struct __pyx_obj_8gxapi_cy_WrapACQUIRE;
+struct __pyx_obj_8gxapi_cy_WrapARCDB;
+struct __pyx_obj_8gxapi_cy_WrapARCDH;
+struct __pyx_obj_8gxapi_cy_WrapARCMAP;
+struct __pyx_obj_8gxapi_cy_WrapARCSYS;
+struct __pyx_obj_8gxapi_cy_WrapBIGRID;
+struct __pyx_obj_8gxapi_cy_WrapCHIMERA;
+struct __pyx_obj_8gxapi_cy_WrapCOM;
+struct __pyx_obj_8gxapi_cy_WrapCSYMB;
+struct __pyx_obj_8gxapi_cy_WrapDGW;
+struct __pyx_obj_8gxapi_cy_WrapDH;
+struct __pyx_obj_8gxapi_cy_WrapDMPPLY;
+struct __pyx_obj_8gxapi_cy_WrapDOCU;
+struct __pyx_obj_8gxapi_cy_WrapDU;
+struct __pyx_obj_8gxapi_cy_WrapDXFI;
+struct __pyx_obj_8gxapi_cy_WrapEDB;
+struct __pyx_obj_8gxapi_cy_WrapEDOC;
+struct __pyx_obj_8gxapi_cy_WrapEMAP;
+struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE;
+struct __pyx_obj_8gxapi_cy_WrapEUL3;
+struct __pyx_obj_8gxapi_cy_WrapEXP;
+struct __pyx_obj_8gxapi_cy_WrapFFT;
+struct __pyx_obj_8gxapi_cy_WrapFFT2;
+struct __pyx_obj_8gxapi_cy_WrapFLT;
+struct __pyx_obj_8gxapi_cy_WrapGD;
+struct __pyx_obj_8gxapi_cy_WrapGER;
+struct __pyx_obj_8gxapi_cy_WrapGMSYS;
+struct __pyx_obj_8gxapi_cy_WrapGU;
+struct __pyx_obj_8gxapi_cy_WrapGUI;
+struct __pyx_obj_8gxapi_cy_WrapHTTP;
+struct __pyx_obj_8gxapi_cy_WrapIEXP;
+struct __pyx_obj_8gxapi_cy_WrapINTERNET;
+struct __pyx_obj_8gxapi_cy_WrapIP;
+struct __pyx_obj_8gxapi_cy_WrapIPGUI;
+struct __pyx_obj_8gxapi_cy_WrapKGRD;
+struct __pyx_obj_8gxapi_cy_WrapLMSG;
+struct __pyx_obj_8gxapi_cy_WrapMISC;
+struct __pyx_obj_8gxapi_cy_WrapMSTK;
+struct __pyx_obj_8gxapi_cy_WrapMVG;
+struct __pyx_obj_8gxapi_cy_WrapPDF3D;
+struct __pyx_obj_8gxapi_cy_WrapPGEXP;
+struct __pyx_obj_8gxapi_cy_WrapPGU;
+struct __pyx_obj_8gxapi_cy_WrapPRAGA3;
+struct __pyx_obj_8gxapi_cy_WrapPROJ;
+struct __pyx_obj_8gxapi_cy_WrapRGRD;
+struct __pyx_obj_8gxapi_cy_WrapSEMPLOT;
+struct __pyx_obj_8gxapi_cy_WrapSHP;
+struct __pyx_obj_8gxapi_cy_WrapSQLSRV;
+struct __pyx_obj_8gxapi_cy_WrapSTK;
+struct __pyx_obj_8gxapi_cy_WrapSTRINGS;
+struct __pyx_obj_8gxapi_cy_WrapTC;
+struct __pyx_obj_8gxapi_cy_WrapTEST;
+struct __pyx_obj_8gxapi_cy_WrapTIN;
+struct __pyx_obj_8gxapi_cy_WrapTRND;
+struct __pyx_obj_8gxapi_cy_WrapUNC;
+struct __pyx_obj_8gxapi_cy_WrapVAU;
+struct __pyx_obj_8gxapi_cy_WrapVVEXP;
+struct __pyx_obj_8gxapi_cy_WrapVVU;
 
-/* "gxapi_cy.pyx":10397
+/* "gxapi_cy.pyx":10402
  *         free(s)
  * 
- * cdef class Geo:             # <<<<<<<<<<<<<<
+ * cdef class WrapPGeo:             # <<<<<<<<<<<<<<
  *     cdef void* p_geo
  * 
  */
-struct __pyx_obj_8gxapi_cy_Geo {
+struct __pyx_obj_8gxapi_cy_WrapPGeo {
   PyObject_HEAD
-  struct __pyx_vtabstruct_8gxapi_cy_Geo *__pyx_vtab;
+  struct __pyx_vtabstruct_8gxapi_cy_WrapPGeo *__pyx_vtab;
   void *p_geo;
 };
 
 
-
-struct __pyx_vtabstruct_8gxapi_cy_Geo {
-  PyObject *(*_raise_on_gx_errors)(struct __pyx_obj_8gxapi_cy_Geo *, void *);
+/* "gxapi_cy.pyx":10465
+ * 
+ * 
+ * cdef class Wrap3DN:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_Wrap3DN {
+  PyObject_HEAD
+  int32_t handle;
 };
-static struct __pyx_vtabstruct_8gxapi_cy_Geo *__pyx_vtabptr_8gxapi_cy_Geo;
+
+
+/* "gxapi_cy.pyx":10482
+ * 
+ * 
+ * cdef class Wrap3DV:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_Wrap3DV {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10499
+ * 
+ * 
+ * cdef class WrapAGG:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapAGG {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10516
+ * 
+ * 
+ * cdef class WrapBF:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapBF {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10533
+ * 
+ * 
+ * cdef class WrapDAT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDAT {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10550
+ * 
+ * 
+ * cdef class WrapDATALINKD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDATALINKD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10567
+ * 
+ * 
+ * cdef class WrapDATAMINE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDATAMINE {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":10576
+ * 
+ * 
+ * cdef class WrapDB:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDB {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10593
+ * 
+ * 
+ * cdef class WrapDBREAD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDBREAD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10610
+ * 
+ * 
+ * cdef class WrapDBWRITE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDBWRITE {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10627
+ * 
+ * 
+ * cdef class WrapDSEL:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDSEL {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10644
+ * 
+ * 
+ * cdef class WrapEXT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEXT {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":10653
+ * 
+ * 
+ * cdef class WrapGEO:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGEO {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":10662
+ * 
+ * 
+ * cdef class WrapGEOSOFT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGEOSOFT {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":10671
+ * 
+ * 
+ * cdef class WrapGEOSTRING:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGEOSTRING {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10688
+ * 
+ * 
+ * cdef class WrapGIS:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGIS {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10705
+ * 
+ * 
+ * cdef class WrapHGD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapHGD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10722
+ * 
+ * 
+ * cdef class WrapHXYZ:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapHXYZ {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10739
+ * 
+ * 
+ * cdef class WrapIGRF:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIGRF {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10756
+ * 
+ * 
+ * cdef class WrapIMG:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIMG {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10773
+ * 
+ * 
+ * cdef class WrapIMU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIMU {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":10782
+ * 
+ * 
+ * cdef class WrapIPJ:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIPJ {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10799
+ * 
+ * 
+ * cdef class WrapITR:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapITR {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10816
+ * 
+ * 
+ * cdef class WrapLAYOUT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapLAYOUT {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10833
+ * 
+ * 
+ * cdef class WrapLL2:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapLL2 {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10850
+ * 
+ * 
+ * cdef class WrapLPT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapLPT {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10867
+ * 
+ * 
+ * cdef class WrapLST:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapLST {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10884
+ * 
+ * 
+ * cdef class WrapLTB:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapLTB {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10901
+ * 
+ * 
+ * cdef class WrapMAP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMAP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10918
+ * 
+ * 
+ * cdef class WrapMAPL:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMAPL {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10935
+ * 
+ * 
+ * cdef class WrapMAPTEMPLATE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10952
+ * 
+ * 
+ * cdef class WrapMATH:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMATH {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":10961
+ * 
+ * 
+ * cdef class WrapMETA:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMETA {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10978
+ * 
+ * 
+ * cdef class WrapMVIEW:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMVIEW {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":10995
+ * 
+ * 
+ * cdef class WrapMVU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMVU {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11004
+ * 
+ * 
+ * cdef class WrapMXD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMXD {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11013
+ * 
+ * 
+ * cdef class WrapPAT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPAT {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11030
+ * 
+ * 
+ * cdef class WrapPG:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPG {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11047
+ * 
+ * 
+ * cdef class WrapPJ:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPJ {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11064
+ * 
+ * 
+ * cdef class WrapPLY:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPLY {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11081
+ * 
+ * 
+ * cdef class WrapRA:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapRA {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11098
+ * 
+ * 
+ * cdef class WrapREG:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapREG {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11115
+ * 
+ * 
+ * cdef class WrapSBF:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSBF {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11132
+ * 
+ * 
+ * cdef class WrapST:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapST {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11149
+ * 
+ * 
+ * cdef class WrapST2:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapST2 {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11166
+ * 
+ * 
+ * cdef class WrapSTR:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSTR {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11175
+ * 
+ * 
+ * cdef class WrapSURFACE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSURFACE {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11192
+ * 
+ * 
+ * cdef class WrapSURFACEITEM:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11209
+ * 
+ * 
+ * cdef class WrapSYS:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSYS {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11218
+ * 
+ * 
+ * cdef class WrapTB:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTB {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11235
+ * 
+ * 
+ * cdef class WrapTPAT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTPAT {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11252
+ * 
+ * 
+ * cdef class WrapTR:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTR {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11269
+ * 
+ * 
+ * cdef class WrapUSERMETA:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapUSERMETA {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11286
+ * 
+ * 
+ * cdef class WrapVA:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVA {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11303
+ * 
+ * 
+ * cdef class WrapVM:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVM {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11320
+ * 
+ * 
+ * cdef class WrapVOX:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVOX {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11337
+ * 
+ * 
+ * cdef class WrapVOXD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVOXD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11354
+ * 
+ * 
+ * cdef class WrapVOXE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVOXE {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11371
+ * 
+ * 
+ * cdef class WrapVULCAN:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVULCAN {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11380
+ * 
+ * 
+ * cdef class WrapVV:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVV {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11397
+ * 
+ * 
+ * cdef class WrapWA:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapWA {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11414
+ * 
+ * 
+ * cdef class WrapACQUIRE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapACQUIRE {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11431
+ * 
+ * 
+ * cdef class WrapARCDB:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapARCDB {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11448
+ * 
+ * 
+ * cdef class WrapARCDH:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapARCDH {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11457
+ * 
+ * 
+ * cdef class WrapARCMAP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapARCMAP {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11466
+ * 
+ * 
+ * cdef class WrapARCSYS:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapARCSYS {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11475
+ * 
+ * 
+ * cdef class WrapBIGRID:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapBIGRID {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11492
+ * 
+ * 
+ * cdef class WrapCHIMERA:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapCHIMERA {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11501
+ * 
+ * 
+ * cdef class WrapCOM:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapCOM {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11518
+ * 
+ * 
+ * cdef class WrapCSYMB:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapCSYMB {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11535
+ * 
+ * 
+ * cdef class WrapDGW:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDGW {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11552
+ * 
+ * 
+ * cdef class WrapDH:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDH {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11569
+ * 
+ * 
+ * cdef class WrapDMPPLY:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDMPPLY {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11586
+ * 
+ * 
+ * cdef class WrapDOCU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDOCU {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11603
+ * 
+ * 
+ * cdef class WrapDU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDU {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11612
+ * 
+ * 
+ * cdef class WrapDXFI:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapDXFI {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11629
+ * 
+ * 
+ * cdef class WrapEDB:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEDB {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11646
+ * 
+ * 
+ * cdef class WrapEDOC:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEDOC {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11663
+ * 
+ * 
+ * cdef class WrapEMAP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEMAP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11680
+ * 
+ * 
+ * cdef class WrapEMAPTEMPLATE:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11697
+ * 
+ * 
+ * cdef class WrapEUL3:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEUL3 {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11714
+ * 
+ * 
+ * cdef class WrapEXP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapEXP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11731
+ * 
+ * 
+ * cdef class WrapFFT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapFFT {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11748
+ * 
+ * 
+ * cdef class WrapFFT2:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapFFT2 {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11757
+ * 
+ * 
+ * cdef class WrapFLT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapFLT {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11766
+ * 
+ * 
+ * cdef class WrapGD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11783
+ * 
+ * 
+ * cdef class WrapGER:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGER {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11800
+ * 
+ * 
+ * cdef class WrapGMSYS:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGMSYS {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11809
+ * 
+ * 
+ * cdef class WrapGU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGU {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11818
+ * 
+ * 
+ * cdef class WrapGUI:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapGUI {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11827
+ * 
+ * 
+ * cdef class WrapHTTP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapHTTP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11844
+ * 
+ * 
+ * cdef class WrapIEXP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIEXP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11861
+ * 
+ * 
+ * cdef class WrapINTERNET:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapINTERNET {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11870
+ * 
+ * 
+ * cdef class WrapIP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11887
+ * 
+ * 
+ * cdef class WrapIPGUI:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapIPGUI {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11896
+ * 
+ * 
+ * cdef class WrapKGRD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapKGRD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11913
+ * 
+ * 
+ * cdef class WrapLMSG:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapLMSG {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11922
+ * 
+ * 
+ * cdef class WrapMISC:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMISC {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11931
+ * 
+ * 
+ * cdef class WrapMSTK:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMSTK {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11948
+ * 
+ * 
+ * cdef class WrapMVG:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapMVG {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11965
+ * 
+ * 
+ * cdef class WrapPDF3D:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPDF3D {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":11974
+ * 
+ * 
+ * cdef class WrapPGEXP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPGEXP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":11991
+ * 
+ * 
+ * cdef class WrapPGU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPGU {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12000
+ * 
+ * 
+ * cdef class WrapPRAGA3:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPRAGA3 {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12009
+ * 
+ * 
+ * cdef class WrapPROJ:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapPROJ {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12018
+ * 
+ * 
+ * cdef class WrapRGRD:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapRGRD {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":12035
+ * 
+ * 
+ * cdef class WrapSEMPLOT:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSEMPLOT {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12044
+ * 
+ * 
+ * cdef class WrapSHP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSHP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":12061
+ * 
+ * 
+ * cdef class WrapSQLSRV:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSQLSRV {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12070
+ * 
+ * 
+ * cdef class WrapSTK:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSTK {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":12087
+ * 
+ * 
+ * cdef class WrapSTRINGS:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapSTRINGS {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12096
+ * 
+ * 
+ * cdef class WrapTC:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTC {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":12113
+ * 
+ * 
+ * cdef class WrapTEST:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTEST {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12122
+ * 
+ * 
+ * cdef class WrapTIN:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTIN {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":12139
+ * 
+ * 
+ * cdef class WrapTRND:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapTRND {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12148
+ * 
+ * 
+ * cdef class WrapUNC:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapUNC {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12157
+ * 
+ * 
+ * cdef class WrapVAU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVAU {
+  PyObject_HEAD
+};
+
+
+/* "gxapi_cy.pyx":12166
+ * 
+ * 
+ * cdef class WrapVVEXP:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVVEXP {
+  PyObject_HEAD
+  int32_t handle;
+};
+
+
+/* "gxapi_cy.pyx":12183
+ * 
+ * 
+ * cdef class WrapVVU:             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+struct __pyx_obj_8gxapi_cy_WrapVVU {
+  PyObject_HEAD
+};
+
+
+
+/* "gxapi_cy.pyx":10402
+ *         free(s)
+ * 
+ * cdef class WrapPGeo:             # <<<<<<<<<<<<<<
+ *     cdef void* p_geo
+ * 
+ */
+
+struct __pyx_vtabstruct_8gxapi_cy_WrapPGeo {
+  PyObject *(*_raise_on_gx_errors)(struct __pyx_obj_8gxapi_cy_WrapPGeo *, void *);
+};
+static struct __pyx_vtabstruct_8gxapi_cy_WrapPGeo *__pyx_vtabptr_8gxapi_cy_WrapPGeo;
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -822,6 +2460,15 @@ static PyObject *__Pyx_GetBuiltinName(PyObject *name);
 /* GetModuleGlobalName.proto */
 static CYTHON_INLINE PyObject *__Pyx_GetModuleGlobalName(PyObject *name);
 
+/* GetAttr.proto */
+static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *, PyObject *);
+
+/* GetAttr3.proto */
+static CYTHON_INLINE PyObject *__Pyx_GetAttr3(PyObject *, PyObject *, PyObject *);
+
+/* RaiseException.proto */
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
+
 /* PyCFunctionFastCall.proto */
 #if CYTHON_FAST_PYCCALL
 static CYTHON_INLINE PyObject *__Pyx_PyCFunction_FastCall(PyObject *func, PyObject **args, Py_ssize_t nargs);
@@ -848,8 +2495,28 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
-/* RaiseException.proto */
-static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
+/* PyObjectSetAttrStr.proto */
+#if CYTHON_USE_TYPE_SLOTS
+#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o,n,NULL)
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
+    PyTypeObject* tp = Py_TYPE(obj);
+    if (likely(tp->tp_setattro))
+        return tp->tp_setattro(obj, attr_name, value);
+#if PY_MAJOR_VERSION < 3
+    if (likely(tp->tp_setattr))
+        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
+#endif
+    return PyObject_SetAttr(obj, attr_name, value);
+}
+#else
+#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
+#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
+#endif
+
+/* WriteUnraisableException.proto */
+static void __Pyx_WriteUnraisable(const char *name, int clineno,
+                                  int lineno, const char *filename,
+                                  int full_traceback, int nogil);
 
 /* PyObjectCallNoArg.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
@@ -889,6 +2556,9 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int32_t(int32_t value);
 
+/* CIntFromPy.proto */
+static CYTHON_INLINE int32_t __Pyx_PyInt_As_int32_t(PyObject *);
+
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
@@ -904,7 +2574,7 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self, void *__pyx_v_p_geo); /* proto*/
+static PyObject *__pyx_f_8gxapi_cy_8WrapPGeo__raise_on_gx_errors(CYTHON_UNUSED struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self, void *__pyx_v_p_geo); /* proto*/
 
 /* Module declarations from 'libc.stdint' */
 
@@ -913,13 +2583,212 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
 /* Module declarations from 'libc.stdlib' */
 
 /* Module declarations from 'gxapi_cy' */
-static PyTypeObject *__pyx_ptype_8gxapi_cy_Geo = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPGeo = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_Wrap3DN = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_Wrap3DV = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapAGG = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapBF = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDAT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDATALINKD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDATAMINE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDB = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDBREAD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDBWRITE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDSEL = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEXT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGEO = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGEOSOFT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGEOSTRING = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGIS = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapHGD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapHXYZ = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIGRF = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIMG = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIMU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIPJ = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapITR = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapLAYOUT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapLL2 = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapLPT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapLST = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapLTB = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMAP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMAPL = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMAPTEMPLATE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMATH = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMETA = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMVIEW = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMVU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMXD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPAT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPG = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPJ = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPLY = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapRA = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapREG = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSBF = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapST = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapST2 = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSTR = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSURFACE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSURFACEITEM = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSYS = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTB = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTPAT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTR = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapUSERMETA = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVA = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVM = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVOX = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVOXD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVOXE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVULCAN = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVV = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapWA = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapACQUIRE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapARCDB = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapARCDH = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapARCMAP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapARCSYS = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapBIGRID = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapCHIMERA = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapCOM = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapCSYMB = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDGW = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDH = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDMPPLY = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDOCU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapDXFI = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEDB = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEDOC = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEMAP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEMAPTEMPLATE = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEUL3 = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapEXP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapFFT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapFFT2 = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapFLT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGER = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGMSYS = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapGUI = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapHTTP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIEXP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapINTERNET = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapIPGUI = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapKGRD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapLMSG = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMISC = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMSTK = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapMVG = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPDF3D = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPGEXP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPGU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPRAGA3 = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapPROJ = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapRGRD = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSEMPLOT = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSHP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSQLSRV = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSTK = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapSTRINGS = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTC = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTEST = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTIN = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapTRND = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapUNC = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVAU = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVVEXP = 0;
+static PyTypeObject *__pyx_ptype_8gxapi_cy_WrapVVU = 0;
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_3DN(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_AGG(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) DestroyEx_BF(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DAT(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DATALINKD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DB(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DBREAD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DBWRITE(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DSEL(void *, int32_t const *); /*proto*/
 __PYX_EXTERN_C DL_IMPORT(int32_t) iCheckTerminate_SYS(void *, int32_t *); /*proto*/
 __PYX_EXTERN_C DL_IMPORT(int32_t) sGetError_GEO(void *, void *, int32_t, void *, int32_t, int32_t *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_GEOSTRING(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_GIS(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_HGD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_HXYZ(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_IGRF(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_IMG(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_IPJ(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_ITR(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_LAYOUT(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_LL2(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_LPT(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_LST(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_LTB(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_MAP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_MAPL(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_MAPTEMPLATE(void *, int32_t const *); /*proto*/
 __PYX_EXTERN_C DL_IMPORT(double) rDotProduct3D_MATH(void *, double const *, double const *, double const *, double const *, double const *, double const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_META(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_MVIEW(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_PAT(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_PG(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_PJ(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_PLY(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_RA(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_REG(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_SBF(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_ST(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_ST2(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_SURFACE(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_SURFACEITEM(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destr_SYS(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_TB(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_TPAT(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_TR(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_USERMETA(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VA(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VM(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VOX(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VOXD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VOXE(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VV(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_WA(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_ACQUIRE(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_BIGRID(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_COM(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_CSYMB(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) App_Destroy_DGW(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DH(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DMPPLY(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DOCU(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_DXFI(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) App_Destroy_EDB(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) App_Destroy_EDOC(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) App_Destroy_EMAP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) App_Destroy_EMAPTEMPLATE(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_EXP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_FFT(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_GD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_GER(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_HTTP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_IEXP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_IP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_KGRD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_MSTK(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_MVG(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_PGEXP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_RGRD(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_SHP(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_TC(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_TIN(void *, int32_t const *); /*proto*/
+__PYX_EXTERN_C DL_IMPORT(void) Destroy_VVEXP(void *, int32_t const *); /*proto*/
 __PYX_EXTERN_C DL_IMPORT(void) *pCreate_GEO(char const *, char const *, int32_t, void *, int32_t, char *, int32_t); /*proto*/
 __PYX_EXTERN_C DL_IMPORT(void) Destroy_GEO(void *); /*proto*/
 static PyObject *__pyx_f_8gxapi_cy_tounicode(char *); /*proto*/
+static void *__pyx_f_8gxapi_cy_get_p_geo(void); /*proto*/
 #define __Pyx_MODULE_NAME "gxapi_cy"
 int __pyx_module_is_main_gxapi_cy = 0;
 
@@ -935,25 +2804,39 @@ static const char __pyx_k_ver[] = "ver";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_UTF_8[] = "UTF-8";
+static const char __pyx_k_local[] = "local";
 static const char __pyx_k_GXExit[] = "GXExit";
 static const char __pyx_k_decode[] = "decode";
+static const char __pyx_k_handle[] = "handle";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_strict[] = "strict";
 static const char __pyx_k_GXError[] = "GXError";
 static const char __pyx_k_wind_id[] = "wind_id";
 static const char __pyx_k_GXCancel[] = "GXCancel";
+static const char __pyx_k_threading[] = "threading";
 static const char __pyx_k_GXAPIError[] = "GXAPIError";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
+static const char __pyx_k_gxapi_cy_geo[] = "gxapi_cy_geo";
+static const char __pyx_k_thread_local[] = "thread_local";
 static const char __pyx_k_geosoft_gxapi[] = "geosoft.gxapi";
+static const char __pyx_k_current_thread[] = "current_thread";
+static const char __pyx_k_A_gxapi_cy_WrapPGeo_instance_has[] = "A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.";
+static const char __pyx_k_Only_one_gxapi_cy_WrapPGeo_insta[] = "Only one gxapi_cy.WrapPGeo instance per thread allowed.";
+static PyObject *__pyx_kp_s_A_gxapi_cy_WrapPGeo_instance_has;
 static PyObject *__pyx_n_s_GXAPIError;
 static PyObject *__pyx_n_s_GXCancel;
 static PyObject *__pyx_n_s_GXError;
 static PyObject *__pyx_n_s_GXExit;
+static PyObject *__pyx_kp_s_Only_one_gxapi_cy_WrapPGeo_insta;
 static PyObject *__pyx_kp_s_UTF_8;
 static PyObject *__pyx_n_s_app;
+static PyObject *__pyx_n_s_current_thread;
 static PyObject *__pyx_n_s_decode;
 static PyObject *__pyx_n_s_geosoft_gxapi;
+static PyObject *__pyx_n_s_gxapi_cy_geo;
+static PyObject *__pyx_n_s_handle;
 static PyObject *__pyx_n_s_import;
+static PyObject *__pyx_n_s_local;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_p1;
 static PyObject *__pyx_n_s_p2;
@@ -964,18 +2847,305 @@ static PyObject *__pyx_n_s_p6;
 static PyObject *__pyx_n_s_pyx_vtable;
 static PyObject *__pyx_n_s_strict;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_thread_local;
+static PyObject *__pyx_n_s_threading;
 static PyObject *__pyx_n_s_ver;
 static PyObject *__pyx_n_s_wind_id;
-static int __pyx_pf_8gxapi_cy_3Geo___cinit__(struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self, char const *__pyx_v_app, char const *__pyx_v_ver, PyObject *__pyx_v_wind_id); /* proto */
-static void __pyx_pf_8gxapi_cy_3Geo_2__dealloc__(struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_8gxapi_cy_3Geo_4dot_product(struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self, PyObject *__pyx_v_p1, PyObject *__pyx_v_p2, PyObject *__pyx_v_p3, PyObject *__pyx_v_p4, PyObject *__pyx_v_p5, PyObject *__pyx_v_p6); /* proto */
-static PyObject *__pyx_tp_new_8gxapi_cy_Geo(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_8gxapi_cy_8WrapPGeo___cinit__(struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self, char const *__pyx_v_app, char const *__pyx_v_ver, PyObject *__pyx_v_wind_id); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapPGeo_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_8gxapi_cy_8WrapPGeo_4dot_product(struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self, PyObject *__pyx_v_p1, PyObject *__pyx_v_p2, PyObject *__pyx_v_p3, PyObject *__pyx_v_p4, PyObject *__pyx_v_p5, PyObject *__pyx_v_p6); /* proto */
+static int __pyx_pf_8gxapi_cy_7Wrap3DN___cinit__(struct __pyx_obj_8gxapi_cy_Wrap3DN *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7Wrap3DN_2__dealloc__(struct __pyx_obj_8gxapi_cy_Wrap3DN *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7Wrap3DV___cinit__(struct __pyx_obj_8gxapi_cy_Wrap3DV *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7Wrap3DV_2__dealloc__(struct __pyx_obj_8gxapi_cy_Wrap3DV *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapAGG___cinit__(struct __pyx_obj_8gxapi_cy_WrapAGG *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapAGG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapAGG *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapBF___cinit__(struct __pyx_obj_8gxapi_cy_WrapBF *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapBF_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapBF *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapDAT___cinit__(struct __pyx_obj_8gxapi_cy_WrapDAT *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapDAT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDAT *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_13WrapDATALINKD___cinit__(struct __pyx_obj_8gxapi_cy_WrapDATALINKD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_13WrapDATALINKD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDATALINKD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapDB___cinit__(struct __pyx_obj_8gxapi_cy_WrapDB *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapDB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDB *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_10WrapDBREAD___cinit__(struct __pyx_obj_8gxapi_cy_WrapDBREAD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_10WrapDBREAD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDBREAD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_11WrapDBWRITE___cinit__(struct __pyx_obj_8gxapi_cy_WrapDBWRITE *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_11WrapDBWRITE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDBWRITE *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapDSEL___cinit__(struct __pyx_obj_8gxapi_cy_WrapDSEL *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapDSEL_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDSEL *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_13WrapGEOSTRING___cinit__(struct __pyx_obj_8gxapi_cy_WrapGEOSTRING *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_13WrapGEOSTRING_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGEOSTRING *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapGIS___cinit__(struct __pyx_obj_8gxapi_cy_WrapGIS *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapGIS_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGIS *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapHGD___cinit__(struct __pyx_obj_8gxapi_cy_WrapHGD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapHGD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapHGD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapHXYZ___cinit__(struct __pyx_obj_8gxapi_cy_WrapHXYZ *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapHXYZ_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapHXYZ *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapIGRF___cinit__(struct __pyx_obj_8gxapi_cy_WrapIGRF *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapIGRF_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIGRF *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapIMG___cinit__(struct __pyx_obj_8gxapi_cy_WrapIMG *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapIMG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIMG *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapIPJ___cinit__(struct __pyx_obj_8gxapi_cy_WrapIPJ *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapIPJ_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIPJ *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapITR___cinit__(struct __pyx_obj_8gxapi_cy_WrapITR *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapITR_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapITR *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_10WrapLAYOUT___cinit__(struct __pyx_obj_8gxapi_cy_WrapLAYOUT *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_10WrapLAYOUT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLAYOUT *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapLL2___cinit__(struct __pyx_obj_8gxapi_cy_WrapLL2 *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapLL2_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLL2 *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapLPT___cinit__(struct __pyx_obj_8gxapi_cy_WrapLPT *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapLPT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLPT *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapLST___cinit__(struct __pyx_obj_8gxapi_cy_WrapLST *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapLST_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLST *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapLTB___cinit__(struct __pyx_obj_8gxapi_cy_WrapLTB *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapLTB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLTB *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapMAP___cinit__(struct __pyx_obj_8gxapi_cy_WrapMAP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapMAP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMAP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapMAPL___cinit__(struct __pyx_obj_8gxapi_cy_WrapMAPL *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapMAPL_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMAPL *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_15WrapMAPTEMPLATE___cinit__(struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_15WrapMAPTEMPLATE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapMETA___cinit__(struct __pyx_obj_8gxapi_cy_WrapMETA *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapMETA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMETA *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_9WrapMVIEW___cinit__(struct __pyx_obj_8gxapi_cy_WrapMVIEW *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_9WrapMVIEW_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMVIEW *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapPAT___cinit__(struct __pyx_obj_8gxapi_cy_WrapPAT *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapPAT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPAT *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapPG___cinit__(struct __pyx_obj_8gxapi_cy_WrapPG *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapPG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPG *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapPJ___cinit__(struct __pyx_obj_8gxapi_cy_WrapPJ *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapPJ_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPJ *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapPLY___cinit__(struct __pyx_obj_8gxapi_cy_WrapPLY *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapPLY_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPLY *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapRA___cinit__(struct __pyx_obj_8gxapi_cy_WrapRA *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapRA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapRA *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapREG___cinit__(struct __pyx_obj_8gxapi_cy_WrapREG *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapREG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapREG *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapSBF___cinit__(struct __pyx_obj_8gxapi_cy_WrapSBF *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapSBF_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSBF *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapST___cinit__(struct __pyx_obj_8gxapi_cy_WrapST *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapST_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapST *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapST2___cinit__(struct __pyx_obj_8gxapi_cy_WrapST2 *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapST2_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapST2 *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_11WrapSURFACE___cinit__(struct __pyx_obj_8gxapi_cy_WrapSURFACE *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_11WrapSURFACE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSURFACE *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_15WrapSURFACEITEM___cinit__(struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_15WrapSURFACEITEM_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapTB___cinit__(struct __pyx_obj_8gxapi_cy_WrapTB *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapTB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTB *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapTPAT___cinit__(struct __pyx_obj_8gxapi_cy_WrapTPAT *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapTPAT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTPAT *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapTR___cinit__(struct __pyx_obj_8gxapi_cy_WrapTR *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapTR_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTR *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_12WrapUSERMETA___cinit__(struct __pyx_obj_8gxapi_cy_WrapUSERMETA *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_12WrapUSERMETA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapUSERMETA *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapVA___cinit__(struct __pyx_obj_8gxapi_cy_WrapVA *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapVA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVA *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapVM___cinit__(struct __pyx_obj_8gxapi_cy_WrapVM *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapVM_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVM *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapVOX___cinit__(struct __pyx_obj_8gxapi_cy_WrapVOX *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapVOX_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVOX *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapVOXD___cinit__(struct __pyx_obj_8gxapi_cy_WrapVOXD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapVOXD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVOXD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapVOXE___cinit__(struct __pyx_obj_8gxapi_cy_WrapVOXE *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapVOXE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVOXE *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapVV___cinit__(struct __pyx_obj_8gxapi_cy_WrapVV *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapVV_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVV *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapWA___cinit__(struct __pyx_obj_8gxapi_cy_WrapWA *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapWA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapWA *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_11WrapACQUIRE___cinit__(struct __pyx_obj_8gxapi_cy_WrapACQUIRE *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_11WrapACQUIRE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapACQUIRE *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_9WrapARCDB___cinit__(struct __pyx_obj_8gxapi_cy_WrapARCDB *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_9WrapARCDB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapARCDB *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_10WrapBIGRID___cinit__(struct __pyx_obj_8gxapi_cy_WrapBIGRID *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_10WrapBIGRID_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapBIGRID *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapCOM___cinit__(struct __pyx_obj_8gxapi_cy_WrapCOM *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapCOM_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapCOM *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_9WrapCSYMB___cinit__(struct __pyx_obj_8gxapi_cy_WrapCSYMB *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_9WrapCSYMB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapCSYMB *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapDGW___cinit__(struct __pyx_obj_8gxapi_cy_WrapDGW *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapDGW_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDGW *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapDH___cinit__(struct __pyx_obj_8gxapi_cy_WrapDH *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapDH_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDH *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_10WrapDMPPLY___cinit__(struct __pyx_obj_8gxapi_cy_WrapDMPPLY *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_10WrapDMPPLY_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDMPPLY *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapDOCU___cinit__(struct __pyx_obj_8gxapi_cy_WrapDOCU *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapDOCU_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDOCU *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapDXFI___cinit__(struct __pyx_obj_8gxapi_cy_WrapDXFI *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapDXFI_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDXFI *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapEDB___cinit__(struct __pyx_obj_8gxapi_cy_WrapEDB *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapEDB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEDB *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapEDOC___cinit__(struct __pyx_obj_8gxapi_cy_WrapEDOC *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapEDOC_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEDOC *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapEMAP___cinit__(struct __pyx_obj_8gxapi_cy_WrapEMAP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapEMAP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEMAP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_16WrapEMAPTEMPLATE___cinit__(struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_16WrapEMAPTEMPLATE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapEUL3___cinit__(struct __pyx_obj_8gxapi_cy_WrapEUL3 *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapEUL3_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEUL3 *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapEXP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEXP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapFFT___cinit__(struct __pyx_obj_8gxapi_cy_WrapFFT *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapFFT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapFFT *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapGD___cinit__(struct __pyx_obj_8gxapi_cy_WrapGD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapGD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapGER___cinit__(struct __pyx_obj_8gxapi_cy_WrapGER *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapGER_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGER *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapHTTP___cinit__(struct __pyx_obj_8gxapi_cy_WrapHTTP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapHTTP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapHTTP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapIEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapIEXP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapIEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIEXP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapIP___cinit__(struct __pyx_obj_8gxapi_cy_WrapIP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapIP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapKGRD___cinit__(struct __pyx_obj_8gxapi_cy_WrapKGRD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapKGRD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapKGRD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapMSTK___cinit__(struct __pyx_obj_8gxapi_cy_WrapMSTK *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapMSTK_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMSTK *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapMVG___cinit__(struct __pyx_obj_8gxapi_cy_WrapMVG *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapMVG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMVG *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_9WrapPGEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapPGEXP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_9WrapPGEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPGEXP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_8WrapRGRD___cinit__(struct __pyx_obj_8gxapi_cy_WrapRGRD *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_8WrapRGRD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapRGRD *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapSHP___cinit__(struct __pyx_obj_8gxapi_cy_WrapSHP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapSHP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSHP *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapSTK___cinit__(struct __pyx_obj_8gxapi_cy_WrapSTK *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapSTK_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSTK *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_6WrapTC___cinit__(struct __pyx_obj_8gxapi_cy_WrapTC *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_6WrapTC_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTC *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_7WrapTIN___cinit__(struct __pyx_obj_8gxapi_cy_WrapTIN *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_7WrapTIN_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTIN *__pyx_v_self); /* proto */
+static int __pyx_pf_8gxapi_cy_9WrapVVEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapVVEXP *__pyx_v_self, PyObject *__pyx_v_handle); /* proto */
+static void __pyx_pf_8gxapi_cy_9WrapVVEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVVEXP *__pyx_v_self); /* proto */
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPGeo(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_Wrap3DN(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_Wrap3DV(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapAGG(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapBF(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDAT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDATALINKD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDATAMINE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDBREAD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDBWRITE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDSEL(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEXT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGEO(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGEOSOFT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGEOSTRING(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGIS(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapHGD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapHXYZ(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIGRF(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIMG(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIMU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIPJ(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapITR(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLAYOUT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLL2(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLPT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLST(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLTB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMAP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMAPL(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMAPTEMPLATE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMATH(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMETA(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMVIEW(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMVU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMXD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPAT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPG(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPJ(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPLY(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapRA(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapREG(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSBF(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapST(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapST2(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSTR(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSURFACE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSURFACEITEM(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSYS(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTPAT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTR(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapUSERMETA(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVA(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVM(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVOX(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVOXD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVOXE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVULCAN(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVV(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapWA(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapACQUIRE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCDB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCDH(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCMAP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCSYS(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapBIGRID(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapCHIMERA(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapCOM(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapCSYMB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDGW(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDH(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDMPPLY(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDOCU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDXFI(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEDB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEDOC(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEMAP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEMAPTEMPLATE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEUL3(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEXP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapFFT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapFFT2(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapFLT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGER(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGMSYS(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGUI(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapHTTP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIEXP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapINTERNET(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIPGUI(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapKGRD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLMSG(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMISC(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMSTK(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMVG(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPDF3D(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPGEXP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPGU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPRAGA3(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPROJ(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapRGRD(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSEMPLOT(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSHP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSQLSRV(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSTK(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSTRINGS(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTC(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTEST(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTIN(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTRND(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapUNC(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVAU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVVEXP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVVU(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
+static PyObject *__pyx_tuple__4;
+static PyObject *__pyx_tuple__5;
 
-/* "gxapi_cy.pyx":10383
+/* "gxapi_cy.pyx":10388
  * cdef extern void Destroy_GEO(void *);
  * 
  * cdef unicode tounicode(char* s):             # <<<<<<<<<<<<<<
@@ -990,7 +3160,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode(char *__pyx_v_s) {
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("tounicode", 0);
 
-  /* "gxapi_cy.pyx":10384
+  /* "gxapi_cy.pyx":10389
  * 
  * cdef unicode tounicode(char* s):
  *     return s.decode('UTF-8', 'strict')             # <<<<<<<<<<<<<<
@@ -998,20 +3168,20 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode(char *__pyx_v_s) {
  * cdef unicode tounicode_with_length(
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyUnicode_FromString(__pyx_v_s); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10384, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_FromString(__pyx_v_s); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10384, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10384, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 10384, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 10389, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gxapi_cy.pyx":10383
+  /* "gxapi_cy.pyx":10388
  * cdef extern void Destroy_GEO(void *);
  * 
  * cdef unicode tounicode(char* s):             # <<<<<<<<<<<<<<
@@ -1031,7 +3201,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode(char *__pyx_v_s) {
   return __pyx_r;
 }
 
-/* "gxapi_cy.pyx":10386
+/* "gxapi_cy.pyx":10391
  *     return s.decode('UTF-8', 'strict')
  * 
  * cdef unicode tounicode_with_length(             # <<<<<<<<<<<<<<
@@ -1046,7 +3216,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length(char *__pyx_v_s, size_t
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("tounicode_with_length", 0);
 
-  /* "gxapi_cy.pyx":10388
+  /* "gxapi_cy.pyx":10393
  * cdef unicode tounicode_with_length(
  *         char* s, size_t length):
  *     return s[:length].decode('UTF-8', 'strict')             # <<<<<<<<<<<<<<
@@ -1054,20 +3224,20 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length(char *__pyx_v_s, size_t
  * cdef unicode tounicode_with_length_and_free(
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyUnicode_FromStringAndSize(__pyx_v_s + 0, __pyx_v_length - 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10388, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_FromStringAndSize(__pyx_v_s + 0, __pyx_v_length - 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10388, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10388, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 10388, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 10393, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "gxapi_cy.pyx":10386
+  /* "gxapi_cy.pyx":10391
  *     return s.decode('UTF-8', 'strict')
  * 
  * cdef unicode tounicode_with_length(             # <<<<<<<<<<<<<<
@@ -1087,7 +3257,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length(char *__pyx_v_s, size_t
   return __pyx_r;
 }
 
-/* "gxapi_cy.pyx":10390
+/* "gxapi_cy.pyx":10395
  *     return s[:length].decode('UTF-8', 'strict')
  * 
  * cdef unicode tounicode_with_length_and_free(             # <<<<<<<<<<<<<<
@@ -1112,7 +3282,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length_and_free(char *__pyx_v_
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("tounicode_with_length_and_free", 0);
 
-  /* "gxapi_cy.pyx":10392
+  /* "gxapi_cy.pyx":10397
  * cdef unicode tounicode_with_length_and_free(
  *         char* s, size_t length):
  *     try:             # <<<<<<<<<<<<<<
@@ -1121,7 +3291,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length_and_free(char *__pyx_v_
  */
   /*try:*/ {
 
-    /* "gxapi_cy.pyx":10393
+    /* "gxapi_cy.pyx":10398
  *         char* s, size_t length):
  *     try:
  *         return s[:length].decode('UTF-8', 'strict')             # <<<<<<<<<<<<<<
@@ -1129,26 +3299,26 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length_and_free(char *__pyx_v_
  *         free(s)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyUnicode_FromStringAndSize(__pyx_v_s + 0, __pyx_v_length - 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10393, __pyx_L4_error)
+    __pyx_t_1 = __Pyx_PyUnicode_FromStringAndSize(__pyx_v_s + 0, __pyx_v_length - 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10398, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10393, __pyx_L4_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10398, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10393, __pyx_L4_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10398, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 10393, __pyx_L4_error)
+    if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 10398, __pyx_L4_error)
     __pyx_r = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L3_return;
   }
 
-  /* "gxapi_cy.pyx":10395
+  /* "gxapi_cy.pyx":10400
  *         return s[:length].decode('UTF-8', 'strict')
  *     finally:
  *         free(s)             # <<<<<<<<<<<<<<
  * 
- * cdef class Geo:
+ * cdef class WrapPGeo:
  */
   /*finally:*/ {
     /*exception exit:*/{
@@ -1195,7 +3365,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length_and_free(char *__pyx_v_
     }
   }
 
-  /* "gxapi_cy.pyx":10390
+  /* "gxapi_cy.pyx":10395
  *     return s[:length].decode('UTF-8', 'strict')
  * 
  * cdef unicode tounicode_with_length_and_free(             # <<<<<<<<<<<<<<
@@ -1215,7 +3385,7 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length_and_free(char *__pyx_v_
   return __pyx_r;
 }
 
-/* "gxapi_cy.pyx":10400
+/* "gxapi_cy.pyx":10405
  *     cdef void* p_geo
  * 
  *     def __cinit__(self, const char* app, const char* ver, wind_id=0):             # <<<<<<<<<<<<<<
@@ -1224,8 +3394,8 @@ static PyObject *__pyx_f_8gxapi_cy_tounicode_with_length_and_free(char *__pyx_v_
  */
 
 /* Python wrapper */
-static int __pyx_pw_8gxapi_cy_3Geo_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_8gxapi_cy_3Geo_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_8gxapi_cy_8WrapPGeo_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapPGeo_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   char const *__pyx_v_app;
   char const *__pyx_v_ver;
   PyObject *__pyx_v_wind_id = 0;
@@ -1254,7 +3424,7 @@ static int __pyx_pw_8gxapi_cy_3Geo_1__cinit__(PyObject *__pyx_v_self, PyObject *
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_ver)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 2, 3, 1); __PYX_ERR(0, 10400, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 2, 3, 1); __PYX_ERR(0, 10405, __pyx_L3_error)
         }
         case  2:
         if (kw_args > 0) {
@@ -1263,7 +3433,7 @@ static int __pyx_pw_8gxapi_cy_3Geo_1__cinit__(PyObject *__pyx_v_self, PyObject *
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10400, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10405, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1274,48 +3444,50 @@ static int __pyx_pw_8gxapi_cy_3Geo_1__cinit__(PyObject *__pyx_v_self, PyObject *
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_app = __Pyx_PyObject_AsString(values[0]); if (unlikely((!__pyx_v_app) && PyErr_Occurred())) __PYX_ERR(0, 10400, __pyx_L3_error)
-    __pyx_v_ver = __Pyx_PyObject_AsString(values[1]); if (unlikely((!__pyx_v_ver) && PyErr_Occurred())) __PYX_ERR(0, 10400, __pyx_L3_error)
+    __pyx_v_app = __Pyx_PyObject_AsString(values[0]); if (unlikely((!__pyx_v_app) && PyErr_Occurred())) __PYX_ERR(0, 10405, __pyx_L3_error)
+    __pyx_v_ver = __Pyx_PyObject_AsString(values[1]); if (unlikely((!__pyx_v_ver) && PyErr_Occurred())) __PYX_ERR(0, 10405, __pyx_L3_error)
     __pyx_v_wind_id = values[2];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10400, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10405, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gxapi_cy.Geo.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("gxapi_cy.WrapPGeo.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8gxapi_cy_3Geo___cinit__(((struct __pyx_obj_8gxapi_cy_Geo *)__pyx_v_self), __pyx_v_app, __pyx_v_ver, __pyx_v_wind_id);
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapPGeo___cinit__(((struct __pyx_obj_8gxapi_cy_WrapPGeo *)__pyx_v_self), __pyx_v_app, __pyx_v_ver, __pyx_v_wind_id);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_8gxapi_cy_3Geo___cinit__(struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self, char const *__pyx_v_app, char const *__pyx_v_ver, PyObject *__pyx_v_wind_id) {
+static int __pyx_pf_8gxapi_cy_8WrapPGeo___cinit__(struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self, char const *__pyx_v_app, char const *__pyx_v_ver, PyObject *__pyx_v_wind_id) {
   void *__pyx_v_hParentWnd;
   char *__pyx_v_err;
+  PyObject *__pyx_v_tls_geo = NULL;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
+  PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_3;
+  int __pyx_t_4;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  int __pyx_t_7;
+  PyObject *__pyx_t_7 = NULL;
   int __pyx_t_8;
-  char const *__pyx_t_9;
-  PyObject *__pyx_t_10 = NULL;
+  int __pyx_t_9;
+  char const *__pyx_t_10;
   PyObject *__pyx_t_11 = NULL;
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
   PyObject *__pyx_t_14 = NULL;
   PyObject *__pyx_t_15 = NULL;
+  PyObject *__pyx_t_16 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "gxapi_cy.pyx":10401
+  /* "gxapi_cy.pyx":10406
  * 
  *     def __cinit__(self, const char* app, const char* ver, wind_id=0):
  *         cdef void* hParentWnd = <void *>wind_id             # <<<<<<<<<<<<<<
@@ -1324,116 +3496,182 @@ static int __pyx_pf_8gxapi_cy_3Geo___cinit__(struct __pyx_obj_8gxapi_cy_Geo *__p
  */
   __pyx_v_hParentWnd = ((void *)__pyx_v_wind_id);
 
-  /* "gxapi_cy.pyx":10402
+  /* "gxapi_cy.pyx":10407
  *     def __cinit__(self, const char* app, const char* ver, wind_id=0):
  *         cdef void* hParentWnd = <void *>wind_id
  *         cdef char* err = <char*>malloc(4096)             # <<<<<<<<<<<<<<
  *         try:
- *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
  */
   __pyx_v_err = ((char *)malloc(0x1000));
 
-  /* "gxapi_cy.pyx":10403
+  /* "gxapi_cy.pyx":10408
  *         cdef void* hParentWnd = <void *>wind_id
  *         cdef char* err = <char*>malloc(4096)
  *         try:             # <<<<<<<<<<<<<<
- *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
- *             if self.p_geo == NULL:
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *             if not tls_geo is None:
  */
   /*try:*/ {
 
-    /* "gxapi_cy.pyx":10404
+    /* "gxapi_cy.pyx":10409
  *         cdef char* err = <char*>malloc(4096)
  *         try:
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)             # <<<<<<<<<<<<<<
+ *             if not tls_geo is None:
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
+ */
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_thread_local); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10409, __pyx_L4_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_GetAttr3(__pyx_t_1, __pyx_n_s_gxapi_cy_geo, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10409, __pyx_L4_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_tls_geo = __pyx_t_2;
+    __pyx_t_2 = 0;
+
+    /* "gxapi_cy.pyx":10410
+ *         try:
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *             if not tls_geo is None:             # <<<<<<<<<<<<<<
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
+ *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
+ */
+    __pyx_t_3 = (__pyx_v_tls_geo != Py_None);
+    __pyx_t_4 = (__pyx_t_3 != 0);
+    if (__pyx_t_4) {
+
+      /* "gxapi_cy.pyx":10411
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *             if not tls_geo is None:
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");             # <<<<<<<<<<<<<<
+ *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
+ *             if self.p_geo == NULL:
+ */
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10411, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10411, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __PYX_ERR(0, 10411, __pyx_L4_error)
+
+      /* "gxapi_cy.pyx":10410
+ *         try:
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *             if not tls_geo is None:             # <<<<<<<<<<<<<<
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
+ *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
+ */
+    }
+
+    /* "gxapi_cy.pyx":10412
+ *             if not tls_geo is None:
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
  *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)             # <<<<<<<<<<<<<<
  *             if self.p_geo == NULL:
- *                 raise GXAPIError(tounicode(err));
+ *                 raise GXAPIError(tounicode(err))
  */
     __pyx_v_self->p_geo = pCreate_GEO(__pyx_v_app, __pyx_v_ver, 0, __pyx_v_hParentWnd, 0, __pyx_v_err, 0x1000);
 
-    /* "gxapi_cy.pyx":10405
- *         try:
+    /* "gxapi_cy.pyx":10413
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
  *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
  *             if self.p_geo == NULL:             # <<<<<<<<<<<<<<
- *                 raise GXAPIError(tounicode(err));
- *         finally:
+ *                 raise GXAPIError(tounicode(err))
+ *             thread_local.gxapi_cy_geo = <size_t>self.p_geo
  */
-    __pyx_t_1 = ((__pyx_v_self->p_geo == NULL) != 0);
-    if (__pyx_t_1) {
+    __pyx_t_4 = ((__pyx_v_self->p_geo == NULL) != 0);
+    if (__pyx_t_4) {
 
-      /* "gxapi_cy.pyx":10406
+      /* "gxapi_cy.pyx":10414
  *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
  *             if self.p_geo == NULL:
- *                 raise GXAPIError(tounicode(err));             # <<<<<<<<<<<<<<
+ *                 raise GXAPIError(tounicode(err))             # <<<<<<<<<<<<<<
+ *             thread_local.gxapi_cy_geo = <size_t>self.p_geo
  *         finally:
- *             free(err)
  */
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10406, __pyx_L4_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_err); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10406, __pyx_L4_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-          __Pyx_INCREF(__pyx_t_5);
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10414, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_5 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_err); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 10414, __pyx_L4_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_6 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_3, function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
         }
       }
-      if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10406, __pyx_L4_error)
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
+      if (!__pyx_t_6) {
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10414, __pyx_L4_error)
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_GOTREF(__pyx_t_1);
       } else {
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_3)) {
-          PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10406, __pyx_L4_error)
-          __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (PyFunction_Check(__pyx_t_2)) {
+          PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_5};
+          __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10414, __pyx_L4_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
-          PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10406, __pyx_L4_error)
-          __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+          PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_5};
+          __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10414, __pyx_L4_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         } else
         #endif
         {
-          __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 10406, __pyx_L4_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
-          __Pyx_GIVEREF(__pyx_t_4);
-          PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_4);
-          __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10406, __pyx_L4_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10414, __pyx_L4_error)
+          __Pyx_GOTREF(__pyx_t_7);
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
+          __Pyx_GIVEREF(__pyx_t_5);
+          PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_5);
+          __pyx_t_5 = 0;
+          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10414, __pyx_L4_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
       }
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_Raise(__pyx_t_2, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __PYX_ERR(0, 10406, __pyx_L4_error)
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __PYX_ERR(0, 10414, __pyx_L4_error)
 
-      /* "gxapi_cy.pyx":10405
- *         try:
+      /* "gxapi_cy.pyx":10413
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
  *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
  *             if self.p_geo == NULL:             # <<<<<<<<<<<<<<
- *                 raise GXAPIError(tounicode(err));
- *         finally:
+ *                 raise GXAPIError(tounicode(err))
+ *             thread_local.gxapi_cy_geo = <size_t>self.p_geo
  */
     }
+
+    /* "gxapi_cy.pyx":10415
+ *             if self.p_geo == NULL:
+ *                 raise GXAPIError(tounicode(err))
+ *             thread_local.gxapi_cy_geo = <size_t>self.p_geo             # <<<<<<<<<<<<<<
+ *         finally:
+ *             free(err)
+ */
+    __pyx_t_1 = __Pyx_PyInt_FromSize_t(((size_t)__pyx_v_self->p_geo)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10415, __pyx_L4_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_thread_local); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10415, __pyx_L4_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_gxapi_cy_geo, __pyx_t_1) < 0) __PYX_ERR(0, 10415, __pyx_L4_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
 
-  /* "gxapi_cy.pyx":10408
- *                 raise GXAPIError(tounicode(err));
+  /* "gxapi_cy.pyx":10417
+ *             thread_local.gxapi_cy_geo = <size_t>self.p_geo
  *         finally:
  *             free(err)             # <<<<<<<<<<<<<<
  * 
@@ -1447,44 +3685,44 @@ static int __pyx_pf_8gxapi_cy_3Geo___cinit__(struct __pyx_obj_8gxapi_cy_Geo *__p
     /*exception exit:*/{
       __Pyx_PyThreadState_declare
       __pyx_L4_error:;
-      __pyx_t_10 = 0; __pyx_t_11 = 0; __pyx_t_12 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; __pyx_t_15 = 0;
+      __pyx_t_11 = 0; __pyx_t_12 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; __pyx_t_15 = 0; __pyx_t_16 = 0;
       __Pyx_PyThreadState_assign
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (PY_MAJOR_VERSION >= 3) __Pyx_ExceptionSwap(&__pyx_t_13, &__pyx_t_14, &__pyx_t_15);
-      if ((PY_MAJOR_VERSION < 3) || unlikely(__Pyx_GetException(&__pyx_t_10, &__pyx_t_11, &__pyx_t_12) < 0)) __Pyx_ErrFetch(&__pyx_t_10, &__pyx_t_11, &__pyx_t_12);
-      __Pyx_XGOTREF(__pyx_t_10);
+      if (PY_MAJOR_VERSION >= 3) __Pyx_ExceptionSwap(&__pyx_t_14, &__pyx_t_15, &__pyx_t_16);
+      if ((PY_MAJOR_VERSION < 3) || unlikely(__Pyx_GetException(&__pyx_t_11, &__pyx_t_12, &__pyx_t_13) < 0)) __Pyx_ErrFetch(&__pyx_t_11, &__pyx_t_12, &__pyx_t_13);
       __Pyx_XGOTREF(__pyx_t_11);
       __Pyx_XGOTREF(__pyx_t_12);
       __Pyx_XGOTREF(__pyx_t_13);
       __Pyx_XGOTREF(__pyx_t_14);
       __Pyx_XGOTREF(__pyx_t_15);
-      __pyx_t_7 = __pyx_lineno; __pyx_t_8 = __pyx_clineno; __pyx_t_9 = __pyx_filename;
+      __Pyx_XGOTREF(__pyx_t_16);
+      __pyx_t_8 = __pyx_lineno; __pyx_t_9 = __pyx_clineno; __pyx_t_10 = __pyx_filename;
       {
         free(__pyx_v_err);
       }
       __Pyx_PyThreadState_assign
       if (PY_MAJOR_VERSION >= 3) {
-        __Pyx_XGIVEREF(__pyx_t_13);
         __Pyx_XGIVEREF(__pyx_t_14);
         __Pyx_XGIVEREF(__pyx_t_15);
-        __Pyx_ExceptionReset(__pyx_t_13, __pyx_t_14, __pyx_t_15);
+        __Pyx_XGIVEREF(__pyx_t_16);
+        __Pyx_ExceptionReset(__pyx_t_14, __pyx_t_15, __pyx_t_16);
       }
-      __Pyx_XGIVEREF(__pyx_t_10);
       __Pyx_XGIVEREF(__pyx_t_11);
       __Pyx_XGIVEREF(__pyx_t_12);
-      __Pyx_ErrRestore(__pyx_t_10, __pyx_t_11, __pyx_t_12);
-      __pyx_t_10 = 0; __pyx_t_11 = 0; __pyx_t_12 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; __pyx_t_15 = 0;
-      __pyx_lineno = __pyx_t_7; __pyx_clineno = __pyx_t_8; __pyx_filename = __pyx_t_9;
+      __Pyx_XGIVEREF(__pyx_t_13);
+      __Pyx_ErrRestore(__pyx_t_11, __pyx_t_12, __pyx_t_13);
+      __pyx_t_11 = 0; __pyx_t_12 = 0; __pyx_t_13 = 0; __pyx_t_14 = 0; __pyx_t_15 = 0; __pyx_t_16 = 0;
+      __pyx_lineno = __pyx_t_8; __pyx_clineno = __pyx_t_9; __pyx_filename = __pyx_t_10;
       goto __pyx_L1_error;
     }
     __pyx_L5:;
   }
 
-  /* "gxapi_cy.pyx":10400
+  /* "gxapi_cy.pyx":10405
  *     cdef void* p_geo
  * 
  *     def __cinit__(self, const char* app, const char* ver, wind_id=0):             # <<<<<<<<<<<<<<
@@ -1496,19 +3734,20 @@ static int __pyx_pf_8gxapi_cy_3Geo___cinit__(struct __pyx_obj_8gxapi_cy_Geo *__p
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("gxapi_cy.Geo.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_AddTraceback("gxapi_cy.WrapPGeo.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_tls_geo);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "gxapi_cy.pyx":10410
+/* "gxapi_cy.pyx":10419
  *             free(err)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1517,50 +3756,63 @@ static int __pyx_pf_8gxapi_cy_3Geo___cinit__(struct __pyx_obj_8gxapi_cy_Geo *__p
  */
 
 /* Python wrapper */
-static void __pyx_pw_8gxapi_cy_3Geo_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_8gxapi_cy_3Geo_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_8gxapi_cy_8WrapPGeo_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapPGeo_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_8gxapi_cy_3Geo_2__dealloc__(((struct __pyx_obj_8gxapi_cy_Geo *)__pyx_v_self));
+  __pyx_pf_8gxapi_cy_8WrapPGeo_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapPGeo *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_8gxapi_cy_3Geo_2__dealloc__(struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self) {
+static void __pyx_pf_8gxapi_cy_8WrapPGeo_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "gxapi_cy.pyx":10411
+  /* "gxapi_cy.pyx":10420
  * 
  *     def __dealloc__(self):
  *         if self.p_geo != NULL:             # <<<<<<<<<<<<<<
  *             Destroy_GEO(self.p_geo)
- * 
+ *         thread_local.gxapi_cy_geo = None
  */
   __pyx_t_1 = ((__pyx_v_self->p_geo != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "gxapi_cy.pyx":10412
+    /* "gxapi_cy.pyx":10421
  *     def __dealloc__(self):
  *         if self.p_geo != NULL:
  *             Destroy_GEO(self.p_geo)             # <<<<<<<<<<<<<<
+ *         thread_local.gxapi_cy_geo = None
  * 
- *     cdef _raise_on_gx_errors(self, void* p_geo):
  */
     Destroy_GEO(__pyx_v_self->p_geo);
 
-    /* "gxapi_cy.pyx":10411
+    /* "gxapi_cy.pyx":10420
  * 
  *     def __dealloc__(self):
  *         if self.p_geo != NULL:             # <<<<<<<<<<<<<<
  *             Destroy_GEO(self.p_geo)
- * 
+ *         thread_local.gxapi_cy_geo = None
  */
   }
 
-  /* "gxapi_cy.pyx":10410
+  /* "gxapi_cy.pyx":10422
+ *         if self.p_geo != NULL:
+ *             Destroy_GEO(self.p_geo)
+ *         thread_local.gxapi_cy_geo = None             # <<<<<<<<<<<<<<
+ * 
+ *     cdef _raise_on_gx_errors(self, void* p_geo):
+ */
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_thread_local); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10422, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_gxapi_cy_geo, Py_None) < 0) __PYX_ERR(0, 10422, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "gxapi_cy.pyx":10419
  *             free(err)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1569,18 +3821,23 @@ static void __pyx_pf_8gxapi_cy_3Geo_2__dealloc__(struct __pyx_obj_8gxapi_cy_Geo 
  */
 
   /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_WriteUnraisable("gxapi_cy.WrapPGeo.__dealloc__", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_L0:;
   __Pyx_RefNannyFinishContext();
 }
 
-/* "gxapi_cy.pyx":10414
- *             Destroy_GEO(self.p_geo)
+/* "gxapi_cy.pyx":10424
+ *         thread_local.gxapi_cy_geo = None
  * 
  *     cdef _raise_on_gx_errors(self, void* p_geo):             # <<<<<<<<<<<<<<
  *         cdef int32_t term
  *         cdef char* module
  */
 
-static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self, void *__pyx_v_p_geo) {
+static PyObject *__pyx_f_8gxapi_cy_8WrapPGeo__raise_on_gx_errors(CYTHON_UNUSED struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self, void *__pyx_v_p_geo) {
   int32_t __pyx_v_term;
   char *__pyx_v_module;
   char *__pyx_v_err;
@@ -1607,7 +3864,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
   PyObject *__pyx_t_18 = NULL;
   __Pyx_RefNannySetupContext("_raise_on_gx_errors", 0);
 
-  /* "gxapi_cy.pyx":10419
+  /* "gxapi_cy.pyx":10429
  *         cdef char* err
  *         cdef int32_t error_number
  *         if iCheckTerminate_SYS(p_geo, &term) > 0:             # <<<<<<<<<<<<<<
@@ -1617,7 +3874,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
   __pyx_t_1 = ((iCheckTerminate_SYS(__pyx_v_p_geo, (&__pyx_v_term)) > 0) != 0);
   if (__pyx_t_1) {
 
-    /* "gxapi_cy.pyx":10420
+    /* "gxapi_cy.pyx":10430
  *         cdef int32_t error_number
  *         if iCheckTerminate_SYS(p_geo, &term) > 0:
  *             if term == 0:             # <<<<<<<<<<<<<<
@@ -1627,14 +3884,14 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
     switch (__pyx_v_term) {
       case 0:
 
-      /* "gxapi_cy.pyx":10421
+      /* "gxapi_cy.pyx":10431
  *         if iCheckTerminate_SYS(p_geo, &term) > 0:
  *             if term == 0:
  *                 raise GXExit()             # <<<<<<<<<<<<<<
  *             elif term == -1:
  *                 raise GXCancel()
  */
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXExit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10421, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXExit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10431, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -1647,18 +3904,18 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
         }
       }
       if (__pyx_t_4) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10421, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10431, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       } else {
-        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10421, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10431, __pyx_L1_error)
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_Raise(__pyx_t_2, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __PYX_ERR(0, 10421, __pyx_L1_error)
+      __PYX_ERR(0, 10431, __pyx_L1_error)
 
-      /* "gxapi_cy.pyx":10420
+      /* "gxapi_cy.pyx":10430
  *         cdef int32_t error_number
  *         if iCheckTerminate_SYS(p_geo, &term) > 0:
  *             if term == 0:             # <<<<<<<<<<<<<<
@@ -1667,7 +3924,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
       break;
 
-      /* "gxapi_cy.pyx":10422
+      /* "gxapi_cy.pyx":10432
  *             if term == 0:
  *                 raise GXExit()
  *             elif term == -1:             # <<<<<<<<<<<<<<
@@ -1676,14 +3933,14 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
       case -1L:
 
-      /* "gxapi_cy.pyx":10423
+      /* "gxapi_cy.pyx":10433
  *                 raise GXExit()
  *             elif term == -1:
  *                 raise GXCancel()             # <<<<<<<<<<<<<<
  *             else:
  *                 module = <char*>malloc(1024)
  */
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXCancel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10423, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXCancel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10433, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -1696,18 +3953,18 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
         }
       }
       if (__pyx_t_4) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10423, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10433, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       } else {
-        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10423, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10433, __pyx_L1_error)
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_Raise(__pyx_t_2, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __PYX_ERR(0, 10423, __pyx_L1_error)
+      __PYX_ERR(0, 10433, __pyx_L1_error)
 
-      /* "gxapi_cy.pyx":10422
+      /* "gxapi_cy.pyx":10432
  *             if term == 0:
  *                 raise GXExit()
  *             elif term == -1:             # <<<<<<<<<<<<<<
@@ -1717,7 +3974,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
       break;
       default:
 
-      /* "gxapi_cy.pyx":10425
+      /* "gxapi_cy.pyx":10435
  *                 raise GXCancel()
  *             else:
  *                 module = <char*>malloc(1024)             # <<<<<<<<<<<<<<
@@ -1726,36 +3983,36 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
       __pyx_v_module = ((char *)malloc(0x400));
 
-      /* "gxapi_cy.pyx":10426
+      /* "gxapi_cy.pyx":10436
  *             else:
  *                 module = <char*>malloc(1024)
  *                 err = <char*>malloc(4096)             # <<<<<<<<<<<<<<
  *                 try:
- * 
+ *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
  */
       __pyx_v_err = ((char *)malloc(0x1000));
 
-      /* "gxapi_cy.pyx":10427
+      /* "gxapi_cy.pyx":10437
  *                 module = <char*>malloc(1024)
  *                 err = <char*>malloc(4096)
  *                 try:             # <<<<<<<<<<<<<<
- * 
  *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
+ *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
  */
       /*try:*/ {
 
-        /* "gxapi_cy.pyx":10429
+        /* "gxapi_cy.pyx":10438
+ *                 err = <char*>malloc(4096)
  *                 try:
- * 
  *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)             # <<<<<<<<<<<<<<
- * 
  *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
+ *                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
  */
         sGetError_GEO(__pyx_v_p_geo, __pyx_v_module, 0x400, __pyx_v_err, 0x1000, (&__pyx_v_error_number));
 
-        /* "gxapi_cy.pyx":10431
+        /* "gxapi_cy.pyx":10439
+ *                 try:
  *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
- * 
  *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc             # <<<<<<<<<<<<<<
  *                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
  *                         raise GXAPIError(tounicode(err));
@@ -1773,8 +4030,8 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
           goto __pyx_L8_bool_binop_done;
         }
 
-        /* "gxapi_cy.pyx":10432
- * 
+        /* "gxapi_cy.pyx":10440
+ *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
  *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
  *                         error_number == 31009 or error_number == 31011):  # wrapper bind errors             # <<<<<<<<<<<<<<
  *                         raise GXAPIError(tounicode(err));
@@ -1790,25 +4047,25 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
         __pyx_t_1 = __pyx_t_5;
         __pyx_L8_bool_binop_done:;
 
-        /* "gxapi_cy.pyx":10431
+        /* "gxapi_cy.pyx":10439
+ *                 try:
  *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
- * 
  *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc             # <<<<<<<<<<<<<<
  *                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
  *                         raise GXAPIError(tounicode(err));
  */
         if (__pyx_t_1) {
 
-          /* "gxapi_cy.pyx":10433
+          /* "gxapi_cy.pyx":10441
  *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
  *                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
  *                         raise GXAPIError(tounicode(err));             # <<<<<<<<<<<<<<
  *                     else:
  *                         raise GXError(tounicode(err), tounicode(module), error_number)
  */
-          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10433, __pyx_L5_error)
+          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10441, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_4 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_err); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10433, __pyx_L5_error)
+          __pyx_t_4 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_err); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10441, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_6 = NULL;
           if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -1821,14 +4078,14 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
             }
           }
           if (!__pyx_t_6) {
-            __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10433, __pyx_L5_error)
+            __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10441, __pyx_L5_error)
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_GOTREF(__pyx_t_2);
           } else {
             #if CYTHON_FAST_PYCALL
             if (PyFunction_Check(__pyx_t_3)) {
               PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_4};
-              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10433, __pyx_L5_error)
+              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10441, __pyx_L5_error)
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -1837,20 +4094,20 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
             #if CYTHON_FAST_PYCCALL
             if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
               PyObject *__pyx_temp[2] = {__pyx_t_6, __pyx_t_4};
-              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10433, __pyx_L5_error)
+              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10441, __pyx_L5_error)
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             } else
             #endif
             {
-              __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10433, __pyx_L5_error)
+              __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10441, __pyx_L5_error)
               __Pyx_GOTREF(__pyx_t_7);
               __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
               __Pyx_GIVEREF(__pyx_t_4);
               PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_4);
               __pyx_t_4 = 0;
-              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10433, __pyx_L5_error)
+              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10441, __pyx_L5_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             }
@@ -1858,18 +4115,18 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_Raise(__pyx_t_2, 0, 0, 0);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __PYX_ERR(0, 10433, __pyx_L5_error)
+          __PYX_ERR(0, 10441, __pyx_L5_error)
 
-          /* "gxapi_cy.pyx":10431
+          /* "gxapi_cy.pyx":10439
+ *                 try:
  *                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
- * 
  *                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc             # <<<<<<<<<<<<<<
  *                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
  *                         raise GXAPIError(tounicode(err));
  */
         }
 
-        /* "gxapi_cy.pyx":10435
+        /* "gxapi_cy.pyx":10443
  *                         raise GXAPIError(tounicode(err));
  *                     else:
  *                         raise GXError(tounicode(err), tounicode(module), error_number)             # <<<<<<<<<<<<<<
@@ -1877,13 +4134,13 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  *                     if module != NULL:
  */
         /*else*/ {
-          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10435, __pyx_L5_error)
+          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10443, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_7 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_err); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10435, __pyx_L5_error)
+          __pyx_t_7 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_err); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 10443, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_4 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_module); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10435, __pyx_L5_error)
+          __pyx_t_4 = __pyx_f_8gxapi_cy_tounicode(__pyx_v_module); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10443, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_6 = __Pyx_PyInt_From_int32_t(__pyx_v_error_number); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 10435, __pyx_L5_error)
+          __pyx_t_6 = __Pyx_PyInt_From_int32_t(__pyx_v_error_number); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 10443, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_6);
           __pyx_t_8 = NULL;
           __pyx_t_9 = 0;
@@ -1900,7 +4157,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
           #if CYTHON_FAST_PYCALL
           if (PyFunction_Check(__pyx_t_3)) {
             PyObject *__pyx_temp[4] = {__pyx_t_8, __pyx_t_7, __pyx_t_4, __pyx_t_6};
-            __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 3+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10435, __pyx_L5_error)
+            __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 3+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10443, __pyx_L5_error)
             __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -1911,7 +4168,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
           #if CYTHON_FAST_PYCCALL
           if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
             PyObject *__pyx_temp[4] = {__pyx_t_8, __pyx_t_7, __pyx_t_4, __pyx_t_6};
-            __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 3+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10435, __pyx_L5_error)
+            __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 3+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10443, __pyx_L5_error)
             __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -1920,7 +4177,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
           } else
           #endif
           {
-            __pyx_t_10 = PyTuple_New(3+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 10435, __pyx_L5_error)
+            __pyx_t_10 = PyTuple_New(3+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 10443, __pyx_L5_error)
             __Pyx_GOTREF(__pyx_t_10);
             if (__pyx_t_8) {
               __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -1934,18 +4191,18 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
             __pyx_t_7 = 0;
             __pyx_t_4 = 0;
             __pyx_t_6 = 0;
-            __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10435, __pyx_L5_error)
+            __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10443, __pyx_L5_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           }
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_Raise(__pyx_t_2, 0, 0, 0);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __PYX_ERR(0, 10435, __pyx_L5_error)
+          __PYX_ERR(0, 10443, __pyx_L5_error)
         }
       }
 
-      /* "gxapi_cy.pyx":10437
+      /* "gxapi_cy.pyx":10445
  *                         raise GXError(tounicode(err), tounicode(module), error_number)
  *                 finally:
  *                     if module != NULL:             # <<<<<<<<<<<<<<
@@ -1978,7 +4235,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
             __pyx_t_1 = ((__pyx_v_module != NULL) != 0);
             if (__pyx_t_1) {
 
-              /* "gxapi_cy.pyx":10438
+              /* "gxapi_cy.pyx":10446
  *                 finally:
  *                     if module != NULL:
  *                         free(module)             # <<<<<<<<<<<<<<
@@ -1987,7 +4244,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
               free(__pyx_v_module);
 
-              /* "gxapi_cy.pyx":10437
+              /* "gxapi_cy.pyx":10445
  *                         raise GXError(tounicode(err), tounicode(module), error_number)
  *                 finally:
  *                     if module != NULL:             # <<<<<<<<<<<<<<
@@ -1996,7 +4253,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
             }
 
-            /* "gxapi_cy.pyx":10439
+            /* "gxapi_cy.pyx":10447
  *                     if module != NULL:
  *                         free(module)
  *                     if err != NULL:             # <<<<<<<<<<<<<<
@@ -2006,7 +4263,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
             __pyx_t_1 = ((__pyx_v_err != NULL) != 0);
             if (__pyx_t_1) {
 
-              /* "gxapi_cy.pyx":10440
+              /* "gxapi_cy.pyx":10448
  *                         free(module)
  *                     if err != NULL:
  *                         free(err)             # <<<<<<<<<<<<<<
@@ -2015,7 +4272,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
               free(__pyx_v_err);
 
-              /* "gxapi_cy.pyx":10439
+              /* "gxapi_cy.pyx":10447
  *                     if module != NULL:
  *                         free(module)
  *                     if err != NULL:             # <<<<<<<<<<<<<<
@@ -2043,7 +4300,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
       break;
     }
 
-    /* "gxapi_cy.pyx":10419
+    /* "gxapi_cy.pyx":10429
  *         cdef char* err
  *         cdef int32_t error_number
  *         if iCheckTerminate_SYS(p_geo, &term) > 0:             # <<<<<<<<<<<<<<
@@ -2052,8 +4309,8 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
   }
 
-  /* "gxapi_cy.pyx":10414
- *             Destroy_GEO(self.p_geo)
+  /* "gxapi_cy.pyx":10424
+ *         thread_local.gxapi_cy_geo = None
  * 
  *     cdef _raise_on_gx_errors(self, void* p_geo):             # <<<<<<<<<<<<<<
  *         cdef int32_t term
@@ -2071,7 +4328,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("gxapi_cy.Geo._raise_on_gx_errors", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("gxapi_cy.WrapPGeo._raise_on_gx_errors", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2079,7 +4336,7 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
   return __pyx_r;
 }
 
-/* "gxapi_cy.pyx":10442
+/* "gxapi_cy.pyx":10450
  *                         free(err)
  * 
  *     def dot_product(self, p1, p2, p3, p4, p5, p6):             # <<<<<<<<<<<<<<
@@ -2088,8 +4345,8 @@ static PyObject *__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors(CYTHON_UNUSED struct
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8gxapi_cy_3Geo_5dot_product(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_8gxapi_cy_3Geo_5dot_product(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8gxapi_cy_8WrapPGeo_5dot_product(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_8gxapi_cy_8WrapPGeo_5dot_product(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_p1 = 0;
   PyObject *__pyx_v_p2 = 0;
   PyObject *__pyx_v_p3 = 0;
@@ -2123,31 +4380,31 @@ static PyObject *__pyx_pw_8gxapi_cy_3Geo_5dot_product(PyObject *__pyx_v_self, Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 1); __PYX_ERR(0, 10442, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 1); __PYX_ERR(0, 10450, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_p3)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 2); __PYX_ERR(0, 10442, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 2); __PYX_ERR(0, 10450, __pyx_L3_error)
         }
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_p4)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 3); __PYX_ERR(0, 10442, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 3); __PYX_ERR(0, 10450, __pyx_L3_error)
         }
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_p5)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 4); __PYX_ERR(0, 10442, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 4); __PYX_ERR(0, 10450, __pyx_L3_error)
         }
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_p6)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 5); __PYX_ERR(0, 10442, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, 5); __PYX_ERR(0, 10450, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "dot_product") < 0)) __PYX_ERR(0, 10442, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "dot_product") < 0)) __PYX_ERR(0, 10450, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -2168,20 +4425,20 @@ static PyObject *__pyx_pw_8gxapi_cy_3Geo_5dot_product(PyObject *__pyx_v_self, Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10442, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("dot_product", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10450, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("gxapi_cy.Geo.dot_product", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("gxapi_cy.WrapPGeo.dot_product", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8gxapi_cy_3Geo_4dot_product(((struct __pyx_obj_8gxapi_cy_Geo *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_p3, __pyx_v_p4, __pyx_v_p5, __pyx_v_p6);
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapPGeo_4dot_product(((struct __pyx_obj_8gxapi_cy_WrapPGeo *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_p3, __pyx_v_p4, __pyx_v_p5, __pyx_v_p6);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8gxapi_cy_3Geo_4dot_product(struct __pyx_obj_8gxapi_cy_Geo *__pyx_v_self, PyObject *__pyx_v_p1, PyObject *__pyx_v_p2, PyObject *__pyx_v_p3, PyObject *__pyx_v_p4, PyObject *__pyx_v_p5, PyObject *__pyx_v_p6) {
+static PyObject *__pyx_pf_8gxapi_cy_8WrapPGeo_4dot_product(struct __pyx_obj_8gxapi_cy_WrapPGeo *__pyx_v_self, PyObject *__pyx_v_p1, PyObject *__pyx_v_p2, PyObject *__pyx_v_p3, PyObject *__pyx_v_p4, PyObject *__pyx_v_p5, PyObject *__pyx_v_p6) {
   double __pyx_v_dp1;
   double __pyx_v_dp2;
   double __pyx_v_dp3;
@@ -2195,27 +4452,27 @@ static PyObject *__pyx_pf_8gxapi_cy_3Geo_4dot_product(struct __pyx_obj_8gxapi_cy
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("dot_product", 0);
 
-  /* "gxapi_cy.pyx":10443
+  /* "gxapi_cy.pyx":10451
  * 
  *     def dot_product(self, p1, p2, p3, p4, p5, p6):
  *         cdef double dp1 = p1, dp2 = p2, dp3 = p3, dp4 = p4, dp5 = p5, dp6 = p6             # <<<<<<<<<<<<<<
  *         retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)
  *         self._raise_on_gx_errors(self.p_geo)
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p1); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10443, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p1); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10451, __pyx_L1_error)
   __pyx_v_dp1 = __pyx_t_1;
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p2); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10443, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p2); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10451, __pyx_L1_error)
   __pyx_v_dp2 = __pyx_t_1;
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p3); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10443, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p3); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10451, __pyx_L1_error)
   __pyx_v_dp3 = __pyx_t_1;
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p4); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10443, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p4); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10451, __pyx_L1_error)
   __pyx_v_dp4 = __pyx_t_1;
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p5); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10443, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p5); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10451, __pyx_L1_error)
   __pyx_v_dp5 = __pyx_t_1;
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p6); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10443, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_p6); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10451, __pyx_L1_error)
   __pyx_v_dp6 = __pyx_t_1;
 
-  /* "gxapi_cy.pyx":10444
+  /* "gxapi_cy.pyx":10452
  *     def dot_product(self, p1, p2, p3, p4, p5, p6):
  *         cdef double dp1 = p1, dp2 = p2, dp3 = p3, dp4 = p4, dp5 = p5, dp6 = p6
  *         retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)             # <<<<<<<<<<<<<<
@@ -2224,31 +4481,32 @@ static PyObject *__pyx_pf_8gxapi_cy_3Geo_4dot_product(struct __pyx_obj_8gxapi_cy
  */
   __pyx_v_retval = rDotProduct3D_MATH(__pyx_v_self->p_geo, (&__pyx_v_dp1), (&__pyx_v_dp2), (&__pyx_v_dp3), (&__pyx_v_dp4), (&__pyx_v_dp5), (&__pyx_v_dp6));
 
-  /* "gxapi_cy.pyx":10445
+  /* "gxapi_cy.pyx":10453
  *         cdef double dp1 = p1, dp2 = p2, dp3 = p3, dp4 = p4, dp5 = p5, dp6 = p6
  *         retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)
  *         self._raise_on_gx_errors(self.p_geo)             # <<<<<<<<<<<<<<
  *         return retval
  * 
  */
-  __pyx_t_2 = ((struct __pyx_vtabstruct_8gxapi_cy_Geo *)__pyx_v_self->__pyx_vtab)->_raise_on_gx_errors(__pyx_v_self, __pyx_v_self->p_geo); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10445, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_8gxapi_cy_WrapPGeo *)__pyx_v_self->__pyx_vtab)->_raise_on_gx_errors(__pyx_v_self, __pyx_v_self->p_geo); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10453, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "gxapi_cy.pyx":10446
+  /* "gxapi_cy.pyx":10454
  *         retval = rDotProduct3D_MATH(self.p_geo, &dp1, &dp2, &dp3, &dp4, &dp5, &dp6)
  *         self._raise_on_gx_errors(self.p_geo)
  *         return retval             # <<<<<<<<<<<<<<
  * 
+ * cdef void* get_p_geo():
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_retval); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10446, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_retval); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10454, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "gxapi_cy.pyx":10442
+  /* "gxapi_cy.pyx":10450
  *                         free(err)
  * 
  *     def dot_product(self, p1, p2, p3, p4, p5, p6):             # <<<<<<<<<<<<<<
@@ -2259,17 +4517,12908 @@ static PyObject *__pyx_pf_8gxapi_cy_3Geo_4dot_product(struct __pyx_obj_8gxapi_cy
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("gxapi_cy.Geo.dot_product", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("gxapi_cy.WrapPGeo.dot_product", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static struct __pyx_vtabstruct_8gxapi_cy_Geo __pyx_vtable_8gxapi_cy_Geo;
 
-static PyObject *__pyx_tp_new_8gxapi_cy_Geo(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_8gxapi_cy_Geo *p;
+/* "gxapi_cy.pyx":10456
+ *         return retval
+ * 
+ * cdef void* get_p_geo():             # <<<<<<<<<<<<<<
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *     if not tls_geo is None:
+ */
+
+static void *__pyx_f_8gxapi_cy_get_p_geo(void) {
+  PyObject *__pyx_v_tls_geo = NULL;
+  void *__pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_t_3;
+  int __pyx_t_4;
+  __Pyx_RefNannySetupContext("get_p_geo", 0);
+
+  /* "gxapi_cy.pyx":10457
+ * 
+ * cdef void* get_p_geo():
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)             # <<<<<<<<<<<<<<
+ *     if not tls_geo is None:
+ *         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
+ */
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_thread_local); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10457, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_GetAttr3(__pyx_t_1, __pyx_n_s_gxapi_cy_geo, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10457, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_tls_geo = __pyx_t_2;
+  __pyx_t_2 = 0;
+
+  /* "gxapi_cy.pyx":10458
+ * cdef void* get_p_geo():
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *     if not tls_geo is None:             # <<<<<<<<<<<<<<
+ *         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
+ *     return <void*>tls_geo
+ */
+  __pyx_t_3 = (__pyx_v_tls_geo != Py_None);
+  __pyx_t_4 = (__pyx_t_3 != 0);
+  if (__pyx_t_4) {
+
+    /* "gxapi_cy.pyx":10459
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *     if not tls_geo is None:
+ *         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");             # <<<<<<<<<<<<<<
+ *     return <void*>tls_geo
+ * 
+ */
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10459, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10459, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 10459, __pyx_L1_error)
+
+    /* "gxapi_cy.pyx":10458
+ * cdef void* get_p_geo():
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *     if not tls_geo is None:             # <<<<<<<<<<<<<<
+ *         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
+ *     return <void*>tls_geo
+ */
+  }
+
+  /* "gxapi_cy.pyx":10460
+ *     if not tls_geo is None:
+ *         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
+ *     return <void*>tls_geo             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_r = ((void *)__pyx_v_tls_geo);
+  goto __pyx_L0;
+
+  /* "gxapi_cy.pyx":10456
+ *         return retval
+ * 
+ * cdef void* get_p_geo():             # <<<<<<<<<<<<<<
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *     if not tls_geo is None:
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_WriteUnraisable("gxapi_cy.get_p_geo", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_tls_geo);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10471
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7Wrap3DN_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7Wrap3DN_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10471, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10471, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.Wrap3DN.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7Wrap3DN___cinit__(((struct __pyx_obj_8gxapi_cy_Wrap3DN *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7Wrap3DN___cinit__(struct __pyx_obj_8gxapi_cy_Wrap3DN *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10472
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10472, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10471
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.Wrap3DN.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10474
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_3DN(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7Wrap3DN_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7Wrap3DN_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7Wrap3DN_2__dealloc__(((struct __pyx_obj_8gxapi_cy_Wrap3DN *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7Wrap3DN_2__dealloc__(struct __pyx_obj_8gxapi_cy_Wrap3DN *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10475
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_3DN(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10476
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_3DN(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_3DN(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10475
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_3DN(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10474
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_3DN(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10488
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7Wrap3DV_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7Wrap3DV_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10488, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10488, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.Wrap3DV.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7Wrap3DV___cinit__(((struct __pyx_obj_8gxapi_cy_Wrap3DV *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7Wrap3DV___cinit__(struct __pyx_obj_8gxapi_cy_Wrap3DV *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10489
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10489, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10488
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.Wrap3DV.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10491
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7Wrap3DV_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7Wrap3DV_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7Wrap3DV_2__dealloc__(((struct __pyx_obj_8gxapi_cy_Wrap3DV *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7Wrap3DV_2__dealloc__(struct __pyx_obj_8gxapi_cy_Wrap3DV *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10492
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10493
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destr_SYS(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10492
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10491
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10505
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapAGG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapAGG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10505, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10505, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapAGG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapAGG___cinit__(((struct __pyx_obj_8gxapi_cy_WrapAGG *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapAGG___cinit__(struct __pyx_obj_8gxapi_cy_WrapAGG *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10506
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10506, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10505
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapAGG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10508
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_AGG(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapAGG_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapAGG_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapAGG_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapAGG *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapAGG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapAGG *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10509
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_AGG(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10510
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_AGG(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_AGG(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10509
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_AGG(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10508
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_AGG(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10522
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapBF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapBF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10522, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10522, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapBF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapBF___cinit__(((struct __pyx_obj_8gxapi_cy_WrapBF *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapBF___cinit__(struct __pyx_obj_8gxapi_cy_WrapBF *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10523
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10523, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10522
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapBF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10525
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             DestroyEx_BF(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapBF_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapBF_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapBF_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapBF *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapBF_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapBF *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10526
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             DestroyEx_BF(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10527
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             DestroyEx_BF(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    DestroyEx_BF(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10526
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             DestroyEx_BF(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10525
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             DestroyEx_BF(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10539
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapDAT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapDAT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10539, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10539, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDAT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapDAT___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDAT *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapDAT___cinit__(struct __pyx_obj_8gxapi_cy_WrapDAT *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10540
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10540, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10539
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDAT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10542
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DAT(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapDAT_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapDAT_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapDAT_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDAT *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapDAT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDAT *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10543
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DAT(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10544
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DAT(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DAT(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10543
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DAT(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10542
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DAT(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10556
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_13WrapDATALINKD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_13WrapDATALINKD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10556, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10556, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDATALINKD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_13WrapDATALINKD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDATALINKD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_13WrapDATALINKD___cinit__(struct __pyx_obj_8gxapi_cy_WrapDATALINKD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10557
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10557, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10556
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDATALINKD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10559
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DATALINKD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_13WrapDATALINKD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_13WrapDATALINKD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_13WrapDATALINKD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDATALINKD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_13WrapDATALINKD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDATALINKD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10560
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DATALINKD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10561
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DATALINKD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DATALINKD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10560
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DATALINKD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10559
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DATALINKD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10582
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapDB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapDB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10582, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10582, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapDB___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDB *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapDB___cinit__(struct __pyx_obj_8gxapi_cy_WrapDB *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10583
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10583, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10582
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10585
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DB(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapDB_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapDB_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapDB_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDB *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapDB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDB *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10586
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DB(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10587
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DB(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DB(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10586
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DB(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10585
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DB(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10599
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_10WrapDBREAD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_10WrapDBREAD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10599, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10599, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDBREAD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_10WrapDBREAD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDBREAD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_10WrapDBREAD___cinit__(struct __pyx_obj_8gxapi_cy_WrapDBREAD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10600
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10600, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10599
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDBREAD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10602
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DBREAD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_10WrapDBREAD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_10WrapDBREAD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_10WrapDBREAD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDBREAD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_10WrapDBREAD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDBREAD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10603
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DBREAD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10604
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DBREAD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DBREAD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10603
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DBREAD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10602
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DBREAD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10616
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_11WrapDBWRITE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_11WrapDBWRITE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10616, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10616, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDBWRITE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_11WrapDBWRITE___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDBWRITE *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_11WrapDBWRITE___cinit__(struct __pyx_obj_8gxapi_cy_WrapDBWRITE *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10617
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10617, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10616
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDBWRITE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10619
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DBWRITE(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_11WrapDBWRITE_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_11WrapDBWRITE_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_11WrapDBWRITE_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDBWRITE *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_11WrapDBWRITE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDBWRITE *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10620
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DBWRITE(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10621
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DBWRITE(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DBWRITE(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10620
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DBWRITE(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10619
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DBWRITE(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10633
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapDSEL_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapDSEL_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10633, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10633, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDSEL.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapDSEL___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDSEL *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapDSEL___cinit__(struct __pyx_obj_8gxapi_cy_WrapDSEL *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10634
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10634, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10633
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDSEL.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10636
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DSEL(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapDSEL_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapDSEL_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapDSEL_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDSEL *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapDSEL_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDSEL *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10637
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DSEL(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10638
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DSEL(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DSEL(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10637
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DSEL(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10636
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DSEL(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10677
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_13WrapGEOSTRING_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_13WrapGEOSTRING_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10677, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10677, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGEOSTRING.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_13WrapGEOSTRING___cinit__(((struct __pyx_obj_8gxapi_cy_WrapGEOSTRING *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_13WrapGEOSTRING___cinit__(struct __pyx_obj_8gxapi_cy_WrapGEOSTRING *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10678
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10678, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10677
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGEOSTRING.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10680
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GEOSTRING(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_13WrapGEOSTRING_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_13WrapGEOSTRING_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_13WrapGEOSTRING_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapGEOSTRING *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_13WrapGEOSTRING_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGEOSTRING *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10681
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GEOSTRING(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10682
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_GEOSTRING(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_GEOSTRING(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10681
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GEOSTRING(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10680
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GEOSTRING(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10694
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapGIS_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapGIS_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10694, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10694, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGIS.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapGIS___cinit__(((struct __pyx_obj_8gxapi_cy_WrapGIS *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapGIS___cinit__(struct __pyx_obj_8gxapi_cy_WrapGIS *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10695
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10695, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10694
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGIS.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10697
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GIS(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapGIS_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapGIS_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapGIS_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapGIS *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapGIS_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGIS *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10698
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GIS(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10699
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_GIS(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_GIS(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10698
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GIS(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10697
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GIS(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10711
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapHGD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapHGD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10711, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10711, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapHGD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapHGD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapHGD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapHGD___cinit__(struct __pyx_obj_8gxapi_cy_WrapHGD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10712
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10712, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10711
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapHGD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10714
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_HGD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapHGD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapHGD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapHGD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapHGD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapHGD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapHGD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10715
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_HGD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10716
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_HGD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_HGD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10715
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_HGD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10714
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_HGD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10728
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapHXYZ_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapHXYZ_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10728, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10728, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapHXYZ.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapHXYZ___cinit__(((struct __pyx_obj_8gxapi_cy_WrapHXYZ *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapHXYZ___cinit__(struct __pyx_obj_8gxapi_cy_WrapHXYZ *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10729
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10729, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10728
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapHXYZ.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10731
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_HXYZ(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapHXYZ_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapHXYZ_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapHXYZ_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapHXYZ *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapHXYZ_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapHXYZ *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10732
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_HXYZ(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10733
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_HXYZ(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_HXYZ(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10732
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_HXYZ(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10731
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_HXYZ(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10745
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapIGRF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapIGRF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10745, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10745, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIGRF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapIGRF___cinit__(((struct __pyx_obj_8gxapi_cy_WrapIGRF *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapIGRF___cinit__(struct __pyx_obj_8gxapi_cy_WrapIGRF *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10746
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10746, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10745
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIGRF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10748
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IGRF(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapIGRF_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapIGRF_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapIGRF_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapIGRF *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapIGRF_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIGRF *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10749
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IGRF(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10750
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_IGRF(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_IGRF(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10749
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IGRF(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10748
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IGRF(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10762
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapIMG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapIMG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10762, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10762, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIMG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapIMG___cinit__(((struct __pyx_obj_8gxapi_cy_WrapIMG *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapIMG___cinit__(struct __pyx_obj_8gxapi_cy_WrapIMG *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10763
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10763, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10762
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIMG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10765
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IMG(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapIMG_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapIMG_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapIMG_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapIMG *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapIMG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIMG *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10766
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IMG(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10767
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_IMG(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_IMG(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10766
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IMG(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10765
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IMG(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10788
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapIPJ_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapIPJ_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10788, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10788, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIPJ.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapIPJ___cinit__(((struct __pyx_obj_8gxapi_cy_WrapIPJ *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapIPJ___cinit__(struct __pyx_obj_8gxapi_cy_WrapIPJ *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10789
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10789, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10788
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIPJ.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10791
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IPJ(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapIPJ_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapIPJ_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapIPJ_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapIPJ *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapIPJ_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIPJ *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10792
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IPJ(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10793
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_IPJ(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_IPJ(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10792
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IPJ(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10791
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IPJ(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10805
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapITR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapITR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10805, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10805, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapITR.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapITR___cinit__(((struct __pyx_obj_8gxapi_cy_WrapITR *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapITR___cinit__(struct __pyx_obj_8gxapi_cy_WrapITR *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10806
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10806, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10805
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapITR.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10808
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ITR(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapITR_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapITR_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapITR_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapITR *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapITR_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapITR *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10809
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ITR(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10810
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_ITR(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_ITR(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10809
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ITR(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10808
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ITR(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10822
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_10WrapLAYOUT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_10WrapLAYOUT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10822, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10822, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLAYOUT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_10WrapLAYOUT___cinit__(((struct __pyx_obj_8gxapi_cy_WrapLAYOUT *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_10WrapLAYOUT___cinit__(struct __pyx_obj_8gxapi_cy_WrapLAYOUT *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10823
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10823, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10822
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLAYOUT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10825
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LAYOUT(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_10WrapLAYOUT_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_10WrapLAYOUT_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_10WrapLAYOUT_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapLAYOUT *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_10WrapLAYOUT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLAYOUT *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10826
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LAYOUT(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10827
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_LAYOUT(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_LAYOUT(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10826
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LAYOUT(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10825
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LAYOUT(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10839
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapLL2_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapLL2_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10839, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10839, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLL2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapLL2___cinit__(((struct __pyx_obj_8gxapi_cy_WrapLL2 *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapLL2___cinit__(struct __pyx_obj_8gxapi_cy_WrapLL2 *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10840
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10840, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10839
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLL2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10842
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LL2(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapLL2_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapLL2_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapLL2_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapLL2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapLL2_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLL2 *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10843
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LL2(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10844
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_LL2(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_LL2(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10843
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LL2(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10842
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LL2(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10856
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapLPT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapLPT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10856, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10856, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLPT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapLPT___cinit__(((struct __pyx_obj_8gxapi_cy_WrapLPT *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapLPT___cinit__(struct __pyx_obj_8gxapi_cy_WrapLPT *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10857
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10857, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10856
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLPT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10859
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LPT(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapLPT_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapLPT_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapLPT_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapLPT *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapLPT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLPT *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10860
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LPT(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10861
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_LPT(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_LPT(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10860
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LPT(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10859
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LPT(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10873
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapLST_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapLST_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10873, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10873, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLST.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapLST___cinit__(((struct __pyx_obj_8gxapi_cy_WrapLST *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapLST___cinit__(struct __pyx_obj_8gxapi_cy_WrapLST *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10874
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10874, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10873
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLST.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10876
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LST(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapLST_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapLST_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapLST_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapLST *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapLST_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLST *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10877
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LST(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10878
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_LST(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_LST(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10877
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LST(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10876
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LST(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10890
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapLTB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapLTB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10890, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10890, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLTB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapLTB___cinit__(((struct __pyx_obj_8gxapi_cy_WrapLTB *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapLTB___cinit__(struct __pyx_obj_8gxapi_cy_WrapLTB *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10891
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10891, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10890
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapLTB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10893
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LTB(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapLTB_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapLTB_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapLTB_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapLTB *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapLTB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapLTB *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10894
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LTB(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10895
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_LTB(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_LTB(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10894
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_LTB(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10893
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_LTB(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10907
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapMAP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapMAP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10907, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10907, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMAP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapMAP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMAP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapMAP___cinit__(struct __pyx_obj_8gxapi_cy_WrapMAP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10908
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10908, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10907
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMAP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10910
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MAP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapMAP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapMAP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapMAP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMAP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapMAP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMAP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10911
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MAP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10912
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_MAP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_MAP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10911
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MAP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10910
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MAP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10924
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapMAPL_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapMAPL_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10924, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10924, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMAPL.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapMAPL___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMAPL *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapMAPL___cinit__(struct __pyx_obj_8gxapi_cy_WrapMAPL *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10925
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10925, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10924
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMAPL.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10927
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MAPL(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapMAPL_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapMAPL_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapMAPL_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMAPL *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapMAPL_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMAPL *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10928
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MAPL(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10929
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_MAPL(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_MAPL(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10928
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MAPL(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10927
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MAPL(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10941
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_15WrapMAPTEMPLATE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_15WrapMAPTEMPLATE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10941, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10941, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMAPTEMPLATE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_15WrapMAPTEMPLATE___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_15WrapMAPTEMPLATE___cinit__(struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10942
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10942, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10941
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMAPTEMPLATE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10944
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MAPTEMPLATE(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_15WrapMAPTEMPLATE_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_15WrapMAPTEMPLATE_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_15WrapMAPTEMPLATE_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_15WrapMAPTEMPLATE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10945
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MAPTEMPLATE(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10946
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_MAPTEMPLATE(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_MAPTEMPLATE(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10945
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MAPTEMPLATE(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10944
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MAPTEMPLATE(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10967
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapMETA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapMETA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10967, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10967, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMETA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapMETA___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMETA *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapMETA___cinit__(struct __pyx_obj_8gxapi_cy_WrapMETA *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10968
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10968, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10967
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMETA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10970
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_META(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapMETA_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapMETA_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapMETA_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMETA *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapMETA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMETA *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10971
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_META(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10972
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_META(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_META(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10971
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_META(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10970
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_META(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":10984
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_9WrapMVIEW_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_9WrapMVIEW_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 10984, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 10984, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMVIEW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_9WrapMVIEW___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMVIEW *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_9WrapMVIEW___cinit__(struct __pyx_obj_8gxapi_cy_WrapMVIEW *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":10985
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10985, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":10984
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMVIEW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":10987
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MVIEW(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_9WrapMVIEW_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_9WrapMVIEW_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_9WrapMVIEW_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMVIEW *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_9WrapMVIEW_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMVIEW *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":10988
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MVIEW(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":10989
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_MVIEW(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_MVIEW(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":10988
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MVIEW(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":10987
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MVIEW(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11019
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapPAT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapPAT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11019, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11019, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPAT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapPAT___cinit__(((struct __pyx_obj_8gxapi_cy_WrapPAT *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapPAT___cinit__(struct __pyx_obj_8gxapi_cy_WrapPAT *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11020
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11020, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11019
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPAT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11022
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PAT(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapPAT_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapPAT_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapPAT_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapPAT *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapPAT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPAT *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11023
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PAT(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11024
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_PAT(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_PAT(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11023
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PAT(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11022
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PAT(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11036
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapPG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapPG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11036, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11036, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapPG___cinit__(((struct __pyx_obj_8gxapi_cy_WrapPG *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapPG___cinit__(struct __pyx_obj_8gxapi_cy_WrapPG *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11037
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11037, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11036
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11039
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PG(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapPG_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapPG_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapPG_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapPG *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapPG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPG *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11040
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PG(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11041
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_PG(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_PG(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11040
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PG(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11039
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PG(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11053
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapPJ_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapPJ_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11053, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11053, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPJ.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapPJ___cinit__(((struct __pyx_obj_8gxapi_cy_WrapPJ *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapPJ___cinit__(struct __pyx_obj_8gxapi_cy_WrapPJ *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11054
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11054, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11053
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPJ.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11056
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PJ(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapPJ_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapPJ_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapPJ_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapPJ *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapPJ_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPJ *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11057
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PJ(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11058
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_PJ(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_PJ(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11057
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PJ(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11056
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PJ(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11070
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapPLY_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapPLY_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11070, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11070, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPLY.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapPLY___cinit__(((struct __pyx_obj_8gxapi_cy_WrapPLY *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapPLY___cinit__(struct __pyx_obj_8gxapi_cy_WrapPLY *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11071
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11071, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11070
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPLY.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11073
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PLY(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapPLY_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapPLY_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapPLY_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapPLY *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapPLY_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPLY *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11074
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PLY(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11075
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_PLY(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_PLY(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11074
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PLY(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11073
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PLY(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11087
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapRA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapRA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11087, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11087, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapRA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapRA___cinit__(((struct __pyx_obj_8gxapi_cy_WrapRA *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapRA___cinit__(struct __pyx_obj_8gxapi_cy_WrapRA *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11088
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11088, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11087
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapRA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11090
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_RA(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapRA_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapRA_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapRA_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapRA *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapRA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapRA *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11091
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_RA(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11092
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_RA(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_RA(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11091
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_RA(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11090
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_RA(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11104
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapREG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapREG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11104, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11104, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapREG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapREG___cinit__(((struct __pyx_obj_8gxapi_cy_WrapREG *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapREG___cinit__(struct __pyx_obj_8gxapi_cy_WrapREG *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11105
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11105, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11104
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapREG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11107
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_REG(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapREG_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapREG_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapREG_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapREG *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapREG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapREG *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11108
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_REG(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11109
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_REG(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_REG(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11108
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_REG(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11107
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_REG(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11121
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapSBF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapSBF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11121, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11121, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSBF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapSBF___cinit__(((struct __pyx_obj_8gxapi_cy_WrapSBF *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapSBF___cinit__(struct __pyx_obj_8gxapi_cy_WrapSBF *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11122
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11122, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11121
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSBF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11124
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SBF(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapSBF_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapSBF_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapSBF_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapSBF *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapSBF_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSBF *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11125
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SBF(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11126
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_SBF(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_SBF(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11125
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SBF(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11124
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SBF(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11138
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapST_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapST_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11138, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11138, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapST.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapST___cinit__(((struct __pyx_obj_8gxapi_cy_WrapST *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapST___cinit__(struct __pyx_obj_8gxapi_cy_WrapST *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11139
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11139, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11138
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapST.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11141
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ST(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapST_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapST_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapST_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapST *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapST_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapST *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11142
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ST(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11143
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_ST(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_ST(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11142
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ST(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11141
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ST(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11155
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapST2_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapST2_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11155, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11155, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapST2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapST2___cinit__(((struct __pyx_obj_8gxapi_cy_WrapST2 *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapST2___cinit__(struct __pyx_obj_8gxapi_cy_WrapST2 *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11156
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11156, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11155
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapST2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11158
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ST2(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapST2_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapST2_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapST2_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapST2 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapST2_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapST2 *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11159
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ST2(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11160
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_ST2(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_ST2(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11159
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ST2(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11158
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ST2(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11181
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_11WrapSURFACE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_11WrapSURFACE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11181, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11181, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSURFACE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_11WrapSURFACE___cinit__(((struct __pyx_obj_8gxapi_cy_WrapSURFACE *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_11WrapSURFACE___cinit__(struct __pyx_obj_8gxapi_cy_WrapSURFACE *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11182
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11182, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11181
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSURFACE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11184
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SURFACE(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_11WrapSURFACE_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_11WrapSURFACE_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_11WrapSURFACE_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapSURFACE *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_11WrapSURFACE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSURFACE *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11185
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SURFACE(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11186
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_SURFACE(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_SURFACE(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11185
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SURFACE(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11184
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SURFACE(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11198
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_15WrapSURFACEITEM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_15WrapSURFACEITEM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11198, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11198, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSURFACEITEM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_15WrapSURFACEITEM___cinit__(((struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_15WrapSURFACEITEM___cinit__(struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11199
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11199, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11198
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSURFACEITEM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11201
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SURFACEITEM(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_15WrapSURFACEITEM_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_15WrapSURFACEITEM_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_15WrapSURFACEITEM_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_15WrapSURFACEITEM_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11202
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SURFACEITEM(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11203
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_SURFACEITEM(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_SURFACEITEM(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11202
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SURFACEITEM(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11201
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SURFACEITEM(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11224
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapTB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapTB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11224, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11224, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapTB___cinit__(((struct __pyx_obj_8gxapi_cy_WrapTB *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapTB___cinit__(struct __pyx_obj_8gxapi_cy_WrapTB *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11225
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11225, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11224
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11227
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TB(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapTB_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapTB_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapTB_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapTB *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapTB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTB *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11228
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TB(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11229
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_TB(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_TB(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11228
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TB(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11227
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TB(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11241
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapTPAT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapTPAT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11241, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11241, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTPAT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapTPAT___cinit__(((struct __pyx_obj_8gxapi_cy_WrapTPAT *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapTPAT___cinit__(struct __pyx_obj_8gxapi_cy_WrapTPAT *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11242
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11242, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11241
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTPAT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11244
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TPAT(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapTPAT_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapTPAT_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapTPAT_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapTPAT *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapTPAT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTPAT *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11245
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TPAT(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11246
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_TPAT(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_TPAT(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11245
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TPAT(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11244
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TPAT(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11258
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapTR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapTR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11258, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11258, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTR.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapTR___cinit__(((struct __pyx_obj_8gxapi_cy_WrapTR *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapTR___cinit__(struct __pyx_obj_8gxapi_cy_WrapTR *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11259
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11259, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11258
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTR.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11261
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TR(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapTR_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapTR_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapTR_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapTR *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapTR_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTR *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11262
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TR(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11263
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_TR(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_TR(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11262
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TR(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11261
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TR(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11275
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_12WrapUSERMETA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_12WrapUSERMETA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11275, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11275, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapUSERMETA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_12WrapUSERMETA___cinit__(((struct __pyx_obj_8gxapi_cy_WrapUSERMETA *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_12WrapUSERMETA___cinit__(struct __pyx_obj_8gxapi_cy_WrapUSERMETA *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11276
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11276, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11275
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapUSERMETA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11278
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_USERMETA(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_12WrapUSERMETA_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_12WrapUSERMETA_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_12WrapUSERMETA_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapUSERMETA *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_12WrapUSERMETA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapUSERMETA *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11279
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_USERMETA(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11280
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_USERMETA(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_USERMETA(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11279
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_USERMETA(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11278
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_USERMETA(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11292
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapVA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapVA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11292, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11292, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapVA___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVA *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapVA___cinit__(struct __pyx_obj_8gxapi_cy_WrapVA *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11293
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11293, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11292
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11295
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VA(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapVA_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapVA_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapVA_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVA *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapVA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVA *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11296
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VA(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11297
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VA(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VA(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11296
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VA(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11295
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VA(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11309
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapVM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapVM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11309, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11309, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapVM___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVM *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapVM___cinit__(struct __pyx_obj_8gxapi_cy_WrapVM *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11310
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11310, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11309
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11312
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VM(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapVM_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapVM_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapVM_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVM *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapVM_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVM *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11313
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VM(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11314
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VM(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VM(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11313
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VM(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11312
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VM(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11326
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapVOX_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapVOX_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11326, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11326, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVOX.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapVOX___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVOX *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapVOX___cinit__(struct __pyx_obj_8gxapi_cy_WrapVOX *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11327
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11327, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11326
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVOX.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11329
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VOX(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapVOX_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapVOX_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapVOX_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVOX *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapVOX_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVOX *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11330
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VOX(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11331
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VOX(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VOX(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11330
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VOX(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11329
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VOX(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11343
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapVOXD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapVOXD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11343, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11343, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVOXD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapVOXD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVOXD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapVOXD___cinit__(struct __pyx_obj_8gxapi_cy_WrapVOXD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11344
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11344, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11343
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVOXD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11346
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VOXD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapVOXD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapVOXD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapVOXD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVOXD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapVOXD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVOXD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11347
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VOXD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11348
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VOXD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VOXD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11347
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VOXD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11346
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VOXD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11360
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapVOXE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapVOXE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11360, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11360, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVOXE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapVOXE___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVOXE *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapVOXE___cinit__(struct __pyx_obj_8gxapi_cy_WrapVOXE *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11361
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11361, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11360
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVOXE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11363
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VOXE(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapVOXE_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapVOXE_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapVOXE_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVOXE *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapVOXE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVOXE *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11364
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VOXE(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11365
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VOXE(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VOXE(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11364
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VOXE(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11363
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VOXE(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11386
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapVV_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapVV_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11386, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11386, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVV.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapVV___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVV *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapVV___cinit__(struct __pyx_obj_8gxapi_cy_WrapVV *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11387
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11387, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11386
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVV.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11389
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VV(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapVV_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapVV_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapVV_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVV *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapVV_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVV *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11390
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VV(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11391
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VV(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VV(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11390
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VV(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11389
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VV(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11403
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapWA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapWA_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11403, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11403, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapWA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapWA___cinit__(((struct __pyx_obj_8gxapi_cy_WrapWA *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapWA___cinit__(struct __pyx_obj_8gxapi_cy_WrapWA *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11404
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11404, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11403
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapWA.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11406
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_WA(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapWA_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapWA_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapWA_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapWA *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapWA_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapWA *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11407
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_WA(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11408
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_WA(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_WA(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11407
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_WA(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11406
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_WA(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11420
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_11WrapACQUIRE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_11WrapACQUIRE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11420, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11420, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapACQUIRE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_11WrapACQUIRE___cinit__(((struct __pyx_obj_8gxapi_cy_WrapACQUIRE *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_11WrapACQUIRE___cinit__(struct __pyx_obj_8gxapi_cy_WrapACQUIRE *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11421
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11421, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11420
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapACQUIRE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11423
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ACQUIRE(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_11WrapACQUIRE_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_11WrapACQUIRE_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_11WrapACQUIRE_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapACQUIRE *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_11WrapACQUIRE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapACQUIRE *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11424
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ACQUIRE(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11425
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_ACQUIRE(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_ACQUIRE(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11424
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_ACQUIRE(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11423
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_ACQUIRE(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11437
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_9WrapARCDB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_9WrapARCDB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11437, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11437, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapARCDB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_9WrapARCDB___cinit__(((struct __pyx_obj_8gxapi_cy_WrapARCDB *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_9WrapARCDB___cinit__(struct __pyx_obj_8gxapi_cy_WrapARCDB *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11438
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11438, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11437
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapARCDB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11440
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_9WrapARCDB_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_9WrapARCDB_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_9WrapARCDB_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapARCDB *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_9WrapARCDB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapARCDB *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11441
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11442
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destr_SYS(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11441
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11440
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11481
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_10WrapBIGRID_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_10WrapBIGRID_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11481, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11481, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapBIGRID.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_10WrapBIGRID___cinit__(((struct __pyx_obj_8gxapi_cy_WrapBIGRID *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_10WrapBIGRID___cinit__(struct __pyx_obj_8gxapi_cy_WrapBIGRID *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11482
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11482, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11481
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapBIGRID.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11484
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_BIGRID(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_10WrapBIGRID_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_10WrapBIGRID_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_10WrapBIGRID_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapBIGRID *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_10WrapBIGRID_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapBIGRID *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11485
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_BIGRID(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11486
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_BIGRID(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_BIGRID(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11485
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_BIGRID(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11484
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_BIGRID(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11507
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapCOM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapCOM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11507, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11507, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapCOM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapCOM___cinit__(((struct __pyx_obj_8gxapi_cy_WrapCOM *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapCOM___cinit__(struct __pyx_obj_8gxapi_cy_WrapCOM *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11508
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11508, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11507
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapCOM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11510
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_COM(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapCOM_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapCOM_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapCOM_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapCOM *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapCOM_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapCOM *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11511
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_COM(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11512
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_COM(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_COM(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11511
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_COM(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11510
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_COM(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11524
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_9WrapCSYMB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_9WrapCSYMB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11524, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11524, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapCSYMB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_9WrapCSYMB___cinit__(((struct __pyx_obj_8gxapi_cy_WrapCSYMB *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_9WrapCSYMB___cinit__(struct __pyx_obj_8gxapi_cy_WrapCSYMB *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11525
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11525, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11524
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapCSYMB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11527
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_CSYMB(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_9WrapCSYMB_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_9WrapCSYMB_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_9WrapCSYMB_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapCSYMB *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_9WrapCSYMB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapCSYMB *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11528
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_CSYMB(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11529
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_CSYMB(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_CSYMB(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11528
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_CSYMB(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11527
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_CSYMB(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11541
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapDGW_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapDGW_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11541, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11541, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDGW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapDGW___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDGW *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapDGW___cinit__(struct __pyx_obj_8gxapi_cy_WrapDGW *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11542
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11542, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11541
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDGW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11544
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_DGW(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapDGW_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapDGW_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapDGW_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDGW *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapDGW_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDGW *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11545
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_DGW(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11546
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             App_Destroy_DGW(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    App_Destroy_DGW(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11545
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_DGW(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11544
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_DGW(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11558
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapDH_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapDH_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11558, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11558, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDH.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapDH___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDH *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapDH___cinit__(struct __pyx_obj_8gxapi_cy_WrapDH *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11559
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11559, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11558
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDH.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11561
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DH(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapDH_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapDH_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapDH_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDH *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapDH_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDH *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11562
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DH(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11563
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DH(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DH(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11562
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DH(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11561
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DH(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11575
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_10WrapDMPPLY_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_10WrapDMPPLY_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11575, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11575, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDMPPLY.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_10WrapDMPPLY___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDMPPLY *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_10WrapDMPPLY___cinit__(struct __pyx_obj_8gxapi_cy_WrapDMPPLY *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11576
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11576, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11575
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDMPPLY.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11578
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DMPPLY(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_10WrapDMPPLY_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_10WrapDMPPLY_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_10WrapDMPPLY_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDMPPLY *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_10WrapDMPPLY_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDMPPLY *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11579
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DMPPLY(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11580
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DMPPLY(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DMPPLY(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11579
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DMPPLY(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11578
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DMPPLY(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11592
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapDOCU_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapDOCU_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11592, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11592, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDOCU.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapDOCU___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDOCU *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapDOCU___cinit__(struct __pyx_obj_8gxapi_cy_WrapDOCU *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11593
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11593, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11592
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDOCU.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11595
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DOCU(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapDOCU_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapDOCU_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapDOCU_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDOCU *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapDOCU_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDOCU *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11596
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DOCU(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11597
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DOCU(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DOCU(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11596
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DOCU(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11595
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DOCU(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11618
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapDXFI_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapDXFI_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11618, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11618, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDXFI.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapDXFI___cinit__(((struct __pyx_obj_8gxapi_cy_WrapDXFI *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapDXFI___cinit__(struct __pyx_obj_8gxapi_cy_WrapDXFI *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11619
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11619, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11618
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapDXFI.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11621
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DXFI(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapDXFI_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapDXFI_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapDXFI_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapDXFI *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapDXFI_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapDXFI *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11622
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DXFI(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11623
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_DXFI(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_DXFI(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11622
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_DXFI(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11621
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_DXFI(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11635
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapEDB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapEDB_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11635, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11635, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEDB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapEDB___cinit__(((struct __pyx_obj_8gxapi_cy_WrapEDB *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapEDB___cinit__(struct __pyx_obj_8gxapi_cy_WrapEDB *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11636
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11636, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11635
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEDB.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11638
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EDB(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapEDB_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapEDB_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapEDB_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapEDB *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapEDB_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEDB *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11639
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EDB(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11640
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             App_Destroy_EDB(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    App_Destroy_EDB(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11639
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EDB(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11638
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EDB(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11652
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapEDOC_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapEDOC_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11652, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11652, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEDOC.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapEDOC___cinit__(((struct __pyx_obj_8gxapi_cy_WrapEDOC *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapEDOC___cinit__(struct __pyx_obj_8gxapi_cy_WrapEDOC *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11653
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11653, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11652
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEDOC.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11655
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EDOC(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapEDOC_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapEDOC_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapEDOC_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapEDOC *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapEDOC_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEDOC *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11656
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EDOC(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11657
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             App_Destroy_EDOC(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    App_Destroy_EDOC(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11656
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EDOC(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11655
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EDOC(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11669
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapEMAP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapEMAP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11669, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11669, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEMAP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapEMAP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapEMAP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapEMAP___cinit__(struct __pyx_obj_8gxapi_cy_WrapEMAP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11670
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11670, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11669
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEMAP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11672
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EMAP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapEMAP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapEMAP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapEMAP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapEMAP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapEMAP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEMAP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11673
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EMAP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11674
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             App_Destroy_EMAP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    App_Destroy_EMAP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11673
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EMAP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11672
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EMAP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11686
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_16WrapEMAPTEMPLATE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_16WrapEMAPTEMPLATE_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11686, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11686, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEMAPTEMPLATE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_16WrapEMAPTEMPLATE___cinit__(((struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_16WrapEMAPTEMPLATE___cinit__(struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11687
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11687, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11686
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEMAPTEMPLATE.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11689
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EMAPTEMPLATE(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_16WrapEMAPTEMPLATE_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_16WrapEMAPTEMPLATE_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_16WrapEMAPTEMPLATE_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_16WrapEMAPTEMPLATE_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11690
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EMAPTEMPLATE(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11691
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             App_Destroy_EMAPTEMPLATE(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    App_Destroy_EMAPTEMPLATE(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11690
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             App_Destroy_EMAPTEMPLATE(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11689
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             App_Destroy_EMAPTEMPLATE(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11703
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapEUL3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapEUL3_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11703, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11703, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEUL3.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapEUL3___cinit__(((struct __pyx_obj_8gxapi_cy_WrapEUL3 *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapEUL3___cinit__(struct __pyx_obj_8gxapi_cy_WrapEUL3 *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11704
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11704, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11703
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEUL3.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11706
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapEUL3_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapEUL3_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapEUL3_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapEUL3 *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapEUL3_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEUL3 *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11707
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11708
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destr_SYS(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11707
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11706
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11720
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11720, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11720, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapEXP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapEXP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapEXP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11721
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11721, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11720
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11723
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_EXP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapEXP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapEXP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapEXP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapEXP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapEXP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11724
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_EXP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11725
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_EXP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_EXP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11724
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_EXP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11723
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_EXP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11737
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapFFT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapFFT_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11737, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11737, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapFFT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapFFT___cinit__(((struct __pyx_obj_8gxapi_cy_WrapFFT *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapFFT___cinit__(struct __pyx_obj_8gxapi_cy_WrapFFT *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11738
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11738, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11737
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapFFT.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11740
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_FFT(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapFFT_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapFFT_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapFFT_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapFFT *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapFFT_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapFFT *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11741
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_FFT(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11742
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_FFT(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_FFT(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11741
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_FFT(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11740
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_FFT(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11772
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapGD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapGD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11772, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11772, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapGD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapGD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapGD___cinit__(struct __pyx_obj_8gxapi_cy_WrapGD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11773
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11773, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11772
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11775
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapGD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapGD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapGD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapGD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapGD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11776
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11777
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_GD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_GD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11776
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11775
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11789
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapGER_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapGER_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11789, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11789, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGER.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapGER___cinit__(((struct __pyx_obj_8gxapi_cy_WrapGER *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapGER___cinit__(struct __pyx_obj_8gxapi_cy_WrapGER *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11790
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11790, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11789
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapGER.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11792
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GER(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapGER_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapGER_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapGER_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapGER *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapGER_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapGER *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11793
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GER(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11794
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_GER(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_GER(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11793
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_GER(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11792
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_GER(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11833
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapHTTP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapHTTP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11833, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11833, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapHTTP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapHTTP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapHTTP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapHTTP___cinit__(struct __pyx_obj_8gxapi_cy_WrapHTTP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11834
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11834, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11833
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapHTTP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11836
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_HTTP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapHTTP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapHTTP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapHTTP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapHTTP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapHTTP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapHTTP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11837
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_HTTP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11838
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_HTTP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_HTTP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11837
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_HTTP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11836
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_HTTP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11850
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapIEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapIEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11850, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11850, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapIEXP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapIEXP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapIEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapIEXP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11851
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11851, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11850
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11853
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IEXP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapIEXP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapIEXP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapIEXP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapIEXP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapIEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIEXP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11854
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IEXP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11855
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_IEXP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_IEXP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11854
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IEXP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11853
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IEXP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11876
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapIP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapIP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11876, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11876, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapIP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapIP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapIP___cinit__(struct __pyx_obj_8gxapi_cy_WrapIP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11877
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11877, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11876
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapIP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11879
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapIP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapIP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapIP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapIP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapIP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapIP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11880
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11881
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_IP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_IP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11880
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_IP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11879
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_IP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11902
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapKGRD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapKGRD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11902, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11902, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapKGRD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapKGRD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapKGRD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapKGRD___cinit__(struct __pyx_obj_8gxapi_cy_WrapKGRD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11903
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11903, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11902
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapKGRD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11905
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_KGRD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapKGRD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapKGRD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapKGRD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapKGRD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapKGRD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapKGRD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11906
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_KGRD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11907
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_KGRD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_KGRD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11906
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_KGRD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11905
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_KGRD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11937
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapMSTK_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapMSTK_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11937, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11937, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMSTK.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapMSTK___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMSTK *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapMSTK___cinit__(struct __pyx_obj_8gxapi_cy_WrapMSTK *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11938
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11938, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11937
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMSTK.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11940
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MSTK(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapMSTK_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapMSTK_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapMSTK_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMSTK *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapMSTK_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMSTK *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11941
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MSTK(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11942
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_MSTK(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_MSTK(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11941
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MSTK(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11940
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MSTK(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11954
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapMVG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapMVG_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11954, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11954, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMVG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapMVG___cinit__(((struct __pyx_obj_8gxapi_cy_WrapMVG *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapMVG___cinit__(struct __pyx_obj_8gxapi_cy_WrapMVG *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11955
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11955, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11954
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapMVG.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11957
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MVG(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapMVG_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapMVG_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapMVG_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapMVG *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapMVG_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapMVG *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11958
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MVG(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11959
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_MVG(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_MVG(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11958
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_MVG(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11957
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_MVG(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":11980
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_9WrapPGEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_9WrapPGEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 11980, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11980, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPGEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_9WrapPGEXP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapPGEXP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_9WrapPGEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapPGEXP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":11981
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 11981, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":11980
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapPGEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":11983
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PGEXP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_9WrapPGEXP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_9WrapPGEXP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_9WrapPGEXP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapPGEXP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_9WrapPGEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapPGEXP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":11984
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PGEXP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":11985
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_PGEXP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_PGEXP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":11984
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_PGEXP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":11983
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_PGEXP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":12024
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_8WrapRGRD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_8WrapRGRD_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 12024, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12024, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapRGRD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_8WrapRGRD___cinit__(((struct __pyx_obj_8gxapi_cy_WrapRGRD *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_8WrapRGRD___cinit__(struct __pyx_obj_8gxapi_cy_WrapRGRD *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":12025
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12025, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":12024
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapRGRD.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":12027
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_RGRD(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_8WrapRGRD_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_8WrapRGRD_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_8WrapRGRD_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapRGRD *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_8WrapRGRD_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapRGRD *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":12028
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_RGRD(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":12029
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_RGRD(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_RGRD(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":12028
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_RGRD(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":12027
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_RGRD(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":12050
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapSHP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapSHP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 12050, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12050, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSHP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapSHP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapSHP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapSHP___cinit__(struct __pyx_obj_8gxapi_cy_WrapSHP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":12051
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12051, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":12050
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSHP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":12053
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SHP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapSHP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapSHP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapSHP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapSHP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapSHP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSHP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":12054
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SHP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":12055
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_SHP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_SHP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":12054
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_SHP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":12053
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_SHP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":12076
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapSTK_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapSTK_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 12076, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12076, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSTK.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapSTK___cinit__(((struct __pyx_obj_8gxapi_cy_WrapSTK *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapSTK___cinit__(struct __pyx_obj_8gxapi_cy_WrapSTK *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":12077
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12077, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":12076
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapSTK.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":12079
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapSTK_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapSTK_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapSTK_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapSTK *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapSTK_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapSTK *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":12080
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":12081
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destr_SYS(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":12080
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":12079
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destr_SYS(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":12102
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_6WrapTC_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_6WrapTC_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 12102, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12102, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTC.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_6WrapTC___cinit__(((struct __pyx_obj_8gxapi_cy_WrapTC *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_6WrapTC___cinit__(struct __pyx_obj_8gxapi_cy_WrapTC *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":12103
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12103, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":12102
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTC.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":12105
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TC(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_6WrapTC_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_6WrapTC_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_6WrapTC_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapTC *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_6WrapTC_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTC *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":12106
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TC(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":12107
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_TC(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_TC(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":12106
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TC(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":12105
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TC(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":12128
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_7WrapTIN_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_7WrapTIN_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 12128, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12128, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTIN.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_7WrapTIN___cinit__(((struct __pyx_obj_8gxapi_cy_WrapTIN *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_7WrapTIN___cinit__(struct __pyx_obj_8gxapi_cy_WrapTIN *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":12129
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12129, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":12128
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapTIN.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":12131
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TIN(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_7WrapTIN_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_7WrapTIN_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_7WrapTIN_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapTIN *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_7WrapTIN_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapTIN *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":12132
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TIN(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":12133
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_TIN(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_TIN(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":12132
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_TIN(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":12131
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_TIN(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gxapi_cy.pyx":12172
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_8gxapi_cy_9WrapVVEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_8gxapi_cy_9WrapVVEXP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_handle = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_handle,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_handle)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 12172, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_handle = values[0];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12172, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVVEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_8gxapi_cy_9WrapVVEXP___cinit__(((struct __pyx_obj_8gxapi_cy_WrapVVEXP *)__pyx_v_self), __pyx_v_handle);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_8gxapi_cy_9WrapVVEXP___cinit__(struct __pyx_obj_8gxapi_cy_WrapVVEXP *__pyx_v_self, PyObject *__pyx_v_handle) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int32_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "gxapi_cy.pyx":12173
+ * 
+ *     def __cinit__(self, handle):
+ *         self.handle = handle             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+ */
+  __pyx_t_1 = __Pyx_PyInt_As_int32_t(__pyx_v_handle); if (unlikely((__pyx_t_1 == ((int32_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 12173, __pyx_L1_error)
+  __pyx_v_self->handle = __pyx_t_1;
+
+  /* "gxapi_cy.pyx":12172
+ *     cdef int32_t handle
+ * 
+ *     def __cinit__(self, handle):             # <<<<<<<<<<<<<<
+ *         self.handle = handle
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("gxapi_cy.WrapVVEXP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gxapi_cy.pyx":12175
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VVEXP(get_p_geo(), &self.handle)
+ */
+
+/* Python wrapper */
+static void __pyx_pw_8gxapi_cy_9WrapVVEXP_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_8gxapi_cy_9WrapVVEXP_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_8gxapi_cy_9WrapVVEXP_2__dealloc__(((struct __pyx_obj_8gxapi_cy_WrapVVEXP *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_8gxapi_cy_9WrapVVEXP_2__dealloc__(struct __pyx_obj_8gxapi_cy_WrapVVEXP *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "gxapi_cy.pyx":12176
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VVEXP(get_p_geo(), &self.handle)
+ * 
+ */
+  __pyx_t_1 = ((__pyx_v_self->handle != 0) != 0);
+  if (__pyx_t_1) {
+
+    /* "gxapi_cy.pyx":12177
+ *     def __dealloc__(self):
+ *         if self.handle != 0:
+ *             Destroy_VVEXP(get_p_geo(), &self.handle)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    Destroy_VVEXP(__pyx_f_8gxapi_cy_get_p_geo(), (&__pyx_v_self->handle));
+
+    /* "gxapi_cy.pyx":12176
+ * 
+ *     def __dealloc__(self):
+ *         if self.handle != 0:             # <<<<<<<<<<<<<<
+ *             Destroy_VVEXP(get_p_geo(), &self.handle)
+ * 
+ */
+  }
+
+  /* "gxapi_cy.pyx":12175
+ *         self.handle = handle
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.handle != 0:
+ *             Destroy_VVEXP(get_p_geo(), &self.handle)
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+static struct __pyx_vtabstruct_8gxapi_cy_WrapPGeo __pyx_vtable_8gxapi_cy_WrapPGeo;
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPGeo(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_8gxapi_cy_WrapPGeo *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -2277,16 +17426,16 @@ static PyObject *__pyx_tp_new_8gxapi_cy_Geo(PyTypeObject *t, PyObject *a, PyObje
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_8gxapi_cy_Geo *)o);
-  p->__pyx_vtab = __pyx_vtabptr_8gxapi_cy_Geo;
-  if (unlikely(__pyx_pw_8gxapi_cy_3Geo_1__cinit__(o, a, k) < 0)) goto bad;
+  p = ((struct __pyx_obj_8gxapi_cy_WrapPGeo *)o);
+  p->__pyx_vtab = __pyx_vtabptr_8gxapi_cy_WrapPGeo;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapPGeo_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_8gxapi_cy_Geo(PyObject *o) {
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPGeo(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
   if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -2296,24 +17445,24 @@ static void __pyx_tp_dealloc_8gxapi_cy_Geo(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     ++Py_REFCNT(o);
-    __pyx_pw_8gxapi_cy_3Geo_3__dealloc__(o);
+    __pyx_pw_8gxapi_cy_8WrapPGeo_3__dealloc__(o);
     --Py_REFCNT(o);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_8gxapi_cy_Geo[] = {
-  {"dot_product", (PyCFunction)__pyx_pw_8gxapi_cy_3Geo_5dot_product, METH_VARARGS|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapPGeo[] = {
+  {"dot_product", (PyCFunction)__pyx_pw_8gxapi_cy_8WrapPGeo_5dot_product, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_8gxapi_cy_Geo = {
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPGeo = {
   PyVarObject_HEAD_INIT(0, 0)
-  "gxapi_cy.Geo", /*tp_name*/
-  sizeof(struct __pyx_obj_8gxapi_cy_Geo), /*tp_basicsize*/
+  "gxapi_cy.WrapPGeo", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPGeo), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_8gxapi_cy_Geo, /*tp_dealloc*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPGeo, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -2341,7 +17490,7 @@ static PyTypeObject __pyx_type_8gxapi_cy_Geo = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_8gxapi_cy_Geo, /*tp_methods*/
+  __pyx_methods_8gxapi_cy_WrapPGeo, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -2351,7 +17500,10601 @@ static PyTypeObject __pyx_type_8gxapi_cy_Geo = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_8gxapi_cy_Geo, /*tp_new*/
+  __pyx_tp_new_8gxapi_cy_WrapPGeo, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_Wrap3DN(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7Wrap3DN_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_Wrap3DN(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7Wrap3DN_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_Wrap3DN[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_Wrap3DN = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.Wrap3DN", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_Wrap3DN), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_Wrap3DN, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_Wrap3DN, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_Wrap3DN, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_Wrap3DV(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7Wrap3DV_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_Wrap3DV(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7Wrap3DV_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_Wrap3DV[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_Wrap3DV = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.Wrap3DV", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_Wrap3DV), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_Wrap3DV, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_Wrap3DV, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_Wrap3DV, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapAGG(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapAGG_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapAGG(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapAGG_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapAGG[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapAGG = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapAGG", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapAGG), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapAGG, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapAGG, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapAGG, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapBF(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapBF_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapBF(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapBF_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapBF[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapBF = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapBF", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapBF), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapBF, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapBF, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapBF, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDAT(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapDAT_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDAT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapDAT_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDAT[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDAT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDAT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDAT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDAT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDAT, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDAT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDATALINKD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_13WrapDATALINKD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDATALINKD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_13WrapDATALINKD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDATALINKD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDATALINKD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDATALINKD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDATALINKD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDATALINKD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDATALINKD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDATALINKD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDATAMINE(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDATAMINE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDATAMINE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDATAMINE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDATAMINE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDATAMINE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDATAMINE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDB(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapDB_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDB(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapDB_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDB[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDB = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDB", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDB), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDB, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDB, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDB, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDBREAD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_10WrapDBREAD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDBREAD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_10WrapDBREAD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDBREAD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDBREAD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDBREAD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDBREAD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDBREAD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDBREAD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDBREAD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDBWRITE(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_11WrapDBWRITE_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDBWRITE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_11WrapDBWRITE_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDBWRITE[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDBWRITE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDBWRITE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDBWRITE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDBWRITE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDBWRITE, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDBWRITE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDSEL(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapDSEL_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDSEL(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapDSEL_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDSEL[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDSEL = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDSEL", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDSEL), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDSEL, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDSEL, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDSEL, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEXT(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEXT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEXT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEXT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEXT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEXT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEXT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGEO(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGEO(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGEO = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGEO", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGEO), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGEO, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGEO, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGEOSOFT(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGEOSOFT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGEOSOFT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGEOSOFT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGEOSOFT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGEOSOFT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGEOSOFT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGEOSTRING(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_13WrapGEOSTRING_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGEOSTRING(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_13WrapGEOSTRING_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapGEOSTRING[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGEOSTRING = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGEOSTRING", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGEOSTRING), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGEOSTRING, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapGEOSTRING, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGEOSTRING, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGIS(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapGIS_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGIS(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapGIS_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapGIS[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGIS = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGIS", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGIS), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGIS, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapGIS, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGIS, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapHGD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapHGD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapHGD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapHGD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapHGD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapHGD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapHGD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapHGD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapHGD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapHGD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapHGD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapHXYZ(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapHXYZ_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapHXYZ(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapHXYZ_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapHXYZ[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapHXYZ = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapHXYZ", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapHXYZ), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapHXYZ, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapHXYZ, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapHXYZ, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIGRF(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapIGRF_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIGRF(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapIGRF_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapIGRF[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIGRF = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIGRF", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIGRF), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIGRF, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapIGRF, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIGRF, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIMG(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapIMG_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIMG(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapIMG_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapIMG[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIMG = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIMG", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIMG), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIMG, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapIMG, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIMG, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIMU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIMU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIMU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIMU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIMU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIMU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIMU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIPJ(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapIPJ_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIPJ(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapIPJ_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapIPJ[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIPJ = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIPJ", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIPJ), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIPJ, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapIPJ, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIPJ, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapITR(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapITR_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapITR(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapITR_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapITR[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapITR = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapITR", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapITR), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapITR, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapITR, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapITR, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLAYOUT(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_10WrapLAYOUT_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapLAYOUT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_10WrapLAYOUT_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapLAYOUT[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapLAYOUT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapLAYOUT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapLAYOUT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapLAYOUT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapLAYOUT, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapLAYOUT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLL2(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapLL2_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapLL2(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapLL2_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapLL2[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapLL2 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapLL2", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapLL2), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapLL2, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapLL2, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapLL2, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLPT(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapLPT_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapLPT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapLPT_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapLPT[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapLPT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapLPT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapLPT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapLPT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapLPT, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapLPT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLST(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapLST_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapLST(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapLST_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapLST[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapLST = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapLST", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapLST), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapLST, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapLST, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapLST, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLTB(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapLTB_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapLTB(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapLTB_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapLTB[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapLTB = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapLTB", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapLTB), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapLTB, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapLTB, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapLTB, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMAP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapMAP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMAP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapMAP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMAP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMAP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMAP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMAP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMAP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMAP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMAP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMAPL(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapMAPL_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMAPL(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapMAPL_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMAPL[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMAPL = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMAPL", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMAPL), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMAPL, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMAPL, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMAPL, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMAPTEMPLATE(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_15WrapMAPTEMPLATE_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMAPTEMPLATE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_15WrapMAPTEMPLATE_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMAPTEMPLATE[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMAPTEMPLATE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMAPTEMPLATE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMAPTEMPLATE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMAPTEMPLATE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMAPTEMPLATE, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMAPTEMPLATE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMATH(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMATH(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMATH = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMATH", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMATH), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMATH, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMATH, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMETA(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapMETA_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMETA(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapMETA_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMETA[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMETA = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMETA", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMETA), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMETA, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMETA, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMETA, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMVIEW(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_9WrapMVIEW_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMVIEW(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_9WrapMVIEW_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMVIEW[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMVIEW = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMVIEW", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMVIEW), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMVIEW, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMVIEW, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMVIEW, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMVU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMVU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMVU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMVU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMVU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMVU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMVU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMXD(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMXD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMXD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMXD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMXD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMXD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMXD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPAT(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapPAT_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPAT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapPAT_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapPAT[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPAT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPAT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPAT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPAT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapPAT, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPAT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPG(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapPG_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPG(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapPG_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapPG[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPG = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPG", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPG), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPG, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapPG, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPG, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPJ(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapPJ_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPJ(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapPJ_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapPJ[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPJ = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPJ", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPJ), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPJ, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapPJ, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPJ, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPLY(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapPLY_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPLY(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapPLY_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapPLY[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPLY = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPLY", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPLY), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPLY, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapPLY, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPLY, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapRA(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapRA_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapRA(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapRA_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapRA[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapRA = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapRA", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapRA), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapRA, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapRA, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapRA, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapREG(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapREG_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapREG(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapREG_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapREG[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapREG = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapREG", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapREG), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapREG, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapREG, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapREG, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSBF(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapSBF_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSBF(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapSBF_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapSBF[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSBF = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSBF", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSBF), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSBF, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapSBF, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSBF, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapST(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapST_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapST(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapST_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapST[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapST = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapST", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapST), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapST, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapST, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapST, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapST2(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapST2_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapST2(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapST2_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapST2[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapST2 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapST2", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapST2), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapST2, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapST2, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapST2, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSTR(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSTR(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSTR = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSTR", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSTR), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSTR, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSTR, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSURFACE(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_11WrapSURFACE_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSURFACE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_11WrapSURFACE_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapSURFACE[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSURFACE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSURFACE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSURFACE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSURFACE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapSURFACE, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSURFACE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSURFACEITEM(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_15WrapSURFACEITEM_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSURFACEITEM(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_15WrapSURFACEITEM_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapSURFACEITEM[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSURFACEITEM = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSURFACEITEM", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSURFACEITEM), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSURFACEITEM, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapSURFACEITEM, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSURFACEITEM, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSYS(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSYS(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSYS = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSYS", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSYS), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSYS, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSYS, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTB(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapTB_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTB(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapTB_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapTB[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTB = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTB", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTB), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTB, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapTB, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTB, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTPAT(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapTPAT_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTPAT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapTPAT_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapTPAT[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTPAT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTPAT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTPAT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTPAT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapTPAT, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTPAT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTR(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapTR_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTR(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapTR_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapTR[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTR = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTR", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTR), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTR, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapTR, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTR, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapUSERMETA(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_12WrapUSERMETA_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapUSERMETA(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_12WrapUSERMETA_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapUSERMETA[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapUSERMETA = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapUSERMETA", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapUSERMETA), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapUSERMETA, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapUSERMETA, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapUSERMETA, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVA(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapVA_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVA(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapVA_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVA[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVA = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVA", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVA), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVA, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVA, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVA, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVM(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapVM_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVM(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapVM_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVM[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVM = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVM", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVM), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVM, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVM, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVM, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVOX(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapVOX_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVOX(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapVOX_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVOX[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVOX = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVOX", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVOX), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVOX, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVOX, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVOX, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVOXD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapVOXD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVOXD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapVOXD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVOXD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVOXD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVOXD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVOXD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVOXD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVOXD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVOXD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVOXE(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapVOXE_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVOXE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapVOXE_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVOXE[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVOXE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVOXE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVOXE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVOXE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVOXE, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVOXE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVULCAN(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVULCAN(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVULCAN = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVULCAN", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVULCAN), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVULCAN, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVULCAN, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVV(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapVV_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVV(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapVV_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVV[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVV = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVV", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVV), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVV, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVV, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVV, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapWA(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapWA_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapWA(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapWA_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapWA[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapWA = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapWA", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapWA), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapWA, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapWA, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapWA, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapACQUIRE(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_11WrapACQUIRE_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapACQUIRE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_11WrapACQUIRE_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapACQUIRE[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapACQUIRE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapACQUIRE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapACQUIRE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapACQUIRE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapACQUIRE, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapACQUIRE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCDB(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_9WrapARCDB_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapARCDB(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_9WrapARCDB_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapARCDB[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapARCDB = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapARCDB", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapARCDB), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapARCDB, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapARCDB, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapARCDB, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCDH(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapARCDH(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapARCDH = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapARCDH", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapARCDH), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapARCDH, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapARCDH, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCMAP(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapARCMAP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapARCMAP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapARCMAP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapARCMAP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapARCMAP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapARCMAP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapARCSYS(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapARCSYS(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapARCSYS = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapARCSYS", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapARCSYS), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapARCSYS, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapARCSYS, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapBIGRID(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_10WrapBIGRID_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapBIGRID(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_10WrapBIGRID_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapBIGRID[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapBIGRID = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapBIGRID", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapBIGRID), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapBIGRID, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapBIGRID, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapBIGRID, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapCHIMERA(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapCHIMERA(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapCHIMERA = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapCHIMERA", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapCHIMERA), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapCHIMERA, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapCHIMERA, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapCOM(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapCOM_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapCOM(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapCOM_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapCOM[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapCOM = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapCOM", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapCOM), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapCOM, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapCOM, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapCOM, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapCSYMB(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_9WrapCSYMB_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapCSYMB(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_9WrapCSYMB_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapCSYMB[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapCSYMB = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapCSYMB", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapCSYMB), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapCSYMB, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapCSYMB, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapCSYMB, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDGW(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapDGW_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDGW(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapDGW_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDGW[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDGW = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDGW", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDGW), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDGW, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDGW, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDGW, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDH(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapDH_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDH(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapDH_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDH[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDH = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDH", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDH), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDH, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDH, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDH, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDMPPLY(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_10WrapDMPPLY_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDMPPLY(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_10WrapDMPPLY_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDMPPLY[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDMPPLY = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDMPPLY", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDMPPLY), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDMPPLY, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDMPPLY, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDMPPLY, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDOCU(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapDOCU_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDOCU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapDOCU_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDOCU[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDOCU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDOCU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDOCU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDOCU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDOCU, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDOCU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapDXFI(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapDXFI_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapDXFI(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapDXFI_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapDXFI[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapDXFI = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapDXFI", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapDXFI), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapDXFI, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapDXFI, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapDXFI, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEDB(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapEDB_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEDB(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapEDB_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapEDB[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEDB = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEDB", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEDB), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEDB, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapEDB, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEDB, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEDOC(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapEDOC_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEDOC(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapEDOC_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapEDOC[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEDOC = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEDOC", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEDOC), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEDOC, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapEDOC, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEDOC, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEMAP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapEMAP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEMAP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapEMAP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapEMAP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEMAP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEMAP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEMAP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEMAP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapEMAP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEMAP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEMAPTEMPLATE(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_16WrapEMAPTEMPLATE_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEMAPTEMPLATE(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_16WrapEMAPTEMPLATE_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapEMAPTEMPLATE[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEMAPTEMPLATE = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEMAPTEMPLATE", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEMAPTEMPLATE), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEMAPTEMPLATE, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapEMAPTEMPLATE, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEMAPTEMPLATE, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEUL3(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapEUL3_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEUL3(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapEUL3_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapEUL3[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEUL3 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEUL3", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEUL3), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEUL3, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapEUL3, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEUL3, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapEXP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapEXP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapEXP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapEXP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapEXP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapEXP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapEXP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapEXP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapEXP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapEXP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapEXP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapFFT(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapFFT_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapFFT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapFFT_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapFFT[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapFFT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapFFT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapFFT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapFFT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapFFT, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapFFT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapFFT2(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapFFT2(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapFFT2 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapFFT2", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapFFT2), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapFFT2, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapFFT2, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapFLT(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapFLT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapFLT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapFLT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapFLT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapFLT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapFLT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapGD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapGD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapGD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapGD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGER(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapGER_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGER(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapGER_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapGER[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGER = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGER", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGER), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGER, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapGER, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGER, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGMSYS(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGMSYS(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGMSYS = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGMSYS", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGMSYS), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGMSYS, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGMSYS, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapGUI(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapGUI(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapGUI = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapGUI", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapGUI), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapGUI, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapGUI, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapHTTP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapHTTP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapHTTP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapHTTP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapHTTP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapHTTP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapHTTP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapHTTP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapHTTP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapHTTP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapHTTP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIEXP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapIEXP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIEXP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapIEXP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapIEXP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIEXP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIEXP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIEXP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIEXP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapIEXP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIEXP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapINTERNET(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapINTERNET(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapINTERNET = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapINTERNET", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapINTERNET), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapINTERNET, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapINTERNET, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapIP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapIP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapIP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapIP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapIPGUI(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapIPGUI(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapIPGUI = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapIPGUI", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapIPGUI), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapIPGUI, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapIPGUI, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapKGRD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapKGRD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapKGRD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapKGRD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapKGRD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapKGRD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapKGRD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapKGRD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapKGRD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapKGRD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapKGRD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapLMSG(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapLMSG(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapLMSG = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapLMSG", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapLMSG), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapLMSG, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapLMSG, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMISC(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMISC(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMISC = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMISC", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMISC), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMISC, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMISC, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMSTK(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapMSTK_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMSTK(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapMSTK_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMSTK[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMSTK = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMSTK", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMSTK), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMSTK, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMSTK, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMSTK, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapMVG(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapMVG_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapMVG(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapMVG_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapMVG[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapMVG = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapMVG", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapMVG), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapMVG, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapMVG, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapMVG, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPDF3D(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPDF3D(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPDF3D = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPDF3D", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPDF3D), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPDF3D, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPDF3D, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPGEXP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_9WrapPGEXP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPGEXP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_9WrapPGEXP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapPGEXP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPGEXP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPGEXP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPGEXP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPGEXP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapPGEXP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPGEXP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPGU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPGU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPGU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPGU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPGU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPGU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPGU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPRAGA3(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPRAGA3(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPRAGA3 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPRAGA3", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPRAGA3), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPRAGA3, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPRAGA3, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapPROJ(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapPROJ(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapPROJ = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapPROJ", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapPROJ), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapPROJ, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapPROJ, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapRGRD(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_8WrapRGRD_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapRGRD(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_8WrapRGRD_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapRGRD[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapRGRD = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapRGRD", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapRGRD), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapRGRD, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapRGRD, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapRGRD, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSEMPLOT(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSEMPLOT(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSEMPLOT = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSEMPLOT", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSEMPLOT), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSEMPLOT, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSEMPLOT, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSHP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapSHP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSHP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapSHP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapSHP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSHP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSHP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSHP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSHP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapSHP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSHP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSQLSRV(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSQLSRV(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSQLSRV = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSQLSRV", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSQLSRV), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSQLSRV, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSQLSRV, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSTK(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapSTK_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSTK(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapSTK_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapSTK[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSTK = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSTK", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSTK), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSTK, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapSTK, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSTK, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapSTRINGS(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapSTRINGS(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapSTRINGS = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapSTRINGS", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapSTRINGS), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapSTRINGS, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapSTRINGS, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTC(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_6WrapTC_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTC(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_6WrapTC_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapTC[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTC = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTC", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTC), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTC, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapTC, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTC, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTEST(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTEST(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTEST = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTEST", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTEST), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTEST, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTEST, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTIN(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_7WrapTIN_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTIN(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_7WrapTIN_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapTIN[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTIN = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTIN", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTIN), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTIN, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapTIN, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTIN, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapTRND(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapTRND(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapTRND = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapTRND", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapTRND), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapTRND, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapTRND, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapUNC(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapUNC(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapUNC = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapUNC", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapUNC), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapUNC, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapUNC, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVAU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVAU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVAU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVAU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVAU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVAU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVAU, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVVEXP(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  if (unlikely(__pyx_pw_8gxapi_cy_9WrapVVEXP_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVVEXP(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_8gxapi_cy_9WrapVVEXP_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyMethodDef __pyx_methods_8gxapi_cy_WrapVVEXP[] = {
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVVEXP = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVVEXP", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVVEXP), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVVEXP, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_8gxapi_cy_WrapVVEXP, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVVEXP, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_8gxapi_cy_WrapVVU(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_8gxapi_cy_WrapVVU(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyTypeObject __pyx_type_8gxapi_cy_WrapVVU = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "gxapi_cy.WrapVVU", /*tp_name*/
+  sizeof(struct __pyx_obj_8gxapi_cy_WrapVVU), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_8gxapi_cy_WrapVVU, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_8gxapi_cy_WrapVVU, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -2389,15 +28132,21 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
+  {&__pyx_kp_s_A_gxapi_cy_WrapPGeo_instance_has, __pyx_k_A_gxapi_cy_WrapPGeo_instance_has, sizeof(__pyx_k_A_gxapi_cy_WrapPGeo_instance_has), 0, 0, 1, 0},
   {&__pyx_n_s_GXAPIError, __pyx_k_GXAPIError, sizeof(__pyx_k_GXAPIError), 0, 0, 1, 1},
   {&__pyx_n_s_GXCancel, __pyx_k_GXCancel, sizeof(__pyx_k_GXCancel), 0, 0, 1, 1},
   {&__pyx_n_s_GXError, __pyx_k_GXError, sizeof(__pyx_k_GXError), 0, 0, 1, 1},
   {&__pyx_n_s_GXExit, __pyx_k_GXExit, sizeof(__pyx_k_GXExit), 0, 0, 1, 1},
+  {&__pyx_kp_s_Only_one_gxapi_cy_WrapPGeo_insta, __pyx_k_Only_one_gxapi_cy_WrapPGeo_insta, sizeof(__pyx_k_Only_one_gxapi_cy_WrapPGeo_insta), 0, 0, 1, 0},
   {&__pyx_kp_s_UTF_8, __pyx_k_UTF_8, sizeof(__pyx_k_UTF_8), 0, 0, 1, 0},
   {&__pyx_n_s_app, __pyx_k_app, sizeof(__pyx_k_app), 0, 0, 1, 1},
+  {&__pyx_n_s_current_thread, __pyx_k_current_thread, sizeof(__pyx_k_current_thread), 0, 0, 1, 1},
   {&__pyx_n_s_decode, __pyx_k_decode, sizeof(__pyx_k_decode), 0, 0, 1, 1},
   {&__pyx_n_s_geosoft_gxapi, __pyx_k_geosoft_gxapi, sizeof(__pyx_k_geosoft_gxapi), 0, 0, 1, 1},
+  {&__pyx_n_s_gxapi_cy_geo, __pyx_k_gxapi_cy_geo, sizeof(__pyx_k_gxapi_cy_geo), 0, 0, 1, 1},
+  {&__pyx_n_s_handle, __pyx_k_handle, sizeof(__pyx_k_handle), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
+  {&__pyx_n_s_local, __pyx_k_local, sizeof(__pyx_k_local), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_p1, __pyx_k_p1, sizeof(__pyx_k_p1), 0, 0, 1, 1},
   {&__pyx_n_s_p2, __pyx_k_p2, sizeof(__pyx_k_p2), 0, 0, 1, 1},
@@ -2408,6 +28157,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
   {&__pyx_n_s_strict, __pyx_k_strict, sizeof(__pyx_k_strict), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_thread_local, __pyx_k_thread_local, sizeof(__pyx_k_thread_local), 0, 0, 1, 1},
+  {&__pyx_n_s_threading, __pyx_k_threading, sizeof(__pyx_k_threading), 0, 0, 1, 1},
   {&__pyx_n_s_ver, __pyx_k_ver, sizeof(__pyx_k_ver), 0, 0, 1, 1},
   {&__pyx_n_s_wind_id, __pyx_k_wind_id, sizeof(__pyx_k_wind_id), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
@@ -2420,38 +28171,60 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "gxapi_cy.pyx":10384
+  /* "gxapi_cy.pyx":10389
  * 
  * cdef unicode tounicode(char* s):
  *     return s.decode('UTF-8', 'strict')             # <<<<<<<<<<<<<<
  * 
  * cdef unicode tounicode_with_length(
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_kp_s_UTF_8, __pyx_n_s_strict); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 10384, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_kp_s_UTF_8, __pyx_n_s_strict); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 10389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "gxapi_cy.pyx":10388
+  /* "gxapi_cy.pyx":10393
  * cdef unicode tounicode_with_length(
  *         char* s, size_t length):
  *     return s[:length].decode('UTF-8', 'strict')             # <<<<<<<<<<<<<<
  * 
  * cdef unicode tounicode_with_length_and_free(
  */
-  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_kp_s_UTF_8, __pyx_n_s_strict); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 10388, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_kp_s_UTF_8, __pyx_n_s_strict); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 10393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "gxapi_cy.pyx":10393
+  /* "gxapi_cy.pyx":10398
  *         char* s, size_t length):
  *     try:
  *         return s[:length].decode('UTF-8', 'strict')             # <<<<<<<<<<<<<<
  *     finally:
  *         free(s)
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_kp_s_UTF_8, __pyx_n_s_strict); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 10393, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_kp_s_UTF_8, __pyx_n_s_strict); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 10398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
+
+  /* "gxapi_cy.pyx":10411
+ *             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *             if not tls_geo is None:
+ *                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");             # <<<<<<<<<<<<<<
+ *             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
+ *             if self.p_geo == NULL:
+ */
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Only_one_gxapi_cy_WrapPGeo_insta); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 10411, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+
+  /* "gxapi_cy.pyx":10459
+ *     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
+ *     if not tls_geo is None:
+ *         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");             # <<<<<<<<<<<<<<
+ *     return <void*>tls_geo
+ * 
+ */
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_A_gxapi_cy_WrapPGeo_instance_has); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 10459, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2477,6 +28250,7 @@ PyMODINIT_FUNC PyInit_gxapi_cy(void)
 {
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannyDeclarations
   #if CYTHON_REFNANNY
   __Pyx_RefNanny = __Pyx_RefNannyImportAPI("refnanny");
@@ -2552,13 +28326,489 @@ PyMODINIT_FUNC PyInit_gxapi_cy(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  __pyx_vtabptr_8gxapi_cy_Geo = &__pyx_vtable_8gxapi_cy_Geo;
-  __pyx_vtable_8gxapi_cy_Geo._raise_on_gx_errors = (PyObject *(*)(struct __pyx_obj_8gxapi_cy_Geo *, void *))__pyx_f_8gxapi_cy_3Geo__raise_on_gx_errors;
-  if (PyType_Ready(&__pyx_type_8gxapi_cy_Geo) < 0) __PYX_ERR(0, 10397, __pyx_L1_error)
-  __pyx_type_8gxapi_cy_Geo.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_8gxapi_cy_Geo.tp_dict, __pyx_vtabptr_8gxapi_cy_Geo) < 0) __PYX_ERR(0, 10397, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Geo", (PyObject *)&__pyx_type_8gxapi_cy_Geo) < 0) __PYX_ERR(0, 10397, __pyx_L1_error)
-  __pyx_ptype_8gxapi_cy_Geo = &__pyx_type_8gxapi_cy_Geo;
+  __pyx_vtabptr_8gxapi_cy_WrapPGeo = &__pyx_vtable_8gxapi_cy_WrapPGeo;
+  __pyx_vtable_8gxapi_cy_WrapPGeo._raise_on_gx_errors = (PyObject *(*)(struct __pyx_obj_8gxapi_cy_WrapPGeo *, void *))__pyx_f_8gxapi_cy_8WrapPGeo__raise_on_gx_errors;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPGeo) < 0) __PYX_ERR(0, 10402, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPGeo.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_8gxapi_cy_WrapPGeo.tp_dict, __pyx_vtabptr_8gxapi_cy_WrapPGeo) < 0) __PYX_ERR(0, 10402, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "WrapPGeo", (PyObject *)&__pyx_type_8gxapi_cy_WrapPGeo) < 0) __PYX_ERR(0, 10402, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPGeo = &__pyx_type_8gxapi_cy_WrapPGeo;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_Wrap3DN) < 0) __PYX_ERR(0, 10465, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_Wrap3DN.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "Wrap3DN", (PyObject *)&__pyx_type_8gxapi_cy_Wrap3DN) < 0) __PYX_ERR(0, 10465, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_Wrap3DN = &__pyx_type_8gxapi_cy_Wrap3DN;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_Wrap3DV) < 0) __PYX_ERR(0, 10482, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_Wrap3DV.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "Wrap3DV", (PyObject *)&__pyx_type_8gxapi_cy_Wrap3DV) < 0) __PYX_ERR(0, 10482, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_Wrap3DV = &__pyx_type_8gxapi_cy_Wrap3DV;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapAGG) < 0) __PYX_ERR(0, 10499, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapAGG.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapAGG", (PyObject *)&__pyx_type_8gxapi_cy_WrapAGG) < 0) __PYX_ERR(0, 10499, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapAGG = &__pyx_type_8gxapi_cy_WrapAGG;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapBF) < 0) __PYX_ERR(0, 10516, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapBF.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapBF", (PyObject *)&__pyx_type_8gxapi_cy_WrapBF) < 0) __PYX_ERR(0, 10516, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapBF = &__pyx_type_8gxapi_cy_WrapBF;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDAT) < 0) __PYX_ERR(0, 10533, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDAT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDAT", (PyObject *)&__pyx_type_8gxapi_cy_WrapDAT) < 0) __PYX_ERR(0, 10533, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDAT = &__pyx_type_8gxapi_cy_WrapDAT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDATALINKD) < 0) __PYX_ERR(0, 10550, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDATALINKD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDATALINKD", (PyObject *)&__pyx_type_8gxapi_cy_WrapDATALINKD) < 0) __PYX_ERR(0, 10550, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDATALINKD = &__pyx_type_8gxapi_cy_WrapDATALINKD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDATAMINE) < 0) __PYX_ERR(0, 10567, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDATAMINE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDATAMINE", (PyObject *)&__pyx_type_8gxapi_cy_WrapDATAMINE) < 0) __PYX_ERR(0, 10567, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDATAMINE = &__pyx_type_8gxapi_cy_WrapDATAMINE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDB) < 0) __PYX_ERR(0, 10576, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDB.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDB", (PyObject *)&__pyx_type_8gxapi_cy_WrapDB) < 0) __PYX_ERR(0, 10576, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDB = &__pyx_type_8gxapi_cy_WrapDB;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDBREAD) < 0) __PYX_ERR(0, 10593, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDBREAD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDBREAD", (PyObject *)&__pyx_type_8gxapi_cy_WrapDBREAD) < 0) __PYX_ERR(0, 10593, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDBREAD = &__pyx_type_8gxapi_cy_WrapDBREAD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDBWRITE) < 0) __PYX_ERR(0, 10610, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDBWRITE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDBWRITE", (PyObject *)&__pyx_type_8gxapi_cy_WrapDBWRITE) < 0) __PYX_ERR(0, 10610, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDBWRITE = &__pyx_type_8gxapi_cy_WrapDBWRITE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDSEL) < 0) __PYX_ERR(0, 10627, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDSEL.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDSEL", (PyObject *)&__pyx_type_8gxapi_cy_WrapDSEL) < 0) __PYX_ERR(0, 10627, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDSEL = &__pyx_type_8gxapi_cy_WrapDSEL;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEXT) < 0) __PYX_ERR(0, 10644, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEXT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEXT", (PyObject *)&__pyx_type_8gxapi_cy_WrapEXT) < 0) __PYX_ERR(0, 10644, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEXT = &__pyx_type_8gxapi_cy_WrapEXT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGEO) < 0) __PYX_ERR(0, 10653, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGEO.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGEO", (PyObject *)&__pyx_type_8gxapi_cy_WrapGEO) < 0) __PYX_ERR(0, 10653, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGEO = &__pyx_type_8gxapi_cy_WrapGEO;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGEOSOFT) < 0) __PYX_ERR(0, 10662, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGEOSOFT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGEOSOFT", (PyObject *)&__pyx_type_8gxapi_cy_WrapGEOSOFT) < 0) __PYX_ERR(0, 10662, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGEOSOFT = &__pyx_type_8gxapi_cy_WrapGEOSOFT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGEOSTRING) < 0) __PYX_ERR(0, 10671, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGEOSTRING.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGEOSTRING", (PyObject *)&__pyx_type_8gxapi_cy_WrapGEOSTRING) < 0) __PYX_ERR(0, 10671, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGEOSTRING = &__pyx_type_8gxapi_cy_WrapGEOSTRING;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGIS) < 0) __PYX_ERR(0, 10688, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGIS.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGIS", (PyObject *)&__pyx_type_8gxapi_cy_WrapGIS) < 0) __PYX_ERR(0, 10688, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGIS = &__pyx_type_8gxapi_cy_WrapGIS;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapHGD) < 0) __PYX_ERR(0, 10705, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapHGD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapHGD", (PyObject *)&__pyx_type_8gxapi_cy_WrapHGD) < 0) __PYX_ERR(0, 10705, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapHGD = &__pyx_type_8gxapi_cy_WrapHGD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapHXYZ) < 0) __PYX_ERR(0, 10722, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapHXYZ.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapHXYZ", (PyObject *)&__pyx_type_8gxapi_cy_WrapHXYZ) < 0) __PYX_ERR(0, 10722, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapHXYZ = &__pyx_type_8gxapi_cy_WrapHXYZ;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIGRF) < 0) __PYX_ERR(0, 10739, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIGRF.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIGRF", (PyObject *)&__pyx_type_8gxapi_cy_WrapIGRF) < 0) __PYX_ERR(0, 10739, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIGRF = &__pyx_type_8gxapi_cy_WrapIGRF;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIMG) < 0) __PYX_ERR(0, 10756, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIMG.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIMG", (PyObject *)&__pyx_type_8gxapi_cy_WrapIMG) < 0) __PYX_ERR(0, 10756, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIMG = &__pyx_type_8gxapi_cy_WrapIMG;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIMU) < 0) __PYX_ERR(0, 10773, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIMU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIMU", (PyObject *)&__pyx_type_8gxapi_cy_WrapIMU) < 0) __PYX_ERR(0, 10773, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIMU = &__pyx_type_8gxapi_cy_WrapIMU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIPJ) < 0) __PYX_ERR(0, 10782, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIPJ.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIPJ", (PyObject *)&__pyx_type_8gxapi_cy_WrapIPJ) < 0) __PYX_ERR(0, 10782, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIPJ = &__pyx_type_8gxapi_cy_WrapIPJ;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapITR) < 0) __PYX_ERR(0, 10799, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapITR.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapITR", (PyObject *)&__pyx_type_8gxapi_cy_WrapITR) < 0) __PYX_ERR(0, 10799, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapITR = &__pyx_type_8gxapi_cy_WrapITR;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapLAYOUT) < 0) __PYX_ERR(0, 10816, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapLAYOUT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapLAYOUT", (PyObject *)&__pyx_type_8gxapi_cy_WrapLAYOUT) < 0) __PYX_ERR(0, 10816, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapLAYOUT = &__pyx_type_8gxapi_cy_WrapLAYOUT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapLL2) < 0) __PYX_ERR(0, 10833, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapLL2.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapLL2", (PyObject *)&__pyx_type_8gxapi_cy_WrapLL2) < 0) __PYX_ERR(0, 10833, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapLL2 = &__pyx_type_8gxapi_cy_WrapLL2;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapLPT) < 0) __PYX_ERR(0, 10850, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapLPT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapLPT", (PyObject *)&__pyx_type_8gxapi_cy_WrapLPT) < 0) __PYX_ERR(0, 10850, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapLPT = &__pyx_type_8gxapi_cy_WrapLPT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapLST) < 0) __PYX_ERR(0, 10867, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapLST.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapLST", (PyObject *)&__pyx_type_8gxapi_cy_WrapLST) < 0) __PYX_ERR(0, 10867, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapLST = &__pyx_type_8gxapi_cy_WrapLST;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapLTB) < 0) __PYX_ERR(0, 10884, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapLTB.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapLTB", (PyObject *)&__pyx_type_8gxapi_cy_WrapLTB) < 0) __PYX_ERR(0, 10884, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapLTB = &__pyx_type_8gxapi_cy_WrapLTB;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMAP) < 0) __PYX_ERR(0, 10901, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMAP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMAP", (PyObject *)&__pyx_type_8gxapi_cy_WrapMAP) < 0) __PYX_ERR(0, 10901, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMAP = &__pyx_type_8gxapi_cy_WrapMAP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMAPL) < 0) __PYX_ERR(0, 10918, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMAPL.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMAPL", (PyObject *)&__pyx_type_8gxapi_cy_WrapMAPL) < 0) __PYX_ERR(0, 10918, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMAPL = &__pyx_type_8gxapi_cy_WrapMAPL;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMAPTEMPLATE) < 0) __PYX_ERR(0, 10935, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMAPTEMPLATE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMAPTEMPLATE", (PyObject *)&__pyx_type_8gxapi_cy_WrapMAPTEMPLATE) < 0) __PYX_ERR(0, 10935, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMAPTEMPLATE = &__pyx_type_8gxapi_cy_WrapMAPTEMPLATE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMATH) < 0) __PYX_ERR(0, 10952, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMATH.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMATH", (PyObject *)&__pyx_type_8gxapi_cy_WrapMATH) < 0) __PYX_ERR(0, 10952, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMATH = &__pyx_type_8gxapi_cy_WrapMATH;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMETA) < 0) __PYX_ERR(0, 10961, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMETA.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMETA", (PyObject *)&__pyx_type_8gxapi_cy_WrapMETA) < 0) __PYX_ERR(0, 10961, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMETA = &__pyx_type_8gxapi_cy_WrapMETA;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMVIEW) < 0) __PYX_ERR(0, 10978, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMVIEW.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMVIEW", (PyObject *)&__pyx_type_8gxapi_cy_WrapMVIEW) < 0) __PYX_ERR(0, 10978, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMVIEW = &__pyx_type_8gxapi_cy_WrapMVIEW;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMVU) < 0) __PYX_ERR(0, 10995, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMVU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMVU", (PyObject *)&__pyx_type_8gxapi_cy_WrapMVU) < 0) __PYX_ERR(0, 10995, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMVU = &__pyx_type_8gxapi_cy_WrapMVU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMXD) < 0) __PYX_ERR(0, 11004, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMXD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMXD", (PyObject *)&__pyx_type_8gxapi_cy_WrapMXD) < 0) __PYX_ERR(0, 11004, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMXD = &__pyx_type_8gxapi_cy_WrapMXD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPAT) < 0) __PYX_ERR(0, 11013, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPAT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPAT", (PyObject *)&__pyx_type_8gxapi_cy_WrapPAT) < 0) __PYX_ERR(0, 11013, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPAT = &__pyx_type_8gxapi_cy_WrapPAT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPG) < 0) __PYX_ERR(0, 11030, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPG.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPG", (PyObject *)&__pyx_type_8gxapi_cy_WrapPG) < 0) __PYX_ERR(0, 11030, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPG = &__pyx_type_8gxapi_cy_WrapPG;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPJ) < 0) __PYX_ERR(0, 11047, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPJ.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPJ", (PyObject *)&__pyx_type_8gxapi_cy_WrapPJ) < 0) __PYX_ERR(0, 11047, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPJ = &__pyx_type_8gxapi_cy_WrapPJ;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPLY) < 0) __PYX_ERR(0, 11064, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPLY.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPLY", (PyObject *)&__pyx_type_8gxapi_cy_WrapPLY) < 0) __PYX_ERR(0, 11064, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPLY = &__pyx_type_8gxapi_cy_WrapPLY;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapRA) < 0) __PYX_ERR(0, 11081, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapRA.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapRA", (PyObject *)&__pyx_type_8gxapi_cy_WrapRA) < 0) __PYX_ERR(0, 11081, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapRA = &__pyx_type_8gxapi_cy_WrapRA;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapREG) < 0) __PYX_ERR(0, 11098, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapREG.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapREG", (PyObject *)&__pyx_type_8gxapi_cy_WrapREG) < 0) __PYX_ERR(0, 11098, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapREG = &__pyx_type_8gxapi_cy_WrapREG;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSBF) < 0) __PYX_ERR(0, 11115, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSBF.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSBF", (PyObject *)&__pyx_type_8gxapi_cy_WrapSBF) < 0) __PYX_ERR(0, 11115, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSBF = &__pyx_type_8gxapi_cy_WrapSBF;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapST) < 0) __PYX_ERR(0, 11132, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapST.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapST", (PyObject *)&__pyx_type_8gxapi_cy_WrapST) < 0) __PYX_ERR(0, 11132, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapST = &__pyx_type_8gxapi_cy_WrapST;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapST2) < 0) __PYX_ERR(0, 11149, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapST2.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapST2", (PyObject *)&__pyx_type_8gxapi_cy_WrapST2) < 0) __PYX_ERR(0, 11149, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapST2 = &__pyx_type_8gxapi_cy_WrapST2;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSTR) < 0) __PYX_ERR(0, 11166, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSTR.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSTR", (PyObject *)&__pyx_type_8gxapi_cy_WrapSTR) < 0) __PYX_ERR(0, 11166, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSTR = &__pyx_type_8gxapi_cy_WrapSTR;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSURFACE) < 0) __PYX_ERR(0, 11175, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSURFACE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSURFACE", (PyObject *)&__pyx_type_8gxapi_cy_WrapSURFACE) < 0) __PYX_ERR(0, 11175, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSURFACE = &__pyx_type_8gxapi_cy_WrapSURFACE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSURFACEITEM) < 0) __PYX_ERR(0, 11192, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSURFACEITEM.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSURFACEITEM", (PyObject *)&__pyx_type_8gxapi_cy_WrapSURFACEITEM) < 0) __PYX_ERR(0, 11192, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSURFACEITEM = &__pyx_type_8gxapi_cy_WrapSURFACEITEM;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSYS) < 0) __PYX_ERR(0, 11209, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSYS.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSYS", (PyObject *)&__pyx_type_8gxapi_cy_WrapSYS) < 0) __PYX_ERR(0, 11209, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSYS = &__pyx_type_8gxapi_cy_WrapSYS;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTB) < 0) __PYX_ERR(0, 11218, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTB.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTB", (PyObject *)&__pyx_type_8gxapi_cy_WrapTB) < 0) __PYX_ERR(0, 11218, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTB = &__pyx_type_8gxapi_cy_WrapTB;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTPAT) < 0) __PYX_ERR(0, 11235, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTPAT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTPAT", (PyObject *)&__pyx_type_8gxapi_cy_WrapTPAT) < 0) __PYX_ERR(0, 11235, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTPAT = &__pyx_type_8gxapi_cy_WrapTPAT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTR) < 0) __PYX_ERR(0, 11252, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTR.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTR", (PyObject *)&__pyx_type_8gxapi_cy_WrapTR) < 0) __PYX_ERR(0, 11252, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTR = &__pyx_type_8gxapi_cy_WrapTR;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapUSERMETA) < 0) __PYX_ERR(0, 11269, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapUSERMETA.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapUSERMETA", (PyObject *)&__pyx_type_8gxapi_cy_WrapUSERMETA) < 0) __PYX_ERR(0, 11269, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapUSERMETA = &__pyx_type_8gxapi_cy_WrapUSERMETA;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVA) < 0) __PYX_ERR(0, 11286, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVA.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVA", (PyObject *)&__pyx_type_8gxapi_cy_WrapVA) < 0) __PYX_ERR(0, 11286, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVA = &__pyx_type_8gxapi_cy_WrapVA;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVM) < 0) __PYX_ERR(0, 11303, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVM.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVM", (PyObject *)&__pyx_type_8gxapi_cy_WrapVM) < 0) __PYX_ERR(0, 11303, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVM = &__pyx_type_8gxapi_cy_WrapVM;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVOX) < 0) __PYX_ERR(0, 11320, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVOX.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVOX", (PyObject *)&__pyx_type_8gxapi_cy_WrapVOX) < 0) __PYX_ERR(0, 11320, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVOX = &__pyx_type_8gxapi_cy_WrapVOX;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVOXD) < 0) __PYX_ERR(0, 11337, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVOXD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVOXD", (PyObject *)&__pyx_type_8gxapi_cy_WrapVOXD) < 0) __PYX_ERR(0, 11337, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVOXD = &__pyx_type_8gxapi_cy_WrapVOXD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVOXE) < 0) __PYX_ERR(0, 11354, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVOXE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVOXE", (PyObject *)&__pyx_type_8gxapi_cy_WrapVOXE) < 0) __PYX_ERR(0, 11354, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVOXE = &__pyx_type_8gxapi_cy_WrapVOXE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVULCAN) < 0) __PYX_ERR(0, 11371, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVULCAN.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVULCAN", (PyObject *)&__pyx_type_8gxapi_cy_WrapVULCAN) < 0) __PYX_ERR(0, 11371, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVULCAN = &__pyx_type_8gxapi_cy_WrapVULCAN;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVV) < 0) __PYX_ERR(0, 11380, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVV.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVV", (PyObject *)&__pyx_type_8gxapi_cy_WrapVV) < 0) __PYX_ERR(0, 11380, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVV = &__pyx_type_8gxapi_cy_WrapVV;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapWA) < 0) __PYX_ERR(0, 11397, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapWA.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapWA", (PyObject *)&__pyx_type_8gxapi_cy_WrapWA) < 0) __PYX_ERR(0, 11397, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapWA = &__pyx_type_8gxapi_cy_WrapWA;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapACQUIRE) < 0) __PYX_ERR(0, 11414, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapACQUIRE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapACQUIRE", (PyObject *)&__pyx_type_8gxapi_cy_WrapACQUIRE) < 0) __PYX_ERR(0, 11414, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapACQUIRE = &__pyx_type_8gxapi_cy_WrapACQUIRE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapARCDB) < 0) __PYX_ERR(0, 11431, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapARCDB.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapARCDB", (PyObject *)&__pyx_type_8gxapi_cy_WrapARCDB) < 0) __PYX_ERR(0, 11431, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapARCDB = &__pyx_type_8gxapi_cy_WrapARCDB;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapARCDH) < 0) __PYX_ERR(0, 11448, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapARCDH.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapARCDH", (PyObject *)&__pyx_type_8gxapi_cy_WrapARCDH) < 0) __PYX_ERR(0, 11448, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapARCDH = &__pyx_type_8gxapi_cy_WrapARCDH;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapARCMAP) < 0) __PYX_ERR(0, 11457, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapARCMAP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapARCMAP", (PyObject *)&__pyx_type_8gxapi_cy_WrapARCMAP) < 0) __PYX_ERR(0, 11457, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapARCMAP = &__pyx_type_8gxapi_cy_WrapARCMAP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapARCSYS) < 0) __PYX_ERR(0, 11466, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapARCSYS.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapARCSYS", (PyObject *)&__pyx_type_8gxapi_cy_WrapARCSYS) < 0) __PYX_ERR(0, 11466, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapARCSYS = &__pyx_type_8gxapi_cy_WrapARCSYS;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapBIGRID) < 0) __PYX_ERR(0, 11475, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapBIGRID.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapBIGRID", (PyObject *)&__pyx_type_8gxapi_cy_WrapBIGRID) < 0) __PYX_ERR(0, 11475, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapBIGRID = &__pyx_type_8gxapi_cy_WrapBIGRID;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapCHIMERA) < 0) __PYX_ERR(0, 11492, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapCHIMERA.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapCHIMERA", (PyObject *)&__pyx_type_8gxapi_cy_WrapCHIMERA) < 0) __PYX_ERR(0, 11492, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapCHIMERA = &__pyx_type_8gxapi_cy_WrapCHIMERA;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapCOM) < 0) __PYX_ERR(0, 11501, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapCOM.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapCOM", (PyObject *)&__pyx_type_8gxapi_cy_WrapCOM) < 0) __PYX_ERR(0, 11501, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapCOM = &__pyx_type_8gxapi_cy_WrapCOM;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapCSYMB) < 0) __PYX_ERR(0, 11518, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapCSYMB.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapCSYMB", (PyObject *)&__pyx_type_8gxapi_cy_WrapCSYMB) < 0) __PYX_ERR(0, 11518, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapCSYMB = &__pyx_type_8gxapi_cy_WrapCSYMB;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDGW) < 0) __PYX_ERR(0, 11535, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDGW.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDGW", (PyObject *)&__pyx_type_8gxapi_cy_WrapDGW) < 0) __PYX_ERR(0, 11535, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDGW = &__pyx_type_8gxapi_cy_WrapDGW;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDH) < 0) __PYX_ERR(0, 11552, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDH.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDH", (PyObject *)&__pyx_type_8gxapi_cy_WrapDH) < 0) __PYX_ERR(0, 11552, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDH = &__pyx_type_8gxapi_cy_WrapDH;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDMPPLY) < 0) __PYX_ERR(0, 11569, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDMPPLY.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDMPPLY", (PyObject *)&__pyx_type_8gxapi_cy_WrapDMPPLY) < 0) __PYX_ERR(0, 11569, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDMPPLY = &__pyx_type_8gxapi_cy_WrapDMPPLY;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDOCU) < 0) __PYX_ERR(0, 11586, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDOCU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDOCU", (PyObject *)&__pyx_type_8gxapi_cy_WrapDOCU) < 0) __PYX_ERR(0, 11586, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDOCU = &__pyx_type_8gxapi_cy_WrapDOCU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDU) < 0) __PYX_ERR(0, 11603, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDU", (PyObject *)&__pyx_type_8gxapi_cy_WrapDU) < 0) __PYX_ERR(0, 11603, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDU = &__pyx_type_8gxapi_cy_WrapDU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapDXFI) < 0) __PYX_ERR(0, 11612, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapDXFI.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapDXFI", (PyObject *)&__pyx_type_8gxapi_cy_WrapDXFI) < 0) __PYX_ERR(0, 11612, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapDXFI = &__pyx_type_8gxapi_cy_WrapDXFI;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEDB) < 0) __PYX_ERR(0, 11629, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEDB.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEDB", (PyObject *)&__pyx_type_8gxapi_cy_WrapEDB) < 0) __PYX_ERR(0, 11629, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEDB = &__pyx_type_8gxapi_cy_WrapEDB;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEDOC) < 0) __PYX_ERR(0, 11646, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEDOC.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEDOC", (PyObject *)&__pyx_type_8gxapi_cy_WrapEDOC) < 0) __PYX_ERR(0, 11646, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEDOC = &__pyx_type_8gxapi_cy_WrapEDOC;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEMAP) < 0) __PYX_ERR(0, 11663, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEMAP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEMAP", (PyObject *)&__pyx_type_8gxapi_cy_WrapEMAP) < 0) __PYX_ERR(0, 11663, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEMAP = &__pyx_type_8gxapi_cy_WrapEMAP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEMAPTEMPLATE) < 0) __PYX_ERR(0, 11680, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEMAPTEMPLATE.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEMAPTEMPLATE", (PyObject *)&__pyx_type_8gxapi_cy_WrapEMAPTEMPLATE) < 0) __PYX_ERR(0, 11680, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEMAPTEMPLATE = &__pyx_type_8gxapi_cy_WrapEMAPTEMPLATE;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEUL3) < 0) __PYX_ERR(0, 11697, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEUL3.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEUL3", (PyObject *)&__pyx_type_8gxapi_cy_WrapEUL3) < 0) __PYX_ERR(0, 11697, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEUL3 = &__pyx_type_8gxapi_cy_WrapEUL3;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapEXP) < 0) __PYX_ERR(0, 11714, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapEXP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapEXP", (PyObject *)&__pyx_type_8gxapi_cy_WrapEXP) < 0) __PYX_ERR(0, 11714, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapEXP = &__pyx_type_8gxapi_cy_WrapEXP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapFFT) < 0) __PYX_ERR(0, 11731, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapFFT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapFFT", (PyObject *)&__pyx_type_8gxapi_cy_WrapFFT) < 0) __PYX_ERR(0, 11731, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapFFT = &__pyx_type_8gxapi_cy_WrapFFT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapFFT2) < 0) __PYX_ERR(0, 11748, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapFFT2.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapFFT2", (PyObject *)&__pyx_type_8gxapi_cy_WrapFFT2) < 0) __PYX_ERR(0, 11748, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapFFT2 = &__pyx_type_8gxapi_cy_WrapFFT2;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapFLT) < 0) __PYX_ERR(0, 11757, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapFLT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapFLT", (PyObject *)&__pyx_type_8gxapi_cy_WrapFLT) < 0) __PYX_ERR(0, 11757, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapFLT = &__pyx_type_8gxapi_cy_WrapFLT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGD) < 0) __PYX_ERR(0, 11766, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGD", (PyObject *)&__pyx_type_8gxapi_cy_WrapGD) < 0) __PYX_ERR(0, 11766, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGD = &__pyx_type_8gxapi_cy_WrapGD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGER) < 0) __PYX_ERR(0, 11783, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGER.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGER", (PyObject *)&__pyx_type_8gxapi_cy_WrapGER) < 0) __PYX_ERR(0, 11783, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGER = &__pyx_type_8gxapi_cy_WrapGER;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGMSYS) < 0) __PYX_ERR(0, 11800, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGMSYS.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGMSYS", (PyObject *)&__pyx_type_8gxapi_cy_WrapGMSYS) < 0) __PYX_ERR(0, 11800, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGMSYS = &__pyx_type_8gxapi_cy_WrapGMSYS;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGU) < 0) __PYX_ERR(0, 11809, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGU", (PyObject *)&__pyx_type_8gxapi_cy_WrapGU) < 0) __PYX_ERR(0, 11809, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGU = &__pyx_type_8gxapi_cy_WrapGU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapGUI) < 0) __PYX_ERR(0, 11818, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapGUI.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapGUI", (PyObject *)&__pyx_type_8gxapi_cy_WrapGUI) < 0) __PYX_ERR(0, 11818, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapGUI = &__pyx_type_8gxapi_cy_WrapGUI;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapHTTP) < 0) __PYX_ERR(0, 11827, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapHTTP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapHTTP", (PyObject *)&__pyx_type_8gxapi_cy_WrapHTTP) < 0) __PYX_ERR(0, 11827, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapHTTP = &__pyx_type_8gxapi_cy_WrapHTTP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIEXP) < 0) __PYX_ERR(0, 11844, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIEXP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIEXP", (PyObject *)&__pyx_type_8gxapi_cy_WrapIEXP) < 0) __PYX_ERR(0, 11844, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIEXP = &__pyx_type_8gxapi_cy_WrapIEXP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapINTERNET) < 0) __PYX_ERR(0, 11861, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapINTERNET.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapINTERNET", (PyObject *)&__pyx_type_8gxapi_cy_WrapINTERNET) < 0) __PYX_ERR(0, 11861, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapINTERNET = &__pyx_type_8gxapi_cy_WrapINTERNET;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIP) < 0) __PYX_ERR(0, 11870, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIP", (PyObject *)&__pyx_type_8gxapi_cy_WrapIP) < 0) __PYX_ERR(0, 11870, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIP = &__pyx_type_8gxapi_cy_WrapIP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapIPGUI) < 0) __PYX_ERR(0, 11887, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapIPGUI.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapIPGUI", (PyObject *)&__pyx_type_8gxapi_cy_WrapIPGUI) < 0) __PYX_ERR(0, 11887, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapIPGUI = &__pyx_type_8gxapi_cy_WrapIPGUI;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapKGRD) < 0) __PYX_ERR(0, 11896, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapKGRD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapKGRD", (PyObject *)&__pyx_type_8gxapi_cy_WrapKGRD) < 0) __PYX_ERR(0, 11896, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapKGRD = &__pyx_type_8gxapi_cy_WrapKGRD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapLMSG) < 0) __PYX_ERR(0, 11913, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapLMSG.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapLMSG", (PyObject *)&__pyx_type_8gxapi_cy_WrapLMSG) < 0) __PYX_ERR(0, 11913, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapLMSG = &__pyx_type_8gxapi_cy_WrapLMSG;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMISC) < 0) __PYX_ERR(0, 11922, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMISC.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMISC", (PyObject *)&__pyx_type_8gxapi_cy_WrapMISC) < 0) __PYX_ERR(0, 11922, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMISC = &__pyx_type_8gxapi_cy_WrapMISC;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMSTK) < 0) __PYX_ERR(0, 11931, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMSTK.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMSTK", (PyObject *)&__pyx_type_8gxapi_cy_WrapMSTK) < 0) __PYX_ERR(0, 11931, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMSTK = &__pyx_type_8gxapi_cy_WrapMSTK;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapMVG) < 0) __PYX_ERR(0, 11948, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapMVG.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapMVG", (PyObject *)&__pyx_type_8gxapi_cy_WrapMVG) < 0) __PYX_ERR(0, 11948, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapMVG = &__pyx_type_8gxapi_cy_WrapMVG;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPDF3D) < 0) __PYX_ERR(0, 11965, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPDF3D.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPDF3D", (PyObject *)&__pyx_type_8gxapi_cy_WrapPDF3D) < 0) __PYX_ERR(0, 11965, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPDF3D = &__pyx_type_8gxapi_cy_WrapPDF3D;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPGEXP) < 0) __PYX_ERR(0, 11974, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPGEXP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPGEXP", (PyObject *)&__pyx_type_8gxapi_cy_WrapPGEXP) < 0) __PYX_ERR(0, 11974, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPGEXP = &__pyx_type_8gxapi_cy_WrapPGEXP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPGU) < 0) __PYX_ERR(0, 11991, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPGU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPGU", (PyObject *)&__pyx_type_8gxapi_cy_WrapPGU) < 0) __PYX_ERR(0, 11991, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPGU = &__pyx_type_8gxapi_cy_WrapPGU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPRAGA3) < 0) __PYX_ERR(0, 12000, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPRAGA3.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPRAGA3", (PyObject *)&__pyx_type_8gxapi_cy_WrapPRAGA3) < 0) __PYX_ERR(0, 12000, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPRAGA3 = &__pyx_type_8gxapi_cy_WrapPRAGA3;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapPROJ) < 0) __PYX_ERR(0, 12009, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapPROJ.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapPROJ", (PyObject *)&__pyx_type_8gxapi_cy_WrapPROJ) < 0) __PYX_ERR(0, 12009, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapPROJ = &__pyx_type_8gxapi_cy_WrapPROJ;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapRGRD) < 0) __PYX_ERR(0, 12018, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapRGRD.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapRGRD", (PyObject *)&__pyx_type_8gxapi_cy_WrapRGRD) < 0) __PYX_ERR(0, 12018, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapRGRD = &__pyx_type_8gxapi_cy_WrapRGRD;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSEMPLOT) < 0) __PYX_ERR(0, 12035, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSEMPLOT.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSEMPLOT", (PyObject *)&__pyx_type_8gxapi_cy_WrapSEMPLOT) < 0) __PYX_ERR(0, 12035, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSEMPLOT = &__pyx_type_8gxapi_cy_WrapSEMPLOT;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSHP) < 0) __PYX_ERR(0, 12044, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSHP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSHP", (PyObject *)&__pyx_type_8gxapi_cy_WrapSHP) < 0) __PYX_ERR(0, 12044, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSHP = &__pyx_type_8gxapi_cy_WrapSHP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSQLSRV) < 0) __PYX_ERR(0, 12061, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSQLSRV.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSQLSRV", (PyObject *)&__pyx_type_8gxapi_cy_WrapSQLSRV) < 0) __PYX_ERR(0, 12061, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSQLSRV = &__pyx_type_8gxapi_cy_WrapSQLSRV;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSTK) < 0) __PYX_ERR(0, 12070, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSTK.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSTK", (PyObject *)&__pyx_type_8gxapi_cy_WrapSTK) < 0) __PYX_ERR(0, 12070, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSTK = &__pyx_type_8gxapi_cy_WrapSTK;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapSTRINGS) < 0) __PYX_ERR(0, 12087, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapSTRINGS.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapSTRINGS", (PyObject *)&__pyx_type_8gxapi_cy_WrapSTRINGS) < 0) __PYX_ERR(0, 12087, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapSTRINGS = &__pyx_type_8gxapi_cy_WrapSTRINGS;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTC) < 0) __PYX_ERR(0, 12096, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTC.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTC", (PyObject *)&__pyx_type_8gxapi_cy_WrapTC) < 0) __PYX_ERR(0, 12096, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTC = &__pyx_type_8gxapi_cy_WrapTC;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTEST) < 0) __PYX_ERR(0, 12113, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTEST.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTEST", (PyObject *)&__pyx_type_8gxapi_cy_WrapTEST) < 0) __PYX_ERR(0, 12113, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTEST = &__pyx_type_8gxapi_cy_WrapTEST;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTIN) < 0) __PYX_ERR(0, 12122, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTIN.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTIN", (PyObject *)&__pyx_type_8gxapi_cy_WrapTIN) < 0) __PYX_ERR(0, 12122, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTIN = &__pyx_type_8gxapi_cy_WrapTIN;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapTRND) < 0) __PYX_ERR(0, 12139, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapTRND.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapTRND", (PyObject *)&__pyx_type_8gxapi_cy_WrapTRND) < 0) __PYX_ERR(0, 12139, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapTRND = &__pyx_type_8gxapi_cy_WrapTRND;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapUNC) < 0) __PYX_ERR(0, 12148, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapUNC.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapUNC", (PyObject *)&__pyx_type_8gxapi_cy_WrapUNC) < 0) __PYX_ERR(0, 12148, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapUNC = &__pyx_type_8gxapi_cy_WrapUNC;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVAU) < 0) __PYX_ERR(0, 12157, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVAU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVAU", (PyObject *)&__pyx_type_8gxapi_cy_WrapVAU) < 0) __PYX_ERR(0, 12157, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVAU = &__pyx_type_8gxapi_cy_WrapVAU;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVVEXP) < 0) __PYX_ERR(0, 12166, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVVEXP.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVVEXP", (PyObject *)&__pyx_type_8gxapi_cy_WrapVVEXP) < 0) __PYX_ERR(0, 12166, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVVEXP = &__pyx_type_8gxapi_cy_WrapVVEXP;
+  if (PyType_Ready(&__pyx_type_8gxapi_cy_WrapVVU) < 0) __PYX_ERR(0, 12183, __pyx_L1_error)
+  __pyx_type_8gxapi_cy_WrapVVU.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "WrapVVU", (PyObject *)&__pyx_type_8gxapi_cy_WrapVVU) < 0) __PYX_ERR(0, 12183, __pyx_L1_error)
+  __pyx_ptype_8gxapi_cy_WrapVVU = &__pyx_type_8gxapi_cy_WrapVVU;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
@@ -2570,44 +28820,110 @@ PyMODINIT_FUNC PyInit_gxapi_cy(void)
   /* "gxapi_cy.pyx":7
  * from libc.stdlib cimport malloc, free
  * 
+ * import threading             # <<<<<<<<<<<<<<
+ * from threading import current_thread
+ * 
+ */
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_threading, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_threading, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "gxapi_cy.pyx":8
+ * 
+ * import threading
+ * from threading import current_thread             # <<<<<<<<<<<<<<
+ * 
+ * thread_local = threading.local()
+ */
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_n_s_current_thread);
+  __Pyx_GIVEREF(__pyx_n_s_current_thread);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_current_thread);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_threading, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_current_thread); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_current_thread, __pyx_t_1) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "gxapi_cy.pyx":10
+ * from threading import current_thread
+ * 
+ * thread_local = threading.local()             # <<<<<<<<<<<<<<
+ * 
+ * from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
+ */
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_threading); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_local); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (__pyx_t_1) {
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  } else {
+    __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+  }
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_thread_local, __pyx_t_2) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "gxapi_cy.pyx":12
+ * thread_local = threading.local()
+ * 
  * from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyList_New(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_GXCancel);
   __Pyx_GIVEREF(__pyx_n_s_GXCancel);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_GXCancel);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_GXCancel);
   __Pyx_INCREF(__pyx_n_s_GXExit);
   __Pyx_GIVEREF(__pyx_n_s_GXExit);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_GXExit);
+  PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_GXExit);
   __Pyx_INCREF(__pyx_n_s_GXAPIError);
   __Pyx_GIVEREF(__pyx_n_s_GXAPIError);
-  PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_s_GXAPIError);
+  PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_GXAPIError);
   __Pyx_INCREF(__pyx_n_s_GXError);
   __Pyx_GIVEREF(__pyx_n_s_GXError);
-  PyList_SET_ITEM(__pyx_t_1, 3, __pyx_n_s_GXError);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_geosoft_gxapi, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_GXCancel); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXCancel, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_GXExit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXExit, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXAPIError, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_GXError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXError, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyList_SET_ITEM(__pyx_t_2, 3, __pyx_n_s_GXError);
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_geosoft_gxapi, __pyx_t_2, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_GXCancel); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXCancel, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_GXExit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXExit, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_GXAPIError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXAPIError, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_GXError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GXError, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "gxapi_cy.pyx":2
  * 
@@ -2615,10 +28931,10 @@ PyMODINIT_FUNC PyInit_gxapi_cy(void)
  * 
  * from libc.stdint cimport int32_t, int16_t
  */
-  __pyx_t_2 = PyDict_New(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_3 = PyDict_New(); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_3) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /*--- Wrapped vars code ---*/
 
@@ -2626,6 +28942,7 @@ PyMODINIT_FUNC PyInit_gxapi_cy(void)
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init gxapi_cy", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -2989,210 +29306,36 @@ bad:
     return result;
 }
 
-/* PyCFunctionFastCall */
-    #if CYTHON_FAST_PYCCALL
-static CYTHON_INLINE PyObject * __Pyx_PyCFunction_FastCall(PyObject *func_obj, PyObject **args, Py_ssize_t nargs) {
-    PyCFunctionObject *func = (PyCFunctionObject*)func_obj;
-    PyCFunction meth = PyCFunction_GET_FUNCTION(func);
-    PyObject *self = PyCFunction_GET_SELF(func);
-    assert(PyCFunction_Check(func));
-    assert(METH_FASTCALL == (PyCFunction_GET_FLAGS(func) & ~(METH_CLASS | METH_STATIC | METH_COEXIST)));
-    assert(nargs >= 0);
-    assert(nargs == 0 || args != NULL);
-    /* _PyCFunction_FastCallDict() must not be called with an exception set,
-       because it may clear it (directly or indirectly) and so the
-       caller loses its exception */
-    assert(!PyErr_Occurred());
-    return (*((__Pyx_PyCFunctionFast)meth)) (self, args, nargs, NULL);
-}
-#endif  // CYTHON_FAST_PYCCALL
-
-/* PyFunctionFastCall */
-    #if CYTHON_FAST_PYCALL
-#include "frameobject.h"
-static PyObject* __Pyx_PyFunction_FastCallNoKw(PyCodeObject *co, PyObject **args, Py_ssize_t na,
-                                               PyObject *globals) {
-    PyFrameObject *f;
-    PyThreadState *tstate = PyThreadState_GET();
-    PyObject **fastlocals;
-    Py_ssize_t i;
-    PyObject *result;
-    assert(globals != NULL);
-    /* XXX Perhaps we should create a specialized
-       PyFrame_New() that doesn't take locals, but does
-       take builtins without sanity checking them.
-       */
-    assert(tstate != NULL);
-    f = PyFrame_New(tstate, co, globals, NULL);
-    if (f == NULL) {
-        return NULL;
-    }
-    fastlocals = f->f_localsplus;
-    for (i = 0; i < na; i++) {
-        Py_INCREF(*args);
-        fastlocals[i] = *args++;
-    }
-    result = PyEval_EvalFrameEx(f,0);
-    ++tstate->recursion_depth;
-    Py_DECREF(f);
-    --tstate->recursion_depth;
-    return result;
-}
-#if 1 || PY_VERSION_HEX < 0x030600B1
-static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, int nargs, PyObject *kwargs) {
-    PyCodeObject *co = (PyCodeObject *)PyFunction_GET_CODE(func);
-    PyObject *globals = PyFunction_GET_GLOBALS(func);
-    PyObject *argdefs = PyFunction_GET_DEFAULTS(func);
-    PyObject *closure;
+/* GetAttr */
+    static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *o, PyObject *n) {
+#if CYTHON_COMPILING_IN_CPYTHON
 #if PY_MAJOR_VERSION >= 3
-    PyObject *kwdefs;
-#endif
-    PyObject *kwtuple, **k;
-    PyObject **d;
-    Py_ssize_t nd;
-    Py_ssize_t nk;
-    PyObject *result;
-    assert(kwargs == NULL || PyDict_Check(kwargs));
-    nk = kwargs ? PyDict_Size(kwargs) : 0;
-    if (Py_EnterRecursiveCall((char*)" while calling a Python object")) {
-        return NULL;
-    }
-    if (
-#if PY_MAJOR_VERSION >= 3
-            co->co_kwonlyargcount == 0 &&
-#endif
-            likely(kwargs == NULL || nk == 0) &&
-            co->co_flags == (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)) {
-        if (argdefs == NULL && co->co_argcount == nargs) {
-            result = __Pyx_PyFunction_FastCallNoKw(co, args, nargs, globals);
-            goto done;
-        }
-        else if (nargs == 0 && argdefs != NULL
-                 && co->co_argcount == Py_SIZE(argdefs)) {
-            /* function called with no arguments, but all parameters have
-               a default value: use default values as arguments .*/
-            args = &PyTuple_GET_ITEM(argdefs, 0);
-            result =__Pyx_PyFunction_FastCallNoKw(co, args, Py_SIZE(argdefs), globals);
-            goto done;
-        }
-    }
-    if (kwargs != NULL) {
-        Py_ssize_t pos, i;
-        kwtuple = PyTuple_New(2 * nk);
-        if (kwtuple == NULL) {
-            result = NULL;
-            goto done;
-        }
-        k = &PyTuple_GET_ITEM(kwtuple, 0);
-        pos = i = 0;
-        while (PyDict_Next(kwargs, &pos, &k[i], &k[i+1])) {
-            Py_INCREF(k[i]);
-            Py_INCREF(k[i+1]);
-            i += 2;
-        }
-        nk = i / 2;
-    }
-    else {
-        kwtuple = NULL;
-        k = NULL;
-    }
-    closure = PyFunction_GET_CLOSURE(func);
-#if PY_MAJOR_VERSION >= 3
-    kwdefs = PyFunction_GET_KW_DEFAULTS(func);
-#endif
-    if (argdefs != NULL) {
-        d = &PyTuple_GET_ITEM(argdefs, 0);
-        nd = Py_SIZE(argdefs);
-    }
-    else {
-        d = NULL;
-        nd = 0;
-    }
-#if PY_MAJOR_VERSION >= 3
-    result = PyEval_EvalCodeEx((PyObject*)co, globals, (PyObject *)NULL,
-                               args, nargs,
-                               k, (int)nk,
-                               d, (int)nd, kwdefs, closure);
+    if (likely(PyUnicode_Check(n)))
 #else
-    result = PyEval_EvalCodeEx(co, globals, (PyObject *)NULL,
-                               args, nargs,
-                               k, (int)nk,
-                               d, (int)nd, closure);
+    if (likely(PyString_Check(n)))
 #endif
-    Py_XDECREF(kwtuple);
-done:
-    Py_LeaveRecursiveCall();
-    return result;
+        return __Pyx_PyObject_GetAttrStr(o, n);
+#endif
+    return PyObject_GetAttr(o, n);
 }
-#endif  // CPython < 3.6
-#endif  // CYTHON_FAST_PYCALL
 
-/* PyObjectCallMethO */
-    #if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
-    PyObject *self, *result;
-    PyCFunction cfunc;
-    cfunc = PyCFunction_GET_FUNCTION(func);
-    self = PyCFunction_GET_SELF(func);
-    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
-        return NULL;
-    result = cfunc(self, arg);
-    Py_LeaveRecursiveCall();
-    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
-        PyErr_SetString(
-            PyExc_SystemError,
-            "NULL result without error in PyObject_Call");
+/* GetAttr3 */
+    static CYTHON_INLINE PyObject *__Pyx_GetAttr3(PyObject *o, PyObject *n, PyObject *d) {
+    PyObject *r = __Pyx_GetAttr(o, n);
+    if (unlikely(!r)) {
+        if (!PyErr_ExceptionMatches(PyExc_AttributeError))
+            goto bad;
+        PyErr_Clear();
+        r = d;
+        Py_INCREF(d);
     }
-    return result;
+    return r;
+bad:
+    return NULL;
 }
-#endif
-
-/* PyObjectCallOneArg */
-    #if CYTHON_COMPILING_IN_CPYTHON
-static PyObject* __Pyx__PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-    PyObject *result;
-    PyObject *args = PyTuple_New(1);
-    if (unlikely(!args)) return NULL;
-    Py_INCREF(arg);
-    PyTuple_SET_ITEM(args, 0, arg);
-    result = __Pyx_PyObject_Call(func, args, NULL);
-    Py_DECREF(args);
-    return result;
-}
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-#if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(func)) {
-        return __Pyx_PyFunction_FastCall(func, &arg, 1);
-    }
-#endif
-#ifdef __Pyx_CyFunction_USED
-    if (likely(PyCFunction_Check(func) || PyObject_TypeCheck(func, __pyx_CyFunctionType))) {
-#else
-    if (likely(PyCFunction_Check(func))) {
-#endif
-        if (likely(PyCFunction_GET_FLAGS(func) & METH_O)) {
-            return __Pyx_PyObject_CallMethO(func, arg);
-#if CYTHON_FAST_PYCCALL
-        } else if (PyCFunction_GET_FLAGS(func) & METH_FASTCALL) {
-            return __Pyx_PyCFunction_FastCall(func, &arg, 1);
-#endif
-        }
-    }
-    return __Pyx__PyObject_CallOneArg(func, arg);
-}
-#else
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-    PyObject *result;
-    PyObject *args = PyTuple_Pack(1, arg);
-    if (unlikely(!args)) return NULL;
-    result = __Pyx_PyObject_Call(func, args, NULL);
-    Py_DECREF(args);
-    return result;
-}
-#endif
 
 /* RaiseException */
-      #if PY_MAJOR_VERSION < 3
+    #if PY_MAJOR_VERSION < 3
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb,
                         CYTHON_UNUSED PyObject *cause) {
     __Pyx_PyThreadState_declare
@@ -3353,6 +29496,250 @@ bad:
     return;
 }
 #endif
+
+/* PyCFunctionFastCall */
+      #if CYTHON_FAST_PYCCALL
+static CYTHON_INLINE PyObject * __Pyx_PyCFunction_FastCall(PyObject *func_obj, PyObject **args, Py_ssize_t nargs) {
+    PyCFunctionObject *func = (PyCFunctionObject*)func_obj;
+    PyCFunction meth = PyCFunction_GET_FUNCTION(func);
+    PyObject *self = PyCFunction_GET_SELF(func);
+    assert(PyCFunction_Check(func));
+    assert(METH_FASTCALL == (PyCFunction_GET_FLAGS(func) & ~(METH_CLASS | METH_STATIC | METH_COEXIST)));
+    assert(nargs >= 0);
+    assert(nargs == 0 || args != NULL);
+    /* _PyCFunction_FastCallDict() must not be called with an exception set,
+       because it may clear it (directly or indirectly) and so the
+       caller loses its exception */
+    assert(!PyErr_Occurred());
+    return (*((__Pyx_PyCFunctionFast)meth)) (self, args, nargs, NULL);
+}
+#endif  // CYTHON_FAST_PYCCALL
+
+/* PyFunctionFastCall */
+      #if CYTHON_FAST_PYCALL
+#include "frameobject.h"
+static PyObject* __Pyx_PyFunction_FastCallNoKw(PyCodeObject *co, PyObject **args, Py_ssize_t na,
+                                               PyObject *globals) {
+    PyFrameObject *f;
+    PyThreadState *tstate = PyThreadState_GET();
+    PyObject **fastlocals;
+    Py_ssize_t i;
+    PyObject *result;
+    assert(globals != NULL);
+    /* XXX Perhaps we should create a specialized
+       PyFrame_New() that doesn't take locals, but does
+       take builtins without sanity checking them.
+       */
+    assert(tstate != NULL);
+    f = PyFrame_New(tstate, co, globals, NULL);
+    if (f == NULL) {
+        return NULL;
+    }
+    fastlocals = f->f_localsplus;
+    for (i = 0; i < na; i++) {
+        Py_INCREF(*args);
+        fastlocals[i] = *args++;
+    }
+    result = PyEval_EvalFrameEx(f,0);
+    ++tstate->recursion_depth;
+    Py_DECREF(f);
+    --tstate->recursion_depth;
+    return result;
+}
+#if 1 || PY_VERSION_HEX < 0x030600B1
+static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, int nargs, PyObject *kwargs) {
+    PyCodeObject *co = (PyCodeObject *)PyFunction_GET_CODE(func);
+    PyObject *globals = PyFunction_GET_GLOBALS(func);
+    PyObject *argdefs = PyFunction_GET_DEFAULTS(func);
+    PyObject *closure;
+#if PY_MAJOR_VERSION >= 3
+    PyObject *kwdefs;
+#endif
+    PyObject *kwtuple, **k;
+    PyObject **d;
+    Py_ssize_t nd;
+    Py_ssize_t nk;
+    PyObject *result;
+    assert(kwargs == NULL || PyDict_Check(kwargs));
+    nk = kwargs ? PyDict_Size(kwargs) : 0;
+    if (Py_EnterRecursiveCall((char*)" while calling a Python object")) {
+        return NULL;
+    }
+    if (
+#if PY_MAJOR_VERSION >= 3
+            co->co_kwonlyargcount == 0 &&
+#endif
+            likely(kwargs == NULL || nk == 0) &&
+            co->co_flags == (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)) {
+        if (argdefs == NULL && co->co_argcount == nargs) {
+            result = __Pyx_PyFunction_FastCallNoKw(co, args, nargs, globals);
+            goto done;
+        }
+        else if (nargs == 0 && argdefs != NULL
+                 && co->co_argcount == Py_SIZE(argdefs)) {
+            /* function called with no arguments, but all parameters have
+               a default value: use default values as arguments .*/
+            args = &PyTuple_GET_ITEM(argdefs, 0);
+            result =__Pyx_PyFunction_FastCallNoKw(co, args, Py_SIZE(argdefs), globals);
+            goto done;
+        }
+    }
+    if (kwargs != NULL) {
+        Py_ssize_t pos, i;
+        kwtuple = PyTuple_New(2 * nk);
+        if (kwtuple == NULL) {
+            result = NULL;
+            goto done;
+        }
+        k = &PyTuple_GET_ITEM(kwtuple, 0);
+        pos = i = 0;
+        while (PyDict_Next(kwargs, &pos, &k[i], &k[i+1])) {
+            Py_INCREF(k[i]);
+            Py_INCREF(k[i+1]);
+            i += 2;
+        }
+        nk = i / 2;
+    }
+    else {
+        kwtuple = NULL;
+        k = NULL;
+    }
+    closure = PyFunction_GET_CLOSURE(func);
+#if PY_MAJOR_VERSION >= 3
+    kwdefs = PyFunction_GET_KW_DEFAULTS(func);
+#endif
+    if (argdefs != NULL) {
+        d = &PyTuple_GET_ITEM(argdefs, 0);
+        nd = Py_SIZE(argdefs);
+    }
+    else {
+        d = NULL;
+        nd = 0;
+    }
+#if PY_MAJOR_VERSION >= 3
+    result = PyEval_EvalCodeEx((PyObject*)co, globals, (PyObject *)NULL,
+                               args, nargs,
+                               k, (int)nk,
+                               d, (int)nd, kwdefs, closure);
+#else
+    result = PyEval_EvalCodeEx(co, globals, (PyObject *)NULL,
+                               args, nargs,
+                               k, (int)nk,
+                               d, (int)nd, closure);
+#endif
+    Py_XDECREF(kwtuple);
+done:
+    Py_LeaveRecursiveCall();
+    return result;
+}
+#endif  // CPython < 3.6
+#endif  // CYTHON_FAST_PYCALL
+
+/* PyObjectCallMethO */
+      #if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
+    PyObject *self, *result;
+    PyCFunction cfunc;
+    cfunc = PyCFunction_GET_FUNCTION(func);
+    self = PyCFunction_GET_SELF(func);
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    result = cfunc(self, arg);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
+    return result;
+}
+#endif
+
+/* PyObjectCallOneArg */
+      #if CYTHON_COMPILING_IN_CPYTHON
+static PyObject* __Pyx__PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *result;
+    PyObject *args = PyTuple_New(1);
+    if (unlikely(!args)) return NULL;
+    Py_INCREF(arg);
+    PyTuple_SET_ITEM(args, 0, arg);
+    result = __Pyx_PyObject_Call(func, args, NULL);
+    Py_DECREF(args);
+    return result;
+}
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+#if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(func)) {
+        return __Pyx_PyFunction_FastCall(func, &arg, 1);
+    }
+#endif
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || PyObject_TypeCheck(func, __pyx_CyFunctionType))) {
+#else
+    if (likely(PyCFunction_Check(func))) {
+#endif
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_O)) {
+            return __Pyx_PyObject_CallMethO(func, arg);
+#if CYTHON_FAST_PYCCALL
+        } else if (PyCFunction_GET_FLAGS(func) & METH_FASTCALL) {
+            return __Pyx_PyCFunction_FastCall(func, &arg, 1);
+#endif
+        }
+    }
+    return __Pyx__PyObject_CallOneArg(func, arg);
+}
+#else
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *result;
+    PyObject *args = PyTuple_Pack(1, arg);
+    if (unlikely(!args)) return NULL;
+    result = __Pyx_PyObject_Call(func, args, NULL);
+    Py_DECREF(args);
+    return result;
+}
+#endif
+
+/* WriteUnraisableException */
+        static void __Pyx_WriteUnraisable(const char *name, CYTHON_UNUSED int clineno,
+                                  CYTHON_UNUSED int lineno, CYTHON_UNUSED const char *filename,
+                                  int full_traceback, CYTHON_UNUSED int nogil) {
+    PyObject *old_exc, *old_val, *old_tb;
+    PyObject *ctx;
+    __Pyx_PyThreadState_declare
+#ifdef WITH_THREAD
+    PyGILState_STATE state;
+    if (nogil)
+        state = PyGILState_Ensure();
+#ifdef _MSC_VER
+    else state = (PyGILState_STATE)-1;
+#endif
+#endif
+    __Pyx_PyThreadState_assign
+    __Pyx_ErrFetch(&old_exc, &old_val, &old_tb);
+    if (full_traceback) {
+        Py_XINCREF(old_exc);
+        Py_XINCREF(old_val);
+        Py_XINCREF(old_tb);
+        __Pyx_ErrRestore(old_exc, old_val, old_tb);
+        PyErr_PrintEx(1);
+    }
+    #if PY_MAJOR_VERSION < 3
+    ctx = PyString_FromString(name);
+    #else
+    ctx = PyUnicode_FromString(name);
+    #endif
+    __Pyx_ErrRestore(old_exc, old_val, old_tb);
+    if (!ctx) {
+        PyErr_WriteUnraisable(Py_None);
+    } else {
+        PyErr_WriteUnraisable(ctx);
+        Py_DECREF(ctx);
+    }
+#ifdef WITH_THREAD
+    if (nogil)
+        PyGILState_Release(state);
+#endif
+}
 
 /* PyObjectCallNoArg */
         #if CYTHON_COMPILING_IN_CPYTHON
@@ -3673,6 +30060,217 @@ bad:
     }
 }
 
+/* CIntFromPyVerify */
+          #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
+
+/* CIntFromPy */
+          static CYTHON_INLINE int32_t __Pyx_PyInt_As_int32_t(PyObject *x) {
+    const int32_t neg_one = (int32_t) -1, const_zero = (int32_t) 0;
+    const int is_unsigned = neg_one > const_zero;
+#if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_Check(x))) {
+        if (sizeof(int32_t) < sizeof(long)) {
+            __PYX_VERIFY_RETURN_INT(int32_t, long, PyInt_AS_LONG(x))
+        } else {
+            long val = PyInt_AS_LONG(x);
+            if (is_unsigned && unlikely(val < 0)) {
+                goto raise_neg_overflow;
+            }
+            return (int32_t) val;
+        }
+    } else
+#endif
+    if (likely(PyLong_Check(x))) {
+        if (is_unsigned) {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int32_t) 0;
+                case  1: __PYX_VERIFY_RETURN_INT(int32_t, digit, digits[0])
+                case 2:
+                    if (8 * sizeof(int32_t) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) >= 2 * PyLong_SHIFT) {
+                            return (int32_t) (((((int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0]));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int32_t) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) >= 3 * PyLong_SHIFT) {
+                            return (int32_t) (((((((int32_t)digits[2]) << PyLong_SHIFT) | (int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0]));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int32_t) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) >= 4 * PyLong_SHIFT) {
+                            return (int32_t) (((((((((int32_t)digits[3]) << PyLong_SHIFT) | (int32_t)digits[2]) << PyLong_SHIFT) | (int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0]));
+                        }
+                    }
+                    break;
+            }
+#endif
+#if CYTHON_COMPILING_IN_CPYTHON
+            if (unlikely(Py_SIZE(x) < 0)) {
+                goto raise_neg_overflow;
+            }
+#else
+            {
+                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
+                if (unlikely(result < 0))
+                    return (int32_t) -1;
+                if (unlikely(result == 1))
+                    goto raise_neg_overflow;
+            }
+#endif
+            if (sizeof(int32_t) <= sizeof(unsigned long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int32_t, unsigned long, PyLong_AsUnsignedLong(x))
+#ifdef HAVE_LONG_LONG
+            } else if (sizeof(int32_t) <= sizeof(unsigned PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int32_t, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+#endif
+            }
+        } else {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int32_t) 0;
+                case -1: __PYX_VERIFY_RETURN_INT(int32_t, sdigit, (sdigit) (-(sdigit)digits[0]))
+                case  1: __PYX_VERIFY_RETURN_INT(int32_t,  digit, +digits[0])
+                case -2:
+                    if (8 * sizeof(int32_t) - 1 > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) - 1 > 2 * PyLong_SHIFT) {
+                            return (int32_t) (((int32_t)-1)*(((((int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0])));
+                        }
+                    }
+                    break;
+                case 2:
+                    if (8 * sizeof(int32_t) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) - 1 > 2 * PyLong_SHIFT) {
+                            return (int32_t) ((((((int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0])));
+                        }
+                    }
+                    break;
+                case -3:
+                    if (8 * sizeof(int32_t) - 1 > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) - 1 > 3 * PyLong_SHIFT) {
+                            return (int32_t) (((int32_t)-1)*(((((((int32_t)digits[2]) << PyLong_SHIFT) | (int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0])));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int32_t) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) - 1 > 3 * PyLong_SHIFT) {
+                            return (int32_t) ((((((((int32_t)digits[2]) << PyLong_SHIFT) | (int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0])));
+                        }
+                    }
+                    break;
+                case -4:
+                    if (8 * sizeof(int32_t) - 1 > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) - 1 > 4 * PyLong_SHIFT) {
+                            return (int32_t) (((int32_t)-1)*(((((((((int32_t)digits[3]) << PyLong_SHIFT) | (int32_t)digits[2]) << PyLong_SHIFT) | (int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0])));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int32_t) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int32_t, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int32_t) - 1 > 4 * PyLong_SHIFT) {
+                            return (int32_t) ((((((((((int32_t)digits[3]) << PyLong_SHIFT) | (int32_t)digits[2]) << PyLong_SHIFT) | (int32_t)digits[1]) << PyLong_SHIFT) | (int32_t)digits[0])));
+                        }
+                    }
+                    break;
+            }
+#endif
+            if (sizeof(int32_t) <= sizeof(long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int32_t, long, PyLong_AsLong(x))
+#ifdef HAVE_LONG_LONG
+            } else if (sizeof(int32_t) <= sizeof(PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int32_t, PY_LONG_LONG, PyLong_AsLongLong(x))
+#endif
+            }
+        }
+        {
+#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
+            PyErr_SetString(PyExc_RuntimeError,
+                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
+#else
+            int32_t val;
+            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
+ #if PY_MAJOR_VERSION < 3
+            if (likely(v) && !PyLong_Check(v)) {
+                PyObject *tmp = v;
+                v = PyNumber_Long(tmp);
+                Py_DECREF(tmp);
+            }
+ #endif
+            if (likely(v)) {
+                int one = 1; int is_little = (int)*(unsigned char *)&one;
+                unsigned char *bytes = (unsigned char *)&val;
+                int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                              bytes, sizeof(val),
+                                              is_little, !is_unsigned);
+                Py_DECREF(v);
+                if (likely(!ret))
+                    return val;
+            }
+#endif
+            return (int32_t) -1;
+        }
+    } else {
+        int32_t val;
+        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
+        if (!tmp) return (int32_t) -1;
+        val = __Pyx_PyInt_As_int32_t(tmp);
+        Py_DECREF(tmp);
+        return val;
+    }
+raise_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "value too large to convert to int32_t");
+    return (int32_t) -1;
+raise_neg_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "can't convert negative value to int32_t");
+    return (int32_t) -1;
+}
+
 /* CIntToPy */
           static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
     const long neg_one = (long) -1, const_zero = (long) 0;
@@ -3703,28 +30301,6 @@ bad:
                                      little, !is_unsigned);
     }
 }
-
-/* CIntFromPyVerify */
-          #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
 
 /* CIntFromPy */
           static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
