@@ -153,3 +153,11 @@ $RECYCLE.BIN/
 # Visual Studio
 # =========================
 .vs/
+/gxapi_t.pyx
+/gxapi_cy.pyx
+/gxapi_cy.cp36-win_amd64.pyd
+/gxapi_cy.c
+/gxapi_t.pyx
+/gxapi_cy.pyx
+/gxapi_cy.cp36-win_amd64.pyd
+/gxapi_cy.c
