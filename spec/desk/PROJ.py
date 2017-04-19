@@ -60,9 +60,15 @@ gx_methods = {
                qualifiers (if applicable).
                
                The type string can be one of the following:
-               Database    Save and close only databases.
-               Map         Save and close only maps.
-               Grid        Save and close only grids.
+               
+                   Database      
+                   Grid          
+                   Map           
+                   3DView        
+                   Voxel         
+                   VoxelInversion
+                   GMS3D         
+                   GMS2D
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -87,10 +93,15 @@ gx_methods = {
                qualifiers (if applicable).
                
                The type string can be one of the following:
-               Database    Save and close only databases.
-               Map         Save and close only maps.
-               Grid        Save and close only grids.
-               Voxel		Voxel file.
+               
+                   Database      
+                   Grid          
+                   Map           
+                   3DView        
+                   Voxel         
+                   VoxelInversion
+                   GMS3D         
+                   GMS2D
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -111,7 +122,8 @@ gx_methods = {
                return_doc="""
                :def:`COMMAND_ENV`
                
-               Notes									We are moving towards embedded tools and menus and this setting can be set
+               Notes:
+               We are moving towards embedded tools and menus and this setting can be set
                queried from the project to determine how specific commands should react.
                ly 3D viewer is currently making use of this.
                """),
@@ -123,15 +135,16 @@ gx_methods = {
                GX will terminate if error.
                
                The type string can be one of the following:
-               Database         List Databases.
-               Grid             List Grids.
-               Map              List Maps.
-               Voxel            List Voxels.
-               VoxelInversion   List VOXI Documents.
-               :class:`MXD`              List ArcGIS MXDs.
-               GMS3D            List GM-:class:`SYS` 3D Models.
-               GMS2D            List GM-:class:`SYS` 2D Models.
-               All              Lists all files.
+               
+                   Database      
+                   Grid          
+                   Map           
+                   3DView        
+                   Voxel         
+                   VoxelInversion
+                   GMS3D         
+                   GMS2D
+                   All
                """,
                return_type=Type.INT32_T,
                return_doc="The number of documents listed in the :class:`VV`.",
@@ -205,10 +218,16 @@ gx_methods = {
                Only documents that have actually changed will be listed.
                
                The type string can be one of the following:
-               Database    Save and close only databases.
-               Map         Save and close only maps.
-               Grid        Save and close only grids.
-               All         Saves and closes all files.
+                   
+                   Database      
+                   Grid          
+                   Map           
+                   3DView        
+                   Voxel         
+                   VoxelInversion
+                   GMS3D         
+                   GMS2D
+                   All                     
                """,
                return_type=Type.INT32_T,
                return_doc="""
