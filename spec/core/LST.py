@@ -14,9 +14,9 @@ gx_defines = [
            doc=":class:`LST` data access",
            constants=[
                Constant('LST_ITEM_NAME', value='0', type=Type.INT32_T,
-                        doc='Access the "Name" part of the :class:`LST` item.')                        ,
+                        doc='Access the "Name" part of the :class:`LST` item.'),
                Constant('LST_ITEM_VALUE', value='1', type=Type.INT32_T,
-                        doc='Access the "Value" part of the :class:`LST` item.')                        
+                        doc='Access the "Value" part of the :class:`LST` item.')
            ])]
 
 

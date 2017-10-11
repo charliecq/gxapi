@@ -11,32 +11,32 @@ gx_defines = [
     Define('BLAKEY_TEST',
            doc="Types of BLAKEY tests",
            constants=[
-               Constant('BLAKEY_TEST_ONESIDE', value='1', type=Type.INT32_T)                        ,
-               Constant('BLAKEY_TEST_TWOSIDE', value='2', type=Type.INT32_T)                        ,
-               Constant('BLAKEY_TEST_THREESIDE', value='3', type=Type.INT32_T)                        ,
-               Constant('BLAKEY_TEST_FOURSIDE', value='4', type=Type.INT32_T)                        
+               Constant('BLAKEY_TEST_ONESIDE', value='1', type=Type.INT32_T),
+               Constant('BLAKEY_TEST_TWOSIDE', value='2', type=Type.INT32_T),
+               Constant('BLAKEY_TEST_THREESIDE', value='3', type=Type.INT32_T),
+               Constant('BLAKEY_TEST_FOURSIDE', value='4', type=Type.INT32_T)
            ]),
 
     Define('PGU_CORR',
            doc="Correlation (must be synchronized with :def:`ST2_CORRELATION`)",
            constants=[
                Constant('PGU_CORR_SIMPLE', value='0', type=Type.INT32_T,
-                        doc="Simple correlation")                        ,
+                        doc="Simple correlation"),
                Constant('PGU_CORR_PEARSON', value='1', type=Type.INT32_T,
-                        doc="Pearson's correlation (normalized to standard deviations)")                        
+                        doc="Pearson's correlation (normalized to standard deviations)")
            ]),
 
     Define('PGU_DIRECTGRID',
            doc="Type of statistic to use on the data points in each cell.",
            constants=[
                Constant('PGU_DIRECTGRID_MINIMUM', value='0', type=Type.INT32_T,
-                        doc="Select the minimum value found in each cell")                        ,
+                        doc="Select the minimum value found in each cell"),
                Constant('PGU_DIRECTGRID_MAXIMUM', value='1', type=Type.INT32_T,
-                        doc="Select the maximum value found in each cell")                        ,
+                        doc="Select the maximum value found in each cell"),
                Constant('PGU_DIRECTGRID_MEAN', value='2', type=Type.INT32_T,
-                        doc="Select the mean of all values found in each cell")                        ,
+                        doc="Select the mean of all values found in each cell"),
                Constant('PGU_DIRECTGRID_ITEMS', value='3', type=Type.INT32_T,
-                        doc="The number of valid (non-dummy) items found in each cell")                        
+                        doc="The number of valid (non-dummy) items found in each cell")
            ]),
 
     Define('PGU_DIRECTION',
@@ -46,30 +46,30 @@ gx_defines = [
                         doc="""
                         Forward direction: Removes mean and standard deviation,
                         storing the values in the VVs.
-                        """)                        ,
+                        """),
                Constant('PGU_BACKWARD', value='1', type=Type.INT32_T,
                         doc="""
                         Backward direction: Applies mean and standard deviation
                         values in the VVs to the data.
-                        """)                        
+                        """)
            ]),
 
     Define('PGU_TRANS',
            doc="transform methods for the columns",
            constants=[
-               Constant('PGU_TRANS_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('PGU_TRANS_LOG', value='1', type=Type.INT32_T)                        
+               Constant('PGU_TRANS_NONE', value='0', type=Type.INT32_T),
+               Constant('PGU_TRANS_LOG', value='1', type=Type.INT32_T)
            ]),
 
     Define('PGU_INTERP_ORDER',
            doc="interpolation direction order",
            constants=[
-               Constant('PGU_INTERP_ORDER_XYZ', value='0', type=Type.INT32_T)                        ,
-               Constant('PGU_INTERP_ORDER_XZY', value='1', type=Type.INT32_T)                        ,
-               Constant('PGU_INTERP_ORDER_YXZ', value='2', type=Type.INT32_T)                        ,
-               Constant('PGU_INTERP_ORDER_YZX', value='3', type=Type.INT32_T)                        ,
-               Constant('PGU_INTERP_ORDER_ZXY', value='4', type=Type.INT32_T)                        ,
-               Constant('PGU_INTERP_ORDER_ZYX', value='5', type=Type.INT32_T)                        
+               Constant('PGU_INTERP_ORDER_XYZ', value='0', type=Type.INT32_T),
+               Constant('PGU_INTERP_ORDER_XZY', value='1', type=Type.INT32_T),
+               Constant('PGU_INTERP_ORDER_YXZ', value='2', type=Type.INT32_T),
+               Constant('PGU_INTERP_ORDER_YZX', value='3', type=Type.INT32_T),
+               Constant('PGU_INTERP_ORDER_ZXY', value='4', type=Type.INT32_T),
+               Constant('PGU_INTERP_ORDER_ZYX', value='5', type=Type.INT32_T)
            ])]
 
 

@@ -19,40 +19,40 @@ gx_defines = [
     Define('IP_ARRAY',
            doc=":class:`IP` Array options",
            constants=[
-               Constant('IP_ARRAY_DPDP', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_PLDP', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_PLPL', value='2', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_GRAD', value='3', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_WENNER', value='5', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_SCHLUMBERGER', value='6', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_UNKNOWN', value='7', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_3D', value='9', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_3D_PLDP', value='10', type=Type.INT32_T)                        ,
-               Constant('IP_ARRAY_3D_PLPL', value='11', type=Type.INT32_T)                        
+               Constant('IP_ARRAY_DPDP', value='0', type=Type.INT32_T),
+               Constant('IP_ARRAY_PLDP', value='1', type=Type.INT32_T),
+               Constant('IP_ARRAY_PLPL', value='2', type=Type.INT32_T),
+               Constant('IP_ARRAY_GRAD', value='3', type=Type.INT32_T),
+               Constant('IP_ARRAY_WENNER', value='5', type=Type.INT32_T),
+               Constant('IP_ARRAY_SCHLUMBERGER', value='6', type=Type.INT32_T),
+               Constant('IP_ARRAY_UNKNOWN', value='7', type=Type.INT32_T),
+               Constant('IP_ARRAY_3D', value='9', type=Type.INT32_T),
+               Constant('IP_ARRAY_3D_PLDP', value='10', type=Type.INT32_T),
+               Constant('IP_ARRAY_3D_PLPL', value='11', type=Type.INT32_T)
            ]),
 
     Define('IP_CHANNELS',
            doc="Channels to display",
            constants=[
-               Constant('IP_CHANNELS_DISPLAYED', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_CHANNELS_SELECTED', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_CHANNELS_ALL', value='2', type=Type.INT32_T)                        
+               Constant('IP_CHANNELS_DISPLAYED', value='0', type=Type.INT32_T),
+               Constant('IP_CHANNELS_SELECTED', value='1', type=Type.INT32_T),
+               Constant('IP_CHANNELS_ALL', value='2', type=Type.INT32_T)
            ]),
 
     Define('IP_DOMAIN',
            doc="Types of Domains",
            constants=[
-               Constant('IP_DOMAIN_NONE', value='-1', type=Type.INT32_T)                        ,
-               Constant('IP_DOMAIN_TIME', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_DOMAIN_FREQUENCY', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_DOMAIN_BOTH', value='2', type=Type.INT32_T)                        
+               Constant('IP_DOMAIN_NONE', value='-1', type=Type.INT32_T),
+               Constant('IP_DOMAIN_TIME', value='0', type=Type.INT32_T),
+               Constant('IP_DOMAIN_FREQUENCY', value='1', type=Type.INT32_T),
+               Constant('IP_DOMAIN_BOTH', value='2', type=Type.INT32_T)
            ]),
 
     Define('IP_DUPLICATE',
            doc="How to handle duplicates",
            constants=[
-               Constant('IP_DUPLICATE_APPEND', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_DUPLICATE_OVERWRITE', value='1', type=Type.INT32_T)                        
+               Constant('IP_DUPLICATE_APPEND', value='0', type=Type.INT32_T),
+               Constant('IP_DUPLICATE_OVERWRITE', value='1', type=Type.INT32_T)
            ]),
 
     Define('IP_FILTER',
@@ -65,7 +65,7 @@ gx_defines = [
                         /*/ \\*\\  n2
                         /*/   \\*\\ n3
                         :  :
-                        """)                        ,
+                        """),
                Constant('IP_FILTER_PANTLEGP', value='2', type=Type.INT32_T,
                         doc="""
                         Regular pant-leg filter with top at first point:
@@ -74,7 +74,7 @@ gx_defines = [
                         /*_*\\  n2
                         /*/ \\*\\ n3
                         :  :
-                        """)                        ,
+                        """),
                Constant('IP_FILTER_PYRIAMID', value='3', type=Type.INT32_T,
                         doc="""
                         Regular pyramid filter:     _!_  maxn:
@@ -82,7 +82,7 @@ gx_defines = [
                         /* * *\\  n2
                         /* * * *\\ n3
                         :  :
-                        """)                        ,
+                        """),
                Constant('IP_FILTER_PYRIAMIDP', value='4', type=Type.INT32_T,
                         doc="""
                         Regular pyramid filter      !  maxn:
@@ -90,41 +90,50 @@ gx_defines = [
                         /* *\\  n2
                         /* * *\\ n3
                         :  :
-                        """)                        
+                        """)
            ]),
 
     Define('IP_I2XIMPMODE',
            doc="Interpext Import Mode",
            constants=[
                Constant('IP_I2XIMPMODE_REPLACE', value='0', type=Type.INT32_T,
-                        doc="Recreates the line from scratch.")                        ,
+                        doc="Recreates the line from scratch."),
                Constant('IP_I2XIMPMODE_MERGE', value='1', type=Type.INT32_T,
                         doc="""
                         Looks for matching Tx1 and N values and
                         replaces data in matching lines only.
-                        """)                        
+                        """)
            ]),
 
     Define('IP_I2XINV',
            doc="Type of Inversion",
            constants=[
-               Constant('IP_I2XINV_IMAGE', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_I2XINV_ZONGE', value='1', type=Type.INT32_T)                        
+               Constant('IP_I2XINV_IMAGE', value='0', type=Type.INT32_T),
+               Constant('IP_I2XINV_ZONGE', value='1', type=Type.INT32_T)
            ]),
 
     Define('IP_LINES',
            doc="Lines to display",
            constants=[
-               Constant('IP_LINES_DISPLAYED', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_LINES_SELECTED', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_LINES_ALL', value='2', type=Type.INT32_T)                        
+               Constant('IP_LINES_DISPLAYED', value='0', type=Type.INT32_T),
+               Constant('IP_LINES_SELECTED', value='1', type=Type.INT32_T),
+               Constant('IP_LINES_ALL', value='2', type=Type.INT32_T)
            ]),
 
     Define('IP_PLOT',
            doc="Type of Plot",
            constants=[
-               Constant('IP_PLOT_PSEUDOSECTION', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_PLOT_STACKEDSECTION', value='1', type=Type.INT32_T)                        
+               Constant('IP_PLOT_PSEUDOSECTION', value='0', type=Type.INT32_T),
+               Constant('IP_PLOT_STACKEDSECTION', value='1', type=Type.INT32_T)
+           ]),
+
+    Define('IP_QCTYPE',
+           doc="Type of Measurement",
+           constants=[
+               Constant('IP_QCTYPE_RESISTIVITY', value='0', type=Type.INT32_T,
+                        doc="Resistivity"),
+               Constant('IP_QCTYPE_IP', value='1', type=Type.INT32_T,
+                        doc=":class:`IP`")
            ]),
 
     Define('IP_STACK_TYPE',
@@ -135,60 +144,61 @@ gx_defines = [
                         Use map-based spacing, and preserve the directions of the
                         original lines by rotating the sections as desired to their true
                         locations. (At present only N-S and E-W sections are supported).
-                        """)                        ,
+                        """),
                Constant('IP_STACK_TYPE_EQUAL', value='1', type=Type.INT32_T,
                         doc="""
                         Spaces the sections equally, with enough room to
                         guarantee no overlap with high N-values or closely spaced lines.
-                        """)                        ,
+                        """),
                Constant('IP_STACK_TYPE_GEOGRAPHIC', value='2', type=Type.INT32_T,
-                        doc="Now the same as IP_STACK_MAP")                        
+                        doc="Now the same as IP_STACK_MAP")
            ]),
 
     Define('IP_STNSCALE',
            doc="Station Scaling",
            constants=[
                Constant('IP_STNSCALE_NONE', value='0', type=Type.INT32_T,
-                        doc="Station numbers become X or Y locations")                        ,
+                        doc="Station numbers become X or Y locations"),
                Constant('IP_STNSCALE_ASPACE', value='1', type=Type.INT32_T,
-                        doc="Multiply station numbers by the A spacing")                        ,
+                        doc="Multiply station numbers by the A spacing"),
                Constant('IP_STNSCALE_VALUE', value='2', type=Type.INT32_T,
-                        doc="Multiply by an input value.")                        ,
+                        doc="Multiply by an input value."),
                Constant('IP_STNSCALE_FILE', value='3', type=Type.INT32_T,
-                        doc="Look up locations from a CSV Line/Station/X/Y file")                        
+                        doc="Look up locations from a CSV Line/Station/X/Y file")
            ]),
 
     Define('IP_SYS',
            doc="Instrument",
            constants=[
-               Constant('IP_SYS_IPDATA', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_IP2', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_IP6', value='2', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_IP10', value='3', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_SYSCALR2', value='4', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_IPR11', value='5', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_IPR12', value='6', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_PHOENIX', value='7', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_PHOENIX_V2', value='8', type=Type.INT32_T)                        ,
-               Constant('IP_SYS_ELREC_PRO', value='9', type=Type.INT32_T)                        
+               Constant('IP_SYS_IPDATA', value='0', type=Type.INT32_T),
+               Constant('IP_SYS_IP2', value='1', type=Type.INT32_T),
+               Constant('IP_SYS_IP6', value='2', type=Type.INT32_T),
+               Constant('IP_SYS_IP10', value='3', type=Type.INT32_T),
+               Constant('IP_SYS_SYSCALR2', value='4', type=Type.INT32_T),
+               Constant('IP_SYS_IPR11', value='5', type=Type.INT32_T),
+               Constant('IP_SYS_IPR12', value='6', type=Type.INT32_T),
+               Constant('IP_SYS_PHOENIX', value='7', type=Type.INT32_T),
+               Constant('IP_SYS_PHOENIX_V2', value='8', type=Type.INT32_T),
+               Constant('IP_SYS_ELREC_PRO', value='9', type=Type.INT32_T),
+               Constant('IP_SYS_PROSYS_II', value='10', type=Type.INT32_T)
            ]),
 
     Define('IP_UBC_CONTROL',
            doc="Types of Domains",
            constants=[
-               Constant('IP_UBC_CONTROL_NONE', value='-1', type=Type.INT32_T)                        ,
-               Constant('IP_UBC_CONTROL_DEFAULT', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_UBC_CONTROL_FILE', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_UBC_CONTROL_VALUE', value='2', type=Type.INT32_T)                        ,
-               Constant('IP_UBC_CONTROL_LENGTH', value='3', type=Type.INT32_T)                        
+               Constant('IP_UBC_CONTROL_NONE', value='-1', type=Type.INT32_T),
+               Constant('IP_UBC_CONTROL_DEFAULT', value='0', type=Type.INT32_T),
+               Constant('IP_UBC_CONTROL_FILE', value='1', type=Type.INT32_T),
+               Constant('IP_UBC_CONTROL_VALUE', value='2', type=Type.INT32_T),
+               Constant('IP_UBC_CONTROL_LENGTH', value='3', type=Type.INT32_T)
            ]),
 
     Define('IP_PLDP_CONV',
            doc="Types of Domains",
            constants=[
-               Constant('IP_PLDP_CONV_CLOSE_RX', value='0', type=Type.INT32_T)                        ,
-               Constant('IP_PLDP_CONV_MID_RX', value='1', type=Type.INT32_T)                        ,
-               Constant('IP_PLDP_CONV_DISTANT_RX', value='2', type=Type.INT32_T)                        
+               Constant('IP_PLDP_CONV_CLOSE_RX', value='0', type=Type.INT32_T),
+               Constant('IP_PLDP_CONV_MID_RX', value='1', type=Type.INT32_T),
+               Constant('IP_PLDP_CONV_DISTANT_RX', value='2', type=Type.INT32_T)
            ])]
 
 
@@ -1496,6 +1506,18 @@ gx_methods = {
                              doc="Inverted :class:`IP` channel")
                ]),
 
+        Method('SetImportLine_IP', module='geogxx', version='9.3.0',
+               availability=Availability.EXTENSION, 
+               doc="Set the line name for some imports.",
+               notes="For some imports, no line name is derivable from the import itself.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="IP",
+                             doc=":class:`IP` object."),
+                   Parameter('p2', type=Type.STRING,
+                             doc="Line name")
+               ]),
+
         Method('SetImportMode_IP', module='geogxx', version='6.3.0',
                availability=Availability.EXTENSION, 
                doc="When importing data to a line, set append/overwrite mode.",
@@ -1636,9 +1658,38 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Y locations"),
                    Parameter('p7', type="VV",
-                             doc='Off-time QC channel values ("QC")'),
+                             doc=':class:`IP` QC channel values ("QC" or "QC_IP")'),
                    Parameter('p8', type="VV",
-                             doc='On-time QC channel values ("QC_RES")')
+                             doc='Resistivity QC channel values ("QC_RES")')
+               ]),
+
+        Method('GetElectrodeLocationsAndMaskValues2_IP', module='geogxx', version='9.2.0',
+               availability=Availability.EXTENSION, 
+               doc="Get unique electrodes, along with current mask info.",
+               notes="""
+               The mask values are determined from the first row where a given electrode is found.
+               Values returned for all currently selected lines.
+               """,
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="IP",
+                             doc=":class:`IP` object."),
+                   Parameter('p2', type="DB",
+                             doc=":class:`DB` object"),
+                   Parameter('p3', type=Type.STRING,
+                             doc='Line name ("" for all selected lines)'),
+                   Parameter('p4', type=Type.INT32_T,
+                             doc="Electrode type. 0:Tx, 1:Rx"),
+                   Parameter('p5', type="VV",
+                             doc="X locations"),
+                   Parameter('p6', type="VV",
+                             doc="Y locations"),
+                   Parameter('p7', type="VV",
+                             doc=':class:`IP` QC channel values ("QC" or "QC_IP")'),
+                   Parameter('p8', type="VV",
+                             doc='Resistivity QC channel values ("QC_RES")'),
+                   Parameter('p9', type="VV",
+                             doc="Line symbol values (:def_val:`GS_INT`)")
                ]),
 
         Method('SetElectrodeMaskValues_IP', module='geogxx', version='9.0.0',
@@ -1660,9 +1711,53 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Y locations"),
                    Parameter('p7', type="VV",
-                             doc='Off-time QC channel values ("QC")'),
+                             doc=':class:`IP` QC channel values ("QC" or "QC_IP")'),
                    Parameter('p8', type="VV",
-                             doc='On-time QC channel values ("QC_RES")')
+                             doc='Resistivity QC channel values ("QC_RES")')
+               ]),
+
+        Method('SetElectrodeMaskValuesSingleQCChannel_IP', module='geogxx', version='9.2.0',
+               availability=Availability.EXTENSION, 
+               doc="Set unique electrodes, along with current mask info.",
+               notes="Mask values are set for all included electrode locations, currently selected lines.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="IP",
+                             doc=":class:`IP` object."),
+                   Parameter('p2', type="DB",
+                             doc=":class:`DB` object"),
+                   Parameter('p3', type=Type.STRING,
+                             doc='Line name ("" for all selected lines)'),
+                   Parameter('p4', type=Type.INT32_T,
+                             doc="Electrode type. 0:Tx, 1:Rx"),
+                   Parameter('p5', type=Type.INT32_T,
+                             doc="QC channel type.  :def:`IP_QCTYPE`"),
+                   Parameter('p6', type="VV",
+                             doc="X locations"),
+                   Parameter('p7', type="VV",
+                             doc="Y locations"),
+                   Parameter('p8', type="VV",
+                             doc='QC channel values ("QC")')
+               ]),
+
+        Method('GetQCChannel_IP', module='geogxx', version='9.2.0',
+               availability=Availability.EXTENSION, 
+               doc="Get the QC channel handle, if it exists.",
+               notes="""
+               For :class:`IP`, looks for "QC_IP", then "QC_OffTime", then "QC".
+               For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
+               """,
+               return_type="DB_SYMB",
+               return_doc="Channel handle,  :def_val:`NULLSYMB` if not found",
+               parameters = [
+                   Parameter('p1', type="DB",
+                             doc=":class:`DB` object"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="QC channel type.  :def:`IP_QCTYPE`"),
+                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                             doc="string to place name into"),
+                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                             doc="maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ])
     ],
     'Obsolete': [
@@ -1675,8 +1770,7 @@ gx_methods = {
                as long as the mask channel is defined at that FID.
                Previous averaged values (IP_DATA_AVG) are overwritten according to the
                overwrite flag.
-               
-               EPLACED BY: :func:`AverageDuplicatesQC_IP`.
+               REPLACED BY: :func:`AverageDuplicatesQC_IP`.
                """,
                return_type=Type.VOID,
                parameters = [

@@ -9,13 +9,13 @@ gx_defines = [
            doc="SQL Server Driver",
            constants=[
                Constant('MFCSQL_DRIVER_NOPROMPT', value='0', type=Type.INT32_T,
-                        doc="No dialog box, Error if authentication parameters are wrong")                        ,
+                        doc="No dialog box, Error if authentication parameters are wrong"),
                Constant('MFCSQL_DRIVER_COMPLETE', value='1', type=Type.INT32_T,
-                        doc="Only shows dialog box if authentication parameters are wrong")                        ,
+                        doc="Only shows dialog box if authentication parameters are wrong"),
                Constant('MFCSQL_DRIVER_PROMPT', value='2', type=Type.INT32_T,
-                        doc="Always show dialog box, with option to change parameter")                        ,
+                        doc="Always show dialog box, with option to change parameter"),
                Constant('MFCSQL_DRIVER_COMPLETE_REQUIRED', value='3', type=Type.INT32_T,
-                        doc="Same as :def_val:`MFCSQL_DRIVER_COMPLETE` except only missing parameters are editable")                        
+                        doc="Same as :def_val:`MFCSQL_DRIVER_COMPLETE` except only missing parameters are editable")
            ])]
 
 

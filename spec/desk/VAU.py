@@ -11,8 +11,8 @@ gx_defines = [
     Define('VAU_PRUNE',
            doc="Prune Options",
            constants=[
-               Constant('VAU_PRUNE_DUMMY', value='0', type=Type.INT32_T)                        ,
-               Constant('VAU_PRUNE_VALID', value='1', type=Type.INT32_T)                        
+               Constant('VAU_PRUNE_DUMMY', value='0', type=Type.INT32_T),
+               Constant('VAU_PRUNE_VALID', value='1', type=Type.INT32_T)
            ])]
 
 

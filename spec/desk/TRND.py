@@ -13,8 +13,8 @@ gx_defines = [
     Define('TRND_NODE',
            doc="Node to find",
            constants=[
-               Constant('TRND_MIN', value='0', type=Type.INT32_T)                        ,
-               Constant('TRND_MAX', value='1', type=Type.INT32_T)                        
+               Constant('TRND_MIN', value='0', type=Type.INT32_T),
+               Constant('TRND_MAX', value='1', type=Type.INT32_T)
            ])]
 
 

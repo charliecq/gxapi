@@ -14,17 +14,17 @@ gx_defines = [
            doc="Shape file geometry types",
            constants=[
                Constant('SHP_GEOM_TYPE_POINT', value='1', type=Type.INT32_T,
-                        doc="Single (X, Y) point")                        ,
+                        doc="Single (X, Y) point"),
                Constant('SHP_GEOM_TYPE_ARC', value='3', type=Type.INT32_T,
-                        doc="Arc (polyline) multiple (X, Y) points.")                        ,
+                        doc="Arc (polyline) multiple (X, Y) points."),
                Constant('SHP_GEOM_TYPE_POLYGON', value='5', type=Type.INT32_T,
-                        doc="Polygon. Multiple (X, Y) points.")                        ,
+                        doc="Polygon. Multiple (X, Y) points."),
                Constant('SHP_GEOM_TYPE_POINTZ', value='11', type=Type.INT32_T,
-                        doc="Single (X, Y, Z) point")                        ,
+                        doc="Single (X, Y, Z) point"),
                Constant('SHP_GEOM_TYPE_ARCZ', value='13', type=Type.INT32_T,
-                        doc="Arc (polyline) multiple (X, Y, Z) points.")                        ,
+                        doc="Arc (polyline) multiple (X, Y, Z) points."),
                Constant('SHP_GEOM_TYPE_POLYGONZ', value='15', type=Type.INT32_T,
-                        doc="Polygon. Multiple (X, Y, Z) points.")                        
+                        doc="Polygon. Multiple (X, Y, Z) points.")
            ])]
 
 

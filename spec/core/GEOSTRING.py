@@ -8,18 +8,18 @@ gx_defines = [
     Define('GEOSTRING_OPEN',
            doc="Open Modes",
            constants=[
-               Constant('GEOSTRING_OPEN_READ', value='0', type=Type.INT32_T)                        ,
-               Constant('GEOSTRING_OPEN_READWRITE', value='1', type=Type.INT32_T)                        
+               Constant('GEOSTRING_OPEN_READ', value='0', type=Type.INT32_T),
+               Constant('GEOSTRING_OPEN_READWRITE', value='1', type=Type.INT32_T)
            ]),
 
     Define('SECTION_ORIENTATION',
            doc="Section orientation types",
            constants=[
-               Constant('SECTION_ORIENTATION_UNKNOWN', value='0', type=Type.INT32_T)                        ,
-               Constant('SECTION_ORIENTATION_PLAN', value='1', type=Type.INT32_T)                        ,
-               Constant('SECTION_ORIENTATION_SECTION', value='2', type=Type.INT32_T)                        ,
-               Constant('SECTION_ORIENTATION_CROOKED', value='2', type=Type.INT32_T)                        ,
-               Constant('SECTION_ORIENTATION_GMSYS', value='2', type=Type.INT32_T)                        
+               Constant('SECTION_ORIENTATION_UNKNOWN', value='0', type=Type.INT32_T),
+               Constant('SECTION_ORIENTATION_PLAN', value='1', type=Type.INT32_T),
+               Constant('SECTION_ORIENTATION_SECTION', value='2', type=Type.INT32_T),
+               Constant('SECTION_ORIENTATION_CROOKED', value='2', type=Type.INT32_T),
+               Constant('SECTION_ORIENTATION_GMSYS', value='2', type=Type.INT32_T)
            ])]
 
 

@@ -9,31 +9,31 @@ gx_defines = [
            doc="Command environments",
            constants=[
                Constant('COMMAND_ENV_NORMAL', value='0', type=Type.INT32_T,
-                        doc="Normal")                        ,
+                        doc="Normal"),
                Constant('COMMAND_ENV_IN3DVIEWER', value='1', type=Type.INT32_T,
-                        doc="Executing from inside 3D Viewer")                        
+                        doc="Executing from inside 3D Viewer")
            ]),
 
     Define('TOOL_TYPE',
            doc="Tool type defines",
            constants=[
                Constant('TOOL_TYPE_DEFAULT', value='0', type=Type.INT32_T,
-                        doc="Geosoft created default tools")                        ,
+                        doc="Geosoft created default tools"),
                Constant('TOOL_TYPE_AUXILIARY', value='1', type=Type.INT32_T,
-                        doc="Auxiliary tools (including custom XTools)")                        ,
+                        doc="Auxiliary tools (including custom XTools)"),
                Constant('TOOL_TYPE_ALL', value='2', type=Type.INT32_T,
-                        doc="All tools")                        
+                        doc="All tools")
            ]),
 
     Define('PROJ_DISPLAY',
            doc="How to display an object",
            constants=[
                Constant('PROJ_DISPLAY_NO', value='0', type=Type.INT32_T,
-                        doc="Do not display the object")                        ,
+                        doc="Do not display the object"),
                Constant('PROJ_DISPLAY_YES', value='1', type=Type.INT32_T,
-                        doc="Display the object unless user set option not too")                        ,
+                        doc="Display the object unless user set option not too"),
                Constant('PROJ_DISPLAY_ALWAYS', value='2', type=Type.INT32_T,
-                        doc="Always display the object")                        
+                        doc="Always display the object")
            ])]
 
 
@@ -60,15 +60,9 @@ gx_methods = {
                qualifiers (if applicable).
                
                The type string can be one of the following:
-               
-                   Database      
-                   Grid          
-                   Map           
-                   3DView        
-                   Voxel         
-                   VoxelInversion
-                   GMS3D         
-                   GMS2D
+               Database    Save and close only databases.
+               Map         Save and close only maps.
+               Grid        Save and close only grids.
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -93,15 +87,10 @@ gx_methods = {
                qualifiers (if applicable).
                
                The type string can be one of the following:
-               
-                   Database      
-                   Grid          
-                   Map           
-                   3DView        
-                   Voxel         
-                   VoxelInversion
-                   GMS3D         
-                   GMS2D
+               Database    Save and close only databases.
+               Map         Save and close only maps.
+               Grid        Save and close only grids.
+               Voxel		Voxel file.
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -122,8 +111,7 @@ gx_methods = {
                return_doc="""
                :def:`COMMAND_ENV`
                
-               Notes:
-               We are moving towards embedded tools and menus and this setting can be set
+               Notes									We are moving towards embedded tools and menus and this setting can be set
                queried from the project to determine how specific commands should react.
                ly 3D viewer is currently making use of this.
                """),
@@ -132,19 +120,17 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="Fills a :class:`VV` with documents of a certain type.",
                notes="""
-               GX will terminate if error.
-               
                The type string can be one of the following:
-               
-                   Database      
-                   Grid          
-                   Map           
-                   3DView        
-                   Voxel         
-                   VoxelInversion
-                   GMS3D         
-                   GMS2D
-                   All
+               Database         List Databases.
+               Grid             List Grids.
+               Map              List Maps.
+               3DView           List 3D Views.
+               Voxel            List Voxels.
+               VoxelInversion   List VOXI Documents.
+               :class:`MXD`              List ArcGIS MXDs.
+               GMS3D            List GM-:class:`SYS` 3D Models.
+               GMS2D            List GM-:class:`SYS` 2D Models.
+               All              Lists all files.
                """,
                return_type=Type.INT32_T,
                return_doc="The number of documents listed in the :class:`VV`.",
@@ -153,6 +139,61 @@ gx_methods = {
                              doc=":class:`VV` of type -:def_val:`STR_FILE`"),
                    Parameter('p2', type=Type.STRING,
                              doc="Type of document to obtain")
+               ]),
+
+        Method('iListLoadedDocuments_PROJ', module='None', version='9.2',
+               availability=Availability.PUBLIC, is_app=True, 
+               doc="Fills a :class:`VV` with loaded documents of a certain type.",
+               notes="""
+               The type string can be one of the following:
+               Database         List Databases.
+               Grid             List Grids.
+               Map              List Maps.
+               3DView           List 3D Views.
+               Voxel            List Voxels.
+               VoxelInversion   List VOXI Documents.
+               :class:`MXD`              List ArcGIS MXDs.
+               GMS3D            List GM-:class:`SYS` 3D Models.
+               GMS2D            List GM-:class:`SYS` 2D Models.
+               All              Lists all files.
+               """,
+               return_type=Type.INT32_T,
+               return_doc="The number of loaded documents listed in the :class:`VV`.",
+               parameters = [
+                   Parameter('p1', type="VV",
+                             doc=":class:`VV` of type -:def_val:`STR_FILE`>"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="Type of document to obtain")
+               ]),
+
+        Method('ICurrentDocument_PROJ', module='None', version='9.2.0',
+               availability=Availability.PUBLIC, is_app=True, 
+               doc="Get the name and type of the loaded document with focus.",
+               return_type=Type.VOID,
+               return_doc="Nothing.",
+               parameters = [
+                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                             doc="name (empty if none currenlty loaded)"),
+                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                             doc="maximum name length"),
+                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                             doc="type"),
+                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                             doc="maximum type length")
+               ]),
+
+        Method('ICurrentDocumentOfType_PROJ', module='None', version='9.2.0',
+               availability=Availability.PUBLIC, is_app=True, 
+               doc="Get the name loaded document of a specific type.",
+               return_type=Type.VOID,
+               return_doc="Nothing.",
+               parameters = [
+                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                             doc="name (empty if none currenlty loaded)"),
+                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                             doc="maximum name length"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="type")
                ]),
 
         Method('iListTools_PROJ', module='None', version='5.0.0',
@@ -218,16 +259,10 @@ gx_methods = {
                Only documents that have actually changed will be listed.
                
                The type string can be one of the following:
-                   
-                   Database      
-                   Grid          
-                   Map           
-                   3DView        
-                   Voxel         
-                   VoxelInversion
-                   GMS3D         
-                   GMS2D
-                   All                     
+               Database    Save and close only databases.
+               Map         Save and close only maps.
+               Grid        Save and close only grids.
+               All         Saves and closes all files.
                """,
                return_type=Type.INT32_T,
                return_doc="""

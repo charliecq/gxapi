@@ -12,11 +12,11 @@ gx_defines = [
            doc=":class:`USERMETA` Format Types",
            constants=[
                Constant('USERMETA_FORMAT_DEFAULT', value='-1', type=Type.INT32_T,
-                        doc="Use the standard type for the system")                        ,
+                        doc="Use the standard type for the system"),
                Constant('USERMETA_FORMAT_ISO', value='0', type=Type.INT32_T,
-                        doc="ISO 19139 standard")                        ,
+                        doc="ISO 19139 standard"),
                Constant('USERMETA_FORMAT_FGDC', value='1', type=Type.INT32_T,
-                        doc="FGDC Metadata Standard")                        
+                        doc="FGDC Metadata Standard")
            ])]
 
 

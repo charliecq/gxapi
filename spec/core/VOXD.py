@@ -57,7 +57,7 @@ gx_methods = {
                are not valid.
                
                To determine if a :class:`VOX` object is thematic, use the
-               :func:`iIsThematic_VOX` function.
+               :func:`iIsThematic_VOXD` function.
                
                Fails if the :class:`VOX` object is NOT thematic.
                """,
@@ -66,6 +66,47 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VOX",
                              doc=":class:`VOX` Object")
+               ]),
+
+        Method('iIsThematic_VOXD', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Is this a thematic voxel?",
+               notes="""
+               A thematic voxel is one where the stored integer values
+               represent indices into an internally stored :class:`TPAT` object.
+               Thematic voxels contain their own color definitions, and
+               normal numerical operations, such as applying ITRs for display,
+               are not valid.
+               """,
+               return_type=Type.INT32_T,
+               return_doc="1 if :class:`VOX` is thematic",
+               parameters = [
+                   Parameter('p1', type="VOXD",
+                             doc=":class:`VOXD` object")
+               ]),
+
+        Method('GetThematicInfo_VOXD', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get a copy of a thematic voxel's :class:`TPAT` object and a :class:`VV` containing the current display selections.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="VOXD",
+                             doc=":class:`VOXD` object"),
+                   Parameter('p2', type="TPAT",
+                             doc=":class:`TPAT` object to get"),
+                   Parameter('p3', type="VV",
+                             doc=":class:`VV` (int) object to fill with current selections")
+               ]),
+
+        Method('SetThematicSelection_VOXD', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get a copy of a thematic voxel's :class:`TPAT` object and a :class:`VV` containing the current display selections.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="VOXD",
+                             doc=":class:`VOXD` object"),
+                   Parameter('p2', type="VV",
+                             doc=":class:`VV` (int) object to set the current selections to")
                ]),
 
         Method('Destroy_VOXD', module='geoengine.map', version='6.2.0',

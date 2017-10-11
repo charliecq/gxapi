@@ -19,70 +19,70 @@ gx_defines = [
     Define('DB_DUP',
            doc="Duplicate Types",
            constants=[
-               Constant('DB_DUP_FIRST', value='1', type=Type.INT32_T)                        ,
-               Constant('DB_DUP_AVERAGE', value='2', type=Type.INT32_T)                        ,
-               Constant('DB_DUP_MINIMUM', value='3', type=Type.INT32_T)                        ,
-               Constant('DB_DUP_MAXIMUM', value='4', type=Type.INT32_T)                        ,
-               Constant('DB_DUP_MEDIAN', value='5', type=Type.INT32_T)                        ,
-               Constant('DB_DUP_LAST', value='6', type=Type.INT32_T)                        
+               Constant('DB_DUP_FIRST', value='1', type=Type.INT32_T),
+               Constant('DB_DUP_AVERAGE', value='2', type=Type.INT32_T),
+               Constant('DB_DUP_MINIMUM', value='3', type=Type.INT32_T),
+               Constant('DB_DUP_MAXIMUM', value='4', type=Type.INT32_T),
+               Constant('DB_DUP_MEDIAN', value='5', type=Type.INT32_T),
+               Constant('DB_DUP_LAST', value='6', type=Type.INT32_T)
            ]),
 
     Define('DB_DUPEDIT',
            doc="Duplicate Edit Flags",
            constants=[
-               Constant('DB_DUPEDIT_SINGLE', value='0', type=Type.INT32_T)                        ,
-               Constant('DB_DUPEDIT_ALL', value='1', type=Type.INT32_T)                        
+               Constant('DB_DUPEDIT_SINGLE', value='0', type=Type.INT32_T),
+               Constant('DB_DUPEDIT_ALL', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_CHANNELS',
            doc="Channels to Display",
            constants=[
-               Constant('DU_CHANNELS_DISPLAYED', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_CHANNELS_ALL', value='1', type=Type.INT32_T)                        
+               Constant('DU_CHANNELS_DISPLAYED', value='0', type=Type.INT32_T),
+               Constant('DU_CHANNELS_ALL', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_EXPORT',
            doc="Export Type",
            constants=[
-               Constant('DU_EXPORT_CSV', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_EXPORT_ODDF', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_EXPORT_POST_PC', value='2', type=Type.INT32_T)                        ,
-               Constant('DU_EXPORT_POST_UNIX', value='3', type=Type.INT32_T)                        
+               Constant('DU_EXPORT_CSV', value='0', type=Type.INT32_T),
+               Constant('DU_EXPORT_ODDF', value='1', type=Type.INT32_T),
+               Constant('DU_EXPORT_POST_PC', value='2', type=Type.INT32_T),
+               Constant('DU_EXPORT_POST_UNIX', value='3', type=Type.INT32_T)
            ]),
 
     Define('DU_FILL',
            doc="Filling Options",
            constants=[
-               Constant('DU_FILL_INSIDE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_FILL_OUTSIDE', value='1', type=Type.INT32_T)                        
+               Constant('DU_FILL_INSIDE', value='0', type=Type.INT32_T),
+               Constant('DU_FILL_OUTSIDE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_IMPORT',
            doc="Import Mode",
            constants=[
-               Constant('DU_IMPORT_APPEND', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_IMPORT_REPLACE', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_IMPORT_MERGE', value='2', type=Type.INT32_T)                        ,
-               Constant('DU_IMPORT_MERGE_APPEND', value='3', type=Type.INT32_T)                        
+               Constant('DU_IMPORT_APPEND', value='0', type=Type.INT32_T),
+               Constant('DU_IMPORT_REPLACE', value='1', type=Type.INT32_T),
+               Constant('DU_IMPORT_MERGE', value='2', type=Type.INT32_T),
+               Constant('DU_IMPORT_MERGE_APPEND', value='3', type=Type.INT32_T)
            ]),
 
     Define('DU_INTERP',
            doc="Inside Interpolation Method",
            constants=[
-               Constant('DU_INTERP_NEAREST', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_LINEAR', value='2', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_CUBIC', value='3', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_AKIMA', value='4', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_PREDICT', value='5', type=Type.INT32_T)                        
+               Constant('DU_INTERP_NEAREST', value='1', type=Type.INT32_T),
+               Constant('DU_INTERP_LINEAR', value='2', type=Type.INT32_T),
+               Constant('DU_INTERP_CUBIC', value='3', type=Type.INT32_T),
+               Constant('DU_INTERP_AKIMA', value='4', type=Type.INT32_T),
+               Constant('DU_INTERP_PREDICT', value='5', type=Type.INT32_T)
            ]),
 
     Define('DU_INTERP_EDGE',
            doc="Edge Interpolation Method",
            constants=[
-               Constant('DU_INTERP_EDGE_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_EDGE_SAME', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_EDGE_NEAREST', value='2', type=Type.INT32_T)                        ,
-               Constant('DU_INTERP_EDGE_LINEAR', value='3', type=Type.INT32_T)                        
+               Constant('DU_INTERP_EDGE_NONE', value='0', type=Type.INT32_T),
+               Constant('DU_INTERP_EDGE_SAME', value='1', type=Type.INT32_T),
+               Constant('DU_INTERP_EDGE_NEAREST', value='2', type=Type.INT32_T),
+               Constant('DU_INTERP_EDGE_LINEAR', value='3', type=Type.INT32_T)
            ]),
 
     Define('DU_LAB_TYPE',
@@ -94,61 +94,61 @@ gx_defines = [
                         characters to be used as delimiters.  Use C style escape
                         sequences to identify non-printable characters.  The
                         default delimiters for FREE format files are " \\t,".
-                        """)                        ,
+                        """),
                Constant('DU_LAB_TYPE_COMMA', value='2', type=Type.INT32_T,
                         doc="""
                         For COMMA type files, the delimiter string identifies
                         characters to be removed before comma delimiting.  The
                         default for COMMA delimited files is " \\t".
-                        """)                        
+                        """)
            ]),
 
     Define('DU_LEVEL',
            doc="Leveling Options",
            constants=[
                Constant('DU_LEVEL_LINES', value='0', type=Type.INT32_T,
-                        doc="extract line corrections")                        ,
+                        doc="extract line corrections"),
                Constant('DU_LEVEL_TIES', value='1', type=Type.INT32_T,
-                        doc="extract tie corrections")                        ,
+                        doc="extract tie corrections"),
                Constant('DU_LEVEL_ALL', value='2', type=Type.INT32_T,
-                        doc="extract all corrections")                        
+                        doc="extract all corrections")
            ]),
 
     Define('DU_LINEOUT',
            doc="Lineout Options (du.h)",
            constants=[
-               Constant('DU_LINEOUT_SINGLE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_LINEOUT_MULTIPLE', value='1', type=Type.INT32_T)                        
+               Constant('DU_LINEOUT_SINGLE', value='0', type=Type.INT32_T),
+               Constant('DU_LINEOUT_MULTIPLE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_FEATURE_TYPE_OUTPUT',
            doc="Export to geodatabase feature type (du.h)",
            constants=[
-               Constant('DU_FEATURE_TYPE_OUTPUT_POINT', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_FEATURE_TYPE_OUTPUT_LINE', value='1', type=Type.INT32_T)                        
+               Constant('DU_FEATURE_TYPE_OUTPUT_POINT', value='0', type=Type.INT32_T),
+               Constant('DU_FEATURE_TYPE_OUTPUT_LINE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_GEODATABASE_EXPORT_TYPE',
            doc="Export to geodatabase overwrite mode(du.h)",
            constants=[
-               Constant('DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_GEODATABASE_EXPORT_TYPE_APPEND', value='2', type=Type.INT32_T)                        
+               Constant('DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE', value='0', type=Type.INT32_T),
+               Constant('DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS', value='1', type=Type.INT32_T),
+               Constant('DU_GEODATABASE_EXPORT_TYPE_APPEND', value='2', type=Type.INT32_T)
            ]),
 
     Define('DU_LINES',
            doc="Lines to display",
            constants=[
-               Constant('DU_LINES_DISPLAYED', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_LINES_SELECTED', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_LINES_ALL', value='2', type=Type.INT32_T)                        
+               Constant('DU_LINES_DISPLAYED', value='0', type=Type.INT32_T),
+               Constant('DU_LINES_SELECTED', value='1', type=Type.INT32_T),
+               Constant('DU_LINES_ALL', value='2', type=Type.INT32_T)
            ]),
 
     Define('DU_LOADLTB',
            doc="Load table options",
            constants=[
-               Constant('DU_LOADLTB_REPLACE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_LOADLTB_APPEND', value='1', type=Type.INT32_T)                        
+               Constant('DU_LOADLTB_REPLACE', value='0', type=Type.INT32_T),
+               Constant('DU_LOADLTB_APPEND', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_LOOKUP',
@@ -158,7 +158,7 @@ gx_defines = [
                         doc="""
                         Requires an exact match in all indexes.
                         Results will dummy if Indexes are not found.
-                        """)                        ,
+                        """),
                Constant('DU_LOOKUP_NEAREST', value='1', type=Type.INT32_T,
                         doc="""
                         Requires that the first index match exactly.
@@ -166,13 +166,13 @@ gx_defines = [
                         the lookup value.
                         The results will be dummy only if the first index
                         does not have a match.
-                        """)                        ,
+                        """),
                Constant('DU_LOOKUP_INTERPOLATE', value='2', type=Type.INT32_T,
                         doc="""
                         The same as _NEAREST, except that the value will
                         be interpolated between the two nearest
                         framing values in the table.
-                        """)                        ,
+                        """),
                Constant('DU_LOOKUP_NEARESTCLOSE', value='3', type=Type.INT32_T,
                         doc="""
                         Same as _NEAREST mode except that the target
@@ -183,7 +183,7 @@ gx_defines = [
                         b) the secondary index channel for
                         double index lookups.
                         Values not in data spacing are dummy.
-                        """)                        ,
+                        """),
                Constant('DU_LOOKUP_INTERPCLOSE', value='4', type=Type.INT32_T,
                         doc="""
                         Same as _INTERPOLATE mode except that the target
@@ -194,28 +194,28 @@ gx_defines = [
                         b) the secondary index channel for
                         double index lookups.
                         Values not in data spacing are dummy.
-                        """)                        ,
+                        """),
                Constant('DU_LOOKUP_INTERPOLATE_DUMMYOUTSIDE', value='5', type=Type.INT32_T,
-                        doc="Interpolate between values, dummy beyond two ends")                        ,
+                        doc="Interpolate between values, dummy beyond two ends"),
                Constant('DU_LOOKUP_INTERPOLATE_CONSTOUTSIDE', value='6', type=Type.INT32_T,
-                        doc="Interpolate between values, constant end values beyond two ends")                        ,
+                        doc="Interpolate between values, constant end values beyond two ends"),
                Constant('DU_LOOKUP_INTERPOLATE_EXTPLOUTSIDE', value='7', type=Type.INT32_T,
-                        doc="Interpolate between values, extrapolate beyond two ends")                        ,
+                        doc="Interpolate between values, extrapolate beyond two ends"),
                Constant('DU_LOOKUP_MAXOPTION', value='8', type=Type.INT32_T,
-                        doc="Maximum option value")                        
+                        doc="Maximum option value")
            ]),
 
     Define('DU_MASK',
            doc="Masking Options",
            constants=[
-               Constant('DU_MASK_INSIDE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_MASK_OUTSIDE', value='1', type=Type.INT32_T)                        
+               Constant('DU_MASK_INSIDE', value='0', type=Type.INT32_T),
+               Constant('DU_MASK_OUTSIDE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_MERGE',
            doc="Merge flags",
            constants=[
-               Constant('DU_MERGE_APPEND', value='0', type=Type.INT32_T)                        
+               Constant('DU_MERGE_APPEND', value='0', type=Type.INT32_T)
            ]),
 
     Define('DU_MODFID',
@@ -226,92 +226,92 @@ gx_defines = [
                         Will insert fid range by moving data.  Inserted
                         range will always be dummied out.  If the insertion point
                         is before start of data, the fid start is changed.
-                        """)                        ,
+                        """),
                Constant('DU_MODFID_DELETE', value='1', type=Type.INT32_T,
-                        doc="Will delete the range of fids.")                        ,
+                        doc="Will delete the range of fids."),
                Constant('DU_MODFID_APPEND', value='2', type=Type.INT32_T,
                         doc="""
                         Is like INSERT, except that it is only used to
                         add fids to the start or end of the existing data.  The
                         data is not moved with repect to the current fid locations.
-                        """)                        
+                        """)
            ]),
 
     Define('DU_MOVE',
            doc="Move Style",
            constants=[
                Constant('DU_MOVE_ABSOLUTE', value='0', type=Type.INT32_T,
-                        doc="move input to absolute value in control channel")                        ,
+                        doc="move input to absolute value in control channel"),
                Constant('DU_MOVE_MINUS', value='1', type=Type.INT32_T,
-                        doc="subtract control channel from input channel")                        ,
+                        doc="subtract control channel from input channel"),
                Constant('DU_MOVE_PLUS', value='2', type=Type.INT32_T,
-                        doc="add control channel to input channel")                        ,
+                        doc="add control channel to input channel"),
                Constant('DU_MOVE_INTERP', value='3', type=Type.INT32_T,
                         doc="""
                         data is NOT moved, but dummies in the input are interpolated
                         based on the control channel, assuming both the input and control
                         vary linearly inside the gaps
-                        """)                        
+                        """)
            ]),
 
     Define('DU_REFID',
            doc="Interpolation mode",
            constants=[
                Constant('DU_REFID_LINEAR', value='0', type=Type.INT32_T,
-                        doc="0")                        ,
+                        doc="0"),
                Constant('DU_REFID_MINCUR', value='1', type=Type.INT32_T,
-                        doc="1")                        ,
+                        doc="1"),
                Constant('DU_REFID_AKIMA', value='2', type=Type.INT32_T,
-                        doc="2")                        ,
+                        doc="2"),
                Constant('DU_REFID_NEAREST', value='3', type=Type.INT32_T,
-                        doc="3")                        
+                        doc="3")
            ]),
 
     Define('DU_SORT',
            doc="Sort Direction",
            constants=[
-               Constant('DU_SORT_ASCENDING', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_SORT_DESCENDING', value='1', type=Type.INT32_T)                        
+               Constant('DU_SORT_ASCENDING', value='0', type=Type.INT32_T),
+               Constant('DU_SORT_DESCENDING', value='1', type=Type.INT32_T)
            ]),
 
     Define('DU_SPLITLINE',
            doc="Sort Direction",
            constants=[
-               Constant('DU_SPLITLINE_XYPOSITION', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_SPLITLINE_SEQUENTIAL', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_SPLITLINE_TOVERSIONS', value='2', type=Type.INT32_T)                        
+               Constant('DU_SPLITLINE_XYPOSITION', value='0', type=Type.INT32_T),
+               Constant('DU_SPLITLINE_SEQUENTIAL', value='1', type=Type.INT32_T),
+               Constant('DU_SPLITLINE_TOVERSIONS', value='2', type=Type.INT32_T)
            ]),
 
     Define('DU_STORAGE',
            doc="Storage Type",
            constants=[
-               Constant('DU_STORAGE_LINE', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_STORAGE_GROUP', value='1', type=Type.INT32_T)                        
+               Constant('DU_STORAGE_LINE', value='0', type=Type.INT32_T),
+               Constant('DU_STORAGE_GROUP', value='1', type=Type.INT32_T)
            ]),
 
     Define('QC_PLAN_TYPE',
            doc="Type Plan",
            constants=[
-               Constant('QC_PLAN_SURVEYLINE', value='0', type=Type.INT32_T)                        ,
-               Constant('QC_PLAN_TIELINE', value='1', type=Type.INT32_T)                        ,
-               Constant('QC_PLAN_BOTHLINES', value='2', type=Type.INT32_T)                        
+               Constant('QC_PLAN_SURVEYLINE', value='0', type=Type.INT32_T),
+               Constant('QC_PLAN_TIELINE', value='1', type=Type.INT32_T),
+               Constant('QC_PLAN_BOTHLINES', value='2', type=Type.INT32_T)
            ]),
 
     Define('DU_DISTANCE_CHANNEL_TYPE',
            doc="Distance channel direction type",
            constants=[
                Constant('DU_DISTANCE_CHANNEL_MAINTAIN_DIRECTION', value='0', type=Type.INT32_T,
-                        doc="Zero distance is always at the start of the line.")                        ,
+                        doc="Zero distance is always at the start of the line."),
                Constant('DU_DISTANCE_CHANNEL_CARTESIAN_COORDINATES', value='1', type=Type.INT32_T,
-                        doc="Put zero at the end of the line with min X if X changes most, or min Y if Y changes most")                        
+                        doc="Put zero at the end of the line with min X if X changes most, or min Y if Y changes most")
            ]),
 
     Define('DU_DIRECTGRID_METHOD',
            doc="How to calculate the cell values for direct gridding.",
            constants=[
-               Constant('DU_DIRECTGRID_MIN', value='0', type=Type.INT32_T)                        ,
-               Constant('DU_DIRECTGRID_MAX', value='1', type=Type.INT32_T)                        ,
-               Constant('DU_DIRECTGRID_MEAN', value='2', type=Type.INT32_T)                        
+               Constant('DU_DIRECTGRID_MIN', value='0', type=Type.INT32_T),
+               Constant('DU_DIRECTGRID_MAX', value='1', type=Type.INT32_T),
+               Constant('DU_DIRECTGRID_MEAN', value='2', type=Type.INT32_T)
            ])]
 
 
@@ -784,7 +784,7 @@ gx_methods = {
                ]),
 
         Method('CopyLineAcross_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Copy a line from one database to another.",
                notes="""
                Existing channels in the output line will be replaced
@@ -804,7 +804,7 @@ gx_methods = {
                ]),
 
         Method('CopyLineChanAcross_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Copy a list of channels in a line from one database to another.",
                notes="""
                Existing channels in the output line will be replaced
@@ -826,7 +826,7 @@ gx_methods = {
                ]),
 
         Method('CopyLineMasked_DU', module='geogxx', version='5.0.8',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Copy a line, prune items based on a mask channel",
                notes="""
                The input line's channel data is ReFidded to the mask
@@ -964,7 +964,7 @@ gx_methods = {
                ]),
 
         Method('DupChanLocks_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Duplicate all channels protect-info from input :class:`DB`.",
                return_type=Type.VOID,
                parameters = [
@@ -975,7 +975,7 @@ gx_methods = {
                ]),
 
         Method('DupChans_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Duplicate all channels from input :class:`DB`.",
                return_type=Type.VOID,
                parameters = [
@@ -1011,7 +1011,7 @@ gx_methods = {
                ]),
 
         Method('Export_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to a specific format.",
                notes="""
                For databases with both groups and lines:
@@ -1047,7 +1047,7 @@ gx_methods = {
                ]),
 
         Method('Export2_DU', module='geogxx', version='5.1.6',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Like :func:`Export_DU`, but include line names as data.",
                notes="""
                See :func:`Export_DU`.
@@ -1076,7 +1076,7 @@ gx_methods = {
                ]),
 
         Method('ExportAMIRA_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to database an AMIRA data file.",
                notes="""
                Other defined FIELDS stored in the database (see :func:`ImportAMIRA_DU` function)
@@ -1109,7 +1109,7 @@ gx_methods = {
                ]),
 
         Method('ExportAseg_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to ASEG-GDF format file(s).",
                notes="""
                At least one of the header file
@@ -1139,7 +1139,7 @@ gx_methods = {
                ]),
 
         Method('ExportAsegProj_DU', module='geogxx', version='5.0.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to ASEG-GDF format file(s) (supports projections).",
                notes="""
                At least one of the header file
@@ -1245,7 +1245,7 @@ gx_methods = {
                ]),
 
         Method('ExportGBN_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to a GBN data file.",
                notes="""
                The iDispChanList_DBE or :func:`iSymbList_DB` methods can be
@@ -1262,7 +1262,7 @@ gx_methods = {
                ]),
 
         Method('ExportMDB_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to a Microsoft Access Database (MDB) file.",
                notes="""
                Similar to :func:`ExportGBN_DU`, with the addition that
@@ -1336,7 +1336,7 @@ gx_methods = {
                ]),
 
         Method('ExportSHP_DU', module='geogxx', version='6.1.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export to a shape file or files.",
                notes="""
                Similar to :func:`ExportMDB_DU`, with the addition that groups go to indiviual files
@@ -1362,7 +1362,7 @@ gx_methods = {
                ]),
 
         Method('ExportXYZ_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export XYZdata from a database to an XYZ file.",
                notes="""
                1. The export template can be in the local directory or the :class:`GEOSOFT`
@@ -1394,7 +1394,7 @@ gx_methods = {
                ]),
 
         Method('ExportXYZ2_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export XYZdata from a database to an XYZ file, using file handles.",
                see_also=":func:`ExportXYZ_DU`",
                return_type=Type.VOID,
@@ -1848,7 +1848,7 @@ gx_methods = {
                ]),
 
         Method('ImportAMIRA_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Import an AMIRA data file.",
                notes="""
                All the constant declarations are stored within the database
@@ -1869,7 +1869,7 @@ gx_methods = {
                ]),
 
         Method('ImportAseg_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Import an ASEG-GDF data file.",
                return_type=Type.VOID,
                parameters = [
@@ -1888,7 +1888,7 @@ gx_methods = {
                ]),
 
         Method('ImportAsegProj_DU', module='geogxx', version='5.0.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Import an ASEG-GDF data file (supports projections).",
                notes="This version supports projections",
                return_type=Type.VOID,
@@ -2129,7 +2129,7 @@ gx_methods = {
                ]),
 
         Method('ImportPico_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Import a Picodas data file.",
                return_type=Type.VOID,
                parameters = [
@@ -2503,7 +2503,7 @@ gx_methods = {
                ]),
 
         Method('MakeFid_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Make a fiducial channel based on an existing channel.",
                return_type=Type.VOID,
                parameters = [
@@ -2652,7 +2652,7 @@ gx_methods = {
                ]),
 
         Method('Normal_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Set fid of all channels to match a specified channel.",
                see_also=":func:`ReFidAllCh_DU`",
                return_type=Type.VOID,
@@ -2875,7 +2875,7 @@ gx_methods = {
                ]),
 
         Method('rDirection_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Returns the direction of a line.",
                notes="""
                The direction is calculated from the first and last
@@ -2900,7 +2900,7 @@ gx_methods = {
                ]),
 
         Method('ReFid_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Re-fid a channel based on a reference channel",
                notes="""
                The original channel can be an array channel, in which case
@@ -2938,7 +2938,7 @@ gx_methods = {
                ]),
 
         Method('ReFidAllCh_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Simple re-fid of all channels based on a reference channel",
                notes="""
                Channels can be array channels, in which case
@@ -2956,7 +2956,7 @@ gx_methods = {
                ]),
 
         Method('ReFidCh_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Simple re-fid of a channel based on a reference channel",
                notes="""
                The original channel can be an array channel, in which case
@@ -3077,7 +3077,7 @@ gx_methods = {
                ]),
 
         Method('ScanAseg_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="""
                This method scans an ASEG-GDF file and generates a default
                template listing all the channels and all the ALIAS lines.
@@ -3095,7 +3095,7 @@ gx_methods = {
                ]),
 
         Method('ScanDAO_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Scans an external DAO database and generates a default template.",
                notes="All the channels are listed",
                return_type=Type.VOID,
@@ -3547,7 +3547,7 @@ gx_methods = {
                ]),
 
         Method('WriteWA_DU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write data to an ASCII file.",
                notes="""
                Channels to be written should be placed in a :class:`LST` object.

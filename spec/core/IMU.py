@@ -13,60 +13,60 @@ gx_defines = [
            doc="Overlapping area option",
            constants=[
                Constant('IMU_BOOL_OLAP_AVE', value='0', type=Type.INT32_T,
-                        doc="Overlap values are averaged")                        ,
+                        doc="Overlap values are averaged"),
                Constant('IMU_BOOL_OLAP_1', value='1', type=Type.INT32_T,
-                        doc="Overlap values use grid 1 value")                        ,
+                        doc="Overlap values use grid 1 value"),
                Constant('IMU_BOOL_OLAP_2', value='2', type=Type.INT32_T,
-                        doc="Overlap values use grid 2 value")                        
+                        doc="Overlap values use grid 2 value")
            ]),
 
     Define('IMU_BOOL_OPT',
            doc="Boolean logic option",
            constants=[
                Constant('IMU_BOOL_OPT_AND', value='0', type=Type.INT32_T,
-                        doc="Valid areas are only where grids overlap")                        ,
+                        doc="Valid areas are only where grids overlap"),
                Constant('IMU_BOOL_OPT_OR', value='1', type=Type.INT32_T,
-                        doc="Valid areas are where either grid is a valid value")                        ,
+                        doc="Valid areas are where either grid is a valid value"),
                Constant('IMU_BOOL_OPT_XOR', value='2', type=Type.INT32_T,
-                        doc="Overlap areas are dummied")                        
+                        doc="Overlap areas are dummied")
            ]),
 
     Define('IMU_BOOL_SIZING',
            doc="Sizing option",
            constants=[
                Constant('IMU_BOOL_SIZING_MIN', value='0', type=Type.INT32_T,
-                        doc="Output grid is sized to overlapping region")                        ,
+                        doc="Output grid is sized to overlapping region"),
                Constant('IMU_BOOL_SIZING_0', value='1', type=Type.INT32_T,
-                        doc="Output grid is sized to grid 1")                        ,
+                        doc="Output grid is sized to grid 1"),
                Constant('IMU_BOOL_SIZING_1', value='2', type=Type.INT32_T,
-                        doc="Output grid is sized to grid 2")                        ,
+                        doc="Output grid is sized to grid 2"),
                Constant('IMU_BOOL_SIZING_MAX', value='3', type=Type.INT32_T,
-                        doc="Output grid is sized to maximum combined area of both grids")                        
+                        doc="Output grid is sized to maximum combined area of both grids")
            ]),
 
     Define('IMU_DOUBLE_CRC_BITS',
            doc="Bits to use in double CRC's",
            constants=[
                Constant('IMU_DOUBLE_CRC_BITS_EXACT', value='0', type=Type.INT32_T,
-                        doc="Exact CRC")                        ,
+                        doc="Exact CRC"),
                Constant('IMU_DOUBLE_CRC_BITS_DEFAULT', value='10', type=Type.INT32_T,
-                        doc="Default inaccuracy in double (10 Bits)")                        ,
+                        doc="Default inaccuracy in double (10 Bits)"),
                Constant('IMU_DOUBLE_CRC_BITS_MAX', value='51', type=Type.INT32_T,
-                        doc="Maximum number of inaccuracy bits (51 Bits)")                        
+                        doc="Maximum number of inaccuracy bits (51 Bits)")
            ]),
 
     Define('IMU_EXPAND_SHAPE',
            doc="Shape of output grid",
            constants=[
-               Constant('IMU_EXPAND_SHAPE_RECTANGLE', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_EXPAND_SHAPE_SQUARE', value='1', type=Type.INT32_T)                        
+               Constant('IMU_EXPAND_SHAPE_RECTANGLE', value='0', type=Type.INT32_T),
+               Constant('IMU_EXPAND_SHAPE_SQUARE', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_FILL_ROLLOPT',
            doc="Defines for Grid Filling Method Options",
            constants=[
-               Constant('IMU_FILL_ROLLOPT_LINEAR', value='1', type=Type.INT32_T)                        ,
-               Constant('IMU_FILL_ROLLOPT_SQUARE', value='2', type=Type.INT32_T)                        
+               Constant('IMU_FILL_ROLLOPT_LINEAR', value='1', type=Type.INT32_T),
+               Constant('IMU_FILL_ROLLOPT_SQUARE', value='2', type=Type.INT32_T)
            ]),
 
     Define('IMU_FILT_DUMMY',
@@ -75,8 +75,8 @@ gx_defines = [
            values are dummy
            """,
            constants=[
-               Constant('IMU_FILT_DUMMY_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_FILT_DUMMY_YES', value='1', type=Type.INT32_T)                        
+               Constant('IMU_FILT_DUMMY_NO', value='0', type=Type.INT32_T),
+               Constant('IMU_FILT_DUMMY_YES', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_FILT_FILE',
@@ -85,8 +85,8 @@ gx_defines = [
            filter values
            """,
            constants=[
-               Constant('IMU_FILT_FILE_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_FILT_FILE_YES', value='1', type=Type.INT32_T)                        
+               Constant('IMU_FILT_FILE_NO', value='0', type=Type.INT32_T),
+               Constant('IMU_FILT_FILE_YES', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_FILT_HZDRV',
@@ -95,34 +95,34 @@ gx_defines = [
            is being applied (X direction, Y direction, none at all)
            """,
            constants=[
-               Constant('IMU_FILT_HZDRV_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_FILT_HZDRV_X', value='1', type=Type.INT32_T)                        ,
-               Constant('IMU_FILT_HZDRV_Y', value='2', type=Type.INT32_T)                        
+               Constant('IMU_FILT_HZDRV_NO', value='0', type=Type.INT32_T),
+               Constant('IMU_FILT_HZDRV_X', value='1', type=Type.INT32_T),
+               Constant('IMU_FILT_HZDRV_Y', value='2', type=Type.INT32_T)
            ]),
 
     Define('IMU_FLOAT_CRC_BITS',
            doc="Bits to use in float CRC's",
            constants=[
                Constant('IMU_FLOAT_CRC_BITS_EXACT', value='0', type=Type.INT32_T,
-                        doc="Exact CRC")                        ,
+                        doc="Exact CRC"),
                Constant('IMU_FLOAT_CRC_BITS_DEFAULT', value='7', type=Type.INT32_T,
-                        doc="Default inaccuracy in floats (7 Bits)")                        ,
+                        doc="Default inaccuracy in floats (7 Bits)"),
                Constant('IMU_FLOAT_CRC_BITS_MAX', value='22', type=Type.INT32_T,
-                        doc="Maximum number of inaccuracy bits (22 Bits)")                        
+                        doc="Maximum number of inaccuracy bits (22 Bits)")
            ]),
 
     Define('IMU_MASK',
            doc="Defined options for masking grids",
            constants=[
-               Constant('IMU_MASK_INSIDE', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_MASK_OUTSIDE', value='1', type=Type.INT32_T)                        
+               Constant('IMU_MASK_INSIDE', value='0', type=Type.INT32_T),
+               Constant('IMU_MASK_OUTSIDE', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_STAT_FORCED',
            doc="Defined options for forcing recalculating the grid values",
            constants=[
-               Constant('IMU_STAT_FORCED_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_STAT_FORCED_YES', value='1', type=Type.INT32_T)                        
+               Constant('IMU_STAT_FORCED_NO', value='0', type=Type.INT32_T),
+               Constant('IMU_STAT_FORCED_YES', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_TRANS',
@@ -132,32 +132,32 @@ gx_defines = [
            """,
            constants=[
                Constant('IMU_TRANS_DEFAULT', value='0', type=Type.INT32_T,
-                        doc="can be ANY orientation")                        ,
+                        doc="can be ANY orientation"),
                Constant('IMU_TRANS_Y', value='1', type=Type.INT32_T,
-                        doc="MUST be parallel to Y-Axis")                        ,
+                        doc="MUST be parallel to Y-Axis"),
                Constant('IMU_TRANS_X', value='-1', type=Type.INT32_T,
-                        doc="MUST be parallel to X-Axis")                        
+                        doc="MUST be parallel to X-Axis")
            ]),
 
     Define('IMU_TREND',
            doc="Points in grid to use",
            constants=[
-               Constant('IMU_TREND_ALL', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_TREND_EDGE', value='1', type=Type.INT32_T)                        
+               Constant('IMU_TREND_ALL', value='0', type=Type.INT32_T),
+               Constant('IMU_TREND_EDGE', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_WIND_COORD',
            doc="Output grid coordinate units",
            constants=[
-               Constant('IMU_WIND_GRID', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_WIND_GROUND', value='1', type=Type.INT32_T)                        
+               Constant('IMU_WIND_GRID', value='0', type=Type.INT32_T),
+               Constant('IMU_WIND_GROUND', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_WIND_DUMMIES',
            doc="Option for handling out-of-range Z values",
            constants=[
-               Constant('IMU_WIND_DUMMY', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_WIND_CLIP', value='1', type=Type.INT32_T)                        
+               Constant('IMU_WIND_DUMMY', value='0', type=Type.INT32_T),
+               Constant('IMU_WIND_CLIP', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_XYZ_INDEX',
@@ -166,15 +166,15 @@ gx_defines = [
            station numbers.
            """,
            constants=[
-               Constant('IMU_XYZ_INDEX_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('IMU_XYZ_INDEX_YES', value='1', type=Type.INT32_T)                        
+               Constant('IMU_XYZ_INDEX_NO', value='0', type=Type.INT32_T),
+               Constant('IMU_XYZ_INDEX_YES', value='1', type=Type.INT32_T)
            ]),
 
     Define('IMU_XYZ_LABEL',
            doc="XYZ Label Flags",
            constants=[
-               Constant('IMU_XYZ_LABEL_NO', value='1', type=Type.INT32_T)                        ,
-               Constant('IMU_XYZ_LABEL_YES', value='0', type=Type.INT32_T)                        
+               Constant('IMU_XYZ_LABEL_NO', value='1', type=Type.INT32_T),
+               Constant('IMU_XYZ_LABEL_YES', value='0', type=Type.INT32_T)
            ])]
 
 
@@ -198,7 +198,7 @@ gx_methods = {
                ]),
 
         Method('CRC_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Computes a CRC Checksum on an image.",
                return_type="CRC",
                return_doc="CRC value",
@@ -210,7 +210,7 @@ gx_methods = {
                ]),
 
         Method('CRCGrid_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Computes a CRC Checksum on a grid.",
                return_type="CRC",
                return_doc="CRC value",
@@ -222,7 +222,7 @@ gx_methods = {
                ]),
 
         Method('CRCGridInexact_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="""
                Computes a CRC Checksum on a grid and allows you to specify
                number of bits of floats/doubles to drop so that the CRC
@@ -246,7 +246,7 @@ gx_methods = {
                ]),
 
         Method('CRCInexact_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="""
                Computes a CRC Checksum on an image and allows you to specify
                number of bits of floats/doubles to drop so that the CRC
@@ -563,7 +563,7 @@ gx_methods = {
                ]),
 
         Method('GridHead_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Modifies Statistics contained in a grid header.",
                return_type=Type.VOID,
                parameters = [
@@ -1055,7 +1055,7 @@ gx_methods = {
                ]),
 
         Method('GridTrns_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="""
                Transpose a grid by swapping the grid rows with
                the grid columns.
@@ -1116,7 +1116,7 @@ gx_methods = {
                ]),
 
         Method('GridWind_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="""
                Create a grid using a defined area window
                within a larger grid.
@@ -1152,7 +1152,7 @@ gx_methods = {
                ]),
 
         Method('GridWind2_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Window a grid.",
                notes="""
                To change the cell size or work in a different projection,
@@ -1208,7 +1208,7 @@ gx_methods = {
                ]),
 
         Method('iGridType_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Reports the true data the of a grid (geosoft types)",
                return_type=Type.INT32_T,
                return_doc=":def:`GS_TYPES`",

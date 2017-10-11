@@ -30,16 +30,16 @@ gx_defines = [
            doc="Maker defines",
            constants=[
                Constant('MAKER_GX', value='0', type=Type.INT32_T,
-                        doc="GX")                        
+                        doc="GX")
            ]),
 
     Define('MVIEW_CLIP',
            doc="Boolean clipping defines",
            constants=[
                Constant('CLIP_ON', value='1', type=Type.INT32_T,
-                        doc="Turn ON clipping")                        ,
+                        doc="Turn ON clipping"),
                Constant('CLIP_OFF', value='0', type=Type.INT32_T,
-                        doc="Turn OFF clipping")                        
+                        doc="Turn OFF clipping")
            ]),
 
     Define('MVIEW_COLOR',
@@ -52,208 +52,210 @@ gx_defines = [
            """,
            constants=[
                Constant('C_BLACK', value='33554432', type=Type.INT32_T,
-                        doc="Black")                        ,
+                        doc="Black"),
                Constant('C_RED', value='33554687', type=Type.INT32_T,
-                        doc="Red")                        ,
+                        doc="Red"),
                Constant('C_GREEN', value='33619712', type=Type.INT32_T,
-                        doc="Green")                        ,
+                        doc="Green"),
                Constant('C_BLUE', value='50266112', type=Type.INT32_T,
-                        doc="Blue")                        ,
+                        doc="Blue"),
                Constant('C_CYAN', value='50331903', type=Type.INT32_T,
-                        doc="Cyan")                        ,
+                        doc="Cyan"),
                Constant('C_MAGENTA', value='50396928', type=Type.INT32_T,
-                        doc="Magenta")                        ,
+                        doc="Magenta"),
                Constant('C_YELLOW', value='67043328', type=Type.INT32_T,
-                        doc="Yellow")                        ,
+                        doc="Yellow"),
                Constant('C_GREY', value='41975936', type=Type.INT32_T,
-                        doc="Grey")                        ,
+                        doc="Grey"),
                Constant('C_LT_RED', value='54542336', type=Type.INT32_T,
-                        doc="Light Red")                        ,
+                        doc="Light Red"),
                Constant('C_LT_GREEN', value='54526016', type=Type.INT32_T,
-                        doc="Light Green")                        ,
+                        doc="Light Green"),
                Constant('C_LT_BLUE', value='50348096', type=Type.INT32_T,
-                        doc="Light Blue")                        ,
+                        doc="Light Blue"),
                Constant('C_LT_CYAN', value='50331712', type=Type.INT32_T,
-                        doc="Light Cyan")                        ,
+                        doc="Light Cyan"),
                Constant('C_LT_MAGENTA', value='50348032', type=Type.INT32_T,
-                        doc="Light Magenta")                        ,
+                        doc="Light Magenta"),
                Constant('C_LT_YELLOW', value='54525952', type=Type.INT32_T,
-                        doc="Light Yellow")                        ,
+                        doc="Light Yellow"),
                Constant('C_LT_GREY', value='54542400', type=Type.INT32_T,
-                        doc="Light Grey")                        ,
+                        doc="Light Grey"),
                Constant('C_GREY10', value='51910680', type=Type.INT32_T,
-                        doc="Grey 10%")                        ,
+                        doc="Grey 10%"),
                Constant('C_GREY25', value='54542400', type=Type.INT32_T,
-                        doc="Grey 25%")                        ,
+                        doc="Grey 25%"),
                Constant('C_GREY50', value='41975936', type=Type.INT32_T,
-                        doc="Grey 50%")                        ,
+                        doc="Grey 50%"),
                Constant('C_WHITE', value='50331648', type=Type.INT32_T,
-                        doc="White")                        ,
+                        doc="White"),
                Constant('C_TRANSPARENT', value='0', type=Type.INT32_T,
-                        doc="Transparent or no-draw")                        
+                        doc="Transparent or no-draw")
            ]),
 
     Define('MVIEW_CYLINDER3D',
            doc="What parts of the cylinder are closed",
            constants=[
-               Constant('MVIEW_CYLINDER3D_OPEN', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_CYLINDER3D_CLOSESTART', value='1', type=Type.INT32_T)                        ,
-               Constant('MVIEW_CYLINDER3D_CLOSEEND', value='2', type=Type.INT32_T)                        ,
-               Constant('MVIEW_CYLINDER3D_CLOSEALL', value='3', type=Type.INT32_T)                        
+               Constant('MVIEW_CYLINDER3D_OPEN', value='0', type=Type.INT32_T),
+               Constant('MVIEW_CYLINDER3D_CLOSESTART', value='1', type=Type.INT32_T),
+               Constant('MVIEW_CYLINDER3D_CLOSEEND', value='2', type=Type.INT32_T),
+               Constant('MVIEW_CYLINDER3D_CLOSEALL', value='3', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_DRAW',
            doc="Polygon drawing defines",
            constants=[
                Constant('MVIEW_DRAW_POLYLINE', value='0', type=Type.INT32_T,
-                        doc="Draw Polylines")                        ,
+                        doc="Draw Polylines"),
                Constant('MVIEW_DRAW_POLYGON', value='1', type=Type.INT32_T,
-                        doc="Draw Polygons")                        
+                        doc="Draw Polygons")
            ]),
 
     Define('MVIEW_DRAWOBJ3D_ENTITY',
            doc="What types of entities to draw",
            constants=[
                Constant('MVIEW_DRAWOBJ3D_ENTITY_POINTS', value='0', type=Type.INT32_T,
-                        doc="Draw 3D Points (no normals) [1 verticies per object]")                        ,
+                        doc="Draw 3D Points (no normals) [1 verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_LINES', value='1', type=Type.INT32_T,
-                        doc="Draw 3D Lines (no normals) [2 verticies per object]")                        ,
+                        doc="Draw 3D Lines (no normals) [2 verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_LINE_STRIPS', value='2', type=Type.INT32_T,
-                        doc="Draw 3D Line strip (no normals) [2+x verticies per object]")                        ,
+                        doc="Draw 3D Line strip (no normals) [2+x verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_LINE_LOOPS', value='3', type=Type.INT32_T,
-                        doc="Draw 3D Line loop (no normals, closes loop with first point) [2+x verticies per object]")                        ,
+                        doc="Draw 3D Line loop (no normals, closes loop with first point) [2+x verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_TRIANGLES', value='4', type=Type.INT32_T,
-                        doc="Draw 3D Triangles [3 verticies per object]")                        ,
+                        doc="Draw 3D Triangles [3 verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_STRIPS', value='5', type=Type.INT32_T,
-                        doc="Draw 3D Triangle strips [3+x verticies per object]")                        ,
+                        doc="Draw 3D Triangle strips [3+x verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_TRIANGLE_FANS', value='6', type=Type.INT32_T,
-                        doc="Draw 3D Triangle fans [3+x verticies per object]")                        ,
+                        doc="Draw 3D Triangle fans [3+x verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_QUADS', value='7', type=Type.INT32_T,
-                        doc="Draw 3D Quads (Must be in the same plane) [4 verticies per object]")                        ,
+                        doc="Draw 3D Quads (Must be in the same plane) [4 verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_QUADS_STRIPS', value='8', type=Type.INT32_T,
-                        doc="Draw 3D Quad Strips (Must be in the same plane) [4+2x verticies per object]")                        ,
+                        doc="Draw 3D Quad Strips (Must be in the same plane) [4+2x verticies per object]"),
                Constant('MVIEW_DRAWOBJ3D_ENTITY_POLYGONS', value='9', type=Type.INT32_T,
-                        doc="Draw 3D Quad Polygones (Must be in the same plane, must be convex and cannot intersect itself)")                        
+                        doc="Draw 3D Quad Polygones (Must be in the same plane, must be convex and cannot intersect itself)")
            ]),
 
     Define('MVIEW_DRAWOBJ3D_MODE',
            doc="What types of entities to draw",
            constants=[
                Constant('MVIEW_DRAWOBJ3D_MODE_FLAT', value='0', type=Type.INT32_T,
-                        doc="Draw flat shaded faces (one normal and color per object)")                        ,
+                        doc="Draw flat shaded faces (one normal and color per object)"),
                Constant('MVIEW_DRAWOBJ3D_MODE_SMOOTH', value='1', type=Type.INT32_T,
-                        doc="Draw smooth shaded faces (one normal and color per vertex)")                        
+                        doc="Draw smooth shaded faces (one normal and color per vertex)")
            ]),
 
     Define('MVIEW_EXTENT',
            doc="Types of extents defines",
            constants=[
                Constant('MVIEW_EXTENT_ALL', value='0', type=Type.INT32_T,
-                        doc="All objects")                        ,
+                        doc="All objects"),
                Constant('MVIEW_EXTENT_CLIP', value='1', type=Type.INT32_T,
-                        doc="Clipping regions")                        ,
+                        doc="Clipping regions"),
                Constant('MVIEW_EXTENT_MAP', value='2', type=Type.INT32_T,
-                        doc="Map extents")                        ,
+                        doc="Map extents"),
                Constant('MVIEW_EXTENT_VISIBLE', value='3', type=Type.INT32_T,
-                        doc="Visible objects")                        
+                        doc="Visible objects")
            ]),
 
     Define('MVIEW_FIT',
            doc="Fit area defines",
            constants=[
                Constant('MVIEW_FIT_MAP', value='0', type=Type.INT32_T,
-                        doc="Fit it to the map area")                        ,
+                        doc="Fit it to the map area"),
                Constant('MVIEW_FIT_VIEW', value='1', type=Type.INT32_T,
-                        doc="Fit it to the view area")                        
+                        doc="Fit it to the view area")
            ]),
 
     Define('MVIEW_FONT_WEIGHT',
            doc="Font weight defines",
            constants=[
-               Constant('MVIEW_FONT_WEIGHT_NORMAL', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_FONT_WEIGHT_ULTRALIGHT', value='1', type=Type.INT32_T)                        ,
-               Constant('MVIEW_FONT_WEIGHT_LIGHT', value='2', type=Type.INT32_T)                        ,
-               Constant('MVIEW_FONT_WEIGHT_MEDIUM', value='3', type=Type.INT32_T)                        ,
-               Constant('MVIEW_FONT_WEIGHT_BOLD', value='4', type=Type.INT32_T)                        ,
-               Constant('MVIEW_FONT_WEIGHT_XBOLD', value='5', type=Type.INT32_T)                        ,
-               Constant('MVIEW_FONT_WEIGHT_XXBOLD', value='6', type=Type.INT32_T)                        
+               Constant('MVIEW_FONT_WEIGHT_NORMAL', value='0', type=Type.INT32_T),
+               Constant('MVIEW_FONT_WEIGHT_ULTRALIGHT', value='1', type=Type.INT32_T),
+               Constant('MVIEW_FONT_WEIGHT_LIGHT', value='2', type=Type.INT32_T),
+               Constant('MVIEW_FONT_WEIGHT_MEDIUM', value='3', type=Type.INT32_T),
+               Constant('MVIEW_FONT_WEIGHT_BOLD', value='4', type=Type.INT32_T),
+               Constant('MVIEW_FONT_WEIGHT_XBOLD', value='5', type=Type.INT32_T),
+               Constant('MVIEW_FONT_WEIGHT_XXBOLD', value='6', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_GRID',
            doc="Grid Drawing defines",
            constants=[
-               Constant('MVIEW_GRID_DOT', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_GRID_LINE', value='1', type=Type.INT32_T)                        ,
-               Constant('MVIEW_GRID_CROSS', value='2', type=Type.INT32_T)                        
+               Constant('MVIEW_GRID_DOT', value='0', type=Type.INT32_T),
+               Constant('MVIEW_GRID_LINE', value='1', type=Type.INT32_T),
+               Constant('MVIEW_GRID_CROSS', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_GROUP',
            doc="Open Group defines",
            constants=[
                Constant('MVIEW_GROUP_NEW', value='1', type=Type.INT32_T,
-                        doc="New Group (destroy any existing group)")                        ,
+                        doc="New Group (destroy any existing group)"),
                Constant('MVIEW_GROUP_APPEND', value='0', type=Type.INT32_T,
-                        doc="Append to an existing Group")                        
+                        doc="Append to an existing Group")
            ]),
 
     Define('MVIEW_GROUP_LIST',
            doc="What groups to list",
            constants=[
                Constant('MVIEW_GROUP_LIST_ALL', value='0', type=Type.INT32_T,
-                        doc="All the groups.")                        ,
+                        doc="All the groups."),
                Constant('MVIEW_GROUP_LIST_MARKED', value='1', type=Type.INT32_T,
-                        doc="Those groups marked using the various mark functions.")                        ,
+                        doc="Those groups marked using the various mark functions."),
                Constant('MVIEW_GROUP_LIST_VISIBLE', value='2', type=Type.INT32_T,
-                        doc="Those groups checked as visible in the view/group manager.")                        
+                        doc="Those groups checked as visible in the view/group manager.")
            ]),
 
     Define('MVIEW_HIDE',
            doc="Boolean hidding defines",
            constants=[
                Constant('HIDE_ON', value='1', type=Type.INT32_T,
-                        doc="Turn ON hidding")                        ,
+                        doc="Turn ON hidding"),
                Constant('HIDE_OFF', value='0', type=Type.INT32_T,
-                        doc="Turn OFF hidding")                        
+                        doc="Turn OFF hidding")
            ]),
 
     Define('MVIEW_IS',
            doc="Defines for mview types",
            constants=[
-               Constant('MVIEW_IS_AGG', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_MOVABLE', value='3', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_CSYMB', value='4', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_LINKED', value='5', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_MADE', value='6', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_HIDDEN', value='7', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_CLIPPED', value='8', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_META', value='9', type=Type.INT32_T)                        ,
-               Constant('MVIEW_IS_VOXD', value='10', type=Type.INT32_T)                        
+               Constant('MVIEW_IS_AGG', value='0', type=Type.INT32_T),
+               Constant('MVIEW_IS_MOVABLE', value='3', type=Type.INT32_T),
+               Constant('MVIEW_IS_CSYMB', value='4', type=Type.INT32_T),
+               Constant('MVIEW_IS_LINKED', value='5', type=Type.INT32_T),
+               Constant('MVIEW_IS_MADE', value='6', type=Type.INT32_T),
+               Constant('MVIEW_IS_HIDDEN', value='7', type=Type.INT32_T),
+               Constant('MVIEW_IS_CLIPPED', value='8', type=Type.INT32_T),
+               Constant('MVIEW_IS_META', value='9', type=Type.INT32_T),
+               Constant('MVIEW_IS_VOXD', value='10', type=Type.INT32_T),
+               Constant('MVIEW_IS_SHADOW_2D_INTERPRETATION', value='11', type=Type.INT32_T),
+               Constant('MVIEW_IS_VECTOR3D', value='12', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_LABEL_BOUND',
            doc="Label Binding Defines",
            constants=[
                Constant('MVIEW_LABEL_BOUND_NO', value='0', type=Type.INT32_T,
-                        doc="Label Not Bound")                        ,
+                        doc="Label Not Bound"),
                Constant('MVIEW_LABEL_BOUND_YES', value='1', type=Type.INT32_T,
-                        doc="Label Bound")                        
+                        doc="Label Bound")
            ]),
 
     Define('MVIEW_LABEL_JUST',
            doc="Label Justification Defines",
            constants=[
-               Constant('MVIEW_LABEL_JUST_TOP', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_LABEL_JUST_BOTTOM', value='1', type=Type.INT32_T)                        ,
-               Constant('MVIEW_LABEL_JUST_LEFT', value='2', type=Type.INT32_T)                        ,
-               Constant('MVIEW_LABEL_JUST_RIGHT', value='3', type=Type.INT32_T)                        
+               Constant('MVIEW_LABEL_JUST_TOP', value='0', type=Type.INT32_T),
+               Constant('MVIEW_LABEL_JUST_BOTTOM', value='1', type=Type.INT32_T),
+               Constant('MVIEW_LABEL_JUST_LEFT', value='2', type=Type.INT32_T),
+               Constant('MVIEW_LABEL_JUST_RIGHT', value='3', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_LABEL_ORIENT',
            doc="Label Orientation Defines",
            constants=[
-               Constant('MVIEW_LABEL_ORIENT_HORIZONTAL', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_LABEL_ORIENT_TOP_RIGHT', value='1', type=Type.INT32_T)                        ,
-               Constant('MVIEW_LABEL_ORIENT_TOP_LEFT', value='2', type=Type.INT32_T)                        
+               Constant('MVIEW_LABEL_ORIENT_HORIZONTAL', value='0', type=Type.INT32_T),
+               Constant('MVIEW_LABEL_ORIENT_TOP_RIGHT', value='1', type=Type.INT32_T),
+               Constant('MVIEW_LABEL_ORIENT_TOP_LEFT', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_NAME_LENGTH',
@@ -262,18 +264,18 @@ gx_defines = [
            doc="maximum length for view and group names",
            constants=[
                Constant('MVIEW_NAME_LENGTH', value='1040', type=Type.INT32_T,
-                        doc="Maximum Length (1040)")                        
+                        doc="Maximum Length (1040)")
            ]),
 
     Define('MVIEW_OPEN',
            doc="Open :class:`MVIEW` define",
            constants=[
                Constant('MVIEW_READ', value='0', type=Type.INT32_T,
-                        doc="Read Only - No changes")                        ,
+                        doc="Read Only - No changes"),
                Constant('MVIEW_WRITENEW', value='1', type=Type.INT32_T,
-                        doc="Create new :class:`MVIEW` - destroys any existing :class:`MVIEW`")                        ,
+                        doc="Create new :class:`MVIEW` - destroys any existing :class:`MVIEW`"),
                Constant('MVIEW_WRITEOLD', value='2', type=Type.INT32_T,
-                        doc="Open existing :class:`MVIEW` for read/write (must exist)")                        
+                        doc="Open existing :class:`MVIEW` for read/write (must exist)")
            ]),
 
     Define('MVIEW_PJ',
@@ -284,63 +286,63 @@ gx_defines = [
                         No reprojection is used and all locations and
                         attributes are assumed to be in the view coordinate
                         system.
-                        """)                        ,
+                        """),
                Constant('MVIEW_PJ_LOCATION', value='1', type=Type.INT32_T,
                         doc="""
                         Only locations will be transformed to the view
                         coordinate system.
-                        """)                        ,
+                        """),
                Constant('MVIEW_PJ_ALL', value='2', type=Type.INT32_T,
                         doc="""
                         Locations and attributes (sizes, thicknesses, angles)
                         will be transformed to the view coordinate system.
-                        """)                        ,
+                        """),
                Constant('MVIEW_PJ_ON', value='3', type=Type.INT32_T,
-                        doc="mode before the last :def_val:`MVIEW_PJ_OFF`.")                        
+                        doc="mode before the last :def_val:`MVIEW_PJ_OFF`.")
            ]),
 
     Define('MVIEW_RELOCATE',
            doc="Relocation Defines",
            constants=[
                Constant('MVIEW_RELOCATE_FIT', value='0', type=Type.INT32_T,
-                        doc="Will fit the image to fill the specified area")                        ,
+                        doc="Will fit the image to fill the specified area"),
                Constant('MVIEW_RELOCATE_ASPECT', value='1', type=Type.INT32_T,
-                        doc="Will maintain aspect ratio")                        ,
+                        doc="Will maintain aspect ratio"),
                Constant('MVIEW_RELOCATE_ASPECT_CENTER', value='2', type=Type.INT32_T,
-                        doc="Will maintain aspect ratio and center in specified area")                        
+                        doc="Will maintain aspect ratio and center in specified area")
            ]),
 
     Define('MVIEW_SMOOTH',
            doc="Interpolation method to use for drawing line and polygon edges",
            constants=[
                Constant('MVIEW_SMOOTH_NEAREST', value='0', type=Type.INT32_T,
-                        doc="Nearest neighbour")                        ,
+                        doc="Nearest neighbour"),
                Constant('MVIEW_SMOOTH_CUBIC', value='1', type=Type.INT32_T,
-                        doc="Cubic Spline")                        ,
+                        doc="Cubic Spline"),
                Constant('MVIEW_SMOOTH_AKIMA', value='2', type=Type.INT32_T,
-                        doc="Akima")                        
+                        doc="Akima")
            ]),
 
     Define('MVIEW_TILE',
            doc="Tiling defines",
            constants=[
-               Constant('MVIEW_TILE_RECTANGULAR', value='0', type=Type.INT32_T)                        ,
-               Constant('MVIEW_TILE_DIAGONAL', value='1', type=Type.INT32_T)                        ,
-               Constant('MVIEW_TILE_TRIANGULAR', value='2', type=Type.INT32_T)                        ,
-               Constant('MVIEW_TILE_RANDOM', value='3', type=Type.INT32_T)                        
+               Constant('MVIEW_TILE_RECTANGULAR', value='0', type=Type.INT32_T),
+               Constant('MVIEW_TILE_DIAGONAL', value='1', type=Type.INT32_T),
+               Constant('MVIEW_TILE_TRIANGULAR', value='2', type=Type.INT32_T),
+               Constant('MVIEW_TILE_RANDOM', value='3', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_UNIT',
            doc="Coordinate systems defines",
            constants=[
                Constant('MVIEW_UNIT_VIEW', value='0', type=Type.INT32_T,
-                        doc="view coordinates")                        ,
+                        doc="view coordinates"),
                Constant('MVIEW_UNIT_PLOT', value='1', type=Type.INT32_T,
-                        doc="plot hi-metric (mm*100) on the map.")                        ,
+                        doc="plot hi-metric (mm*100) on the map."),
                Constant('MVIEW_UNIT_MM', value='2', type=Type.INT32_T,
-                        doc="plot mm on the map.")                        ,
+                        doc="plot mm on the map."),
                Constant('MVIEW_UNIT_VIEW_UNWARPED', value='3', type=Type.INT32_T,
-                        doc="view coordinates without a warp if there is one")                        
+                        doc="view coordinates without a warp if there is one")
            ]),
 
     Define('MVIEW_EXTENT_UNIT',
@@ -350,27 +352,27 @@ gx_defines = [
            """,
            constants=[
                Constant('MVIEW_EXTENT_UNIT_VIEW', value='MVIEW_UNIT_VIEW', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_VIEW`")                        ,
+                        doc=":def_val:`MVIEW_UNIT_VIEW`"),
                Constant('MVIEW_EXTENT_UNIT_PLOT', value='MVIEW_UNIT_PLOT', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_PLOT`")                        ,
+                        doc=":def_val:`MVIEW_UNIT_PLOT`"),
                Constant('MVIEW_EXTENT_UNIT_MM', value='MVIEW_UNIT_MM', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_MM`")                        ,
+                        doc=":def_val:`MVIEW_UNIT_MM`"),
                Constant('MVIEW_EXTENT_UNIT_VIEW_UNWARPED', value='MVIEW_UNIT_VIEW_UNWARPED', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_VIEW_UNWARPED`")                        
+                        doc=":def_val:`MVIEW_UNIT_VIEW_UNWARPED`")
            ]),
 
     Define('TEXT_REF',
            doc="Text reference locations",
            constants=[
-               Constant('TEXT_REF_BOTTOM_LEFT', value='0', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_BOTTOM_CENTER', value='1', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_BOTTOM_RIGHT', value='2', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_MIDDLE_LEFT', value='3', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_MIDDLE_CENTER', value='4', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_MIDDLE_RIGHT', value='5', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_TOP_LEFT', value='6', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_TOP_CENTER', value='7', type=Type.INT32_T)                        ,
-               Constant('TEXT_REF_TOP_RIGHT', value='8', type=Type.INT32_T)                        
+               Constant('TEXT_REF_BOTTOM_LEFT', value='0', type=Type.INT32_T),
+               Constant('TEXT_REF_BOTTOM_CENTER', value='1', type=Type.INT32_T),
+               Constant('TEXT_REF_BOTTOM_RIGHT', value='2', type=Type.INT32_T),
+               Constant('TEXT_REF_MIDDLE_LEFT', value='3', type=Type.INT32_T),
+               Constant('TEXT_REF_MIDDLE_CENTER', value='4', type=Type.INT32_T),
+               Constant('TEXT_REF_MIDDLE_RIGHT', value='5', type=Type.INT32_T),
+               Constant('TEXT_REF_TOP_LEFT', value='6', type=Type.INT32_T),
+               Constant('TEXT_REF_TOP_CENTER', value='7', type=Type.INT32_T),
+               Constant('TEXT_REF_TOP_RIGHT', value='8', type=Type.INT32_T)
            ]),
 
     Define('MVIEW_3D_RENDER',
@@ -381,14 +383,14 @@ gx_defines = [
            """,
            constants=[
                Constant('MVIEW_3D_RENDER_BACKFACES', value='1', type=Type.INT32_T,
-                        doc="This flag is enabled if the backfaces of geometry should be rendered")                        ,
+                        doc="This flag is enabled if the backfaces of geometry should be rendered"),
                Constant('MVIEW_3D_DONT_SCALE_GEOMETRY', value='2', type=Type.INT32_T,
                         doc="""
                         If the exaggeration scales of the 3D view in X, Y and/or Z is set to anything other than 1.0
                         any geometric objects (spheres, cubes etc.) for 3D groups with the following flags 
                         will render untransformed while only the centers of the objects are changed.
                         This ensures the objects appear in the correct place with respect to other data being rendered (and scaled).
-                        """)                        
+                        """)
            ])]
 
 
@@ -417,7 +419,7 @@ gx_methods = {
                ]),
 
         Method('CRCView_MVIEW', module='geoengine.map', version='6.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Generate an XML CRC of a View",
                return_type=Type.VOID,
                parameters = [
@@ -430,7 +432,7 @@ gx_methods = {
                ]),
 
         Method('CRCViewGroup_MVIEW', module='geoengine.map', version='6.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Generate an XML CRC of a Group",
                return_type=Type.VOID,
                parameters = [
@@ -988,6 +990,48 @@ gx_methods = {
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type="3DN",
                              doc=":class:`3DN` to set (NULL for 2D view)")
+               ]),
+
+        Method('Get3DPointOfView_MVIEW', module='geoengine.map', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Get 3D point of view (values are will be :def_val:`rDUMMY` if view for 2D views)",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc=":class:`MVIEW` Handle"),
+                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                             doc="X center"),
+                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                             doc="Y center"),
+                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                             doc="Z center"),
+                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                             doc="Distance from center"),
+                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                             doc="Declination, 0 to 360 CW from Y"),
+                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                             doc="Inclination, -90 to +90")
+               ]),
+
+        Method('Set3DPointOfView_MVIEW', module='geoengine.map', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Set 3D point of view (no effect on 2D views)",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc=":class:`MVIEW` Handle"),
+                   Parameter('p2', type=Type.DOUBLE,
+                             doc="X center"),
+                   Parameter('p3', type=Type.DOUBLE,
+                             doc="Y center"),
+                   Parameter('p4', type=Type.DOUBLE,
+                             doc="Z center"),
+                   Parameter('p5', type=Type.DOUBLE,
+                             doc="Distance from center"),
+                   Parameter('p6', type=Type.DOUBLE,
+                             doc="Declination, 0 to 360 CW from Y"),
+                   Parameter('p7', type=Type.DOUBLE,
+                             doc="Inclination, -90 to +90")
                ]),
 
         Method('SetPlaneClipPLY_MVIEW', module='geoengine.map', version='5.1.4',
@@ -2310,6 +2354,19 @@ gx_methods = {
                              doc="Aggregate name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
                ]),
 
+        Method('GetAggregate_MVIEW', module='geoengine.map', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Get an existing Aggregate object from the view.",
+               notes="This method returns a cached object owned by the :class:`MVIEW` and will be destroyed automatically when the :class:`MVIEW` is disposed",
+               return_type="AGG",
+               return_doc=":class:`AGG` object",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="group number")
+               ]),
+
         Method('ChangeLineMessage_MVIEW', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Change the specified line in a view.",
@@ -2338,6 +2395,19 @@ gx_methods = {
                              doc=":class:`CSYMB` object")
                ]),
 
+        Method('GetColSymbol_MVIEW', module='geoengine.map', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Get an existing colored symbol object from the view.",
+               notes="This method returns a cached object owned by the :class:`MVIEW` and will be destroyed automatically when the :class:`MVIEW` is disposed",
+               return_type="CSYMB",
+               return_doc=":class:`CSYMB` object",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="group number")
+               ]),
+
         Method('DATALINKD_MVIEW', module='geoengine.map', version='6.4.0',
                availability=Availability.PUBLIC, 
                doc="Add a Data Link Display (:class:`DATALINKD`) object to the view.",
@@ -2348,6 +2418,19 @@ gx_methods = {
                    Parameter('p2', type="DATALINKD"),
                    Parameter('p3', type=Type.STRING,
                              doc="name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
+               ]),
+
+        Method('GetDATALINKD_MVIEW', module='geoengine.map', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Get an existing Data Link Display (:class:`DATALINKD`) object from the view.",
+               notes="This method returns a cached object owned by the :class:`MVIEW` and will be destroyed automatically when the :class:`MVIEW` is disposed",
+               return_type="DATALINKD",
+               return_doc=":class:`DATALINKD` object",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="group number")
                ]),
 
         Method('EasyMaker_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2467,8 +2550,9 @@ gx_methods = {
         Method('GetVOXD_MVIEW', module='geoengine.map', version='8.2.0',
                availability=Availability.PUBLIC, 
                doc="Get an existing :class:`VOXD` object from the view.",
+               notes="This method returns a cached object owned by the :class:`MVIEW` and will be destroyed automatically when the :class:`MVIEW` is disposed",
                return_type="VOXD",
-               return_doc=":class:`VOXD` object - cache only - use immediately.",
+               return_doc=":class:`VOXD` object",
                parameters = [
                    Parameter('p1', type="MVIEW",
                              doc="View"),
@@ -2479,6 +2563,7 @@ gx_methods = {
         Method('DrawVectorVoxelVectors_MVIEW', module='geoengine.map', version='7.6.0',
                availability=Availability.PUBLIC, 
                doc="Display vectors from a vector voxel in the view.",
+               notes="This will result in a :class:`VECTOR3D` group object within the view",
                return_type=Type.VOID,
                return_doc="Each data value in a vector voxel contains X, Y and Z components of a vector. The amplitudes do NOT necessarily correspond to the spatial size of the voxel.",
                parameters = [
@@ -2499,6 +2584,19 @@ gx_methods = {
                              doc="Cutoff value - do not plot vectors with amplitudes less than this value (:def_val:`rDUMMY` or 0 to plot all)"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Maximum number of vectors - decimate as required to reduce (:def_val:`iDUMMY` to plot all)")
+               ]),
+
+        Method('GetVECTOR3D_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get an existing :class:`VECTOR3D` object from the view.",
+               notes="This method returns a cached object owned by the :class:`MVIEW` and will be destroyed automatically when the :class:`MVIEW` is disposed",
+               return_type="VECTOR3D",
+               return_doc=":class:`VECTOR3D` object",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="group number")
                ]),
 
         Method('DrawVectors3D_MVIEW', module='geoengine.map', version='8.0.1',
@@ -2537,6 +2635,52 @@ gx_methods = {
                ])
     ],
     'Group Methods': [
+
+        Method('SetGroupITR_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Set group :class:`ITR`",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type="ITR")
+               ]),
+
+        Method('GetGroupITR_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get group :class:`ITR`",
+               return_type="ITR",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number")
+               ]),
+
+        Method('SetGroupTPAT_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Set group :class:`TPAT`",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type="TPAT")
+               ]),
+
+        Method('GetGroupTPAT_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get group :class:`TPAT`",
+               return_type="TPAT",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number")
+               ]),
 
         Method('CopyMarkedGroups_MVIEW', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
@@ -2967,6 +3111,34 @@ gx_methods = {
                              doc="Group name, can be NULL, Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`MVIEW_GROUP`")
+               ]),
+
+        Method('GetGroupGUID_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Gets a GUID of a group in the :class:`MVIEW`.",
+               notes="If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc=":class:`MVIEW` Object"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                             doc="GUID"),
+                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                             doc="Size of GUID buffer.")
+               ]),
+
+        Method('iFindGroupByGUID_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Find a Group by name.",
+               return_type=Type.INT32_T,
+               return_doc="Group Number.",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="GUID")
                ])
     ],
     'Projection': [
@@ -3590,6 +3762,20 @@ gx_methods = {
                              doc="view name returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="view name string size")
+               ]),
+
+        Method('GetGUID_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Gets the GUID of the :class:`MVIEW`.",
+               notes="If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc=":class:`MVIEW` Object"),
+                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                             doc="GUID"),
+                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                             doc="Size of GUID buffer.")
                ])
     ],
     'View Control': [

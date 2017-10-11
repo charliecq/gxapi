@@ -14,9 +14,9 @@ gx_defines = [
            doc="Color Symbol filling defines",
            constants=[
                Constant('CSYMB_COLOR_EDGE', value='0', type=Type.INT32_T,
-                        doc="Draw Edges only")                        ,
+                        doc="Draw Edges only"),
                Constant('CSYMB_COLOR_FILL', value='1', type=Type.INT32_T,
-                        doc="Fill Symbols")                        
+                        doc="Fill Symbols")
            ])]
 
 
@@ -81,7 +81,7 @@ gx_methods = {
                notes="""
                The lower 16 bits of the number is interpreted as UTF-16 with a valid Unicode character
                code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
-               plus-minus and diameter symbol(latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
+               plus-minus and diameter symbol (latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
                
                It is possible to check if a character is valid using :func:`iIsValidUTF16Char_UNC`. The high 16-bits are reserved
                for future use. Also see: :func:`iValidSymbol_UNC` and :func:`ValidateSymbols_UNC`
@@ -137,6 +137,17 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="CSYMB",
                              doc=":class:`CSYMB` to destroy")
+               ]),
+
+        Method('GetITR_CSYMB', module='geogxx', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get the :class:`ITR` of the :class:`CSYMB`",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="CSYMB",
+                             doc=":class:`CSYMB` object"),
+                   Parameter('p2', type="ITR",
+                             doc=":class:`ITR` object")
                ]),
 
         Method('SetFont_CSYMB', module='geogxx', version='5.0.0',

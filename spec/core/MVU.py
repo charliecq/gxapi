@@ -13,75 +13,75 @@ gx_defines = [
            doc="Type of Geometry",
            constants=[
                Constant('EMLAY_V_COPLANAR', value='0', type=Type.INT32_T,
-                        doc="0")                        ,
+                        doc="0"),
                Constant('EMLAY_H_COPLANAR', value='1', type=Type.INT32_T,
-                        doc="1")                        ,
+                        doc="1"),
                Constant('EMLAY_V_COAXIAL', value='2', type=Type.INT32_T,
-                        doc="2")                        
+                        doc="2")
            ]),
 
     Define('ARROW_ALIGNMENT',
            doc="Direction of alignment",
            constants=[
-               Constant('ARROW_ALIGNMENT_HORIZONTAL', value='0', type=Type.INT32_T)                        ,
-               Constant('ARROW_ALIGNMENT_VERTICAL', value='1', type=Type.INT32_T)                        
+               Constant('ARROW_ALIGNMENT_HORIZONTAL', value='0', type=Type.INT32_T),
+               Constant('ARROW_ALIGNMENT_VERTICAL', value='1', type=Type.INT32_T)
            ]),
 
     Define('BARCHART_LABEL',
            doc="Place to draw bar labels",
            constants=[
                Constant('BARCHART_LABEL_NO', value='0', type=Type.INT32_T,
-                        doc="No label")                        ,
+                        doc="No label"),
                Constant('BARCHART_LABEL_BELOWX', value='1', type=Type.INT32_T,
-                        doc="Label below X axis")                        ,
+                        doc="Label below X axis"),
                Constant('BARCHART_LABEL_ABOVEX', value='2', type=Type.INT32_T,
-                        doc="Label above X axis")                        ,
+                        doc="Label above X axis"),
                Constant('BARCHART_LABEL_PEND', value='3', type=Type.INT32_T,
-                        doc="Label at positive end of bar")                        ,
+                        doc="Label at positive end of bar"),
                Constant('BARCHART_LABEL_NEND', value='4', type=Type.INT32_T,
-                        doc="Label at negative end of bar")                        ,
+                        doc="Label at negative end of bar"),
                Constant('BARCHART_LABEL_ALTERNAT1', value='5', type=Type.INT32_T,
-                        doc="Label at alternative ends,1st label at positive end")                        ,
+                        doc="Label at alternative ends,1st label at positive end"),
                Constant('BARCHART_LABEL_ALTERNAT2', value='6', type=Type.INT32_T,
-                        doc="Label at alternative ends,1st label at negative end")                        
+                        doc="Label at alternative ends,1st label at negative end")
            ]),
 
     Define('COLORBAR_LABEL',
            doc="Label text orientation",
            constants=[
                Constant('COLORBAR_LABEL_HORIZONTAL', value='0', type=Type.INT32_T,
-                        doc="(default)")                        ,
+                        doc="(default)"),
                Constant('COLORBAR_LABEL_VERTICAL', value='1', type=Type.INT32_T,
-                        doc="Gives text an orientation of -90 degrees")                        
+                        doc="Gives text an orientation of -90 degrees")
            ]),
 
     Define('COLORBAR_STYLE',
            doc="Label text orientation",
            constants=[
                Constant('COLORBAR_STYLE_NONE', value='0', type=Type.INT32_T,
-                        doc="Don't draw")                        ,
+                        doc="Don't draw"),
                Constant('COLORBAR_STYLE_MAXMIN', value='1', type=Type.INT32_T,
-                        doc="Post max/min values")                        
+                        doc="Post max/min values")
            ]),
 
     Define('MVU_ORIENTATION',
            doc="Orientation (of whatever)",
            constants=[
                Constant('MVU_ORIENTATION_VERTICAL', value='0', type=Type.INT32_T,
-                        doc="Vertical")                        ,
+                        doc="Vertical"),
                Constant('MVU_ORIENTATION_HORIZONTAL', value='1', type=Type.INT32_T,
-                        doc="Horizontal")                        
+                        doc="Horizontal")
            ]),
 
     Define('MVU_DIVISION_STYLE',
            doc="Orientation (of whatever)",
            constants=[
                Constant('MVU_DIVISION_STYLE_NONE', value='0', type=Type.INT32_T,
-                        doc="No division marks")                        ,
+                        doc="No division marks"),
                Constant('MVU_DIVISION_STYLE_LINES', value='1', type=Type.INT32_T,
-                        doc="Division line")                        ,
+                        doc="Division line"),
                Constant('MVU_DIVISION_STYLE_TICS', value='2', type=Type.INT32_T,
-                        doc="Inside tics, both sides")                        
+                        doc="Inside tics, both sides")
            ]),
 
     Define('MVU_ARROW',
@@ -94,45 +94,45 @@ gx_defines = [
                         doc="""
                         Plot the head as a solid triangle, otherwise plot a "stick arrow"
                         with three lines for the tail and two barbs.
-                        """)                        ,
+                        """),
                Constant('MVU_ARROW_FIXED', value='2', type=Type.INT32_T,
                         doc="""
                         If used, input the actual length of the barbs on the arrow, in
                         view X-axis units, as measured along the tail. If not used, enter the ratio
                         between the length of the barbs and full length of the arrow (e.g. 0.4).
                         In the latter case, the longer the arrow, the bigger the arrow head.
-                        """)                        
+                        """)
            ]),
 
     Define('MVU_FLIGHT_COMPASS',
            doc="Compass direction",
            constants=[
-               Constant('MVU_FLIGHT_COMPASS_NONE', value='-1', type=Type.INT32_T)                        ,
-               Constant('MVU_FLIGHT_COMPASS_EAST', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_FLIGHT_COMPASS_NORTH', value='1', type=Type.INT32_T)                        ,
-               Constant('MVU_FLIGHT_COMPASS_WEST', value='2', type=Type.INT32_T)                        ,
-               Constant('MVU_FLIGHT_COMPASS_SOUTH', value='3', type=Type.INT32_T)                        
+               Constant('MVU_FLIGHT_COMPASS_NONE', value='-1', type=Type.INT32_T),
+               Constant('MVU_FLIGHT_COMPASS_EAST', value='0', type=Type.INT32_T),
+               Constant('MVU_FLIGHT_COMPASS_NORTH', value='1', type=Type.INT32_T),
+               Constant('MVU_FLIGHT_COMPASS_WEST', value='2', type=Type.INT32_T),
+               Constant('MVU_FLIGHT_COMPASS_SOUTH', value='3', type=Type.INT32_T)
            ]),
 
     Define('MVU_FLIGHT_DUMMIES',
            doc="Show Dummies",
            constants=[
-               Constant('MVU_FLIGHT_DUMMIES_NOTINCLUDED', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_FLIGHT_DUMMIES_INCLUDED', value='1', type=Type.INT32_T)                        
+               Constant('MVU_FLIGHT_DUMMIES_NOTINCLUDED', value='0', type=Type.INT32_T),
+               Constant('MVU_FLIGHT_DUMMIES_INCLUDED', value='1', type=Type.INT32_T)
            ]),
 
     Define('MVU_FLIGHT_LOCATE',
            doc="Line label locations",
            constants=[
                Constant('MVU_FLIGHT_LOCATE_NONE', value='0', type=Type.INT32_T,
-                        doc="No label")                        ,
+                        doc="No label"),
                Constant('MVU_FLIGHT_LOCATE_END', value='1', type=Type.INT32_T,
                         doc="""
                         L100.2 -------------------------- L100.2
                         
                         dOffA controls distance from label to line.
                         dOffB controls verical offset from center.
-                        """)                        ,
+                        """),
                Constant('MVU_FLIGHT_LOCATE_ABOVE', value='2', type=Type.INT32_T,
                         doc="""
                         L100.2                            L100.2
@@ -140,7 +140,7 @@ gx_defines = [
                         
                         dOffA controls label distance above the line.
                         dOffB controls offset in from line end.
-                        """)                        ,
+                        """),
                Constant('MVU_FLIGHT_LOCATE_BELOW', value='3', type=Type.INT32_T,
                         doc="""
                         ----------------------------------------
@@ -148,67 +148,67 @@ gx_defines = [
                         
                         dOffA controls label distance below the line.
                         dOffB controls offset in from line end.
-                        """)                        ,
+                        """),
                Constant('MVU_FLIGHT_DIRECTION', value='8', type=Type.INT32_T,
                         doc="""
                         To add '>' to label to indicate direction, for example:
                         :def_val:`MVU_FLIGHT_LOCATE_END`+:def_val:`MVU_FLIGHT_DIRECTION`
-                        """)                        
+                        """)
            ]),
 
     Define('MVU_VOX_SURFACE_METHOD',
            doc="TODO",
            constants=[
-               Constant('MVU_VOX_SURFACE_METHOD_MARCHING_CUBES', value='0', type=Type.INT32_T)                        
+               Constant('MVU_VOX_SURFACE_METHOD_MARCHING_CUBES', value='0', type=Type.INT32_T)
            ]),
 
     Define('MVU_VOX_SURFACE_OPTION',
            doc="TODO",
            constants=[
-               Constant('MVU_VOX_SURFACE_OPTION_OPEN', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_VOX_SURFACE_OPTION_CLOSED', value='1', type=Type.INT32_T)                        
+               Constant('MVU_VOX_SURFACE_OPTION_OPEN', value='0', type=Type.INT32_T),
+               Constant('MVU_VOX_SURFACE_OPTION_CLOSED', value='1', type=Type.INT32_T)
            ]),
 
     Define('MVU_TEXTBOX',
            doc="Type of Box",
            constants=[
-               Constant('MVU_TEXTBOX_LEFT', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_TEXTBOX_CENTER', value='1', type=Type.INT32_T)                        ,
-               Constant('MVU_TEXTBOX_RIGHT', value='2', type=Type.INT32_T)                        
+               Constant('MVU_TEXTBOX_LEFT', value='0', type=Type.INT32_T),
+               Constant('MVU_TEXTBOX_CENTER', value='1', type=Type.INT32_T),
+               Constant('MVU_TEXTBOX_RIGHT', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVU_VPOINT',
            doc="Head Acuteness",
            constants=[
-               Constant('MVU_VPOINT_SHARP', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_VPOINT_MEDIUM', value='1', type=Type.INT32_T)                        ,
-               Constant('MVU_VPOINT_BLUNT', value='2', type=Type.INT32_T)                        
+               Constant('MVU_VPOINT_SHARP', value='0', type=Type.INT32_T),
+               Constant('MVU_VPOINT_MEDIUM', value='1', type=Type.INT32_T),
+               Constant('MVU_VPOINT_BLUNT', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVU_VPOS',
            doc="Head Position",
            constants=[
-               Constant('MVU_VPOS_HEAD', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_VPOS_MIDDLE', value='1', type=Type.INT32_T)                        ,
-               Constant('MVU_VPOS_TAIL', value='2', type=Type.INT32_T)                        
+               Constant('MVU_VPOS_HEAD', value='0', type=Type.INT32_T),
+               Constant('MVU_VPOS_MIDDLE', value='1', type=Type.INT32_T),
+               Constant('MVU_VPOS_TAIL', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVU_VSIZE',
            doc="Head Size",
            constants=[
-               Constant('MVU_VSIZE_NOHEAD', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_VSIZE_SMALLHEAD', value='1', type=Type.INT32_T)                        ,
-               Constant('MVU_VSIZE_MEDIUMHEAD', value='2', type=Type.INT32_T)                        ,
-               Constant('MVU_VSIZE_LARGEHEAD', value='3', type=Type.INT32_T)                        ,
-               Constant('MVU_VSIZE_NOTAIL', value='4', type=Type.INT32_T)                        
+               Constant('MVU_VSIZE_NOHEAD', value='0', type=Type.INT32_T),
+               Constant('MVU_VSIZE_SMALLHEAD', value='1', type=Type.INT32_T),
+               Constant('MVU_VSIZE_MEDIUMHEAD', value='2', type=Type.INT32_T),
+               Constant('MVU_VSIZE_LARGEHEAD', value='3', type=Type.INT32_T),
+               Constant('MVU_VSIZE_NOTAIL', value='4', type=Type.INT32_T)
            ]),
 
     Define('MVU_VSTYLE',
            doc="Head Style",
            constants=[
-               Constant('MVU_VSTYLE_LINES', value='0', type=Type.INT32_T)                        ,
-               Constant('MVU_VSTYLE_BARB', value='1', type=Type.INT32_T)                        ,
-               Constant('MVU_VSTYLE_TRIANGLE', value='2', type=Type.INT32_T)                        
+               Constant('MVU_VSTYLE_LINES', value='0', type=Type.INT32_T),
+               Constant('MVU_VSTYLE_BARB', value='1', type=Type.INT32_T),
+               Constant('MVU_VSTYLE_TRIANGLE', value='2', type=Type.INT32_T)
            ])]
 
 
@@ -1386,7 +1386,7 @@ gx_methods = {
                ]),
 
         Method('LoadPlot_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Load a Geosoft PLT file into a :class:`MAP`.",
                return_type=Type.VOID,
                parameters = [
@@ -1397,7 +1397,7 @@ gx_methods = {
                ]),
 
         Method('MapFromPLT_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a new map from a PLT file.",
                notes="""
                This only creates a map, it does not read the PLT into
@@ -1422,7 +1422,7 @@ gx_methods = {
                ]),
 
         Method('MapMDF_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates an MDF from a Map.",
                return_type=Type.VOID,
                parameters = [
@@ -1435,7 +1435,7 @@ gx_methods = {
                ]),
 
         Method('Mapset_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a new map directly from parameters.",
                return_type=Type.VOID,
                parameters = [
@@ -1459,7 +1459,7 @@ gx_methods = {
                              doc="0 - landscape; 1 - portrait"),
                    Parameter('p10', type=Type.INT32_T,
                              doc="1 - map size fixed to media; 0 - map size adjusted to data and margins."),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('p11', type=Type.DOUBLE,
                              doc="Map scale (rDummy for default)"),
                    Parameter('p12', type=Type.DOUBLE,
                              doc="Conversion factor (to units/meter) (rDummy for default)"),
@@ -1473,11 +1473,10 @@ gx_methods = {
                              doc="top margin (cm)"),
                    Parameter('p17', type=Type.DOUBLE,
                              doc="Inside data margin (cm)")
-
                ]),
 
         Method('Mapset2_MVU', module='geoengine.map', version='8.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Same as :func:`Mapset_MVU`, with vertical exaggeration.",
                return_type=Type.VOID,
                parameters = [
@@ -1501,7 +1500,7 @@ gx_methods = {
                              doc="0 - landscape; 1 - portrait"),
                    Parameter('p10', type=Type.INT32_T,
                              doc="1 - map size fixed to media; 0 - map size adjusted to data and margins."),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('p11', type=Type.DOUBLE,
                              doc="Map scale (rDummy for default)"),
                    Parameter('p12', type=Type.DOUBLE,
                              doc="Vertical Exaggeration (1.0 for none)"),
@@ -1520,7 +1519,7 @@ gx_methods = {
                ]),
 
         Method('MDF_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a new map from an MDF file.",
                return_type=Type.VOID,
                parameters = [

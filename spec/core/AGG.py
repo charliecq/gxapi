@@ -3,7 +3,7 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 gx_class = Class('AGG',
                  doc="""
                  The :class:`AGG` class is used to handle image display on maps.
-                 An aggragate contains one or more image layers (LAY) with
+                 An aggregate contains one or more image layers (LAY) with
                  each layer representing a grid or image file. The :class:`AGG`
                  will combine all the layers to form one image
                  """)
@@ -19,13 +19,13 @@ gx_defines = [
                         it will be used with the default zoning
                         method of the data, which is usually
                         :def_val:`AGG_LAYER_ZONE_EQUALAREA`.
-                        """)                        ,
+                        """),
                Constant('AGG_LAYER_ZONE_LINEAR', value='1', type=Type.INT32_T,
-                        doc="Linear Distribution")                        ,
+                        doc="Linear Distribution"),
                Constant('AGG_LAYER_ZONE_NORMAL', value='2', type=Type.INT32_T,
-                        doc="Normal Distribution")                        ,
+                        doc="Normal Distribution"),
                Constant('AGG_LAYER_ZONE_EQUALAREA', value='3', type=Type.INT32_T,
-                        doc="Equal Area Distribution")                        ,
+                        doc="Equal Area Distribution"),
                Constant('AGG_LAYER_ZONE_SHADE', value='4', type=Type.INT32_T,
                         doc="""
                         If :def_val:`AGG_LAYER_ZONE_SHADE` is specified, a shaded relief
@@ -39,40 +39,40 @@ gx_defines = [
                         Shading is always at inclination = declination = 45 deg.
                         with default scaling.  If different shading is desired,
                         use the :func:`LayerShadeIMG_AGG` method.
-                        """)                        ,
+                        """),
                Constant('AGG_LAYER_ZONE_LOGLINEAR', value='5', type=Type.INT32_T,
-                        doc="Log Linear Distribution")                        ,
+                        doc="Log Linear Distribution"),
                Constant('AGG_LAYER_ZONE_LAST', value='6', type=Type.INT32_T,
                         doc="""
                         The last :class:`ITR` used to display this
                         data will be used if it exists.  If it
                         does not exist, the behaviour is the same
                         as :def_val:`AGG_LAYER_ZONE_DEFAULT`.
-                        """)                        
+                        """)
            ]),
 
     Define('AGG_MODEL',
            doc="Aggregation color model defines",
            constants=[
                Constant('AGG_MODEL_HSV', value='1', type=Type.INT32_T,
-                        doc="Hue Saturation Value")                        ,
+                        doc="Hue Saturation Value"),
                Constant('AGG_MODEL_RGB', value='2', type=Type.INT32_T,
-                        doc="Red Green Blue")                        ,
+                        doc="Red Green Blue"),
                Constant('AGG_MODEL_CMY', value='3', type=Type.INT32_T,
-                        doc="Cyan Magenta Yellow")                        
+                        doc="Cyan Magenta Yellow")
            ]),
 
     Define('AGG_RENDER',
            doc="Aggregation rendering modes",
            constants=[
                Constant('AGG_RENDER_ADD', value='0', type=Type.INT32_T,
-                        doc="Add all the colors together")                        ,
+                        doc="Add all the colors together"),
                Constant('AGG_RENDER_BLEND', value='1', type=Type.INT32_T,
-                        doc="Adds and divides by the number of non-dummy colors")                        ,
+                        doc="Adds and divides by the number of non-dummy colors"),
                Constant('AGG_RENDER_BLEND_ALL', value='2', type=Type.INT32_T,
-                        doc="Adds and divides by the number of colors")                        ,
+                        doc="Adds and divides by the number of colors"),
                Constant('AGG_RENDER_FADE', value='3', type=Type.INT32_T,
-                        doc="Multiplies current colors by the input's colors over 255 (input works as the percentage of color to preserve)")                        
+                        doc="Multiplies current colors by the input's colors over 255 (input works as the percentage of color to preserve)")
            ])]
 
 

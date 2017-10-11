@@ -16,38 +16,38 @@ gx_defines = [
            doc="Optimization",
            constants=[
                Constant('TC_OPT_NONE', value='0', type=Type.INT32_T,
-                        doc="(slow)    no optimization")                        ,
+                        doc="(slow)    no optimization"),
                Constant('TC_OPT_MAX', value='1', type=Type.INT32_T,
                         doc="""
                         (faster)  desampling and using qspline (4x4 points) interp
                         on coarser averaged grid
-                        """)                        
+                        """)
            ]),
 
     Define('TC_SURVEYTYPE',
            doc="Survey Type",
            constants=[
                Constant('TC_SURVEYTYPE_GROUND', value='0', type=Type.INT32_T,
-                        doc="Ground")                        ,
+                        doc="Ground"),
                Constant('TC_SURVEYTYPE_SHIPBORNE', value='1', type=Type.INT32_T,
-                        doc="Shipborne")                        ,
+                        doc="Shipborne"),
                Constant('TC_SURVEYTYPE_AIRBORNE', value='2', type=Type.INT32_T,
-                        doc="Airborne")                        
+                        doc="Airborne")
            ]),
 
     Define('GG_ELEMENT',
            doc="GG element",
            constants=[
                Constant('GG_ELEMENT_XX', value='0', type=Type.INT32_T,
-                        doc="Gxx")                        ,
+                        doc="Gxx"),
                Constant('GG_ELEMENT_YY', value='1', type=Type.INT32_T,
-                        doc="Gyy")                        ,
+                        doc="Gyy"),
                Constant('GG_ELEMENT_XY', value='2', type=Type.INT32_T,
-                        doc="Gxy")                        ,
+                        doc="Gxy"),
                Constant('GG_ELEMENT_XZ', value='3', type=Type.INT32_T,
-                        doc="Gxz")                        ,
+                        doc="Gxz"),
                Constant('GG_ELEMENT_YZ', value='4', type=Type.INT32_T,
-                        doc="Gyz")                        
+                        doc="Gyz")
            ])]
 
 

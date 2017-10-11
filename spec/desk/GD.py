@@ -12,9 +12,9 @@ gx_defines = [
     Define('GD_STATUS',
            doc="Grid open mode",
            constants=[
-               Constant('GD_STATUS_READONLY', value='0', type=Type.INT32_T)                        ,
-               Constant('GD_STATUS_NEW', value='1', type=Type.INT32_T)                        ,
-               Constant('GD_STATUS_OLD', value='2', type=Type.INT32_T)                        
+               Constant('GD_STATUS_READONLY', value='0', type=Type.INT32_T),
+               Constant('GD_STATUS_NEW', value='1', type=Type.INT32_T),
+               Constant('GD_STATUS_OLD', value='2', type=Type.INT32_T)
            ])]
 
 

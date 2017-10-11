@@ -14,13 +14,13 @@ gx_defines = [
            doc="Detrending option",
            constants=[
                Constant('FFT_DETREND_NONE', value='0', type=Type.INT32_T,
-                        doc="no trend remove")                        ,
+                        doc="no trend remove"),
                Constant('FFT_DETREND_ENDS', value='1', type=Type.INT32_T,
-                        doc="detrend order 1 using only two end points")                        ,
+                        doc="detrend order 1 using only two end points"),
                Constant('FFT_DETREND_ALL', value='2', type=Type.INT32_T,
-                        doc="detrend order 1 using all data points")                        ,
+                        doc="detrend order 1 using all data points"),
                Constant('FFT_DETREND_MEAN', value='3', type=Type.INT32_T,
-                        doc="remove mean value")                        
+                        doc="remove mean value")
            ])]
 
 

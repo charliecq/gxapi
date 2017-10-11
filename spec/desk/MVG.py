@@ -8,55 +8,55 @@ gx_defines = [
     Define('MVG_DRAW',
            doc=":class:`MVG` draw define",
            constants=[
-               Constant('MVG_DRAW_POLYLINE', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_DRAW_POLYGON', value='1', type=Type.INT32_T)                        
+               Constant('MVG_DRAW_POLYLINE', value='0', type=Type.INT32_T),
+               Constant('MVG_DRAW_POLYGON', value='1', type=Type.INT32_T)
            ]),
 
     Define('MVG_GRID',
            doc=":class:`MVG` grid define",
            constants=[
-               Constant('MVG_GRID_DOT', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_GRID_LINE', value='1', type=Type.INT32_T)                        ,
-               Constant('MVG_GRID_CROSS', value='2', type=Type.INT32_T)                        
+               Constant('MVG_GRID_DOT', value='0', type=Type.INT32_T),
+               Constant('MVG_GRID_LINE', value='1', type=Type.INT32_T),
+               Constant('MVG_GRID_CROSS', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVG_LABEL_BOUND',
            doc=":class:`MVG` label bound define",
            constants=[
-               Constant('MVG_LABEL_BOUND_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_LABEL_BOUND_YES', value='1', type=Type.INT32_T)                        
+               Constant('MVG_LABEL_BOUND_NO', value='0', type=Type.INT32_T),
+               Constant('MVG_LABEL_BOUND_YES', value='1', type=Type.INT32_T)
            ]),
 
     Define('MVG_LABEL_JUST',
            doc=":class:`MVG` label justification define",
            constants=[
-               Constant('MVG_LABEL_JUST_TOP', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_LABEL_JUST_BOTTOM', value='1', type=Type.INT32_T)                        ,
-               Constant('MVG_LABEL_JUST_LEFT', value='2', type=Type.INT32_T)                        ,
-               Constant('MVG_LABEL_JUST_RIGHT', value='3', type=Type.INT32_T)                        
+               Constant('MVG_LABEL_JUST_TOP', value='0', type=Type.INT32_T),
+               Constant('MVG_LABEL_JUST_BOTTOM', value='1', type=Type.INT32_T),
+               Constant('MVG_LABEL_JUST_LEFT', value='2', type=Type.INT32_T),
+               Constant('MVG_LABEL_JUST_RIGHT', value='3', type=Type.INT32_T)
            ]),
 
     Define('MVG_LABEL_ORIENT',
            doc=":class:`MVG` label orientation",
            constants=[
-               Constant('MVG_LABEL_ORIENT_HORIZONTAL', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_LABEL_ORIENT_TOP_RIGHT', value='1', type=Type.INT32_T)                        ,
-               Constant('MVG_LABEL_ORIENT_TOP_LEFT', value='2', type=Type.INT32_T)                        
+               Constant('MVG_LABEL_ORIENT_HORIZONTAL', value='0', type=Type.INT32_T),
+               Constant('MVG_LABEL_ORIENT_TOP_RIGHT', value='1', type=Type.INT32_T),
+               Constant('MVG_LABEL_ORIENT_TOP_LEFT', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVG_SCALE',
            doc=":class:`MVG` scale define",
            constants=[
-               Constant('MVG_SCALE_LINEAR', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_SCALE_LOG', value='1', type=Type.INT32_T)                        ,
-               Constant('MVG_SCALE_LOGLINEAR', value='2', type=Type.INT32_T)                        
+               Constant('MVG_SCALE_LINEAR', value='0', type=Type.INT32_T),
+               Constant('MVG_SCALE_LOG', value='1', type=Type.INT32_T),
+               Constant('MVG_SCALE_LOGLINEAR', value='2', type=Type.INT32_T)
            ]),
 
     Define('MVG_WRAP',
            doc=":class:`MVG` wrap define",
            constants=[
-               Constant('MVG_WRAP_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('MVG_WRAP_YES', value='1', type=Type.INT32_T)                        
+               Constant('MVG_WRAP_NO', value='0', type=Type.INT32_T),
+               Constant('MVG_WRAP_YES', value='1', type=Type.INT32_T)
            ])]
 
 

@@ -12,8 +12,8 @@ gx_defines = [
     Define('FFT2_PG',
            doc="Pager Direction",
            constants=[
-               Constant('FFT2_PG_FORWARD', value='0', type=Type.INT32_T)                        ,
-               Constant('FFT2_PG_INVERSE', value='1', type=Type.INT32_T)                        
+               Constant('FFT2_PG_FORWARD', value='0', type=Type.INT32_T),
+               Constant('FFT2_PG_INVERSE', value='1', type=Type.INT32_T)
            ])]
 
 

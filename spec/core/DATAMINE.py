@@ -12,12 +12,12 @@ gx_defines = [
     Define('GIS_DMTYPE',
            doc="Datamine file types",
            constants=[
-               Constant('GIS_DMTYPE_STRING', value='2', type=Type.INT32_T)                        ,
-               Constant('GIS_DMTYPE_WIREFRAME_TR', value='8', type=Type.INT32_T)                        ,
-               Constant('GIS_DMTYPE_DTM', value='16', type=Type.INT32_T)                        ,
-               Constant('GIS_DMTYPE_BLOCKMODEL', value='32', type=Type.INT32_T)                        ,
-               Constant('GIS_DMTYPE_WIREFRAME_PT', value='64', type=Type.INT32_T)                        ,
-               Constant('GIS_DMTYPE_POINTDATA', value='1024', type=Type.INT32_T)                        
+               Constant('GIS_DMTYPE_STRING', value='2', type=Type.INT32_T),
+               Constant('GIS_DMTYPE_WIREFRAME_TR', value='8', type=Type.INT32_T),
+               Constant('GIS_DMTYPE_DTM', value='16', type=Type.INT32_T),
+               Constant('GIS_DMTYPE_BLOCKMODEL', value='32', type=Type.INT32_T),
+               Constant('GIS_DMTYPE_WIREFRAME_PT', value='64', type=Type.INT32_T),
+               Constant('GIS_DMTYPE_POINTDATA', value='1024', type=Type.INT32_T)
            ])]
 
 

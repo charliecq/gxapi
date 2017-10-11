@@ -11,16 +11,16 @@ gx_defines = [
            is_single_constant=True,
            doc=":class:`SEMPLOT` group class.",
            constants=[
-               Constant('SEMPLOT_GROUP_CLASS', value='Semplot', type=Type.STRING)                        
+               Constant('SEMPLOT_GROUP_CLASS', value='Semplot', type=Type.STRING)
            ]),
 
     Define('SEMPLOT_EXPORT',
            doc=":class:`SEMPLOT` export type selection.",
            constants=[
                Constant('SEMPLOT_EXPORT_NORMAL', value='0', type=Type.INT32_T,
-                        doc="Exports Sample info channels, oxides/ratios, totals, extra channels.")                        ,
+                        doc="Exports Sample info channels, oxides/ratios, totals, extra channels."),
                Constant('SEMPLOT_EXPORT_NOEXTRA', value='1', type=Type.INT32_T,
-                        doc="Exports Sample info, oxides/ratios, totals.")                        
+                        doc="Exports Sample info, oxides/ratios, totals.")
            ]),
 
     Define('SEMPLOT_EXT',
@@ -30,17 +30,17 @@ gx_defines = [
                         doc="""
                         Use for selection only. Selects both "Semplot" and ":class:`CHIMERA`" type
                         files when creating LSTs etc.
-                        """)                        ,
+                        """),
                Constant('SEMPLOT_EXT_SEMPLOT', value='1', type=Type.INT32_T,
                         doc="""
                         Read/write templates with extensions ".xyt", ".tri" and ".semtemplate"
                         Read/write overlays with extensions ".oly" and ".semoverlay"
-                        """)                        ,
+                        """),
                Constant('SEMPLOT_EXT_CHIMERA', value='2', type=Type.INT32_T,
                         doc="""
                         Read/write templates with extensions ".geosoft_template"
                         Read/write overlays with extensions ".geosoft_overlay"
-                        """)                        
+                        """)
            ]),
 
     Define('SEMPLOT_PLOT',
@@ -50,13 +50,13 @@ gx_defines = [
                         doc="""
                         Use for selection only. Selects both "XYPlot" and "TriPlot"
                         plots when creating LSTs etc.
-                        """)                        ,
+                        """),
                Constant('SEMPLOT_PLOT_XYPLOT', value='1', type=Type.INT32_T,
-                        doc="Select XY (Scatter) plot.")                        ,
+                        doc="Select XY (Scatter) plot."),
                Constant('SEMPLOT_PLOT_TRIPLOT', value='2', type=Type.INT32_T,
-                        doc="Select Tri (Triangular) plot.")                        ,
+                        doc="Select Tri (Triangular) plot."),
                Constant('SEMPLOT_PLOT_UNKNOWN', value='3', type=Type.INT32_T,
-                        doc="Returned as an error status from some functions.")                        
+                        doc="Returned as an error status from some functions.")
            ])]
 
 

@@ -12,66 +12,66 @@ gx_defines = [
            doc="Four forms",
            constants=[
                Constant('EDOC_PATH_FULL', value='0', type=Type.INT32_T,
-                        doc="d:\\directory\\file.gdb")                        ,
+                        doc="d:\\directory\\file.gdb"),
                Constant('EDOC_PATH_DIR', value='1', type=Type.INT32_T,
-                        doc="\\directory\\file.gdb")                        ,
+                        doc="\\directory\\file.gdb"),
                Constant('EDOC_PATH_NAME_EXT', value='2', type=Type.INT32_T,
-                        doc="file.gdb")                        ,
+                        doc="file.gdb"),
                Constant('EDOC_PATH_NAME', value='3', type=Type.INT32_T,
-                        doc="file")                        
+                        doc="file")
            ]),
 
     Define('EDOC_TYPE',
            doc="Avaialable generic document types",
            constants=[
                Constant('EDOC_TYPE_GMS3D', value='0', type=Type.INT32_T,
-                        doc=":class:`GMSYS` 3D Model")                        ,
+                        doc=":class:`GMSYS` 3D Model"),
                Constant('EDOC_TYPE_VOXEL', value='1', type=Type.INT32_T,
-                        doc="Voxel")                        ,
+                        doc="Voxel"),
                Constant('EDOC_TYPE_VOXEL_INVERSION', value='2', type=Type.INT32_T,
-                        doc="Voxel Inversion")                        ,
+                        doc="Voxel Inversion"),
                Constant('EDOC_TYPE_GMS2D', value='3', type=Type.INT32_T,
-                        doc=":class:`GMSYS` 2D Model")                        
+                        doc=":class:`GMSYS` 2D Model")
            ]),
 
     Define('EDOC_UNLOAD',
            doc="What type of prompt",
            constants=[
-               Constant('EDOC_UNLOAD_NO_PROMPT', value='0', type=Type.INT32_T)                        ,
-               Constant('EDOC_UNLOAD_PROMPT', value='1', type=Type.INT32_T)                        
+               Constant('EDOC_UNLOAD_NO_PROMPT', value='0', type=Type.INT32_T),
+               Constant('EDOC_UNLOAD_PROMPT', value='1', type=Type.INT32_T)
            ]),
 
     Define('EDOC_WINDOW_POSITION',
            doc="Window Positioning Options",
            constants=[
-               Constant('EDOC_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T)                        ,
-               Constant('EDOC_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)                        
+               Constant('EDOC_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T),
+               Constant('EDOC_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)
            ]),
 
     Define('EDOC_WINDOW_STATE',
            doc="Window State Options",
            constants=[
-               Constant('EDOC_WINDOW_RESTORE', value='0', type=Type.INT32_T)                        ,
-               Constant('EDOC_WINDOW_MINIMIZE', value='1', type=Type.INT32_T)                        ,
-               Constant('EDOC_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)                        
+               Constant('EDOC_WINDOW_RESTORE', value='0', type=Type.INT32_T),
+               Constant('EDOC_WINDOW_MINIMIZE', value='1', type=Type.INT32_T),
+               Constant('EDOC_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)
            ]),
 
     Define('GMS3D_MODELTYPE',
            doc="Avaialable model types",
            constants=[
                Constant('GMS3D_MODELTYPE_DEPTH', value='0', type=Type.INT32_T,
-                        doc="Depth Model")                        ,
+                        doc="Depth Model"),
                Constant('GMS3D_MODELTYPE_TIME', value='1', type=Type.INT32_T,
-                        doc="Time Model")                        
+                        doc="Time Model")
            ]),
 
     Define('GMS2D_MODELTYPE',
            doc="Avaialable model types",
            constants=[
                Constant('GMS2D_MODELTYPE_DEPTH', value='0', type=Type.INT32_T,
-                        doc="Depth Model")                        ,
+                        doc="Depth Model"),
                Constant('GMS2D_MODELTYPE_TIME', value='1', type=Type.INT32_T,
-                        doc="Time Model")                        
+                        doc="Time Model")
            ])]
 
 

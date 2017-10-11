@@ -8,16 +8,16 @@ gx_defines = [
     Define('DSEL_PICTURE_QUALITY',
            doc="Line Label Formats",
            constants=[
-               Constant('DSEL_PICTURE_QUALITY_DEFAULT', value='0', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_LOSSLESS', value='1', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_SEMILOSSY', value='2', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_LOSSY', value='3', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_NATIVE', value='4', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_ECW', value='5', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_JPG', value='6', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_PNG', value='7', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_BMP', value='8', type=Type.INT32_T)                        ,
-               Constant('DSEL_PICTURE_QUALITY_TIF', value='9', type=Type.INT32_T)                        
+               Constant('DSEL_PICTURE_QUALITY_DEFAULT', value='0', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_LOSSLESS', value='1', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_SEMILOSSY', value='2', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_LOSSY', value='3', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_NATIVE', value='4', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_ECW', value='5', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_JPG', value='6', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_PNG', value='7', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_BMP', value='8', type=Type.INT32_T),
+               Constant('DSEL_PICTURE_QUALITY_TIF', value='9', type=Type.INT32_T)
            ])]
 
 

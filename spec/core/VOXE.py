@@ -12,11 +12,11 @@ gx_defines = [
            doc="Voxel Evaluation modes",
            constants=[
                Constant('VOXE_EVAL_NEAR', value='0', type=Type.INT32_T,
-                        doc="Nearest value")                        ,
+                        doc="Nearest value"),
                Constant('VOXE_EVAL_INTERP', value='1', type=Type.INT32_T,
-                        doc="Linear Interpolation")                        ,
+                        doc="Linear Interpolation"),
                Constant('VOXE_EVAL_BEST', value='2', type=Type.INT32_T,
-                        doc="Best Interpolation")                        
+                        doc="Best Interpolation")
            ])]
 
 
@@ -24,7 +24,7 @@ gx_methods = {
     'Miscellaneous': [
 
         Method('Create_VOXE', module='geoengine.core', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a handle to an :class:`VOXE` object",
                return_type="VOXE",
                return_doc=":class:`VOXE` handle, terminates if creation fails",
@@ -43,7 +43,7 @@ gx_methods = {
                ]),
 
         Method('Profile_VOXE', module='geoengine.core', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Extract a profile of data along points provided.",
                return_type=Type.VOID,
                parameters = [
@@ -62,7 +62,7 @@ gx_methods = {
                ]),
 
         Method('rValue_VOXE', module='geoengine.core', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Get a value at a specific point",
                return_type=Type.DOUBLE,
                return_doc="Value at the point or DUMMY if not valid",
@@ -80,7 +80,7 @@ gx_methods = {
                ]),
 
         Method('Vector_VOXE', module='geoengine.core', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Extract a profile of data along a vector",
                return_type=Type.VOID,
                parameters = [

@@ -11,14 +11,14 @@ gx_defines = [
     Define('EUL3_RESULT',
            doc="Euler result types",
            constants=[
-               Constant('EUL3_RESULT_X', value='1', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_Y', value='2', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_DEPTH', value='3', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_BACKGROUND', value='4', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_DEPTHERROR', value='5', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_LOCATIONERROR', value='6', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_WINDOWX', value='7', type=Type.INT32_T)                        ,
-               Constant('EUL3_RESULT_WINDOWY', value='8', type=Type.INT32_T)                        
+               Constant('EUL3_RESULT_X', value='1', type=Type.INT32_T),
+               Constant('EUL3_RESULT_Y', value='2', type=Type.INT32_T),
+               Constant('EUL3_RESULT_DEPTH', value='3', type=Type.INT32_T),
+               Constant('EUL3_RESULT_BACKGROUND', value='4', type=Type.INT32_T),
+               Constant('EUL3_RESULT_DEPTHERROR', value='5', type=Type.INT32_T),
+               Constant('EUL3_RESULT_LOCATIONERROR', value='6', type=Type.INT32_T),
+               Constant('EUL3_RESULT_WINDOWX', value='7', type=Type.INT32_T),
+               Constant('EUL3_RESULT_WINDOWY', value='8', type=Type.INT32_T)
            ])]
 
 

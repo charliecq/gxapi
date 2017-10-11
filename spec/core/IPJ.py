@@ -23,88 +23,88 @@ gx_defines = [
            doc="3D Flags",
            constants=[
                Constant('IPJ_3D_FLAG_NONE', value='0', type=Type.INT32_T,
-                        doc="Standard")                        ,
+                        doc="Standard"),
                Constant('IPJ_3D_FLAG_INVERTANGLES', value='1', type=Type.INT32_T,
-                        doc="Invert angle rotation during matrix creation")                        ,
+                        doc="Invert angle rotation during matrix creation"),
                Constant('IPJ_3D_FLAG_INVERTZ', value='2', type=Type.INT32_T,
-                        doc="Invert the Z plane to make up down.")                        ,
+                        doc="Invert the Z plane to make up down."),
                Constant('IPJ_3D_FLAG_ORDER_ROTATION', value='4', type=Type.INT32_T,
-                        doc="Apply rotations in a specific order, determined by pdParm[7]")                        
+                        doc="Apply rotations in a specific order, determined by pdParm[7]")
            ]),
 
     Define('IPJ_3D_ROTATE',
            doc="3D Rotation Mode",
            constants=[
-               Constant('IPJ_3D_ROTATE_DEFAULT', value='0', type=Type.INT32_T)                        ,
-               Constant('IPJ_3D_ROTATE_XYZ', value='1', type=Type.INT32_T)                        ,
-               Constant('IPJ_3D_ROTATE_XZY', value='2', type=Type.INT32_T)                        ,
-               Constant('IPJ_3D_ROTATE_YXZ', value='3', type=Type.INT32_T)                        ,
-               Constant('IPJ_3D_ROTATE_YZX', value='4', type=Type.INT32_T)                        ,
-               Constant('IPJ_3D_ROTATE_ZXY', value='5', type=Type.INT32_T)                        ,
-               Constant('IPJ_3D_ROTATE_ZYX', value='6', type=Type.INT32_T)                        
+               Constant('IPJ_3D_ROTATE_DEFAULT', value='0', type=Type.INT32_T),
+               Constant('IPJ_3D_ROTATE_XYZ', value='1', type=Type.INT32_T),
+               Constant('IPJ_3D_ROTATE_XZY', value='2', type=Type.INT32_T),
+               Constant('IPJ_3D_ROTATE_YXZ', value='3', type=Type.INT32_T),
+               Constant('IPJ_3D_ROTATE_YZX', value='4', type=Type.INT32_T),
+               Constant('IPJ_3D_ROTATE_ZXY', value='5', type=Type.INT32_T),
+               Constant('IPJ_3D_ROTATE_ZYX', value='6', type=Type.INT32_T)
            ]),
 
     Define('IPJ_CSP',
            doc="Projection Setting",
            constants=[
-               Constant('IPJ_CSP_SCALE', value='0', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_FALSEEAST', value='1', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_FALSENORTH', value='2', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_LATORIGIN', value='3', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_LONORIGIN', value='4', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_PARALLEL_1', value='5', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_PARALLEL_2', value='6', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_AZIMUTH', value='7', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_ANGLE', value='8', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_POINTLAT_1', value='9', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_POINTLON_1', value='10', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_POINTLAT_2', value='11', type=Type.INT32_T)                        ,
-               Constant('IPJ_CSP_POINTLON_2', value='12', type=Type.INT32_T)                        
+               Constant('IPJ_CSP_SCALE', value='0', type=Type.INT32_T),
+               Constant('IPJ_CSP_FALSEEAST', value='1', type=Type.INT32_T),
+               Constant('IPJ_CSP_FALSENORTH', value='2', type=Type.INT32_T),
+               Constant('IPJ_CSP_LATORIGIN', value='3', type=Type.INT32_T),
+               Constant('IPJ_CSP_LONORIGIN', value='4', type=Type.INT32_T),
+               Constant('IPJ_CSP_PARALLEL_1', value='5', type=Type.INT32_T),
+               Constant('IPJ_CSP_PARALLEL_2', value='6', type=Type.INT32_T),
+               Constant('IPJ_CSP_AZIMUTH', value='7', type=Type.INT32_T),
+               Constant('IPJ_CSP_ANGLE', value='8', type=Type.INT32_T),
+               Constant('IPJ_CSP_POINTLAT_1', value='9', type=Type.INT32_T),
+               Constant('IPJ_CSP_POINTLON_1', value='10', type=Type.INT32_T),
+               Constant('IPJ_CSP_POINTLAT_2', value='11', type=Type.INT32_T),
+               Constant('IPJ_CSP_POINTLON_2', value='12', type=Type.INT32_T)
            ]),
 
     Define('IPJ_NAME',
            doc="Project Name",
            constants=[
                Constant('IPJ_NAME_PCS', value='0', type=Type.INT32_T,
-                        doc="projected coordinate system name")                        ,
+                        doc="projected coordinate system name"),
                Constant('IPJ_NAME_PROJECTION', value='1', type=Type.INT32_T,
-                        doc="projection name")                        ,
+                        doc="projection name"),
                Constant('IPJ_NAME_METHOD', value='2', type=Type.INT32_T,
-                        doc="projection method name")                        ,
+                        doc="projection method name"),
                Constant('IPJ_NAME_DATUM', value='3', type=Type.INT32_T,
-                        doc="datum name")                        ,
+                        doc="datum name"),
                Constant('IPJ_NAME_ELLIPSOID', value='4', type=Type.INT32_T,
-                        doc="ellipsoid name")                        ,
+                        doc="ellipsoid name"),
                Constant('IPJ_NAME_LDATUM', value='5', type=Type.INT32_T,
-                        doc="local datum name")                        ,
+                        doc="local datum name"),
                Constant('IPJ_NAME_UNIT_ABBR', value='6', type=Type.INT32_T,
-                        doc="unit abbreviation")                        ,
+                        doc="unit abbreviation"),
                Constant('IPJ_NAME_UNIT_FULL', value='7', type=Type.INT32_T,
-                        doc="full unit name")                        ,
+                        doc="full unit name"),
                Constant('IPJ_NAME_TYPE', value='8', type=Type.INT32_T,
-                        doc="projection type description")                        ,
+                        doc="projection type description"),
                Constant('IPJ_NAME_LLDATUM', value='9', type=Type.INT32_T,
-                        doc="datum transform table name")                        ,
+                        doc="datum transform table name"),
                Constant('IPJ_NAME_METHOD_PARMS', value='10', type=Type.INT32_T,
-                        doc="projection method parameters in GXF order")                        ,
+                        doc="projection method parameters in GXF order"),
                Constant('IPJ_NAME_METHOD_LABEL', value='11', type=Type.INT32_T,
-                        doc="projection method parameters labels")                        ,
+                        doc="projection method parameters labels"),
                Constant('IPJ_NAME_DATUM_PARMS', value='12', type=Type.INT32_T,
-                        doc="datum parameters (major axis, flattening, prime meridian)")                        ,
+                        doc="datum parameters (major axis, flattening, prime meridian)"),
                Constant('IPJ_NAME_LDATUM_PARMS', value='13', type=Type.INT32_T,
                         doc="""
                         local datum parameters (dX,dY,dZ,rX,rY,rZ,scale)
                         See GXF revision 3 for parameter list order and
                         specifications.
-                        """)                        ,
+                        """),
                Constant('IPJ_NAME_GEOID', value='14', type=Type.INT32_T,
-                        doc="geoid name if known")                        ,
+                        doc="geoid name if known"),
                Constant('IPJ_NAME_LDATUMDESCRIPTION', value='15', type=Type.INT32_T,
-                        doc="local datum description")                        ,
+                        doc="local datum description"),
                Constant('IPJ_NAME_METHOD_PARMS_NATIVE', value='16', type=Type.INT32_T,
-                        doc="projection method parameters in GXF order (Native units for eastings/northings)")                        ,
+                        doc="projection method parameters in GXF order (Native units for eastings/northings)"),
                Constant('IPJ_NAME_ORIENTATION_PARMS', value='17', type=Type.INT32_T,
-                        doc="orientation parameters")                        
+                        doc="orientation parameters")
            ]),
 
     Define('IPJ_ORIENT',
@@ -114,55 +114,55 @@ gx_defines = [
                         doc="""
                         no special orientation - plan view. All views in maps
                         created before v5.1.3 will return this value.
-                        """)                        ,
+                        """),
                Constant('IPJ_ORIENT_PLAN', value='1', type=Type.INT32_T,
                         doc="""
                         A plan view with a reference elevation and
                         optional rotation.
-                        """)                        ,
+                        """),
                Constant('IPJ_ORIENT_SECTION', value='2', type=Type.INT32_T,
                         doc="""
                         Has an azimuth and swing.
                         The section view projects all plotted objects
                         HORIZONTALLY onto the viewing plan in order to
                         preserve elevations, even if the section has a swing.
-                        """)                        ,
+                        """),
                Constant('IPJ_ORIENT_SECTION_NORMAL', value='5', type=Type.INT32_T,
                         doc="""
                         Same as :def_val:`IPJ_ORIENT_SECTION`, but the projection is perpendicular
                         to the section, not horizonatl, so elevatins are not preserved
                         on swung sections.
-                        """)                        ,
+                        """),
                Constant('IPJ_ORIENT_DEPTH_SECTION', value='3', type=Type.INT32_T,
                         doc="""
                         This simple section has no azimuth or swing defined;
                         only the depth is of importance, and it is output as
                         the Y parameter, increasing downward. Used (for instance)
                         for strip logs in Wholeplot.
-                        """)                        ,
+                        """),
                Constant('IPJ_ORIENT_3D', value='4', type=Type.INT32_T,
-                        doc="A 3D rotation/scaling/translation orientation")                        ,
+                        doc="A 3D rotation/scaling/translation orientation"),
                Constant('IPJ_ORIENT_3D_MATRIX', value='7', type=Type.INT32_T,
-                        doc="A 3D matrix orientation")                        ,
+                        doc="A 3D matrix orientation"),
                Constant('IPJ_ORIENT_SECTION_CROOKED', value='6', type=Type.INT32_T,
                         doc="""
                         This is a vertical section that follows a
                         curving path, like a river or survey traverse.
                         The horizontal section location is the distance along
                         the path, while the vertical axis gives the elevation.
-                        """)                        
+                        """)
            ]),
 
     Define('IPJ_PARM_LST',
            doc="Projection List",
            constants=[
-               Constant('IPJ_PARM_LST_COORDINATESYSTEM', value='0', type=Type.INT32_T)                        ,
-               Constant('IPJ_PARM_LST_DATUM', value='1', type=Type.INT32_T)                        ,
-               Constant('IPJ_PARM_LST_PROJECTION', value='2', type=Type.INT32_T)                        ,
-               Constant('IPJ_PARM_LST_UNITS', value='3', type=Type.INT32_T)                        ,
-               Constant('IPJ_PARM_LST_LOCALDATUMDESCRIPTION', value='4', type=Type.INT32_T)                        ,
-               Constant('IPJ_PARM_LST_LOCALDATUMNAME', value='5', type=Type.INT32_T)                        ,
-               Constant('IPJ_PARM_LST_UNITSDESCRIPTION', value='6', type=Type.INT32_T)                        
+               Constant('IPJ_PARM_LST_COORDINATESYSTEM', value='0', type=Type.INT32_T),
+               Constant('IPJ_PARM_LST_DATUM', value='1', type=Type.INT32_T),
+               Constant('IPJ_PARM_LST_PROJECTION', value='2', type=Type.INT32_T),
+               Constant('IPJ_PARM_LST_UNITS', value='3', type=Type.INT32_T),
+               Constant('IPJ_PARM_LST_LOCALDATUMDESCRIPTION', value='4', type=Type.INT32_T),
+               Constant('IPJ_PARM_LST_LOCALDATUMNAME', value='5', type=Type.INT32_T),
+               Constant('IPJ_PARM_LST_UNITSDESCRIPTION', value='6', type=Type.INT32_T)
            ]),
 
     Define('IPJ_TYPE',
@@ -173,34 +173,34 @@ gx_defines = [
                         Read from a PRJ file:
                         string 1 - Source file name
                         string 2 and 3 are not used.
-                        """)                        ,
+                        """),
                Constant('IPJ_TYPE_PCS', value='1', type=Type.INT32_T,
                         doc="""
                         Projected coordinate system:
                         string 1 - POSC PCS name
                         string 2 - POSC Datum transform name
                         string 3 - not used.
-                        """)                        ,
+                        """),
                Constant('IPJ_TYPE_GCS', value='2', type=Type.INT32_T,
                         doc="""
                         Geographic coordinate system:
                         string 1 - POSC Datum name
                         string 2 - POSC Datum transform name
                         string 3 - not used.
-                        """)                        ,
+                        """),
                Constant('IPJ_TYPE_ANY', value='3', type=Type.INT32_T,
                         doc="""
                         Custom projection
                         string 1 - POSC Datum name
                         string 2 - POSC Datum transform name
                         string 3 - POSC Transform, "" if geographic
-                        """)                        ,
+                        """),
                Constant('IPJ_TYPE_NONE', value='4', type=Type.INT32_T,
                         doc="""
                         Not used for :func:`Read_IPJ`.  This is used for
                         :func:`iSourceType_IPJ` to indicate no projection.
-                        """)                        ,
-               Constant('IPJ_TYPE_WRP', value='5', type=Type.INT32_T)                        ,
+                        """),
+               Constant('IPJ_TYPE_WRP', value='5', type=Type.INT32_T),
                Constant('IPJ_TYPE_TEST', value='6', type=Type.INT32_T,
                         doc="""
                         tests the projection tables for internal consistency
@@ -210,37 +210,37 @@ gx_defines = [
                         ESRI coordinate string per line.  Lines that
                         start with '#' are skipped.
                         string 3 - not currently used
-                        """)                        
+                        """)
            ]),
 
     Define('IPJ_UNIT',
            doc="Projection Unit Type",
            constants=[
-               Constant('IPJ_UNIT_ABBREVIATION', value='0', type=Type.INT32_T)                        ,
-               Constant('IPJ_UNIT_FULLNAME', value='1', type=Type.INT32_T)                        
+               Constant('IPJ_UNIT_ABBREVIATION', value='0', type=Type.INT32_T),
+               Constant('IPJ_UNIT_FULLNAME', value='1', type=Type.INT32_T)
            ]),
 
     Define('IPJ_WARP',
            doc="Warp (Transformation) type",
            constants=[
                Constant('IPJ_WARP_MATRIX', value='-1', type=Type.INT32_T,
-                        doc="Matrix Warp")                        ,
+                        doc="Matrix Warp"),
                Constant('IPJ_WARP_NONE', value='0', type=Type.INT32_T,
-                        doc="no warp")                        ,
+                        doc="no warp"),
                Constant('IPJ_WARP_TRANS1', value='1', type=Type.INT32_T,
-                        doc="translate only (needs 1 point)")                        ,
+                        doc="translate only (needs 1 point)"),
                Constant('IPJ_WARP_TRANS2', value='2', type=Type.INT32_T,
-                        doc="translate, rotate, normal scale (needs 2 pts)")                        ,
+                        doc="translate, rotate, normal scale (needs 2 pts)"),
                Constant('IPJ_WARP_TRANS3', value='3', type=Type.INT32_T,
-                        doc="translate, rotate, scale X and Y (needs 3 pts or more, least-square fit)")                        ,
+                        doc="translate, rotate, scale X and Y (needs 3 pts or more, least-square fit)"),
                Constant('IPJ_WARP_QUAD', value='4', type=Type.INT32_T,
-                        doc="quadrilateral warp (needs 4 points)")                        ,
+                        doc="quadrilateral warp (needs 4 points)"),
                Constant('IPJ_WARP_MULTIPOINT', value='5', type=Type.INT32_T,
-                        doc="multipoint warp (needs at least 3 points)")                        ,
+                        doc="multipoint warp (needs at least 3 points)"),
                Constant('IPJ_WARP_LOG', value='6', type=Type.INT32_T,
-                        doc="convert from linear to log coords in X and/or Y")                        ,
+                        doc="convert from linear to log coords in X and/or Y"),
                Constant('IPJ_WARP_MULTIPOINT_Y', value='7', type=Type.INT32_T,
-                        doc="multipoint warp in Y only (needs at least 3 points)")                        
+                        doc="multipoint warp in Y only (needs at least 3 points)")
            ])]
 
 
@@ -891,6 +891,31 @@ gx_methods = {
                              doc="name returned"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="maximum name size")
+               ]),
+
+        Method('SetVCS_IPJ', module='geoengine.core', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Set the Verical Coordinate System in the :class:`IPJ` name string",
+               notes="""
+               The vertical coordinate system (vcs) describes the datum used for vertical coordinates. The vcs name, if
+               			known, will appear in square brackets as part of the coordinate system name.
+               
+               			Examples:
+                              "WGS 84 [geoid]"
+                              "WGS 84 / UTM zone 12S" - the vcs is not known.
+               			   "WGS 84 / UTM zone 12S [NAVD88]"
+               
+                           Valid inputs:
+                             "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
+                             ""                - Clears the vcs
+               """,
+               return_type=Type.VOID,
+               return_doc="Nothing",
+               parameters = [
+                   Parameter('p1', type="IPJ",
+                             doc=":class:`IPJ` object"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="new name (See Valid inputs above).")
                ]),
 
         Method('iGetOrientation_IPJ', module='geoengine.core', version='5.1.4',

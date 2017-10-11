@@ -13,50 +13,50 @@ gx_defines = [
     Define('EM_ERR',
            doc="Error Scaling",
            constants=[
-               Constant('EM_ERR_UNSCALED', value='0', type=Type.INT32_T)                        ,
-               Constant('EM_ERR_LOGSCALING', value='1', type=Type.INT32_T)                        
+               Constant('EM_ERR_UNSCALED', value='0', type=Type.INT32_T),
+               Constant('EM_ERR_LOGSCALING', value='1', type=Type.INT32_T)
            ]),
 
     Define('EM_INV',
            doc="Type of Inversion",
            constants=[
-               Constant('EM_INV_INPHASE', value='0', type=Type.INT32_T)                        ,
-               Constant('EM_INV_QUADRATURE', value='1', type=Type.INT32_T)                        ,
-               Constant('EM_INV_BOTH', value='2', type=Type.INT32_T)                        
+               Constant('EM_INV_INPHASE', value='0', type=Type.INT32_T),
+               Constant('EM_INV_QUADRATURE', value='1', type=Type.INT32_T),
+               Constant('EM_INV_BOTH', value='2', type=Type.INT32_T)
            ]),
 
     Define('EMPLATE_DOMAIN',
            doc="Type of Domain",
            constants=[
-               Constant('EMPLATE_FREQUENCY', value='1', type=Type.INT32_T)                        ,
-               Constant('EMPLATE_TIME', value='9', type=Type.INT32_T)                        
+               Constant('EMPLATE_FREQUENCY', value='1', type=Type.INT32_T),
+               Constant('EMPLATE_TIME', value='9', type=Type.INT32_T)
            ]),
 
     Define('EMPLATE_TX',
            doc="Orientation",
            constants=[
-               Constant('EMPLATE_TX_X', value='1', type=Type.INT32_T)                        ,
-               Constant('EMPLATE_TX_Y', value='2', type=Type.INT32_T)                        ,
-               Constant('EMPLATE_TX_Z', value='3', type=Type.INT32_T)                        
+               Constant('EMPLATE_TX_X', value='1', type=Type.INT32_T),
+               Constant('EMPLATE_TX_Y', value='2', type=Type.INT32_T),
+               Constant('EMPLATE_TX_Z', value='3', type=Type.INT32_T)
            ]),
 
     Define('GU_DAARC500_DATATYPE',
            doc="Supported serial data types for import",
            constants=[
-               Constant('GU_DAARC500_UNKNOWN', value='0', type=Type.INT32_T)                        ,
-               Constant('GU_DAARC500_GENERIC_ASCII', value='1', type=Type.INT32_T)                        ,
-               Constant('GU_DAARC500_GPS', value='2', type=Type.INT32_T)                        ,
-               Constant('GU_DAARC500_GR820_256D', value='3', type=Type.INT32_T)                        ,
-               Constant('GU_DAARC500_GR820_256DU', value='4', type=Type.INT32_T)                        ,
-               Constant('GU_DAARC500_GR820_512DU', value='5', type=Type.INT32_T)                        ,
-               Constant('GU_DAARC500_NAV', value='6', type=Type.INT32_T)                        
+               Constant('GU_DAARC500_UNKNOWN', value='0', type=Type.INT32_T),
+               Constant('GU_DAARC500_GENERIC_ASCII', value='1', type=Type.INT32_T),
+               Constant('GU_DAARC500_GPS', value='2', type=Type.INT32_T),
+               Constant('GU_DAARC500_GR820_256D', value='3', type=Type.INT32_T),
+               Constant('GU_DAARC500_GR820_256DU', value='4', type=Type.INT32_T),
+               Constant('GU_DAARC500_GR820_512DU', value='5', type=Type.INT32_T),
+               Constant('GU_DAARC500_NAV', value='6', type=Type.INT32_T)
            ]),
 
     Define('PEAKEULER_XY',
            doc="Fit Options",
            constants=[
-               Constant('PEAKEULER_XY_NOFIT', value='0', type=Type.INT32_T)                        ,
-               Constant('PEAKEULER_XY_FIT', value='1', type=Type.INT32_T)                        
+               Constant('PEAKEULER_XY_NOFIT', value='0', type=Type.INT32_T),
+               Constant('PEAKEULER_XY_FIT', value='1', type=Type.INT32_T)
            ])]
 
 

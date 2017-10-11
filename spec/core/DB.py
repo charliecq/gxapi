@@ -24,13 +24,13 @@ gx_defines = [
            is_single_constant=True,
            doc="Activity Blob",
            constants=[
-               Constant('DB_ACTIVITY_BLOB', value='OE.DB_ACTIVITY_LOG', type=Type.STRING)                        
+               Constant('DB_ACTIVITY_BLOB', value='OE.DB_ACTIVITY_LOG', type=Type.STRING)
            ]),
 
     Define('DB_CATEGORY_BLOB',
            doc="Blob Categories",
            constants=[
-               Constant('DB_CATEGORY_BLOB_NORMAL', value='0', type=Type.INT32_T)                        
+               Constant('DB_CATEGORY_BLOB_NORMAL', value='0', type=Type.INT32_T)
            ]),
 
     Define('DB_CATEGORY_CHAN',
@@ -251,7 +251,7 @@ gx_defines = [
                Constant('DB_ARRAY_BASETYPE_ELEVATIONS', value='4', type=Type.INT32_T),
                Constant('DB_ARRAY_BASETYPE_DEPTHS', value='5', type=Type.INT32_T),
                Constant('DB_ARRAY_BASETYPE_VELOCITIES', value='6', type=Type.INT32_T),
-               Constant('DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS', value='7', type=Type.INT32_T)                        
+               Constant('DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS', value='7', type=Type.INT32_T)
            ]),
 
     Define('NULLSYMB',
@@ -259,7 +259,7 @@ gx_defines = [
            is_single_constant=True,
            doc="Database Null",
            constants=[
-               Constant('NULLSYMB', value='-1', type=Type.INT32_T)                        
+               Constant('NULLSYMB', value='-1', type=Type.INT32_T)
            ])]
 
 
@@ -906,7 +906,7 @@ gx_methods = {
                ]),
 
         Method('PutVaChanVV_DB', module='geoengine.core', version='5.1.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Place the contents of a :class:`VV` at a specific part of a channel.",
                notes="""
                If a :class:`VA` channel is specified, then element [0] of this

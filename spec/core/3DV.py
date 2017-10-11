@@ -8,8 +8,8 @@ gx_defines = [
     Define('GEO3DV_OPEN',
            doc="Open Modes",
            constants=[
-               Constant('GEO3DV_MVIEW_READ', value='0', type=Type.INT32_T)                        ,
-               Constant('GEO3DV_MVIEW_WRITEOLD', value='2', type=Type.INT32_T)                        
+               Constant('GEO3DV_MVIEW_READ', value='0', type=Type.INT32_T),
+               Constant('GEO3DV_MVIEW_WRITEOLD', value='2', type=Type.INT32_T)
            ])]
 
 

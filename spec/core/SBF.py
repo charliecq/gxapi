@@ -17,22 +17,22 @@ gx_defines = [
            doc=":class:`SBF` Open defines",
            constants=[
                Constant('SBF_READ', value='0', type=Type.INT32_T,
-                        doc="Read only")                        ,
+                        doc="Read only"),
                Constant('SBF_READWRITE_NEW', value='1', type=Type.INT32_T,
-                        doc="Read/write - erases structured file")                        ,
+                        doc="Read/write - erases structured file"),
                Constant('SBF_READWRITE_OLD', value='2', type=Type.INT32_T,
-                        doc="Read/write - open and append onto pre-existing structured file")                        
+                        doc="Read/write - open and append onto pre-existing structured file")
            ]),
 
     Define('SBF_TYPE',
            doc=":class:`SBF` Object type defines",
            constants=[
                Constant('SBF_TYPE_DIRS', value='1', type=Type.INT32_T,
-                        doc="Embedded directory names")                        ,
+                        doc="Embedded directory names"),
                Constant('SBF_TYPE_FILES', value='2', type=Type.INT32_T,
-                        doc="Embedded file names")                        ,
+                        doc="Embedded file names"),
                Constant('SBF_TYPE_BOTH', value='3', type=Type.INT32_T,
-                        doc="Embedded file and directory names")                        
+                        doc="Embedded file and directory names")
            ])]
 
 

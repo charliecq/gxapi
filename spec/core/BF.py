@@ -14,46 +14,46 @@ gx_defines = [
            doc="Byte order for read/write",
            constants=[
                Constant('BF_BYTEORDER_LSB', value='256', type=Type.INT32_T,
-                        doc="Least significant byte first (Intel, Windows)")                        ,
+                        doc="Least significant byte first (Intel, Windows)"),
                Constant('BF_BYTEORDER_MSB', value='512', type=Type.INT32_T,
-                        doc="Most significant byte first (Mororola, Sun)")                        
+                        doc="Most significant byte first (Mororola, Sun)")
            ]),
 
     Define('BF_CLOSE',
            doc="Close Flags",
            constants=[
-               Constant('BF_KEEP', value='0', type=Type.INT32_T)                        ,
-               Constant('BF_DELETE', value='1', type=Type.INT32_T)                        
+               Constant('BF_KEEP', value='0', type=Type.INT32_T),
+               Constant('BF_DELETE', value='1', type=Type.INT32_T)
            ]),
 
     Define('BF_ENCODE',
            doc="The way a string is encoded",
            constants=[
                Constant('BF_ENCODE_ANSI', value='0', type=Type.INT32_T,
-                        doc="String is stored as ANSI code page")                        ,
+                        doc="String is stored as ANSI code page"),
                Constant('BF_ENCODE_UTF8', value='1', type=Type.INT32_T,
-                        doc="String is stored as :def:`UTF8`")                        
+                        doc="String is stored as :def:`UTF8`")
            ]),
 
     Define('BF_OPEN_MODE',
            doc="Open Status",
            constants=[
                Constant('BF_READ', value='0', type=Type.INT32_T,
-                        doc="Read only")                        ,
+                        doc="Read only"),
                Constant('BF_READWRITE_NEW', value='1', type=Type.INT32_T,
-                        doc="erases existing file")                        ,
+                        doc="erases existing file"),
                Constant('BF_READWRITE_OLD', value='2', type=Type.INT32_T,
-                        doc="file must pre-exist")                        ,
+                        doc="file must pre-exist"),
                Constant('BF_READWRITE_APP', value='4', type=Type.INT32_T,
-                        doc="open and append onto pre-existing file (cannot be read from)")                        
+                        doc="open and append onto pre-existing file (cannot be read from)")
            ]),
 
     Define('BF_SEEK',
            doc="Seek Location",
            constants=[
-               Constant('BF_SEEK_START', value='0', type=Type.INT32_T)                        ,
-               Constant('BF_SEEK_CURRENT', value='1', type=Type.INT32_T)                        ,
-               Constant('BF_SEEK_EOF', value='2', type=Type.INT32_T)                        
+               Constant('BF_SEEK_START', value='0', type=Type.INT32_T),
+               Constant('BF_SEEK_CURRENT', value='1', type=Type.INT32_T),
+               Constant('BF_SEEK_EOF', value='2', type=Type.INT32_T)
            ])]
 
 

@@ -49,39 +49,39 @@ gx_defines = [
            doc="Four forms",
            constants=[
                Constant('EMAPTEMPLATE_PATH_FULL', value='0', type=Type.INT32_T,
-                        doc="d:\\directory\\file.gdb")                        ,
+                        doc="d:\\directory\\file.gdb"),
                Constant('EMAPTEMPLATE_PATH_DIR', value='1', type=Type.INT32_T,
-                        doc="\\directory\\file.gdb")                        ,
+                        doc="\\directory\\file.gdb"),
                Constant('EMAPTEMPLATE_PATH_NAME_EXT', value='2', type=Type.INT32_T,
-                        doc="file.gdb")                        ,
+                        doc="file.gdb"),
                Constant('EMAPTEMPLATE_PATH_NAME', value='3', type=Type.INT32_T,
-                        doc="file")                        
+                        doc="file")
            ]),
 
     Define('EMAPTEMPLATE_TRACK',
            doc="Tracking Options",
            constants=[
                Constant('EMAPTEMPLATE_TRACK_ERASE', value='1', type=Type.INT32_T,
-                        doc="Erase Object after you return?")                        ,
+                        doc="Erase Object after you return?"),
                Constant('EMAPTEMPLATE_TRACK_RMENU', value='2', type=Type.INT32_T,
-                        doc="Allow use of right-menu")                        ,
+                        doc="Allow use of right-menu"),
                Constant('EMAPTEMPLATE_TRACK_CYCLE', value='4', type=Type.INT32_T,
-                        doc="If user holds down left-mouse, will return many times")                        
+                        doc="If user holds down left-mouse, will return many times")
            ]),
 
     Define('EMAPTEMPLATE_WINDOW_POSITION',
            doc="Window Positioning Options",
            constants=[
-               Constant('EMAPTEMPLATE_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAPTEMPLATE_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)                        
+               Constant('EMAPTEMPLATE_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T),
+               Constant('EMAPTEMPLATE_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)
            ]),
 
     Define('EMAPTEMPLATE_WINDOW_STATE',
            doc="Window State Options",
            constants=[
-               Constant('EMAPTEMPLATE_WINDOW_RESTORE', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAPTEMPLATE_WINDOW_MINIMIZE', value='1', type=Type.INT32_T)                        ,
-               Constant('EMAPTEMPLATE_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)                        
+               Constant('EMAPTEMPLATE_WINDOW_RESTORE', value='0', type=Type.INT32_T),
+               Constant('EMAPTEMPLATE_WINDOW_MINIMIZE', value='1', type=Type.INT32_T),
+               Constant('EMAPTEMPLATE_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)
            ])]
 
 

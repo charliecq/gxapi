@@ -12,153 +12,153 @@ gx_defines = [
     Define('QC_CRITERION',
            doc="Criterion",
            constants=[
-               Constant('QC_CRITERION_1', value='0', type=Type.INT32_T)                        ,
-               Constant('QC_CRITERION_2', value='1', type=Type.INT32_T)                        ,
-               Constant('QC_CRITERION_12', value='2', type=Type.INT32_T)                        
+               Constant('QC_CRITERION_1', value='0', type=Type.INT32_T),
+               Constant('QC_CRITERION_2', value='1', type=Type.INT32_T),
+               Constant('QC_CRITERION_12', value='2', type=Type.INT32_T)
            ]),
 
     Define('TEM_ARRAY',
            doc="Array Type",
            constants=[
-               Constant('TEM_ARRAY_VERTICALSOUNDING', value='0', type=Type.INT32_T)                        ,
-               Constant('TEM_ARRAY_PROFILING', value='1', type=Type.INT32_T)                        ,
-               Constant('TEM_ARRAY_BOREHOLE', value='2', type=Type.INT32_T)                        
+               Constant('TEM_ARRAY_VERTICALSOUNDING', value='0', type=Type.INT32_T),
+               Constant('TEM_ARRAY_PROFILING', value='1', type=Type.INT32_T),
+               Constant('TEM_ARRAY_BOREHOLE', value='2', type=Type.INT32_T)
            ]),
 
     Define('VV_DUP',
            doc="Duplicate handling mode",
            constants=[
                Constant('VV_DUP_AVERAGE', value='0', type=Type.INT32_T,
-                        doc="average numeric values (for strings, same as :def_val:`VV_DUP_1`)")                        ,
+                        doc="average numeric values (for strings, same as :def_val:`VV_DUP_1`)"),
                Constant('VV_DUP_1', value='1', type=Type.INT32_T,
-                        doc="Use first value of the pair")                        ,
+                        doc="Use first value of the pair"),
                Constant('VV_DUP_2', value='2', type=Type.INT32_T,
-                        doc="Use second value of the pair")                        ,
+                        doc="Use second value of the pair"),
                Constant('VV_DUP_DUMMY', value='3', type=Type.INT32_T,
-                        doc="Set to dummy")                        ,
+                        doc="Set to dummy"),
                Constant('VV_DUP_SAMPLE', value='4', type=Type.INT32_T,
-                        doc='Set to "3" (cannot use with string data :class:`VV`)')                        
+                        doc='Set to "3" (cannot use with string data :class:`VV`)')
            ]),
 
     Define('VV_XYDUP',
            doc="Sample handling",
            constants=[
-               Constant('VV_XYDUP_AVERAGE', value='0', type=Type.INT32_T)                        ,
-               Constant('VV_XYDUP_SUM', value='1', type=Type.INT32_T)                        
+               Constant('VV_XYDUP_AVERAGE', value='0', type=Type.INT32_T),
+               Constant('VV_XYDUP_SUM', value='1', type=Type.INT32_T)
            ]),
 
     Define('VVU_CASE',
            doc="String case handling",
            constants=[
-               Constant('VVU_CASE_TOLERANT', value='0', type=Type.INT32_T)                        ,
-               Constant('VVU_CASE_SENSITIVE', value='1', type=Type.INT32_T)                        
+               Constant('VVU_CASE_TOLERANT', value='0', type=Type.INT32_T),
+               Constant('VVU_CASE_SENSITIVE', value='1', type=Type.INT32_T)
            ]),
 
     Define('VVU_CLIP',
            doc="Type of clipping",
            constants=[
                Constant('VVU_CLIP_DUMMY', value='0', type=Type.INT32_T,
-                        doc="clip replaces clipped values with a dummy.")                        ,
+                        doc="clip replaces clipped values with a dummy."),
                Constant('VVU_CLIP_LIMIT', value='1', type=Type.INT32_T,
-                        doc="clip replaces clipped values with the limit.")                        
+                        doc="clip replaces clipped values with the limit.")
            ]),
 
     Define('VVU_DUMMYREPEAT',
            doc="How to deal with repeats",
            constants=[
                Constant('VVU_DUMMYREPEAT_FIRST', value='0', type=Type.INT32_T,
-                        doc="dummies all but first point.")                        ,
+                        doc="dummies all but first point."),
                Constant('VVU_DUMMYREPEAT_LAST', value='1', type=Type.INT32_T,
-                        doc="dummies all but last point.")                        ,
+                        doc="dummies all but last point."),
                Constant('VVU_DUMMYREPEAT_MIDDLE', value='2', type=Type.INT32_T,
-                        doc="dummies all but middle point.")                        
+                        doc="dummies all but middle point.")
            ]),
 
     Define('VVU_INTERP',
            doc="Interpolation method to use",
            constants=[
-               Constant('VVU_INTERP_NEAREST', value='1', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_LINEAR', value='2', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_CUBIC', value='3', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_AKIMA', value='4', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_PREDICT', value='5', type=Type.INT32_T)                        
+               Constant('VVU_INTERP_NEAREST', value='1', type=Type.INT32_T),
+               Constant('VVU_INTERP_LINEAR', value='2', type=Type.INT32_T),
+               Constant('VVU_INTERP_CUBIC', value='3', type=Type.INT32_T),
+               Constant('VVU_INTERP_AKIMA', value='4', type=Type.INT32_T),
+               Constant('VVU_INTERP_PREDICT', value='5', type=Type.INT32_T)
            ]),
 
     Define('VVU_INTERP_EDGE',
            doc="Interpolation method to use on edges",
            constants=[
-               Constant('VVU_INTERP_EDGE_NONE', value='0', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_EDGE_SAME', value='1', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_EDGE_NEAREST', value='2', type=Type.INT32_T)                        ,
-               Constant('VVU_INTERP_EDGE_LINEAR', value='3', type=Type.INT32_T)                        
+               Constant('VVU_INTERP_EDGE_NONE', value='0', type=Type.INT32_T),
+               Constant('VVU_INTERP_EDGE_SAME', value='1', type=Type.INT32_T),
+               Constant('VVU_INTERP_EDGE_NEAREST', value='2', type=Type.INT32_T),
+               Constant('VVU_INTERP_EDGE_LINEAR', value='3', type=Type.INT32_T)
            ]),
 
     Define('VVU_LINE',
            doc="Line Types",
            constants=[
-               Constant('LINE_2_POINTS', value='0', type=Type.INT32_T)                        ,
-               Constant('LINE_POINT_AZIMUTH', value='1', type=Type.INT32_T)                        
+               Constant('LINE_2_POINTS', value='0', type=Type.INT32_T),
+               Constant('LINE_POINT_AZIMUTH', value='1', type=Type.INT32_T)
            ]),
 
     Define('VVU_MASK',
            doc="Type of clipping",
            constants=[
                Constant('VVU_MASK_INSIDE', value='0', type=Type.INT32_T,
-                        doc="Mask :class:`VV` is set to dummy at locations inside the :class:`PLY`.")                        ,
+                        doc="Mask :class:`VV` is set to dummy at locations inside the :class:`PLY`."),
                Constant('VVU_MASK_OUTSIDE', value='1', type=Type.INT32_T,
-                        doc="Mask :class:`VV` is set to dummy at locations outside the :class:`PLY`.")                        
+                        doc="Mask :class:`VV` is set to dummy at locations outside the :class:`PLY`.")
            ]),
 
     Define('VVU_MATCH',
            doc="Matching style",
            constants=[
                Constant('VVU_MATCH_FULL_STRINGS', value='0', type=Type.INT32_T,
-                        doc="entire string")                        ,
+                        doc="entire string"),
                Constant('VVU_MATCH_INPUT_LENGTH', value='1', type=Type.INT32_T,
-                        doc="match the first part of a string.")                        
+                        doc="match the first part of a string.")
            ]),
 
     Define('VVU_MODE',
            doc="Statistic to select",
            constants=[
-               Constant('VVU_MODE_MEAN', value='0', type=Type.INT32_T)                        ,
-               Constant('VVU_MODE_MEDIAN', value='1', type=Type.INT32_T)                        ,
-               Constant('VVU_MODE_MAXIMUM', value='2', type=Type.INT32_T)                        ,
-               Constant('VVU_MODE_MINIMUM', value='3', type=Type.INT32_T)                        
+               Constant('VVU_MODE_MEAN', value='0', type=Type.INT32_T),
+               Constant('VVU_MODE_MEDIAN', value='1', type=Type.INT32_T),
+               Constant('VVU_MODE_MAXIMUM', value='2', type=Type.INT32_T),
+               Constant('VVU_MODE_MINIMUM', value='3', type=Type.INT32_T)
            ]),
 
     Define('VVU_OFFSET',
            doc="Heading",
            constants=[
-               Constant('VVU_OFFSET_FORWARD', value='0', type=Type.INT32_T)                        ,
-               Constant('VVU_OFFSET_BACKWARD', value='1', type=Type.INT32_T)                        ,
-               Constant('VVU_OFFSET_RIGHT', value='2', type=Type.INT32_T)                        ,
-               Constant('VVU_OFFSET_LEFT', value='3', type=Type.INT32_T)                        
+               Constant('VVU_OFFSET_FORWARD', value='0', type=Type.INT32_T),
+               Constant('VVU_OFFSET_BACKWARD', value='1', type=Type.INT32_T),
+               Constant('VVU_OFFSET_RIGHT', value='2', type=Type.INT32_T),
+               Constant('VVU_OFFSET_LEFT', value='3', type=Type.INT32_T)
            ]),
 
     Define('VVU_PRUNE',
            doc="Prune options",
            constants=[
                Constant('VVU_PRUNE_DUMMY', value='0', type=Type.INT32_T,
-                        doc="0")                        ,
+                        doc="0"),
                Constant('VVU_PRUNE_VALID', value='1', type=Type.INT32_T,
-                        doc="1")                        
+                        doc="1")
            ]),
 
     Define('VVU_SPL',
            doc="Spline types",
            constants=[
-               Constant('VVU_SPL_LINEAR', value='0', type=Type.INT32_T)                        ,
-               Constant('VVU_SPL_CUBIC', value='1', type=Type.INT32_T)                        ,
-               Constant('VVU_SPL_AKIMA', value='2', type=Type.INT32_T)                        ,
-               Constant('VVU_SPL_NEAREST', value='3', type=Type.INT32_T)                        
+               Constant('VVU_SPL_LINEAR', value='0', type=Type.INT32_T),
+               Constant('VVU_SPL_CUBIC', value='1', type=Type.INT32_T),
+               Constant('VVU_SPL_AKIMA', value='2', type=Type.INT32_T),
+               Constant('VVU_SPL_NEAREST', value='3', type=Type.INT32_T)
            ]),
 
     Define('VVU_SRCHREPL_CASE',
            doc="Search and Replace handling of string case",
            constants=[
-               Constant('VVU_SRCHREPL_CASE_TOLERANT', value='0', type=Type.INT32_T)                        ,
-               Constant('VVU_SRCHREPL_CASE_SENSITIVE', value='1', type=Type.INT32_T)                        
+               Constant('VVU_SRCHREPL_CASE_TOLERANT', value='0', type=Type.INT32_T),
+               Constant('VVU_SRCHREPL_CASE_SENSITIVE', value='1', type=Type.INT32_T)
            ])]
 
 

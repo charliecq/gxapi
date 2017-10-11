@@ -10,15 +10,15 @@ gx_defines = [
            is_single_constant=True,
            doc="Maximum channels in Chimera database",
            constants=[
-               Constant('CHIMERA_MAX_CHAN', value='128', type=Type.INT32_T)                        
+               Constant('CHIMERA_MAX_CHAN', value='128', type=Type.INT32_T)
            ]),
 
     Define('CHIMERA_PLOT',
            doc="Chimera plot type",
            constants=[
-               Constant('CHIMERA_PLOT_ROSE', value='0', type=Type.INT32_T)                        ,
-               Constant('CHIMERA_PLOT_PIE', value='1', type=Type.INT32_T)                        ,
-               Constant('CHIMERA_PLOT_BAR', value='2', type=Type.INT32_T)                        
+               Constant('CHIMERA_PLOT_ROSE', value='0', type=Type.INT32_T),
+               Constant('CHIMERA_PLOT_PIE', value='1', type=Type.INT32_T),
+               Constant('CHIMERA_PLOT_BAR', value='2', type=Type.INT32_T)
            ])]
 
 
@@ -48,9 +48,9 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Data handles, stored as INT values"),
                    Parameter('p7', type="VV",
-                             doc="Colours"),
+                             doc="Colors"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="Colour for edges"),
+                             doc="Color for edges"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Offset symbols (0: No, 1: Yes)"),
                    Parameter('p10', type=Type.DOUBLE,
@@ -180,13 +180,13 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Duplicate data"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="log-transform: 0 - linear, 1 - log"),
+                             doc="Log-transform: 0 - linear, 1 - log"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Detect Limit"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="number of old samples in the :class:`VV`"),
+                             doc="Number of old samples in the :class:`VV`"),
                    Parameter('p6', type="VV",
-                             doc="tolerances (1-5 values)"),
+                             doc="Tolerances (1-5 values)"),
                    Parameter('p7', type=Type.STRING,
                              doc="Title"),
                    Parameter('p8', type=Type.STRING,
@@ -196,9 +196,9 @@ gx_methods = {
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="graph width"),
+                             doc="Graph width"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="graph height")
+                             doc="Graph height")
                ]),
 
         Method('DuplicateChemView_CHIMERA', module='geochimera', version='8.3.0',
@@ -216,13 +216,13 @@ gx_methods = {
                    Parameter('p5', type="VV",
                              doc="Duplicate data"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="log-transform: 0 - linear, 1 - log"),
+                             doc="Log-transform: 0 - linear, 1 - log"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Detect Limit"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="number of old samples in the :class:`VV`"),
+                             doc="Number of old samples in the :class:`VV`"),
                    Parameter('p9', type="VV",
-                             doc="tolerances (1-5 values)"),
+                             doc="Tolerances (1-5 values)"),
                    Parameter('p10', type=Type.STRING,
                              doc="Title"),
                    Parameter('p11', type=Type.STRING,
@@ -256,9 +256,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Line to read"),
                    Parameter('p3', type=Type.STRING,
-                             doc='geochem stage (just "raw data stage" for now).'),
+                             doc='Geochem stage (just "raw data stage" for now).'),
                    Parameter('p4', type=Type.STRING,
-                             doc="channel expression"),
+                             doc="Channel expression"),
                    Parameter('p5', type=Type.STRING,
                              doc='INI file name with required units (e.g. PARAMETER.CU="ppm") (optional)'),
                    Parameter('p6', type="VV",
@@ -340,9 +340,9 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="Transform option: -1, 0, 1 or 2"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
-                             doc="returned transform used"),
+                             doc="Returned transform used"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
-                             doc="returned lambda value for option==2")
+                             doc="Returned lambda value for option==2")
                ]),
 
         Method('iIsAcquireChan_CHIMERA', module='geochimera', version='7.2.0',
@@ -358,17 +358,17 @@ gx_methods = {
                return_doc=":def:`GEO_BOOL`",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to test"),
+                             doc="String to test"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned channel name"),
+                             doc="Returned channel name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="buffer size for channel name"),
+                             doc="Buffer size for channel name"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="returned units"),
+                             doc="Returned units"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
-                             doc="buffer size for units"),
+                             doc="Buffer size for units"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="units factor (e.g. ppm = 1.e-6)"),
+                             doc="Buffer factor (e.g. ppm = 1.e-6)"),
                    Parameter('p7', type=Type.INT32_T, is_ref=True,
                              doc=":def:`GEO_BOOL` is this an oxide?")
                ]),
@@ -384,7 +384,7 @@ gx_methods = {
                return_doc=":def:`GEO_BOOL`",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to test"),
+                             doc="String to test"),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`STR_CASE`")
                ]),
@@ -423,7 +423,7 @@ gx_methods = {
                notes="""
                The scatter tool uses the following INI parameters
                
-               SCATTER.STM       name of the scatter template,"none" for none
+               SCATTER.STM       name of the scatter template, "none" for none
                SCATTER.STM_NAME  name of last template section, "" for none.
                SCATTER.X         name of channel to display in X
                SCATTER.Y         name of channel to display in Y
@@ -445,7 +445,7 @@ gx_methods = {
                notes="""
                The Triplot tool uses the following INI parameters
                
-                        TRIPLOT.TTM       name of the triplot template,"none" for none
+                        TRIPLOT.TTM       name of the triplot template, "none" for none
                         TRIPLOT.TTM_NAME  name of last template section, "" for none.
                         TRIPLOT.X         name of channel to display in X
                         TRIPLOT.Y         name of channel to display in Y
@@ -508,7 +508,7 @@ gx_methods = {
                notes="""
                The number of channels is taken from the Data handles :class:`VV`.
                The values in each data :class:`VV` are summed and the pie arc is
-               is given by the percent contribution of each consituent.
+               is given by the percent contribution of each constituent.
                See the note on offset symbols in :func:`RosePlot_CHIMERA`
                """,
                return_type=Type.VOID,
@@ -526,9 +526,9 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Data handles, stored as INT values"),
                    Parameter('p7', type="VV",
-                             doc="Colours"),
+                             doc="Colors"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="Colour for edges"),
+                             doc="Color for edges"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Offset symbols (0: No, 1: Yes)"),
                    Parameter('p10', type=Type.DOUBLE,
@@ -560,9 +560,9 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Data handles, stored as INT values"),
                    Parameter('p7', type="VV",
-                             doc="Colours"),
+                             doc="Colors"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="Colour for edges"),
+                             doc="Color for edges"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Offset symbols (0: No, 1: Yes)"),
                    Parameter('p10', type=Type.DOUBLE,
@@ -582,17 +582,17 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="Map view object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="title"),
+                             doc="Title"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="left side X location"),
+                             doc="Left side X location"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="bottom Y bound"),
+                             doc="Bottom Y bound"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="top Y bound"),
+                             doc="Top Y bound"),
                    Parameter('p6', type=Type.STRING,
                              doc="Class file name (:class:`TPAT`)"),
                    Parameter('p7', type="VV",
-                             doc="Class indices  (INT :class:`VV`)")
+                             doc="Class indices (INT :class:`VV`)")
                ]),
 
         Method('rAtomicWeight_CHIMERA', module='geochimera', version='6.4.2',
@@ -606,7 +606,7 @@ gx_methods = {
                return_doc="The atomic weight of the given element.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="element name (case insensitive)")
+                             doc="Element name (case insensitive)")
                ]),
 
         Method('RosePlot_CHIMERA', module='geochimera', version='5.0.7',
@@ -642,9 +642,9 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Data handles, stored as INT values"),
                    Parameter('p7', type="VV",
-                             doc="Colours"),
+                             doc="Colors"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="Colour for edges"),
+                             doc="Color for edges"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Offset symbols (0: No, 1: Yes)"),
                    Parameter('p10', type=Type.DOUBLE,
@@ -674,9 +674,9 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Data handles, stored as INT values"),
                    Parameter('p7', type="VV",
-                             doc="Colours"),
+                             doc="Colors"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="Colour for edges"),
+                             doc="Color for edges"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Offset symbols (0: No, 1: Yes)"),
                    Parameter('p10', type=Type.DOUBLE,
@@ -703,21 +703,21 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel"),
                    Parameter('p8', type="VV",
                              doc="Vertical channel"),
                    Parameter('p9', type=Type.STRING,
-                             doc='decorated font name, "" for default symbol font (normally symbols.gfn)'),
+                             doc='Decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('p10', type="VV",
                              doc="Symbol numbers"),
                    Parameter('p11', type="VV",
                              doc="Symbol sizes"),
                    Parameter('p12', type="VV",
-                             doc="Colours  if symbol number or colour == 0, do not plot"),
+                             doc="Colors  if symbol number or Color == 0, do not plot"),
                    Parameter('p13', type=Type.INT32_T,
                              doc="Annotation style 0 - outside, 1 - inside"),
                    Parameter('p14', type=Type.STRING,
@@ -753,17 +753,17 @@ gx_methods = {
                    Parameter('p29', type=Type.INT32_T,
                              doc="Use Max Vert. Range selection?"),
                    Parameter('p30', type=Type.INT32_T,
-                             doc="horizontal axis scaling: 0 - linear, 1 - log"),
+                             doc="Horizontal axis scaling: 0 - linear, 1 - log"),
                    Parameter('p31', type=Type.INT32_T,
-                             doc="vertical axis scaling")
+                             doc="Vertical axis scaling")
                ]),
 
         Method('FixedSymbolScatterPlot_CHIMERA', module='geochimera', version='8.0.1',
                availability=Availability.EXTENSION, 
                doc="""
                Plot a scatter plot using a single fixed symbol.
-               Optional data masking with masking colour.
-               Optioinal database linking.
+               Optional data masking with masking Color.
+               Optional database linking.
                """,
                notes="Plot a scatter plot using a single fixed symbol.",
                return_type=Type.VOID,
@@ -777,9 +777,9 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel data"),
                    Parameter('p8', type="VV",
@@ -787,9 +787,9 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Mask channel data (can be NULL)"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask Color; overrides symbol Color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p11', type=Type.STRING,
-                             doc='decorated font name, "" for default symbol font (normally symbols.gfn)'),
+                             doc='Decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('p12', type=Type.INT32_T,
                              doc="Symbol number (>=0)"),
                    Parameter('p13', type=Type.DOUBLE,
@@ -797,9 +797,9 @@ gx_methods = {
                    Parameter('p14', type=Type.DOUBLE,
                              doc="Symbol angle (-360 to 360)"),
                    Parameter('p15', type=Type.INT32_T,
-                             doc="Symbol colour"),
+                             doc="Symbol Color"),
                    Parameter('p16', type=Type.INT32_T,
-                             doc="Symbol fill colour"),
+                             doc="Symbol fill Color"),
                    Parameter('p17', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p18', type="VV",
@@ -825,21 +825,21 @@ gx_methods = {
                    Parameter('p28', type=Type.DOUBLE,
                              doc="Max. Vertical value"),
                    Parameter('p29', type=Type.INT32_T,
-                             doc="horizontal axis scaling: 0 - linear, 1 - log"),
+                             doc="Horizontal axis scaling: 0 - linear, 1 - log"),
                    Parameter('p30', type=Type.INT32_T,
-                             doc="vertical axis scaling"),
+                             doc="Vertical axis scaling"),
                    Parameter('p31', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ]),
 
         Method('ZoneColouredScatterPlot_CHIMERA', module='geochimera', version='8.0.1',
                availability=Availability.EXTENSION, 
                doc="""
-               Plot a scatter plot using colours based on a zone file.
-               Optional data masking with masking colour.
-               Optioinal database linking.
+               Plot a scatter plot using colors based on a zone file.
+               Optional data masking with masking color.
+               Optional database linking.
                """,
-               notes="Plot a scatter plot using colours based on a zone file.",
+               notes="Plot a scatter plot using colors based on a zone file.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
@@ -851,9 +851,9 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel data"),
                    Parameter('p8', type="VV",
@@ -861,13 +861,13 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Mask channel data (can be NULL)"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p11', type="VV",
                              doc="Zone channel data"),
                    Parameter('p12', type=Type.STRING,
                              doc="Zone file name"),
                    Parameter('p13', type=Type.STRING,
-                             doc='decorated font name, "" for default symbol font (normally symbols.gfn)'),
+                             doc='Decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('p14', type=Type.INT32_T,
                              doc="Symbol number (>=0)"),
                    Parameter('p15', type=Type.DOUBLE,
@@ -875,11 +875,11 @@ gx_methods = {
                    Parameter('p16', type=Type.DOUBLE,
                              doc="Symbol angle (-360 to 360)"),
                    Parameter('p17', type=Type.INT32_T,
-                             doc="Symbol colour"),
+                             doc="Symbol color"),
                    Parameter('p18', type=Type.INT32_T,
-                             doc="Symbol fill colour"),
+                             doc="Symbol fill color"),
                    Parameter('p19', type=Type.INT32_T,
-                             doc="Fix symbol edge colour?"),
+                             doc="Fix symbol edge color?"),
                    Parameter('p20', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p21', type="VV",
@@ -905,19 +905,19 @@ gx_methods = {
                    Parameter('p31', type=Type.DOUBLE,
                              doc="Max. Vertical value"),
                    Parameter('p32', type=Type.INT32_T,
-                             doc="horizontal axis scaling: 0 - linear, 1 - log"),
+                             doc="Horizontal axis scaling: 0 - linear, 1 - log"),
                    Parameter('p33', type=Type.INT32_T,
-                             doc="vertical axis scaling"),
+                             doc="Vertical axis scaling"),
                    Parameter('p34', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ]),
 
         Method('StringClassifiedScatterPlot_CHIMERA', module='geochimera', version='8.0.1',
                availability=Availability.EXTENSION, 
                doc="""
                Plot a scatter plot using symbols based on a symbol class file.
-               Optional data masking with masking colour.
-               Optioinal database linking.
+               Optional data masking with masking color.
+               Optional database linking.
                """,
                notes="Plot a scatter plot using symbols based on a symbol class file.",
                return_type=Type.VOID,
@@ -931,9 +931,9 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel data"),
                    Parameter('p8', type="VV",
@@ -941,7 +941,7 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Mask channel data"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p11', type="VV",
                              doc="Class channel data"),
                    Parameter('p12', type=Type.STRING,
@@ -973,11 +973,11 @@ gx_methods = {
                    Parameter('p25', type=Type.DOUBLE,
                              doc="Max. Vertical value"),
                    Parameter('p26', type=Type.INT32_T,
-                             doc="horizontal axis scaling: 0 - linear, 1 - log"),
+                             doc="Horizontal axis scaling: 0 - linear, 1 - log"),
                    Parameter('p27', type=Type.INT32_T,
-                             doc="vertical axis scaling"),
+                             doc="Vertical axis scaling"),
                    Parameter('p28', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ]),
 
         Method('SetLithogeochemData_CHIMERA', module='geochimera', version='6.2.0',
@@ -996,7 +996,7 @@ gx_methods = {
                or if the value in the last :class:`VV` below is set to 1.
                
                New channel types will be set using the data :class:`VV` type.
-               Any meta data (CLASS, display formats) should be set separately.
+               Any metadata (CLASS, display formats) should be set separately.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1024,7 +1024,7 @@ gx_methods = {
 
         Method('StackedBarPlot_CHIMERA', module='geochimera', version='5.1.8',
                availability=Availability.EXTENSION, 
-               doc="Plot a Bar plot of up to 8 channels, bars stacked on each other",
+               doc="Plot a Bar plot of up to 8 channels, bars stacked on each other.",
                notes="""
                The number of channels is taken from the Data handles :class:`VV`.
                Plots a bar plot with the center of the "X" axis at the symbol location.
@@ -1045,9 +1045,9 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Data handles, stored as INT values"),
                    Parameter('p7', type="VV",
-                             doc="Colours"),
+                             doc="Colors"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="Colour for edges"),
+                             doc="Color for edges"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Offset symbols (0: No, 1: Yes)"),
                    Parameter('p10', type=Type.DOUBLE,
@@ -1070,9 +1070,9 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="standard data"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="number of old samples in the :class:`VV`"),
+                             doc="Number of old samples in the :class:`VV`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="tolerance as a function of std dev"),
+                             doc="Tolerance as a function of std dev"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="minimum acceptable value"),
                    Parameter('p6', type=Type.DOUBLE,
@@ -1086,9 +1086,9 @@ gx_methods = {
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="graph width"),
+                             doc="Graph width"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="graph height")
+                             doc="Graph height")
                ]),
 
         Method('StandardView_CHIMERA', module='geochimera', version='8.3.0',
@@ -1107,9 +1107,9 @@ gx_methods = {
                    Parameter('p5', type="VV",
                              doc="standard data (:class:`VV` Y)"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="number of old samples in the :class:`VV`"),
+                             doc="Number of old samples in the :class:`VV`"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="tolerance as a function of std dev"),
+                             doc="Tolerance as a function of std dev"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="minimum acceptable value"),
                    Parameter('p9', type=Type.DOUBLE,
@@ -1155,9 +1155,9 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="X channel"),
                    Parameter('p8', type="VV",
@@ -1173,7 +1173,7 @@ gx_methods = {
                    Parameter('p13', type="VV",
                              doc="Symbol sizes"),
                    Parameter('p14', type="VV",
-                             doc="Colours  if symbol number or colour == 0, do not plot"),
+                             doc="Colors  if symbol number or color == 0, do not plot"),
                    Parameter('p15', type=Type.STRING,
                              doc="X channel name"),
                    Parameter('p16', type=Type.STRING,
@@ -1216,8 +1216,8 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="""
                Plot a tri-plot using a single fixed symbol.
-               Optional data masking with masking colour.
-               Optioinal database linking.
+               Optional data masking with masking color.
+               Optional database linking.
                """,
                notes="Plot a tri plot using a single fixed symbol.",
                return_type=Type.VOID,
@@ -1241,7 +1241,7 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Mask channel data"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p11', type=Type.STRING,
                              doc='decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('p12', type=Type.INT32_T,
@@ -1251,9 +1251,9 @@ gx_methods = {
                    Parameter('p14', type=Type.DOUBLE,
                              doc="Symbol angle (-360 to 360)"),
                    Parameter('p15', type=Type.INT32_T,
-                             doc="Symbol colour"),
+                             doc="Symbol color"),
                    Parameter('p16', type=Type.INT32_T,
-                             doc="Symbol fill colour"),
+                             doc="Symbol fill color"),
                    Parameter('p17', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p18', type="VV",
@@ -1273,17 +1273,17 @@ gx_methods = {
                    Parameter('p25', type=Type.DOUBLE,
                              doc="Grid increment (in percent)"),
                    Parameter('p26', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ]),
 
         Method('ZoneColouredTriPlot_CHIMERA', module='geochimera', version='8.0.1',
                availability=Availability.EXTENSION, 
                doc="""
-               Plot a tri-plot using colours based on a zone file.
-               Optional data masking with masking colour.
-               Optioinal database linking.
+               Plot a tri-plot using colors based on a zone file.
+               Optional data masking with masking color.
+               Optional database linking.
                """,
-               notes="Plot a tri plot using colours based on a zone file.",
+               notes="Plot a tri plot using colors based on a zone file.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
@@ -1305,7 +1305,7 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Mask channel data"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p11', type="VV",
                              doc="Zone channel data"),
                    Parameter('p12', type=Type.STRING,
@@ -1319,11 +1319,11 @@ gx_methods = {
                    Parameter('p16', type=Type.DOUBLE,
                              doc="Symbol angle (-360 to 360)"),
                    Parameter('p17', type=Type.INT32_T,
-                             doc="Symbol colour"),
+                             doc="Symbol color"),
                    Parameter('p18', type=Type.INT32_T,
-                             doc="Symbol fill colour"),
+                             doc="Symbol fill color"),
                    Parameter('p19', type=Type.INT32_T,
-                             doc="Fix symbol edge colour?"),
+                             doc="Fix symbol edge color?"),
                    Parameter('p20', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p21', type="VV",
@@ -1343,15 +1343,15 @@ gx_methods = {
                    Parameter('p28', type=Type.DOUBLE,
                              doc="Grid increment (in percent)"),
                    Parameter('p29', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ]),
 
         Method('StringClassifiedTriPlot_CHIMERA', module='geochimera', version='8.0.1',
                availability=Availability.EXTENSION, 
                doc="""
                Plot a tri-plot using symbols based on a symbol class file.
-               Optional data masking with masking colour.
-               Optioinal database linking.
+               Optional data masking with masking color.
+               Optional database linking.
                """,
                notes="Plot a tri-plot using symbols based on a symbol class file.",
                return_type=Type.VOID,
@@ -1375,7 +1375,7 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Mask channel data"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p11', type="VV",
                              doc="Class channel data"),
                    Parameter('p12', type=Type.STRING,
@@ -1401,7 +1401,7 @@ gx_methods = {
                    Parameter('p22', type=Type.DOUBLE,
                              doc="Grid increment (in percent)"),
                    Parameter('p23', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ])
     ],
     'Obsolete': [
@@ -1420,13 +1420,13 @@ gx_methods = {
 
         Method('GetStringClassifiedSymbols_CHIMERA', module='geochimera', version='6.3.0',
                availability=Availability.EXTENSION, is_obsolete=True, 
-               doc="Get symbol numbers and colours based on a classification :class:`VV`.",
+               doc="Get symbol numbers and colors based on a classification :class:`VV`.",
                notes="""
                Obsolete - Use GetStringClassifiedSymbolsFromClassFile_CHIMERA. Scatter and Triplots now use class files.
                Up to 42 different symbols are defined.
                Index 0 is returned for unclassified strings ""
                Index 1 is returned for unassigned strings (only the
-               first 40 different classes get their own unique symbol/colour.
+               first 40 different classes get their own unique symbol/color.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1435,36 +1435,36 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Symbol numbers (returned) (INT :class:`VV`)"),
                    Parameter('p3', type="VV",
-                             doc="Symbol colours (returned) (INT :class:`VV`)"),
+                             doc="Symbol colors (returned) (INT :class:`VV`)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="(TRUE/FALSE) Set Unclassified symbol colour to C_ANY_NONE?"),
+                             doc="(TRUE/FALSE) Set Unclassified symbol color to C_ANY_NONE?"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="(TRUE/FALSE) Set Unassigned symbol colour to C_ANY_NONE?")
+                             doc="(TRUE/FALSE) Set Unassigned symbol color to C_ANY_NONE?")
                ]),
 
         Method('PlotStringClassifiedSymbolsLegend_CHIMERA', module='geochimera', version='6.3.0',
                availability=Availability.EXTENSION, is_obsolete=True, 
-               doc="Plot legend for the string classified symbols",
+               doc="Plot legend for the string classified symbols.",
                notes="""
                Obsolete - Use :func:`PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA`. Scatter and Triplots now use class files.
                Up to 42 different symbols are defined.
                Duplicate symbol indices are removed.
                Index 0 is returned for unclassified strings ""
                Index 1 is returned for unassigned strings (only the
-               first 40 different classes get their own unique symbol/colour.
+               first 40 different classes get their own unique symbol/color.
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
                              doc="Map view object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="title"),
+                             doc="Title"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="left side X location"),
+                             doc="Left side X location"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="bottom Y bound"),
+                             doc="Bottom Y bound"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="top Y bound"),
+                             doc="Top Y bound"),
                    Parameter('p6', type="VV",
                              doc="Strings (string :class:`VV`)"),
                    Parameter('p7', type="VV",
@@ -1490,13 +1490,13 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Title"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel"),
                    Parameter('p8', type="VV",
@@ -1552,7 +1552,7 @@ gx_methods = {
                OBSOLETE - Replaced by Scatter4_CHIMERA.
                - As of v6.3, the plotted data is put in its own view. The Line-Fid
                values are passed in to enable Line-Fid linking.
-               - Optional Mask symbol colours
+               - Optional Mask symbol colors
                - Optional overlay. (See :class:`SEMPLOT` class).
                - If the classified symbols are used, unique symbols (up to 266) are
                given to the different classes. An "Unassigned" symbol is plotted
@@ -1572,9 +1572,9 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel"),
                    Parameter('p8', type="VV",
@@ -1588,9 +1588,9 @@ gx_methods = {
                    Parameter('p12', type="VV",
                              doc="Symbol sizes"),
                    Parameter('p13', type="VV",
-                             doc="Colours  if symbol number or colour == 0, do not plot"),
+                             doc="Colors if symbol number or color == 0, do not plot"),
                    Parameter('p14', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p15', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p16', type="VV",
@@ -1616,11 +1616,11 @@ gx_methods = {
                    Parameter('p26', type=Type.DOUBLE,
                              doc="Max. Vertical value"),
                    Parameter('p27', type=Type.INT32_T,
-                             doc="horizontal axis scaling: 0 - linear, 1 - log"),
+                             doc="Horizontal axis scaling: 0 - linear, 1 - log"),
                    Parameter('p28', type=Type.INT32_T,
-                             doc="vertical axis scaling"),
+                             doc="Vertical axis scaling"),
                    Parameter('p29', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ]),
 
         Method('TriPlot_CHIMERA', module='geochimera', version='5.0.7',
@@ -1634,13 +1634,13 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Title"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="X channel"),
                    Parameter('p8', type="VV",
@@ -1722,9 +1722,9 @@ gx_methods = {
                    Parameter('p12', type="VV",
                              doc="Symbol sizes"),
                    Parameter('p13', type="VV",
-                             doc="Symbol colours  if symbol number or colour == 0, do not plot"),
+                             doc="Symbol colors  if symbol number or color == 0, do not plot"),
                    Parameter('p14', type=Type.INT32_T,
-                             doc='Mask colour; overrides symbol colour. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
                    Parameter('p15', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p16', type="VV",
@@ -1744,7 +1744,7 @@ gx_methods = {
                    Parameter('p23', type=Type.DOUBLE,
                              doc="Grid increment (in percent)"),
                    Parameter('p24', type=Type.STRING,
-                             doc='plot overlay ("" for none)')
+                             doc='Plot overlay ("" for none)')
                ])
     ]
 }

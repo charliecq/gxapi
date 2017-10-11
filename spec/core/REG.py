@@ -16,9 +16,9 @@ gx_defines = [
            doc=":class:`REG` merge options",
            constants=[
                Constant('REG_MERGE_REPLACE', value='0', type=Type.INT32_T,
-                        doc="Replace Values")                        ,
+                        doc="Replace Values"),
                Constant('REG_MERGE_ADD', value='1', type=Type.INT32_T,
-                        doc="Only append values")                        
+                        doc="Only append values")
            ])]
 
 

@@ -32,9 +32,9 @@ gx_defines = [
     Define('ITR_COLOR_MODEL',
            doc=":class:`ITR` Color Model defines",
            constants=[
-               Constant('ITR_COLOR_MODEL_HSV', value='1', type=Type.INT32_T)                        ,
-               Constant('ITR_COLOR_MODEL_RGB', value='2', type=Type.INT32_T)                        ,
-               Constant('ITR_COLOR_MODEL_CMY', value='3', type=Type.INT32_T)                        
+               Constant('ITR_COLOR_MODEL_HSV', value='1', type=Type.INT32_T),
+               Constant('ITR_COLOR_MODEL_RGB', value='2', type=Type.INT32_T),
+               Constant('ITR_COLOR_MODEL_CMY', value='3', type=Type.INT32_T)
            ]),
 
     Define('ITR_NULL',
@@ -45,37 +45,37 @@ gx_defines = [
            doc="Power Zoning defines",
            constants=[
                Constant('ITR_POWER_10', value='0', type=Type.INT32_T,
-                        doc="Power of 10")                        ,
+                        doc="Power of 10"),
                Constant('ITR_POWER_EXP', value='1', type=Type.INT32_T,
-                        doc="Exponential")                        
+                        doc="Exponential")
            ]),
 
     Define('ITR_ZONE',
            doc="Zoning Methods",
            constants=[
-               Constant('ITR_ZONE_DEFAULT', value='0', type=Type.INT32_T)                        ,
-               Constant('ITR_ZONE_LINEAR', value='1', type=Type.INT32_T)                        ,
-               Constant('ITR_ZONE_NORMAL', value='2', type=Type.INT32_T)                        ,
-               Constant('ITR_ZONE_EQUALAREA', value='3', type=Type.INT32_T)                        ,
-               Constant('ITR_ZONE_SHADE', value='4', type=Type.INT32_T)                        ,
-               Constant('ITR_ZONE_LOGLINEAR', value='5', type=Type.INT32_T)                        
+               Constant('ITR_ZONE_DEFAULT', value='0', type=Type.INT32_T),
+               Constant('ITR_ZONE_LINEAR', value='1', type=Type.INT32_T),
+               Constant('ITR_ZONE_NORMAL', value='2', type=Type.INT32_T),
+               Constant('ITR_ZONE_EQUALAREA', value='3', type=Type.INT32_T),
+               Constant('ITR_ZONE_SHADE', value='4', type=Type.INT32_T),
+               Constant('ITR_ZONE_LOGLINEAR', value='5', type=Type.INT32_T)
            ]),
 
     Define('ITR_ZONE_MODEL',
            doc=":class:`ITR` Zone Model defines",
            constants=[
                Constant('ITR_ZONE_MODEL_NOZONE', value='-1', type=Type.INT32_T,
-                        doc="The :class:`ITR` has no numeric zones defined (e.g. from a TBL file)")                        ,
+                        doc="The :class:`ITR` has no numeric zones defined (e.g. from a TBL file)"),
                Constant('ITR_ZONE_MODEL_NONE', value='0', type=Type.INT32_T,
-                        doc="There is no specific zone model defined.")                        ,
+                        doc="There is no specific zone model defined."),
                Constant('ITR_ZONE_MODEL_LINEAR', value='1', type=Type.INT32_T,
-                        doc="The :class:`ITR` is set up with a linear transform.")                        ,
+                        doc="The :class:`ITR` is set up with a linear transform."),
                Constant('ITR_ZONE_MODEL_NORMAL', value='2', type=Type.INT32_T,
-                        doc="The :class:`ITR` is set up with a normal distribution transform.")                        ,
+                        doc="The :class:`ITR` is set up with a normal distribution transform."),
                Constant('ITR_ZONE_MODEL_EQUAL', value='3', type=Type.INT32_T,
-                        doc="The :class:`ITR` is set up with an equal area transform.")                        ,
+                        doc="The :class:`ITR` is set up with an equal area transform."),
                Constant('ITR_MODEL_LOGLIN', value='4', type=Type.INT32_T,
-                        doc="The :class:`ITR` is set up with a log-linear transform.")                        
+                        doc="The :class:`ITR` is set up with a log-linear transform.")
            ])]
 
 

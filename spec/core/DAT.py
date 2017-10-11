@@ -19,23 +19,23 @@ gx_defines = [
     Define('DAT_FILE',
            doc="Type of grid",
            constants=[
-               Constant('DAT_FILE_GRID', value='1', type=Type.INT32_T)                        ,
-               Constant('DAT_FILE_IMAGE', value='2', type=Type.INT32_T)                        
+               Constant('DAT_FILE_GRID', value='1', type=Type.INT32_T),
+               Constant('DAT_FILE_IMAGE', value='2', type=Type.INT32_T)
            ]),
 
     Define('DAT_FILE_FORM',
            doc="Type of form",
            constants=[
-               Constant('DAT_FILE_FORM_OPEN', value='0', type=Type.INT32_T)                        ,
-               Constant('DAT_FILE_FORM_SAVE', value='1', type=Type.INT32_T)                        
+               Constant('DAT_FILE_FORM_OPEN', value='0', type=Type.INT32_T),
+               Constant('DAT_FILE_FORM_SAVE', value='1', type=Type.INT32_T)
            ]),
 
     Define('DAT_XGD',
            doc=":class:`DAT` Open modes",
            constants=[
-               Constant('DAT_XGD_READ', value='0', type=Type.INT32_T)                        ,
-               Constant('DAT_XGD_NEW', value='1', type=Type.INT32_T)                        ,
-               Constant('DAT_XGD_WRITE', value='2', type=Type.INT32_T)                        
+               Constant('DAT_XGD_READ', value='0', type=Type.INT32_T),
+               Constant('DAT_XGD_NEW', value='1', type=Type.INT32_T),
+               Constant('DAT_XGD_WRITE', value='2', type=Type.INT32_T)
            ])]
 
 

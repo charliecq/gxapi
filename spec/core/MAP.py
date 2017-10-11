@@ -15,30 +15,30 @@ gx_defines = [
            doc="Duplicate Modes",
            constants=[
                Constant('DUPMAP_BLANK', value='0', type=Type.INT32_T,
-                        doc="Blank")                        ,
+                        doc="Blank"),
                Constant('DUPMAP_COPY', value='1', type=Type.INT32_T,
-                        doc="Copy all current contents")                        ,
+                        doc="Copy all current contents"),
                Constant('DUPMAP_COPY_PRE62', value='2', type=Type.INT32_T,
-                        doc="Copy all current contents and save text for pre-6.2 versions.")                        
+                        doc="Copy all current contents and save text for pre-6.2 versions.")
            ]),
 
     Define('MAP_EXPORT_BITS',
            doc="Color Types",
            constants=[
                Constant('MAP_EXPORT_BITS_24', value='24', type=Type.INT32_T,
-                        doc="24 Bit Color")                        ,
+                        doc="24 Bit Color"),
                Constant('MAP_EXPORT_BITS_GREY8', value='9', type=Type.INT32_T,
-                        doc="8 Bit Gray Scale")                        ,
+                        doc="8 Bit Gray Scale"),
                Constant('MAP_EXPORT_BITS_8', value='8', type=Type.INT32_T,
-                        doc="8 Bit Color")                        ,
+                        doc="8 Bit Color"),
                Constant('MAP_EXPORT_BITS_GREY4', value='5', type=Type.INT32_T,
-                        doc="4 Bit Gray Scale")                        ,
+                        doc="4 Bit Gray Scale"),
                Constant('MAP_EXPORT_BITS_4', value='4', type=Type.INT32_T,
-                        doc="4 Bit Color")                        ,
+                        doc="4 Bit Color"),
                Constant('MAP_EXPORT_BITS_GREY1', value='1', type=Type.INT32_T,
-                        doc="1 Bit Gray Scale")                        ,
+                        doc="1 Bit Gray Scale"),
                Constant('MAP_EXPORT_BITS_DEFAULT', value='0', type=Type.INT32_T,
-                        doc="Default Resolution")                        
+                        doc="Default Resolution")
            ]),
 
     Define('MAP_EXPORT_FORMAT',
@@ -50,36 +50,36 @@ gx_defines = [
            """,
            constants=[
                Constant('MAP_EXPORT_FORMAT_PLT', value='PLT', type=Type.STRING,
-                        doc='"PLT"    Geosoft Plot (*.plt)         Plot')                        ,
+                        doc='"PLT"    Geosoft Plot (*.plt)         Plot'),
                Constant('MAP_EXPORT_FORMAT_SHP', value='SHP', type=Type.STRING,
-                        doc='":class:`SHP`"    ArcView Shapfile (*.shp)     Plot')                        ,
+                        doc='":class:`SHP`"    ArcView Shapfile (*.shp)     Plot'),
                Constant('MAP_EXPORT_FORMAT_DXF12', value='DXF12', type=Type.STRING,
-                        doc='"DXF12"  AutoCad12 (*.dxf)            Plot')                        ,
+                        doc='"DXF12"  AutoCad12 (*.dxf)            Plot'),
                Constant('MAP_EXPORT_FORMAT_DXF13', value='DXF13', type=Type.STRING,
-                        doc='"DXF13"  AutoCad13 (*.dxf)            Plot')                        ,
+                        doc='"DXF13"  AutoCad13 (*.dxf)            Plot'),
                Constant('MAP_EXPORT_FORMAT_GTIFF', value='GTIFF', type=Type.STRING,
-                        doc='"GTIFF"  GeoTIFF (*.tif),             Color Image')                        ,
+                        doc='"GTIFF"  GeoTIFF (*.tif),             Color Image'),
                Constant('MAP_EXPORT_FORMAT_MTIFF', value='MTIFF', type=Type.STRING,
-                        doc='"MTIFF"  MapInfo TIFF (*.tif)         Color Image')                        ,
+                        doc='"MTIFF"  MapInfo TIFF (*.tif)         Color Image'),
                Constant('MAP_EXPORT_FORMAT_ATIFF', value='ATIFF', type=Type.STRING,
-                        doc='"ATIFF"  ArcView TIFF (*.tif)         Color Image')                        ,
+                        doc='"ATIFF"  ArcView TIFF (*.tif)         Color Image'),
                Constant('MAP_EXPORT_FORMAT_GEO', value='GEO', type=Type.STRING,
-                        doc='":class:`GEO`"    Geosoft COLOR grid (*.grd)   Color Image')                        ,
+                        doc='":class:`GEO`"    Geosoft COLOR grid (*.grd)   Color Image'),
                Constant('MAP_EXPORT_FORMAT_ERM', value='ERM', type=Type.STRING,
-                        doc='"ERM"    ER Mapper RGB (*.ers)        Color Image')                        ,
+                        doc='"ERM"    ER Mapper RGB (*.ers)        Color Image'),
                Constant('MAP_EXPORT_FORMAT_KMZ', value='KMZ', type=Type.STRING,
-                        doc='"KMZ"    Keyhole Markup (*.kmz)       Zipped XML/Image files')                        
+                        doc='"KMZ"    Keyhole Markup (*.kmz)       Zipped XML/Image files')
            ]),
 
     Define('MAP_EXPORT_METHOD',
            doc="Dithering Methods",
            constants=[
                Constant('MAP_EXPORT_METHOD_STANDARD', value='0', type=Type.INT32_T,
-                        doc="Standard Dither")                        ,
+                        doc="Standard Dither"),
                Constant('MAP_EXPORT_METHOD_DIFFUSE', value='1', type=Type.INT32_T,
-                        doc="Error Diffusion Dither")                        ,
+                        doc="Error Diffusion Dither"),
                Constant('MAP_EXPORT_METHOD_NONE', value='2', type=Type.INT32_T,
-                        doc="No Dither")                        
+                        doc="No Dither")
            ]),
 
     Define('MAP_EXPORT_RASTER_FORMAT',
@@ -92,40 +92,40 @@ gx_defines = [
            """,
            constants=[
                Constant('MAP_EXPORT_RASTER_FORMAT_EMF', value='EMF', type=Type.STRING,
-                        doc='"EMF"   Enhanced Metafile (*.emf)        Plot')                        ,
+                        doc='"EMF"   Enhanced Metafile (*.emf)        Plot'),
                Constant('MAP_EXPORT_RASTER_FORMAT_BMP', value='BMP', type=Type.STRING,
-                        doc='"BMP"   Bitmap (*.bmp)                   Color Image     X    X    X    X    X    X')                        ,
+                        doc='"BMP"   Bitmap (*.bmp)                   Color Image     X    X    X    X    X    X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_JPEGL', value='JPEGL', type=Type.STRING,
-                        doc='"JPEGL" JPEG Low Quality (*.jpg)         Color Image                              X')                        ,
+                        doc='"JPEGL" JPEG Low Quality (*.jpg)         Color Image                              X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_JPEG', value='JPEG', type=Type.STRING,
-                        doc='"JPEG" JPEG (*.jpg)                     Color Image                              X')                        ,
+                        doc='"JPEG" JPEG (*.jpg)                     Color Image                              X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_JPEGH', value='JPEGH', type=Type.STRING,
-                        doc='"JPEGH" JPEG High Quality (*.jpg)        Color Image                              X')                        ,
+                        doc='"JPEGH" JPEG High Quality (*.jpg)        Color Image                              X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_GIF', value='GIF', type=Type.STRING,
-                        doc='"GIF"   GIF (*.gif)                      Color Image     X    X    X    X    X')                        ,
+                        doc='"GIF"   GIF (*.gif)                      Color Image     X    X    X    X    X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_PCX', value='PCX', type=Type.STRING,
-                        doc='"PCX"   PCX (*.pcx)                      Color Image     X    X    X    X    X    X')                        ,
+                        doc='"PCX"   PCX (*.pcx)                      Color Image     X    X    X    X    X    X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_PNG', value='PNG', type=Type.STRING,
-                        doc='"PNG"   PNG (*.png)                      Color Image     X    X    X    X    X    X')                        ,
+                        doc='"PNG"   PNG (*.png)                      Color Image     X    X    X    X    X    X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_EPS', value='EPS', type=Type.STRING,
-                        doc='"EPS"   Encasulated PostScript (*.eps)   Color Image                    X')                        ,
+                        doc='"EPS"   Encasulated PostScript (*.eps)   Color Image                    X'),
                Constant('MAP_EXPORT_RASTER_FORMAT_TIFF', value='TIFF', type=Type.STRING,
-                        doc='"TIFF"  TIFF (*.tif)                     Color Image     X    X    X    X    X    X')                        
+                        doc='"TIFF"  TIFF (*.tif)                     Color Image     X    X    X    X    X    X')
            ]),
 
     Define('MAP_LIST_MODE',
            doc="Map List modes",
            constants=[
-               Constant('MAP_LIST_MODE_ALL', value='0', type=Type.INT32_T)                        ,
-               Constant('MAP_LIST_MODE_3D', value='1', type=Type.INT32_T)                        ,
-               Constant('MAP_LIST_MODE_NOT3D', value='2', type=Type.INT32_T)                        
+               Constant('MAP_LIST_MODE_ALL', value='0', type=Type.INT32_T),
+               Constant('MAP_LIST_MODE_3D', value='1', type=Type.INT32_T),
+               Constant('MAP_LIST_MODE_NOT3D', value='2', type=Type.INT32_T)
            ]),
 
     Define('MAP_OPEN',
            doc="Open Modes",
            constants=[
-               Constant('MAP_WRITENEW', value='1', type=Type.INT32_T)                        ,
-               Constant('MAP_WRITEOLD', value='2', type=Type.INT32_T)                        
+               Constant('MAP_WRITENEW', value='1', type=Type.INT32_T),
+               Constant('MAP_WRITEOLD', value='2', type=Type.INT32_T)
            ])]
 
 
@@ -134,10 +134,7 @@ gx_methods = {
 
         Method('ExportAllInView_MAP', module='geoengine.map', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="""
-               Export the entire map in view units to an external format. View and Group names are
-               removed and plane spatial coordinates will be in the units of the
-               """,
+               doc="Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MAP",
@@ -162,7 +159,7 @@ gx_methods = {
 
         Method('ExportAllRaster_MAP', module='geoengine.map', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="Export the entire map to map to a non-geo raster format",
+               doc="Export the entire map to map to a non-geo raster format.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MAP",
@@ -273,9 +270,33 @@ gx_methods = {
                    Parameter('p6', type=Type.DOUBLE,
                              doc="MaxY"),
                    Parameter('p7', type=Type.STRING,
-                             doc="File to generate (ext forced to BMP)"),
+                             doc="File to generate (BMP or PNG, otherwise extension forced to BMP)"),
                    Parameter('p8', type=Type.INT32_T,
                              doc="Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)")
+               ])
+    ],
+    '3D View': [
+
+        Method('CreateLinked3DView_MAP', module='geoengine.map', version='9.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Create a 3D View in this map that is linked to a :class:`MVIEW` in a 3D View file.",
+               return_type=Type.VOID,
+               return_doc="nothing",
+               parameters = [
+                   Parameter('p1', type="MAP",
+                             doc=":class:`MAP` Object"),
+                   Parameter('p2', type="MVIEW",
+                             doc=":class:`3DV`'s 3D :class:`MVIEW`"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="New view name"),
+                   Parameter('p4', type=Type.DOUBLE,
+                             doc="X minimum in mm"),
+                   Parameter('p5', type=Type.DOUBLE,
+                             doc="Y minimun in mm"),
+                   Parameter('p6', type=Type.DOUBLE,
+                             doc="X maximum in mm"),
+                   Parameter('p7', type=Type.DOUBLE,
+                             doc="Y maximum in mm")
                ])
     ],
     'Miscellaneous': [
@@ -350,7 +371,7 @@ gx_methods = {
                ]),
 
         Method('CRCMap_MAP', module='geoengine.map', version='6.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Generate an XML CRC of a :class:`MAP`",
                return_type=Type.VOID,
                parameters = [
@@ -419,12 +440,12 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Duplicate copy of current map.",
                notes="""
-               Before version 6.2. text in maps were displayed with a character set
-               defining how characters above ASCII 127 would be displayed. 6.2. introduced
+               Before version 6.2 text in maps were displayed with a character set
+               defining how characters above ASCII 127 would be displayed. 6.2 introduced
                Unicode in the core montaj engine that eliminated the need for such a setting and
                greatly increased the number of symbols that can be used. The only caveat
                of the new system is that text may appear corrupted (especially with GFN fonts) in
-               versions prior to 6.2. that render maps created in version 6.2 and later.
+               versions prior to 6.2 that render maps created in version 6.2 and later.
                The constant :def_val:`DUPMAP_COPY_PRE62` provides a way to create maps that can be
                distributed to versions prior to 6.2.
                """,

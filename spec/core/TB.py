@@ -15,9 +15,9 @@ gx_defines = [
            doc=":class:`TB` Searching mode",
            constants=[
                Constant('TB_SEARCH_BINARY', value='0', type=Type.INT32_T,
-                        doc="Random searches in a table.")                        ,
+                        doc="Random searches in a table."),
                Constant('TB_SEARCH_LINEAR', value='1', type=Type.INT32_T,
-                        doc="Linear searches up or down a table (Default).")                        
+                        doc="Linear searches up or down a table (Default).")
            ])]
 
 

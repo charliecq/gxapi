@@ -12,9 +12,9 @@ gx_defines = [
     Define('SURFACERENDER_MODE',
            doc="Open Modes",
            constants=[
-               Constant('SURFACERENDER_SMOOTH', value='0', type=Type.INT32_T)                        ,
-               Constant('SURFACERENDER_FILL', value='1', type=Type.INT32_T)                        ,
-               Constant('SURFACERENDER_EDGES', value='2', type=Type.INT32_T)                        
+               Constant('SURFACERENDER_SMOOTH', value='0', type=Type.INT32_T),
+               Constant('SURFACERENDER_FILL', value='1', type=Type.INT32_T),
+               Constant('SURFACERENDER_EDGES', value='2', type=Type.INT32_T)
            ])]
 
 

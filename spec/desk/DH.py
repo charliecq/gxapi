@@ -18,8 +18,8 @@ gx_defines = [
            is_constant=True,
            doc="Default filenames",
            constants=[
-               Constant('DH_DEFAULT_ROCKCODE_FILE', value='agso.csv', type=Type.STRING)                        ,
-               Constant('DH_DEFAULT_STRUCTURECODE_FILE', value='structcodes.csv', type=Type.STRING)                        
+               Constant('DH_DEFAULT_ROCKCODE_FILE', value='agso.csv', type=Type.STRING),
+               Constant('DH_DEFAULT_STRUCTURECODE_FILE', value='structcodes.csv', type=Type.STRING)
            ]),
 
     Define('STR_DH_HOLES',
@@ -31,48 +31,48 @@ gx_defines = [
            selection tool. This should be big enough for 65,000 16-character hole names!
            """,
            constants=[
-               Constant('STR_DH_HOLES', value='1048576', type=Type.INT32_T)                        
+               Constant('STR_DH_HOLES', value='1048576', type=Type.INT32_T)
            ]),
 
     Define('DH_COMP_CHOICE',
            doc="Composition",
            constants=[
                Constant('DH_COMP_DONE', value='0', type=Type.INT32_T,
-                        doc="User is done")                        ,
+                        doc="User is done"),
                Constant('DH_COMP_CANCEL', value='-1', type=Type.INT32_T,
-                        doc="User canceled")                        ,
+                        doc="User canceled"),
                Constant('DH_COMP_SELECT', value='1', type=Type.INT32_T,
-                        doc="User chose to select an interval interactively")                        ,
+                        doc="User chose to select an interval interactively"),
                Constant('DH_COMP_REFRESH', value='2', type=Type.INT32_T,
-                        doc="User chose to refresh")                        
+                        doc="User chose to refresh")
            ]),
 
     Define('DH_COMPSTDB_HOLSEL',
            doc="Composite Hole Selection",
            constants=[
-               Constant('DH_COMPSTDB_HOLSEL_ALL', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_COMPSTDB_HOLSEL_SELECTED', value='1', type=Type.INT32_T)                        
+               Constant('DH_COMPSTDB_HOLSEL_ALL', value='0', type=Type.INT32_T),
+               Constant('DH_COMPSTDB_HOLSEL_SELECTED', value='1', type=Type.INT32_T)
            ]),
 
     Define('DH_COMPSTDB_INTSEL',
            doc="Composite Interval",
            constants=[
-               Constant('DH_COMPSTDB_INTSEL_FIXED', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_COMPSTDB_INTSEL_LITHOLOGY', value='1', type=Type.INT32_T)                        ,
-               Constant('DH_COMPSTDB_INTSEL_BESTFITLITH', value='2', type=Type.INT32_T)                        ,
-               Constant('DH_COMPSTDB_INTSEL_INTFILE', value='3', type=Type.INT32_T)                        
+               Constant('DH_COMPSTDB_INTSEL_FIXED', value='0', type=Type.INT32_T),
+               Constant('DH_COMPSTDB_INTSEL_LITHOLOGY', value='1', type=Type.INT32_T),
+               Constant('DH_COMPSTDB_INTSEL_BESTFITLITH', value='2', type=Type.INT32_T),
+               Constant('DH_COMPSTDB_INTSEL_INTFILE', value='3', type=Type.INT32_T)
            ]),
 
     Define('DH_DATA',
            doc="What to import",
            constants=[
-               Constant('DH_DATA_DIPAZIMUTH', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_DATA_EASTNORTH', value='1', type=Type.INT32_T)                        ,
-               Constant('DH_DATA_FROMTO', value='2', type=Type.INT32_T)                        ,
-               Constant('DH_DATA_POINT', value='3', type=Type.INT32_T)                        ,
-               Constant('DH_DATA_COLLAR', value='4', type=Type.INT32_T)                        ,
+               Constant('DH_DATA_DIPAZIMUTH', value='0', type=Type.INT32_T),
+               Constant('DH_DATA_EASTNORTH', value='1', type=Type.INT32_T),
+               Constant('DH_DATA_FROMTO', value='2', type=Type.INT32_T),
+               Constant('DH_DATA_POINT', value='3', type=Type.INT32_T),
+               Constant('DH_DATA_COLLAR', value='4', type=Type.INT32_T),
                Constant('DH_DATA_UNKNOWN', value='100', type=Type.INT32_T,
-                        doc="The type is not known")                        
+                        doc="The type is not known")
            ]),
 
     Define('DH_DEFINE_PLAN',
@@ -80,63 +80,63 @@ gx_defines = [
            is_single_constant=True,
            doc="Plans",
            constants=[
-               Constant('DH_DEFINE_PLAN', value='1', type=Type.INT32_T)                        
+               Constant('DH_DEFINE_PLAN', value='1', type=Type.INT32_T)
            ]),
 
     Define('DH_DEFINE_SECT',
            is_constant=True,
            doc="Types of Sections",
            constants=[
-               Constant('DH_DEFINE_SECT_NS', value='1', type=Type.INT32_T)                        ,
-               Constant('DH_DEFINE_SECT_EW', value='2', type=Type.INT32_T)                        ,
-               Constant('DH_DEFINE_SECT_ANGLED', value='3', type=Type.INT32_T)                        
+               Constant('DH_DEFINE_SECT_NS', value='1', type=Type.INT32_T),
+               Constant('DH_DEFINE_SECT_EW', value='2', type=Type.INT32_T),
+               Constant('DH_DEFINE_SECT_ANGLED', value='3', type=Type.INT32_T)
            ]),
 
     Define('DH_EXP',
            doc="Type of Export",
            constants=[
-               Constant('DH_EXP_CSV', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_EXP_ASCII', value='1', type=Type.INT32_T)                        ,
-               Constant('DH_EXP_ACCESS', value='2', type=Type.INT32_T)                        ,
+               Constant('DH_EXP_CSV', value='0', type=Type.INT32_T),
+               Constant('DH_EXP_ASCII', value='1', type=Type.INT32_T),
+               Constant('DH_EXP_ACCESS', value='2', type=Type.INT32_T),
                Constant('DH_EXP_SHP', value='3', type=Type.INT32_T,
-                        doc="Collars as points")                        ,
+                        doc="Collars as points"),
                Constant('DH_EXP_SURPAC', value='4', type=Type.INT32_T,
-                        doc="To Surpace Geological database (special format ACCESS)")                        ,
+                        doc="To Surpace Geological database (special format ACCESS)"),
                Constant('DH_EXP_SHP_TRACES', value='5', type=Type.INT32_T,
-                        doc="Hole traces as polylines")                        
+                        doc="Hole traces as polylines")
            ]),
 
     Define('DH_HOLES',
            doc="Holes to select",
            constants=[
-               Constant('DH_HOLES_ALL', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_HOLES_SELECTED', value='1', type=Type.INT32_T)                        
+               Constant('DH_HOLES_ALL', value='0', type=Type.INT32_T),
+               Constant('DH_HOLES_SELECTED', value='1', type=Type.INT32_T)
            ]),
 
     Define('DH_MASK',
            doc="Masks",
            constants=[
-               Constant('DH_MASK_APPEND', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_MASK_NEW', value='1', type=Type.INT32_T)                        
+               Constant('DH_MASK_APPEND', value='0', type=Type.INT32_T),
+               Constant('DH_MASK_NEW', value='1', type=Type.INT32_T)
            ]),
 
     Define('DH_PLOT',
            doc="Type of Plot",
            constants=[
-               Constant('DH_PLOT_PLAN', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_SECTION', value='1', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_STRIPLOG', value='2', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_HOLE_TRACES', value='3', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_3D', value='4', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_SECTION_STACK', value='5', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_SECTION_FENCE', value='6', type=Type.INT32_T)                        ,
-               Constant('DH_PLOT_SECTION_CROOKED', value='7', type=Type.INT32_T)                        
+               Constant('DH_PLOT_PLAN', value='0', type=Type.INT32_T),
+               Constant('DH_PLOT_SECTION', value='1', type=Type.INT32_T),
+               Constant('DH_PLOT_STRIPLOG', value='2', type=Type.INT32_T),
+               Constant('DH_PLOT_HOLE_TRACES', value='3', type=Type.INT32_T),
+               Constant('DH_PLOT_3D', value='4', type=Type.INT32_T),
+               Constant('DH_PLOT_SECTION_STACK', value='5', type=Type.INT32_T),
+               Constant('DH_PLOT_SECTION_FENCE', value='6', type=Type.INT32_T),
+               Constant('DH_PLOT_SECTION_CROOKED', value='7', type=Type.INT32_T)
            ]),
 
     Define('DH_SECT_PAGE',
            doc="Sections",
            constants=[
-               Constant('DH_SECT_PAGE_SECTION', value='1', type=Type.INT32_T)                        
+               Constant('DH_SECT_PAGE_SECTION', value='1', type=Type.INT32_T)
            ]),
 
     Define('DH_SURFACE',
@@ -145,19 +145,19 @@ gx_defines = [
            top or bottom surfaces.
            """,
            constants=[
-               Constant('DH_SURFACE_FIRST_LAYER_FROM', value='0', type=Type.INT32_T)                        ,
-               Constant('DH_SURFACE_FIRST_LAYER_TO', value='1', type=Type.INT32_T)                        ,
-               Constant('DH_SURFACE_SECOND_LAYER_FROM', value='2', type=Type.INT32_T)                        ,
-               Constant('DH_SURFACE_SECOND_LAYER_TO', value='3', type=Type.INT32_T)                        ,
-               Constant('DH_SURFACE_LAST_LAYER_FROM', value='4', type=Type.INT32_T)                        ,
-               Constant('DH_SURFACE_LAST_LAYER_TO', value='5', type=Type.INT32_T)                        
+               Constant('DH_SURFACE_FIRST_LAYER_FROM', value='0', type=Type.INT32_T),
+               Constant('DH_SURFACE_FIRST_LAYER_TO', value='1', type=Type.INT32_T),
+               Constant('DH_SURFACE_SECOND_LAYER_FROM', value='2', type=Type.INT32_T),
+               Constant('DH_SURFACE_SECOND_LAYER_TO', value='3', type=Type.INT32_T),
+               Constant('DH_SURFACE_LAST_LAYER_FROM', value='4', type=Type.INT32_T),
+               Constant('DH_SURFACE_LAST_LAYER_TO', value='5', type=Type.INT32_T)
            ]),
 
     Define('DIP_CONVENTION',
            doc="Dip convention",
            constants=[
-               Constant('DIP_CONVENTION_NEGATIVE', value='-1', type=Type.INT32_T)                        ,
-               Constant('DIP_CONVENTION_POSITIVE', value='1', type=Type.INT32_T)                        
+               Constant('DIP_CONVENTION_NEGATIVE', value='-1', type=Type.INT32_T),
+               Constant('DIP_CONVENTION_POSITIVE', value='1', type=Type.INT32_T)
            ])]
 
 
@@ -1585,6 +1585,35 @@ gx_methods = {
                              doc="Job Name   (*.in3)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
+               ]),
+
+        Method('iEditClassificationTableFileGUI_DH', module='geodh', version='9.3.0',
+               availability=Availability.EXTENSION, 
+               doc="Edit a symbol color/pattern CSV file",
+               return_type=Type.INT32_T,
+               return_doc="""
+               0 - Ok
+               -1 - User Cancelled
+               """,
+               parameters = [
+                   Parameter('p1', type="DH",
+                             doc=":class:`DH` Handle"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="Channel"),
+                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                             doc="CSV filename (in/out can be blank)"),
+                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                             doc="CSV filename string size"),
+                   Parameter('p5', type=Type.INT32_T,
+                             doc="""
+                             0 - Collar Symbols
+                             -1 - Rock Patterns
+                             """),
+                   Parameter('p6', type=Type.INT32_T,
+                             doc="""
+                             0 - Symbols/patterns (2D)
+                             -1 - Colors only (3D)
+                             """)
                ]),
 
         Method('iModifyCrookedSectionHolesGUI_DH', module='geodh', version='7.2.0',

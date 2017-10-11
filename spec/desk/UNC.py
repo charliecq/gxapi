@@ -18,7 +18,7 @@ gx_defines = [
            doc="UTF-8 Defines",
            constants=[
                Constant('UTF8_MAX_CHAR', value='5', type=Type.INT32_T,
-                        doc="Maximum width of a single Unicode code point as a :def:`UTF8` string, including terminator (5)")                        
+                        doc="Maximum width of a single Unicode code point as a :def:`UTF8` string, including terminator (5)")
            ])]
 
 

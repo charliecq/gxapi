@@ -24,7 +24,7 @@ gx_methods = {
 
         Method('Create_BIGRID', module='geogxx', version='5.0.0',
                availability=Availability.EXTENSION, 
-               doc="Create a handle to a Brigrid object",
+               doc="Create a handle to a Bigrid object",
                notes="""
                The Bigrid object is initially empty. It will store the
                control file parameters which the Bigrid program needs
@@ -98,7 +98,7 @@ gx_methods = {
                    Parameter('p1', type="BIGRID",
                              doc="Handle to :class:`BIGRID` object (stores control parameters)"),
                    Parameter('p2', type=Type.STRING,
-                             doc='not used, pass as ""'),
+                             doc='Not used, pass as ""'),
                    Parameter('p3', type="DAT",
                              doc="Handle to source :class:`DAT` object (from database)"),
                    Parameter('p4', type="DAT",
@@ -116,7 +116,7 @@ gx_methods = {
                    Parameter('p1', type="BIGRID",
                              doc="Handle to :class:`BIGRID` object (stores control parameters)"),
                    Parameter('p2', type=Type.STRING,
-                             doc='not used, pass as ""'),
+                             doc='Not used, pass as ""'),
                    Parameter('p3', type="DAT",
                              doc="Handle to source :class:`DAT` object (from database)"),
                    Parameter('p4', type="DAT",

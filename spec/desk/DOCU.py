@@ -8,8 +8,8 @@ gx_defines = [
     Define('DOCU_OPEN',
            doc="How to open document",
            constants=[
-               Constant('DOCU_OPEN_VIEW', value='0', type=Type.INT32_T)                        ,
-               Constant('DOCU_OPEN_EDIT', value='1', type=Type.INT32_T)                        
+               Constant('DOCU_OPEN_VIEW', value='0', type=Type.INT32_T),
+               Constant('DOCU_OPEN_EDIT', value='1', type=Type.INT32_T)
            ])]
 
 
@@ -117,7 +117,7 @@ gx_methods = {
 
         Method('iHaveMETA_DOCU', module='geogxx', version='5.1.1',
                availability=Availability.PUBLIC, 
-               doc="Do you have meta data?",
+               doc="Do you have metadata?",
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [

@@ -18,21 +18,21 @@ gx_defines = [
     Define('PG_3D_DIR',
            doc="3D Pager direction",
            constants=[
-               Constant('PG_3D_DIR_XYZ', value='0', type=Type.INT32_T)                        ,
-               Constant('PG_3D_DIR_YXZ', value='1', type=Type.INT32_T)                        ,
-               Constant('PG_3D_DIR_XZY', value='2', type=Type.INT32_T)                        ,
-               Constant('PG_3D_DIR_YZX', value='3', type=Type.INT32_T)                        ,
-               Constant('PG_3D_DIR_ZXY', value='4', type=Type.INT32_T)                        ,
-               Constant('PG_3D_DIR_ZYX', value='5', type=Type.INT32_T)                        
+               Constant('PG_3D_DIR_XYZ', value='0', type=Type.INT32_T),
+               Constant('PG_3D_DIR_YXZ', value='1', type=Type.INT32_T),
+               Constant('PG_3D_DIR_XZY', value='2', type=Type.INT32_T),
+               Constant('PG_3D_DIR_YZX', value='3', type=Type.INT32_T),
+               Constant('PG_3D_DIR_ZXY', value='4', type=Type.INT32_T),
+               Constant('PG_3D_DIR_ZYX', value='5', type=Type.INT32_T)
            ]),
 
     Define('PG_BF_CONV',
            doc="Pager binary conversions",
            constants=[
                Constant('PG_BF_CONV_NONE', value='0', type=Type.INT32_T,
-                        doc="The Data is in Raw form")                        ,
+                        doc="The Data is in Raw form"),
                Constant('PG_BF_CONV_SWAP', value='1', type=Type.INT32_T,
-                        doc="The data needs to be byte swapped")                        
+                        doc="The data needs to be byte swapped")
            ])]
 
 
@@ -134,7 +134,7 @@ gx_methods = {
     '2D Methods': [
 
         Method('Copy_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Copy the data from one pager to another.",
                return_type=Type.VOID,
                parameters = [
@@ -145,7 +145,7 @@ gx_methods = {
                ]),
 
         Method('CopySubset_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Copy a subset of data from one pager to another.",
                notes="2D Only",
                return_type=Type.VOID,
@@ -169,7 +169,7 @@ gx_methods = {
                ]),
 
         Method('Create_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a Pager object",
                return_type="PG",
                return_doc=":class:`PG` Object",
@@ -183,7 +183,7 @@ gx_methods = {
                ]),
 
         Method('CreateS_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a 2D :class:`PG` from serialized source.",
                notes="For 3D pagers, use CreateBF_PG.",
                return_type="PG",
@@ -202,7 +202,7 @@ gx_methods = {
                ]),
 
         Method('Dummy_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Sets the Entire pager to dummy.",
                return_type=Type.VOID,
                parameters = [
@@ -211,7 +211,7 @@ gx_methods = {
                ]),
 
         Method('iEType_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Gets the type of pager.",
                return_type=Type.INT32_T,
                return_doc=":def:`GS_TYPES`",
@@ -221,7 +221,7 @@ gx_methods = {
                ]),
 
         Method('iNCols_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Gets the # of columns in pager.",
                return_type=Type.INT32_T,
                return_doc="# of columns.",
@@ -231,7 +231,7 @@ gx_methods = {
                ]),
 
         Method('iNRows_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Gets the # of rows in pager.",
                return_type=Type.INT32_T,
                return_doc="# of rows.",
@@ -241,7 +241,7 @@ gx_methods = {
                ]),
 
         Method('iNSlices_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Gets the # of slices (z) in pager.",
                return_type=Type.INT32_T,
                return_doc="# of rows.",
@@ -251,7 +251,7 @@ gx_methods = {
                ]),
 
         Method('Range_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Computes the range of the entire pager.",
                return_type=Type.VOID,
                parameters = [
@@ -264,7 +264,7 @@ gx_methods = {
                ]),
 
         Method('rGet_PG', module='geoengine.core', version='8.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read a single value from a 2D :class:`PG`",
                notes="This is a low-performance method.",
                return_type=Type.DOUBLE,
@@ -278,7 +278,7 @@ gx_methods = {
                ]),
 
         Method('ReadCol_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read a set of elements in X (column) from pager into vv",
                return_type=Type.VOID,
                parameters = [
@@ -295,7 +295,7 @@ gx_methods = {
                ]),
 
         Method('ReadRow_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read a set of elements in Y (row) from pager into vv",
                return_type=Type.VOID,
                parameters = [
@@ -312,7 +312,7 @@ gx_methods = {
                ]),
 
         Method('ReAllocate_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Changes the size of Pager",
                return_type=Type.VOID,
                parameters = [
@@ -325,7 +325,7 @@ gx_methods = {
                ]),
 
         Method('Serial_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Serialize a 2D :class:`PG` to a :class:`BF`.",
                notes="For 3D pagers, use :func:`WriteBF_PG`.",
                return_type=Type.VOID,
@@ -346,7 +346,7 @@ gx_methods = {
                ]),
 
         Method('WriteCol_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write a set of elements in X (column) from vv into pager",
                return_type=Type.VOID,
                parameters = [
@@ -363,7 +363,7 @@ gx_methods = {
                ]),
 
         Method('WriteRow_PG', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write a set of elements in Y (row) from vv into pager",
                return_type=Type.VOID,
                parameters = [
@@ -622,8 +622,31 @@ gx_methods = {
                              doc="Reverse Z")
                ]),
 
-        Method('WriteWA_PG', module='geoengine.core', version='6.2.0',
+        Method('WriteBFEx_PG', module='geoengine.core', version='9.3',
                availability=Availability.LICENSED, 
+               doc="Write the contents of a 2D or 3D pager to a :class:`BF`.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="PG",
+                             doc=":class:`PG` handle"),
+                   Parameter('p2', type="BF",
+                             doc=":class:`BF` to write to"),
+                   Parameter('p3', type=Type.INT32_T,
+                             doc=":def:`PG_3D_DIR`"),
+                   Parameter('p4', type=Type.INT32_T,
+                             doc=":def:`PG_BF_CONV`"),
+                   Parameter('p5', type=Type.INT32_T,
+                             doc="Reverse X"),
+                   Parameter('p6', type=Type.INT32_T,
+                             doc="Reverse Y"),
+                   Parameter('p7', type=Type.INT32_T,
+                             doc="Reverse Z"),
+                   Parameter('p8', type=Type.DOUBLE,
+                             doc="Dummy value")
+               ]),
+
+        Method('WriteWA_PG', module='geoengine.core', version='6.2.0',
+               availability=Availability.PUBLIC, 
                doc="Write the contents of a 2D or 3D pager to a :class:`WA`",
                notes="Each line will hold only 1 value",
                return_type=Type.VOID,

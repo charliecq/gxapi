@@ -9,9 +9,9 @@ gx_defines = [
            doc="Which variables to return from sReadBlockModelVariableInfo",
            constants=[
                Constant('BLOCK_MODEL_NUMERIC_VARIABLE', value='1', type=Type.INT32_T,
-                        doc="Return numeric variable names")                        ,
+                        doc="Return numeric variable names"),
                Constant('BLOCK_MODEL_STRING_VARIABLE', value='2', type=Type.INT32_T,
-                        doc="Return string variable names")                        
+                        doc="Return string variable names")
            ])]
 
 

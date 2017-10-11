@@ -57,21 +57,21 @@ gx_defines = [
            """,
            constants=[
                Constant('DGW_LABEL', value='0', type=Type.INT32_T,
-                        doc="The text label tied to each Dialogue component.")                        ,
+                        doc="The text label tied to each Dialogue component."),
                Constant('DGW_TEXT', value='1', type=Type.INT32_T,
-                        doc="The edit field text.")                        ,
+                        doc="The edit field text."),
                Constant('DGW_PATH', value='2', type=Type.INT32_T,
-                        doc="The file edit path.")                        ,
+                        doc="The file edit path."),
                Constant('DGW_FILEPATH', value='3', type=Type.INT32_T,
-                        doc="The complete file name, path included.")                        ,
+                        doc="The complete file name, path included."),
                Constant('DGW_LISTVAL', value='4', type=Type.INT32_T,
-                        doc="The alias value associated with the list entry.")                        ,
+                        doc="The alias value associated with the list entry."),
                Constant('DGW_LISTALIAS', value='5', type=Type.INT32_T,
-                        doc="The text value associated with the list entry.")                        ,
+                        doc="The text value associated with the list entry."),
                Constant('DGW_EXT', value='7', type=Type.INT32_T,
-                        doc="The extension associated with a filename entry.")                        ,
+                        doc="The extension associated with a filename entry."),
                Constant('DGW_HIDE', value='8', type=Type.INT32_T,
-                        doc='Hide the button or entry and its label, if string is not "0"')                        
+                        doc='Hide the button or entry and its label, if string is not "0"')
            ])]
 
 

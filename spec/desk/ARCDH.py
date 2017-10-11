@@ -45,7 +45,7 @@ gx_methods = {
 
         Method('iHasStringFileGDBEdits_ARCDH', module='geoarcgis', version='8.0.1',
                availability=Availability.EXTENSION, 
-               doc="Is a Geostring File Geodatabase loaded and contain edits?",
+               doc="Is a Geostring File Geodatabase loaded and contains edits?",
                return_type=Type.INT32_T),
 
         Method('iGeostringsExtensionAvailable_ARCDH', module='geoarcgis', version='8.0.1',
@@ -59,9 +59,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="name returned"),
+                             doc="Name returned"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="string size")
+                             doc="String size")
                ]),
 
         Method('iIsValidFGDBFileName_ARCDH', module='geoarcgis', version='8.0.1',
@@ -79,7 +79,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="featureclass name")
+                             doc="Featureclass name")
                ]),
 
         Method('sPromptForESRISymbol_ARCDH', module='geoarcgis', version='8.2.0',

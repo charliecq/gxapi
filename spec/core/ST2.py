@@ -14,9 +14,9 @@ gx_defines = [
            doc="Correlation style",
            constants=[
                Constant('ST2_CORR', value='0', type=Type.INT32_T,
-                        doc="Simple correlation")                        ,
+                        doc="Simple correlation"),
                Constant('ST2_PCORR', value='1', type=Type.INT32_T,
-                        doc="Pearson's correlation (normalized to standard deviations)")                        
+                        doc="Pearson's correlation (normalized to standard deviations)")
            ])]
 
 

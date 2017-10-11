@@ -13,9 +13,9 @@ gx_defines = [
            doc="Open Modes",
            constants=[
                Constant('MAPTEMPLATE_WRITENEW', value='0', type=Type.INT32_T,
-                        doc="Create new empty map template (will overwrite existing files)")                        ,
+                        doc="Create new empty map template (will overwrite existing files)"),
                Constant('MAPTEMPLATE_EXIST', value='1', type=Type.INT32_T,
-                        doc="Create from existing template on disk")                        
+                        doc="Create from existing template on disk")
            ])]
 
 

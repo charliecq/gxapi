@@ -42,10 +42,10 @@ gx_defines = [
     Define('TPAT_STRING_SIZE',
            doc="Default string sizes.",
            constants=[
-               Constant('TPAT_CODE_SIZE', value='21', type=Type.INT32_T)                        ,
-               Constant('TPAT_LABEL_SIZE', value='32', type=Type.INT32_T)                        ,
-               Constant('TPAT_DESC_SIZE', value='128', type=Type.INT32_T)                        ,
-               Constant('TPAT_SYMBFONT_SIZE', value='32', type=Type.INT32_T)                        
+               Constant('TPAT_CODE_SIZE', value='21', type=Type.INT32_T),
+               Constant('TPAT_LABEL_SIZE', value='32', type=Type.INT32_T),
+               Constant('TPAT_DESC_SIZE', value='128', type=Type.INT32_T),
+               Constant('TPAT_SYMBFONT_SIZE', value='32', type=Type.INT32_T)
            ])]
 
 

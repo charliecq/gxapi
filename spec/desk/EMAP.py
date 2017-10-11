@@ -69,84 +69,84 @@ gx_defines = [
     Define('EMAP_FONT',
            doc="Font Types",
            constants=[
-               Constant('EMAP_FONT_TT', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAP_FONT_GFN', value='1', type=Type.INT32_T)                        
+               Constant('EMAP_FONT_TT', value='0', type=Type.INT32_T),
+               Constant('EMAP_FONT_GFN', value='1', type=Type.INT32_T)
            ]),
 
     Define('EMAP_PATH',
            doc="Four forms",
            constants=[
                Constant('EMAP_PATH_FULL', value='0', type=Type.INT32_T,
-                        doc="d:\\directory\\file.gdb")                        ,
+                        doc="d:\\directory\\file.gdb"),
                Constant('EMAP_PATH_DIR', value='1', type=Type.INT32_T,
-                        doc="\\directory\\file.gdb")                        ,
+                        doc="\\directory\\file.gdb"),
                Constant('EMAP_PATH_NAME_EXT', value='2', type=Type.INT32_T,
-                        doc="file.gdb")                        ,
+                        doc="file.gdb"),
                Constant('EMAP_PATH_NAME', value='3', type=Type.INT32_T,
-                        doc="file")                        
+                        doc="file")
            ]),
 
     Define('EMAP_REDRAW',
            doc="Redraw Options",
            constants=[
-               Constant('EMAP_REDRAW_NO', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAP_REDRAW_YES', value='1', type=Type.INT32_T)                        
+               Constant('EMAP_REDRAW_NO', value='0', type=Type.INT32_T),
+               Constant('EMAP_REDRAW_YES', value='1', type=Type.INT32_T)
            ]),
 
     Define('EMAP_REMOVE',
            doc="How to handle pending changes in document",
            constants=[
-               Constant('EMAP_REMOVE_SAVE', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAP_REMOVE_PROMPT', value='1', type=Type.INT32_T)                        ,
-               Constant('EMAP_REMOVE_DISCARD', value='2', type=Type.INT32_T)                        
+               Constant('EMAP_REMOVE_SAVE', value='0', type=Type.INT32_T),
+               Constant('EMAP_REMOVE_PROMPT', value='1', type=Type.INT32_T),
+               Constant('EMAP_REMOVE_DISCARD', value='2', type=Type.INT32_T)
            ]),
 
     Define('EMAP_TRACK',
            doc="Tracking Options",
            constants=[
                Constant('EMAP_TRACK_ERASE', value='1', type=Type.INT32_T,
-                        doc="Erase Object after you return?")                        ,
+                        doc="Erase Object after you return?"),
                Constant('EMAP_TRACK_RMENU', value='2', type=Type.INT32_T,
-                        doc="Allow use of right-menu")                        ,
+                        doc="Allow use of right-menu"),
                Constant('EMAP_TRACK_CYCLE', value='4', type=Type.INT32_T,
-                        doc="If user holds down left-mouse, will return many times")                        
+                        doc="If user holds down left-mouse, will return many times")
            ]),
 
     Define('EMAP_VIEWPORT',
            doc="Tracking Options",
            constants=[
                Constant('EMAP_VIEWPORT_NORMAL', value='0', type=Type.INT32_T,
-                        doc="Normal map usage")                        ,
+                        doc="Normal map usage"),
                Constant('EMAP_VIEWPORT_BROWSEZOOM', value='1', type=Type.INT32_T,
-                        doc="Zoom Mode")                        ,
+                        doc="Zoom Mode"),
                Constant('EMAP_VIEWPORT_BROWSEAOI', value='2', type=Type.INT32_T,
-                        doc="Change Area Of Interest Mode")                        
+                        doc="Change Area Of Interest Mode")
            ]),
 
     Define('EMAP_WINDOW_POSITION',
            doc="Window Positioning Options",
            constants=[
-               Constant('EMAP_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAP_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)                        
+               Constant('EMAP_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T),
+               Constant('EMAP_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)
            ]),
 
     Define('EMAP_WINDOW_STATE',
            doc="Window State Options",
            constants=[
-               Constant('EMAP_WINDOW_RESTORE', value='0', type=Type.INT32_T)                        ,
-               Constant('EMAP_WINDOW_MINIMIZE', value='1', type=Type.INT32_T)                        ,
-               Constant('EMAP_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)                        
+               Constant('EMAP_WINDOW_RESTORE', value='0', type=Type.INT32_T),
+               Constant('EMAP_WINDOW_MINIMIZE', value='1', type=Type.INT32_T),
+               Constant('EMAP_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)
            ]),
 
     Define('LAYOUT_VIEW_UNITS',
            doc="Base dlayout display units",
            constants=[
                Constant('LAYOUT_VIEW_MM', value='0', type=Type.INT32_T,
-                        doc="Millimeters")                        ,
+                        doc="Millimeters"),
                Constant('LAYOUT_VIEW_CM', value='1', type=Type.INT32_T,
-                        doc="Centimeters")                        ,
+                        doc="Centimeters"),
                Constant('LAYOUT_VIEW_IN', value='2', type=Type.INT32_T,
-                        doc="Inches")                        
+                        doc="Inches")
            ])]
 
 
@@ -442,6 +442,16 @@ gx_methods = {
     ],
     'General': [
 
+        Method('iPackedFiles_EMAP', module='None', version='9.2.0',
+               availability=Availability.PUBLIC, is_app=True, 
+               doc="The number of packed files in the map.",
+               return_type=Type.INT32_T,
+               return_doc="The number of packed files in map.",
+               parameters = [
+                   Parameter('p1', type="EMAP",
+                             doc=":class:`EMAP` object")
+               ]),
+
         Method('ActivateGroup_EMAP', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Activates a group and associated tools.",
@@ -698,6 +708,16 @@ gx_methods = {
                doc="Is the current view a 3D view.",
                return_type=Type.INT32_T,
                return_doc="1 - Yes, 0 - No",
+               parameters = [
+                   Parameter('p1', type="EMAP",
+                             doc=":class:`EMAP` object")
+               ]),
+
+        Method('GetE3DV_EMAP', module='None', version='9.3.0',
+               availability=Availability.PUBLIC, is_app=True, 
+               doc="Get an :class:`E3DV` from the :class:`EMAP`",
+               return_type="E3DV",
+               return_doc=":class:`E3DV` object",
                parameters = [
                    Parameter('p1', type="EMAP",
                              doc=":class:`EMAP` object")
@@ -1683,8 +1703,8 @@ gx_methods = {
     'External Window': [
 
         Method('LoadControl_EMAP', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, no_gxh=True, no_cpp=True, 
-               doc="",
+               availability=Availability.PUBLIC, is_app=True, no_gxh=True, 
+               doc="Version of :func:`Load_EMAP` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
@@ -1694,8 +1714,8 @@ gx_methods = {
                ]),
 
         Method('LoadWithViewControl_EMAP', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, no_gxh=True, no_cpp=True, 
-               doc="",
+               availability=Availability.PUBLIC, is_app=True, no_gxh=True, 
+               doc="Version of :func:`LoadWithView_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,

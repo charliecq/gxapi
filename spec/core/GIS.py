@@ -13,32 +13,32 @@ gx_defines = [
            doc="View type to create",
            constants=[
                Constant('GIS_MAP2D_PLAN', value='0', type=Type.INT32_T,
-                        doc="Plan view")                        ,
+                        doc="Plan view"),
                Constant('GIS_MAP2D_EWSECTION', value='1', type=Type.INT32_T,
-                        doc="Section view, East-West")                        ,
+                        doc="Section view, East-West"),
                Constant('GIS_MAP2D_NSSECTION', value='2', type=Type.INT32_T,
-                        doc="Section view, North-South")                        
+                        doc="Section view, North-South")
            ]),
 
     Define('GIS_TYPE',
            doc="Type of file",
            constants=[
                Constant('GIS_TYPE_MAPINFO', value='1', type=Type.INT32_T,
-                        doc="Mapinfo Files")                        ,
+                        doc="Mapinfo Files"),
                Constant('GIS_TYPE_ARCVIEW', value='2', type=Type.INT32_T,
-                        doc="ArcView files")                        ,
+                        doc="ArcView files"),
                Constant('GIS_TYPE_DGN', value='3', type=Type.INT32_T,
-                        doc="Microstation DGN files")                        ,
+                        doc="Microstation DGN files"),
                Constant('GIS_TYPE_SURPAC', value='4', type=Type.INT32_T,
-                        doc="Surpac :class:`STR` and DTM files")                        ,
+                        doc="Surpac :class:`STR` and DTM files"),
                Constant('GIS_TYPE_DATAMINE', value='5', type=Type.INT32_T,
-                        doc="Datamine DM files")                        ,
+                        doc="Datamine DM files"),
                Constant('GIS_TYPE_GEMCOM', value='6', type=Type.INT32_T,
-                        doc="GEMCOM files")                        ,
+                        doc="GEMCOM files"),
                Constant('GIS_TYPE_MICROMINE', value='7', type=Type.INT32_T,
-                        doc="MICROMINE files")                        ,
+                        doc="MICROMINE files"),
                Constant('GIS_TYPE_MINESIGHT', value='8', type=Type.INT32_T,
-                        doc="MINESIGHT files")                        
+                        doc="MINESIGHT files")
            ])]
 
 
@@ -324,7 +324,7 @@ gx_methods = {
                All string fields (excluding X/Y and numerical fields) will be saved into the :class:`WA` columns.
                
                e field names are saved in the first line, followed by a blank line.
-               e field columns are seperated by a tab (delimited character).
+               e field columns are separated by a tab (delimited character).
                """,
                return_type=Type.VOID,
                parameters = [

@@ -2,8 +2,8 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
 gx_class = Class('ACQUIRE',
                  doc="""
-                 This class is used to import Acquire data. It uses the
-                 public Acquire API.
+                 This class is used to import acQuire data. It uses the
+                 public acQuire API.
                  """)
 
 
@@ -11,8 +11,8 @@ gx_defines = [
     Define('ACQUIRE_SEL',
            doc="Type of Selection",
            constants=[
-               Constant('ACQUIRE_SEL_HOLES', value='0', type=Type.INT32_T)                        ,
-               Constant('ACQUIRE_SEL_POINT', value='1', type=Type.INT32_T)                        
+               Constant('ACQUIRE_SEL_HOLES', value='0', type=Type.INT32_T),
+               Constant('ACQUIRE_SEL_POINT', value='1', type=Type.INT32_T)
            ])]
 
 
@@ -21,9 +21,9 @@ gx_methods = {
 
         Method('Create_ACQUIRE', module='geoacquire', version='6.0.0',
                availability=Availability.LICENSED, 
-               doc="Create a :class:`ACQUIRE` object",
+               doc="Create an acQuire object",
                return_type="ACQUIRE",
-               return_doc=":class:`ACQUIRE` Object"),
+               return_doc="acQuire Object"),
 
         Method('DeleteEmptyChan_ACQUIRE', module='geoacquire', version='6.0.0',
                availability=Availability.LICENSED, 
@@ -31,7 +31,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ACQUIRE",
-                             doc=":class:`ACQUIRE` Handle"),
+                             doc="acQuire Handle"),
                    Parameter('p2', type="DB",
                              doc="Database")
                ]),
@@ -42,7 +42,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ACQUIRE",
-                             doc="Aquire Object")
+                             doc="acQuire Object")
                ]),
 
         Method('iImportHole_ACQUIRE', module='geoacquire', version='6.0.1',
@@ -59,15 +59,15 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="ACQUIRE",
-                             doc="Aquire Object"),
+                             doc="acQuire Object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="project name"),
+                             doc="Project name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="project directory"),
+                             doc="Project directory"),
                    Parameter('p4', type=Type.STRING,
                              doc="Parameter File"),
                    Parameter('p5', type="VV",
-                             doc="list of geology name database"),
+                             doc="List of geology name database"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="0: Write to existing databases (overwrite holes), 1: Delete existing databases."),
                    Parameter('p7', type=Type.INT32_T,
@@ -89,7 +89,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="ACQUIRE",
-                             doc=":class:`ACQUIRE` Handle"),
+                             doc="acQuire Handle"),
                    Parameter('p2', type="DB",
                              doc="Geosoft GDB"),
                    Parameter('p3', type=Type.STRING,
@@ -100,7 +100,7 @@ gx_methods = {
 
         Method('iSelectionTool_ACQUIRE', module='geoacquire', version='6.0.1',
                availability=Availability.LICENSED, 
-               doc="Run the Acquire Selection Tool.",
+               doc="Run the acQuire Selection Tool.",
                notes="""
                The selection file will be loaded (if present) and then
                the user can make selections then the selections are saved
@@ -113,7 +113,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="ACQUIRE",
-                             doc="Aquire Object"),
+                             doc="acQuire Object"),
                    Parameter('p2', type=Type.STRING,
                              doc="Selection File Name"),
                    Parameter('p3', type=Type.INT32_T,

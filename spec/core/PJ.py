@@ -14,24 +14,24 @@ gx_defines = [
            doc="elevation correction method",
            constants=[
                Constant('PJ_ELEVATION_NONE', value='0', type=Type.INT32_T,
-                        doc="elevation transform not supported.")                        ,
+                        doc="elevation transform not supported."),
                Constant('PJ_ELEVATION_GEOCENTRIC', value='1', type=Type.INT32_T,
                         doc="""
                         elevation transformation uses earth-centre shift
                         and is not accurate.
-                        """)                        ,
+                        """),
                Constant('PJ_ELEVATION_GEOID', value='2', type=Type.INT32_T,
                         doc="""
                         elevation transformation uses a geoid model
                         and is as accurate as the geoid data.
-                        """)                        
+                        """)
            ]),
 
     Define('PJ_RECT',
            doc="Conversion direction",
            constants=[
-               Constant('PJ_RECT_XY2LL', value='0', type=Type.INT32_T)                        ,
-               Constant('PJ_RECT_LL2XY', value='1', type=Type.INT32_T)                        
+               Constant('PJ_RECT_XY2LL', value='0', type=Type.INT32_T),
+               Constant('PJ_RECT_LL2XY', value='1', type=Type.INT32_T)
            ])]
 
 

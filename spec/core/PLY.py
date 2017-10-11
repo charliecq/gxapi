@@ -12,25 +12,25 @@ gx_defines = [
            doc="Polygon clipping mode",
            constants=[
                Constant('PLY_CLIP_NO_INTERSECT', value='0', type=Type.INT32_T,
-                        doc="The polygons do not intersect")                        ,
+                        doc="The polygons do not intersect"),
                Constant('PLY_CLIP_INTERSECT', value='1', type=Type.INT32_T,
-                        doc="The polygons do intersect")                        ,
+                        doc="The polygons do intersect"),
                Constant('PLY_CLIP_A_IN_B', value='2', type=Type.INT32_T,
-                        doc="Polygon A is completly inside polygon B")                        ,
+                        doc="Polygon A is completly inside polygon B"),
                Constant('PLY_CLIP_B_IN_A', value='3', type=Type.INT32_T,
-                        doc="Polygon B is completly inside polygon A")                        
+                        doc="Polygon B is completly inside polygon A")
            ]),
 
     Define('PLY_LINE_CLIP',
            doc="Polygon line clip indicator",
            constants=[
                Constant('PLY_LINE_CLIP_INSIDE', value='0', type=Type.INT32_T,
-                        doc="The start point of the line is inside")                        ,
+                        doc="The start point of the line is inside"),
                Constant('PLY_LINE_CLIP_NO_INTERSECT', value='0', type=Type.INT32_T,
-                        doc="This name is a misnomer - it should have been :def_val:`PLY_LINE_CLIP_INSIDE`, but is retained to support legacy code")                        ,
+                        doc="This name is a misnomer - it should have been :def_val:`PLY_LINE_CLIP_INSIDE`, but is retained to support legacy code"),
                Constant('PLY_LINE_CLIP_OUTSIDE', value='1', type=Type.INT32_T,
-                        doc="The start point of the line is outside")                        ,
-               Constant('PLY_LINE_CLIP_ERROR', value='2', type=Type.INT32_T)                        
+                        doc="The start point of the line is outside"),
+               Constant('PLY_LINE_CLIP_ERROR', value='2', type=Type.INT32_T)
            ])]
 
 

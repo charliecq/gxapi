@@ -12,11 +12,11 @@ gx_defines = [
            doc="Describes what kind of table was selected",
            constants=[
                Constant('ARC_SELTBL_STANDALONE', value='0', type=Type.INT32_T,
-                        doc="Standalone Table")                        ,
+                        doc="Standalone Table"),
                Constant('ARC_SELTBL_FEATURELAYER', value='1', type=Type.INT32_T,
-                        doc="Feature Layer")                        ,
+                        doc="Feature Layer"),
                Constant('ARC_SELTBL_CANCELED', value='-1', type=Type.INT32_T,
-                        doc="User Canceled")                        
+                        doc="User Canceled")
            ]),
 
     Define('ARCDB_NULL',

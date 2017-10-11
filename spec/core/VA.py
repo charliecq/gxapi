@@ -23,18 +23,18 @@ gx_defines = [
            doc=":class:`VA` Object to average",
            constants=[
                Constant('VA_AVERAGE_ROWS', value='0', type=Type.INT32_T,
-                        doc="Average the Rows")                        ,
+                        doc="Average the Rows"),
                Constant('VA_AVERAGE_COLUMNS', value='1', type=Type.INT32_T,
-                        doc="Average the Columns")                        
+                        doc="Average the Columns")
            ]),
 
     Define('VA_OBJECT',
            doc=":class:`VA` Object to select",
            constants=[
                Constant('VA_ROW', value='0', type=Type.INT32_T,
-                        doc="Row")                        ,
+                        doc="Row"),
                Constant('VA_COL', value='1', type=Type.INT32_T,
-                        doc="Column")                        
+                        doc="Column")
            ])]
 
 

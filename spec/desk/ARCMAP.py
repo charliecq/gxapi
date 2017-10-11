@@ -12,31 +12,31 @@ gx_defines = [
            doc="Flags that can be combined and passed to iLoadMap_ARCMAP",
            constants=[
                Constant('ARCMAP_LOAD_DELFRAME', value='1', type=Type.INT32_T,
-                        doc="If an exisiting frame is found delete it")                        ,
+                        doc="If an existing frame is found delete it"),
                Constant('ARCMAP_LOAD_DELLAYER', value='2', type=Type.INT32_T,
-                        doc="If an exisiting layer is found delete it")                        ,
+                        doc="If an existing layer is found delete it"),
                Constant('ARCMAP_LOAD_EXISTFRAME', value='4', type=Type.INT32_T,
-                        doc="If an exisiting frame is found add new layers to it")                        ,
+                        doc="If an existing frame is found add new layers to it"),
                Constant('ARCMAP_LOAD_COPYLAYER', value='8', type=Type.INT32_T,
-                        doc="If an exisiting layer is found make a copy")                        ,
+                        doc="If an existing layer is found make a copy"),
                Constant('ARCMAP_LOAD_HIDESIBLINGS', value='16', type=Type.INT32_T,
-                        doc="Hide all other existing layers in frame")                        ,
+                        doc="Hide all other existing layers in frame"),
                Constant('ARCMAP_LOAD_PREFIXMAPFRAME', value='32', type=Type.INT32_T,
-                        doc="Prefix the map filename part as part of the frame name")                        ,
+                        doc="Prefix the map filename part as part of the frame name"),
                Constant('ARCMAP_LOAD_PREFIXMAPLAYER', value='64', type=Type.INT32_T,
-                        doc="Prefix the map filename part as part of the layer name")                        ,
+                        doc="Prefix the map filename part as part of the layer name"),
                Constant('ARCMAP_LOAD_MERGETOSINGLEVIEW', value='128', type=Type.INT32_T,
-                        doc="Will render all views in single layer with the data view defining the coordinate system")                        ,
+                        doc="Will render all views in single layer with the data view defining the coordinate system"),
                Constant('ARCMAP_LOAD_INTOCURRENTFRAME', value='256', type=Type.INT32_T,
-                        doc="Load everything into the current data frame")                        ,
+                        doc="Load everything into the current data frame"),
                Constant('ARCMAP_LOAD_NOMAPLAYERS', value='512', type=Type.INT32_T,
-                        doc="Use the map only for sizing data frames in layout, only load extra datasets.")                        ,
+                        doc="Use the map only for sizing data frames in layout, only load extra datasets."),
                Constant('ARCMAP_LOAD_ACTIVATE', value='1024', type=Type.INT32_T,
-                        doc="Activates the main quickmap layer when done (e.g. 3D Viewer)")                        ,
+                        doc="Activates the main quickmap layer when done (e.g. 3D Viewer)"),
                Constant('ARCMAP_LOAD_NEW', value='2048', type=Type.INT32_T,
-                        doc="New method for loading maps introduced in 7.1. Will mimic what happens in montaj (i.e. base groups and 3D become graphics and views gets split into separate LYRs).")                        ,
+                        doc="New method for loading maps introduced in 7.1. Will mimic what happens in montaj (i.e. base groups and 3D become graphics and views gets split into separate LYRs)."),
                Constant('ARCMAP_LOAD_NAMETAGISPREFIX', value='4096', type=Type.INT32_T,
-                        doc="Use a provided name tag as prefix when naming a newly created map layer.")                        
+                        doc="Use a provided name tag as prefix when naming a newly created map layer.")
            ])]
 
 
@@ -75,7 +75,7 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc="Layer name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="output file name")
+                             doc="Output file name")
                ]),
 
         Method('ExportSelectedFeatureLayerTo3DFile_ARCMAP', module='geoarcgis', version='8.0.0',
@@ -84,7 +84,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="output file name")
+                             doc="Output file name")
                ]),
 
         Method('GetCurrentDocumentInfo_ARCMAP', module='geoarcgis', version='8.0.0',
@@ -195,9 +195,9 @@ gx_methods = {
                return_doc="0- OK, 1 - Error, -1 - Cancel",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="shape file to load"),
+                             doc="Shape file to load"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="delete existing layers?")
+                             doc="Delete existing layers?")
                ]),
 
         Method('iLoadSPF_ARCMAP', module='geoarcgis', version='8.0.0',
@@ -207,9 +207,9 @@ gx_methods = {
                return_doc="0- OK, 1 - Error, -1 - Cancel",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="list of shape files to load"),
+                             doc="List of shape files to load"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number of shape files")
+                             doc="Number of shape files")
                ]),
 
         Method('LoadLYR_ARCMAP', module='geoarcgis', version='8.0.0',
@@ -323,7 +323,7 @@ gx_methods = {
 
         Method('QuerySize_ARCMAP', module='geoarcgis', version='8.0.0',
                availability=Availability.PUBLIC, 
-               doc="Querie the page size in mm of the entire map page.",
+               doc="Query the page size in mm of the entire map page.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE, is_ref=True,

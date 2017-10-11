@@ -14,104 +14,104 @@ gx_defines = [
            doc="Voxel direction",
            constants=[
                Constant('VOX_DIR_XY', value='0', type=Type.INT32_T,
-                        doc="X/Y Plane (Fastest)")                        ,
+                        doc="X/Y Plane (Fastest)"),
                Constant('VOX_DIR_XZ', value='1', type=Type.INT32_T,
-                        doc="X/Z Plane (Middle)")                        ,
+                        doc="X/Z Plane (Middle)"),
                Constant('VOX_DIR_YZ', value='2', type=Type.INT32_T,
-                        doc="Y/Z Plane (Slowest)")                        
+                        doc="Y/Z Plane (Slowest)")
            ]),
 
     Define('VOX_DIRECTION',
            doc="Voxel export direction",
            constants=[
                Constant('VOX_3D_DIR_XYZ', value='0', type=Type.INT32_T,
-                        doc="XYZ")                        ,
+                        doc="XYZ"),
                Constant('VOX_3D_DIR_YXZ', value='1', type=Type.INT32_T,
-                        doc="YXZ")                        ,
+                        doc="YXZ"),
                Constant('VOX_3D_DIR_XZY', value='2', type=Type.INT32_T,
-                        doc="XZY")                        ,
+                        doc="XZY"),
                Constant('VOX_3D_DIR_YZX', value='3', type=Type.INT32_T,
-                        doc="YZX")                        ,
+                        doc="YZX"),
                Constant('VOX_3D_DIR_ZXY', value='4', type=Type.INT32_T,
-                        doc="ZXY")                        ,
+                        doc="ZXY"),
                Constant('VOX_3D_DIR_ZYX', value='5', type=Type.INT32_T,
-                        doc="ZYX")                        
+                        doc="ZYX")
            ]),
 
     Define('VOX_FILTER3D',
            doc="Voxel filter type",
            constants=[
                Constant('VOX_FILTER3D_FILE', value='0', type=Type.INT32_T,
-                        doc="Specify a file containing the 27-point filter")                        ,
+                        doc="Specify a file containing the 27-point filter"),
                Constant('VOX_FILTER3D_SMOOTHING', value='1', type=Type.INT32_T,
-                        doc="Smoothing filter")                        ,
+                        doc="Smoothing filter"),
                Constant('VOX_FILTER3D_LAPLACE', value='2', type=Type.INT32_T,
-                        doc="Laplace filter")                        ,
+                        doc="Laplace filter"),
                Constant('VOX_FILTER3D_X_GRADIENT', value='3', type=Type.INT32_T,
-                        doc="X-Gradient filter")                        ,
+                        doc="X-Gradient filter"),
                Constant('VOX_FILTER3D_Y_GRADIENT', value='4', type=Type.INT32_T,
-                        doc="Y-Gradient filter")                        ,
+                        doc="Y-Gradient filter"),
                Constant('VOX_FILTER3D_Z_GRADIENT', value='5', type=Type.INT32_T,
-                        doc="Z-Gradient filter")                        ,
+                        doc="Z-Gradient filter"),
                Constant('VOX_FILTER3D_TOTAL_GRADIENT', value='6', type=Type.INT32_T,
-                        doc="Total-Gradient filter")                        
+                        doc="Total-Gradient filter")
            ]),
 
     Define('VOX_GOCAD_ORIENTATION',
            doc="GOCAD Orientations",
            constants=[
                Constant('VOX_GOCAD_ORIENTATIONS_NORMAL', value='0', type=Type.INT32_T,
-                        doc="Normal")                        ,
+                        doc="Normal"),
                Constant('VOX_GOCAD_ORIENTATIONS_INVERTED', value='1', type=Type.INT32_T,
-                        doc="Inverted (Z)")                        ,
+                        doc="Inverted (Z)"),
                Constant('VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST', value='2', type=Type.INT32_T,
-                        doc="Normal (ZFirst)")                        ,
+                        doc="Normal (ZFirst)"),
                Constant('VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST', value='3', type=Type.INT32_T,
-                        doc="Inverted (Z) (ZFirst)")                        
+                        doc="Inverted (Z) (ZFirst)")
            ]),
 
     Define('VOX_GRID_LOGOPT',
            doc="Voxel log gridding options",
            constants=[
                Constant('VOX_GRID_LOGOPT_LINEAR', value='0', type=Type.INT32_T,
-                        doc="linear")                        ,
+                        doc="linear"),
                Constant('VOX_GRID_LOGOPT_LOG_SAVELINEAR', value='-1', type=Type.INT32_T,
-                        doc="log, save as linear")                        ,
+                        doc="log, save as linear"),
                Constant('VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR', value='-2', type=Type.INT32_T,
-                        doc="log-linear, save as linear")                        ,
+                        doc="log-linear, save as linear"),
                Constant('VOX_GRID_LOGOPT_LOG_SAVELOG', value='1', type=Type.INT32_T,
-                        doc="log, save as log")                        ,
+                        doc="log, save as log"),
                Constant('VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG', value='2', type=Type.INT32_T,
-                        doc="log-linear, save as log")                        
+                        doc="log-linear, save as log")
            ]),
 
     Define('VOX_ORIGIN',
            doc="Voxel origin",
            constants=[
                Constant('VOX_ORIGIN_BOTTOM', value='0', type=Type.INT32_T,
-                        doc="Bottom corner (standard Geosoft)")                        ,
+                        doc="Bottom corner (standard Geosoft)"),
                Constant('VOX_ORIGIN_TOP', value='1', type=Type.INT32_T,
-                        doc="Top corner")                        
+                        doc="Top corner")
            ]),
 
     Define('VOX_SLICE_MODE',
            doc="Voxel export direction",
            constants=[
                Constant('VOX_SLICE_MODE_LINEAR', value='1', type=Type.INT32_T,
-                        doc="Linear")                        ,
+                        doc="Linear"),
                Constant('VOX_SLICE_MODE_NEAREST', value='0', type=Type.INT32_T,
-                        doc="Nearest")                        
+                        doc="Nearest")
            ]),
 
     Define('VOX_VECTORVOX_IMPORT',
            doc="Voxel direction",
            constants=[
                Constant('VOX_VECTORVOX_XYZ', value='0', type=Type.INT32_T,
-                        doc="X, Y and Z")                        ,
+                        doc="X, Y and Z"),
                Constant('VOX_VECTORVOX_UVW', value='1', type=Type.INT32_T,
-                        doc="U, V and W")                        ,
+                        doc="U, V and W"),
                Constant('VOX_VECTORVOX_AID', value='2', type=Type.INT32_T,
-                        doc="Amplitude, Inclination and Declination")                        
+                        doc="Amplitude, Inclination and Declination")
            ])]
 
 
@@ -179,29 +179,6 @@ gx_methods = {
                              doc=":class:`VOX` Handle"),
                    Parameter('p2', type=Type.STRING,
                              doc="Name of grids (each layers adds _Dir_Z to the name)")
-               ]),
-
-        Method('ExportDB_VOX', module='geoengine.core', version='6.3.0',
-               availability=Availability.PUBLIC, 
-               doc="Export a Voxel to a database",
-               notes="The database lines contain a slice of the voxel at a time.",
-               return_type=Type.VOID,
-               parameters = [
-                   Parameter('p1', type="VOX"),
-                   Parameter('p2', type="DB",
-                             doc="Database"),
-                   Parameter('p3', type=Type.STRING,
-                             doc="Channel Name"),
-                   Parameter('p4', type=Type.INT32_T,
-                             doc=":def:`VOX_DIRECTION`"),
-                   Parameter('p5', type=Type.INT32_T,
-                             doc="Reverse X ? (0/1)"),
-                   Parameter('p6', type=Type.INT32_T,
-                             doc="Reverse Y ? (0/1)"),
-                   Parameter('p7', type=Type.INT32_T,
-                             doc="Reverse Z ? (0/1)"),
-                   Parameter('p8', type=Type.INT32_T,
-                             doc="Write Dummies? (0/1)")
                ]),
 
         Method('ExportIMG_VOX', module='geoengine.core', version='6.2.0',
@@ -358,39 +335,6 @@ gx_methods = {
                              doc="Declination value for :def_val:`VOX_VECTORVOX_UVW` (-180° to 180°)")
                ]),
 
-        Method('GenerateGOCAD_VOX', module='geoengine.core', version='6.2.0',
-               availability=Availability.PUBLIC, 
-               doc="Generate a :class:`VOX` from a GOCAD File",
-               return_type="VOX",
-               return_doc=":class:`VOX` Object",
-               parameters = [
-                   Parameter('p1', type=Type.STRING,
-                             doc="Name of output :class:`VOX`"),
-                   Parameter('p2', type=Type.STRING,
-                             doc="Name of GOCAD Voxel file"),
-                   Parameter('p3', type=Type.STRING,
-                             doc="Propert name to import"),
-                   Parameter('p4', type="IPJ")
-               ]),
-
-        Method('GenerateOrientedGOCAD_VOX', module='geoengine.core', version='6.3.0',
-               availability=Availability.PUBLIC, 
-               doc="Generate a :class:`VOX` from a GOCAD File",
-               notes="Allows the Orientation flag to be specified.",
-               return_type="VOX",
-               return_doc=":class:`VOX` Object",
-               parameters = [
-                   Parameter('p1', type=Type.STRING,
-                             doc="Name of output :class:`VOX`"),
-                   Parameter('p2', type=Type.STRING,
-                             doc="Name of GOCAD Voxel file"),
-                   Parameter('p3', type=Type.STRING,
-                             doc="Propert name to import"),
-                   Parameter('p4', type="IPJ"),
-                   Parameter('p5', type=Type.INT32_T,
-                             doc=":def:`VOX_GOCAD_ORIENTATION`")
-               ]),
-
         Method('GeneratePG_VOX', module='geoengine.core', version='6.2.0',
                availability=Availability.PUBLIC, 
                doc="Generate a :class:`VOX` from a 3D Pager",
@@ -416,7 +360,7 @@ gx_methods = {
                    Parameter('p9', type="IPJ",
                              doc="Projection"),
                    Parameter('p10', type="META",
-                             doc=":class:`META` data")
+                             doc="Metadata")
                ]),
 
         Method('GenerateConstantValue_VOX', module='geoengine.core', version='8.4.0',
@@ -452,7 +396,7 @@ gx_methods = {
                    Parameter('p13', type="IPJ",
                              doc="Projection"),
                    Parameter('p14', type="META",
-                             doc=":class:`META` data")
+                             doc="Metadata")
                ]),
 
         Method('GeneratePGVV_VOX', module='geoengine.core', version='8.0.0',
@@ -481,7 +425,7 @@ gx_methods = {
                    Parameter('p9', type="IPJ",
                              doc="Projection"),
                    Parameter('p10', type="META",
-                             doc=":class:`META` data")
+                             doc="Metadata")
                ]),
 
         Method('GenerateConstantValueVV_VOX', module='geoengine.core', version='8.4.0',
@@ -511,40 +455,7 @@ gx_methods = {
                    Parameter('p10', type="IPJ",
                              doc="Projection"),
                    Parameter('p11', type="META",
-                             doc=":class:`META` data")
-               ]),
-
-        Method('GenerateUBC_VOX', module='geoengine.core', version='6.2.0',
-               availability=Availability.PUBLIC, 
-               doc="Generate a :class:`VOX` from a UBC File",
-               return_type="VOX",
-               return_doc=":class:`VOX` Object",
-               parameters = [
-                   Parameter('p1', type=Type.STRING,
-                             doc="Name of output :class:`VOX`"),
-                   Parameter('p2', type=Type.STRING,
-                             doc="Name of UBC Mesh File"),
-                   Parameter('p3', type=Type.STRING,
-                             doc="Name of UBC Mod File"),
-                   Parameter('p4', type=Type.DOUBLE,
-                             doc="Dummy Value"),
-                   Parameter('p5', type="IPJ",
-                             doc="Projection")
-               ]),
-
-        Method('GenerateXYZ_VOX', module='geoengine.core', version='6.3.0',
-               availability=Availability.PUBLIC, 
-               doc="Generate a :class:`VOX` from an XYZ File",
-               return_type=Type.VOID,
-               parameters = [
-                   Parameter('p1', type=Type.STRING,
-                             doc="Voxel Name"),
-                   Parameter('p2', type="RA",
-                             doc=":class:`RA` To import from"),
-                   Parameter('p3', type=Type.INT32_T,
-                             doc="Data Type :def:`GS_TYPES`"),
-                   Parameter('p4', type="IPJ",
-                             doc="Projection")
+                             doc="Metadata")
                ]),
 
         Method('InitGenerateBySubsetPG_VOX', module='geoengine.core', version='8.5.0',
@@ -611,7 +522,7 @@ gx_methods = {
                    Parameter('p9', type="IPJ",
                              doc="Projection"),
                    Parameter('p10', type="META",
-                             doc=":class:`META` data")
+                             doc="Metadata")
                ]),
 
         Method('GetArea_VOX', module='geoengine.core', version='6.2.0',
@@ -1087,7 +998,7 @@ gx_methods = {
                ]),
 
         Method('IGetCellSizeStrings_VOX', module='geoengine.core', version='6.3.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Get the Location Strings",
                return_type=Type.VOID,
                parameters = [
@@ -1145,7 +1056,7 @@ gx_methods = {
                ]),
 
         Method('iSetCellSizeStrings_VOX', module='geoengine.core', version='6.3.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Set the Location Strings",
                return_type=Type.INT32_T,
                return_doc="""
@@ -1161,18 +1072,6 @@ gx_methods = {
                              doc="Y String"),
                    Parameter('p4', type=Type.STRING,
                              doc="Z String")
-               ]),
-
-        Method('ListGOCADProperties_VOX', module='geoengine.core', version='6.2.0',
-               availability=Availability.PUBLIC, 
-               doc="List all the properties available in this GOCAD file.",
-               return_type="VOX",
-               return_doc=":class:`VOX` Object",
-               parameters = [
-                   Parameter('p1', type=Type.STRING,
-                             doc="Name of GOCAD Voxel file"),
-                   Parameter('p2', type="LST",
-                             doc="List object to populate")
                ]),
 
         Method('LogGridPointsZEx_VOX', module='geoengine.core', version='7.2.0',
@@ -1577,7 +1476,7 @@ gx_methods = {
                ]),
 
         Method('SetOrigin_VOX', module='geoengine.core', version='6.3.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Set the Voxel Origin",
                return_type=Type.VOID,
                parameters = [
@@ -1981,6 +1880,119 @@ gx_methods = {
                              doc="Z Cell sizes (bottom to top)"),
                    Parameter('p9', type="REG",
                              doc="Parameters (see above)")
+               ]),
+
+        Method('IGetMultiVoxsetGUID_VOX', module='geoengine.core', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Get the UUID",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type=Type.STRING,
+                             doc="Input Voxel file"),
+                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                             doc="UUID string returned"),
+                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                             doc="Size of UUID string")
+               ]),
+
+        Method('GenerateGOCAD_VOX', module='geoengine.core', version='6.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Generate a :class:`VOX` from a GOCAD File",
+               return_type="VOX",
+               return_doc=":class:`VOX` Object",
+               parameters = [
+                   Parameter('p1', type=Type.STRING,
+                             doc="Name of output :class:`VOX`"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="Name of GOCAD Voxel file"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Propert name to import"),
+                   Parameter('p4', type="IPJ")
+               ]),
+
+        Method('GenerateOrientedGOCAD_VOX', module='geoengine.core', version='6.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Generate a :class:`VOX` from a GOCAD File",
+               notes="Allows the Orientation flag to be specified.",
+               return_type="VOX",
+               return_doc=":class:`VOX` Object",
+               parameters = [
+                   Parameter('p1', type=Type.STRING,
+                             doc="Name of output :class:`VOX`"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="Name of GOCAD Voxel file"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Propert name to import"),
+                   Parameter('p4', type="IPJ"),
+                   Parameter('p5', type=Type.INT32_T,
+                             doc=":def:`VOX_GOCAD_ORIENTATION`")
+               ]),
+
+        Method('GenerateUBC_VOX', module='geoengine.core', version='6.2.0',
+               availability=Availability.PUBLIC, 
+               doc="Generate a :class:`VOX` from a UBC File",
+               return_type="VOX",
+               return_doc=":class:`VOX` Object",
+               parameters = [
+                   Parameter('p1', type=Type.STRING,
+                             doc="Name of output :class:`VOX`"),
+                   Parameter('p2', type=Type.STRING,
+                             doc="Name of UBC Mesh File"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Name of UBC Mod File"),
+                   Parameter('p4', type=Type.DOUBLE,
+                             doc="Dummy Value"),
+                   Parameter('p5', type="IPJ",
+                             doc="Projection")
+               ]),
+
+        Method('GenerateXYZ_VOX', module='geoengine.core', version='6.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Generate a :class:`VOX` from an XYZ File",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type=Type.STRING,
+                             doc="Voxel Name"),
+                   Parameter('p2', type="RA",
+                             doc=":class:`RA` To import from"),
+                   Parameter('p3', type=Type.INT32_T,
+                             doc="Data Type :def:`GS_TYPES`"),
+                   Parameter('p4', type="IPJ",
+                             doc="Projection")
+               ]),
+
+        Method('ListGOCADProperties_VOX', module='geoengine.core', version='6.2.0',
+               availability=Availability.PUBLIC, 
+               doc="List all the properties available in this GOCAD file.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type=Type.STRING,
+                             doc="Name of GOCAD Voxel file"),
+                   Parameter('p2', type="LST",
+                             doc="List object to populate")
+               ]),
+
+        Method('ExportDB_VOX', module='geoengine.core', version='6.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Export a Voxel to a database",
+               notes="The database lines contain a slice of the voxel at a time.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="VOX"),
+                   Parameter('p2', type="DB",
+                             doc="Database"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Channel Name"),
+                   Parameter('p4', type=Type.INT32_T,
+                             doc=":def:`VOX_DIRECTION`"),
+                   Parameter('p5', type=Type.INT32_T,
+                             doc="Reverse X ? (0/1)"),
+                   Parameter('p6', type=Type.INT32_T,
+                             doc="Reverse Y ? (0/1)"),
+                   Parameter('p7', type=Type.INT32_T,
+                             doc="Reverse Z ? (0/1)"),
+                   Parameter('p8', type=Type.INT32_T,
+                             doc="Write Dummies? (0/1)")
                ])
     ],
     'Obsolete': [

@@ -43,9 +43,9 @@ gx_defines = [
            doc="Image open modes",
            constants=[
                Constant('IMG_FILE_READONLY', value='0', type=Type.INT32_T,
-                        doc="Reading only")                        ,
+                        doc="Reading only"),
                Constant('IMG_FILE_READWRITE', value='2', type=Type.INT32_T,
-                        doc="Reading and writting")                        ,
+                        doc="Reading and writting"),
                Constant('IMG_FILE_READORWRITE', value='3', type=Type.INT32_T,
                         doc="""
                         Allows you to open read-only grids to change the
@@ -53,17 +53,17 @@ gx_defines = [
                         to the original grid (dat), the changed projection
                         or location information will be passed on to the grid,
                         otherwise changes will only occur in the .gi file.
-                        """)                        
+                        """)
            ]),
 
     Define('IMG_QUERY',
            doc="Information to Query",
            constants=[
-               Constant('IMG_QUERY_iWRITE', value='0', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_iPG', value='1', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_iWRITEPG', value='2', type=Type.INT32_T)                        ,
+               Constant('IMG_QUERY_iWRITE', value='0', type=Type.INT32_T),
+               Constant('IMG_QUERY_iPG', value='1', type=Type.INT32_T),
+               Constant('IMG_QUERY_iWRITEPG', value='2', type=Type.INT32_T),
                Constant('IMG_QUERY_iIMGTYPE', value='3', type=Type.INT32_T,
-                        doc="The element type used to open the :class:`IMG`.")                        ,
+                        doc="The element type used to open the :class:`IMG`."),
                Constant('IMG_QUERY_iDATTYPE', value='4', type=Type.INT32_T,
                         doc="""
                         DATTYPE is the native element type of the :class:`DAT`.
@@ -73,35 +73,35 @@ gx_defines = [
                         3 - 32-bit long
                         4 - 32-bit float
                         5 - 64-bit double
-                        """)                        ,
+                        """),
                Constant('IMG_QUERY_iRENDER', value='5', type=Type.INT32_T,
                         doc="""
                         Render modes are:    0 - interpolate
                         1 - pixelate
                         2 - colour
-                        """)                        ,
-               Constant('IMG_QUERY_iKX', value='6', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_iNX', value='7', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_iNY', value='8', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_iNV', value='9', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_iNE', value='10', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rXO', value='11', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rYO', value='12', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rDX', value='13', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rDY', value='14', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rROT', value='15', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rBASE', value='16', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rMULT', value='17', type=Type.INT32_T)                        ,
-               Constant('IMG_QUERY_rCOMPRESSION_RATIO', value='18', type=Type.INT32_T)                        
+                        """),
+               Constant('IMG_QUERY_iKX', value='6', type=Type.INT32_T),
+               Constant('IMG_QUERY_iNX', value='7', type=Type.INT32_T),
+               Constant('IMG_QUERY_iNY', value='8', type=Type.INT32_T),
+               Constant('IMG_QUERY_iNV', value='9', type=Type.INT32_T),
+               Constant('IMG_QUERY_iNE', value='10', type=Type.INT32_T),
+               Constant('IMG_QUERY_rXO', value='11', type=Type.INT32_T),
+               Constant('IMG_QUERY_rYO', value='12', type=Type.INT32_T),
+               Constant('IMG_QUERY_rDX', value='13', type=Type.INT32_T),
+               Constant('IMG_QUERY_rDY', value='14', type=Type.INT32_T),
+               Constant('IMG_QUERY_rROT', value='15', type=Type.INT32_T),
+               Constant('IMG_QUERY_rBASE', value='16', type=Type.INT32_T),
+               Constant('IMG_QUERY_rMULT', value='17', type=Type.INT32_T),
+               Constant('IMG_QUERY_rCOMPRESSION_RATIO', value='18', type=Type.INT32_T)
            ]),
 
     Define('IMG_RELOCATE',
            doc="Relocation Style",
            constants=[
                Constant('IMG_RELOCATE_FIT', value='0', type=Type.INT32_T,
-                        doc="will fit the image to fill the specified area")                        ,
+                        doc="will fit the image to fill the specified area"),
                Constant('IMG_RELOCATE_ASPECT', value='1', type=Type.INT32_T,
-                        doc="will maintain aspect ratio")                        
+                        doc="will maintain aspect ratio")
            ])]
 
 
@@ -577,11 +577,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Asks the :class:`IMG` for the most efficient way to access the data.",
                return_type=Type.INT32_T,
-               return_doc="""
-               -1  - by Columns
-               0  - Rows or Columns are equally efficient.
-               1  - by Rows
-               """,
+               return_doc="-1 by columns, 1 by rows, 0 rows and columns are equally efficient.",
                parameters = [
                    Parameter('p1', type="IMG",
                              doc="Image Object")
@@ -603,7 +599,7 @@ gx_methods = {
                ]),
 
         Method('iUserPreferenceToPlotAsColourShadedGrid_IMG', module='geoengine.core', version='7.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Returns the global setting.",
                return_type=Type.INT32_T,
                return_doc="""
@@ -703,7 +699,7 @@ gx_methods = {
                ]),
 
         Method('RefreshGI_IMG', module='geoengine.core', version='7.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Refresh the GI of a grid after it has moved or changed.",
                return_type=Type.VOID,
                parameters = [
@@ -878,7 +874,7 @@ gx_methods = {
                ]),
 
         Method('Sync_IMG', module='geoengine.core', version='7.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Syncronize the Metadata for this Grid",
                return_type=Type.VOID,
                parameters = [

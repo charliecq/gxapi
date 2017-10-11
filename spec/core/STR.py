@@ -19,60 +19,60 @@ gx_defines = [
            doc="Extension option",
            constants=[
                Constant('FILE_EXT_ADD_IF_NONE', value='0', type=Type.INT32_T,
-                        doc="will add the extension only if no extension is present.")                        ,
+                        doc="will add the extension only if no extension is present."),
                Constant('FILE_EXT_FORCE', value='1', type=Type.INT32_T,
-                        doc="will cause a renaming of the file extension to the new extension.")                        
+                        doc="will cause a renaming of the file extension to the new extension.")
            ]),
 
     Define('STR_CASE',
            doc="Case sensitivity",
            constants=[
-               Constant('STR_CASE_TOLERANT', value='0', type=Type.INT32_T)                        ,
-               Constant('STR_CASE_SENSITIVE', value='1', type=Type.INT32_T)                        
+               Constant('STR_CASE_TOLERANT', value='0', type=Type.INT32_T),
+               Constant('STR_CASE_SENSITIVE', value='1', type=Type.INT32_T)
            ]),
 
     Define('STR_ESCAPE',
            doc="How to handle escape",
            constants=[
                Constant('ESCAPE_CONVERT', value='0', type=Type.INT32_T,
-                        doc="Converts non-standard characters in a string to escape sequences.")                        ,
+                        doc="Converts non-standard characters in a string to escape sequences."),
                Constant('ESCAPE_REPLACE', value='1', type=Type.INT32_T,
-                        doc="Replaces escape sequences with original characters.")                        
+                        doc="Replaces escape sequences with original characters.")
            ]),
 
     Define('STR_FILE_PART',
            doc="Parts of a path string",
            constants=[
                Constant('STR_FILE_PART_NAME', value='0', type=Type.INT32_T,
-                        doc="File Name")                        ,
+                        doc="File Name"),
                Constant('STR_FILE_PART_EXTENSION', value='1', type=Type.INT32_T,
-                        doc="Extension")                        ,
+                        doc="Extension"),
                Constant('STR_FILE_PART_DIRECTORY', value='2', type=Type.INT32_T,
-                        doc="Directory")                        ,
+                        doc="Directory"),
                Constant('STR_FILE_PART_VOLUME', value='3', type=Type.INT32_T,
-                        doc="Drive")                        ,
+                        doc="Drive"),
                Constant('STR_FILE_PART_QUALIFIERS', value='4', type=Type.INT32_T,
-                        doc="Qualifiers")                        ,
+                        doc="Qualifiers"),
                Constant('STR_FILE_PART_NAME_EXTENSION', value='5', type=Type.INT32_T,
-                        doc="Name and the Extension together")                        ,
+                        doc="Name and the Extension together"),
                Constant('STR_FILE_PART_FULLPATH_NO_QUALIFIERS', value='6', type=Type.INT32_T,
-                        doc="Full name of file with no qualifiers")                        
+                        doc="Full name of file with no qualifiers")
            ]),
 
     Define('STR_JUSTIFY',
            doc="String justification style",
            constants=[
-               Constant('STR_JUSTIFY_LEFT', value='0', type=Type.INT32_T)                        ,
-               Constant('STR_JUSTIFY_CENTER', value='1', type=Type.INT32_T)                        ,
-               Constant('STR_JUSTIFY_RIGHT', value='2', type=Type.INT32_T)                        
+               Constant('STR_JUSTIFY_LEFT', value='0', type=Type.INT32_T),
+               Constant('STR_JUSTIFY_CENTER', value='1', type=Type.INT32_T),
+               Constant('STR_JUSTIFY_RIGHT', value='2', type=Type.INT32_T)
            ]),
 
     Define('STR_TRIM',
            doc="What to trim",
            constants=[
-               Constant('STR_TRIMRIGHT', value='1', type=Type.INT32_T)                        ,
-               Constant('STR_TRIMLEFT', value='2', type=Type.INT32_T)                        ,
-               Constant('STR_TRIMBOTH', value='3', type=Type.INT32_T)                        
+               Constant('STR_TRIMRIGHT', value='1', type=Type.INT32_T),
+               Constant('STR_TRIMLEFT', value='2', type=Type.INT32_T),
+               Constant('STR_TRIMBOTH', value='3', type=Type.INT32_T)
            ])]
 
 

@@ -24,38 +24,38 @@ gx_defines = [
            doc="Number of bits to use in double CRC's",
            constants=[
                Constant('VV_DOUBLE_CRC_BITS_EXACT', value='0', type=Type.INT32_T,
-                        doc="Exact CRC")                        ,
+                        doc="Exact CRC"),
                Constant('VV_DOUBLE_CRC_BITS_DEFAULT', value='10', type=Type.INT32_T,
-                        doc="Default inaccuracy in double (10 Bits)")                        ,
+                        doc="Default inaccuracy in double (10 Bits)"),
                Constant('VV_DOUBLE_CRC_BITS_MAX', value='51', type=Type.INT32_T,
-                        doc="Maximum number of inaccuracy bits")                        
+                        doc="Maximum number of inaccuracy bits")
            ]),
 
     Define('VV_FLOAT_CRC_BITS',
            doc="Number of bits to use in float CRC's",
            constants=[
                Constant('VV_FLOAT_CRC_BITS_EXACT', value='0', type=Type.INT32_T,
-                        doc="Exact CRC")                        ,
+                        doc="Exact CRC"),
                Constant('VV_FLOAT_CRC_BITS_DEFAULT', value='7', type=Type.INT32_T,
-                        doc="Default inaccuracy in floats (7 Bits)")                        ,
+                        doc="Default inaccuracy in floats (7 Bits)"),
                Constant('VV_FLOAT_CRC_BITS_MAX', value='22', type=Type.INT32_T,
-                        doc="Maximum number of inaccuracy bits")                        
+                        doc="Maximum number of inaccuracy bits")
            ]),
 
     Define('VV_LOG_BASE',
            doc="Type of log to use",
            constants=[
                Constant('VV_LOG_BASE_10', value='0', type=Type.INT32_T,
-                        doc="Base 10")                        ,
+                        doc="Base 10"),
                Constant('VV_LOG_BASE_E', value='1', type=Type.INT32_T,
-                        doc="Base e")                        
+                        doc="Base e")
            ]),
 
     Define('VV_LOG_NEGATIVE',
            doc="Ways to handle negatives",
            constants=[
                Constant('VV_LOG_NEGATIVE_NO', value='0', type=Type.INT32_T,
-                        doc="dummies out value less than the minimum.")                        ,
+                        doc="dummies out value less than the minimum."),
                Constant('VV_LOG_NEGATIVE_YES', value='1', type=Type.INT32_T,
                         doc="""
                         if the data is in the range +/- minimum,
@@ -64,56 +64,56 @@ gx_defines = [
                         applied, the minimum is added and the
                         sign is reapplied. Use LogLinear_VV function
                         if decades in results are required.
-                        """)                        
+                        """)
            ]),
 
     Define('VV_LOOKUP',
            doc="Lookup style",
            constants=[
                Constant('VV_LOOKUP_EXACT', value='0', type=Type.INT32_T,
-                        doc="only exact matches are used")                        ,
+                        doc="only exact matches are used"),
                Constant('VV_LOOKUP_NEAREST', value='1', type=Type.INT32_T,
-                        doc="nearest match is used (regardless of sampling range)")                        ,
+                        doc="nearest match is used (regardless of sampling range)"),
                Constant('VV_LOOKUP_INTERPOLATE', value='2', type=Type.INT32_T,
-                        doc="interpolate between values (regardless of sampling range)")                        ,
+                        doc="interpolate between values (regardless of sampling range)"),
                Constant('VV_LOOKUP_NEARESTCLOSE', value='3', type=Type.INT32_T,
-                        doc="use nearest match only if within sampling range")                        ,
+                        doc="use nearest match only if within sampling range"),
                Constant('VV_LOOKUP_INTERPCLOSE', value='4', type=Type.INT32_T,
-                        doc="interpolate only if within sampling range")                        
+                        doc="interpolate only if within sampling range")
            ]),
 
     Define('VV_MASK',
            doc="Where to mask",
            constants=[
-               Constant('VV_MASK_INSIDE', value='0', type=Type.INT32_T)                        ,
-               Constant('VV_MASK_OUTSIDE', value='1', type=Type.INT32_T)                        
+               Constant('VV_MASK_INSIDE', value='0', type=Type.INT32_T),
+               Constant('VV_MASK_OUTSIDE', value='1', type=Type.INT32_T)
            ]),
 
     Define('VV_ORDER',
            doc="Specify if the data is montonically increasing or decreasing.",
            constants=[
                Constant('VV_ORDER_NONE', value='0', type=Type.INT32_T,
-                        doc="There is no specific data size ordering in the :class:`VV`.")                        ,
+                        doc="There is no specific data size ordering in the :class:`VV`."),
                Constant('VV_ORDER_INCREASING', value='1', type=Type.INT32_T,
-                        doc="Every value is greater than or equal to the previous value.")                        ,
+                        doc="Every value is greater than or equal to the previous value."),
                Constant('VV_ORDER_DECREASING', value='2', type=Type.INT32_T,
-                        doc="Every value is less than or equal to the previous value.")                        
+                        doc="Every value is less than or equal to the previous value.")
            ]),
 
     Define('VV_SORT',
            doc="Sort order",
            constants=[
-               Constant('VV_SORT_ASCENDING', value='0', type=Type.INT32_T)                        ,
-               Constant('VV_SORT_DESCENDING', value='1', type=Type.INT32_T)                        
+               Constant('VV_SORT_ASCENDING', value='0', type=Type.INT32_T),
+               Constant('VV_SORT_DESCENDING', value='1', type=Type.INT32_T)
            ]),
 
     Define('VV_WINDOW',
            doc="How to handle :class:`VV` limits",
            constants=[
                Constant('VV_WINDOW_DUMMY', value='0', type=Type.INT32_T,
-                        doc="Dummy values outside the limits")                        ,
+                        doc="Dummy values outside the limits"),
                Constant('VV_WINDOW_LIMIT', value='1', type=Type.INT32_T,
-                        doc="Set values outside the limits to the limits")                        
+                        doc="Set values outside the limits to the limits")
            ])]
 
 
@@ -360,7 +360,7 @@ gx_methods = {
                ]),
 
         Method('CRC_VV', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Compute the CRC value of a :class:`VV`.",
                return_type="CRC",
                return_doc="CRC Value",
@@ -371,7 +371,7 @@ gx_methods = {
                ]),
 
         Method('CRCInexact_VV', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="""
                Compute the CRC value of a :class:`VV` and allows you to specify
                number of bits of floats/doubles to drop so that the CRC
@@ -666,7 +666,7 @@ gx_methods = {
                ]),
 
         Method('IndexInsert_VV', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Insert items into a :class:`VV` using an index :class:`VV`.",
                notes="""
                The items in the input data :class:`VV` are inserted into
@@ -712,7 +712,7 @@ gx_methods = {
                ]),
 
         Method('InitIndex_VV', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Initialize an index :class:`VV` to values 0, 1, 2, etc...",
                notes="""
                Populates a :class:`VV` with the values 0, 1, 2, 3, 4 etc., to be
@@ -973,7 +973,7 @@ gx_methods = {
                ]),
 
         Method('ReFid_VV', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Re-sample a :class:`VV` to a new fid start/icrement",
                return_type=Type.VOID,
                parameters = [
@@ -988,7 +988,7 @@ gx_methods = {
                ]),
 
         Method('ReFidVV_VV', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Re-sample a :class:`VV` to match another :class:`VV`.",
                notes="""
                This method will honor the :class:`VV` FID Expansion and will expand/contract
@@ -1003,7 +1003,7 @@ gx_methods = {
                ]),
 
         Method('ReSample_VV', module='geoengine.core', version='5.1.1',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Resamples a :class:`VV` from one fid/incr to another fid/incr.",
                return_type=Type.VOID,
                parameters = [

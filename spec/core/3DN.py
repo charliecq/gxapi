@@ -215,7 +215,7 @@ gx_methods = {
                view of the 3D objects can be made. Note that they
                are relative to each other. Thus, setting the scaling
                to 5,5,5 is the same as 1,1,1. This is typically used
-               to exagerate one scale such as Z (1,1,5).
+               to exaggerate one scale such as Z (1,1,5).
                """,
                return_type=Type.VOID,
                parameters = [

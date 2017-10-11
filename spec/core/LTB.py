@@ -33,36 +33,36 @@ gx_defines = [
            doc="Case handling of :class:`LTB` strings",
            constants=[
                Constant('LTB_CASE_INSENSITIVE', value='0', type=Type.INT32_T,
-                        doc="Ignore case")                        ,
+                        doc="Ignore case"),
                Constant('LTB_CASE_SENSITIVE', value='1', type=Type.INT32_T,
-                        doc="Case is used")                        
+                        doc="Case is used")
            ]),
 
     Define('LTB_CONLST',
            doc="Matching types",
            constants=[
-               Constant('LTB_CONLST_EXACT', value='0', type=Type.INT32_T)                        ,
-               Constant('LTB_CONLST_ANY', value='1', type=Type.INT32_T)                        
+               Constant('LTB_CONLST_EXACT', value='0', type=Type.INT32_T),
+               Constant('LTB_CONLST_ANY', value='1', type=Type.INT32_T)
            ]),
 
     Define('LTB_DELIM',
            doc="Types of :class:`LTB` Delimiters",
            constants=[
                Constant('LTB_DELIM_SPACE', value='0', type=Type.INT32_T,
-                        doc="Spaces")                        ,
+                        doc="Spaces"),
                Constant('LTB_DELIM_COMMA', value='1', type=Type.INT32_T,
-                        doc="Commas")                        ,
+                        doc="Commas"),
                Constant('LTB_DELIM_SPACECOMMA', value='2', type=Type.INT32_T,
-                        doc="Spaces and Commas")                        
+                        doc="Spaces and Commas")
            ]),
 
     Define('LTB_TYPE',
            doc="Types of :class:`LTB` Headers",
            constants=[
                Constant('LTB_TYPE_HEADER', value='0', type=Type.INT32_T,
-                        doc="Has a header")                        ,
+                        doc="Has a header"),
                Constant('LTB_TYPE_NOHEADER', value='1', type=Type.INT32_T,
-                        doc="Has no header")                        
+                        doc="Has no header")
            ])]
 
 

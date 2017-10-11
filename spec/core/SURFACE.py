@@ -12,8 +12,8 @@ gx_defines = [
     Define('SURFACE_OPEN',
            doc="Open Modes",
            constants=[
-               Constant('SURFACE_OPEN_READ', value='0', type=Type.INT32_T)                        ,
-               Constant('SURFACE_OPEN_READWRITE', value='1', type=Type.INT32_T)                        
+               Constant('SURFACE_OPEN_READ', value='0', type=Type.INT32_T),
+               Constant('SURFACE_OPEN_READWRITE', value='1', type=Type.INT32_T)
            ])]
 
 

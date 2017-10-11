@@ -18,34 +18,34 @@ gx_defines = [
            doc=":class:`STK` Axis defines",
            constants=[
                Constant('STK_AXIS_X', value='0', type=Type.INT32_T,
-                        doc="X Axis")                        ,
+                        doc="X Axis"),
                Constant('STK_AXIS_Y', value='1', type=Type.INT32_T,
-                        doc="Y Axis")                        
+                        doc="Y Axis")
            ]),
 
     Define('STK_FLAG',
            doc="Stack flags",
            constants=[
-               Constant('STK_FLAG_PROFILE', value='0', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_FID', value='1', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_SYMBOL', value='2', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_XBAR', value='3', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_XLABEL', value='4', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_XTITLE', value='5', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_YBAR', value='6', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_YLABEL', value='7', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_YTITLE', value='8', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_GRID1', value='9', type=Type.INT32_T)                        ,
-               Constant('STK_FLAG_GRID2', value='10', type=Type.INT32_T)                        
+               Constant('STK_FLAG_PROFILE', value='0', type=Type.INT32_T),
+               Constant('STK_FLAG_FID', value='1', type=Type.INT32_T),
+               Constant('STK_FLAG_SYMBOL', value='2', type=Type.INT32_T),
+               Constant('STK_FLAG_XBAR', value='3', type=Type.INT32_T),
+               Constant('STK_FLAG_XLABEL', value='4', type=Type.INT32_T),
+               Constant('STK_FLAG_XTITLE', value='5', type=Type.INT32_T),
+               Constant('STK_FLAG_YBAR', value='6', type=Type.INT32_T),
+               Constant('STK_FLAG_YLABEL', value='7', type=Type.INT32_T),
+               Constant('STK_FLAG_YTITLE', value='8', type=Type.INT32_T),
+               Constant('STK_FLAG_GRID1', value='9', type=Type.INT32_T),
+               Constant('STK_FLAG_GRID2', value='10', type=Type.INT32_T)
            ]),
 
     Define('STK_GRID',
            doc="Stack Grid define",
            constants=[
                Constant('STK_GRID_PRIMARY', value='0', type=Type.INT32_T,
-                        doc="Primary Grid")                        ,
+                        doc="Primary Grid"),
                Constant('STK_GRID_SECONDARY', value='1', type=Type.INT32_T,
-                        doc="Secondary Grid")                        
+                        doc="Secondary Grid")
            ])]
 
 

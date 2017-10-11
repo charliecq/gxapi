@@ -20,41 +20,41 @@ gx_defines = [
            is_single_constant=True,
            doc="The following value should be kept synchronized with the value defined in src\\geoguilib\\stdafx.h",
            constants=[
-               Constant('MAX_PROF_WND', value='5', type=Type.INT32_T)                        
+               Constant('MAX_PROF_WND', value='5', type=Type.INT32_T)
            ]),
 
     Define('EDB_PATH',
            doc="Four forms",
            constants=[
                Constant('EDB_PATH_FULL', value='0', type=Type.INT32_T,
-                        doc="d:\\directory\\file.gdb")                        ,
+                        doc="d:\\directory\\file.gdb"),
                Constant('EDB_PATH_DIR', value='1', type=Type.INT32_T,
-                        doc="\\directory\\file.gdb")                        ,
+                        doc="\\directory\\file.gdb"),
                Constant('EDB_PATH_NAME_EXT', value='2', type=Type.INT32_T,
-                        doc="file.gdb")                        ,
+                        doc="file.gdb"),
                Constant('EDB_PATH_NAME', value='3', type=Type.INT32_T,
-                        doc="file")                        
+                        doc="file")
            ]),
 
     Define('EDB_PROF',
            doc="Profile data",
            constants=[
                Constant('EDB_PROF_I_CHANNEL', value='0', type=Type.INT32_T,
-                        doc="DB_SYMB")                        ,
+                        doc="DB_SYMB"),
                Constant('EDB_PROF_I_LINE_STYLE', value='1', type=Type.INT32_T,
                         doc="""
                         0 - no line
                         1 - solid
                         2 - long dash
                         3 - short dash
-                        """)                        ,
+                        """),
                Constant('EDB_PROF_I_LINE_WEIGHT', value='2', type=Type.INT32_T,
                         doc="""
                         0 - no line
                         1 - normal
                         2 - medium
                         3 - heavy
-                        """)                        ,
+                        """),
                Constant('EDB_PROF_I_SYMBOL', value='3', type=Type.INT32_T,
                         doc="""
                         0 - no symbol
@@ -64,89 +64,89 @@ gx_defines = [
                         4 - diamond
                         5 - x
                         6 - +
-                        """)                        ,
+                        """),
                Constant('EDB_PROF_I_SYMBOL_WEIGHT', value='4', type=Type.INT32_T,
                         doc="""
                         0 - normal
                         1 - large
-                        """)                        ,
+                        """),
                Constant('EDB_PROF_I_COLOR', value='5', type=Type.INT32_T,
-                        doc=":class:`MVIEW` Color Value")                        ,
+                        doc=":class:`MVIEW` Color Value"),
                Constant('EDB_PROF_I_WRAP', value='6', type=Type.INT32_T,
-                        doc="0-no, 1-yes")                        ,
+                        doc="0-no, 1-yes"),
                Constant('EDB_PROF_I_BREAK_ON_DUMMY', value='7', type=Type.INT32_T,
-                        doc="0-no, 1-yes")                        ,
+                        doc="0-no, 1-yes"),
                Constant('EDB_PROF_I_GRID_LINE', value='8', type=Type.INT32_T,
-                        doc="0-no, 1-yes")                        ,
+                        doc="0-no, 1-yes"),
                Constant('EDB_PROF_R_GRID_LINE_INTERVAL', value='9', type=Type.INT32_T,
-                        doc="0-no, 1-yes")                        ,
+                        doc="0-no, 1-yes"),
                Constant('EDB_PROF_I_LOG', value='10', type=Type.INT32_T,
-                        doc="0-Linear, 1-Log, 2-LogLinear")                        ,
+                        doc="0-Linear, 1-Log, 2-LogLinear"),
                Constant('EDB_PROF_R_LOG_MINIMUM', value='11', type=Type.INT32_T,
-                        doc="Minimum Value")                        ,
+                        doc="Minimum Value"),
                Constant('EDB_PROF_I_SAMESCALE', value='12', type=Type.INT32_T,
-                        doc="0-no, 1-yes")                        ,
+                        doc="0-no, 1-yes"),
                Constant('EDB_PROF_I_SOURCELINE', value='13', type=Type.INT32_T,
                         doc="""
                         0 - current line
                         -1 - previous line
                         -2 - next line
-                        """)                        ,
+                        """),
                Constant('EDB_PROF_I_SCALEOPTION', value='14', type=Type.INT32_T,
                         doc="""
                         0 - scale to fit for each line
                         1 - fix the range
                         2 - fix the scale, center the range
-                        """)                        ,
+                        """),
                Constant('EDB_PROF_I_SAMERANGE', value='15', type=Type.INT32_T,
-                        doc="0-no, 1-yes")                        
+                        doc="0-no, 1-yes")
            ]),
 
     Define('EDB_PROFILE_SCALE',
            doc="Profile Scale Options",
            constants=[
-               Constant('EDB_PROFILE_SCALE_LINEAR', value='0', type=Type.INT32_T)                        ,
-               Constant('EDB_PROFILE_SCALE_LOG', value='1', type=Type.INT32_T)                        ,
-               Constant('EDB_PROFILE_SCALE_LOGLINEAR', value='2', type=Type.INT32_T)                        
+               Constant('EDB_PROFILE_SCALE_LINEAR', value='0', type=Type.INT32_T),
+               Constant('EDB_PROFILE_SCALE_LOG', value='1', type=Type.INT32_T),
+               Constant('EDB_PROFILE_SCALE_LOGLINEAR', value='2', type=Type.INT32_T)
            ]),
 
     Define('EDB_REMOVE',
            doc="How to handle pending changes in document",
            constants=[
-               Constant('EDB_REMOVE_SAVE', value='0', type=Type.INT32_T)                        ,
-               Constant('EDB_REMOVE_PROMPT', value='1', type=Type.INT32_T)                        ,
-               Constant('EDB_REMOVE_DISCARD', value='2', type=Type.INT32_T)                        
+               Constant('EDB_REMOVE_SAVE', value='0', type=Type.INT32_T),
+               Constant('EDB_REMOVE_PROMPT', value='1', type=Type.INT32_T),
+               Constant('EDB_REMOVE_DISCARD', value='2', type=Type.INT32_T)
            ]),
 
     Define('EDB_UNLOAD',
            doc="What type of prompt",
            constants=[
-               Constant('EDB_UNLOAD_NO_PROMPT', value='0', type=Type.INT32_T)                        ,
-               Constant('EDB_UNLOAD_SINGLE_PROMPT', value='1', type=Type.INT32_T)                        ,
+               Constant('EDB_UNLOAD_NO_PROMPT', value='0', type=Type.INT32_T),
+               Constant('EDB_UNLOAD_SINGLE_PROMPT', value='1', type=Type.INT32_T),
                Constant('EDB_UNLOAD_MULTI_PROMPT', value='2', type=Type.INT32_T,
-                        doc="Obsolete")                        
+                        doc="Obsolete")
            ]),
 
     Define('EDB_WINDOW_POSITION',
            doc="Window Positioning Options",
            constants=[
-               Constant('EDB_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T)                        ,
-               Constant('EDB_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)                        
+               Constant('EDB_WINDOW_POSITION_DOCKED', value='0', type=Type.INT32_T),
+               Constant('EDB_WINDOW_POSITION_FLOATING', value='1', type=Type.INT32_T)
            ]),
 
     Define('EDB_WINDOW_STATE',
            doc="Window State Options",
            constants=[
-               Constant('EDB_WINDOW_RESTORE', value='0', type=Type.INT32_T)                        ,
-               Constant('EDB_WINDOW_MINIMIZE', value='1', type=Type.INT32_T)                        ,
-               Constant('EDB_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)                        
+               Constant('EDB_WINDOW_RESTORE', value='0', type=Type.INT32_T),
+               Constant('EDB_WINDOW_MINIMIZE', value='1', type=Type.INT32_T),
+               Constant('EDB_WINDOW_MAXIMIZE', value='2', type=Type.INT32_T)
            ]),
 
     Define('EDB_YAXIS_DIRECTION',
            doc="Window State Options",
            constants=[
-               Constant('EDB_YAXIS_NORMAL', value='0', type=Type.INT32_T)                        ,
-               Constant('EDB_YAXIS_INVERTED', value='1', type=Type.INT32_T)                        
+               Constant('EDB_YAXIS_NORMAL', value='0', type=Type.INT32_T),
+               Constant('EDB_YAXIS_INVERTED', value='1', type=Type.INT32_T)
            ])]
 
 
@@ -280,6 +280,21 @@ gx_methods = {
                              doc="fiducial start"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="number of fiducials")
+               ]),
+
+        Method('GetCurPoint_EDB', module='None', version='9.2.0',
+               availability=Availability.PUBLIC, is_app=True, 
+               doc="Returns the coordinates of the currently selected point in the database (first value if range selected)",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="EDB",
+                             doc=":class:`EDB` object"),
+                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                             doc="X coordinate (dummy if no selection or if no X channel defined)"),
+                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                             doc="Y coordinate (dummy if no selection or if no Y channel defined)"),
+                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                             doc="Z coordinate (dummy if no selection or if no Z channel defined)")
                ]),
 
         Method('GetFidRange_EDB', module='None', version='5.0.0',
@@ -1463,8 +1478,8 @@ gx_methods = {
     'External Window': [
 
         Method('LoadControl_EDB', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, no_gxh=True, no_cpp=True, 
-               doc="",
+               availability=Availability.PUBLIC, is_app=True, no_gxh=True, 
+               doc="Version of :func:`Load_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
@@ -1474,8 +1489,8 @@ gx_methods = {
                ]),
 
         Method('LoadNewControl_EDB', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, no_gxh=True, no_cpp=True, 
-               doc="",
+               availability=Availability.PUBLIC, is_app=True, no_gxh=True, 
+               doc="Version of :func:`LoadNew_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
@@ -1485,8 +1500,8 @@ gx_methods = {
                ]),
 
         Method('LoadPassControl_EDB', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, no_gxh=True, no_cpp=True, 
-               doc="",
+               availability=Availability.PUBLIC, is_app=True, no_gxh=True, 
+               doc="Version of :func:`LoadPass_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
@@ -1500,8 +1515,8 @@ gx_methods = {
                ]),
 
         Method('LoadWithViewControl_EDB', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, no_gxh=True, no_cpp=True, 
-               doc="",
+               availability=Availability.PUBLIC, is_app=True, no_gxh=True, 
+               doc="Version of :func:`LoadWithView_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
