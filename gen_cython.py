@@ -87,7 +87,7 @@ cdef class Wrap{{ cl.name }}:
 {{ cl.init_dealloc }}
 
 {{ cl.wrap_methods }}
-
+    pass
 """).render(cl=self)
 
     @property
@@ -159,10 +159,30 @@ cdef class Wrap{{ cl.name }}:
 {% endfor %}
 """).render(methods=method_group)
 
+type_map = {
+    'CRC': 'int32_t',
+    'WND': 'int32_t',
+    'PTMP': 'int32_t',
+    'FILTER': 'int32_t',
+    'DGW_OBJ': 'int32_t',
+    'TB_FIELD': 'int32_t',
+    'DB_SELECT': 'int32_t',
+    'DB_SYMB': 'int32_t',
+    'META_TOKEN': 'int32_t',
+    'HANDLE': 'int32_t',
+    'GEO_BOOL': 'bool'
+}
+
 class CythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
         super().__init__(constant_type=CythonConstant, define_type=CythonDefine, parameter_type=CythonParameter,
                          method_type=CythonMethod, class_type=CythonClass)
+        self._remove_no_cpp_methods()
+
+    def _remove_no_cpp_methods(self):
+        for _, cl in self.classes.items():
+            for g_k, methods in cl.method_groups.items():
+                cl.method_groups[g_k] = [m for m in methods if not m.no_cpp]
 
     def get_c_type(self, type, is_val=False, is_ref=False):
         if type is str:
@@ -179,6 +199,8 @@ class CythonCodeGenerator(CodeGeneratorBase):
             c_type = "int16_t"
         elif type == Type.STRING:
             c_type = "char"
+        elif type in type_map:
+            c_type = type_map[type]
         elif type in self.classes or type in self.definitions:
             c_type = "int32_t"
         
@@ -204,6 +226,14 @@ thread_local = threading.local()
 
 from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
+ctypedef Py_UNICODE WCHAR
+ctypedef const WCHAR* LPCWSTR
+ctypedef void* HWND
+ctypedef void* HDC
+cdef extern void Destr_SYS(void*, const int32_t* p1);
+cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
+cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);
+
 {% for key, cl in classes.items() %}
 {{ cl.cdef_declarations }}
 {% endfor %}
@@ -224,18 +254,6 @@ cdef unicode tounicode_with_length_and_free(
         return s[:length].decode('UTF-8', 'strict')
     finally:
         free(s)
-
-cdef extern from "Windows.h":
-
-    ctypedef Py_UNICODE WCHAR
-    ctypedef const WCHAR* LPCWSTR
-    ctypedef void* HWND
-
-    int_value MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, int_value uType)
-
-#title = u"Windows Interop Demo - Python %d.%d.%d" % sys.version_info[:3]
-#MessageBoxW(NULL, u"Hello Cython \u263a", title, 0)
-
 
 cdef class WrapPGeo:
     cdef void* p_geo
@@ -297,28 +315,9 @@ cdef void* get_p_geo():
 
 ''').render(classes=self.classes)
 
-def usage():
-    print('gen_cython.py -o <outputfile.pyx>')
-    sys.exit(2)
-def main(argv):
-    outputfile = None
-    try:
-        opts, args = getopt.getopt(argv,"ho:",["ofile="])
-    except getopt.GetoptError:
-        usage()
-    for opt, arg in opts:
-        if opt == '-h':
-            usage()
-        elif opt in ("-o", "--ofile"):
-            outputfile = arg
-    if not outputfile:
-        usage()
-
+if __name__ == "__main__":
+    outputfile = 'gxapi_cy.pyx'
     with open(outputfile, 'wb') as f:
         gen = CythonCodeGenerator()
         #f.write(gen.classes['3DN'].method_groups['Miscellaneous'][0].parameters[0].c_type.encode('UTF-8'))
         f.write(gen.render_pyx().encode('UTF-8'))
-    
-
-if __name__ == "__main__":
-   main(sys.argv[1:])

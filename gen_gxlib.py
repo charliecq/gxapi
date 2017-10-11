@@ -95,13 +95,6 @@ class GXLibMethod(Method):
 {{ method.string_macro }}""").render(method=self)
 
     @property
-    def exposed_name(self):
-        if self.external_name:
-            return self.external_name
-        else:
-            return self.name
-
-    @property
     def string_macro(self):
         method_name = self.exposed_name
         param_replacements = {p.size_of_param: p.name for p in self.parameters if p.size_of_param}

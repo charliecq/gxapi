@@ -7,8 +7,6 @@ __pycache__/
 *.so
 
 # Cython extensions
-*.pyx
-*.pyd
 
 # Distribution / packaging
 .Python

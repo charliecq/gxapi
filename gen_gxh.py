@@ -97,13 +97,6 @@ class GXHMethod(Method):
 {{ method.string_macro }}""").render(method=self)
 
     @property
-    def exposed_name(self):
-        if self.external_name:
-            return self.external_name
-        else:
-            return self.name
-
-    @property
     def string_macro(self):
         method_name = self.exposed_name
         param_replacements = {p.size_of_param: p.name for p in self.parameters if p.size_of_param}
@@ -255,3 +248,13 @@ class GXHCodeGenerator(CodeGeneratorBase):
         for _, cl in self.classes.items():
             for g_k, methods in cl.method_groups.items():
                 cl.method_groups[g_k] = [m for m in methods if not m.no_gxh]
+
+if __name__ == "__main__":
+    gen = GXHCodeGenerator()
+
+    for cl_name, cl in gen.classes.items():
+        outputfile = "../gxdeveloper/gx/include/" + cl_name.lower() + ".gxh"
+        print("Generating {}".format(outputfile))
+        with open(outputfile, 'wb') as f:
+            output = os.linesep.join(cl.render().splitlines())
+            f.write(output.encode('UTF-8'))

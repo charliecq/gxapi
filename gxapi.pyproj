@@ -155,5 +155,9 @@
     <Folder Include="spec\core" />
     <Folder Include="spec\desk" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="gxapi.pyx" />
+    <Content Include="gxapi_cy.pyx" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
