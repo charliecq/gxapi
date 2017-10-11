@@ -259,7 +259,7 @@ gx_methods = {
                              doc="Buffer to Place Symbol name into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size of the buffer"),
-                   Parameter('p5', type="var DB_SYMB", is_ref=True,
+                   Parameter('p5', type="DB_SYMB", is_ref=True,
                              doc="Symbol handle")
                ]),
 

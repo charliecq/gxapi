@@ -229,7 +229,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc="Voxel file name"),
-                   Parameter('p2', type="var CRC", is_ref=True,
+                   Parameter('p2', type="CRC", is_ref=True,
                              doc="CRC returned - not implemented - always returns 0."),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
