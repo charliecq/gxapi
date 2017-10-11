@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>cysetup.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="cysetup.py" />
+    <Compile Include="gen\code_generator.py" />
+    <Compile Include="gen\__init__.py" />
+    <Compile Include="gen_cython.py" />
+    <Compile Include="gen_gxh.py" />
+    <Compile Include="gen_gxlib.py" />
+    <Compile Include="spec\core\3DN.py" />
+    <Compile Include="spec\core\3DV.py" />
+    <Compile Include="spec\core\AGG.py" />
+    <Compile Include="spec\core\BF.py" />
+    <Compile Include="spec\core\DAT.py" />
+    <Compile Include="spec\core\DATALINKD.py" />
+    <Compile Include="spec\core\DATAMINE.py" />
+    <Compile Include="spec\core\DB.py" />
+    <Compile Include="spec\core\DBREAD.py" />
+    <Compile Include="spec\core\DBWRITE.py" />
+    <Compile Include="spec\core\DSEL.py" />
+    <Compile Include="spec\core\EXT.py" />
+    <Compile Include="spec\core\GEO.py" />
+    <Compile Include="spec\core\GEOSOFT.py" />
+    <Compile Include="spec\core\GEOSTRING.py" />
+    <Compile Include="spec\core\GIS.py" />
+    <Compile Include="spec\core\HGD.py" />
+    <Compile Include="spec\core\HXYZ.py" />
+    <Compile Include="spec\core\IGRF.py" />
+    <Compile Include="spec\core\IMG.py" />
+    <Compile Include="spec\core\IMU.py" />
+    <Compile Include="spec\core\IPJ.py" />
+    <Compile Include="spec\core\ITR.py" />
+    <Compile Include="spec\core\LAYOUT.py" />
+    <Compile Include="spec\core\LL2.py" />
+    <Compile Include="spec\core\LPT.py" />
+    <Compile Include="spec\core\LST.py" />
+    <Compile Include="spec\core\LTB.py" />
+    <Compile Include="spec\core\MAP.py" />
+    <Compile Include="spec\core\MAPL.py" />
+    <Compile Include="spec\core\MAPTEMPLATE.py" />
+    <Compile Include="spec\core\MATH.py" />
+    <Compile Include="spec\core\META.py" />
+    <Compile Include="spec\core\MVIEW.py" />
+    <Compile Include="spec\core\MVU.py" />
+    <Compile Include="spec\core\MXD.py" />
+    <Compile Include="spec\core\PAT.py" />
+    <Compile Include="spec\core\PG.py" />
+    <Compile Include="spec\core\PJ.py" />
+    <Compile Include="spec\core\PLY.py" />
+    <Compile Include="spec\core\RA.py" />
+    <Compile Include="spec\core\REG.py" />
+    <Compile Include="spec\core\SBF.py" />
+    <Compile Include="spec\core\ST.py" />
+    <Compile Include="spec\core\ST2.py" />
+    <Compile Include="spec\core\STR.py" />
+    <Compile Include="spec\core\SURFACE.py" />
+    <Compile Include="spec\core\SURFACEITEM.py" />
+    <Compile Include="spec\core\SYS.py" />
+    <Compile Include="spec\core\TB.py" />
+    <Compile Include="spec\core\TPAT.py" />
+    <Compile Include="spec\core\TR.py" />
+    <Compile Include="spec\core\USERMETA.py" />
+    <Compile Include="spec\core\VA.py" />
+    <Compile Include="spec\core\VM.py" />
+    <Compile Include="spec\core\VOX.py" />
+    <Compile Include="spec\core\VOXD.py" />
+    <Compile Include="spec\core\VOXE.py" />
+    <Compile Include="spec\core\VULCAN.py" />
+    <Compile Include="spec\core\VV.py" />
+    <Compile Include="spec\core\WA.py" />
+    <Compile Include="spec\desk\ACQUIRE.py" />
+    <Compile Include="spec\desk\ARCDB.py" />
+    <Compile Include="spec\desk\ARCDH.py" />
+    <Compile Include="spec\desk\ARCMAP.py" />
+    <Compile Include="spec\desk\ARCSYS.py" />
+    <Compile Include="spec\desk\BIGRID.py" />
+    <Compile Include="spec\desk\CHIMERA.py" />
+    <Compile Include="spec\desk\COM.py" />
+    <Compile Include="spec\desk\CSYMB.py" />
+    <Compile Include="spec\desk\DGW.py" />
+    <Compile Include="spec\desk\DH.py" />
+    <Compile Include="spec\desk\DMPPLY.py" />
+    <Compile Include="spec\desk\DOCU.py" />
+    <Compile Include="spec\desk\DU.py" />
+    <Compile Include="spec\desk\DXFI.py" />
+    <Compile Include="spec\desk\EDB.py" />
+    <Compile Include="spec\desk\EDOC.py" />
+    <Compile Include="spec\desk\EMAP.py" />
+    <Compile Include="spec\desk\EMAPTEMPLATE.py" />
+    <Compile Include="spec\desk\EUL3.py" />
+    <Compile Include="spec\desk\EXP.py" />
+    <Compile Include="spec\desk\FFT.py" />
+    <Compile Include="spec\desk\FFT2.py" />
+    <Compile Include="spec\desk\FLT.py" />
+    <Compile Include="spec\desk\GD.py" />
+    <Compile Include="spec\desk\GER.py" />
+    <Compile Include="spec\desk\GMSYS.py" />
+    <Compile Include="spec\desk\GU.py" />
+    <Compile Include="spec\desk\GUI.py" />
+    <Compile Include="spec\desk\HTTP.py" />
+    <Compile Include="spec\desk\IEXP.py" />
+    <Compile Include="spec\desk\INTERNET.py" />
+    <Compile Include="spec\desk\IP.py" />
+    <Compile Include="spec\desk\IPGUI.py" />
+    <Compile Include="spec\desk\KGRD.py" />
+    <Compile Include="spec\desk\LMSG.py" />
+    <Compile Include="spec\desk\MISC.py" />
+    <Compile Include="spec\desk\MSTK.py" />
+    <Compile Include="spec\desk\MVG.py" />
+    <Compile Include="spec\desk\PDF3D.py" />
+    <Compile Include="spec\desk\PGEXP.py" />
+    <Compile Include="spec\desk\PGU.py" />
+    <Compile Include="spec\desk\PRAGA3.py" />
+    <Compile Include="spec\desk\PROJ.py" />
+    <Compile Include="spec\desk\RGRD.py" />
+    <Compile Include="spec\desk\SEMPLOT.py" />
+    <Compile Include="spec\desk\SHP.py" />
+    <Compile Include="spec\desk\SQLSRV.py" />
+    <Compile Include="spec\desk\STK.py" />
+    <Compile Include="spec\desk\STRINGS.py" />
+    <Compile Include="spec\desk\TC.py" />
+    <Compile Include="spec\desk\TEST.py" />
+    <Compile Include="spec\desk\TIN.py" />
+    <Compile Include="spec\desk\TRND.py" />
+    <Compile Include="spec\desk\UNC.py" />
+    <Compile Include="spec\desk\VAU.py" />
+    <Compile Include="spec\desk\VVEXP.py" />
+    <Compile Include="spec\desk\VVU.py" />
+    <Compile Include="spec\gxclass.py" />
+    <Compile Include="spec\gxdefs.py" />
+    <Compile Include="spec\gxmethod.py" />
+    <Compile Include="spec\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="gen" />
+    <Folder Include="spec" />
+    <Folder Include="spec\core" />
+    <Folder Include="spec\desk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

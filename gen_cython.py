@@ -1,7 +1,8 @@
-import os
+import os, sys
 from gen import CodeGeneratorBase
 from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
+import getopt
 
 class CythonConstant(Constant):
     def __init__(self, other):
@@ -17,33 +18,17 @@ class CythonDefine(Define):
     def __init__(self, other):
         super().construct_copy(other)
 
-def get_c_type(type):
-    if type == Type.VOID:
-        return "void"
-    elif type == Type.DOUBLE:
-        return "double"
-    elif type == Type.INT32_T:
-        return "int32_t"
-    elif type == Type.INT16_T:
-        return "int16_t"
-    elif type == Type.STRING:
-        return "char"
-    else:
-        return "int32_t"
-
 class CythonParameter(Parameter):
     def __init__(self, other):
         super().construct_copy(other)
 
     @property
     def c_type(self):
-        if self.is_ref:
-            return '{}*'.format(get_c_type(self.type))
-        elif self.is_val:
-            return '{}'.format(get_c_type(self.type))
-        else:
-            return 'const {}*'.format(get_c_type(self.type))
-
+        return self.generator.get_c_type(self.type, is_ref=self.is_ref, is_val=self.is_val)
+        
+    def cy_assign(self, index):
+        c_type = self.generator.get_c_type(self.type, is_val=True)
+        return c_type
 
 class CythonMethod(Method):
     def __init__(self, other):
@@ -58,19 +43,25 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
             return ""
         else:
             return self.generator.get_template("""
-    def {{ method.ext_method_name }}({{ method.render_wrap_parameters() }}):
+    def {{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
+        
         pass
 """).render(method=self)
     
     def render_c_parameters(self):
-        return self.generator.get_template("""(void*{% for param in parameters %}, {{ param.c_type }}{% endfor %});""").render(parameters=self.parameters)
+        return self.generator.get_template("""(void*{% for param in parameters %}, {{ param.c_type }} {{ param.name }}{% endfor %});""").render(parameters=self.parameters)
 
-    def render_wrap_parameters(self):
-        return self.generator.get_template("{% for param in parameters %}p{{ loop.index }}{% if not loop.last %}, {% endif %}{% endfor %}").render(parameters=self.parameters)
+    @property
+    def wrap_parameters(self):
+        return self.generator.get_template("{% for param in in_params %}, {{ param.name }}{% endfor %}").render(in_params=self.in_params)
+
+    @property
+    def wrap_first_parm(self):
+        return "cls" if self.is_static else "self"
 
     @property
     def c_return_type(self):
-        return get_c_type(self.return_type)
+        return self.generator.get_c_type(self.return_type, is_val=True)
 
 
 class CythonClass(Class):
@@ -173,6 +164,32 @@ class CythonCodeGenerator(CodeGeneratorBase):
         super().__init__(constant_type=CythonConstant, define_type=CythonDefine, parameter_type=CythonParameter,
                          method_type=CythonMethod, class_type=CythonClass)
 
+    def get_c_type(self, type, is_val=False, is_ref=False):
+        if type is str:
+            type = type.replace("_stdcall", "")
+            is_val = is_val or not type.find('*') == -1
+        c_type = type
+        if type == Type.VOID:
+            c_type = "void"
+        elif type == Type.DOUBLE:
+            c_type = "double"
+        elif type == Type.INT32_T:
+            c_type = "int32_t"
+        elif type == Type.INT16_T:
+            c_type = "int16_t"
+        elif type == Type.STRING:
+            c_type = "char"
+        elif type in self.classes or type in self.definitions:
+            c_type = "int32_t"
+        
+        if is_ref:
+            return '{}*'.format(c_type)
+        elif is_val:
+            return c_type
+        else:
+            return 'const {}*'.format(c_type)
+
+
     def render_pyx(self):
         return self.get_template('''
 # cython: c_string_type=unicode, c_string_encoding=utf8
@@ -207,6 +224,18 @@ cdef unicode tounicode_with_length_and_free(
         return s[:length].decode('UTF-8', 'strict')
     finally:
         free(s)
+
+cdef extern from "Windows.h":
+
+    ctypedef Py_UNICODE WCHAR
+    ctypedef const WCHAR* LPCWSTR
+    ctypedef void* HWND
+
+    int_value MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, int_value uType)
+
+#title = u"Windows Interop Demo - Python %d.%d.%d" % sys.version_info[:3]
+#MessageBoxW(NULL, u"Hello Cython \u263a", title, 0)
+
 
 cdef class WrapPGeo:
     cdef void* p_geo
@@ -268,9 +297,28 @@ cdef void* get_p_geo():
 
 ''').render(classes=self.classes)
 
+def usage():
+    print('gen_cython.py -o <outputfile.pyx>')
+    sys.exit(2)
+def main(argv):
+    outputfile = None
+    try:
+        opts, args = getopt.getopt(argv,"ho:",["ofile="])
+    except getopt.GetoptError:
+        usage()
+    for opt, arg in opts:
+        if opt == '-h':
+            usage()
+        elif opt in ("-o", "--ofile"):
+            outputfile = arg
+    if not outputfile:
+        usage()
 
-# running as stand-alone program
+    with open(outputfile, 'wb') as f:
+        gen = CythonCodeGenerator()
+        #f.write(gen.classes['3DN'].method_groups['Miscellaneous'][0].parameters[0].c_type.encode('UTF-8'))
+        f.write(gen.render_pyx().encode('UTF-8'))
+    
+
 if __name__ == "__main__":
-    gen = CythonCodeGenerator()
-    #print (gen.classes['3DN'].method_groups['Miscellaneous'][0].ext_method_name)
-    print(gen.render_pyx())
+   main(sys.argv[1:])

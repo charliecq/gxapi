@@ -41,7 +41,12 @@ class Method(SpecBase):
         self.parameters = parameters
         self.is_static = True
         self.is_destroy_method = False
+        
         self.exposed_name = external_name if external_name else 'App_{}'.format(self.name) if self.is_app else self.name
+        
+        self.size_of_params = { p.size_of_param: p for p in self.parameters if p.size_of_param }
+        self.in_params = [ p for p in self.parameters if not p in self.size_of_params ]
+        self.ref_params = [ p for p in self.parameters if p.is_ref ]
 
     @property
     def ext_method_name(self):

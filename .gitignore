@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Cython extensions
+*.pyx
+*.pyd
+
 # Distribution / packaging
 .Python
 env/
@@ -25,7 +29,6 @@ var/
 .installed.cfg
 *.egg
 *.key
-geosoft/*.pyd
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -153,11 +156,3 @@ $RECYCLE.BIN/
 # Visual Studio
 # =========================
 .vs/
-/gxapi_t.pyx
-/gxapi_cy.pyx
-/gxapi_cy.cp36-win_amd64.pyd
-/gxapi_cy.c
-/gxapi_t.pyx
-/gxapi_cy.pyx
-/gxapi_cy.cp36-win_amd64.pyd
-/gxapi_cy.c

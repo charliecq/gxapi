@@ -18,11 +18,6 @@ _classes = {}
 _class_method_groups = {}
 _class_defines = {}
 
-#_known_classes = set()
-#_known_defines = set()
-#_known_constants = set()
-#_known_methods = set()
-
 for file in itertools.chain(_core_files, _desk_files):
     parts = file.replace('/', '.').replace('\\', '.').split('.')
     parts.pop()
@@ -30,19 +25,12 @@ for file in itertools.chain(_core_files, _desk_files):
     branch = parts.pop()
     mod = importlib.import_module('spec.{}.{}'.format(branch, gx_cl), __package__)
 
-#    _known_classes.add(gx_cl)
-
     _classes[gx_cl] = mod.gx_class
 
     defines = mod.gx_defines if hasattr(mod, 'gx_defines') else []
-#    for define in defines:
-#        _known_defines.add(define.name)
     _class_defines[gx_cl] = defines
 
     groups = mod.gx_methods if hasattr(mod, 'gx_methods') else {}
- #   for _, group in groups:
- #       for m in group:
- #           _known_methods.add(define.name)
 
     _class_method_groups[gx_cl] = groups
 
@@ -100,8 +88,10 @@ class CodeGeneratorBase:
                     gen_const.parent = define
                     gen_const.generator = self
                     gen_constants.append(gen_const)
+                    self.constants[gen_const.name] = gen_const
                 define.constants = gen_constants
                 cl.defines[d.name] = define
+                self.definitions[d.name] = define
 
             cl.is_static = True
             cl.has_methods = False
@@ -143,8 +133,10 @@ class CodeGeneratorBase:
                                 cl.default_destroy_method = 'App_{}'.format(default_destr_name)
                             else:
                                 cl.default_destroy_method = default_destr_name
+
                         cl.has_methods = True
                         methods.append(method)
+                        self.methods[method.name] = method
                 if len(methods) > 0:
                     cl.method_groups[g_k] = methods
             self.classes[c_name] = cl
