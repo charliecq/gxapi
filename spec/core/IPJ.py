@@ -66,31 +66,31 @@ gx_defines = [
            doc="Project Name",
            constants=[
                Constant('IPJ_NAME_PCS', value='0', type=Type.INT32_T,
-                        doc="projected coordinate system name"),
+                        doc="Projected coordinate system name"),
                Constant('IPJ_NAME_PROJECTION', value='1', type=Type.INT32_T,
-                        doc="projection name"),
+                        doc="Projection name"),
                Constant('IPJ_NAME_METHOD', value='2', type=Type.INT32_T,
-                        doc="projection method name"),
+                        doc="Projection method name"),
                Constant('IPJ_NAME_DATUM', value='3', type=Type.INT32_T,
-                        doc="datum name"),
+                        doc="Datum name"),
                Constant('IPJ_NAME_ELLIPSOID', value='4', type=Type.INT32_T,
-                        doc="ellipsoid name"),
+                        doc="Ellipsoid name"),
                Constant('IPJ_NAME_LDATUM', value='5', type=Type.INT32_T,
-                        doc="local datum name"),
+                        doc="Local datum name"),
                Constant('IPJ_NAME_UNIT_ABBR', value='6', type=Type.INT32_T,
-                        doc="unit abbreviation"),
+                        doc="Unit abbreviation"),
                Constant('IPJ_NAME_UNIT_FULL', value='7', type=Type.INT32_T,
-                        doc="full unit name"),
+                        doc="Full unit name"),
                Constant('IPJ_NAME_TYPE', value='8', type=Type.INT32_T,
-                        doc="projection type description"),
+                        doc="Projection type description"),
                Constant('IPJ_NAME_LLDATUM', value='9', type=Type.INT32_T,
-                        doc="datum transform table name"),
+                        doc="Datum transform table name"),
                Constant('IPJ_NAME_METHOD_PARMS', value='10', type=Type.INT32_T,
-                        doc="projection method parameters in GXF order"),
+                        doc="Projection method parameters in GXF order"),
                Constant('IPJ_NAME_METHOD_LABEL', value='11', type=Type.INT32_T,
-                        doc="projection method parameters labels"),
+                        doc="Projection method parameters labels"),
                Constant('IPJ_NAME_DATUM_PARMS', value='12', type=Type.INT32_T,
-                        doc="datum parameters (major axis, flattening, prime meridian)"),
+                        doc="Datum parameters (major axis, flattening, prime meridian)"),
                Constant('IPJ_NAME_LDATUM_PARMS', value='13', type=Type.INT32_T,
                         doc="""
                         local datum parameters (dX,dY,dZ,rX,rY,rZ,scale)
@@ -98,13 +98,13 @@ gx_defines = [
                         specifications.
                         """),
                Constant('IPJ_NAME_GEOID', value='14', type=Type.INT32_T,
-                        doc="geoid name if known"),
+                        doc="Geoid name if known"),
                Constant('IPJ_NAME_LDATUMDESCRIPTION', value='15', type=Type.INT32_T,
-                        doc="local datum description"),
+                        doc="Local datum description"),
                Constant('IPJ_NAME_METHOD_PARMS_NATIVE', value='16', type=Type.INT32_T,
-                        doc="projection method parameters in GXF order (Native units for eastings/northings)"),
+                        doc="Projection method parameters in GXF order (Native units for eastings/northings)"),
                Constant('IPJ_NAME_ORIENTATION_PARMS', value='17', type=Type.INT32_T,
-                        doc="orientation parameters")
+                        doc="Orientation parameters")
            ]),
 
     Define('IPJ_ORIENT',
@@ -226,21 +226,21 @@ gx_defines = [
                Constant('IPJ_WARP_MATRIX', value='-1', type=Type.INT32_T,
                         doc="Matrix Warp"),
                Constant('IPJ_WARP_NONE', value='0', type=Type.INT32_T,
-                        doc="no warp"),
+                        doc="No warp"),
                Constant('IPJ_WARP_TRANS1', value='1', type=Type.INT32_T,
-                        doc="translate only (needs 1 point)"),
+                        doc="Translate only (needs 1 point)"),
                Constant('IPJ_WARP_TRANS2', value='2', type=Type.INT32_T,
-                        doc="translate, rotate, normal scale (needs 2 pts)"),
+                        doc="Translate, rotate, normal scale (needs 2 pts)"),
                Constant('IPJ_WARP_TRANS3', value='3', type=Type.INT32_T,
-                        doc="translate, rotate, scale X and Y (needs 3 pts or more, least-square fit)"),
+                        doc="Translate, rotate, scale X and Y (needs 3 pts or more, least-square fit)"),
                Constant('IPJ_WARP_QUAD', value='4', type=Type.INT32_T,
-                        doc="quadrilateral warp (needs 4 points)"),
+                        doc="Quadrilateral warp (needs 4 points)"),
                Constant('IPJ_WARP_MULTIPOINT', value='5', type=Type.INT32_T,
-                        doc="multipoint warp (needs at least 3 points)"),
+                        doc="Multipoint warp (needs at least 3 points)"),
                Constant('IPJ_WARP_LOG', value='6', type=Type.INT32_T,
-                        doc="convert from linear to log coords in X and/or Y"),
+                        doc="Convert from linear to log coords in X and/or Y"),
                Constant('IPJ_WARP_MULTIPOINT_Y', value='7', type=Type.INT32_T,
-                        doc="multipoint warp in Y only (needs at least 3 points)")
+                        doc="Multipoint warp in Y only (needs at least 3 points)")
            ])]
 
 
@@ -282,9 +282,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="IPJ"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="factor to meters, must be >= 0.0"),
+                             doc="Factor to meters, must be >= 0.0"),
                    Parameter('p3', type=Type.STRING,
-                             doc='abbreviation, can be ""')
+                             doc='Abbreviation, can be ""')
                ]),
 
         Method('AddExaggWarp_IPJ', module='geoengine.core', version='5.0.0',
@@ -436,9 +436,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IPJ",
-                             doc="source :class:`IPJ`"),
+                             doc="Source :class:`IPJ`"),
                    Parameter('p2', type="IPJ",
-                             doc="destination :class:`IPJ`")
+                             doc="Destination :class:`IPJ`")
                ]),
 
         Method('CopyProjection_IPJ', module='geoengine.core', version='7.0.0',
@@ -451,9 +451,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IPJ",
-                             doc="destination"),
+                             doc="Destination"),
                    Parameter('p2', type="IPJ",
-                             doc="source")
+                             doc="Source")
                ]),
 
         Method('Create_IPJ', module='geoengine.core', version='5.0.0',
@@ -580,9 +580,9 @@ gx_methods = {
                    Parameter('p1', type=Type.INT32_T,
                              doc=":def:`IPJ_PARM_LST`"),
                    Parameter('p2', type=Type.STRING,
-                             doc='datum filter, "" for no filter'),
+                             doc='Datum filter, "" for no filter'),
                    Parameter('p3', type="LST",
-                             doc="list returned")
+                             doc="List returned")
                ]),
 
         Method('GetOrientationInfo_IPJ', module='geoengine.core', version='5.1.6',
@@ -813,9 +813,9 @@ gx_methods = {
                    Parameter('p1', type="IPJ",
                              doc=":class:`IPJ` object"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="name returned"),
+                             doc="Name returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('IGetESRI_IPJ', module='geoengine.core', version='5.1.8',
@@ -832,7 +832,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="ESRI projection string returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="string length, should be at least 1024")
+                             doc="String length, should be at least 1024")
                ]),
 
         Method('IGetGXF_IPJ', module='geoengine.core', version='5.0.0',
@@ -848,17 +848,17 @@ gx_methods = {
                    Parameter('p1', type="IPJ",
                              doc=":class:`IPJ` object"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p7',
-                             doc="projection name"),
+                             doc="Projection name"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p7',
-                             doc="datum name, major axis, elipticity"),
+                             doc="Datum name, major axis, elipticity"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p7',
-                             doc="method name, parameters"),
+                             doc="Method name, parameters"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p7',
-                             doc="unit name, factor"),
+                             doc="Unit name, factor"),
                    Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
-                             doc="local transform name,dX,dY,dZ,rX,rY,rZ,Scale"),
+                             doc="Local transform name,dX,dY,dZ,rX,rY,rZ,Scale"),
                    Parameter('p7', type=Type.INT32_T, default_length='STR_GXF',
-                             doc="maximum length of all strings")
+                             doc="Maximum length of all strings")
                ]),
 
         Method('IGetMICoordSys_IPJ', module='geoengine.core', version='7.0.0',
@@ -871,11 +871,11 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="MapInfo coordsys string returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="coordsys string length"),
+                             doc="Coordsys string length"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
                              doc="MapInfo unit string returned"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="unit string length")
+                             doc="Unit string length")
                ]),
 
         Method('IGetName_IPJ', module='geoengine.core', version='5.0.0',
@@ -888,9 +888,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`IPJ_NAME`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="name returned"),
+                             doc="Name returned"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('SetVCS_IPJ', module='geoengine.core', version='9.2.0',
@@ -915,7 +915,7 @@ gx_methods = {
                    Parameter('p1', type="IPJ",
                              doc=":class:`IPJ` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="new name (See Valid inputs above).")
+                             doc="New name (See Valid inputs above).")
                ]),
 
         Method('iGetOrientation_IPJ', module='geoengine.core', version='5.1.4',
@@ -940,9 +940,9 @@ gx_methods = {
                    Parameter('p1', type="IPJ",
                              doc=":class:`IPJ` object"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="name returned"),
+                             doc="Name returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('IGetUnits_IPJ', module='geoengine.core', version='5.0.0',
@@ -952,11 +952,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="IPJ"),
                    Parameter('p2', type=Type.DOUBLE, is_ref=True,
-                             doc="factor to meters"),
+                             doc="Factor to meters"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="abbreviation"),
+                             doc="Abbreviation"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="length of string")
+                             doc="Length of string")
                ]),
 
         Method('IGetXML_IPJ', module='geoengine.core', version='7.0.0',
@@ -969,7 +969,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="XML string returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="string length, should be at least 1024")
+                             doc="String length, should be at least 1024")
                ]),
 
         Method('iHasProjection_IPJ', module='geoengine.core', version='7.2.0',
@@ -1170,13 +1170,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="factor to meters"),
+                             doc="Factor to meters"),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`IPJ_UNIT`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc='name returned, "" if cannot find unit'),
+                             doc='Name returned, "" if cannot find unit'),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="length of string")
+                             doc="Length of string")
                ]),
 
         Method('iWarped_IPJ', module='geoengine.core', version='5.0.0',
@@ -1245,13 +1245,13 @@ gx_methods = {
                    Parameter('p1', type="IPJ",
                              doc=":class:`IPJ` to modify"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="minimum longitude"),
+                             doc="Minimum longitude"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="minimum latitude"),
+                             doc="Minimum latitude"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="maximum longitude"),
+                             doc="Maximum longitude"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="maximum latitude")
+                             doc="Maximum latitude")
                ]),
 
         Method('NewBoxResolution_IPJ', module='geoengine.core', version='5.1.5',
@@ -1265,11 +1265,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IPJ",
-                             doc="original :class:`IPJ`"),
+                             doc="Original :class:`IPJ`"),
                    Parameter('p2', type="IPJ",
-                             doc="new :class:`IPJ`"),
+                             doc="New :class:`IPJ`"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="data resolution in original :class:`IPJ`"),
+                             doc="Data resolution in original :class:`IPJ`"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="X minimum of bounding box in new :class:`IPJ`"),
                    Parameter('p5', type=Type.DOUBLE,
@@ -1279,11 +1279,11 @@ gx_methods = {
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Y maximum"),
                    Parameter('p8', type=Type.DOUBLE, is_ref=True,
-                             doc="minimum data resolution in new :class:`IPJ`,"),
+                             doc="Minimum data resolution in new :class:`IPJ`,"),
                    Parameter('p9', type=Type.DOUBLE, is_ref=True,
-                             doc="maximum data resolution in new :class:`IPJ`"),
+                             doc="Maximum data resolution in new :class:`IPJ`"),
                    Parameter('p10', type=Type.DOUBLE, is_ref=True,
-                             doc="diagonal data resolution in new :class:`IPJ`")
+                             doc="Diagonal data resolution in new :class:`IPJ`")
                ]),
 
         Method('Read_IPJ', module='geoengine.core', version='5.0.0',
@@ -1296,11 +1296,11 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`IPJ_TYPE`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string 1"),
+                             doc="String 1"),
                    Parameter('p4', type=Type.STRING,
-                             doc="string 2"),
+                             doc="String 2"),
                    Parameter('p5', type=Type.STRING,
-                             doc="string 3")
+                             doc="String 3")
                ]),
 
         Method('rGetMethodParm_IPJ', module='geoengine.core', version='5.0.0',
@@ -1328,9 +1328,9 @@ gx_methods = {
                    Parameter('p1', type="IPJ",
                              doc=":class:`IPJ` object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="input X location"),
+                             doc="Input X location"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="input Y location")
+                             doc="Input Y location")
                ]),
 
         Method('rUnitScale_IPJ', module='geoengine.core', version='5.0.0',
@@ -1341,9 +1341,9 @@ gx_methods = {
                return_doc="Scale factor m/unit",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="unit name, abbreviation or full name"),
+                             doc="Unit name, abbreviation or full name"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="default to return if name not found")
+                             doc="Default to return if name not found")
                ]),
 
         Method('Serial_IPJ', module='geoengine.core', version='5.0.0',
@@ -1706,7 +1706,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`IPJ_CSP`"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="parameter value")
+                             doc="Parameter value")
                ]),
 
         Method('SetMICoordSys_IPJ', module='geoengine.core', version='5.1.4',
@@ -1769,7 +1769,7 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Z location of view origin"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="rotation CCW from normal XY coords")
+                             doc="Rotation CCW from normal XY coords")
                ]),
 
         Method('SetSectionView_IPJ', module='geoengine.core', version='5.1.6',
@@ -1839,13 +1839,13 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="WMS style coordinate string"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="minimum X bounding box"),
+                             doc="Minimum X bounding box"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="minimum Y"),
+                             doc="Minimum Y"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="maximum X"),
+                             doc="Maximum X"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="maximum Y")
+                             doc="Maximum Y")
                ]),
 
         Method('SetXML_IPJ', module='geoengine.core', version='7.0.0',

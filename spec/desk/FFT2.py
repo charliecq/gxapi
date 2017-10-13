@@ -39,7 +39,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.STRING,
                              doc="sConFil - :class:`FFT` filter control file"),
                    Parameter('p3', type="TR",
@@ -149,7 +149,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`FFT2_PG`")
                ])

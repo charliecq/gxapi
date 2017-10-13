@@ -57,7 +57,7 @@ gx_defines = [
            """,
            constants=[
                Constant('DGW_LABEL', value='0', type=Type.INT32_T,
-                        doc="The text label tied to each Dialogue component."),
+                        doc="The text label tied to each Dialog component."),
                Constant('DGW_TEXT', value='1', type=Type.INT32_T,
                         doc="The edit field text."),
                Constant('DGW_PATH', value='2', type=Type.INT32_T,
@@ -81,7 +81,7 @@ gx_methods = {
         Method('Create_DGW', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="""
-               This method creates a Dialogue window from a specified
+               This method creates a Dialog window from a specified
                resource. The Resource is loaded into memory but not displayed.
                """,
                return_type="DGW",
@@ -93,22 +93,22 @@ gx_methods = {
 
         Method('Destroy_DGW', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Destroys a Dialogue Window.",
+               doc="Destroys a Dialog Window.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue to Destroy")
+                             doc="Dialog to Destroy")
                ]),
 
         Method('GetInfoMETA_DGW', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Copies the Dialogue information to a :class:`META` attribute.",
+               doc="Copies the Dialog information to a :class:`META` attribute.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
-                             doc="Dialogue Object"),
+                             doc="Dialog Object"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
                    Parameter('p4', type="META"),
@@ -121,15 +121,15 @@ gx_methods = {
         Method('GetInfoSYS_DGW', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="""
-               This method uses the information in a Dialogue box to
+               This method uses the information in a Dialog box to
                set a :class:`SYS` variable.
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
-                             doc="Dialogue Object"),
+                             doc="Dialog Object"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
                    Parameter('p4', type=Type.STRING,
@@ -142,15 +142,15 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="""
                This method retrieves the list (:class:`LST`) object associated
-               with a Dialogue object.
+               with a Dialog object.
                """,
                return_type="LST",
                return_doc="The List Object",
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
-                             doc="Dialogue Object")
+                             doc="Dialog Object")
                ]),
 
         Method('GtInfo_DGW', module='None', version='5.0.0',
@@ -162,7 +162,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
                              doc="Handle to the TEXT Object"),
                    Parameter('p3', type=Type.INT32_T,
@@ -175,12 +175,12 @@ gx_methods = {
 
         Method('iRunDialogue_DGW', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="This method runs the Dialogue window.",
+               doc="This method runs the Dialog window.",
                return_type=Type.INT32_T,
-               return_doc="The Exit Code of the Dialogue window.",
+               return_doc="The Exit Code of the Dialog window.",
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue Window")
+                             doc="Dialog Window")
                ]),
 
         Method('SetInfo_DGW', module='None', version='5.0.0',
@@ -192,7 +192,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
                              doc="Handle to the TEXT Object"),
                    Parameter('p3', type=Type.INT32_T,
@@ -207,9 +207,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
-                             doc="Dialogue Object"),
+                             doc="Dialog Object"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
                    Parameter('p4', type="META"),
@@ -229,9 +229,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type="DGW_OBJ",
-                             doc="Dialogue Object"),
+                             doc="Dialog Object"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
                    Parameter('p4', type=Type.STRING,
@@ -262,7 +262,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DGW",
-                             doc="Dialogue"),
+                             doc="Dialog"),
                    Parameter('p2', type=Type.STRING,
                              doc="Title to set")
                ])

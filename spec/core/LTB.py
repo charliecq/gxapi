@@ -81,9 +81,9 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="key name"),
+                             doc="Key name"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
-                             doc="returned record number")
+                             doc="Returned record number")
                ]),
 
         Method('Contract_LTB', module='geoengine.core', version='5.1.0',
@@ -122,7 +122,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
+                             doc="File name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
                    Parameter('p3', type=Type.INT32_T,
@@ -142,7 +142,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
+                             doc="File name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
                    Parameter('p3', type=Type.INT32_T,
@@ -166,7 +166,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
+                             doc="File name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
                    Parameter('p3', type=Type.INT32_T,
@@ -189,7 +189,7 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number to delete")
+                             doc="Record number to delete")
                ]),
 
         Method('Destroy_LTB', module='geoengine.core', version='5.0.0',
@@ -214,13 +214,13 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="field"),
+                             doc="Field"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string to match to field, must be lower-case"),
+                             doc="String to match to field, must be lower-case"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`LTB_CONLST`"),
                    Parameter('p5', type="LST",
-                             doc="list to populate")
+                             doc="List to populate")
                ]),
 
         Method('GetLST_LTB', module='geoengine.core', version='5.0.0',
@@ -236,9 +236,9 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="field to get, 0 for key field"),
+                             doc="Field to get, 0 for key field"),
                    Parameter('p3', type="LST",
-                             doc="list to populate")
+                             doc="List to populate")
                ]),
 
         Method('GetLST2_LTB', module='geoengine.core', version='5.0.0',
@@ -254,18 +254,18 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="field for names, 0 for key field"),
+                             doc="Field for names, 0 for key field"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field for values, 0 for key field"),
+                             doc="Field for values, 0 for key field"),
                    Parameter('p4', type="LST",
-                             doc="list to populate")
+                             doc="List to populate")
                ]),
 
         Method('iFields_LTB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Get number of fields.",
                return_type=Type.INT32_T,
-               return_doc="number of fields in the :class:`LTB`.",
+               return_doc="Number of fields in the :class:`LTB`.",
                parameters = [
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object")
@@ -283,7 +283,7 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="field name")
+                             doc="Field name")
                ]),
 
         Method('iFindKey_LTB', module='geoengine.core', version='5.0.0',
@@ -298,7 +298,7 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="key name")
+                             doc="Key name")
                ]),
 
         Method('IGetField_LTB', module='geoengine.core', version='5.0.0',
@@ -310,11 +310,11 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="returned field name"),
+                             doc="Returned field name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum field name string length")
+                             doc="Maximum field name string length")
                ]),
 
         Method('iGetInt_LTB', module='geoengine.core', version='5.0.0',
@@ -329,9 +329,9 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number")
+                             doc="Field number")
                ]),
 
         Method('IGetString_LTB', module='geoengine.core', version='5.0.0',
@@ -346,13 +346,13 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="returned field token"),
+                             doc="Returned field token"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum field token string length")
+                             doc="Maximum field token string length")
                ]),
 
         Method('IGetEnglishString_LTB', module='geoengine.core', version='8.2.0',
@@ -367,20 +367,20 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="returned field token"),
+                             doc="Returned field token"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum field token string length")
+                             doc="Maximum field token string length")
                ]),
 
         Method('iRecords_LTB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Get number of records in :class:`LTB`.",
                return_type=Type.INT32_T,
-               return_doc="number of records in the :class:`LTB`.",
+               return_doc="Number of records in the :class:`LTB`.",
                parameters = [
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object")
@@ -398,11 +398,11 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="search start record"),
+                             doc="Search start record"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p4', type=Type.STRING,
-                             doc="search string (case sensitive)")
+                             doc="Search string (case sensitive)")
                ]),
 
         Method('Merge_LTB', module='geoengine.core', version='5.0.0',
@@ -449,9 +449,9 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number")
+                             doc="Field number")
                ]),
 
         Method('Save_LTB', module='geoengine.core', version='5.0.0',
@@ -461,7 +461,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="LTB"),
                    Parameter('p2', type=Type.STRING,
-                             doc='file name, .csv assumed.  If "", save to original file.')
+                             doc='File name, .csv assumed.  If "", save to original file.')
                ]),
 
         Method('SaveCrypt_LTB', module='geoengine.core', version='6.2.0',
@@ -471,9 +471,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="LTB"),
                    Parameter('p2', type=Type.STRING,
-                             doc='file name, .csv assumed.  If "", save to original file.'),
+                             doc='File name, .csv assumed.  If "", save to original file.'),
                    Parameter('p3', type=Type.STRING,
-                             doc="encryption key  :def:`SYS_CRYPT_KEY`")
+                             doc="Encryption key  :def:`SYS_CRYPT_KEY`")
                ]),
 
         Method('SetInt_LTB', module='geoengine.core', version='5.0.0',
@@ -484,11 +484,11 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="entry")
+                             doc="Entry")
                ]),
 
         Method('SetReal_LTB', module='geoengine.core', version='5.0.0',
@@ -499,11 +499,11 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="entry")
+                             doc="Entry")
                ]),
 
         Method('SetString_LTB', module='geoengine.core', version='5.0.0',
@@ -514,11 +514,11 @@ gx_methods = {
                    Parameter('p1', type="LTB",
                              doc=":class:`LTB` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="record number"),
+                             doc="Record number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="field number"),
+                             doc="Field number"),
                    Parameter('p4', type=Type.STRING,
-                             doc="entry")
+                             doc="Entry")
                ])
     ]
 }

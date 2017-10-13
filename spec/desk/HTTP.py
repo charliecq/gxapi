@@ -53,9 +53,9 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="URL of the server"),
                    Parameter('p2', type=Type.STRING,
-                             doc='user name, "" for none'),
+                             doc='User name, "" for none'),
                    Parameter('p3', type=Type.STRING,
-                             doc='password,  "" for none'),
+                             doc='Password,  "" for none'),
                    Parameter('p4', type=Type.STRING,
                              doc="Purpose of communication (for user verification)")
                ]),
@@ -79,7 +79,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HTTP",
-                             doc="http object"),
+                             doc="Http object"),
                    Parameter('p2', type=Type.STRING,
                              doc="File Name on the :class:`HTTP` site"),
                    Parameter('p3', type="BF",
@@ -98,7 +98,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HTTP",
-                             doc="http object"),
+                             doc="Http object"),
                    Parameter('p2', type=Type.STRING,
                              doc="File Name on the :class:`HTTP` site"),
                    Parameter('p3', type="BF",
@@ -120,15 +120,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HTTP",
-                             doc="http object"),
+                             doc="Http object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="http path (file or an ISAPI DLL), no spaces"),
+                             doc="Http path (file or an ISAPI DLL), no spaces"),
                    Parameter('p3', type=Type.STRING,
-                             doc="http search string, no spaces"),
+                             doc="Http search string, no spaces"),
                    Parameter('p4', type="BF",
-                             doc="data to send"),
+                             doc="Data to send"),
                    Parameter('p5', type="BF",
-                             doc="data returned")
+                             doc="Data returned")
                ]),
 
         Method('Post_HTTP', module='geogxx', version='5.0.0',
@@ -143,13 +143,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HTTP",
-                             doc="http object"),
+                             doc="Http object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="http path (file or an ISAPI DLL)"),
+                             doc="Http path (file or an ISAPI DLL)"),
                    Parameter('p3', type=Type.STRING,
-                             doc="http search string, no spaces"),
+                             doc="Http search string, no spaces"),
                    Parameter('p4', type="BF",
-                             doc="data to post")
+                             doc="Data to post")
                ]),
 
         Method('SetProxyCredentials_HTTP', module='geogxx', version='7.2.0',
@@ -161,11 +161,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HTTP",
-                             doc="http object"),
+                             doc="Http object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="username"),
+                             doc="Username"),
                    Parameter('p3', type=Type.STRING,
-                             doc="password")
+                             doc="Password")
                ])
     ]
 }

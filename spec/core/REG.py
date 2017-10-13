@@ -40,9 +40,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="REG",
-                             doc="destination"),
+                             doc="Destination"),
                    Parameter('p2', type="REG",
-                             doc="source")
+                             doc="Source")
                ]),
 
         Method('Create_REG', module='geoengine.core', version='5.0.0',
@@ -52,7 +52,7 @@ gx_methods = {
                return_doc=":class:`REG` Object",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc='maximum size of "parameter=setting" string.')
+                             doc='Maximum size of "parameter=setting" string.')
                ]),
 
         Method('CreateS_REG', module='geoengine.core', version='5.0.0',
@@ -111,7 +111,7 @@ gx_methods = {
                    Parameter('p1', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="sequential number of :class:`REG` entry"),
+                             doc="Sequential number of :class:`REG` entry"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="String to put parameter name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
@@ -178,9 +178,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="REG",
-                             doc="destination"),
+                             doc="Destination"),
                    Parameter('p2', type="REG",
-                             doc="source"),
+                             doc="Source"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`REG_MERGE`")
                ]),

@@ -281,7 +281,6 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Create a 3D View in this map that is linked to a :class:`MVIEW` in a 3D View file.",
                return_type=Type.VOID,
-               return_doc="nothing",
                parameters = [
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Object"),
@@ -314,7 +313,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold the views (allow up to 96 characters)"),
+                             doc="List to hold the views (allow up to 96 characters)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 - view/agg only 1 - view/agg/layer")
                ]),
@@ -332,7 +331,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold the views (allow up to 96 characters)"),
+                             doc="List to hold the views (allow up to 96 characters)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 - view/agg only 1 - view/agg/layer"),
                    Parameter('p4', type=Type.INT32_T,
@@ -525,7 +524,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold the view/groups.  Names may be up to 2080 characters in length.")
+                             doc="List to hold the view/groups.  Names may be up to 2080 characters in length.")
                ]),
 
         Method('GroupListEx_MAP', module='geoengine.map', version='5.1.2',
@@ -537,7 +536,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold the views.  View names may be up to 2080 characters in length."),
+                             doc="List to hold the views.  View names may be up to 2080 characters in length."),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`MAP_LIST_MODE`")
                ]),
@@ -595,11 +594,11 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="class"),
+                             doc="Class"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="name"),
+                             doc="Name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="maximum name length")
+                             doc="Maximum name length")
                ]),
 
         Method('IGetFileName_MAP', module='geoengine.map', version='5.0.0',
@@ -610,9 +609,9 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned map file name"),
+                             doc="Returned map file name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of map name string")
+                             doc="Size of map name string")
                ]),
 
         Method('IGetMapName_MAP', module='geoengine.map', version='5.0.0',
@@ -623,9 +622,9 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned map name"),
+                             doc="Returned map name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of map name string")
+                             doc="Size of map name string")
                ]),
 
         Method('iPackedFiles_MAP', module='geoengine.map', version='6.4.0',
@@ -776,9 +775,9 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="class"),
+                             doc="Class"),
                    Parameter('p3', type=Type.STRING,
-                             doc="name")
+                             doc="Name")
                ]),
 
         Method('SetCurrent_MAP', module='None', version='5.0.0',
@@ -813,7 +812,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="new map scale (must be > 0).")
+                             doc="New map scale (must be > 0).")
                ]),
 
         Method('SetMapSize_MAP', module='geoengine.map', version='5.0.0',
@@ -889,7 +888,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold the views.  View names may be up to 2080 characters in length.")
+                             doc="List to hold the views.  View names may be up to 2080 characters in length.")
                ]),
 
         Method('ViewListEx_MAP', module='geoengine.map', version='5.1.2',
@@ -900,7 +899,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` Handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold the views.  View names may be up to 2080 characters in length."),
+                             doc="List to hold the views.  View names may be up to 2080 characters in length."),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`MAP_LIST_MODE`")
                ]),

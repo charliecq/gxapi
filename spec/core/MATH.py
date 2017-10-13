@@ -44,10 +44,10 @@ gx_methods = {
                doc="Calculate absolute value",
                notes="Dummy values return dummy",
                return_type=Type.INT32_T,
-               return_doc="integer",
+               return_doc="Integer",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="integer")
+                             doc="Integer")
                ]),
 
         Method('iAnd_MATH', module='geoengine.core', version='6.3.0',
@@ -72,6 +72,7 @@ gx_methods = {
                doc="Calculates the modulus of two integers",
                notes="If A or B is a dummy, returns dummy.",
                return_type=Type.INT32_T,
+               return_doc="Int",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="A"),
@@ -105,10 +106,10 @@ gx_methods = {
                Dummy values return dummy
                """,
                return_type=Type.INT32_T,
-               return_doc="integer",
+               return_doc="Integer",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="round")
+                             doc="Round")
                ]),
 
         Method('iXor_MATH', module='geoengine.core', version='6.3.0',
@@ -192,8 +193,10 @@ gx_methods = {
                doc="Calculate absolute value",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rArcCos_MATH', module='geoengine.core', version='6.0.1',
@@ -201,8 +204,10 @@ gx_methods = {
                doc="Calculate the arccosine",
                notes="Dummy values or values < -1 or > 1 return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rArcSin_MATH', module='geoengine.core', version='6.0.1',
@@ -210,8 +215,10 @@ gx_methods = {
                doc="Calculate the arcsin",
                notes="Dummy values or values < -1 or > 1 return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rArcTan_MATH', module='geoengine.core', version='6.0.1',
@@ -219,8 +226,10 @@ gx_methods = {
                doc="Calculate the arctan",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rArcTan2_MATH', module='geoengine.core', version='6.0.1',
@@ -228,6 +237,7 @@ gx_methods = {
                doc="Calculate ArcTan(Y/X)",
                notes="If either X or Y is a dummy, returns dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="Y"),
@@ -240,8 +250,10 @@ gx_methods = {
                doc="Calculates the ceiling of the value",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rCos_MATH', module='geoengine.core', version='6.0.1',
@@ -249,6 +261,7 @@ gx_methods = {
                doc="Calculate the cosine",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="Angle in radians")
@@ -279,6 +292,7 @@ gx_methods = {
                doc="Calculate e raised to the power of X",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="X")
@@ -289,8 +303,10 @@ gx_methods = {
                doc="Calculates the floor of the value",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rHypot_MATH', module='geoengine.core', version='6.0.1',
@@ -298,6 +314,7 @@ gx_methods = {
                doc="sqrt(X*X + Y*Y)",
                notes="If either X or Y is a dummy, the returned value is dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="X"),
@@ -343,8 +360,10 @@ gx_methods = {
                doc="Calculate the natural log",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rLog10_MATH', module='geoengine.core', version='6.0.1',
@@ -352,8 +371,10 @@ gx_methods = {
                doc="Calculate the base 10 log",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rLogZ_MATH', module='geoengine.core', version='6.0.1',
@@ -403,6 +424,7 @@ gx_methods = {
                f A or B is a dummy, returns dummy.
                """,
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="A"),
@@ -447,6 +469,7 @@ gx_methods = {
                doc="Calculate X raised to the power of Y",
                notes="If either X or Y is a dummy, returns dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="X"),
@@ -463,7 +486,7 @@ gx_methods = {
                The standard "C" function rand() is called.
                """,
                return_type=Type.DOUBLE,
-               return_doc="a real number"),
+               return_doc="A real number"),
 
         Method('rRound_MATH', module='geoengine.core', version='6.0.1',
                availability=Availability.PUBLIC, 
@@ -474,10 +497,12 @@ gx_methods = {
                Dummy values return dummy
                """,
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE),
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number of significant digits to round to")
+                             doc="Number of significant digits to round to")
                ]),
 
         Method('rSign_MATH', module='geoengine.core', version='6.0.1',
@@ -498,6 +523,7 @@ gx_methods = {
                doc="Calculate the sin",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="Angle in radians")
@@ -508,8 +534,10 @@ gx_methods = {
                doc="Calculate the square root",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rTan_MATH', module='geoengine.core', version='6.0.1',
@@ -517,6 +545,7 @@ gx_methods = {
                doc="Calculate the tangent",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
+               return_doc="Real",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="Angle in radians")
@@ -531,7 +560,7 @@ gx_methods = {
                return_doc="The original value",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="log value"),
+                             doc="Log value"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Log Mode (0 - Log, 1 - LogLinearLog)"),
                    Parameter('p3', type=Type.DOUBLE,

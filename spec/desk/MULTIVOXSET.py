@@ -590,9 +590,9 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`FILTER3D`"),
                    Parameter('p4', type=Type.STRING,
-                             doc="filter file, if filter is :def_val:`VOX_FILTER3D_FILE`"),
+                             doc="Filter file, if filter is :def_val:`VOX_FILTER3D_FILE`"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="number of filter passes"),
+                             doc="Number of filter passes"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="(1: interpolate dummies)")
                ]),

@@ -22,21 +22,21 @@ gx_methods = {
                return_doc=":class:`LL2` Object",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="longitude origin"),
+                             doc="Longitude origin"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="latitude origin"),
+                             doc="Latitude origin"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="longitude increment"),
+                             doc="Longitude increment"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="latitude increment"),
+                             doc="Latitude increment"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="# longitudes"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="# latitudes"),
                    Parameter('p7', type="IPJ",
-                             doc="input projection"),
+                             doc="Input projection"),
                    Parameter('p8', type="IPJ",
-                             doc="output projection")
+                             doc="Output projection")
                ]),
 
         Method('Destroy_LL2', module='geoengine.core', version='5.0.0',
@@ -61,7 +61,7 @@ gx_methods = {
                    Parameter('p1', type="LL2",
                              doc=":class:`LL2` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="named resource")
+                             doc="Named resource")
                ]),
 
         Method('SetRow_LL2', module='geoengine.core', version='5.0.0',
@@ -79,11 +79,11 @@ gx_methods = {
                    Parameter('p1', type="LL2",
                              doc=":class:`LL2` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="the row to set"),
+                             doc="The row to set"),
                    Parameter('p3', type="VV",
-                             doc="longitude corrections"),
+                             doc="Longitude corrections"),
                    Parameter('p4', type="VV",
-                             doc="latitude corrections")
+                             doc="Latitude corrections")
                ])
     ]
 }

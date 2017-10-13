@@ -303,7 +303,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="list of documents (';' or '|' delimited) to load.")
+                             doc="List of documents (';' or '|' delimited) to load.")
                ]),
 
         Method('Lock_EMAPTEMPLATE', module='None', version='5.0.0',

@@ -114,9 +114,9 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="Column of element to Get"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="returned string"),
+                             doc="Returned string"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum string size")
+                             doc="Maximum string size")
                ]),
 
         Method('iDataType_TB', module='geoengine.core', version='5.0.1',
@@ -214,11 +214,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="TB",
-                             doc="table"),
+                             doc="Table"),
                    Parameter('p2', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="line")
+                             doc="Line")
                ]),
 
         Method('rGetReal_TB', module='geoengine.core', version='5.0.0',
@@ -259,11 +259,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="TB",
-                             doc="table"),
+                             doc="Table"),
                    Parameter('p2', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="line")
+                             doc="Line")
                ]),
 
         Method('SaveToAscii_TB', module='geoengine.core', version='5.0.0',

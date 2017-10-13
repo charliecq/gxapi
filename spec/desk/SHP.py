@@ -98,7 +98,7 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="field name")
+                             doc="Field name")
                ]),
 
         Method('iAddRealField_SHP', module='geogxx', version='6.3.0',
@@ -114,9 +114,9 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="field name"),
+                             doc="Field name"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="number of decimal places")
+                             doc="Number of decimal places")
                ]),
 
         Method('iAddStringField_SHP', module='geogxx', version='6.3.0',
@@ -132,7 +132,7 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="field name"),
+                             doc="Field name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Maximum number of characters in the string")
                ]),
@@ -146,7 +146,7 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="field name")
+                             doc="Field name")
                ]),
 
         Method('iMaxIDNum_SHP', module='geogxx', version='7.2.0',
@@ -183,7 +183,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get the :class:`SHP` object's geometry type.",
                return_type=Type.INT32_T,
-               return_doc="the :class:`SHP` object's geometry type (:def:`SHP_GEOM_TYPE`)",
+               return_doc="The :class:`SHP` object's geometry type (:def:`SHP_GEOM_TYPE`)",
                parameters = [
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object")
@@ -238,9 +238,9 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="data field index"),
+                             doc="Data field index"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="input int value")
+                             doc="Input int value")
                ]),
 
         Method('SetIPJ_SHP', module='geogxx', version='6.3.0',
@@ -259,7 +259,7 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type="IPJ",
-                             doc="input :class:`IPJ`")
+                             doc="Input :class:`IPJ`")
                ]),
 
         Method('SetPoint_SHP', module='geogxx', version='6.3.0',
@@ -335,9 +335,9 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="data field index"),
+                             doc="Data field index"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="input real value")
+                             doc="Input real value")
                ]),
 
         Method('SetString_SHP', module='geogxx', version='6.3.0',
@@ -349,9 +349,9 @@ gx_methods = {
                    Parameter('p1', type="SHP",
                              doc=":class:`SHP` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="data field index"),
+                             doc="Data field index"),
                    Parameter('p3', type=Type.STRING,
-                             doc="input string value")
+                             doc="Input string value")
                ]),
 
         Method('WriteItem_SHP', module='geogxx', version='6.3.0',

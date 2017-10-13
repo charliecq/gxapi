@@ -22,9 +22,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DOCU",
-                             doc="destination :class:`DOCU`"),
+                             doc="Destination :class:`DOCU`"),
                    Parameter('p2', type="DOCU",
-                             doc="source :class:`DOCU`")
+                             doc="Source :class:`DOCU`")
                ]),
 
         Method('Create_DOCU', module='geogxx', version='5.1.1',
@@ -59,7 +59,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="DOCU"),
                    Parameter('p2', type=Type.STRING,
-                             doc="file to which to write document")
+                             doc="File to which to write document")
                ]),
 
         Method('GetFileMeta_DOCU', module='geogxx', version='5.1.8',
@@ -78,7 +78,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="DOCU"),
                    Parameter('p2', type=Type.STRING,
-                             doc="file to which to write document")
+                             doc="File to which to write document")
                ]),
 
         Method('GetMETA_DOCU', module='geogxx', version='5.1.1',
@@ -98,9 +98,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="DOCU"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="buffer to fill with document name"),
+                             doc="Buffer to fill with document name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of buffer")
+                             doc="Size of buffer")
                ]),
 
         Method('IFileName_DOCU', module='geogxx', version='5.1.1',
@@ -110,9 +110,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="DOCU"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="buffer to fill with document file name"),
+                             doc="Buffer to fill with document file name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of buffer")
+                             doc="Size of buffer")
                ]),
 
         Method('iHaveMETA_DOCU', module='geogxx', version='5.1.1',
@@ -199,11 +199,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="DOCU"),
                    Parameter('p2', type=Type.STRING,
-                             doc="document type"),
+                             doc="Document type"),
                    Parameter('p3', type=Type.STRING,
-                             doc='document name, if "" file name will be used'),
+                             doc='Document name, if "" file name will be used'),
                    Parameter('p4', type=Type.STRING,
-                             doc="document file, must exist")
+                             doc="Document file, must exist")
                ]),
 
         Method('SetFileMeta_DOCU', module='geogxx', version='5.1.8',
@@ -230,11 +230,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="DOCU"),
                    Parameter('p2', type=Type.STRING,
-                             doc="document type extension"),
+                             doc="Document type extension"),
                    Parameter('p3', type=Type.STRING,
-                             doc="document name, if NULL use file name"),
+                             doc="Document name, if NULL use file name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="document file or URL")
+                             doc="Document file or URL")
                ]),
 
         Method('SetMETA_DOCU', module='geogxx', version='5.1.1',

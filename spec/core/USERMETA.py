@@ -152,7 +152,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="DataCreator returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('IGetFormat_USERMETA', module='geoengine.core', version='7.0.0',
@@ -162,9 +162,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="USERMETA"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="title returned"),
+                             doc="Title returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('IGetMetaCreator_USERMETA', module='geoengine.core', version='7.0.0',
@@ -176,7 +176,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="MetaCreator returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('IGetProject_USERMETA', module='geoengine.core', version='7.0.0',
@@ -186,9 +186,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="USERMETA"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="title returned"),
+                             doc="Title returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('IGetTitle_USERMETA', module='geoengine.core', version='7.0.0',
@@ -198,9 +198,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="USERMETA"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="title returned"),
+                             doc="Title returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="maximum name size")
+                             doc="Maximum name size")
                ]),
 
         Method('Serial_USERMETA', module='geoengine.core', version='7.0.0',

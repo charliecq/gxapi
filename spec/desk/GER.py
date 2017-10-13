@@ -71,11 +71,11 @@ gx_methods = {
                    Parameter('p1', type="GER",
                              doc=":class:`GER` Object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="message number"),
+                             doc="Message number"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="message string returned, replacements filtered"),
+                             doc="Message string returned, replacements filtered"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum string length")
+                             doc="Maximum string length")
                ]),
 
         Method('SetInt_GER', module='geogxx', version='5.0.0',
@@ -86,9 +86,9 @@ gx_methods = {
                    Parameter('p1', type="GER",
                              doc=":class:`GER` Object"),
                    Parameter('p2', type=Type.STRING,
-                             doc='replacement string (ie. "%1")'),
+                             doc='Replacement string (ie. "%1")'),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="setting")
+                             doc="Setting")
                ]),
 
         Method('SetReal_GER', module='geogxx', version='5.0.0',
@@ -99,9 +99,9 @@ gx_methods = {
                    Parameter('p1', type="GER",
                              doc=":class:`GER` Object"),
                    Parameter('p2', type=Type.STRING,
-                             doc='replacement string (ie. "%1")'),
+                             doc='Replacement string (ie. "%1")'),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="setting")
+                             doc="Setting")
                ]),
 
         Method('SetString_GER', module='geogxx', version='5.0.0',
@@ -112,9 +112,9 @@ gx_methods = {
                    Parameter('p1', type="GER",
                              doc=":class:`GER` Object"),
                    Parameter('p2', type=Type.STRING,
-                             doc='replacement string (ie. "%1")'),
+                             doc='Replacement string (ie. "%1")'),
                    Parameter('p3', type=Type.STRING,
-                             doc="setting")
+                             doc="Setting")
                ])
     ]
 }

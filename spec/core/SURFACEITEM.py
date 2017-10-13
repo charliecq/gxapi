@@ -311,7 +311,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`GEO_BOOL` indicating if mesh is closed"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
-                             doc="number of inner components"),
+                             doc="Number of inner components"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
                              doc="Area"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,

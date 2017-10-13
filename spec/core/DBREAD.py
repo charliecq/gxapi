@@ -27,7 +27,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database input"),
                    Parameter('p2', type="LST",
-                             doc="list of lines to process NAME = line name, VALUE = line symbol")
+                             doc="List of lines to process NAME = line name, VALUE = line symbol")
                ]),
 
         Method('CreateXY_DBREAD', module='geoengine.core', version='8.5.0',
@@ -42,7 +42,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database input"),
                    Parameter('p2', type="LST",
-                             doc="list of lines to process NAME = line name, VALUE = line symbol")
+                             doc="List of lines to process NAME = line name, VALUE = line symbol")
                ]),
 
         Method('CreateXYZ_DBREAD', module='geoengine.core', version='8.5.0',
@@ -57,14 +57,13 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database input"),
                    Parameter('p2', type="LST",
-                             doc="list of lines to process NAME = line name, VALUE = line symbol")
+                             doc="List of lines to process NAME = line name, VALUE = line symbol")
                ]),
 
         Method('Destroy_DBREAD', module='geoengine.core', version='8.5.0',
                availability=Availability.PUBLIC, 
                doc="Destroy :class:`DBREAD` handle.",
                return_type=Type.VOID,
-               return_doc="nothing",
                parameters = [
                    Parameter('p1', type="DBREAD",
                              doc=":class:`DBREAD` handle")

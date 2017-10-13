@@ -21,7 +21,7 @@ gx_methods = {
                return_doc=":class:`RA` Object",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the file")
+                             doc="Name of the file")
                ]),
 
         Method('CreateSBF_RA', module='geoengine.core', version='5.0.0',
@@ -41,7 +41,7 @@ gx_methods = {
                    Parameter('p1', type="SBF",
                              doc="Storage"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the file")
+                             doc="Name of the file")
                ]),
 
         Method('Destroy_RA', module='geoengine.core', version='5.0.0',
@@ -65,9 +65,9 @@ gx_methods = {
                    Parameter('p1', type="RA",
                              doc=":class:`RA` handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="buffer in which to place string"),
+                             doc="Buffer in which to place string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum length of the string buffer")
+                             doc="Maximum length of the string buffer")
                ]),
 
         Method('iLen_RA', module='geoengine.core', version='5.0.0',
@@ -103,7 +103,7 @@ gx_methods = {
                    Parameter('p1', type="RA",
                              doc=":class:`RA` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="line #, 0 is the first.")
+                             doc="Line #, 0 is the first.")
                ])
     ]
 }

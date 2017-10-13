@@ -19,9 +19,9 @@ gx_defines = [
            doc="Extension option",
            constants=[
                Constant('FILE_EXT_ADD_IF_NONE', value='0', type=Type.INT32_T,
-                        doc="will add the extension only if no extension is present."),
+                        doc="Will add the extension only if no extension is present."),
                Constant('FILE_EXT_FORCE', value='1', type=Type.INT32_T,
-                        doc="will cause a renaming of the file extension to the new extension.")
+                        doc="Will cause a renaming of the file extension to the new extension.")
            ]),
 
     Define('STR_CASE',
@@ -145,19 +145,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="drive"),
+                             doc="Drive"),
                    Parameter('p2', type=Type.STRING,
-                             doc="directory"),
+                             doc="Directory"),
                    Parameter('p3', type=Type.STRING,
-                             doc="name"),
+                             doc="Name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="extension"),
+                             doc="Extension"),
                    Parameter('p5', type=Type.STRING,
-                             doc="qualifiers"),
+                             doc="Qualifiers"),
                    Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
-                             doc="destination string, can be same as input"),
+                             doc="Destination string, can be same as input"),
                    Parameter('p7', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="string length")
+                             doc="String length")
                ]),
 
         Method('IFileExt_STR', module='geoengine.core', version='5.0.0',
@@ -166,15 +166,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name to extend"),
+                             doc="File name to extend"),
                    Parameter('p2', type=Type.STRING,
-                             doc="extension if \"\", extenstion and '.' are stripped."),
+                             doc="Extension if \"\", extenstion and '.' are stripped."),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="extended file name (can be same as input)"),
+                             doc="Extended file name (can be same as input)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`FILE_EXT`"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="length of buffer")
+                             doc="Length of buffer")
                ]),
 
         Method('IFileNamePart_STR', module='geoengine.core', version='5.0.0',
@@ -183,11 +183,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name"),
+                             doc="File name"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="destination string, can be same as input"),
+                             doc="Destination string, can be same as input"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="string length"),
+                             doc="String length"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`STR_FILE_PART`")
                ]),
@@ -202,13 +202,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="input multifile string"),
+                             doc="Input multifile string"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="output filepath string"),
+                             doc="Output filepath string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="sizeof output filepath string"),
+                             doc="Sizeof output filepath string"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index of file")
+                             doc="Index of file")
                ]),
 
         Method('IRemoveQualifiers_STR', module='geoengine.core', version='7.0.1',
@@ -217,11 +217,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="input file name"),
+                             doc="Input file name"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="output file name (can be same as input)"),
+                             doc="Output file name (can be same as input)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="length of buffer")
+                             doc="Length of buffer")
                ])
     ],
     'Formating': [
@@ -247,7 +247,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="date value in decimal years to format"),
+                             doc="Date value in decimal years to format"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Resulting string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -264,7 +264,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="value to format"),
+                             doc="Value to format"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Resulting string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -279,7 +279,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="value to format"),
+                             doc="Value to format"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Resulting string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -296,7 +296,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="value to format"),
+                             doc="Value to format"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Resulting string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -313,7 +313,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="value to format"),
+                             doc="Value to format"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Resulting string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -332,7 +332,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="time value in decimal hours to format"),
+                             doc="Time value in decimal hours to format"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Resulting string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -373,9 +373,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="string to modify"),
+                             doc="String to modify"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="string size"),
+                             doc="String size"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`STR_ESCAPE`")
                ]),
@@ -387,7 +387,7 @@ gx_methods = {
                return_doc="ASCII value of first character in string.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to return ascii value of first character")
+                             doc="String to return ascii value of first character")
                ]),
 
         Method('IiCharN_STR', module='geoengine.core', version='5.0.0',
@@ -399,11 +399,12 @@ gx_methods = {
                The first character is 0.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING),
+                   Parameter('p1', type=Type.STRING,
+                             doc="String"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="character to get"),
+                             doc="Character to get"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="maximum string length (unused)")
+                             doc="Maximum string length (unused)")
                ]),
 
         Method('IJustify_STR', module='geoengine.core', version='5.0.0',
@@ -416,15 +417,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to justify"),
+                             doc="String to justify"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="result string, can be same as input"),
+                             doc="Result string, can be same as input"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="justification width"),
+                             doc="Justification width"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`STR_JUSTIFY`"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum size of result")
+                             doc="Maximum size of result")
                ]),
 
         Method('IReplaceiMatchString_STR', module='geoengine.core', version='7.0.1',
@@ -440,11 +441,11 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Destination String"),
                    Parameter('p2', type=Type.STRING,
-                             doc="match string to replace"),
+                             doc="Match string to replace"),
                    Parameter('p3', type=Type.STRING,
-                             doc="replacement string"),
+                             doc="Replacement string"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of the Destination String")
+                             doc="Size of the Destination String")
                ]),
 
         Method('IReplaceMatchString_STR', module='geoengine.core', version='7.0.1',
@@ -460,11 +461,11 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Destination String"),
                    Parameter('p2', type=Type.STRING,
-                             doc="match string to replace"),
+                             doc="Match string to replace"),
                    Parameter('p3', type=Type.STRING,
-                             doc="replacement string"),
+                             doc="Replacement string"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of the Destination String")
+                             doc="Size of the Destination String")
                ]),
 
         Method('ISetCharN_STR', module='geoengine.core', version='5.1.4',
@@ -473,11 +474,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="string"),
+                             doc="String"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="character to set"),
+                             doc="Character to set"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum string length"),
+                             doc="Maximum string length"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="ASCII value")
                ]),
@@ -500,13 +501,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="original string"),
+                             doc="Original string"),
                    Parameter('p2', type=Type.STRING,
-                             doc="split character (first character of string)"),
+                             doc="Split character (first character of string)"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="split string past split character."),
+                             doc="Split string past split character."),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum length of split string.")
+                             doc="Maximum length of split string.")
                ]),
 
         Method('IStrcat_STR', module='geoengine.core', version='5.0.0',
@@ -533,9 +534,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string A"),
+                             doc="String A"),
                    Parameter('p2', type=Type.STRING,
-                             doc="string B"),
+                             doc="String B"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`STR_CASE`")
                ]),
@@ -546,11 +547,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="destination string"),
+                             doc="Destination string"),
                    Parameter('p2', type=Type.STRING,
-                             doc="origin string"),
+                             doc="Origin string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of the destination string")
+                             doc="Size of the destination string")
                ]),
 
         Method('iStriMask_STR', module='geoengine.core', version='5.0.0',
@@ -570,9 +571,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="mask"),
+                             doc="Mask"),
                    Parameter('p2', type=Type.STRING,
-                             doc="string to test")
+                             doc="String to test")
                ]),
 
         Method('IStrins_STR', module='geoengine.core', version='5.1.8',
@@ -601,7 +602,7 @@ gx_methods = {
                return_doc="String length.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to find the length of")
+                             doc="String to find the length of")
                ]),
 
         Method('iStrMask_STR', module='geoengine.core', version='5.0.0',
@@ -621,9 +622,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="mask"),
+                             doc="Mask"),
                    Parameter('p2', type=Type.STRING,
-                             doc="string to test")
+                             doc="String to test")
                ]),
 
         Method('iStrMin_STR', module='geoengine.core', version='5.0.0',
@@ -640,7 +641,7 @@ gx_methods = {
                return_doc="String length.",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to find the min length of")
+                             doc="String to find the min length of")
                ]),
 
         Method('iStrMin2_STR', module='geoengine.core', version='5.0.0',
@@ -650,7 +651,7 @@ gx_methods = {
                return_doc="String length.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to find the min length of")
+                             doc="String to find the min length of")
                ]),
 
         Method('iStrncmp_STR', module='geoengine.core', version='5.0.5',
@@ -664,11 +665,11 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string A"),
+                             doc="String A"),
                    Parameter('p2', type=Type.STRING,
-                             doc="string B"),
+                             doc="String B"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="number of characters to compare"),
+                             doc="Number of characters to compare"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`STR_CASE`")
                ]),
@@ -683,9 +684,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to scan"),
+                             doc="String to scan"),
                    Parameter('p2', type=Type.STRING,
-                             doc="string to look for"),
+                             doc="String to look for"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`STR_CASE`")
                ]),
@@ -701,15 +702,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="destination string"),
+                             doc="Destination string"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of output string buffer"),
                    Parameter('p3', type=Type.STRING,
-                             doc="origin string"),
+                             doc="Origin string"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="start location"),
+                             doc="Start location"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="number of characters")
+                             doc="Number of characters")
                ]),
 
         Method('IToLower_STR', module='geoengine.core', version='5.0.0',
@@ -740,11 +741,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="line name to convert"),
+                             doc="Line name to convert"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="buffer to hold new line name"),
+                             doc="Buffer to hold new line name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="length of buffer")
+                             doc="Length of buffer")
                ]),
 
         Method('MakeAlpha_STR', module='geoengine.core', version='5.1.8',
@@ -763,11 +764,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="destination string"),
+                             doc="Destination string"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of the destination string"),
+                             doc="Size of the destination string"),
                    Parameter('p3', type=Type.STRING,
-                             doc="pattern string")
+                             doc="Pattern string")
                ]),
 
         Method('ReplaceChar_STR', module='geoengine.core', version='5.0.0',
@@ -780,11 +781,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to modify"),
+                             doc="String to modify"),
                    Parameter('p2', type=Type.STRING,
-                             doc="character to replace (first character only)"),
+                             doc="Character to replace (first character only)"),
                    Parameter('p3', type=Type.STRING,
-                             doc="replacement character (first character only)")
+                             doc="Replacement character (first character only)")
                ]),
 
         Method('ReplaceChar2_STR', module='geoengine.core', version='6.3.0',
@@ -798,11 +799,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to modify"),
+                             doc="String to modify"),
                    Parameter('p2', type=Type.STRING,
-                             doc="character to replace (first character only)"),
+                             doc="Character to replace (first character only)"),
                    Parameter('p3', type=Type.STRING,
-                             doc="replacement character (first character only)")
+                             doc="Replacement character (first character only)")
                ]),
 
         Method('ReplaceMultiChar_STR', module='geoengine.core', version='5.1.5',
@@ -815,11 +816,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to modify"),
+                             doc="String to modify"),
                    Parameter('p2', type=Type.STRING,
-                             doc="characters to replace"),
+                             doc="Characters to replace"),
                    Parameter('p3', type=Type.STRING,
-                             doc="replacement characters")
+                             doc="Replacement characters")
                ]),
 
         Method('ReplaceNonASCII_STR', module='geoengine.core', version='6.0.0',
@@ -832,9 +833,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to modify"),
+                             doc="String to modify"),
                    Parameter('p2', type=Type.STRING,
-                             doc="replacement character")
+                             doc="Replacement character")
                ]),
 
         Method('SetChar_STR', module='geoengine.core', version='5.1.4',
@@ -843,7 +844,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string"),
+                             doc="String"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="ASCII value")
                ]),
@@ -919,15 +920,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="input type string (static part)"),
+                             doc="Input type string (static part)"),
                    Parameter('p2', type=Type.STRING,
-                             doc="input db string"),
+                             doc="Input db string"),
                    Parameter('p3', type=Type.STRING,
-                             doc="input ch string (could be 0 length)"),
+                             doc="Input ch string (could be 0 length)"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="output group name string"),
+                             doc="Output group name string"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_GROUP',
-                             doc="output buffer lengths (maximum 32)")
+                             doc="Output buffer lengths (maximum 32)")
                ])
     ],
     'Tokenizing': [
@@ -947,9 +948,9 @@ gx_methods = {
                return_doc="Number of tokens in the string.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string to tokenize"),
+                             doc="String to tokenize"),
                    Parameter('p2', type=Type.STRING,
-                             doc="delimiter characters")
+                             doc="Delimiter characters")
                ]),
 
         Method('IGetToken_STR', module='geoengine.core', version='5.0.0',
@@ -969,13 +970,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="destination string"),
+                             doc="Destination string"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum destination string length"),
+                             doc="Maximum destination string length"),
                    Parameter('p3', type=Type.STRING,
-                             doc="tokenized string"),
+                             doc="Tokenized string"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="token number wanted  (0 is the first!)")
+                             doc="Token number wanted  (0 is the first!)")
                ]),
 
         Method('iTokenize_STR', module='geoengine.core', version='5.0.0',
@@ -1014,10 +1015,10 @@ gx_methods = {
                """,
                see_also="GetToken_STR",
                return_type=Type.INT32_T,
-               return_doc="number of tokens",
+               return_doc="Number of tokens",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="str - String containing token(s)"),
+                             doc=":class:`STR` - String containing token(s)"),
                    Parameter('p2', type=Type.STRING,
                              doc="szSoft - Soft delimiters (spaces/tabs)"),
                    Parameter('p3', type=Type.STRING,
@@ -1041,12 +1042,12 @@ gx_methods = {
                """,
                see_also=":func:`iTokens2_STR`, GetToken_STR",
                return_type=Type.INT32_T,
-               return_doc="number of tokens, maximum is 2048",
+               return_doc="Number of tokens, maximum is 2048",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to tokenize"),
+                             doc="String to tokenize"),
                    Parameter('p2', type=Type.STRING,
-                             doc="delimiter characters")
+                             doc="Delimiter characters")
                ]),
 
         Method('iTokens2_STR', module='geoengine.core', version='5.0.0',
@@ -1063,7 +1064,7 @@ gx_methods = {
                return_doc="Number of Tokens",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True,
-                             doc="string to tokenize"),
+                             doc="String to tokenize"),
                    Parameter('p2', type=Type.STRING,
                              doc="szSoft - Soft delimiters (spaces/tabs)"),
                    Parameter('p3', type=Type.STRING,
@@ -1115,13 +1116,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="destination string"),
+                             doc="Destination string"),
                    Parameter('p2', type=Type.STRING,
-                             doc="origin string"),
+                             doc="Origin string"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start location"),
+                             doc="Start location"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="number of characters")
+                             doc="Number of characters")
                ])
     ]
 }

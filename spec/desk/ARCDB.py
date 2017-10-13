@@ -83,7 +83,7 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc="Database"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p4', type=Type.STRING,
                              doc="Oasis montaj line name to create (overrides template value)")
                ]),
@@ -167,7 +167,7 @@ gx_methods = {
                    Parameter('p1', type="ARCDB",
                              doc="Handle to table"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`IMPCH_TYPE`")
                ]),

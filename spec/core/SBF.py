@@ -48,7 +48,7 @@ gx_methods = {
                    Parameter('p1', type="SBF",
                              doc="Parent :class:`SBF`"),
                    Parameter('p2', type=Type.STRING,
-                             doc="directory name to open / create"),
+                             doc="Directory name to open / create"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`SBF_OPEN`")
                ]),

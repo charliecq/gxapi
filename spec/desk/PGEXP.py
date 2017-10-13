@@ -26,7 +26,7 @@ gx_methods = {
                    Parameter('p1', type="PGEXP",
                              doc=":class:`PGEXP` object"),
                    Parameter('p2', type="PG",
-                             doc="pager to add"),
+                             doc="Pager to add"),
                    Parameter('p3', type=Type.STRING,
                              doc="Variable name")
                ]),

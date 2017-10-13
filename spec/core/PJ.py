@@ -11,10 +11,10 @@ gx_class = Class('PJ',
 
 gx_defines = [
     Define('PJ_ELEVATION',
-           doc="elevation correction method",
+           doc="Elevation correction method",
            constants=[
                Constant('PJ_ELEVATION_NONE', value='0', type=Type.INT32_T,
-                        doc="elevation transform not supported."),
+                        doc="Elevation transform not supported."),
                Constant('PJ_ELEVATION_GEOCENTRIC', value='1', type=Type.INT32_T,
                         doc="""
                         elevation transformation uses earth-centre shift
@@ -194,16 +194,16 @@ gx_methods = {
                return_doc=":class:`PJ` Object",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="longitude  at (X,Y) origin"),
+                             doc="Longitude  at (X,Y) origin"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="latitude   at (X,Y) origin"),
+                             doc="Latitude   at (X,Y) origin"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="(X,Y) origin"),
                    Parameter('p4', type=Type.DOUBLE),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="coordinate Y relative to geographic N (deg azm)"),
+                             doc="Coordinate Y relative to geographic N (deg azm)"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="scale to convert X,Y to m."),
+                             doc="Scale to convert X,Y to m."),
                    Parameter('p7', type=Type.INT32_T,
                              doc=":def:`PJ_RECT`")
                ]),
@@ -312,7 +312,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max Y"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension")
+                             doc="Maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension")
                ]),
 
         Method('ProjectBoundingRectangleRes_PJ', module='geoengine.core', version='5.1.8',
@@ -363,7 +363,7 @@ gx_methods = {
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
                              doc="Resolution"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension")
+                             doc="Maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension")
                ]),
 
         Method('ProjectLimitedBoundingRectangle_PJ', module='geoengine.core', version='6.0.0',

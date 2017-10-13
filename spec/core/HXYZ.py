@@ -85,7 +85,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HXYZ",
-                             doc="source :class:`HXYZ`"),
+                             doc="Source :class:`HXYZ`"),
                    Parameter('p2', type="META",
                              doc=":class:`META` object to add to :class:`HXYZ`'s meta")
                ])

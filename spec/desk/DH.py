@@ -374,7 +374,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Returned assay database index"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="channel name"),
+                             doc="Channel name"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Buffer size for channel name")
                ]),
@@ -404,11 +404,11 @@ gx_methods = {
                    Parameter('p7', type=Type.STRING,
                              doc="DEM grid"),
                    Parameter('p8', type=Type.DOUBLE, is_ref=True,
-                             doc="returned intersection point X"),
+                             doc="Returned intersection point X"),
                    Parameter('p9', type=Type.DOUBLE, is_ref=True,
-                             doc="returned intersection point Y"),
+                             doc="Returned intersection point Y"),
                    Parameter('p10', type=Type.DOUBLE, is_ref=True,
-                             doc="returned intersection point Z")
+                             doc="Returned intersection point Z")
                ]),
 
         Method('LithoGrid3D_DH', module='geodh', version='7.0.0',
@@ -431,7 +431,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Lithology channel code"),
                    Parameter('p3', type="TPAT",
-                             doc="Codes, colours etc."),
+                             doc="Codes, colors etc."),
                    Parameter('p4', type=Type.STRING,
                              doc="Name of :class:`VOX` Persistent Storage file"),
                    Parameter('p5', type=Type.DOUBLE,
@@ -580,7 +580,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="Assay dataset number"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="hole index number")
+                             doc="Hole index number")
                ]),
 
         Method('_hCollarDB_DH', module='geodh', version='5.1.3',
@@ -638,7 +638,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc="hDH object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="hole index number")
+                             doc="Hole index number")
                ]),
 
         Method('_hENSurveyDB_DH', module='geodh', version='5.1.3',
@@ -668,7 +668,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc="hDH object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="hole index number")
+                             doc="Hole index number")
                ]),
 
         Method('AddSurveyTable_DH', module='geodh', version='5.1.8',
@@ -694,7 +694,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="index of the assay database"),
+                             doc="Index of the assay database"),
                    Parameter('p3', type="LST",
                              doc=":class:`LST` handle")
                ]),
@@ -749,19 +749,19 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc="Input assay :class:`DB` object"),
                    Parameter('p3', type="DB",
-                             doc="output composite :class:`DB` object"),
+                             doc="Output composite :class:`DB` object"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DH_COMPSTDB_HOLSEL`"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DH_COMPSTDB_INTSEL`"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="fixed interval length"),
+                             doc="Fixed interval length"),
                    Parameter('p7', type=Type.STRING,
-                             doc="name of lithology cannel"),
+                             doc="Name of lithology cannel"),
                    Parameter('p8', type=Type.STRING,
-                             doc="name of interval file"),
+                             doc="Name of interval file"),
                    Parameter('p9', type=Type.STRING,
-                             doc="name of Weight channel"),
+                             doc="Name of Weight channel"),
                    Parameter('p10', type=Type.DOUBLE,
                              doc="dRej1Val for intervals short than, (:def_val:`GS_R8DM` for no action)"),
                    Parameter('p11', type=Type.DOUBLE,
@@ -771,7 +771,7 @@ gx_methods = {
                    Parameter('p13', type=Type.INT32_T,
                              doc="dRej3Op: 0: >, 1: >=, 2: <, 3: <="),
                    Parameter('p14', type=Type.STRING,
-                             doc="name of Rej3Ch channel")
+                             doc="Name of Rej3Ch channel")
                ]),
 
         Method('ComputeHoleXYZ_DH', module='geodh', version='7.3.0',
@@ -1054,15 +1054,15 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Object"),
                    Parameter('p2', type=Type.DOUBLE, is_ref=True,
-                             doc="azimuth of section (returned)"),
+                             doc="Azimuth of section (returned)"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="corner X (Easting) of section (returned)"),
+                             doc="Corner X (Easting) of section (returned)"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="corner Y (Northing) of section (returned)"),
+                             doc="Corner Y (Northing) of section (returned)"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
-                             doc="section length (returned)"),
+                             doc="Section length (returned)"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="section width (returned)")
+                             doc="Section width (returned)")
                ]),
 
         Method('GetHoleGroup_DH', module='geodh', version='5.0.0',
@@ -1127,7 +1127,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type="VV",
-                             doc="returned map names (string type :class:`VV`)")
+                             doc="Returned map names (string type :class:`VV`)")
                ]),
 
         Method('GetMap_DH', module='geodh', version='8.0.1',
@@ -1334,9 +1334,9 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned file name"),
+                             doc="Returned file name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="buffer size for the file name")
+                             doc="Buffer size for the file name")
                ]),
 
         Method('IGetInfo_DH', module='geodh', version='5.0.0',
@@ -1352,11 +1352,11 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="hole index"),
+                             doc="Hole index"),
                    Parameter('p3', type=Type.STRING,
                              doc="Name of information"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="buffer to place information"),
+                             doc="Buffer to place information"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of buffer")
                ]),
@@ -1369,9 +1369,9 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned string"),
+                             doc="Returned string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="buffer size for the project name")
+                             doc="Buffer size for the project name")
                ]),
 
         Method('IGetSectionID_DH', module='geodh', version='6.1.0',
@@ -1509,9 +1509,9 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc='Units (i.e. "m")'),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="length of Units string"),
+                             doc="Length of Units string"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="conversion (units/m)")
+                             doc="Conversion (units/m)")
                ]),
 
         Method('iHaveCurrent_DH', module='geodh', version='6.1.0',
@@ -2093,7 +2093,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="hole index")
+                             doc="Hole index")
                ]),
 
         Method('LoadDataParametersINI_DH', module='geodh', version='6.0.0',
@@ -2159,7 +2159,7 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Slice thickness - :def_val:`rDUMMY` for no limiting thickness"),
                    Parameter('p5', type=Type.STRING,
-                             doc="name of mask channel"),
+                             doc="Name of mask channel"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`DH_HOLES`"),
                    Parameter('p7', type=Type.INT32_T,
@@ -2184,7 +2184,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="job file name"),
+                             doc="Job file name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
@@ -2467,23 +2467,23 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Hole ID (for error messages)"),
                    Parameter('p3', type="VV",
-                             doc="input East"),
+                             doc="Input East"),
                    Parameter('p4', type="VV",
-                             doc="input North"),
+                             doc="Input North"),
                    Parameter('p5', type="VV",
-                             doc="input RL"),
+                             doc="Input RL"),
                    Parameter('p6', type="VV",
-                             doc="returned depths down the hole"),
+                             doc="Returned depths down the hole"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="input collar East"),
+                             doc="Input collar East"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="input collar North"),
+                             doc="Input collar North"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="input collar RL"),
+                             doc="Input collar RL"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="input top of hole depth"),
+                             doc="Input top of hole depth"),
                    Parameter('p11', type=Type.DOUBLE, is_ref=True,
-                             doc="returned bottom depth")
+                             doc="Returned bottom depth")
                ]),
 
         Method('ReSurveyPolFit_DH', module='geodh', version='5.1.2',
@@ -2702,7 +2702,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="job file name"),
+                             doc="Job file name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
@@ -2774,7 +2774,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="mask"),
+                             doc="Mask"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 - deselect, 1 - select"),
                    Parameter('p4', type=Type.INT32_T,
@@ -2872,7 +2872,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="hole index"),
+                             doc="Hole index"),
                    Parameter('p3', type=Type.STRING,
                              doc="Name of information"),
                    Parameter('p4', type=Type.STRING,
@@ -2927,7 +2927,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="project database name")
+                             doc="Project database name")
                ]),
 
         Method('SetSelectedHolesVV_DH', module='geodh', version='8.0.0',
@@ -2973,7 +2973,7 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc="Input assay :class:`DB` object"),
                    Parameter('p3', type="DB",
-                             doc="output composite :class:`DB` object"),
+                             doc="Output composite :class:`DB` object"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DH_COMPSTDB_HOLSEL`"),
                    Parameter('p5', type=Type.STRING,
@@ -3014,7 +3014,7 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc="LAS file name"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="averaging/desampling interval"),
+                             doc="Averaging/desampling interval"),
                    Parameter('p5', type="WA",
                              doc="Log file handle"),
                    Parameter('p6', type=Type.INT32_T, is_ref=True,
@@ -3058,7 +3058,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="hole index")
+                             doc="Hole index")
                ]),
 
         Method('Wholeplot_DH', module='geodh', version='5.1.2',
@@ -3106,9 +3106,9 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('p2', type="VV",
-                             doc="returned :class:`SHP` names (string type :class:`VV`)"),
+                             doc="Returned :class:`SHP` names (string type :class:`VV`)"),
                    Parameter('p3', type="VV",
-                             doc="corresponding data frame for each :class:`SHP`")
+                             doc="Corresponding data frame for each :class:`SHP`")
                ]),
 
         Method('iIsMultiDB_DH', module='geodh', version='5.1.2',

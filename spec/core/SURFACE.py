@@ -161,7 +161,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="Geosurface file"),
                    Parameter('p2', type=Type.STRING,
-                             doc="output file"),
+                             doc="Output file"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="CRC (unused, always set to 0)")
                ]),
@@ -184,7 +184,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Geosurface file"),
                    Parameter('p3', type=Type.STRING,
-                             doc="dxf file")
+                             doc="DXF file")
                ]),
 
         Method('CreateFromVulcanTriangulation_SURFACE', module='geoengine.interoperability', version='8.4.0',

@@ -74,15 +74,15 @@ gx_defines = [
            doc="Voxel log gridding options",
            constants=[
                Constant('VOX_GRID_LOGOPT_LINEAR', value='0', type=Type.INT32_T,
-                        doc="linear"),
+                        doc="Linear"),
                Constant('VOX_GRID_LOGOPT_LOG_SAVELINEAR', value='-1', type=Type.INT32_T,
-                        doc="log, save as linear"),
+                        doc="Log, save as linear"),
                Constant('VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR', value='-2', type=Type.INT32_T,
-                        doc="log-linear, save as linear"),
+                        doc="Log-linear, save as linear"),
                Constant('VOX_GRID_LOGOPT_LOG_SAVELOG', value='1', type=Type.INT32_T,
-                        doc="log, save as log"),
+                        doc="Log, save as log"),
                Constant('VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG', value='2', type=Type.INT32_T,
-                        doc="log-linear, save as log")
+                        doc="Log-linear, save as log")
            ]),
 
     Define('VOX_ORIGIN',
@@ -229,7 +229,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc="Voxel file name"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('p2', type="var CRC", is_ref=True,
                              doc="CRC returned - not implemented - always returns 0."),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -290,9 +290,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`VOX_FILTER3D`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="filter file, if filter is :def_val:`VOX_FILTER3D_FILE`"),
+                             doc="Filter file, if filter is :def_val:`VOX_FILTER3D_FILE`"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="number of filter passes"),
+                             doc="Number of filter passes"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="(1: interpolate dummies)"),
                    Parameter('p6', type=Type.STRING,
@@ -1373,13 +1373,13 @@ gx_methods = {
                    Parameter('p5', type=Type.INT32_T,
                              doc="Y channel handle"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="depth array channel handle"),
+                             doc="Depth array channel handle"),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="depths sign: 0 - positive down, 1 - negative down"),
+                             doc="Depths sign: 0 - positive down, 1 - negative down"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="elevation channel handle (can be :def_val:`NULLSYMB`)"),
+                             doc="Elevation channel handle (can be :def_val:`NULLSYMB`)"),
                    Parameter('p9', type=Type.INT32_T,
-                             doc="interpolation mode: 0 - linear, 1 - nearest"),
+                             doc="Interpolation mode: 0 - linear, 1 - nearest"),
                    Parameter('p10', type=Type.STRING,
                              doc="Output channel name")
                ]),
@@ -1405,7 +1405,7 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Z values to sample at each X, Y"),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="interpolation mode: 0 - linear, 1 - nearest"),
+                             doc="Interpolation mode: 0 - linear, 1 - nearest"),
                    Parameter('p8', type=Type.STRING,
                              doc="Output data array channel name"),
                    Parameter('p9', type=Type.STRING,
@@ -1427,9 +1427,9 @@ gx_methods = {
                    Parameter('p4', type="VV",
                              doc="Z locations (input)"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="interpolation mode: 0 - linear, 1 - nearest"),
+                             doc="Interpolation mode: 0 - linear, 1 - nearest"),
                    Parameter('p6', type="VV",
-                             doc="returned values")
+                             doc="Returned values")
                ]),
 
         Method('SetIPJ_VOX', module='geoengine.core', version='6.2.0',
@@ -1470,7 +1470,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VOX",
-                             doc="source :class:`VOX`"),
+                             doc="Source :class:`VOX`"),
                    Parameter('p2', type="META",
                              doc=":class:`META` object to add to :class:`VOX`'s meta")
                ]),
@@ -1609,7 +1609,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="voxel name")
+                             doc="Voxel name")
                ]),
 
         Method('WindowPLY_VOX', module='geoengine.core', version='7.3.0',

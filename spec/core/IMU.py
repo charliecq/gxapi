@@ -132,7 +132,7 @@ gx_defines = [
            """,
            constants=[
                Constant('IMU_TRANS_DEFAULT', value='0', type=Type.INT32_T,
-                        doc="can be ANY orientation"),
+                        doc="Can be ANY orientation"),
                Constant('IMU_TRANS_Y', value='1', type=Type.INT32_T,
                         doc="MUST be parallel to Y-Axis"),
                Constant('IMU_TRANS_X', value='-1', type=Type.INT32_T,
@@ -204,9 +204,9 @@ gx_methods = {
                return_doc="CRC value",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input image"),
+                             doc="Input image"),
                    Parameter('p2', type="CRC",
-                             doc="starting CRC (use :def_val:`CRC_INIT_VALUE` if none)")
+                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)")
                ]),
 
         Method('CRCGrid_IMU', module='geoengine.core', version='5.0.0',
@@ -216,9 +216,9 @@ gx_methods = {
                return_doc="CRC value",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="grid"),
+                             doc="Grid"),
                    Parameter('p2', type="CRC",
-                             doc="starting CRC (use :def_val:`CRC_INIT_VALUE` if none)")
+                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)")
                ]),
 
         Method('CRCGridInexact_IMU', module='geoengine.core', version='5.0.0',
@@ -236,9 +236,9 @@ gx_methods = {
                return_doc="CRC value",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="grid"),
+                             doc="Grid"),
                    Parameter('p2', type="CRC",
-                             doc="starting CRC (use :def_val:`CRC_INIT_VALUE` if none)"),
+                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`IMU_FLOAT_CRC_BITS`"),
                    Parameter('p4', type=Type.INT32_T,
@@ -260,9 +260,9 @@ gx_methods = {
                return_doc="CRC value",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input image"),
+                             doc="Input image"),
                    Parameter('p2', type="CRC",
-                             doc="starting CRC (use :def_val:`CRC_INIT_VALUE` if none)"),
+                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`IMU_FLOAT_CRC_BITS`"),
                    Parameter('p4', type=Type.INT32_T,
@@ -276,7 +276,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc="Grid"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('p2', type="var CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -289,7 +289,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc="Grid"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('p2', type="var CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -302,7 +302,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('p2', type="var CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -315,7 +315,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('p2', type="var CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -327,7 +327,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type="VV",
                              doc="X :class:`VV`"),
                    Parameter('p3', type="VV",
@@ -349,7 +349,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type="VV",
                              doc="X :class:`VV`"),
                    Parameter('p3', type="VV",
@@ -637,7 +637,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="Grid file name"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="peak test directions (1 to 4)"),
+                             doc="Peak test directions (1 to 4)"),
                    Parameter('p3', type="VV",
                              doc="X of found peaks"),
                    Parameter('p4', type="VV",
@@ -661,7 +661,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="the :class:`IMG`"),
+                             doc="The :class:`IMG`"),
                    Parameter('p2', type="PLY",
                              doc=":class:`PLY` to which the bounding polygons will be added."),
                    Parameter('p3', type=Type.INT32_T,
@@ -683,7 +683,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="the :class:`IMG`"),
+                             doc="The :class:`IMG`"),
                    Parameter('p2', type="PLY",
                              doc=":class:`PLY` to which the bounding polygons will be added."),
                    Parameter('p3', type=Type.INT32_T,
@@ -728,13 +728,13 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Origin Y"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="cell spacing X"),
+                             doc="Cell spacing X"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="cell spacing Y"),
+                             doc="Cell spacing Y"),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="elements in X"),
+                             doc="Elements in X"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="elements in Y")
+                             doc="Elements in Y")
                ]),
 
         Method('GridResize_IMU', module='geoengine.core', version='5.0.0',
@@ -758,15 +758,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="input image name"),
+                             doc="Input image name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="output new shaded image"),
+                             doc="Output new shaded image"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="inclination 0-90 degrees (def. 45)"),
+                             doc="Inclination 0-90 degrees (def. 45)"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="declination 0-360 degrees azimuth (def. 45)"),
+                             doc="Declination 0-360 degrees azimuth (def. 45)"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
-                             doc="vertical scale factor (distance/z unit)")
+                             doc="Vertical scale factor (distance/z unit)")
                ]),
 
         Method('GridST_IMU', module='geoengine.core', version='5.1.2',
@@ -781,7 +781,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="grid name"),
+                             doc="Grid name"),
                    Parameter('p2', type="ST",
                              doc=":class:`ST` (statistics) object to fill/update")
                ]),
@@ -827,7 +827,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="Name of the grid to get stats from"),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="Element type: 0 - byte 1 - USHORT 2 - SHORT 3 - LONG 4 - FLOAT 5 - DOUBLE 6 - 32 byte Colour (RGBx)"),
+                             doc="Element type: 0 - byte 1 - USHORT 2 - SHORT 3 - LONG 4 - FLOAT 5 - DOUBLE 6 - 32 byte Color (RGBx)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Elements in X direction"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
@@ -905,15 +905,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="grid name"),
+                             doc="Grid name"),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="trend order"),
+                             doc="Trend order"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Number of coefficients"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="trend origin Xo"),
+                             doc="Trend origin Xo"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
-                             doc="trend origin Yo"),
+                             doc="Trend origin Yo"),
                    Parameter('p6', type="VM",
                              doc=":class:`VM` hold coefficient values MUST BE OF TYPE 'real'")
                ]),
@@ -944,13 +944,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="Input Grid1 Name"),
+                             doc="Input Grid1 name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Input Grid2 Name"),
+                             doc="Input Grid2 name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="Output Grid Name"),
+                             doc="Output Grid name"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="Stitching Method"),
+                             doc="Stitching method"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Grid 1 trend removal order"),
                    Parameter('p6', type=Type.INT32_T,
@@ -968,7 +968,7 @@ gx_methods = {
                    Parameter('p12', type=Type.DOUBLE,
                              doc="Correction weighting"),
                    Parameter('p13', type=Type.INT32_T,
-                             doc="width of corrections, in grid cells (8 to 256)")
+                             doc="Width of corrections, in grid cells (8 to 256)")
                ]),
 
         Method('GridStitchCtl_IMU', module='geoengine.core', version='5.1.4',
@@ -989,7 +989,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Generate a Tiff (Tagged-Image file format) file with up to 16 grids.",
                notes="""
-               The background colour can be either selected
+               The background color can be either selected
                from one of 8 settings, or can be specified
                as a combination of Reg,Green, and Blue values.
                """,
@@ -1000,7 +1000,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Name of Tiff file to create"),
                    Parameter('p3', type=Type.STRING,
-                             doc="Background colour option. One of W (White)  K (Black) C (Cyan) M (Magenta) Y (Yellow) R (Red)  G (Green) B (Blue)"),
+                             doc="Background color option. One of W (White)  K (Black) C (Cyan) M (Magenta) Y (Yellow) R (Red)  G (Green) B (Blue)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Background Red value (0-255)"),
                    Parameter('p5', type=Type.INT32_T,
@@ -1012,7 +1012,7 @@ gx_methods = {
                    Parameter('p8', type=Type.INT32_T,
                              doc="Pixel size of registration marks"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="Map Scale")
+                             doc="Map scale")
                ]),
 
         Method('GridTrnd_IMU', module='geoengine.core', version='5.0.0',
@@ -1075,13 +1075,13 @@ gx_methods = {
 
         Method('GridVD_IMU', module='geoengine.core', version='5.0.0',
                availability=Availability.LICENSED, 
-               doc="Apply vertical derivertive convolution filter to a grid.",
+               doc="Apply vertical derivative convolution filter to a grid.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input image"),
+                             doc="Input image"),
                    Parameter('p2', type="IMG",
-                             doc="output image")
+                             doc="Output image")
                ]),
 
         Method('GridVol_IMU', module='geoengine.core', version='5.0.0',
@@ -1347,7 +1347,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type="VV",
                              doc="X locations"),
                    Parameter('p3', type="VV",
@@ -1366,7 +1366,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input image"),
+                             doc="Input image"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X1"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -1376,7 +1376,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y2"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="sample separation, if 0.0, use grid cell size"),
+                             doc="Sample separation, if 0.0, use grid cell size"),
                    Parameter('p7', type="VV",
                              doc=":class:`VV` in which to place result")
                ]),
@@ -1388,7 +1388,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input image"),
+                             doc="Input image"),
                    Parameter('p2', type="VV",
                              doc="X :class:`VV` coordinates"),
                    Parameter('p3', type="VV",
@@ -1410,9 +1410,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='list of grid files, "|" delimited'),
+                             doc='List of grid files, "|" delimited'),
                    Parameter('p2', type="IPJ",
-                             doc="projection for the range - see notes"),
+                             doc="Projection for the range - see notes"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Min X - returned range in the projection"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
@@ -1439,7 +1439,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="input image"),
+                             doc="Input image"),
                    Parameter('p2', type=Type.DOUBLE, is_ref=True,
                              doc="Min latitude"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
@@ -1465,15 +1465,15 @@ gx_methods = {
                    Parameter('p1', type="IMG",
                              doc="Name of the grid to get stats from"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="min X window"),
+                             doc="Min X window"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="min Y window"),
+                             doc="Min Y window"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="max X window"),
+                             doc="Max X window"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="max Y window"),
+                             doc="Max Y window"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="maximum values needed, 0 for all"),
+                             doc="Maximum values needed, 0 for all"),
                    Parameter('p7', type="ST",
                              doc=":class:`ST` object, stats are accumulated")
                ]),

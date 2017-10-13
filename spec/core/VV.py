@@ -55,7 +55,7 @@ gx_defines = [
            doc="Ways to handle negatives",
            constants=[
                Constant('VV_LOG_NEGATIVE_NO', value='0', type=Type.INT32_T,
-                        doc="dummies out value less than the minimum."),
+                        doc="Dummies out value less than the minimum."),
                Constant('VV_LOG_NEGATIVE_YES', value='1', type=Type.INT32_T,
                         doc="""
                         if the data is in the range +/- minimum,
@@ -71,15 +71,15 @@ gx_defines = [
            doc="Lookup style",
            constants=[
                Constant('VV_LOOKUP_EXACT', value='0', type=Type.INT32_T,
-                        doc="only exact matches are used"),
+                        doc="Only exact matches are used"),
                Constant('VV_LOOKUP_NEAREST', value='1', type=Type.INT32_T,
-                        doc="nearest match is used (regardless of sampling range)"),
+                        doc="Nearest match is used (regardless of sampling range)"),
                Constant('VV_LOOKUP_INTERPOLATE', value='2', type=Type.INT32_T,
-                        doc="interpolate between values (regardless of sampling range)"),
+                        doc="Interpolate between values (regardless of sampling range)"),
                Constant('VV_LOOKUP_NEARESTCLOSE', value='3', type=Type.INT32_T,
-                        doc="use nearest match only if within sampling range"),
+                        doc="Use nearest match only if within sampling range"),
                Constant('VV_LOOKUP_INTERPCLOSE', value='4', type=Type.INT32_T,
-                        doc="interpolate only if within sampling range")
+                        doc="Interpolate only if within sampling range")
            ]),
 
     Define('VV_MASK',
@@ -162,9 +162,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="destination"),
+                             doc="Destination"),
                    Parameter('p2', type="VV",
-                             doc="source")
+                             doc="Source")
                ]),
 
         Method('_Copy2_VV', module='geoengine.core', version='5.0.0',
@@ -207,7 +207,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`VV_LOG_NEGATIVE`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="minimum value for :def:`VV_LOG_NEGATIVE`")
+                             doc="Minimum value for :def:`VV_LOG_NEGATIVE`")
                ]),
 
         Method('_LogLinear_VV', module='geoengine.core', version='5.0.0',
@@ -229,7 +229,7 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="minimum value")
+                             doc="Minimum value")
                ]),
 
         Method('_Mask_VV', module='geoengine.core', version='5.0.0',
@@ -278,9 +278,9 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="base value"),
+                             doc="Base value"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="mult value")
+                             doc="Mult value")
                ]),
 
         Method('Abs_VV', module='geoengine.core', version='7.1.0',
@@ -313,11 +313,11 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` A"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="multiplier f1 for A"),
+                             doc="Multiplier f1 for A"),
                    Parameter('p3', type="VV",
                              doc=":class:`VV` B"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="multiplier f2 for B"),
+                             doc="Multiplier f2 for B"),
                    Parameter('p5', type="VV",
                              doc=":class:`VV` C (returned), C = A*f1 + B*f2")
                ]),
@@ -339,9 +339,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="destination :class:`VV`, will be resized to length of the :class:`VM`"),
+                             doc="Destination :class:`VV`, will be resized to length of the :class:`VM`"),
                    Parameter('p2', type="VM",
-                             doc="source :class:`VM`")
+                             doc="Source :class:`VM`")
                ]),
 
         Method('CopyVVtoVM_VV', module='geoengine.core', version='5.0.0',
@@ -354,9 +354,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VM",
-                             doc="destination :class:`VM`, will be resized to length of the :class:`VV`"),
+                             doc="Destination :class:`VM`, will be resized to length of the :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="source :class:`VV`")
+                             doc="Source :class:`VV`")
                ]),
 
         Method('CRC_VV', module='geoengine.core', version='5.0.0',
@@ -367,7 +367,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type="CRC",
-                             doc="previous CRC :def_val:`CRC_INIT_VALUE`")
+                             doc="Previous CRC :def_val:`CRC_INIT_VALUE`")
                ]),
 
         Method('CRCInexact_VV', module='geoengine.core', version='5.0.0',
@@ -386,7 +386,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type="CRC",
-                             doc="previous CRC :def_val:`CRC_INIT_VALUE`"),
+                             doc="Previous CRC :def_val:`CRC_INIT_VALUE`"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`VV_FLOAT_CRC_BITS`"),
                    Parameter('p4', type=Type.INT32_T,
@@ -531,7 +531,8 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type=Type.STRING)
+                   Parameter('p2', type=Type.STRING,
+                             doc="String")
                ]),
 
         Method('GetVM_VV', module='geoengine.core', version='5.0.0',
@@ -616,7 +617,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element wanted")
+                             doc="Element wanted")
                ]),
 
         Method('IGetString_VV', module='geoengine.core', version='5.0.0',
@@ -633,11 +634,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element wanted"),
+                             doc="Element wanted"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string in which to place element"),
+                             doc="String in which to place element"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum length of the string")
+                             doc="Maximum length of the string")
                ]),
 
         Method('iIndexMax_VV', module='geoengine.core', version='6.2.0',
@@ -751,7 +752,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`VV_LOG_NEGATIVE`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="minimum value for :def:`VV_LOG_NEGATIVE`")
+                             doc="Minimum value for :def:`VV_LOG_NEGATIVE`")
                ]),
 
         Method('iOrder_VV', module='geoengine.core', version='6.4.0',
@@ -763,7 +764,7 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` to check order"),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="returned: Do any values repeat (0: No, 1: Yes)?")
+                             doc="Returned: Do any values repeat (0: No, 1: Yes)?")
                ]),
 
         Method('LinesToXY_VV', module='geoengine.core', version='8.0.0',
@@ -780,11 +781,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV` of GS_D2LINE type (create with type -32)"),
+                             doc="Input :class:`VV` of GS_D2LINE type (create with type -32)"),
                    Parameter('p2', type="VV",
-                             doc="output :class:`VV` with X locations (:def_val:`GS_DOUBLE`)"),
+                             doc="Output :class:`VV` with X locations (:def_val:`GS_DOUBLE`)"),
                    Parameter('p3', type="VV",
-                             doc="output :class:`VV` with Y locations (:def_val:`GS_DOUBLE`)")
+                             doc="Output :class:`VV` with Y locations (:def_val:`GS_DOUBLE`)")
                ]),
 
         Method('LookupIndex_VV', module='geoengine.core', version='5.0.0',
@@ -967,9 +968,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.DOUBLE, is_ref=True,
-                             doc="minimum value - returned"),
+                             doc="Minimum value - returned"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="maximum value - returned")
+                             doc="Maximum value - returned")
                ]),
 
         Method('ReFid_VV', module='geoengine.core', version='5.0.0',
@@ -1056,7 +1057,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element wanted")
+                             doc="Element wanted")
                ]),
 
         Method('rSum_VV', module='geoengine.core', version='7.2.0',
@@ -1133,9 +1134,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element to set"),
+                             doc="Element to set"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetIntN_VV', module='geoengine.core', version='5.0.0',
@@ -1150,11 +1151,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="start element (>= 0)"),
+                             doc="Start element (>= 0)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="# elements to set (-1 sets all elements to end)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetLen_VV', module='geoengine.core', version='5.0.0',
@@ -1196,9 +1197,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element to set"),
+                             doc="Element to set"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetRealN_VV', module='geoengine.core', version='5.0.0',
@@ -1213,11 +1214,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="start element (>= 0)"),
+                             doc="Start element (>= 0)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="# elements to set (-1 sets all elements to end)"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetString_VV', module='geoengine.core', version='5.0.0',
@@ -1238,9 +1239,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element to set"),
+                             doc="Element to set"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string to set")
+                             doc="String to set")
                ]),
 
         Method('SetStringN_VV', module='geoengine.core', version='5.0.0',
@@ -1255,11 +1256,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="start element (>= 0)"),
+                             doc="Start element (>= 0)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="# elements to set (-1 sets all elements to end)"),
                    Parameter('p4', type=Type.STRING,
-                             doc="string to set")
+                             doc="String to set")
                ]),
 
         Method('SetupIndex_VV', module='geoengine.core', version='5.0.0',
@@ -1531,7 +1532,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="XML file to create"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="format"),
+                             doc="Format"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Significant digits/decimals")
                ])

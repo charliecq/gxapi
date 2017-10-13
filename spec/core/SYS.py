@@ -122,9 +122,9 @@ gx_defines = [
            doc="Registry key domains",
            constants=[
                Constant('REG_DOMAIN_MACHINE', value='0', type=Type.INT32_T,
-                        doc="same as HKEY_LOCAL_MACHINE in Windows"),
+                        doc="Same as HKEY_LOCAL_MACHINE in Windows"),
                Constant('REG_DOMAIN_USER', value='1', type=Type.INT32_T,
-                        doc="same as HKEY_CURRENT_USER in Windows")
+                        doc="Same as HKEY_CURRENT_USER in Windows")
            ]),
 
     Define('SHELL_EXECUTE',
@@ -148,9 +148,9 @@ gx_defines = [
            doc=":class:`SYS` Directory locations",
            constants=[
                Constant('SYS_DIR_LOCAL', value='0', type=Type.INT32_T,
-                        doc="is the workspace working directory"),
+                        doc="Is the workspace working directory"),
                Constant('SYS_DIR_GEOSOFT', value='1', type=Type.INT32_T,
-                        doc="is the geosoft installation directory (read-only)"),
+                        doc="Is the geosoft installation directory (read-only)"),
                Constant('SYS_DIR_USER', value='2', type=Type.INT32_T,
                         doc="""
                         is the geosoft installation directory that
@@ -246,7 +246,7 @@ gx_defines = [
                Constant('SYS_FONT_GFN', value='1', type=Type.INT32_T,
                         doc="Geosoft GFN fonts."),
                Constant('SYS_FONT_TT', value='0', type=Type.INT32_T,
-                        doc="available TrueType fonts")
+                        doc="Available TrueType fonts")
            ]),
 
     Define('SYS_INFO',
@@ -303,9 +303,9 @@ gx_defines = [
            """,
            constants=[
                Constant('SYS_PATH_LOCAL', value='0', type=Type.INT32_T,
-                        doc="is the workspace working directory"),
+                        doc="Is the workspace working directory"),
                Constant('SYS_PATH_GEOSOFT', value='1', type=Type.INT32_T,
-                        doc="is the geosoft installation directory (read-only)"),
+                        doc="Is the geosoft installation directory (read-only)"),
                Constant('SYS_PATH_GEOSOFT_USER', value='2', type=Type.INT32_T,
                         doc="""
                         is the geosoft installation directory that
@@ -545,13 +545,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="date value to break"),
+                             doc="Date value to break"),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="year"),
+                             doc="Year"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
-                             doc="month (0-11)"),
+                             doc="Month (0-11)"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
-                             doc="day   (0-30)")
+                             doc="Day   (0-30)")
                ]),
 
         Method('iDatetoLong_SYS', module='geoengine.core', version='6.3.0',
@@ -565,7 +565,7 @@ gx_methods = {
                return_doc="x - Days",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="date")
+                             doc="Date")
                ]),
 
         Method('iTimetoLong_SYS', module='geoengine.core', version='6.3.0',
@@ -599,7 +599,7 @@ gx_methods = {
                return_doc="x - Date",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="day")
+                             doc="Day")
                ]),
 
         Method('rLongtoTime_SYS', module='geoengine.core', version='6.3.0',
@@ -609,7 +609,7 @@ gx_methods = {
                return_doc="x - Time",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="seconds")
+                             doc="Seconds")
                ]),
 
         Method('rMakeDate_SYS', module='geoengine.core', version='5.1.1',
@@ -619,11 +619,11 @@ gx_methods = {
                return_doc="Date in decimal years.",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="year"),
+                             doc="Year"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="month (0-11)"),
+                             doc="Month (0-11)"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="day   (0-30)")
+                             doc="Day   (0-30)")
                ]),
 
         Method('rSecondstoTime_SYS', module='geoengine.core', version='6.3.0',
@@ -633,7 +633,7 @@ gx_methods = {
                return_doc="x - Time",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="seconds")
+                             doc="Seconds")
                ]),
 
         Method('rTime_SYS', module='geoengine.core', version='5.0.0',
@@ -688,7 +688,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="setting")
+                             doc="Setting")
                ]),
 
         Method('IGetEnv_SYS', module='geoengine.core', version='5.0.0',
@@ -697,11 +697,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="setting"),
+                             doc="Setting"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="value string"),
+                             doc="Value string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="sizeof string")
+                             doc="Sizeof string")
                ]),
 
         Method('SetEnv_SYS', module='geoengine.core', version='5.0.0',
@@ -710,9 +710,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="setting"),
+                             doc="Setting"),
                    Parameter('p2', type=Type.STRING,
-                             doc="value")
+                             doc="Value")
                ])
     ],
     'Error Handling': [
@@ -741,7 +741,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="the error index (0 to N-1, where N=number of registered errors)"),
+                             doc="The error index (0 to N-1, where N=number of registered errors)"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Buffer to return message in"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
@@ -795,9 +795,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="command name"),
+                             doc="Command name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="command line arguments"),
+                             doc="Command line arguments"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Flags :def:`SYS_RUN_TYPE` :def:`SYS_RUN_DISPLAY` :def:`SYS_RUN_HOLD` :def:`SYS_RUN_WIN`")
                ]),
@@ -815,7 +815,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of GS to run.")
+                             doc="Name of GS to run.")
                ]),
 
         Method('iRunGX_SYS', module='geoengine.core', version='5.0.0',
@@ -836,7 +836,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of GX to run.")
+                             doc="Name of GX to run.")
                ]),
 
         Method('iRunGXEx_SYS', module='geoengine.core', version='5.0.0',
@@ -852,9 +852,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of GX to run."),
+                             doc="Name of GX to run."),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="return value set in the child GX (0 by default)")
+                             doc="Return value set in the child GX (0 by default)")
                ]),
 
         Method('iRunPDF_SYS', module='None', version='5.0.0',
@@ -869,9 +869,9 @@ gx_methods = {
                return_doc="Exit status of the task, 0 usually means success.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='group name, can be "".'),
+                             doc='Group name, can be "".'),
                    Parameter('p2', type=Type.STRING,
-                             doc="pdf name    (.pdf assumed)")
+                             doc="PDF name    (.pdf assumed)")
                ]),
 
         Method('iShellExecute_SYS', module='geoengine.core', version='5.0.0',
@@ -961,11 +961,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='your error file name, "" if none.'),
+                             doc='Your error file name, "" if none.'),
                    Parameter('p2', type=Type.STRING,
-                             doc="module name in which error occured."),
+                             doc="Module name in which error occured."),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="error number")
+                             doc="Error number")
                ]),
 
         Method('ErrorTag_SYS', module='geoengine.core', version='5.0.0',
@@ -981,9 +981,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='tag string, ie "%1".'),
+                             doc='Tag string, ie "%1".'),
                    Parameter('p2', type=Type.STRING,
-                             doc="string to replace the tag.")
+                             doc="String to replace the tag.")
                ]),
 
         Method('iAssertGX_SYS', module='geoengine.core', version='5.0.0',
@@ -1012,11 +1012,11 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="boolean expression (ie. (dB != 0.0) )"),
+                             doc="Boolean expression (ie. (dB != 0.0) )"),
                    Parameter('p2', type=Type.STRING,
-                             doc="module name"),
+                             doc="Module name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="argument name")
+                             doc="Argument name")
                ]),
 
         Method('iOLEAutomation_SYS', module='None', version='5.0.0',
@@ -1039,7 +1039,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="output file name")
+                             doc="Output file name")
                ]),
 
         Method('ShowError_SYS', module='None', version='5.0.0',
@@ -1084,7 +1084,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="module name")
+                             doc="Module name")
                ])
     ],
     'File System': [
@@ -1164,9 +1164,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="source file"),
+                             doc="Source file"),
                    Parameter('p2', type=Type.STRING,
-                             doc="destination file")
+                             doc="Destination file")
                ]),
 
         Method('iDeleteFile_SYS', module='geoengine.core', version='5.0.0',
@@ -1179,7 +1179,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of file to delete")
+                             doc="Name of file to delete")
                ]),
 
         Method('iDeleteGIFile_SYS', module='geoengine.core', version='5.0.0',
@@ -1195,7 +1195,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of grid file to delete")
+                             doc="Name of grid file to delete")
                ]),
 
         Method('iDeleteGridFile_SYS', module='geoengine.core', version='7.0.0',
@@ -1213,7 +1213,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of grid file to delete")
+                             doc="Name of grid file to delete")
                ]),
 
         Method('iDirExist_SYS', module='geoengine.core', version='5.0.0',
@@ -1257,7 +1257,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of file")
+                             doc="Name of file")
                ]),
 
         Method('iFileWritable_SYS', module='geoengine.core', version='6.2.0',
@@ -1348,7 +1348,7 @@ gx_methods = {
                    Parameter('p1', type=Type.INT32_T,
                              doc=":def:`SYS_DIR`"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned directory path string"),
+                             doc="Returned directory path string"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the string")
                ]),
@@ -1362,7 +1362,7 @@ gx_methods = {
                    Parameter('p1', type=Type.INT32_T,
                              doc=":def:`SYS_PATH`"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="string in which to place path"),
+                             doc="String in which to place path"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum string size")
                ]),
@@ -1401,7 +1401,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of file")
+                             doc="Name of file")
                ]),
 
         Method('iMakeFileWritable_SYS', module='geoengine.core', version='6.3.0',
@@ -1414,7 +1414,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of file")
+                             doc="Name of file")
                ]),
 
         Method('IRelativeFileName_SYS', module='geoengine.core', version='6.0.1',
@@ -1454,7 +1454,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="Input Extesion (without .)"),
+                             doc="Input extension (without .)"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Output name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
@@ -1491,11 +1491,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="input file path/name"),
+                             doc="Input file path/name"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="output file name with path transfered"),
+                             doc="Output file name with path transfered"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="maximum length of output string")
+                             doc="Maximum length of output string")
                ]),
 
         Method('iValidFileName_SYS', module='geoengine.core', version='5.0.0',
@@ -1540,7 +1540,7 @@ gx_methods = {
                return_doc="Date in decimal years, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ]),
 
         Method('rFileTime_SYS', module='geoengine.core', version='5.0.0',
@@ -1554,7 +1554,7 @@ gx_methods = {
                return_doc="Date in decimal hours, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ]),
 
         Method('rUTCFileDate_SYS', module='geoengine.core', version='7.0.0',
@@ -1568,7 +1568,7 @@ gx_methods = {
                return_doc="Date in decimal years, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ]),
 
         Method('rUTCFileTime_SYS', module='geoengine.core', version='7.0.0',
@@ -1582,7 +1582,7 @@ gx_methods = {
                return_doc="Date in decimal hours, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ])
     ],
     'Global Parameter': [
@@ -1602,7 +1602,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='new INI file name, if "", use default.')
+                             doc='New INI file name, if "", use default.')
                ]),
 
         Method('GlobalSet_SYS', module='geoengine.core', version='5.0.0',
@@ -1807,7 +1807,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="File Name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="target directory")
+                             doc="Target directory")
                ]),
 
         Method('IBackupGeoFile_SYS', module='geoengine.core', version='7.0.0',
@@ -1919,11 +1919,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="LST",
-                             doc="default menus (typically a single entry based on product)"),
+                             doc="Default menus (typically a single entry based on product)"),
                    Parameter('p2', type="LST",
-                             doc="loaded menus"),
+                             doc="Loaded menus"),
                    Parameter('p3', type="LST",
-                             doc="loaded user menus")
+                             doc="Loaded user menus")
                ]),
 
         Method('SetLoadedMenus_SYS', module='None', version='9.0.0',
@@ -1936,11 +1936,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="LST",
-                             doc="default menus (typically a single entry based on product, do not change the name returned by :func:`GetLoadedMenus_SYS`)"),
+                             doc="Default menus (typically a single entry based on product, do not change the name returned by :func:`GetLoadedMenus_SYS`)"),
                    Parameter('p2', type="LST",
-                             doc="loaded menus"),
+                             doc="Loaded menus"),
                    Parameter('p3', type="LST",
-                             doc="loaded user menus")
+                             doc="Loaded user menus")
                ]),
 
         Method('GetEntitlementRights_SYS', module='geoengine.core', version='9.0.0',
@@ -2065,11 +2065,11 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of .NET GX assembly"),
+                             doc="Name of .NET GX assembly"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="buffer to place list of entries in"),
+                             doc="Buffer to place list of entries in"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="sizeof buffer")
+                             doc="Sizeof buffer")
                ]),
 
         Method('SendGeneralMessage_SYS', module='geoengine.map', version='6.3.0',
@@ -2145,7 +2145,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="group to clear")
+                             doc="Group to clear")
                ]),
 
         Method('ClearGroupParm_SYS', module='geoengine.core', version='5.1.1',
@@ -2153,7 +2153,8 @@ gx_methods = {
                doc="Clears all paramters in a specified group.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING)
+                   Parameter('p1', type=Type.STRING,
+                             doc="String")
                ]),
 
         Method('ClearParm_SYS', module='geoengine.core', version='5.0.0',
@@ -2224,8 +2225,8 @@ gx_methods = {
                valid range is 0-100.
                "PAT_DENSITY"   Tile spacing. A value of 1 means tiles are laid with no overlap.
                A value of 2 means they overlap each other.
-               "PAT_COLOR"     The colour value.
-               "PAT_BACKCOLOR" Background colour value.
+               "PAT_COLOR"     The color value.
+               "PAT_BACKCOLOR" Background color value.
                
                Returned values may be DUMMY, but will be acceptable for use with
                the :func:`iColorForm_GUI` function, to set defaults.
@@ -2256,7 +2257,7 @@ gx_methods = {
                    Parameter('p1', type="REG",
                              doc=":class:`REG` to add parameters to"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name wanted")
+                             doc="Group name wanted")
                ]),
 
         Method('GtString_SYS', module='geoengine.core', version='5.0.0',
@@ -2443,8 +2444,8 @@ gx_methods = {
                valid range is 0-100.
                "PAT_DENSITY"   Tile spacing. A value of 1 means tiles are laid with no overlap.
                A value of 2 means they overlap each other.
-               "PAT_COLOR"     The colour value.
-               "PAT_BACKCOLOR" Background colour value.
+               "PAT_COLOR"     The color value.
+               "PAT_BACKCOLOR" Background color value.
                
                Input values may be DUMMY.
                
@@ -2582,9 +2583,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
-                             doc="count"),
+                             doc="Count"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="max count >= count")
+                             doc="Max count >= count")
                ])
     ],
     'Registry': [
@@ -2597,9 +2598,9 @@ gx_methods = {
                    Parameter('p1', type=Type.INT32_T,
                              doc=":def:`SYS_INFO`"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned setting"),
+                             doc="Returned setting"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="size of string")
+                             doc="Size of string")
                ]),
 
         Method('IiRegistryGetVal_SYS', module='geoengine.core', version='6.0.1',
@@ -2620,7 +2621,7 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
                              doc="String for value data"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of String")
+                             doc="Size of String")
                ]),
 
         Method('iRegistryDeleteKey_SYS', module='geoengine.core', version='5.0.0',
@@ -2693,7 +2694,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PTMP",
-                             doc="saved with Save_PTMP_SYS")
+                             doc="Saved with Save_PTMP_SYS")
                ]),
 
         Method('SavePTMP_SYS', module='geoengine.core', version='5.0.0',
@@ -2755,7 +2756,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Idle delay method.",
                return_type=Type.INT32_T,
-               return_doc="success if the delay has elapsed.",
+               return_doc="Success if the delay has elapsed.",
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
                              doc="Decimal Seconds to delay")
@@ -2763,21 +2764,21 @@ gx_methods = {
 
         Method('iGetTimer_SYS', module='geoengine.core', version='6.0.0',
                availability=Availability.PUBLIC, 
-               doc="return the elapsed time since the established time.",
+               doc="Return the elapsed time since the established time.",
                notes="""
                1st time through call the method with a flag of 1 to identify
                the count start time, subsequent times the time will be the time
                elapsed since the queried start time.  Do so by settign the flag to 0.
                """,
                return_type=Type.INT32_T,
-               return_doc="success if the delay has elapsed.",
+               return_doc="Success if the delay has elapsed.",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="1 - set start time, 0 - return elapsed time"),
                    Parameter('p2', type=Type.DOUBLE, is_ref=True,
-                             doc="start time in seconds"),
+                             doc="Start time in seconds"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="elapsed time in seconds")
+                             doc="Elapsed time in seconds")
                ])
     ],
     'User Interaction': [
@@ -2812,7 +2813,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="Title of the Window"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number")
+                             doc="Number")
                ]),
 
         Method('DisplayMessage_SYS', module='None', version='5.0.0',
@@ -3104,7 +3105,7 @@ gx_methods = {
                return_doc="The number of loaded menus",
                parameters = [
                    Parameter('p1', type="LST",
-                             doc="menu list")
+                             doc="Menu list")
                ]),
 
         Method('LoadMenuList_SYS', module='None', version='5.0.0',
@@ -3113,7 +3114,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="LST",
-                             doc="menu list to load")
+                             doc="Menu list to load")
                ]),
 
         Method('LoadMenus_SYS', module='None', version='5.0.0',
@@ -3122,7 +3123,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="menu to load")
+                             doc="Menu to load")
                ]),
 
         Method('LoadCustomBar_SYS', module='None', version='5.1.5',
@@ -3278,7 +3279,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="value to append to existing Path")
+                             doc="Value to append to existing Path")
                ]),
 
         Method('SetParentWnd_SYS', module='geoengine.core', version='6.1.0',
@@ -3314,9 +3315,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="path that will be scanned recursively for GXC source files"),
+                             doc="Path that will be scanned recursively for GXC source files"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of gx where first breakpoint should be set")
+                             doc="Name of gx where first breakpoint should be set")
                ])
     ]
 }

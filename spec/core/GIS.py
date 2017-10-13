@@ -52,9 +52,9 @@ gx_methods = {
                return_doc=":class:`GIS` Object",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data source (file)"),
+                             doc="Data source (file)"),
                    Parameter('p2', type=Type.STRING,
-                             doc="data qualifying information if required."),
+                             doc="Data qualifying information if required."),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`GIS_TYPE`")
                ]),
@@ -189,9 +189,9 @@ gx_methods = {
                    Parameter('p1', type="GIS",
                              doc=":class:`GIS` Handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned file name"),
+                             doc="Returned file name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of file name string")
+                             doc="Size of file name string")
                ]),
 
         Method('iIsMIMapFile_GIS', module='geoengine.interoperability', version='5.0.0',
@@ -353,7 +353,7 @@ gx_methods = {
                    Parameter('p1', type="GIS",
                              doc=":class:`GIS` object"),
                    Parameter('p2', type="DB",
-                             doc="database")
+                             doc="Database")
                ]),
 
         Method('LoadMAP_GIS', module='geoengine.interoperability', version='5.0.0',
@@ -365,7 +365,7 @@ gx_methods = {
                    Parameter('p1', type="GIS",
                              doc=":class:`GIS` object"),
                    Parameter('p2', type="MVIEW",
-                             doc="view in which to place :class:`GIS` drawing.")
+                             doc="View in which to place :class:`GIS` drawing.")
                ]),
 
         Method('LoadMAPEx_GIS', module='geoengine.interoperability', version='7.1.0',
@@ -396,7 +396,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="GIS"),
                    Parameter('p2', type="MVIEW",
-                             doc="view in which to place :class:`GIS` drawing."),
+                             doc="View in which to place :class:`GIS` drawing."),
                    Parameter('p3', type="META"),
                    Parameter('p4', type="META_TOKEN",
                              doc="Class"),
@@ -438,7 +438,7 @@ gx_methods = {
                    Parameter('p1', type="GIS",
                              doc=":class:`GIS` object"),
                    Parameter('p2', type="DB",
-                             doc="database")
+                             doc="Database")
                ]),
 
         Method('SetDmWireframePtFile_GIS', module='geoengine.interoperability', version='6.3.0',

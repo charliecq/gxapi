@@ -33,9 +33,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="MAPTEMPLATE"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned temporary map template file name"),
+                             doc="Returned temporary map template file name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of file name string")
+                             doc="Size of file name string")
                ]),
 
         Method('UpdateFromTmpCopy_MAPTEMPLATE', module='geoengine.map', version='6.3.0',
@@ -108,9 +108,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="MAPTEMPLATE"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="returned map template file name"),
+                             doc="Returned map template file name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of file name string")
+                             doc="Size of file name string")
                ])
     ],
     'Map Making': [
@@ -152,13 +152,13 @@ gx_methods = {
                    Parameter('p2', type="HDC", is_val=True,
                              doc="DC Handle"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="left value of the render rect in Windows coordinates (bottom>top)"),
+                             doc="Left value of the render rect in Windows coordinates (bottom>top)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="bottom value"),
+                             doc="Bottom value"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="right value"),
+                             doc="Right value"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="top value")
+                             doc="Top value")
                ]),
 
         Method('RenderPreviewMapProduction_MAPTEMPLATE', module='geoengine.map', version='6.4.0',
@@ -176,13 +176,13 @@ gx_methods = {
                    Parameter('p2', type="HDC", is_val=True,
                              doc="DC Handle (pass 0 to just query the Data view pixel location)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
-                             doc="left value of the render rect in Windows coordinates (bottom>top)"),
+                             doc="Left value of the render rect in Windows coordinates (bottom>top)"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
-                             doc="bottom value"),
+                             doc="Bottom value"),
                    Parameter('p5', type=Type.INT32_T, is_ref=True,
-                             doc="right value"),
+                             doc="Right value"),
                    Parameter('p6', type=Type.INT32_T, is_ref=True,
-                             doc="top value")
+                             doc="Top value")
                ])
     ],
     'Miscellaneous': [

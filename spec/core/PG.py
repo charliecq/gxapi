@@ -217,7 +217,7 @@ gx_methods = {
                return_doc=":def:`GS_TYPES`",
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="source :class:`PG`")
+                             doc="Source :class:`PG`")
                ]),
 
         Method('iNCols_PG', module='geoengine.core', version='5.0.0',
@@ -227,7 +227,7 @@ gx_methods = {
                return_doc="# of columns.",
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="source :class:`PG`")
+                             doc="Source :class:`PG`")
                ]),
 
         Method('iNRows_PG', module='geoengine.core', version='5.0.0',
@@ -237,7 +237,7 @@ gx_methods = {
                return_doc="# of rows.",
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="source :class:`PG`")
+                             doc="Source :class:`PG`")
                ]),
 
         Method('iNSlices_PG', module='geoengine.core', version='6.2.0',
@@ -247,7 +247,7 @@ gx_methods = {
                return_doc="# of rows.",
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="source :class:`PG`")
+                             doc="Source :class:`PG`")
                ]),
 
         Method('Range_PG', module='geoengine.core', version='5.0.0',

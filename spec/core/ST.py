@@ -9,22 +9,22 @@ gx_class = Class('ST',
                  statistics for a grid.
                  """,
                  notes="""
-                 *** Histogram ranges and colour zone ranges ***
+                 *** Histogram ranges and color zone ranges ***
                  
                  Histogram bins are defined with inclusive minima and exclusive maxima;
                  for instance if Min = 0 and Inc = 1, then the second bin would include
                  all values z such that  0 >= z > 1 (the first bin has all values < 0).
                  
-                 Colour zones used in displaying grids (:class:`ITR`, ZON etc...) are the
+                 Color zones used in displaying grids (:class:`ITR`, ZON etc...) are the
                  opposite, with exclusive minima and inclusive maxima.
                  For instance, if a zone is defined from 0 to 1, then it would
                  contain all values of z such that 0 > z >= 1.
                  
                  These definitions mean that it is impossible to perfectly assign
-                 :class:`ITR` colours to individual bars of a histogram. The best work-around
-                 when the data values are integers is to define the colour zones using
+                 :class:`ITR` colors to individual bars of a histogram. The best work-around
+                 when the data values are integers is to define the color zones using
                  0.5 values between the integers. A general work-around is to make the
-                 number of histogram bins much larger than the number of colour zones.
+                 number of histogram bins much larger than the number of color zones.
                  
                  See also  :class:`ST2` (bi-variate statistics)
                  """)
@@ -170,7 +170,7 @@ gx_methods = {
                You should already have the data loaded in order to call this
                function.
                
-               See the note above "Histogram ranges and colour zone ranges"
+               See the note above "Histogram ranges and color zone ranges"
                """,
                return_type=Type.VOID,
                parameters = [
@@ -188,7 +188,7 @@ gx_methods = {
                and the one after the maximum, so it must be a value >2.
                The width of the individual bins will be (Min-Max)/(# - 2)
                
-               See the note above "Histogram ranges and colour zone ranges"
+               See the note above "Histogram ranges and color zone ranges"
                """,
                return_type=Type.VOID,
                parameters = [
@@ -214,7 +214,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="ST"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="input value")
+                             doc="Input value")
                ]),
 
         Method('rEquivalentValue_ST', module='geoengine.core', version='5.0.8',
@@ -229,7 +229,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="ST"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="input percentile (0 - 100)")
+                             doc="Input percentile (0 - 100)")
                ]),
 
         Method('Reset_ST', module='geoengine.core', version='5.0.0',
@@ -268,7 +268,7 @@ gx_methods = {
 
         Method('rGetNormProb_ST', module='geoengine.core', version='7.1.0',
                availability=Availability.LICENSED, 
-               doc="return percent value",
+               doc="Return percent value",
                return_type=Type.DOUBLE,
                return_doc="""
                real
@@ -278,7 +278,8 @@ gx_methods = {
                mit to about 5 standard deviations
                """,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rGetNormProbX_ST', module='geoengine.core', version='7.1.0',
@@ -293,7 +294,8 @@ gx_methods = {
                mit to about 5 standard deviations
                """,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE)
+                   Parameter('p1', type=Type.DOUBLE,
+                             doc="Real")
                ]),
 
         Method('rNormalTest_ST', module='geoengine.core', version='5.0.0',

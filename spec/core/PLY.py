@@ -92,9 +92,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PLY",
-                             doc="destination"),
+                             doc="Destination"),
                    Parameter('p2', type="PLY",
-                             doc="source")
+                             doc="Source")
                ]),
 
         Method('Create_PLY', module='geoengine.core', version='5.0.0',
@@ -162,7 +162,7 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y :class:`VV`."),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="polygon number")
+                             doc="Polygon number")
                ]),
 
         Method('GetPolygonEx_PLY', module='geoengine.core', version='5.0.0',
@@ -177,7 +177,7 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y :class:`VV`."),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="polygon number"),
+                             doc="Polygon number"),
                    Parameter('p5', type=Type.INT32_T, is_ref=True,
                              doc="TRUE if exclusion polygon")
                ]),
@@ -189,15 +189,15 @@ gx_methods = {
                return_doc=":def:`PLY_CLIP`",
                parameters = [
                    Parameter('p1', type="PLY",
-                             doc="polygon to clip"),
+                             doc="Polygon to clip"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="min X"),
+                             doc="Min X"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="min Y"),
+                             doc="Min Y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="max X"),
+                             doc="Max X"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="max y")
+                             doc="Max y")
                ]),
 
         Method('iClipLineInt_PLY', module='geoengine.core', version='6.3.0',
@@ -217,19 +217,19 @@ gx_methods = {
                return_doc="0, Terminates on error (you can ignore this value)",
                parameters = [
                    Parameter('p1', type="PLY",
-                             doc="polygon to clip"),
+                             doc="Polygon to clip"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="min X of line to clip"),
+                             doc="Min X of line to clip"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="min Y of line to clip"),
+                             doc="Min Y of line to clip"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="max X of line to clip"),
+                             doc="Max X of line to clip"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="max y of line to clip"),
+                             doc="Max y of line to clip"),
                    Parameter('p6', type="VV",
                              doc="DOUBLE :class:`VV` holding intersection fids"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="data element increment (precision)"),
+                             doc="Data element increment (precision)"),
                    Parameter('p8', type=Type.INT32_T, is_ref=True,
                              doc="First point value (:def:`PLY_LINE_CLIP` value)")
                ]),
@@ -246,11 +246,11 @@ gx_methods = {
                return_doc=":def:`PLY_CLIP`",
                parameters = [
                    Parameter('p1', type="PLY",
-                             doc="polygon A"),
+                             doc="Polygon A"),
                    Parameter('p2', type="PLY",
-                             doc="polygon B"),
+                             doc="Polygon B"),
                    Parameter('p3', type="PLY",
-                             doc="resulting clipped region")
+                             doc="Resulting clipped region")
                ]),
 
         Method('IGetDescription_PLY', module='geoengine.core', version='5.1.0',
@@ -261,16 +261,16 @@ gx_methods = {
                    Parameter('p1', type="PLY",
                              doc=":class:`PLY` Object"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="polygon description"),
+                             doc="Polygon description"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="string size")
+                             doc="String size")
                ]),
 
         Method('iNumPoly_PLY', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Get the number of polygons.",
                return_type=Type.INT32_T,
-               return_doc="number of polygons in the :class:`PLY`.",
+               return_doc="Number of polygons in the :class:`PLY`.",
                parameters = [
                    Parameter('p1', type="PLY",
                              doc=":class:`PLY` Object")
@@ -358,7 +358,7 @@ gx_methods = {
                    Parameter('p1', type="PLY",
                              doc=":class:`PLY` Object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="polygon description")
+                             doc="Polygon description")
                ]),
 
         Method('SetIPJ_PLY', module='geoengine.core', version='5.0.5',
@@ -386,7 +386,7 @@ gx_methods = {
                    Parameter('p1', type="PLY",
                              doc=":class:`PLY` Object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="thining resolution")
+                             doc="Thining resolution")
                ])
     ]
 }

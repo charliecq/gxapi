@@ -78,7 +78,7 @@ gx_defines = [
                         doc="""
                         Render modes are:    0 - interpolate
                         1 - pixelate
-                        2 - colour
+                        2 - color
                         """),
                Constant('IMG_QUERY_iKX', value='6', type=Type.INT32_T),
                Constant('IMG_QUERY_iNX', value='7', type=Type.INT32_T),
@@ -99,9 +99,9 @@ gx_defines = [
            doc="Relocation Style",
            constants=[
                Constant('IMG_RELOCATE_FIT', value='0', type=Type.INT32_T,
-                        doc="will fit the image to fill the specified area"),
+                        doc="Will fit the image to fill the specified area"),
                Constant('IMG_RELOCATE_ASPECT', value='1', type=Type.INT32_T,
-                        doc="will maintain aspect ratio")
+                        doc="Will maintain aspect ratio")
            ])]
 
 
@@ -134,9 +134,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`"),
+                             doc="Source :class:`IMG`"),
                    Parameter('p2', type="IMG",
-                             doc="target :class:`IMG`")
+                             doc="Target :class:`IMG`")
                ]),
 
         Method('Create_IMG', module='geoengine.core', version='5.0.3',
@@ -144,7 +144,7 @@ gx_methods = {
                doc="Creates an :class:`IMG` not tied to a file at all",
                notes="Once destroyed all the data in this :class:`IMG` is lost.",
                return_type="IMG",
-               return_doc=":class:`IMG` Object",
+               return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Data type :def:`GS_TYPES`"),
@@ -162,18 +162,18 @@ gx_methods = {
                notes="""
                When the :def_val:`GS_DOUBLE` data type is chosen the actual on-disk
                type of the input image will be used instead of :def_val:`GS_DOUBLE`
-               if the on-disk values represent colour data as opposed
+               if the on-disk values represent color data as opposed
                to real numbers.
                """,
                return_type="IMG",
-               return_doc=":class:`IMG` Object",
+               return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT` to use native :class:`DAT` type."),
                    Parameter('p2', type=Type.STRING,
                              doc="Name of the Grid to link to"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="Grid File Open Mode :def:`IMG_FILE`")
+                             doc="Grid file open mode :def:`IMG_FILE`")
                ]),
 
         Method('CreateMem_IMG', module='geoengine.core', version='5.0.6',
@@ -181,7 +181,7 @@ gx_methods = {
                doc="Creates an :class:`IMG` object that is backed only by memory.",
                notes="Once destroyed all the data is lost. This is temporary.",
                return_type="IMG",
-               return_doc=":class:`IMG` Object",
+               return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES`"),
@@ -211,7 +211,7 @@ gx_methods = {
                of your application.
                """,
                return_type="IMG",
-               return_doc=":class:`IMG` Object",
+               return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` Cannot be :def_val:`GS_TYPE_DEFAULT`"),
@@ -231,11 +231,11 @@ gx_methods = {
                notes="""
                When the :def_val:`GS_DOUBLE` data type is chosen the actual on-disk
                type of the input image will be used instead of :def_val:`GS_DOUBLE`
-               if the on-disk values represent colour data as opposed
+               if the on-disk values represent color data as opposed
                to real numbers.
                """,
                return_type="IMG",
-               return_doc=":class:`IMG` Object",
+               return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT`"),
@@ -345,7 +345,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
                              doc="Y location of first point"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="grid X axis rotation deg. CCW from reference X")
+                             doc="Grid X axis rotation deg. CCW from reference X")
                ]),
 
         Method('GetIPJ_IMG', module='geoengine.core', version='5.0.0',
@@ -445,14 +445,14 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="image"),
+                             doc="Image"),
                    Parameter('p2', type="ITR",
-                             doc="transform")
+                             doc="Transform")
                ]),
 
         Method('iIsColour_IMG', module='geoengine.core', version='6.0.1',
                availability=Availability.PUBLIC, 
-               doc="Is this a Geosoft colour grid?",
+               doc="Is this a Geosoft color grid?",
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
@@ -491,7 +491,7 @@ gx_methods = {
                return_doc="# of elements in the optimal KX direction",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`")
+                             doc="Source :class:`IMG`")
                ]),
 
         Method('Inherit_IMG', module='geoengine.core', version='5.0.0',
@@ -524,7 +524,7 @@ gx_methods = {
                    Parameter('p1', type="IMG",
                              doc=":class:`IMG` to make match source :class:`IMG`"),
                    Parameter('p2', type="IMG",
-                             doc="source :class:`IMG`")
+                             doc="Source :class:`IMG`")
                ]),
 
         Method('iNV_IMG', module='geoengine.core', version='5.0.0',
@@ -534,7 +534,7 @@ gx_methods = {
                return_doc="# of vectors in the optimal KX direction",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`")
+                             doc="Source :class:`IMG`")
                ]),
 
         Method('iNX_IMG', module='geoengine.core', version='5.0.0',
@@ -544,7 +544,7 @@ gx_methods = {
                return_doc="# of X elements.",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`")
+                             doc="Source :class:`IMG`")
                ]),
 
         Method('iNY_IMG', module='geoengine.core', version='5.0.0',
@@ -554,7 +554,7 @@ gx_methods = {
                return_doc="# of Y elements.",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`")
+                             doc="Source :class:`IMG`")
                ]),
 
         Method('iQuery_IMG', module='geoengine.core', version='5.0.5',
@@ -593,9 +593,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="image"),
+                             doc="Image"),
                    Parameter('p2', type="ITR",
-                             doc="transform")
+                             doc="Transform")
                ]),
 
         Method('iUserPreferenceToPlotAsColourShadedGrid_IMG', module='geoengine.core', version='7.3.0',
@@ -604,17 +604,17 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="""
                0 - User wishes to plot grids as regular (flat) grid
-               1 - User wishes to plot grids as colour-shaded grids
+               1 - User wishes to plot grids as color-shaded grids
                """),
 
         Method('LoadIMG_IMG', module='geoengine.core', version='5.0.6',
                availability=Availability.PUBLIC, 
                doc="Loads an :class:`IMG` into a master :class:`IMG`.",
-               notes="The Cell sizes and projections must be the same.",
+               notes="The cell sizes and projections must be the same.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="master :class:`IMG`"),
+                             doc="Master :class:`IMG`"),
                    Parameter('p2', type="IMG",
                              doc=":class:`IMG` to load")
                ]),
@@ -659,7 +659,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="Vector to Read"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="begining element # to read (0 is the first)"),
+                             doc="Begining element # to read (0 is the first)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# elements to read (0 for whole vector)"),
                    Parameter('p5', type="VV",
@@ -676,7 +676,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="X column"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start Y to read"),
+                             doc="Start Y to read"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# Y to read (0 for whole vector)"),
                    Parameter('p5', type="VV")
@@ -692,7 +692,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="Y row"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start X to read"),
+                             doc="Start X to read"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# X to read (0 for whole vector)"),
                    Parameter('p5', type="VV")
@@ -704,7 +704,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="grid name")
+                             doc="Grid name")
                ]),
 
         Method('Relocate_IMG', module='geoengine.core', version='5.0.0',
@@ -713,15 +713,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="image to relocate"),
+                             doc="Image to relocate"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="area X minimum"),
+                             doc="Area X minimum"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="area Y minimum"),
+                             doc="Area Y minimum"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="area X maximum"),
+                             doc="Area X maximum"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="area Y maximum"),
+                             doc="Area Y maximum"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`IMG_RELOCATE`")
                ]),
@@ -736,9 +736,9 @@ gx_methods = {
                    Parameter('p2', type="WA",
                              doc="Text file to write to"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="recalc statistics (0 - no; 1 - yes)"),
+                             doc="Recalc statistics (0 - no; 1 - yes)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="number of decimals to put in results"),
+                             doc="Number of decimals to put in results"),
                    Parameter('p5', type=Type.STRING,
                              doc="Title for report")
                ]),
@@ -757,9 +757,9 @@ gx_methods = {
                    Parameter('p2', type="WA",
                              doc="Text file to write to"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="recalc statistics (0 - no; 1 - yes)"),
+                             doc="Recalc statistics (0 - no; 1 - yes)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="number of decimals to put in results"),
+                             doc="Number of decimals to put in results"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Write header line (0 - no; 1 - yes)?")
                ]),
@@ -771,7 +771,7 @@ gx_methods = {
                return_doc="Grid value",
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`"),
+                             doc="Source :class:`IMG`"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X location in the grid projection"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -822,7 +822,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y location of first point"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="grid X axis rotation deg. CCW from reference X")
+                             doc="Grid X axis rotation deg. CCW from reference X")
                ]),
 
         Method('SetIPJ_IMG', module='geoengine.core', version='5.0.0',
@@ -835,7 +835,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`"),
+                             doc="Source :class:`IMG`"),
                    Parameter('p2', type="IPJ",
                              doc="Projection")
                ]),
@@ -846,7 +846,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="IMG",
-                             doc="source :class:`IMG`"),
+                             doc="Source :class:`IMG`"),
                    Parameter('p2', type="META",
                              doc="Metadata to add to the grid")
                ]),
@@ -879,7 +879,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="grid name")
+                             doc="Grid name")
                ]),
 
         Method('WriteV_IMG', module='geoengine.core', version='5.0.0',
@@ -890,9 +890,9 @@ gx_methods = {
                    Parameter('p1', type="IMG",
                              doc=":class:`IMG` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="vector to write"),
+                             doc="Vector to write"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="begining element to write (0 is the first)"),
+                             doc="Begining element to write (0 is the first)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# elements to write (0 for whole vector)"),
                    Parameter('p5', type="VV",
@@ -909,7 +909,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="X column"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start Y to write"),
+                             doc="Start Y to write"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# Y to write (0 for whole vector)"),
                    Parameter('p5', type="VV")
@@ -925,7 +925,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="Y row"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start X to write"),
+                             doc="Start X to write"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# X write (0 for whole vector)"),
                    Parameter('p5', type="VV")

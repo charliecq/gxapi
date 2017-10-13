@@ -30,9 +30,9 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc=":class:`MAPL` file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="map base reference name"),
+                             doc="Map base reference name"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start line number in file (0 is first)")
+                             doc="Start line number in file (0 is first)")
                ]),
 
         Method('CreateREG_MAPL', module='geoengine.map', version='5.0.0',
@@ -49,9 +49,9 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc=":class:`MAPL` file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="map base reference name"),
+                             doc="Map base reference name"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="start line number in file (0 is first)"),
+                             doc="Start line number in file (0 is first)"),
                    Parameter('p4', type="REG")
                ]),
 

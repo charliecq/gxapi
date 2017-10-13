@@ -313,9 +313,9 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="Column"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="string in which to place element"),
+                             doc="String in which to place element"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum length of the string")
+                             doc="Maximum length of the string")
                ]),
 
         Method('iLen_VA', module='geoengine.core', version='5.0.0',
@@ -480,7 +480,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="Column"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetLn_VA', module='geoengine.core', version='5.0.0',
@@ -494,7 +494,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VA"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="length")
+                             doc="Length")
                ]),
 
         Method('SetReal_VA', module='geoengine.core', version='5.0.0',
@@ -514,7 +514,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="Column"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetString_VA', module='geoengine.core', version='5.0.0',
@@ -534,7 +534,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="Column"),
                    Parameter('p4', type=Type.STRING,
-                             doc="string to set")
+                             doc="String to set")
                ]),
 
         Method('SetVV_VA', module='geoengine.core', version='5.0.0',
@@ -561,9 +561,9 @@ gx_methods = {
                    Parameter('p1', type="VA",
                              doc=":class:`VA` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="base value"),
+                             doc="Base value"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="mult value")
+                             doc="Mult value")
                ]),
 
         Method('Window_VA', module='geoengine.core', version='5.0.0',
@@ -580,9 +580,9 @@ gx_methods = {
                    Parameter('p1', type="VA",
                              doc=":class:`VA` to window"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="first element in the window"),
+                             doc="First element in the window"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="number of elements in the window"),
+                             doc="Number of elements in the window"),
                    Parameter('p4', type="VV",
                              doc=":class:`VV` in which to place results")
                ]),
@@ -601,9 +601,9 @@ gx_methods = {
                    Parameter('p1', type="VA",
                              doc=":class:`VA` to window"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="start point (from 0.0)"),
+                             doc="Start point (from 0.0)"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="end point (< :class:`VA` elements - 1.0)"),
+                             doc="End point (< :class:`VA` elements - 1.0)"),
                    Parameter('p4', type="VV",
                              doc=":class:`VV` in which to place results")
                ]),
@@ -628,9 +628,9 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="If set to 1, subtract single values in the following :class:`VV` from every array row item before testing (e.g. an elevation value)"),
                    Parameter('p4', type="VV",
-                             doc="values to subtract from each row before doing the comparison test (length equal to the length of the :class:`VA`). Can be VV_NULL (-1) if above subtraction parameter is zero"),
+                             doc="Values to subtract from each row before doing the comparison test (length equal to the length of the :class:`VA`). Can be VV_NULL (-1) if above subtraction parameter is zero"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="comparison tolerance - set to zero or dummy for exact match")
+                             doc="Comparison tolerance - set to zero or dummy for exact match")
                ]),
 
         Method('iCheckForRepeating2_VA', module='geoengine.core', version='8.2.0',
@@ -654,13 +654,13 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="If set to 1, subtract single values in the following :class:`VV` from every array row item before testing (e.g. an elevation value)"),
                    Parameter('p4', type="VV",
-                             doc="values to subtract from each row before doing the comparison test (length equal to the length of the :class:`VA`). Can be VV_NULL (-1) if above subtraction parameter is zero"),
+                             doc="Values to subtract from each row before doing the comparison test (length equal to the length of the :class:`VA`). Can be VV_NULL (-1) if above subtraction parameter is zero"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="comparison tolerance - set to zero or dummy for exact match"),
+                             doc="Comparison tolerance - set to zero or dummy for exact match"),
                    Parameter('p6', type=Type.INT32_T, is_ref=True,
-                             doc="row index of first mismatch"),
+                             doc="Row index of first mismatch"),
                    Parameter('p7', type=Type.INT32_T, is_ref=True,
-                             doc="column index of first mismatch")
+                             doc="Column index of first mismatch")
                ])
     ]
 }

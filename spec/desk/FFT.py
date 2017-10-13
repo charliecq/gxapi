@@ -14,13 +14,13 @@ gx_defines = [
            doc="Detrending option",
            constants=[
                Constant('FFT_DETREND_NONE', value='0', type=Type.INT32_T,
-                        doc="no trend remove"),
+                        doc="No trend remove"),
                Constant('FFT_DETREND_ENDS', value='1', type=Type.INT32_T,
-                        doc="detrend order 1 using only two end points"),
+                        doc="Detrend order 1 using only two end points"),
                Constant('FFT_DETREND_ALL', value='2', type=Type.INT32_T,
-                        doc="detrend order 1 using all data points"),
+                        doc="Detrend order 1 using all data points"),
                Constant('FFT_DETREND_MEAN', value='3', type=Type.INT32_T,
-                        doc="remove mean value")
+                        doc="Remove mean value")
            ])]
 
 
@@ -162,7 +162,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="minimum expansion %")
+                             doc="Minimum expansion %")
                ]),
 
         Method('CreateRef_FFT', module='geogxx', version='5.0.0',
@@ -206,7 +206,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="minimum expansion %, should be the same as in :func:`CreateEx_FFT`() call"),
+                             doc="Minimum expansion %, should be the same as in :func:`CreateEx_FFT`() call"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="DC level multiple")
                ]),
@@ -240,9 +240,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="FFT"),
                    Parameter('p2', type="VV",
-                             doc="real component"),
+                             doc="Real component"),
                    Parameter('p3', type="VV",
-                             doc="imaginary component")
+                             doc="Imaginary component")
                ]),
 
         Method('HDrv_FFT', module='geogxx', version='5.0.0',
@@ -357,9 +357,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="FFT"),
                    Parameter('p2', type="VV",
-                             doc="real component"),
+                             doc="Real component"),
                    Parameter('p3', type="VV",
-                             doc="imaginary component")
+                             doc="Imaginary component")
                ]),
 
         Method('Spectrum_FFT', module='geogxx', version='5.0.0',

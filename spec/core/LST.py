@@ -53,7 +53,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Name of the channel, line or blob symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="symbol handle")
+                             doc="Symbol handle")
                ]),
 
         Method('AddUniqueItem_LST', module='geoengine.core', version='5.0.0',
@@ -259,7 +259,7 @@ gx_methods = {
                              doc="Buffer to Place Symbol name into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size of the buffer"),
-                   Parameter('p5', type="DB_SYMB", is_ref=True,
+                   Parameter('p5', type="var DB_SYMB", is_ref=True,
                              doc="Symbol handle")
                ]),
 
@@ -334,7 +334,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get an integer item.",
                return_type=Type.INT32_T,
-               return_doc="integer, :def_val:`iDUMMY` if conversion fails or string is empty.",
+               return_doc="Integer, :def_val:`iDUMMY` if conversion fails or string is empty.",
                parameters = [
                    Parameter('p1', type="LST",
                              doc="List object"),
@@ -389,9 +389,9 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="The CSV file"),
                    Parameter('p3', type=Type.STRING,
-                             doc="column label for the item name"),
+                             doc="Column label for the item name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="column label for the item value")
+                             doc="Column label for the item value")
                ]),
 
         Method('LoadFile_LST', module='geoengine.core', version='6.2.0',
@@ -421,7 +421,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the file")
+                             doc="Name of the file")
                ]),
 
         Method('Resource_LST', module='geoengine.core', version='5.0.0',
@@ -443,7 +443,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get a real item.",
                return_type=Type.DOUBLE,
-               return_doc="real, :def_val:`rDUMMY` if conversion fails or string is empty.",
+               return_doc="Real, :def_val:`rDUMMY` if conversion fails or string is empty.",
                parameters = [
                    Parameter('p1', type="LST",
                              doc="List object"),
@@ -476,7 +476,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the file")
+                             doc="Name of the file")
                ]),
 
         Method('SelectCSVStringItems_LST', module='geoengine.core', version='5.1.8',
@@ -560,7 +560,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the file")
+                             doc="Name of the file")
                ]),
 
         Method('iLoadProj_LST', module='geoengine.core', version='5.0.0',
@@ -582,7 +582,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the projection datum file (*.DTM file)")
+                             doc="Name of the projection datum file (*.DTM file)")
                ]),
 
         Method('iLoadProjCodes_LST', module='geoengine.core', version='5.0.0',
@@ -604,7 +604,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the projection datum file (*.DTM file)")
+                             doc="Name of the projection datum file (*.DTM file)")
                ]),
 
         Method('MakeREG_LST', module='geoengine.core', version='5.0.0',
@@ -616,7 +616,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name in the reg"),
+                             doc="Group name in the reg"),
                    Parameter('p3', type="REG")
                ])
     ]

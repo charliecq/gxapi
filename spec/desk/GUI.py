@@ -27,10 +27,10 @@ gx_class = Class('GUI',
 
 gx_defines = [
     Define('AOI_RETURN_STATE',
-           doc="AOI Query Return State",
+           doc="AOI query return state",
            constants=[
                Constant('AOI_RETURN_CANCEL', value='-1', type=Type.INT32_T,
-                        doc="User Canceled"),
+                        doc="User canceled"),
                Constant('AOI_RETURN_NODEFINE', value='0', type=Type.INT32_T,
                         doc="User chose to continue with no AOI defined or available"),
                Constant('AOI_RETURN_DEFINE', value='1', type=Type.INT32_T,
@@ -72,10 +72,10 @@ gx_defines = [
            ]),
 
     Define('FILE_FILTER',
-           doc="File Filters",
+           doc="File filters",
            constants=[
                Constant('FILE_FILTER_ALL', value='1', type=Type.INT32_T,
-                        doc="All Files              *.*                  ANYWHERE"),
+                        doc="All files              *.*                  ANYWHERE"),
                Constant('FILE_FILTER_GDB', value='2', type=Type.INT32_T,
                         doc="Geosoft Database       *.gdb                LOCAL"),
                Constant('FILE_FILTER_GX', value='3', type=Type.INT32_T,
@@ -83,21 +83,21 @@ gx_defines = [
                Constant('FILE_FILTER_GS', value='4', type=Type.INT32_T,
                         doc="Geosoft Script         *.gs                 BOTH"),
                Constant('FILE_FILTER_INI', value='5', type=Type.INT32_T,
-                        doc="Parameter Files        *.ini                :class:`GEOSOFT`"),
+                        doc="Parameter files        *.ini                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_OMN', value='6', type=Type.INT32_T,
-                        doc="Oasis Menu Files       *.omn                :class:`GEOSOFT`"),
+                        doc="Oasis Menu files       *.omn                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_VU', value='7', type=Type.INT32_T,
-                        doc="Oasis View Files       *.vu                 LOCAL"),
+                        doc="Oasis View files       *.vu                 LOCAL"),
                Constant('FILE_FILTER_MAP', value='8', type=Type.INT32_T,
-                        doc="Oasis Map Files        *.map                LOCAL"),
+                        doc="Oasis Map files        *.map                LOCAL"),
                Constant('FILE_FILTER_PRJ', value='9', type=Type.INT32_T,
-                        doc="Projection File        *.prj                LOCAL"),
+                        doc="Projection file        *.prj                LOCAL"),
                Constant('FILE_FILTER_CON', value='10', type=Type.INT32_T,
-                        doc="Configuration File     *.con                LOCAL"),
+                        doc="Configuration file     *.con                LOCAL"),
                Constant('FILE_FILTER_MNU', value='11', type=Type.INT32_T,
-                        doc="Sushi MNU Files        *.mnu                :class:`GEOSOFT`"),
+                        doc="Sushi MNU files        *.mnu                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_PDF', value='12', type=Type.INT32_T,
-                        doc="PDF Files              *.pdf                :class:`GEOSOFT`"),
+                        doc="PDF files              *.pdf                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_PLT', value='13', type=Type.INT32_T,
                         doc="Geosoft PLT files      *.plt                LOCAL"),
                Constant('FILE_FILTER_GWS', value='14', type=Type.INT32_T,
@@ -105,7 +105,7 @@ gx_defines = [
                Constant('FILE_FILTER_AGG', value='15', type=Type.INT32_T,
                         doc="Aggregate              *.agg                LOCAL"),
                Constant('FILE_FILTER_TBL', value='16', type=Type.INT32_T,
-                        doc="Color Table            *.tbl                :class:`GEOSOFT`"),
+                        doc="Color table            *.tbl                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_ZON', value='17', type=Type.INT32_T,
                         doc="Zone                   *.zon                LOCAL"),
                Constant('FILE_FILTER_ITR', value='18', type=Type.INT32_T,
@@ -121,29 +121,29 @@ gx_defines = [
                Constant('FILE_FILTER_LUT', value='23', type=Type.INT32_T,
                         doc="ER Mapper LUT          *.lut                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_PNG', value='24', type=Type.INT32_T,
-                        doc="PNG Files              *.png                LOCAL"),
+                        doc="PNG files              *.png                LOCAL"),
                Constant('FILE_FILTER_JPG', value='25', type=Type.INT32_T,
-                        doc="JPG Files              *.jpg                LOCAL"),
+                        doc="JPG files              *.jpg                LOCAL"),
                Constant('FILE_FILTER_PCX', value='26', type=Type.INT32_T,
-                        doc="PCX Files              *.pcx                LOCAL"),
+                        doc="PCX files              *.pcx                LOCAL"),
                Constant('FILE_FILTER_GIF', value='27', type=Type.INT32_T,
-                        doc="GIF Files              *.gif                LOCAL"),
+                        doc="GIF files              *.gif                LOCAL"),
                Constant('FILE_FILTER_GRD', value='28', type=Type.INT32_T,
-                        doc="GRD Files              *.grd                LOCAL"),
+                        doc="GRD files              *.grd                LOCAL"),
                Constant('FILE_FILTER_ERS', value='29', type=Type.INT32_T,
-                        doc="ERS Files              *.ers                LOCAL"),
+                        doc="ERS files              *.ers                LOCAL"),
                Constant('FILE_FILTER_EPS', value='30', type=Type.INT32_T,
-                        doc="EPS Files              *.eps                LOCAL"),
+                        doc="EPS files              *.eps                LOCAL"),
                Constant('FILE_FILTER_SHP', value='31', type=Type.INT32_T,
-                        doc="ArcView Shape Files    *.shp                LOCAL"),
+                        doc="ArcView Shape files    *.shp                LOCAL"),
                Constant('FILE_FILTER_CGM', value='32', type=Type.INT32_T,
-                        doc="CGM Files              *.cgm                LOCAL"),
+                        doc="CGM files              *.cgm                LOCAL"),
                Constant('FILE_FILTER_TAB', value='33', type=Type.INT32_T,
-                        doc="MapInfo Tab Files      *.tab                LOCAL"),
+                        doc="MapInfo Tab files      *.tab                LOCAL"),
                Constant('FILE_FILTER_COMPS', value='34', type=Type.INT32_T,
                         doc="Software Components    Components           LOCAL"),
                Constant('FILE_FILTER_CSV', value='35', type=Type.INT32_T,
-                        doc="MapInfo Tab Files      *.tab                LOCAL"),
+                        doc="MapInfo Tab files      *.tab                LOCAL"),
                Constant('FILE_FILTER_GPF', value='36', type=Type.INT32_T,
                         doc="Geosoft Project        *.gpf                LOCAL"),
                Constant('FILE_FILTER_PLY', value='37', type=Type.INT32_T,
@@ -153,37 +153,37 @@ gx_defines = [
                Constant('FILE_FILTER_TTM', value='39', type=Type.INT32_T,
                         doc="Triplot templates      *.ttm                LOCAL"),
                Constant('FILE_FILTER_XYZ', value='40', type=Type.INT32_T,
-                        doc="Geosoft XYZ Files      *.xyz                LOCAL"),
+                        doc="Geosoft XYZ files      *.xyz                LOCAL"),
                Constant('FILE_FILTER_BAR', value='41', type=Type.INT32_T,
-                        doc="Geosoft Bar File       *.geobar             LOCAL"),
+                        doc="Geosoft Bar file       *.geobar             LOCAL"),
                Constant('FILE_FILTER_GEOSOFT_LICENSE', value='42', type=Type.INT32_T,
-                        doc="Geosoft License Files   *.geosoft_license   LOCAL"),
+                        doc="Geosoft License files   *.geosoft_license   LOCAL"),
                Constant('FILE_FILTER_XML', value='43', type=Type.INT32_T,
-                        doc="XML Files              *.xml                LOCAL"),
+                        doc="XML files              *.xml                LOCAL"),
                Constant('FILE_FILTER_GXNET', value='44', type=Type.INT32_T,
-                        doc="GX.NET Files           *.dll                :class:`GEOSOFT`"),
+                        doc="GX.NET files           *.dll                :class:`GEOSOFT`"),
                Constant('FILE_FILTER_ECW', value='45', type=Type.INT32_T,
-                        doc="ECW Files              *.ecw                LOCAL"),
+                        doc="ECW files              *.ecw                LOCAL"),
                Constant('FILE_FILTER_J2K', value='46', type=Type.INT32_T,
-                        doc="J2K JPEG 2000 Files    *.j2k                LOCAL"),
+                        doc="J2K JPEG 2000 files    *.j2k                LOCAL"),
                Constant('FILE_FILTER_JP2', value='47', type=Type.INT32_T,
-                        doc="JP2 JPEG 2000 Files    *.jp2                LOCAL"),
+                        doc="JP2 JPEG 2000 files    *.jp2                LOCAL"),
                Constant('FILE_FILTER_SEL', value='48', type=Type.INT32_T,
                         doc="acQuire parameters     *.sel                LOCAL"),
                Constant('FILE_FILTER_SVG', value='49', type=Type.INT32_T,
-                        doc="SVG File               *.svg                LOCAL"),
+                        doc="SVG file               *.svg                LOCAL"),
                Constant('FILE_FILTER_SVZ', value='50', type=Type.INT32_T,
-                        doc="SVG Compressed File    *.svz                LOCAL"),
+                        doc="SVG Compressed file    *.svz                LOCAL"),
                Constant('FILE_FILTER_WRP', value='51', type=Type.INT32_T,
-                        doc="Warp File              *.wrp                LOCAL"),
+                        doc="Warp file              *.wrp                LOCAL"),
                Constant('FILE_FILTER_MAPPLOT', value='52', type=Type.INT32_T,
-                        doc="MAPPLOT File           *.con                LOCAL"),
+                        doc="MAPPLOT file           *.con                LOCAL"),
                Constant('FILE_FILTER_DTM', value='53', type=Type.INT32_T,
-                        doc="Surpac DTM Files       *.dtm                LOCAL"),
+                        doc="Surpac DTM files       *.dtm                LOCAL"),
                Constant('FILE_FILTER_VOXEL', value='54', type=Type.INT32_T,
                         doc="Geosoft Voxel          *.geosoft_voxel      LOCAL"),
                Constant('FILE_FILTER_MAPTEMPLATE', value='55', type=Type.INT32_T,
-                        doc="Map Template File      *.geosoft_maptemplate      LOCAL"),
+                        doc="Map Template file      *.geosoft_maptemplate      LOCAL"),
                Constant('FILE_FILTER_ACTION', value='56', type=Type.INT32_T,
                         doc="Action Scripts         *.action             LOCAL"),
                Constant('FILE_FILTER_DM', value='57', type=Type.INT32_T,
@@ -201,19 +201,19 @@ gx_defines = [
                Constant('FILE_FILTER_TARGET_3D', value='63', type=Type.INT32_T,
                         doc="Target parameter ini file for 3D plots   *.in3    LOCAL"),
                Constant('FILE_FILTER_ARGIS_LYR', value='64', type=Type.INT32_T,
-                        doc="ArcGIS Layer Files			 *.lyr    LOCAL"),
+                        doc="ArcGIS Layer files			 *.lyr    LOCAL"),
                Constant('FILE_FILTER_ARGIS_MXD', value='65', type=Type.INT32_T,
-                        doc="ArcGIS Map Document Files	 *.mxd    LOCAL"),
+                        doc="ArcGIS Map Document files	 *.mxd    LOCAL"),
                Constant('FILE_FILTER_GOCAD_TS', value='66', type=Type.INT32_T,
-                        doc="GOCAD TSurf Files			 *.ts     LOCAL"),
+                        doc="GOCAD TSurf files			 *.ts     LOCAL"),
                Constant('FILE_FILTER_LST', value='67', type=Type.INT32_T,
                         doc="Geosoft list of items: names, values  *.lst     LOCAL"),
                Constant('FILE_FILTER_ECS', value='68', type=Type.INT32_T,
-                        doc="GM-:class:`SYS` Extern Coord Sys *.ecs               LOCAL"),
+                        doc="GM-:class:`SYS` external coordinate system     *.ecs     LOCAL"),
                Constant('FILE_FILTER_TARGET_FENCE', value='69', type=Type.INT32_T,
                         doc="Target parameter ini file for fence sections   *.ins    LOCAL"),
                Constant('FILE_FILTER_GMS3D', value='70', type=Type.INT32_T,
-                        doc=":class:`GMSYS` 3D Model *.geosoft_gms3d LOCAL"),
+                        doc="GM-:class:`SYS` 3D model   *.geosoft_gmsys3d    LOCAL"),
                Constant('FILE_FILTER_BT2', value='71', type=Type.INT32_T,
                         doc="GEMCOM BT2 *.bt2 LOCAL"),
                Constant('FILE_FILTER_BPR', value='72', type=Type.INT32_T,
@@ -221,9 +221,9 @@ gx_defines = [
                Constant('FILE_FILTER_BPR2', value='73', type=Type.INT32_T,
                         doc="GEMCOM BPR2 *.bpr2 LOCAL"),
                Constant('FILE_FILTER_XLS', value='74', type=Type.INT32_T,
-                        doc="Excel 97-2003 Workbook		*.xls					LOCAL"),
+                        doc="Excel 97-2003 workbook		*.xls					LOCAL"),
                Constant('FILE_FILTER_XLSX', value='75', type=Type.INT32_T,
-                        doc="Excel 2007 Workbook 			*.xlsx				LOCAL"),
+                        doc="Excel 2007 workbook 			*.xlsx				LOCAL"),
                Constant('FILE_FILTER_MDB', value='76', type=Type.INT32_T,
                         doc="Access 97-2003  				*.mdb 				LOCAL"),
                Constant('FILE_FILTER_ACCDB', value='77', type=Type.INT32_T,
@@ -255,7 +255,7 @@ gx_defines = [
                Constant('FILE_FILTER_EXP', value='90', type=Type.INT32_T,
                         doc="Math expression files		   *.exp  			LOCAL"),
                Constant('FILE_FILTER_SEGY', value='91', type=Type.INT32_T,
-                        doc="SEGY files							*.sgy  			LOCAL"),
+                        doc="SEG-Y files							*.sgy  			LOCAL"),
                Constant('FILE_FILTER_DAARC500', value='92', type=Type.INT32_T,
                         doc="DAARC500 files						xYYMMDD 		   LOCAL"),
                Constant('FILE_FILTER_TXT', value='93', type=Type.INT32_T,
@@ -263,15 +263,15 @@ gx_defines = [
                Constant('FILE_FILTER_VOXEL_INVERSION', value='94', type=Type.INT32_T,
                         doc="Voxi									*.geosoft_voxi	LOCAL"),
                Constant('FILE_FILTER_GMS', value='95', type=Type.INT32_T,
-                        doc="GM-:class:`SYS`									*.gms	LOCAL"),
+                        doc="GM-:class:`SYS` Profile model file		*.gms	LOCAL"),
                Constant('FILE_FILTER_FLT3D', value='96', type=Type.INT32_T,
-                        doc="Geosoft 3D filter Files			*.flt3d			LOCAL"),
+                        doc="Geosoft 3D filter files			*.flt3d			LOCAL"),
                Constant('FILE_FILTER_RESOURCE_PACK', value='97', type=Type.INT32_T,
                         doc="Geosoft Resource Update Packages *.geosoft_resource_pack LOCAL"),
                Constant('FILE_FILTER_GEOSTRING', value='98', type=Type.INT32_T,
-                        doc="Geostring Files *.geosoft_string LOCAL"),
+                        doc="Geostring files *.geosoft_string LOCAL"),
                Constant('FILE_FILTER_GEOSURFACE', value='99', type=Type.INT32_T,
-                        doc="Geosurface Files *.geosoft_surface LOCAL"),
+                        doc="Geosurface files *.geosoft_surface LOCAL"),
                Constant('FILE_FILTER_GEOSOFT3DV', value='100', type=Type.INT32_T,
                         doc="Geosoft :class:`3DV` *.geosoft_3dv LOCAL"),
                Constant('FILE_FILTER_VECTORVOXEL', value='101', type=Type.INT32_T,
@@ -281,21 +281,21 @@ gx_defines = [
                Constant('FILE_FILTER_XYZ_TEMPLATE_O0', value='103', type=Type.INT32_T,
                         doc="XYZ Export Templates *.o0 LOCAL"),
                Constant('FILE_FILTER_GMS2D', value='104', type=Type.INT32_T,
-                        doc=":class:`GMSYS` 2D Model *.geosoft_gms2d LOCAL"),
+                        doc="GM-:class:`SYS` Profile model    *.geosoft_gmsys2d   LOCAL"),
                Constant('FILE_FILTER_IP_DATABASE_TEMPLATE', value='105', type=Type.INT32_T,
                         doc=":class:`IP` Database Template *.geosoft_ipdatabasetemplate LOCAL"),
                Constant('FILE_FILTER_GEOSOFT_RESOURCE_MODULE', value='106', type=Type.INT32_T,
                         doc="Geosoft Resource Module *.geosoft_resources  LOCAL"),
                Constant('FILE_FILTER_VT', value='107', type=Type.INT32_T,
-                        doc="Shell VT Files     *.vt        LOCAL"),
+                        doc="Shell VT files     *.vt        LOCAL"),
                Constant('FILE_FILTER_INT', value='108', type=Type.INT32_T,
-                        doc="Shell INT Files     *.int      LOCAL"),
+                        doc="Shell INT files     *.int      LOCAL"),
                Constant('FILE_FILTER_SGT', value='109', type=Type.INT32_T,
-                        doc="Shell SGT Files     *.sgt      LOCAL"),
+                        doc="Shell SGT files     *.sgt      LOCAL"),
                Constant('FILE_FILTER_IMGVIEW', value='110', type=Type.INT32_T,
-                        doc="Image Viewer Files  *.imgview  LOCAL"),
+                        doc="Image Viewer files  *.imgview  LOCAL"),
                Constant('FILE_FILTER_ZIP', value='111', type=Type.INT32_T,
-                        doc="Zip Files  *.zip  LOCAL"),
+                        doc="Zip files  *.zip  LOCAL"),
                Constant('FILE_FILTER_GPS_TABLE', value='112', type=Type.INT32_T,
                         doc="GPS Table *.tbl :class:`GEOSOFT`"),
                Constant('FILE_FILTER_VULCAN_TRIANGULATION', value='113', type=Type.INT32_T,
@@ -303,13 +303,13 @@ gx_defines = [
                Constant('FILE_FILTER_VULCAN_BLOCK_MODEL', value='114', type=Type.INT32_T,
                         doc="Maptek Vulcan block model file       *.bmf                        LOCAL"),
                Constant('FILE_FILTER_PRJVIEW', value='115', type=Type.INT32_T,
-                        doc="Layout Files  *.prjview  LOCAL"),
+                        doc="Layout files  *.prjview  LOCAL"),
                Constant('FILE_FILTER_LEAPFROG_MODEL', value='116', type=Type.INT32_T,
                         doc="Leapfrog model files  *.lfm  LOCAL"),
                Constant('FILE_FILTER_IOGAS', value='117', type=Type.INT32_T,
                         doc="Reflex ioGAS files  *.gas  LOCAL"),
                Constant('FILE_FILTER_ASEG_ESF', value='118', type=Type.INT32_T,
-                        doc="ASEG ESF File  *.esf  LOCAL"),
+                        doc="ASEG ESF file  *.esf  LOCAL"),
                Constant('FILE_FILTER_LACOSTE_DAT', value='119', type=Type.INT32_T,
                         doc="Micro-g LaCoste MGS-6 gravity files  *.:class:`DAT`  LOCAL"),
                Constant('FILE_FILTER_VAR', value='120', type=Type.INT32_T,
@@ -451,13 +451,13 @@ gx_methods = {
 
         Method('iGetWindowState_GUI', module='None', version='9.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Retrieve the current state of the oasis Montaj window",
+               doc="Retrieve the current state of the Oasis montaj window",
                return_type=Type.INT32_T,
                return_doc=":def:`WINDOW_STATE`"),
 
         Method('SetWindowState_GUI', module='None', version='9.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Changes the state of the oasis Montaj window",
+               doc="Changes the state of the Oasis montaj window",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
@@ -466,7 +466,7 @@ gx_methods = {
 
         Method('GetWindowPosition_GUI', module='None', version='9.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Get the oasis Montaj window's position state",
+               doc="Get the Oasis montaj window's position state",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T, is_ref=True,
@@ -483,7 +483,7 @@ gx_methods = {
 
         Method('SetWindowPosition_GUI', module='None', version='9.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Get the oasis Montaj window's position and state",
+               doc="Get the Oasis montaj window's position and state",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
@@ -500,12 +500,12 @@ gx_methods = {
 
         Method('GetWindowArea_GUI', module='None', version='5.0.0',
                availability=Availability.LICENSED, is_obsolete=True, is_app=True, 
-               doc="Get the location of the oasis montaj window.",
+               doc="Get the location of the Oasis montaj window.",
                notes="""
                The Coordinates are pixels with 0,0 being the top
                left corner of the Screen.
                
-               if the max values are equal or less than the min values
+               if the max values are equal to or less than the min values
                the window will be mimimized. If any Min values are :def_val:`GS_S4MN`
                or any Max values are :def_val:`GS_S4MX`, the window is maximized.
                
@@ -525,7 +525,7 @@ gx_methods = {
 
         Method('GetClientWindowArea_GUI', module='None', version='9.0.0',
                availability=Availability.LICENSED, is_app=True, 
-               doc="Get the location of the oasis montaj client window.",
+               doc="Get the location of the Oasis montaj client window.",
                notes="""
                Returns the coordinates of the client window area (where MDI document windows are placed).
                The returned coordinates are 0,0 for the minimum X and Y and the window width
@@ -563,16 +563,16 @@ gx_methods = {
 
         Method('iColorForm_GUI', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Select a colour.",
+               doc="Select a color.",
                notes="""
-               Colour value is set on input, and new value returned.
-               If the input colour type is :def_val:`C_TRANSPARENT`, then the color
+               Color value is set on input, and new value returned.
+               If the input color type is :def_val:`C_TRANSPARENT`, then the color
                is set to white, if any other type is input the output is
                guaranteed to be of the same type.
                
                If the third flag is :def_val:`GS_TRUE` is used, then on exit, if white is
                selected, the user is prompted: 'Do you want white (Yes) or
-               "None" (No) ?' and the colour is converted as requested.
+               "None" (No) ?' and the color is converted as requested.
                If this is not the case, the :def_val:`C_TRANSPARENT` is converted
                to white (if "Ok" is selected) and no choice is offered.
                """,
@@ -583,7 +583,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.INT32_T, is_ref=True,
-                             doc="Colour (modified)"),
+                             doc="Color (modified)"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Ask about :def_val:`C_TRANSPARENT` if white is selected (1: yes, 0: no)?")
                ]),
@@ -677,9 +677,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="IPJ",
-                             doc="original grid :class:`IPJ` object"),
+                             doc="Original grid :class:`IPJ` object"),
                    Parameter('p2', type="IPJ",
-                             doc="source (target) grid :class:`IPJ` object. This is supplied so the modified orientation can be calculated and displayed."),
+                             doc="Source (target) grid :class:`IPJ` object. This is supplied so the modified orientation can be calculated and displayed."),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Editable :class:`IPJ` (0:No, 1:Yes)"),
                    Parameter('p4', type=Type.INT32_T,
@@ -723,9 +723,9 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="File Name"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="database type (returned)"),
+                             doc="Database type (returned)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of type string")
+                             doc="Size of type string")
                ]),
 
         Method('iDatamineType_GUI', module='None', version='5.0.0',
@@ -828,8 +828,8 @@ gx_methods = {
 
         Method('iGCSDatumWarningSHP_GUI', module='geoguilib', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="Launch the GCS Datum Warning dialogue for :class:`SHP` files.",
-               notes="Runs the GCS Warning dialogue with one data source",
+               doc="Launch the GCS Datum Warning dialog for :class:`SHP` files.",
+               notes="Runs the GCS Warning dialog with one data source",
                return_type=Type.INT32_T,
                return_doc="""
                0 - Ok
@@ -844,8 +844,8 @@ gx_methods = {
 
         Method('iGCSDatumWarningSHPDBEx_GUI', module='geoguilib', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="Launch the GCS Datum Warning dialogue for :class:`SHP` files (Database).",
-               notes="Runs the GCS Warning dialogue with multiple data sources (Database)",
+               doc="Launch the GCS Datum Warning dialog for :class:`SHP` files (Database).",
+               notes="Runs the GCS Warning dialog with multiple data sources (Database)",
                return_type=Type.INT32_T,
                return_doc="""
                0 - Ok
@@ -863,8 +863,8 @@ gx_methods = {
 
         Method('iGCSDatumWarningSHPEx_GUI', module='geoguilib', version='7.1.0',
                availability=Availability.PUBLIC, 
-               doc="Launch the GCS Datum Warning dialogue for :class:`SHP` files.",
-               notes="Runs the GCS Warning dialogue with multiple data sources",
+               doc="Launch the GCS Datum Warning dialog for :class:`SHP` files.",
+               notes="Runs the GCS Warning dialog with multiple data sources",
                return_type=Type.INT32_T,
                return_doc="""
                0 - Ok
@@ -1053,7 +1053,7 @@ gx_methods = {
                The statistics object is required in order to determine
                data ranges, percentiles, etc. Create it using
                :func:`CreateExact_ST`, or be sure to enable histogram statistics.
-               The colour transform file name is used as the default when the save
+               The color transform file name is used as the default when the save
                button is pushed, and is updated both after the load and save buttons
                are pushed by the value input or selected by the user.
                """,
@@ -1072,7 +1072,7 @@ gx_methods = {
                    Parameter('p4', type=Type.INT32_T,
                              doc="Show file load/save buttons (TRUE or FALSE)?"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
-                             doc="Default colour transform file name"),
+                             doc="Default color transform file name"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for the file name")
                ]),
@@ -1091,8 +1091,8 @@ gx_methods = {
                unless that data is already given in percent.
                
                If the file name is defined on input, the initial :class:`ITR` will be loaded from it.
-               If it is left blank, a default 5-colour transform with
-               The colour transform file name is used as the default when the save
+               If it is left blank, a default 5-color transform with
+               The color transform file name is used as the default when the save
                button is pushed, and is updated both after the load and save buttons
                are pushed by the value input or selected by the user.
                """,
@@ -1103,7 +1103,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="Default colour transform file name"),
+                             doc="Default color transform file name"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for the file name"),
                    Parameter('p3', type="ITR",
@@ -1232,7 +1232,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="External database connection string (Blank for OLEDB Wizard)"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="template to make (if left blank, the created template name is returned)"),
+                             doc="Template to make (if left blank, the created template name is returned)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the template name string"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
@@ -1262,7 +1262,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc='External database connection string  (e.g. "d:\\Personal\\test.mdb|Table" or "d:\\File\\test.gdb|TableX|FeatureClassY)"'),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="template to make (if left blank, the created template name is returned)"),
+                             doc="Template to make (if left blank, the created template name is returned)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the template name string"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
@@ -1299,13 +1299,13 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="connection string"),
+                             doc="Connection string"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of connection string returned"),
+                             doc="Size of connection string returned"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of template string returned"),
+                             doc="Size of template string returned"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
                              doc="Name of table"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
@@ -1324,13 +1324,13 @@ gx_methods = {
                return_doc="0-OK 1-Cancel",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="connection string"),
+                             doc="Connection string"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of connection string returned"),
+                             doc="Size of connection string returned"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of template string returned"),
+                             doc="Size of template string returned"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
                              doc="Name of table"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
@@ -1351,9 +1351,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make")
+                             doc="Template to make")
                ]),
 
         Method('iImportChemDatabase_GUI', module='None', version='5.0.0',
@@ -1366,9 +1366,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Name of table"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
@@ -1394,7 +1394,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="External database connection string (Blank for OLEDB Wizard)"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Name of table"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
@@ -1585,7 +1585,7 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING,
                              doc="External database connection string (Blank for OLEDB Wizard)"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Name of table"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
@@ -1700,13 +1700,13 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Connection string (returned)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of connection string"),
+                             doc="Size of connection string"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="File Usage (0 - ODBC drivers not queried, 1 - Directory containing tables, 2 - File containing tables)"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
                              doc="Table name of file (returned if plUsage==1)"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of table name")
+                             doc="Size of table name")
                ]),
 
         Method('IiSymbolForm_GUI', module='None', version='5.0.0',
@@ -1722,21 +1722,21 @@ gx_methods = {
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
                              doc="Symbol font file name"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="buffer size for symbol font face name"),
+                             doc="Buffer size for symbol font face name"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Geosoft font? :def:`GEO_BOOL`"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
-                             doc="weight :def:`MVIEW_FONT_WEIGHT`"),
+                             doc="Weight :def:`MVIEW_FONT_WEIGHT`"),
                    Parameter('p5', type=Type.INT32_T, is_ref=True,
-                             doc="symbol number"),
+                             doc="Symbol number"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="symbol size"),
+                             doc="Symbol size"),
                    Parameter('p7', type=Type.DOUBLE, is_ref=True,
-                             doc="symbol angle"),
+                             doc="Symbol angle"),
                    Parameter('p8', type=Type.INT32_T, is_ref=True,
-                             doc="edge colour"),
+                             doc="Edge color"),
                    Parameter('p9', type=Type.INT32_T, is_ref=True,
-                             doc="fill colour")
+                             doc="Fill color")
                ]),
 
         Method('iMetaDataTool_GUI', module='None', version='5.0.0',
@@ -1762,9 +1762,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`IMPCH_TYPE`")
                ]),
@@ -1775,9 +1775,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.STRING,
                              doc="Name of table"),
                    Parameter('p4', type=Type.INT32_T,
@@ -2073,7 +2073,7 @@ gx_methods = {
                    Parameter('p1', type="META",
                              doc="Meta object"),
                    Parameter('p2', type="META_TOKEN",
-                             doc="Root Token, :def_val:`H_META_INVALID_TOKEN` for root"),
+                             doc="Root token, :def_val:`H_META_INVALID_TOKEN` for root"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Display schema information ?")
                ]),
@@ -2094,33 +2094,33 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="HDC", is_val=True,
-                             doc="DC Handle"),
+                             doc="DC handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="left value of the render rect in Windows coordinates (bottom>top)"),
+                             doc="Left value of the render rect in Windows coordinates (bottom>top)"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="bottom value"),
+                             doc="Bottom value"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="right value"),
+                             doc="Right value"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="top value"),
+                             doc="Top value"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="pattern number"),
+                             doc="Pattern number"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="pattern Size,           // input :def_val:`GS_R8DM` to use default"),
+                             doc="Pattern size,           // input :def_val:`GS_R8DM` to use default"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="pattern Thick (0-100)   // input :def_val:`GS_S4DM` to use default"),
+                             doc="Pattern thick (0-100)   // input :def_val:`GS_S4DM` to use default"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="pattern Density,        // input :def_val:`GS_R8DM` to use default"),
+                             doc="Pattern density,        // input :def_val:`GS_R8DM` to use default"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc="pattern Pattern Color	  // input :def_val:`GS_S4DM` to use default"),
+                             doc="Pattern color	  // input :def_val:`GS_S4DM` to use default"),
                    Parameter('p11', type=Type.INT32_T,
-                             doc="pattern Background Color // input :def_val:`GS_S4DM` to use default; can be :def_val:`C_TRANSPARENT`"),
+                             doc="Pattern background color // input :def_val:`GS_S4DM` to use default; can be :def_val:`C_TRANSPARENT`"),
                    Parameter('p12', type=Type.INT32_T,
-                             doc="is this window enabled?"),
+                             doc="Is this window enabled?"),
                    Parameter('p13', type=Type.INT32_T,
-                             doc="is this a button?"),
+                             doc="Is this a button?"),
                    Parameter('p14', type=Type.INT32_T,
-                             doc="is this window selected?")
+                             doc="Is this window selected?")
                ]),
 
         Method('RenderLinePattern_GUI', module='None', version='8.1.0',
@@ -2132,27 +2132,27 @@ gx_methods = {
                    Parameter('p1', type="HDC", is_val=True,
                              doc="DC Handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="left value of the render rect in Windows coordinates (bottom>top)"),
+                             doc="Left value of the render rect in Windows coordinates (bottom>top)"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="bottom value"),
+                             doc="Bottom value"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="right value"),
+                             doc="Right value"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="top value"),
+                             doc="Top value"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="pattern number"),
+                             doc="Pattern number"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="pattern thickness"),
+                             doc="Pattern thickness"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="pattern pitch"),
+                             doc="Pattern pitch"),
                    Parameter('p9', type=Type.INT32_T,
-                             doc="pattern colour"),
+                             doc="Pattern color"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc="is this window enabled?"),
+                             doc="Is this window enabled?"),
                    Parameter('p11', type=Type.INT32_T,
-                             doc="is this a button?"),
+                             doc="Is this a button?"),
                    Parameter('p12', type=Type.INT32_T,
-                             doc="is this window selected?")
+                             doc="Is this window selected?")
                ]),
 
         Method('SetParentWND_GUI', module='None', version='5.0.0',
@@ -2196,7 +2196,7 @@ gx_methods = {
 
         Method('SetWindowArea_GUI', module='None', version='5.0.0',
                availability=Availability.LICENSED, is_obsolete=True, is_app=True, 
-               doc="Set the location of the oasis montaj window.",
+               doc="Set the location of the Oasis montaj window.",
                notes="""
                The Coordinates are pixels with 0,0 being the top
                left corner of the Screen.
@@ -2220,7 +2220,7 @@ gx_methods = {
 
         Method('ShowDirectHist_GUI', module='None', version='5.0.0',
                availability=Availability.LICENSED, is_app=True, is_gui=True, 
-               doc="Display Histogram of data directly",
+               doc="Display histogram of data directly",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
@@ -2269,7 +2269,7 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="Display GX.Net thematic voxel info :class:`GUI`.",
                notes="""
-               Displays the thematic voxel codes, colours, total volume for
+               Displays the thematic voxel codes, colors, total volume for
                each code, and number of valid items (cubes) for each code.
                This is a replacement for the numeric stats done on normal
                numerical voxel grids.
@@ -2296,7 +2296,7 @@ gx_methods = {
 
         Method('DefineDrillITR_GUI', module='None', version='5.0.0',
                availability=Availability.LICENSED, is_obsolete=True, is_app=True, 
-               doc="Define colour zones for gridded data.",
+               doc="Define color zones for gridded data.",
                notes="""
                The :class:`ITR` for Wholeplot gridded data is now defined inside the tabbed
                dialog for the Plan or Section maps. Calls to this function now bring
@@ -2415,9 +2415,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Name of table"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
@@ -2439,9 +2439,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make")
+                             doc="Template to make")
                ]),
 
         Method('ImportXYZTemplateEditor_GUI', module='None', version='5.0.0',
@@ -2486,13 +2486,13 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Connection string (returned)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="size of connection string"),
+                             doc="Size of connection string"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="File Usage (0 - ODBC drivers not queried, 1 - Directory containing tables, 2 - File containing tables)"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
                              doc="Table name of file (returned if plUsage==1)"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="size of table name")
+                             doc="Size of table name")
                ]),
 
         Method('QueryIPJ_GUI', module='None', version='5.0.0',
@@ -2521,7 +2521,7 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
                              doc="Selected channel (returned)"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="size of channel buffer")
+                             doc="Size of channel buffer")
                ])
     ]
 }

@@ -58,7 +58,7 @@ gx_methods = {
                    Parameter('p5', type=Type.STRING,
                              doc="RANGRID control file."),
                    Parameter('p6', type=Type.STRING,
-                             doc="output grid name (optional)")
+                             doc="Output grid name (optional)")
                ]),
 
         Method('Destroy_RGRD', module='geogxx', version='5.0.0',
@@ -140,7 +140,7 @@ gx_methods = {
                    Parameter('p5', type=Type.STRING,
                              doc="RANGRID control file."),
                    Parameter('p6', type=Type.STRING,
-                             doc="output grid name")
+                             doc="Output grid name")
                ]),
 
         Method('iSaveParms_RGRD', module='geogxx', version='6.0.1',
@@ -178,7 +178,7 @@ gx_methods = {
                    Parameter('p5', type=Type.STRING,
                              doc="RANGRID control file."),
                    Parameter('p6', type=Type.STRING,
-                             doc="output grid name")
+                             doc="Output grid name")
                ])
     ]
 }

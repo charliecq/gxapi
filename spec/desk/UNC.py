@@ -46,7 +46,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="Geosoft font? :def:`GEO_BOOL`"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="symbol number")
+                             doc="Symbol number")
                ]),
 
         Method('UTF16ValToSTR_UNC', module='geogxx', version='6.2.0',

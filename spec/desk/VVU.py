@@ -29,7 +29,7 @@ gx_defines = [
            doc="Duplicate handling mode",
            constants=[
                Constant('VV_DUP_AVERAGE', value='0', type=Type.INT32_T,
-                        doc="average numeric values (for strings, same as :def_val:`VV_DUP_1`)"),
+                        doc="Average numeric values (for strings, same as :def_val:`VV_DUP_1`)"),
                Constant('VV_DUP_1', value='1', type=Type.INT32_T,
                         doc="Use first value of the pair"),
                Constant('VV_DUP_2', value='2', type=Type.INT32_T,
@@ -58,20 +58,20 @@ gx_defines = [
            doc="Type of clipping",
            constants=[
                Constant('VVU_CLIP_DUMMY', value='0', type=Type.INT32_T,
-                        doc="clip replaces clipped values with a dummy."),
+                        doc="Clip replaces clipped values with a dummy."),
                Constant('VVU_CLIP_LIMIT', value='1', type=Type.INT32_T,
-                        doc="clip replaces clipped values with the limit.")
+                        doc="Clip replaces clipped values with the limit.")
            ]),
 
     Define('VVU_DUMMYREPEAT',
            doc="How to deal with repeats",
            constants=[
                Constant('VVU_DUMMYREPEAT_FIRST', value='0', type=Type.INT32_T,
-                        doc="dummies all but first point."),
+                        doc="Dummies all but first point."),
                Constant('VVU_DUMMYREPEAT_LAST', value='1', type=Type.INT32_T,
-                        doc="dummies all but last point."),
+                        doc="Dummies all but last point."),
                Constant('VVU_DUMMYREPEAT_MIDDLE', value='2', type=Type.INT32_T,
-                        doc="dummies all but middle point.")
+                        doc="Dummies all but middle point.")
            ]),
 
     Define('VVU_INTERP',
@@ -113,9 +113,9 @@ gx_defines = [
            doc="Matching style",
            constants=[
                Constant('VVU_MATCH_FULL_STRINGS', value='0', type=Type.INT32_T,
-                        doc="entire string"),
+                        doc="Entire string"),
                Constant('VVU_MATCH_INPUT_LENGTH', value='1', type=Type.INT32_T,
-                        doc="match the first part of a string.")
+                        doc="Match the first part of a string.")
            ]),
 
     Define('VVU_MODE',
@@ -179,9 +179,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="reference :class:`VV`"),
+                             doc="Reference :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="data :class:`VV` to average")
+                             doc="Data :class:`VV` to average")
                ]),
 
         Method('AverageRepeatEx_VVU', module='geogxx', version='8.0.1',
@@ -199,9 +199,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="reference :class:`VV`"),
+                             doc="Reference :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="data :class:`VV` to average"),
+                             doc="Data :class:`VV` to average"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`VVU_MODE`")
                ]),
@@ -223,11 +223,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="reference :class:`VV`"),
+                             doc="Reference :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="reference :class:`VV`"),
+                             doc="Reference :class:`VV`"),
                    Parameter('p3', type="VV",
-                             doc="data :class:`VV` to average")
+                             doc="Data :class:`VV` to average")
                ]),
 
         Method('AverageRepeat2Ex_VVU', module='geogxx', version='8.0.1',
@@ -246,11 +246,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="reference :class:`VV`"),
+                             doc="Reference :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="reference :class:`VV`"),
+                             doc="Reference :class:`VV`"),
                    Parameter('p3', type="VV",
-                             doc="data :class:`VV` to average"),
+                             doc="Data :class:`VV` to average"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`VVU_MODE`")
                ]),
@@ -266,7 +266,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="value to search for."),
+                             doc="Value to search for."),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Minmum Location"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
@@ -296,9 +296,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV`"),
+                             doc="Input :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="filtered :class:`VV`"),
+                             doc="Filtered :class:`VV`"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Short wavelength cutoff, 0 for highpass"),
                    Parameter('p4', type=Type.DOUBLE,
@@ -315,9 +315,9 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` to clip"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="minimum value, :def_val:`rDUMMY` for no minimum clip"),
+                             doc="Minimum value, :def_val:`rDUMMY` for no minimum clip"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="maximum value, :def_val:`rDUMMY` for no maximum clip"),
+                             doc="Maximum value, :def_val:`rDUMMY` for no maximum clip"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`VVU_CLIP`")
                ]),
@@ -391,7 +391,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="decimation factor (must be > 0)")
+                             doc="Decimation factor (must be > 0)")
                ]),
 
         Method('Deviation_VVU', module='geogxx', version='5.0.0',
@@ -566,7 +566,7 @@ gx_methods = {
 
         Method('DummyRepeat_VVU', module='geogxx', version='5.0.0',
                availability=Availability.LICENSED, 
-               doc="dummy repeat values in a :class:`VV`.",
+               doc="Dummy repeat values in a :class:`VV`.",
                notes="""
                Either the first, middle or last point will be left.
                                  Use :func:`Interp_VVU` to interpolate after if desired.
@@ -629,9 +629,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV`"),
+                             doc="Input :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="filtered :class:`VV`"),
+                             doc="Filtered :class:`VV`"),
                    Parameter('p3', type="FILTER",
                              doc="Filter handle (see :class:`FLT`)")
                ]),
@@ -700,9 +700,9 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Y locations"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="input X"),
+                             doc="Input X"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="input Y")
+                             doc="Input Y")
                ]),
 
         Method('iCloseXYM_VVU', module='geogxx', version='5.1.8',
@@ -726,9 +726,9 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Mask values"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="input X"),
+                             doc="Input X"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="input Y")
+                             doc="Input Y")
                ]),
 
         Method('iCloseXYZ_VVU', module='geogxx', version='5.1.8',
@@ -749,11 +749,11 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Z locations"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="input X"),
+                             doc="Input X"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="input Y"),
+                             doc="Input Y"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="input Z")
+                             doc="Input Z")
                ]),
 
         Method('iCloseXYZM_VVU', module='geogxx', version='5.1.8',
@@ -779,11 +779,11 @@ gx_methods = {
                    Parameter('p4', type="VV",
                              doc="Mask values"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="input X"),
+                             doc="Input X"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="input Y"),
+                             doc="Input Y"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="input Z")
+                             doc="Input Z")
                ]),
 
         Method('iDummyBackTracks_VVU', module='geogxx', version='7.0.0',
@@ -821,9 +821,9 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 to find the first dummy 1 find first non-dummy"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="start search range at element"),
+                             doc="Start search range at element"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="end search range at element (-1 for last)")
+                             doc="End search range at element (-1 for last)")
                ]),
 
         Method('Interp_VVU', module='geogxx', version='5.0.0',
@@ -852,7 +852,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV`"),
+                             doc="Input :class:`VV`"),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`VVU_INTERP`"),
                    Parameter('p3', type=Type.INT32_T,
@@ -867,13 +867,13 @@ gx_methods = {
                return_doc="1 if error, 0 if successful",
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input/output X :class:`VV` on which to operate Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input/output X :class:`VV` on which to operate Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p2', type="VV",
-                             doc="input/output Y :class:`VV` on which to operate In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input/output Y :class:`VV` on which to operate In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p3', type="VV",
-                             doc="input Flag :class:`VV` Required in :def_val:`GS_BYTE`"),
+                             doc="Input Flag :class:`VV` Required in :def_val:`GS_BYTE`"),
                    Parameter('p4', type="VV",
-                             doc="input Gap :class:`VV` to use for locating the fill inline segments In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input Gap :class:`VV` to use for locating the fill inline segments In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Min segment length  (required)")
                ]),
@@ -904,7 +904,7 @@ gx_methods = {
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`VVU_MATCH`"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="index to begin search (-1 for full :class:`VV`)"),
+                             doc="Index to begin search (-1 for full :class:`VV`)"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="1: forward search, -1: backward search")
                ]),
@@ -922,7 +922,7 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` to be masked"),
                    Parameter('p2', type="VV",
-                             doc="mask reference :class:`VV`")
+                             doc="Mask reference :class:`VV`")
                ]),
 
         Method('MaskAND_VVU', module='geogxx', version='5.1.8',
@@ -959,9 +959,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV`"),
+                             doc="Input :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="filtered :class:`VV`"),
+                             doc="Filtered :class:`VV`"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Filter Width"),
                    Parameter('p4', type=Type.DOUBLE,
@@ -982,13 +982,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p2', type="VV",
-                             doc="output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
+                             doc="Output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
+                             doc="Allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="number of data points. Must be > 0")
+                             doc="Number of data points. Must be > 0")
                ]),
 
         Method('NoiseCheck2_VVU', module='geogxx', version='6.3.0',
@@ -1011,15 +1011,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p2', type="VV",
-                             doc="output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
+                             doc="Output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
                    Parameter('p3', type="VV",
                              doc="Output maximum deviation :class:`VV`."),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
+                             doc="Allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="number of data points in the line segment. Must be > 0")
+                             doc="Number of data points in the line segment. Must be > 0")
                ]),
 
         Method('NormalDist_VVU', module='geogxx', version='5.1.8',
@@ -1070,9 +1070,9 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Input Y locations"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="minimum offset distance"),
+                             doc="Minimum offset distance"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="symbol radius"),
+                             doc="Symbol radius"),
                    Parameter('p5', type="VV",
                              doc="Output (offset) X locations"),
                    Parameter('p6', type="VV",
@@ -1248,11 +1248,11 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Input Y locations"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="minimum offset distance"),
+                             doc="Minimum offset distance"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="symbol X size (width)"),
+                             doc="Symbol X size (width)"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="symbol Y size (height)"),
+                             doc="Symbol Y size (height)"),
                    Parameter('p6', type="VV",
                              doc="Output (offset) X locations"),
                    Parameter('p7', type="VV",
@@ -1277,13 +1277,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV`"),
+                             doc="Input :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="returned peak :class:`VV`, all dummies except peak points."),
+                             doc="Returned peak :class:`VV`, all dummies except peak points."),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="minimum value to accept (0.0 to find all)"),
+                             doc="Minimum value to accept (0.0 to find all)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="minimum width to accept (1 to find all)")
+                             doc="Minimum width to accept (1 to find all)")
                ]),
 
         Method('PickPeak2_VVU', module='geogxx', version='5.0.0',
@@ -1301,13 +1301,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV`"),
+                             doc="Input :class:`VV`"),
                    Parameter('p2', type="VV",
-                             doc="returned peak :class:`VV`, all dummies except peak points."),
+                             doc="Returned peak :class:`VV`, all dummies except peak points."),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="base level to accept (0.0 to find all)"),
+                             doc="Base level to accept (0.0 to find all)"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="minimum amplitude to accept")
+                             doc="Minimum amplitude to accept")
                ]),
 
         Method('PickPeak3_VVU', module='geogxx', version='6.2.0',
@@ -1360,7 +1360,7 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` with output data. (Preset length)"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="order of the polynomial 0-9"),
+                             doc="Order of the polynomial 0-9"),
                    Parameter('p3', type="VV",
                              doc=":class:`VV` with polynomial coefficients (input)")
                ]),
@@ -1380,7 +1380,7 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc=":class:`VV` with output data. (Preset length)"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="order of the polynomial 0-9"),
+                             doc="Order of the polynomial 0-9"),
                    Parameter('p4', type="VV",
                              doc=":class:`VV` with polynomial coefficients (order+1 values)")
                ]),
@@ -1446,19 +1446,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="VV",
-                             doc="input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p2', type="VV",
-                             doc="distance :class:`VV` (NULL if criterion #2 does not apply). In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Distance :class:`VV` (NULL if criterion #2 does not apply). In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p3', type="VV",
-                             doc="output flag :class:`VV` with result 0,1,2,3,-1,-2,-3. Required in :def_val:`GS_BYTE`"),
+                             doc="Output flag :class:`VV` with result 0,1,2,3,-1,-2,-3. Required in :def_val:`GS_BYTE`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="nominal reading  (required, must not be :def_val:`GS_R8DM`)"),
+                             doc="Nominal reading  (required, must not be :def_val:`GS_R8DM`)"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="maximum tolerance/deviation applied to a single reading (criterion #1). :def_val:`GS_R8DM` if criterion #1 does not apply. Otherwise, must be positive value including 0.0"),
+                             doc="Maximum tolerance/deviation applied to a single reading (criterion #1). :def_val:`GS_R8DM` if criterion #1 does not apply. Otherwise, must be positive value including 0.0"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="allowed tolerance/deviation over a given distance (next parameter) (criterion #2). :def_val:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value including 0.0"),
+                             doc="Allowed tolerance/deviation over a given distance (next parameter) (criterion #2). :def_val:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value including 0.0"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="the specified distance. :def_val:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0"),
+                             doc="The specified distance. :def_val:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0"),
                    Parameter('p8', type=Type.INT32_T,
                              doc=":def:`QC_CRITERION`")
                ]),
@@ -1492,9 +1492,9 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Y data"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="returns slope"),
+                             doc="Returns slope"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="returns intercept")
+                             doc="Returns intercept")
                ]),
 
         Method('RelVarDup_VVU', module='geogxx', version='5.0.0',
@@ -1714,9 +1714,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="value to replace"),
+                             doc="Value to replace"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="replacement")
+                             doc="Replacement")
                ]),
 
         Method('SearchReplaceText_VVU', module='geogxx', version='5.0.0',
@@ -1731,13 +1731,13 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="string format for numeric :class:`VV`"),
+                             doc="String format for numeric :class:`VV`"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="decimals for formating numeric :class:`VV`"),
+                             doc="Decimals for formating numeric :class:`VV`"),
                    Parameter('p4', type=Type.STRING,
-                             doc="formatted string to replace"),
+                             doc="Formatted string to replace"),
                    Parameter('p5', type=Type.STRING,
-                             doc="replacement"),
+                             doc="Replacement"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`VVU_SRCHREPL_CASE`")
                ]),
@@ -1754,17 +1754,17 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="string format for numeric :class:`VV`"),
+                             doc="String format for numeric :class:`VV`"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="decimals for formating numeric :class:`VV`"),
+                             doc="Decimals for formating numeric :class:`VV`"),
                    Parameter('p4', type=Type.STRING,
-                             doc="formatted string to replace"),
+                             doc="Formatted string to replace"),
                    Parameter('p5', type=Type.STRING,
-                             doc="replacement"),
+                             doc="Replacement"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`VVU_SRCHREPL_CASE`"),
                    Parameter('p7', type=Type.INT32_T, is_ref=True,
-                             doc="number of items replaced (returned)")
+                             doc="Number of items replaced (returned)")
                ]),
 
         Method('Spline_VVU', module='geogxx', version='5.0.0',
@@ -1779,7 +1779,7 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y output"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="output Length"),
+                             doc="Output Length"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Starting Location"),
                    Parameter('p6', type=Type.DOUBLE,
@@ -1814,12 +1814,12 @@ gx_methods = {
                doc="Tokenize a string based on any characters.",
                notes="Parses a series of space, tab or comma-delimited values to a :class:`VV`.",
                return_type=Type.INT32_T,
-               return_doc="number of tokens (length of :class:`VV`)",
+               return_doc="Number of tokens (length of :class:`VV`)",
                parameters = [
                    Parameter('p1', type="VV",
                              doc=":class:`VV` to place values in"),
                    Parameter('p2', type=Type.STRING,
-                             doc="str - String to parse")
+                             doc="Str - String to parse")
                ]),
 
         Method('Translate_VVU', module='geogxx', version='5.0.0',
@@ -1830,9 +1830,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VV"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="base"),
+                             doc="Base"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="scale")
+                             doc="Scale")
                ]),
 
         Method('Trend_VVU', module='geogxx', version='5.0.6',
@@ -1854,7 +1854,7 @@ gx_methods = {
                    Parameter('p1', type="VV",
                              doc=":class:`VV` with input data"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="order of the polynomial 0-9"),
+                             doc="Order of the polynomial 0-9"),
                    Parameter('p3', type="VV",
                              doc=":class:`VV` to hold polynomial coefficients (returned).")
                ]),
@@ -1880,7 +1880,7 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc=":class:`VV` with input data"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="order of the polynomial 0-9"),
+                             doc="Order of the polynomial 0-9"),
                    Parameter('p4', type="VV",
                              doc=":class:`VV` to hold polynomial coefficients (returned)")
                ]),

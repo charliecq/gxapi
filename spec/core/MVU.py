@@ -272,7 +272,7 @@ gx_methods = {
                    Parameter('p10', type=Type.INT32_T,
                              doc=":def:`MVU_VPOINT`"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="line thickness (can be Dummy)")
+                             doc="Line thickness (can be Dummy)")
                ]),
 
         Method('BarChart_MVU', module='geoengine.map', version='5.0.0',
@@ -340,9 +340,9 @@ gx_methods = {
 
         Method('CDIPixelPlot_MVU', module='geoengine.map', version='7.2.0',
                availability=Availability.LICENSED, 
-               doc="Create a colour pixel-style plot of CDI data.",
+               doc="Create a color pixel-style plot of CDI data.",
                notes="""
-               Draws a single coloured rectangle for each data point in
+               Draws a single colored rectangle for each data point in
                Conductivity-Depth data (for example). It is similar to the
                result you get if you plot a grid with Pixel=1, but in this
                data the row and column widths are not necessarily constant,
@@ -363,16 +363,16 @@ gx_methods = {
                    Parameter('p5', type="VV",
                              doc="Position (X) [lNC]"),
                    Parameter('p6', type="ITR",
-                             doc="Data colour transform")
+                             doc="Data color transform")
                ]),
 
         Method('CDIPixelPlot3D_MVU', module='geoengine.map', version='7.2.0',
                availability=Availability.LICENSED, 
-               doc="Create a colour pixel-style plot of CDI data in a 3D view.",
+               doc="Create a color pixel-style plot of CDI data in a 3D view.",
                notes="""
                Similar to :func:`CDIPixelPlot_MVU`, but plotted onto a series of
                plotting planes which hang from the XY path in 3D. Each vertical plane azimuth
-               is defined by two adjacent points on the path. The colour "pixel" for each
+               is defined by two adjacent points on the path. The color "pixel" for each
                data point is plotted in two halves, with each half on adjacent plotting planes,
                with the bend at the data point.
                """,
@@ -391,7 +391,7 @@ gx_methods = {
                    Parameter('p6', type="VV",
                              doc="Position (Y) [lNC]"),
                    Parameter('p7', type="ITR",
-                             doc="Data colour transform")
+                             doc="Data color transform")
                ]),
 
         Method('ColorBar_MVU', module='geoengine.map', version='5.0.0',
@@ -404,15 +404,15 @@ gx_methods = {
                    Parameter('p2', type="ITR",
                              doc="Itr"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="annotation offset from box in mm."),
+                             doc="Annotation offset from box in mm."),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y location")
                ]),
@@ -432,15 +432,15 @@ gx_methods = {
                    Parameter('p3', type="ITR",
                              doc="Secondary :class:`ITR`"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="annotation size"),
+                             doc="Annotation size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Y location")
                ]),
@@ -460,15 +460,15 @@ gx_methods = {
                    Parameter('p3', type="ITR",
                              doc="Secondary :class:`ITR`"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="annotation size"),
+                             doc="Annotation size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p10', type=Type.INT32_T,
@@ -492,15 +492,15 @@ gx_methods = {
                    Parameter('p2', type="ITR",
                              doc="Itr"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="annotation offset from box in mm (negative for labels below)."),
+                             doc="Annotation offset from box in mm (negative for labels below)."),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes) in mm"),
+                             doc="X location (bottom left corner of color boxes) in mm"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y location in mm"),
                    Parameter('p9', type=Type.INT32_T,
@@ -522,15 +522,15 @@ gx_methods = {
                    Parameter('p3', type="ITR",
                              doc="Secondary :class:`ITR`"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="annotation size"),
+                             doc="Annotation size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p10', type=Type.INT32_T,
@@ -552,15 +552,15 @@ gx_methods = {
                    Parameter('p3', type="ITR",
                              doc="Secondary :class:`ITR`"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="annotation size"),
+                             doc="Annotation size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p10', type=Type.INT32_T,
@@ -579,15 +579,15 @@ gx_methods = {
                    Parameter('p2', type="ITR",
                              doc="Itr"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="annotation size"),
+                             doc="Annotation size"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p9', type=Type.INT32_T,
@@ -606,15 +606,15 @@ gx_methods = {
                    Parameter('p2', type="ITR",
                              doc="Itr"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="decimals"),
+                             doc="Decimals"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="annotation size"),
+                             doc="Annotation size"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p9', type=Type.INT32_T,
@@ -630,11 +630,11 @@ gx_methods = {
                BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = :def_val:`MVU_ORIENTATION_VERTICAL`)
                DECIMALS					decimals in plotted values (see sFormatStr_GS for rules) (DEFAULT = 1)
                ANNOFF						annotation offset from bar (+/- determines side of the bar left/right and below/above)
-               BOX_SIZE               box height (mm) (width for horizontal colour bar) (DEFAULT = 4)
-               BAR_WIDTH              width (mm) (short dimension) of the colour bar (DEFAULT = 8)
+               BOX_SIZE               box height (mm) (width for horizontal color bar) (DEFAULT = 4)
+               BAR_WIDTH              width (mm) (short dimension) of the color bar (DEFAULT = 8)
                MINIMUM_GAP            Minimum space between annotations, otherwise drop annotations (DEFAULT = 0 mm)
                The actual height is over-estimated, so even with zero gap there will normally always be some space between labels.
-               FIXED_INTERVAL         Preset interval for annotations scale (DEFAULT = DUMMY, use colour zones)
+               FIXED_INTERVAL         Preset interval for annotations scale (DEFAULT = DUMMY, use color zones)
                FIXED_MINOR_INTERVAL   Preset minor interval for annotations scale (DEFAULT = DUMMY, if defined must be 1/10, 1/5, 1/4 or 1/2 of FIXED_INTERVAL)
                X								X location	(REQUIRED)
                Y								Y location	(REQUIRED)
@@ -691,7 +691,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Plot a legend for the classified color symbols.",
                notes="""
-               If the symbol size, colour, font etc are specified in
+               If the symbol size, color, font etc are specified in
                the :class:`ITR`'s :class:`REG`, then the Symbol scale factor is used
                allow the user to adjust the symbol sizes. They will be
                plotted at a size equal to the size in the :class:`REG` times
@@ -701,7 +701,7 @@ gx_methods = {
                If no symbol font or number info is included in the
                :class:`REG`, it is the programmer's responsibility to select
                the correct font and symbol before CSymbLegend is
-               called. The same is true of the edge colour.
+               called. The same is true of the edge color.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -771,9 +771,9 @@ gx_methods = {
                    Parameter('p19', type=Type.DOUBLE,
                              doc="Line pitch, default is 5.0mm"),
                    Parameter('p20', type=Type.INT32_T,
-                             doc="line style"),
+                             doc="Line style"),
                    Parameter('p21', type=Type.STRING,
-                             doc="line color")
+                             doc="Line color")
                ]),
 
         Method('DirectionPlot_MVU', module='geoengine.map', version='5.0.0',
@@ -858,7 +858,7 @@ gx_methods = {
                notes="""
                The lines, rectangles and polygons in the specified groups
                will be exported to a Datamine coordinate string (*.dm) file.
-               The function attemps to duplicate the colours, etc. used.
+               The function attemps to duplicate the colors, etc. used.
                Complex polygon objects will be exported as independent
                single polygons.
                """,
@@ -895,7 +895,7 @@ gx_methods = {
                The lines, rectangles and polygons in the specified groups
                will be exported to a Surpac :class:`STR` file. An accompanying styles
                file will be created which will attempt to duplicate the
-               colours, etc. used.
+               colors, etc. used.
                Complex polygon objects will be exported as independent
                single polygons.
                """,
@@ -919,7 +919,7 @@ gx_methods = {
                Current line color, thickness and style are used to
                draw the line.
                
-               Current font, font colour and font style are used to
+               Current font, font color and font style are used to
                annotate the line labels.
                
                If current clipping is ON in the VIEW, lines will be
@@ -948,17 +948,17 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y"),
                    Parameter('p4', type=Type.STRING,
-                             doc="line label"),
+                             doc="Line label"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_LOCATE`"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="lines steeper than this angle are considered vertical and the up label direction is used."),
+                             doc="Lines steeper than this angle are considered vertical and the up label direction is used."),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="up label direction:   1 up is right, -1 up is left"),
+                             doc="Up label direction:   1 up is right, -1 up is left"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="along line label offset in mm."),
+                             doc="Along line label offset in mm."),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="perpendicular label offset mm.")
+                             doc="Perpendicular label offset mm.")
                ]),
 
         Method('GenAreas_MVU', module='geoengine.map', version='5.0.0',
@@ -967,8 +967,8 @@ gx_methods = {
                notes="""
                The specified line group will be used to create a new group that
                is composed of all the resolved polygonal areas in the line group.
-               Each polygonal area is assigned a colour/pattern as specified in the
-               colour and pattern :class:`VV`'s.  Colour/patterns are assigned in rotating
+               Each polygonal area is assigned a color/pattern as specified in the
+               color and pattern :class:`VV`'s.  Color/patterns are assigned in rotating
                sequence.
                """,
                see_also=":func:`ReGenAreas_MVU`",
@@ -979,11 +979,11 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Group with lines"),
                    Parameter('p3', type="VV",
-                             doc="colours  (colour int)"),
+                             doc="Colors  (color int)"),
                    Parameter('p4', type="VV",
-                             doc="patterns (int), must be same length at colours"),
+                             doc="Patterns (int), must be same length at colors"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="pattern size")
+                             doc="Pattern size")
                ]),
 
         Method('GetRangeGOCADSurface_MVU', module='geoengine.map', version='6.4.0',
@@ -1030,25 +1030,25 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="Title"),
                    Parameter('p5', type=Type.STRING,
-                             doc="unit"),
+                             doc="Unit"),
                    Parameter('p6', type=Type.DOUBLE,
                              doc="X in mm (bottom left corner of histogram box)"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Y in mm (bottom left corner of histogram box)"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Minimum X in data unit (bottom left corner of histogram boxes)"),
                    Parameter('p11', type=Type.DOUBLE,
                              doc="Minimum Y in data unit"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="box width in data unit"),
+                             doc="Box width in data unit"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="box height in data unit"),
+                             doc="Box height in data unit"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="width (mm) of the additional box for summary stats"),
+                             doc="Width (mm) of the additional box for summary stats"),
                    Parameter('p15', type=Type.INT32_T,
                              doc="Log horizontal axis: 0 - Normal, 1 - Log"),
                    Parameter('p16', type=Type.INT32_T,
@@ -1087,25 +1087,25 @@ gx_methods = {
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Text size in mm for plot overall title. Accept dummy"),
                    Parameter('p9', type=Type.STRING,
-                             doc="unit"),
+                             doc="Unit"),
                    Parameter('p10', type=Type.DOUBLE,
                              doc="X in mm (bottom left corner of histogram box)"),
                    Parameter('p11', type=Type.DOUBLE,
                              doc="Y in mm (bottom left corner of histogram box)"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p14', type=Type.DOUBLE,
                              doc="Minimum X in data unit (bottom left corner of histogram boxes)"),
                    Parameter('p15', type=Type.DOUBLE,
                              doc="Minimum Y in data unit"),
                    Parameter('p16', type=Type.DOUBLE,
-                             doc="box width in data unit"),
+                             doc="Box width in data unit"),
                    Parameter('p17', type=Type.DOUBLE,
-                             doc="box height in data unit"),
+                             doc="Box height in data unit"),
                    Parameter('p18', type=Type.DOUBLE,
-                             doc="width (mm) of the additional box for summary stats"),
+                             doc="Width (mm) of the additional box for summary stats"),
                    Parameter('p19', type=Type.INT32_T,
                              doc="Log horizontal axis: 0 - Normal, 1 - Log"),
                    Parameter('p20', type=Type.INT32_T,
@@ -1132,25 +1132,25 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="Title"),
                    Parameter('p5', type=Type.STRING,
-                             doc="unit"),
+                             doc="Unit"),
                    Parameter('p6', type=Type.DOUBLE,
                              doc="X in mm (bottom left corner of histogram box)"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Y in mm (bottom left corner of histogram box)"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Minimum X in data unit (bottom left corner of histogram boxes)"),
                    Parameter('p11', type=Type.DOUBLE,
                              doc="Minimum Y in data unit"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="box width in data unit"),
+                             doc="Box width in data unit"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="box height in data unit"),
+                             doc="Box height in data unit"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="width (mm) of the additional box for summary stats"),
+                             doc="Width (mm) of the additional box for summary stats"),
                    Parameter('p15', type=Type.INT32_T,
                              doc="Log horizontal axis: 0 - Normal, 1 - Log"),
                    Parameter('p16', type=Type.INT32_T,
@@ -1179,25 +1179,25 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="Title"),
                    Parameter('p5', type=Type.STRING,
-                             doc="unit"),
+                             doc="Unit"),
                    Parameter('p6', type=Type.DOUBLE,
                              doc="X in mm (bottom left corner of histogram box)"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Y in mm (bottom left corner of histogram box)"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Minimum X in data unit (bottom left corner of histogram boxes)"),
                    Parameter('p11', type=Type.DOUBLE,
                              doc="Minimum Y in data unit"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="box width in data unit"),
+                             doc="Box width in data unit"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="box height in data unit"),
+                             doc="Box height in data unit"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="width (mm) of the additional box for summary stats"),
+                             doc="Width (mm) of the additional box for summary stats"),
                    Parameter('p15', type=Type.INT32_T,
                              doc="Log horizontal axis: 0 - Normal, 1 - Log"),
                    Parameter('p16', type=Type.INT32_T,
@@ -1216,7 +1216,7 @@ gx_methods = {
 
         Method('Histogram5_MVU', module='geoengine.map', version='5.0.0',
                availability=Availability.LICENSED, 
-               doc="As :func:`Histogram4_MVU`, but allow :class:`ITR` to colour bars.",
+               doc="As :func:`Histogram4_MVU`, but allow :class:`ITR` to color bars.",
                notes="The :class:`ITR` can be empty (but must still be a valid :class:`ITR` object).",
                return_type=Type.VOID,
                parameters = [
@@ -1229,7 +1229,7 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="Title"),
                    Parameter('p5', type=Type.STRING,
-                             doc="unit"),
+                             doc="Unit"),
                    Parameter('p6', type=Type.DOUBLE,
                              doc="[i] Lambda Value"),
                    Parameter('p7', type=Type.DOUBLE,
@@ -1237,19 +1237,19 @@ gx_methods = {
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y in mm (bottom left corner of histogram box)"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p11', type=Type.DOUBLE,
                              doc="Minimum X in data unit (bottom left corner of histogram boxes)"),
                    Parameter('p12', type=Type.DOUBLE,
                              doc="Minimum Y in data unit"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="box width in data unit"),
+                             doc="Box width in data unit"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="box height in data unit"),
+                             doc="Box height in data unit"),
                    Parameter('p15', type=Type.DOUBLE,
-                             doc="width (mm) of the additional box for summary stats"),
+                             doc="Width (mm) of the additional box for summary stats"),
                    Parameter('p16', type=Type.INT32_T,
                              doc="Log horizontal axis: 0 - Normal, 1 - Log, 2 - Lambda"),
                    Parameter('p17', type=Type.INT32_T,
@@ -1265,7 +1265,7 @@ gx_methods = {
                    Parameter('p22', type="ST",
                              doc=":class:`ST` with histogram for box-whisker plot (-1 for no plot)"),
                    Parameter('p23', type="ITR",
-                             doc=":class:`ITR` to colour bars.")
+                             doc=":class:`ITR` to color bars.")
                ]),
 
         Method('iExportableDXF3DGroupsLST_MVU', module='geoengine.interoperability', version='7.1.0',
@@ -1316,13 +1316,13 @@ gx_methods = {
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Conversion factor (to units/meter) (rDummy for default)"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="left margin (cm)"),
+                             doc="Left margin (cm)"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="right margin (cm)"),
+                             doc="Right margin (cm)"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="bottom margin (cm)"),
+                             doc="Bottom margin (cm)"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="top margin (cm)"),
+                             doc="Top margin (cm)"),
                    Parameter('p14', type=Type.DOUBLE,
                              doc="Inside data margin (cm)")
                ]),
@@ -1355,13 +1355,13 @@ gx_methods = {
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Conversion factor (to units/meter) (rDummy for default)"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="left margin (cm)"),
+                             doc="Left margin (cm)"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="right margin (cm)"),
+                             doc="Right margin (cm)"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="bottom margin (cm)"),
+                             doc="Bottom margin (cm)"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="top margin (cm)"),
+                             doc="Top margin (cm)"),
                    Parameter('p15', type=Type.DOUBLE,
                              doc="Inside data margin (cm)")
                ]),
@@ -1382,7 +1382,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="GOCAD file name"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="Color to plot (:def_val:`C_TRANSPARENT` to use file-defined colour).")
+                             doc="Color to plot (:def_val:`C_TRANSPARENT` to use file-defined color).")
                ]),
 
         Method('LoadPlot_MVU', module='geoengine.map', version='5.0.0',
@@ -1393,7 +1393,7 @@ gx_methods = {
                    Parameter('p1', type="MAP",
                              doc="Map handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="plot file name")
+                             doc="Plot file name")
                ]),
 
         Method('MapFromPLT_MVU', module='geoengine.map', version='5.0.0',
@@ -1464,13 +1464,13 @@ gx_methods = {
                    Parameter('p12', type=Type.DOUBLE,
                              doc="Conversion factor (to units/meter) (rDummy for default)"),
                    Parameter('p13', type=Type.DOUBLE,
-                             doc="left margin (cm)"),
+                             doc="Left margin (cm)"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="right margin (cm)"),
+                             doc="Right margin (cm)"),
                    Parameter('p15', type=Type.DOUBLE,
-                             doc="bottom margin (cm)"),
+                             doc="Bottom margin (cm)"),
                    Parameter('p16', type=Type.DOUBLE,
-                             doc="top margin (cm)"),
+                             doc="Top margin (cm)"),
                    Parameter('p17', type=Type.DOUBLE,
                              doc="Inside data margin (cm)")
                ]),
@@ -1507,13 +1507,13 @@ gx_methods = {
                    Parameter('p13', type=Type.DOUBLE,
                              doc="Conversion factor (to units/meter) (rDummy for default)"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="left margin (cm)"),
+                             doc="Left margin (cm)"),
                    Parameter('p15', type=Type.DOUBLE,
-                             doc="right margin (cm)"),
+                             doc="Right margin (cm)"),
                    Parameter('p16', type=Type.DOUBLE,
-                             doc="bottom margin (cm)"),
+                             doc="Bottom margin (cm)"),
                    Parameter('p17', type=Type.DOUBLE,
-                             doc="top margin (cm)"),
+                             doc="Top margin (cm)"),
                    Parameter('p18', type=Type.DOUBLE,
                              doc="Inside data margin (cm)")
                ]),
@@ -1550,19 +1550,19 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y"),
                    Parameter('p4', type=Type.STRING,
-                             doc="line label"),
+                             doc="Line label"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_LOCATE`"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="lines steeper than this angle are considered vertical and the up label direction is used."),
+                             doc="Lines steeper than this angle are considered vertical and the up label direction is used."),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="up label direction:   1 up is right -1 up is left"),
+                             doc="Up label direction:   1 up is right -1 up is left"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="along line label offset in mm."),
+                             doc="Along line label offset in mm."),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="perpendicular label offset mm."),
+                             doc="Perpendicular label offset mm."),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="maximum gap before breaking line, 0.0 for no breaks.")
+                             doc="Maximum gap before breaking line, 0.0 for no breaks.")
                ]),
 
         Method('PathPlotEx_MVU', module='geoengine.map', version='5.0.0',
@@ -1579,21 +1579,21 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y"),
                    Parameter('p4', type=Type.STRING,
-                             doc="line label"),
+                             doc="Line label"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_LOCATE`"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_COMPASS`"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="lines steeper than this angle are considered vertical and the up label direction is used."),
+                             doc="Lines steeper than this angle are considered vertical and the up label direction is used."),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="up label direction:   1 up is right -1 up is left"),
+                             doc="Up label direction:   1 up is right -1 up is left"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="along line label offset in mm."),
+                             doc="Along line label offset in mm."),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="perpendicular label offset mm."),
+                             doc="Perpendicular label offset mm."),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="maximum gap before breaking line, 0.0 for no breaks.")
+                             doc="Maximum gap before breaking line, 0.0 for no breaks.")
                ]),
 
         Method('PathPlotEx2_MVU', module='geoengine.map', version='5.0.8',
@@ -1610,21 +1610,21 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y"),
                    Parameter('p4', type=Type.STRING,
-                             doc="line label"),
+                             doc="Line label"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_LOCATE`"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_COMPASS`"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="lines steeper than this angle are considered vertical and the up label direction is used."),
+                             doc="Lines steeper than this angle are considered vertical and the up label direction is used."),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="up label direction:   1 up is right -1 up is left"),
+                             doc="Up label direction:   1 up is right -1 up is left"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="along line label offset in mm."),
+                             doc="Along line label offset in mm."),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="perpendicular label offset mm."),
+                             doc="Perpendicular label offset mm."),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="maximum gap before breaking line, 0.0 for no breaks."),
+                             doc="Maximum gap before breaking line, 0.0 for no breaks."),
                    Parameter('p12', type=Type.INT32_T,
                              doc=":def:`MVU_FLIGHT_DUMMIES`")
                ]),
@@ -1648,7 +1648,7 @@ gx_methods = {
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Iso-surface value"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="Drawing colour"),
+                             doc="Drawing color"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Line thickness for line drawing, and 2D views.")
                ]),
@@ -1672,7 +1672,7 @@ gx_methods = {
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Iso-surface value"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="Drawing colour"),
+                             doc="Drawing color"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Line thickness for line drawing, and 2D views."),
                    Parameter('p6', type=Type.DOUBLE,
@@ -1700,7 +1700,7 @@ gx_methods = {
                    Parameter('p6', type=Type.DOUBLE,
                              doc="TODO"),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="Drawing colour"),
+                             doc="Drawing color"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Line thickness for line drawing, and 2D views."),
                    Parameter('p9', type=Type.DOUBLE,
@@ -1756,7 +1756,7 @@ gx_methods = {
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Base to remove, default is 0.0"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="detection limit, can be :def_val:`GS_R8DM`"),
+                             doc="Detection limit, can be :def_val:`GS_R8DM`"),
                    Parameter('p9', type=Type.INT32_T,
                              doc="Numb Size"),
                    Parameter('p10', type=Type.INT32_T,
@@ -1778,7 +1778,7 @@ gx_methods = {
                    Parameter('p18', type=Type.INT32_T,
                              doc="Fixed angle ?"),
                    Parameter('p19', type=Type.DOUBLE,
-                             doc="vertical reference angle"),
+                             doc="Vertical reference angle"),
                    Parameter('p20', type=Type.INT32_T,
                              doc="1 up is right, -1 up is left")
                ]),
@@ -1798,7 +1798,7 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="Title"),
                    Parameter('p5', type=Type.STRING,
-                             doc="unit"),
+                             doc="Unit"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="Transform type (0: Raw, 1: Log, 2: Lambda)"),
                    Parameter('p7', type=Type.DOUBLE,
@@ -1808,15 +1808,15 @@ gx_methods = {
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Y in mm (bottom left corner of histogram box)"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="box width in mm"),
+                             doc="Box width in mm"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="box height in mm"),
+                             doc="Box height in mm"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="symbol size in mm"),
+                             doc="Symbol size in mm"),
                    Parameter('p13', type=Type.DOUBLE,
                              doc="Sigma (X range is -sigma to sigma)"),
                    Parameter('p14', type=Type.DOUBLE,
-                             doc="width (mm) of the additional box for summary stats"),
+                             doc="Width (mm) of the additional box for summary stats"),
                    Parameter('p15', type=Type.INT32_T,
                              doc="Summary stats: 0 - do not draw, 1 - draw"),
                    Parameter('p16', type=Type.INT32_T,
@@ -1824,7 +1824,7 @@ gx_methods = {
                    Parameter('p17', type=Type.INT32_T,
                              doc="Decimals for stats, negative for sig. fig."),
                    Parameter('p18', type="ITR",
-                             doc=":class:`ITR` to colour symbols.")
+                             doc=":class:`ITR` to color symbols.")
                ]),
 
         Method('ProfilePlot_MVU', module='geoengine.map', version='5.0.0',
@@ -1842,9 +1842,9 @@ gx_methods = {
                    Parameter('p4', type="VV",
                              doc="Z"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="lines steeper than this angle are considered vertical and the up label direction is used."),
+                             doc="Lines steeper than this angle are considered vertical and the up label direction is used."),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="up label direction:   1 up is right -1 up is left"),
+                             doc="Up label direction:   1 up is right -1 up is left"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Maximum gap in data to span (view units)"),
                    Parameter('p8', type=Type.DOUBLE,
@@ -1870,9 +1870,9 @@ gx_methods = {
                    Parameter('p4', type="VV",
                              doc="Z"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="lines steeper than this angle are considered vertical and the up label direction is used."),
+                             doc="Lines steeper than this angle are considered vertical and the up label direction is used."),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="up label direction:   1 up is right -1 up is left"),
+                             doc="Up label direction:   1 up is right -1 up is left"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Maximum gap in data to span (view units)"),
                    Parameter('p8', type=Type.DOUBLE,
@@ -1888,9 +1888,9 @@ gx_methods = {
                    Parameter('p13', type=Type.INT32_T,
                              doc="Smooth curve option: 0 no (default), 1 yes"),
                    Parameter('p14', type=Type.STRING,
-                             doc="positive fill color"),
+                             doc="Positive fill color"),
                    Parameter('p15', type=Type.STRING,
-                             doc="negative fill color")
+                             doc="Negative fill color")
                ]),
 
         Method('PropSymbLegend_MVU', module='geoengine.map', version='5.0.8',
@@ -1989,9 +1989,9 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Max Y"),
                    Parameter('p6', type=Type.STRING,
-                             doc="text"),
+                             doc="Text"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="line spacing (1.2 good)"),
+                             doc="Line spacing (1.2 good)"),
                    Parameter('p8', type=Type.INT32_T,
                              doc=":def:`MVU_TEXTBOX`")
                ]),
@@ -2087,7 +2087,7 @@ gx_methods = {
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Iso-surface value"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="Drawing colour"),
+                             doc="Drawing color"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Line thickness for line drawing, and 2D views."),
                    Parameter('p6', type=Type.DOUBLE,
@@ -2113,13 +2113,13 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Duplicate data"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="log-transform: 0 - linear, 1 - log"),
+                             doc="Log-transform: 0 - linear, 1 - log"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Detect Limit"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="number of old samples in the :class:`VV`"),
+                             doc="Number of old samples in the :class:`VV`"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="tolerance as a function of std dev"),
+                             doc="Tolerance as a function of std dev"),
                    Parameter('p7', type=Type.STRING,
                              doc="Title"),
                    Parameter('p8', type=Type.STRING,
@@ -2129,9 +2129,9 @@ gx_methods = {
                    Parameter('p10', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="graph width"),
+                             doc="Graph width"),
                    Parameter('p12', type=Type.DOUBLE,
-                             doc="graph height")
+                             doc="Graph height")
                ]),
 
         Method('Scatter_MVU', module='geochimera', version='5.0.0',
@@ -2145,13 +2145,13 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Title"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="X location (bottom left corner of colour boxes)"),
+                             doc="X location (bottom left corner of color boxes)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel"),
                    Parameter('p8', type="VV",
@@ -2215,21 +2215,21 @@ gx_methods = {
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="box width"),
+                             doc="Box width"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="box height"),
+                             doc="Box height"),
                    Parameter('p7', type="VV",
                              doc="Horizontal channel"),
                    Parameter('p8', type="VV",
                              doc="Vertical channel"),
                    Parameter('p9', type=Type.STRING,
-                             doc='decorated font name, "" for default symbol font (normally symbols.gfn)'),
+                             doc='Decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('p10', type="VV",
                              doc="Symbol numbers"),
                    Parameter('p11', type="VV",
                              doc="Symbol sizes"),
                    Parameter('p12', type="VV",
-                             doc="Colours  if symbol number or colour == 0, do not plot"),
+                             doc="Colors  if symbol number or color == 0, do not plot"),
                    Parameter('p13', type=Type.INT32_T,
                              doc="Annotation style 0 - outside, 1 - inside"),
                    Parameter('p14', type=Type.STRING,
@@ -2265,9 +2265,9 @@ gx_methods = {
                    Parameter('p29', type=Type.INT32_T,
                              doc="Use Max Vert. Range selection?"),
                    Parameter('p30', type=Type.INT32_T,
-                             doc="horizontal axis scaling: 0 - linear, 1 - log"),
+                             doc="Horizontal axis scaling: 0 - linear, 1 - log"),
                    Parameter('p31', type=Type.INT32_T,
-                             doc="vertical axis scaling")
+                             doc="Vertical axis scaling")
                ]),
 
         Method('Standard_MVU', module='geochimera', version='5.0.0',
@@ -2279,11 +2279,11 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type="VV",
-                             doc="standard data"),
+                             doc="Standard data"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="number of old samples in the :class:`VV`"),
+                             doc="Number of old samples in the :class:`VV`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="tolerance as a function of std dev (default=2)"),
+                             doc="Tolerance as a function of std dev (default=2)"),
                    Parameter('p5', type=Type.STRING,
                              doc="Title"),
                    Parameter('p6', type=Type.STRING,
@@ -2293,9 +2293,9 @@ gx_methods = {
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="graph width"),
+                             doc="Graph width"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="graph height")
+                             doc="Graph height")
                ])
     ]
 }

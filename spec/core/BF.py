@@ -41,11 +41,11 @@ gx_defines = [
                Constant('BF_READ', value='0', type=Type.INT32_T,
                         doc="Read only"),
                Constant('BF_READWRITE_NEW', value='1', type=Type.INT32_T,
-                        doc="erases existing file"),
+                        doc="Erases existing file"),
                Constant('BF_READWRITE_OLD', value='2', type=Type.INT32_T,
-                        doc="file must pre-exist"),
+                        doc="File must pre-exist"),
                Constant('BF_READWRITE_APP', value='4', type=Type.INT32_T,
-                        doc="open and append onto pre-existing file (cannot be read from)")
+                        doc="Open and append onto pre-existing file (cannot be read from)")
            ]),
 
     Define('BF_SEEK',
@@ -94,7 +94,7 @@ gx_methods = {
                    Parameter('p1', type="BF",
                              doc=":class:`BF` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="new length in bytes")
+                             doc="New length in bytes")
                ]),
 
         Method('_Seek_BF', module='geoengine.core', version='5.0.0',
@@ -109,7 +109,7 @@ gx_methods = {
                    Parameter('p1', type="BF",
                              doc=":class:`BF` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number of bytes from reference point"),
+                             doc="Number of bytes from reference point"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`BF_SEEK`")
                ]),
@@ -134,7 +134,7 @@ gx_methods = {
                    Parameter('p1', type="BF",
                              doc=":class:`BF` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number of bytes to CRC"),
+                             doc="Number of bytes to CRC"),
                    Parameter('p3', type="CRC",
                              doc="CRC start (use :def_val:`CRC_INIT_VALUE` for new)")
                ]),
@@ -159,7 +159,7 @@ gx_methods = {
                return_doc=":class:`BF` Object",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='file name to open ("" is a temporary file)'),
+                             doc='File name to open ("" is a temporary file)'),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`BF_OPEN_MODE`")
                ]),
@@ -174,7 +174,7 @@ gx_methods = {
                    Parameter('p1', type="SBF",
                              doc="Storage"),
                    Parameter('p2', type=Type.STRING,
-                             doc='file name to open ("" is a temporary file)'),
+                             doc='File name to open ("" is a temporary file)'),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`BF_OPEN_MODE`")
                ]),
@@ -184,7 +184,6 @@ gx_methods = {
                doc="Destroy :class:`BF` handle.",
                notes="The DestroyEx call implies :def_val:`BF_KEEP`",
                return_type=Type.VOID,
-               return_doc="nothing",
                parameters = [
                    Parameter('p1', type="BF",
                              doc=":class:`BF` handle"),
@@ -239,7 +238,7 @@ gx_methods = {
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`BF_ENCODE`"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="data"),
+                             doc="Data"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of the string buffer")
                ]),
@@ -286,7 +285,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
-                             doc="data")
+                             doc="Data")
                ]),
 
         Method('ReadReal_BF', module='geoengine.core', version='5.0.0',
@@ -311,7 +310,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="data")
+                             doc="Data")
                ]),
 
         Method('ReadVM_BF', module='geoengine.core', version='5.0.0',
@@ -385,7 +384,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`BF_ENCODE`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string to write out")
+                             doc="String to write out")
                ]),
 
         Method('WriteDataNull_BF', module='geoengine.core', version='5.0.0',
@@ -414,7 +413,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="data")
+                             doc="Data")
                ]),
 
         Method('WriteReal_BF', module='geoengine.core', version='5.0.0',
@@ -434,7 +433,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="data")
+                             doc="Data")
                ]),
 
         Method('WriteVM_BF', module='geoengine.core', version='5.0.0',
@@ -454,7 +453,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type="VM",
-                             doc="data")
+                             doc="Data")
                ]),
 
         Method('WriteVV_BF', module='geoengine.core', version='5.0.0',
@@ -474,7 +473,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type="VV",
-                             doc="data")
+                             doc="Data")
                ])
     ],
     'Obsolete': [
@@ -487,7 +486,7 @@ gx_methods = {
                return_doc=":def:`GEO_BOOL`",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc='file name to open ("" is a temporary file)')
+                             doc='File name to open ("" is a temporary file)')
                ]),
 
         Method('IReadString_BF', module='geoengine.core', version='5.0.0',
@@ -512,7 +511,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="data"),
+                             doc="Data"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Length of string to read, NULL will be added so the string length must be at least int+1.")
                ]),
@@ -525,7 +524,7 @@ gx_methods = {
                    Parameter('p1', type="BF",
                              doc=":class:`BF` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="data string to write (no nulls)")
+                             doc="Data string to write (no nulls)")
                ]),
 
         Method('WriteString_BF', module='geoengine.core', version='5.0.0',
@@ -545,7 +544,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="data")
+                             doc="Data")
                ])
     ]
 }

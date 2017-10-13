@@ -31,7 +31,7 @@ gx_defines = [
                Constant('PROJ_DISPLAY_NO', value='0', type=Type.INT32_T,
                         doc="Do not display the object"),
                Constant('PROJ_DISPLAY_YES', value='1', type=Type.INT32_T,
-                        doc="Display the object unless user set option not too"),
+                        doc="Display the object unless user set option not to"),
                Constant('PROJ_DISPLAY_ALWAYS', value='2', type=Type.INT32_T,
                         doc="Always display the object")
            ])]
@@ -122,10 +122,9 @@ gx_methods = {
                return_doc="""
                :def:`COMMAND_ENV`
                
-               Notes:
-               We are moving towards embedded tools and menus and this setting can be set
+               Notes									We are moving towards embedded tools and menus and this setting can be
                queried from the project to determine how specific commands should react.
-               ly 3D viewer is currently making use of this.
+               Only 3D viewer is currently making use of this.
                """),
 
         Method('iListDocuments_PROJ', module='None', version='5.0.0',
@@ -185,27 +184,27 @@ gx_methods = {
                return_doc="Nothing.",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="name (empty if none currenlty loaded)"),
+                             doc="Name (empty if none currently loaded)"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="maximum name length"),
+                             doc="Maximum name length"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="type"),
+                             doc="Type"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
-                             doc="maximum type length")
+                             doc="Maximum type length")
                ]),
 
         Method('ICurrentDocumentOfType_PROJ', module='None', version='9.2.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Get the name loaded document of a specific type.",
+               doc="Get the name of a loaded document of a specific type.",
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="name (empty if none currenlty loaded)"),
+                             doc="Name (empty if none currently loaded)"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="maximum name length"),
+                             doc="Maximum name length"),
                    Parameter('p3', type=Type.STRING,
-                             doc="type")
+                             doc="Type")
                ]),
 
         Method('iListTools_PROJ', module='None', version='5.0.0',

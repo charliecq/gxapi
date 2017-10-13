@@ -273,7 +273,7 @@ gx_methods = {
                    Parameter('p7', type=Type.STRING,
                              doc="Output TOPO file name"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="version number (3 or 5)")
+                             doc="Version number (3 or 5)")
                ]),
 
         Method('ExportUBCIPControl_IP', module='geogxx', version='6.4.0',
@@ -297,19 +297,19 @@ gx_methods = {
                    Parameter('p5', type=Type.STRING,
                              doc=":class:`IP` obs file"),
                    Parameter('p6', type=Type.STRING,
-                             doc="conductivity file"),
+                             doc="Conductivity file"),
                    Parameter('p7', type=Type.STRING,
-                             doc="mesh file"),
+                             doc="Mesh file"),
                    Parameter('p8', type=Type.STRING,
-                             doc="topography file"),
+                             doc="Topography file"),
                    Parameter('p9', type=Type.STRING,
-                             doc="initial model file"),
+                             doc="Initial model file"),
                    Parameter('p10', type=Type.STRING,
-                             doc="reference model"),
+                             doc="Reference model"),
                    Parameter('p11', type=Type.STRING,
-                             doc="alphas"),
+                             doc="Alphas"),
                    Parameter('p12', type=Type.STRING,
-                             doc="weights file")
+                             doc="Weights file")
                ]),
 
         Method('ExportUBCIPControlV5_IP', module='geogxx', version='8.1.0',
@@ -327,7 +327,7 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="RES obs file"),
                    Parameter('p5', type=Type.STRING,
-                             doc="topography file (required)"),
+                             doc="Topography file (required)"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="Conductivity type :def:`IP_UBC_CONTROL` FILE or VALUE"),
                    Parameter('p7', type=Type.STRING,
@@ -335,21 +335,21 @@ gx_methods = {
                    Parameter('p8', type=Type.INT32_T,
                              doc="Mesh type :def:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT"),
                    Parameter('p9', type=Type.STRING,
-                             doc='mesh file (can be "") or value'),
+                             doc='Mesh file (can be "") or value'),
                    Parameter('p10', type=Type.INT32_T,
                              doc="Initial model type :def:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT"),
                    Parameter('p11', type=Type.STRING,
-                             doc='initial model file (can be "") or value'),
+                             doc='Initial model file (can be "") or value'),
                    Parameter('p12', type=Type.INT32_T,
                              doc="Reference model type :def:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT"),
                    Parameter('p13', type=Type.STRING,
-                             doc='reference model file (can be "") or value('),
+                             doc='Reference model file (can be "") or value('),
                    Parameter('p14', type=Type.INT32_T,
                              doc="Alphas type :def:`IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT"),
                    Parameter('p15', type=Type.STRING,
-                             doc='alphas  file (can be ""), value or length'),
+                             doc='Alphas  file (can be ""), value or length'),
                    Parameter('p16', type=Type.STRING,
-                             doc="weights file")
+                             doc="Weights file")
                ]),
 
         Method('ExportUBCRes3_IP', module='geogxx', version='8.1.0',
@@ -380,7 +380,7 @@ gx_methods = {
                    Parameter('p8', type=Type.STRING,
                              doc="Output TOPO file name"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="version number (3 or 5)")
+                             doc="Version number (3 or 5)")
                ]),
 
         Method('ExportUBCResControl_IP', module='geogxx', version='6.4.0',
@@ -405,17 +405,17 @@ gx_methods = {
                    Parameter('p5', type=Type.STRING,
                              doc="RES obs file"),
                    Parameter('p6', type=Type.STRING,
-                             doc="mesh file"),
+                             doc="Mesh file"),
                    Parameter('p7', type=Type.STRING,
-                             doc="topography file (required)"),
+                             doc="Topography file (required)"),
                    Parameter('p8', type=Type.STRING,
-                             doc='initial model file (can be "" or "NULL")'),
+                             doc='Initial model file (can be "" or "NULL")'),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="reference model conductivity"),
+                             doc="Reference model conductivity"),
                    Parameter('p10', type=Type.STRING,
-                             doc="alphas"),
+                             doc="Alphas"),
                    Parameter('p11', type=Type.STRING,
-                             doc="weights file")
+                             doc="Weights file")
                ]),
 
         Method('ExportUBCResControlV5_IP', module='geogxx', version='8.1.0',
@@ -437,25 +437,25 @@ gx_methods = {
                    Parameter('p4', type=Type.STRING,
                              doc="RES obs file"),
                    Parameter('p5', type=Type.STRING,
-                             doc="topography file (required)"),
+                             doc="Topography file (required)"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="Mesh type :def:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT"),
                    Parameter('p7', type=Type.STRING,
-                             doc='mesh file (can be "") or value'),
+                             doc='Mesh file (can be "") or value'),
                    Parameter('p8', type=Type.INT32_T,
                              doc="Initial model type :def:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT"),
                    Parameter('p9', type=Type.STRING,
-                             doc='initial model file (can be "") or value'),
+                             doc='Initial model file (can be "") or value'),
                    Parameter('p10', type=Type.INT32_T,
                              doc="Reference model type :def:`IP_UBC_CONTROL` FILE, VALUE or DEFAULT"),
                    Parameter('p11', type=Type.STRING,
-                             doc='reference model file (can be "") or value('),
+                             doc='Reference model file (can be "") or value('),
                    Parameter('p12', type=Type.INT32_T,
                              doc="Alphas type :def:`IP_UBC_CONTROL` FILE, VALUE, LENGTH or DEFAULT"),
                    Parameter('p13', type=Type.STRING,
-                             doc='alphas  file (can be ""), value or length'),
+                             doc='Alphas  file (can be ""), value or length'),
                    Parameter('p14', type=Type.STRING,
-                             doc="weights file")
+                             doc="Weights file")
                ]),
 
         Method('ExportDataToUBC3D_IP', module='geogxx', version='9.2',
@@ -553,7 +553,7 @@ gx_methods = {
                    Parameter('p1', type="IP",
                              doc=":class:`IP` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="job file name"),
+                             doc="Job file name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Job type :def:`IP_PLOT`")
                ]),
@@ -566,7 +566,7 @@ gx_methods = {
                    Parameter('p1', type="IP",
                              doc=":class:`IP` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="job file name"),
+                             doc="Job file name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Job type  :def:`IP_PLOT`")
                ]),
@@ -882,7 +882,7 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc="Database"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel to check")
+                             doc="Channel to check")
                ]),
 
         Method('IGetChanLabel_IP', module='geogxx', version='5.0.0',
@@ -912,7 +912,7 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc="Database"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel to check"),
+                             doc="Channel to check"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
                              doc=":def:`IP_DOMAIN`"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
@@ -933,7 +933,7 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc="Database"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel to check"),
+                             doc="Channel to check"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`IP_DOMAIN`"),
                    Parameter('p5', type=Type.DOUBLE,
@@ -1276,9 +1276,9 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc='"IPPLOT" INI file name'),
                    Parameter('p4', type=Type.STRING,
-                             doc="current line name"),
+                             doc="Current line name"),
                    Parameter('p5', type=Type.STRING,
-                             doc="map name to create")
+                             doc="Map name to create")
                ]),
 
         Method('PseudoPlot2_IP', module='geogxx', version='5.1.8',
@@ -1297,11 +1297,11 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc='"IPPLOT" INI file name'),
                    Parameter('p4', type=Type.STRING,
-                             doc="current line name"),
+                             doc="Current line name"),
                    Parameter('p5', type=Type.STRING,
-                             doc="tag for created grids"),
+                             doc="Tag for created grids"),
                    Parameter('p6', type=Type.STRING,
-                             doc="map name to create")
+                             doc="Map name to create")
                ]),
 
         Method('PseudoPlot2Dir_IP', module='geogxx', version='6.4.0',
@@ -1320,13 +1320,13 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc='"IPPLOT" INI file name'),
                    Parameter('p4', type=Type.STRING,
-                             doc="current line name"),
+                             doc="Current line name"),
                    Parameter('p5', type=Type.STRING,
-                             doc="tag for created grids"),
+                             doc="Tag for created grids"),
                    Parameter('p6', type=Type.STRING,
-                             doc="map name to create"),
+                             doc="Map name to create"),
                    Parameter('p7', type=Type.STRING,
-                             doc="directory to create files")
+                             doc="Directory to create files")
                ]),
 
         Method('PSStack_IP', module='geogxx', version='5.0.0',
@@ -1343,11 +1343,11 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc=":class:`DB` object"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel to plot"),
+                             doc="Channel to plot"),
                    Parameter('p4', type=Type.STRING,
                              doc='"IPPLOT" INI file name'),
                    Parameter('p5', type=Type.STRING,
-                             doc="map name to create")
+                             doc="Map name to create")
                ]),
 
         Method('PSStack2_IP', module='geogxx', version='5.1.0',
@@ -1360,13 +1360,13 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc=":class:`DB` object"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel to plot"),
+                             doc="Channel to plot"),
                    Parameter('p4', type=Type.STRING,
                              doc='"IPPLOT" INI file name'),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`IP_STACK_TYPE`"),
                    Parameter('p6', type=Type.STRING,
-                             doc="map name to create")
+                             doc="Map name to create")
                ]),
 
         Method('PSStack2Dir_IP', module='geogxx', version='6.4.0',
@@ -1379,15 +1379,15 @@ gx_methods = {
                    Parameter('p2', type="DB",
                              doc=":class:`DB` object"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel to plot"),
+                             doc="Channel to plot"),
                    Parameter('p4', type=Type.STRING,
                              doc='"IPPLOT" INI file name'),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`IP_STACK_TYPE`"),
                    Parameter('p6', type=Type.STRING,
-                             doc="map name to create"),
+                             doc="Map name to create"),
                    Parameter('p7', type=Type.STRING,
-                             doc="directory to create files")
+                             doc="Directory to create files")
                ]),
 
         Method('QCChanLST_IP', module='geogxx', version='7.3.0',
@@ -1497,7 +1497,7 @@ gx_methods = {
                    Parameter('p6', type=Type.STRING,
                              doc="Inverted Apparent resistivity channel"),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="invert :class:`IP` data too? :def:`IP_I2XINV`"),
+                             doc="Invert :class:`IP` data too? :def:`IP_I2XINV`"),
                    Parameter('p8', type=Type.STRING,
                              doc=":class:`IP` channel"),
                    Parameter('p9', type=Type.STRING,
@@ -1755,9 +1755,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="QC channel type.  :def:`IP_QCTYPE`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string to place name into"),
+                             doc="String to place name into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+                             doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ])
     ],
     'Obsolete': [

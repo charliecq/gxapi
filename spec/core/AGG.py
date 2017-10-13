@@ -15,7 +15,7 @@ gx_defines = [
            constants=[
                Constant('AGG_LAYER_ZONE_DEFAULT', value='0', type=Type.INT32_T,
                         doc="""
-                        If a colour table with no colour transform is passed
+                        If a color table with no color transform is passed
                         it will be used with the default zoning
                         method of the data, which is usually
                         :def_val:`AGG_LAYER_ZONE_EQUALAREA`.
@@ -94,8 +94,8 @@ gx_methods = {
                doc="Change the brightness.",
                notes="""
                0.0 brightness does nothing.
-               -1.0 to 0.0 makes colours darker, -1.0 is black
-               0.0 to 1.0 makes colours lighter, 1.0 is white
+               -1.0 to 0.0 makes colors darker, -1.0 is black
+               0.0 to 1.0 makes colors lighter, 1.0 is white
                """,
                return_type=Type.VOID,
                parameters = [
@@ -109,7 +109,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Create an aggregate",
                return_type="AGG",
-               return_doc=":class:`AGG` Object"),
+               return_doc=":class:`AGG` object"),
 
         Method('CreateMap_AGG', module='geoengine.map', version='5.0.5',
                availability=Availability.PUBLIC, 
@@ -121,12 +121,12 @@ gx_methods = {
                represents as single \\).
                """,
                return_type="AGG",
-               return_doc=":class:`AGG` Object",
+               return_doc=":class:`AGG` object",
                parameters = [
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Agg Group name")
+                             doc=":class:`AGG` group name")
                ]),
 
         Method('Destroy_AGG', module='geoengine.core', version='5.0.0',
@@ -153,7 +153,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="AGG"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="layer number"),
+                             doc="Layer number"),
                    Parameter('p3', type="ITR")
                ]),
 
@@ -180,7 +180,7 @@ gx_methods = {
                doc="Lists file names of all the IMGs inside of the :class:`AGG`.",
                notes="The returned :class:`VV` contains the file names.",
                return_type=Type.INT32_T,
-               return_doc="The number of Imgs.",
+               return_doc="The number of IMGs.",
                parameters = [
                    Parameter('p1', type="AGG",
                              doc=":class:`AGG` Handle"),
@@ -205,13 +205,13 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="AGG"),
                    Parameter('p2', type=Type.STRING,
-                             doc="grid name"),
+                             doc="Grid name"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc=":def:`AGG_LAYER_ZONE` transform to use if colour table has none defined."),
+                             doc=":def:`AGG_LAYER_ZONE` transform to use if color table has none defined."),
                    Parameter('p4', type=Type.STRING,
-                             doc='colour table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
+                             doc='Color table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="colour contour interval or :def_val:`rDUMMY` for default")
+                             doc="Color contour interval or :def_val:`rDUMMY` for default")
                ]),
 
         Method('LayerIMGEx_AGG', module='geoengine.core', version='8.2',
@@ -222,17 +222,17 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="AGG"),
                    Parameter('p2', type=Type.STRING,
-                             doc="grid name"),
+                             doc="Grid name"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc=":def:`AGG_LAYER_ZONE` transform to use if colour table has none defined."),
+                             doc=":def:`AGG_LAYER_ZONE` transform to use if color table has none defined."),
                    Parameter('p4', type=Type.STRING,
-                             doc='colour table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
+                             doc='Color table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="minimum value or :def_val:`rDUMMY` for default"),
+                             doc="Minimum value or :def_val:`rDUMMY` for default"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="maximum value or :def_val:`rDUMMY` for default"),
+                             doc="Maximum value or :def_val:`rDUMMY` for default"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="colour contour interval or :def_val:`rDUMMY` for default")
+                             doc="Color contour interval or :def_val:`rDUMMY` for default")
                ]),
 
         Method('LayerShadeIMG_AGG', module='geoengine.core', version='5.0.0',
@@ -250,15 +250,15 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="AGG"),
                    Parameter('p2', type=Type.STRING,
-                             doc="grid name"),
+                             doc="Grid name"),
                    Parameter('p3', type=Type.STRING,
-                             doc='colour table name, "" for default'),
+                             doc='Color table name, "" for default'),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="inclination"),
+                             doc="Inclination"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="declination"),
+                             doc="Declination"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="scale (:def_val:`rDUMMY` for default, returns value used)")
+                             doc="Scale (:def_val:`rDUMMY` for default, returns value used)")
                ]),
 
         Method('rGetBrightness_AGG', module='geoengine.core', version='5.0.0',
@@ -266,7 +266,7 @@ gx_methods = {
                doc="Get the brightness setting of the :class:`AGG`",
                notes="""
                Brightness can range from -1.0 (black) to 1.0 (white).
-               This brightness control is relative to the normal colour
+               This brightness control is relative to the normal color
                when the :class:`AGG` is created.
                
                :class:`AGG` brightness depends on the brightness of the :class:`ITR` of each layer.
@@ -298,7 +298,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="AGG"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="layer number"),
+                             doc="Layer number"),
                    Parameter('p3', type="ITR")
                ]),
 
@@ -320,9 +320,9 @@ gx_methods = {
                    Parameter('p1', type="AGG",
                              doc=":class:`AGG` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the grid to update"),
+                             doc="Name of the grid to update"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="size of the thumbnail in pixels (64 is typical) the minimum size if 16 (16x16)")
+                             doc="Size of the thumbnail in pixels (64 is typical) the minimum size if 16 (16x16)")
                ])
     ]
 }

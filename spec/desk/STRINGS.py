@@ -16,9 +16,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="string file"),
+                             doc="String file"),
                    Parameter('p2', type=Type.STRING,
-                             doc="definition guid")
+                             doc="Definition guid")
                ])
     ]
 }

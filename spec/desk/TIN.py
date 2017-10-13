@@ -23,9 +23,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="TIN",
-                             doc="destination :class:`TIN`"),
+                             doc="Destination :class:`TIN`"),
                    Parameter('p2', type="TIN",
-                             doc="source :class:`TIN`")
+                             doc="Source :class:`TIN`")
                ]),
 
         Method('Create_TIN', module='geogxx', version='5.0.0',
@@ -73,7 +73,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc=":class:`TIN` file"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('p2', type="var CRC", is_ref=True,
                              doc="CRC returned (Currently this is not implemented)"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -183,7 +183,7 @@ gx_methods = {
                    Parameter('p1', type="TIN",
                              doc=":class:`TIN` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="triangle index [0...N-1]"),
+                             doc="Triangle index [0...N-1]"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="X0"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
@@ -242,11 +242,11 @@ gx_methods = {
                    Parameter('p1', type="TIN",
                              doc=":class:`TIN` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="seed triangle (can be iDummy or <0)"),
+                             doc="Seed triangle (can be iDummy or <0)"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="target X location"),
+                             doc="Target X location"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="target Y location")
+                             doc="Target Y location")
                ]),
 
         Method('iNodes_TIN', module='geogxx', version='5.0.0',

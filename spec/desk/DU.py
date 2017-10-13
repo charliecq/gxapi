@@ -107,11 +107,11 @@ gx_defines = [
            doc="Leveling Options",
            constants=[
                Constant('DU_LEVEL_LINES', value='0', type=Type.INT32_T,
-                        doc="extract line corrections"),
+                        doc="Extract line corrections"),
                Constant('DU_LEVEL_TIES', value='1', type=Type.INT32_T,
-                        doc="extract tie corrections"),
+                        doc="Extract tie corrections"),
                Constant('DU_LEVEL_ALL', value='2', type=Type.INT32_T,
-                        doc="extract all corrections")
+                        doc="Extract all corrections")
            ]),
 
     Define('DU_LINEOUT',
@@ -241,11 +241,11 @@ gx_defines = [
            doc="Move Style",
            constants=[
                Constant('DU_MOVE_ABSOLUTE', value='0', type=Type.INT32_T,
-                        doc="move input to absolute value in control channel"),
+                        doc="Move input to absolute value in control channel"),
                Constant('DU_MOVE_MINUS', value='1', type=Type.INT32_T,
-                        doc="subtract control channel from input channel"),
+                        doc="Subtract control channel from input channel"),
                Constant('DU_MOVE_PLUS', value='2', type=Type.INT32_T,
-                        doc="add control channel to input channel"),
+                        doc="Add control channel to input channel"),
                Constant('DU_MOVE_INTERP', value='3', type=Type.INT32_T,
                         doc="""
                         data is NOT moved, but dummies in the input are interpolated
@@ -757,13 +757,13 @@ gx_methods = {
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Y location"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="located X location"),
+                             doc="Located X location"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
-                             doc="located Y location"),
+                             doc="Located Y location"),
                    Parameter('p6', type=Type.INT32_T, is_ref=True,
-                             doc="line for located point"),
+                             doc="Line for located point"),
                    Parameter('p7', type=Type.DOUBLE, is_ref=True,
-                             doc="fiducial of located point")
+                             doc="Fiducial of located point")
                ]),
 
         Method('CopyLine_DU', module='geogxx', version='5.0.0',
@@ -1035,11 +1035,11 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc="Current line"),
                    Parameter('p4', type="VV",
-                             doc="list of channels - channel symbols stored as INT"),
+                             doc="List of channels - channel symbols stored as INT"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DU_CHANNELS`"),
                    Parameter('p6', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p7', type=Type.INT32_T,
                              doc="Write out dummies?"),
                    Parameter('p8', type=Type.INT32_T,
@@ -1062,11 +1062,11 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc="Current line"),
                    Parameter('p4', type="VV",
-                             doc="list of channels - channel symbols stored as INT"),
+                             doc="List of channels - channel symbols stored as INT"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DU_CHANNELS`"),
                    Parameter('p6', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p7', type=Type.INT32_T,
                              doc="Write out dummies?"),
                    Parameter('p8', type=Type.INT32_T,
@@ -1133,9 +1133,9 @@ gx_methods = {
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DU_CHANNELS`"),
                    Parameter('p5', type=Type.STRING,
-                             doc="header file name"),
+                             doc="Header file name"),
                    Parameter('p6', type=Type.STRING,
-                             doc="data file name")
+                             doc="Data file name")
                ]),
 
         Method('ExportAsegProj_DU', module='geogxx', version='5.0.1',
@@ -1165,11 +1165,11 @@ gx_methods = {
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DU_CHANNELS`"),
                    Parameter('p5', type=Type.STRING,
-                             doc="export header file name"),
+                             doc="Export header file name"),
                    Parameter('p6', type=Type.STRING,
-                             doc="export data file name"),
+                             doc="Export data file name"),
                    Parameter('p7', type=Type.STRING,
-                             doc="export projection file name"),
+                             doc="Export projection file name"),
                    Parameter('p8', type="IPJ",
                              doc="Projection handle")
                ]),
@@ -1218,7 +1218,7 @@ gx_methods = {
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DU_CHANNELS`"),
                    Parameter('p5', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="Write out dummies?"),
                    Parameter('p7', type=Type.INT32_T,
@@ -1258,7 +1258,7 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="List of channels to export"),
                    Parameter('p3', type=Type.STRING,
-                             doc="export data file name")
+                             doc="Export data file name")
                ]),
 
         Method('ExportMDB_DU', module='geogxx', version='5.0.0',
@@ -1283,7 +1283,7 @@ gx_methods = {
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DU_LINEOUT`"),
                    Parameter('p6', type=Type.STRING,
-                             doc="export data file name")
+                             doc="Export data file name")
                ]),
 
         Method('ExportGeodatabase_DU', module='geogxx', version='8.0.0',
@@ -1312,7 +1312,7 @@ gx_methods = {
                    Parameter('p7', type=Type.INT32_T,
                              doc=":def:`DU_LINEOUT`"),
                    Parameter('p8', type=Type.STRING,
-                             doc="export data file name")
+                             doc="Export data file name")
                ]),
 
         Method('GetExistingFeatureClassesInGeodatabase_DU', module='geogxx', version='8.0.0',
@@ -1356,7 +1356,7 @@ gx_methods = {
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DU_LINEOUT`"),
                    Parameter('p6', type=Type.STRING,
-                             doc="export shape file name or base filename (shp assumed if no extension given)"),
+                             doc="Export shape file name or base filename (shp assumed if no extension given)"),
                    Parameter('p7', type="LST",
                              doc=":class:`LST` object will be filled with shape files created")
                ]),
@@ -1388,9 +1388,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="export data file name"),
+                             doc="Export data file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="export template name")
+                             doc="Export template name")
                ]),
 
         Method('ExportXYZ2_DU', module='geogxx', version='5.0.0',
@@ -1402,9 +1402,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type="WA",
-                             doc="export data file :class:`WA` handle"),
+                             doc="Export data file :class:`WA` handle"),
                    Parameter('p3', type="RA",
-                             doc="export template file :class:`RA` handle")
+                             doc="Export template file :class:`RA` handle")
                ]),
 
         Method('FFT_DU', module='geogxx', version='5.0.0',
@@ -1417,11 +1417,11 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Line handle"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="space Channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Space Channel [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="real Channel  [:def_val:`DB_LOCK_READWRITE`]"),
+                             doc="Real Channel  [:def_val:`DB_LOCK_READWRITE`]"),
                    Parameter('p5', type="DB_SYMB",
-                             doc="imaginary Channel [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="Imaginary Channel [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('Filter_DU', module='geogxx', version='5.0.0',
@@ -1486,9 +1486,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="xyz file name"),
+                             doc="Xyz file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template file name to create")
+                             doc="Template file name to create")
                ]),
 
         Method('GetXYZNumFields_DU', module='geogxx', version='9.1.0',
@@ -1497,9 +1497,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="xyz file name"),
+                             doc="Xyz file name"),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="returned number of fields")
+                             doc="Returned number of fields")
                ]),
 
         Method('GetChanDataLST_DU', module='geogxx', version='6.1.0',
@@ -1594,19 +1594,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line                    [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Line                    [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="date                    [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Date                    [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="local time (on date)    [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Local time (on date)    [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p5', type="DB_SYMB",
-                             doc="reading                 [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Reading                 [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p6', type="DB_SYMB",
-                             doc="base                    [:def_val:`DB_LOCK_READWRITE`]"),
+                             doc="Base                    [:def_val:`DB_LOCK_READWRITE`]"),
                    Parameter('p7', type="DB_SYMB",
-                             doc="closure error           [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="Closure error           [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('GravTide_DU', module='geogxx', version='5.0.0',
@@ -1615,21 +1615,21 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="lat  [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Lat  [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="long [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Long [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p5', type="DB_SYMB",
-                             doc="date [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Date [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p6', type="DB_SYMB",
-                             doc="local time (on date) [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Local time (on date) [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="GMT difference (added to time to give GMT)"),
                    Parameter('p8', type="DB_SYMB",
-                             doc="calculated tide [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="Calculated tide [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('GridLoad_DU', module='geogxx', version='5.0.0',
@@ -1640,7 +1640,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type="IMG",
-                             doc="grid img"),
+                             doc="Grid img"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="X decimation factor"),
                    Parameter('p4', type=Type.INT32_T,
@@ -1648,7 +1648,7 @@ gx_methods = {
                    Parameter('p5', type=Type.INT32_T,
                              doc="0 trim leading/trailing dummies (default), 1 trim all dummies, 2 leave all dummies"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="flag for creating index channel: 0 no (default), 1 yes.")
+                             doc="Flag for creating index channel: 0 no (default), 1 yes.")
                ]),
 
         Method('GridLoadXYZ_DU', module='geogxx', version='5.0.0',
@@ -1659,7 +1659,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type="IMG",
-                             doc="grid img"),
+                             doc="Grid img"),
                    Parameter('p3', type="DB_SYMB",
                              doc="X Channel"),
                    Parameter('p4', type="DB_SYMB",
@@ -1675,7 +1675,7 @@ gx_methods = {
                    Parameter('p9', type=Type.INT32_T,
                              doc="0 trim leading/trailing dummies (default), 1 trim all dummies, 2 leave all dummies"),
                    Parameter('p10', type=Type.INT32_T,
-                             doc="flag for creating index channel: 0 no (default), 1 yes.")
+                             doc="Flag for creating index channel: 0 no (default), 1 yes.")
                ]),
 
         Method('Head_DU', module='geogxx', version='5.0.0',
@@ -1690,17 +1690,17 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database object"),
+                             doc="Database object"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line Symbol"),
+                             doc="Line Symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel to correct [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Channel to correct [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="corrected channel  [:def_val:`DB_LOCK_READWRITE`]"),
+                             doc="Corrected channel  [:def_val:`DB_LOCK_READWRITE`]"),
                    Parameter('p5', type="TB",
-                             doc="heading table"),
+                             doc="Heading table"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="line direction")
+                             doc="Line direction")
                ]),
 
         Method('IImportBIN3_DU', module='geogxx', version='6.1.0',
@@ -1718,9 +1718,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
                              doc="Optional Line name (on return, the actual line)"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
@@ -1743,7 +1743,7 @@ gx_methods = {
                    Parameter('p2', type="PJ",
                              doc="Projection Files Object"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p4', type="DB_SYMB",
                              doc="X channel handle"),
                    Parameter('p5', type="DB_SYMB",
@@ -1768,11 +1768,11 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import database connection string       (overrides template value)"),
+                             doc="Import database connection string       (overrides template value)"),
                    Parameter('p3', type=Type.STRING,
-                             doc="imported table in database file (overrides template value)"),
+                             doc="Imported table in database file (overrides template value)"),
                    Parameter('p4', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p5', type=Type.STRING,
                              doc="Oasis montaj line name to create (overrides template value)")
                ]),
@@ -1798,7 +1798,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import database connection string"),
+                             doc="Import database connection string"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DU_STORAGE`")
                ]),
@@ -1840,9 +1840,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="database type"),
+                             doc="Database type"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DU_STORAGE`")
                ]),
@@ -1876,11 +1876,11 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template file name"),
+                             doc="Template file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="header file name"),
+                             doc="Header file name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p5', type=Type.STRING,
                              doc="Flight Line Channel name"),
                    Parameter('p6', type=Type.INT32_T,
@@ -1896,17 +1896,17 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template file name"),
+                             doc="Template file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="header file name"),
+                             doc="Header file name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p5', type=Type.STRING,
                              doc="Flight Line Channel name"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="Number of channels to import at one time"),
                    Parameter('p7', type=Type.STRING,
-                             doc="projection file name"),
+                             doc="Projection file name"),
                    Parameter('p8', type=Type.STRING,
                              doc="Channel pair to associate projection"),
                    Parameter('p9', type=Type.STRING,
@@ -1935,9 +1935,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p4', type=Type.STRING,
                              doc="Optional Line name (see note 3.)"),
                    Parameter('p5', type=Type.INT32_T,
@@ -1968,9 +1968,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p4', type=Type.STRING,
                              doc="Optional Line name (see note 3.)"),
                    Parameter('p5', type=Type.INT32_T,
@@ -1992,9 +1992,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`DU_IMPORT`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p5', type=Type.STRING,
                              doc="Optional Line name (see note 3.)"),
                    Parameter('p6', type=Type.INT32_T,
@@ -2070,13 +2070,13 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import database file name   (overrides template value)"),
+                             doc="Import database file name   (overrides template value)"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import data file type       (overrides template value)"),
+                             doc="Import data file type       (overrides template value)"),
                    Parameter('p4', type=Type.STRING,
-                             doc="imported table in database file (overrides template value)"),
+                             doc="Imported table in database file (overrides template value)"),
                    Parameter('p5', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p6', type=Type.STRING,
                              doc="Oasis Montaj line name to create (overrides template value)")
                ]),
@@ -2099,9 +2099,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc='import database connection string (e.g. "d:\\Personal\\test.mdb|Table" or "d:\\File\\test.gdb|FeatureClass, overrides template value)'),
+                             doc='Import database connection string (e.g. "d:\\Personal\\test.mdb|Table" or "d:\\File\\test.gdb|FeatureClass, overrides template value)'),
                    Parameter('p3', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p4', type=Type.STRING,
                              doc="Oasis montaj line name to create (overrides template value)")
                ]),
@@ -2136,9 +2136,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template file name"),
+                             doc="Template file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Number of channels to import at one time")
                ]),
@@ -2192,9 +2192,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`DU_IMPORT`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="import template name")
+                             doc="Import template name")
                ]),
 
         Method('ImportXYZ2_DU', module='geogxx', version='5.1.6',
@@ -2214,9 +2214,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`DU_IMPORT`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p5', type="WA")
                ]),
 
@@ -2247,9 +2247,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Line symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="ordered index channel (should be int) [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Ordered index channel (should be int) [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="channel to reorder [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="Channel to reorder [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('Interp_DU', module='geogxx', version='5.0.0',
@@ -2414,13 +2414,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="new template name"),
+                             doc="New template name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DU_LAB_TYPE`"),
                    Parameter('p4', type=Type.STRING,
-                             doc="delimiter string"),
+                             doc="Delimiter string"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Offset to column labels line (0 for first line)"),
                    Parameter('p6', type=Type.INT32_T,
@@ -2465,13 +2465,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="REG",
                              doc=":class:`REG` to hold constant data"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="line in which to load data"),
+                             doc="Line in which to load data"),
                    Parameter('p4', type=Type.STRING,
-                             doc="gravity data file")
+                             doc="Gravity data file")
                ]),
 
         Method('LoadLTB_DU', module='geogxx', version='5.0.0',
@@ -2495,9 +2495,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="LTB",
-                             doc="table"),
+                             doc="Table"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DU_LOADLTB`")
                ]),
@@ -2508,13 +2508,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database object"),
+                             doc="Database object"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line Symbol"),
+                             doc="Line Symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="base channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Base channel [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="new fiducial channel [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="New fiducial channel [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('Mask_DU', module='geogxx', version='5.0.0',
@@ -2554,9 +2554,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line handle"),
+                             doc="Line handle"),
                    Parameter('p3', type="EXP",
-                             doc="math expression object (:class:`EXP`)")
+                             doc="Math expression object (:class:`EXP`)")
                ]),
 
         Method('MergeLine_DU', module='geogxx', version='5.0.0',
@@ -2593,15 +2593,15 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="base fid start"),
+                             doc="Base fid start"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="base fid increment"),
+                             doc="Base fid increment"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="start index (can be negative)"),
+                             doc="Start index (can be negative)"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="number of fids"),
+                             doc="Number of fids"),
                    Parameter('p7', type=Type.INT32_T,
                              doc=":def:`DU_MODFID`")
                ]),
@@ -2987,19 +2987,19 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Line symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="input X channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Input X channel [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="input Y channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Input Y channel [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p5', type="DB_SYMB",
-                             doc="output X channel [:def_val:`DB_LOCK_READWRITE`]"),
+                             doc="Output X channel [:def_val:`DB_LOCK_READWRITE`]"),
                    Parameter('p6', type="DB_SYMB",
-                             doc="output Y channel [:def_val:`DB_LOCK_READWRITE`]"),
+                             doc="Output Y channel [:def_val:`DB_LOCK_READWRITE`]"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="X point about which to rotate"),
                    Parameter('p8', type=Type.DOUBLE,
                              doc="Y of point about which to rotate"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="angle in degrees CCW")
+                             doc="Angle in degrees CCW")
                ]),
 
         Method('SampleGD_DU', module='geogxx', version='5.0.0',
@@ -3085,9 +3085,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="header file name"),
+                             doc="Header file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p3', type=Type.STRING,
                              doc="Flight Line Channel name"),
                    Parameter('p4', type=Type.STRING,
@@ -3134,7 +3134,7 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Line symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel to sort [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Channel to sort [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`DU_SORT`")
                ]),
@@ -3149,9 +3149,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Line symbol"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel to sort [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Channel to sort [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('p4', type="DB_SYMB",
-                             doc="output index channel (should be int) [:def_val:`DB_LOCK_READWRITE`]"),
+                             doc="Output index channel (should be int) [:def_val:`DB_LOCK_READWRITE`]"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DU_SORT`")
                ]),
@@ -3174,7 +3174,7 @@ gx_methods = {
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`DU_SORT`"),
                    Parameter('p7', type="DB_SYMB",
-                             doc="output index channel (should be int) [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="Output index channel (should be int) [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('SplitLine_DU', module='geogxx', version='5.0.0',
@@ -3561,11 +3561,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line symbol"),
+                             doc="Line symbol"),
                    Parameter('p3', type="LST",
-                             doc="list of channel names to write"),
+                             doc="List of channel names to write"),
                    Parameter('p4', type="WA",
                              doc=":class:`WA` to write to")
                ]),

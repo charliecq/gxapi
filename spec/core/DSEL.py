@@ -209,7 +209,7 @@ gx_methods = {
                    Parameter('p1', type="DSEL",
                              doc=":class:`DSEL` object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="spatial accuracy desired")
+                             doc="Spatial accuracy desired")
                ])
     ]
 }

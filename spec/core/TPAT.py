@@ -20,9 +20,9 @@ gx_class = Class('TPAT',
                  Density:       The tiling density. If not specified, defaults to 1.0.
                  Thickness:     The line thickness in the tile, expressed as a integer
                  percentage (0-100) of the tile size.
-                 Colour:        The pattern line work colour. If not specified, defaults to black.
+                 Color:        The pattern line work color. If not specified, defaults to black.
                  
-                 Background colour: The pattern background colour. If not specified, defaults to
+                 Background color: The pattern background color. If not specified, defaults to
                  transparent (C_ANY_NONE)
                  
                  
@@ -101,7 +101,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get solid pattern info from the :class:`TPAT`.",
                notes="""
-               Returns the solid colour, pattern foreground color, or symbol
+               Returns the solid color, pattern foreground color, or symbol
                color, along with the code, label and description.
                """,
                return_type=Type.VOID,
@@ -109,19 +109,19 @@ gx_methods = {
                    Parameter('p1', type="TPAT",
                              doc=":class:`TPAT` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="index"),
+                             doc="Index"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Returned Code"),
                    Parameter('p4', type=Type.INT32_T, default_length='TPAT_CODE_SIZE',
-                             doc="length of supplied code string variable"),
+                             doc="Length of supplied code string variable"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
                              doc="Returned Label"),
                    Parameter('p6', type=Type.INT32_T, default_length='TPAT_LABEL_SIZE',
-                             doc="length of supplied code string variable"),
+                             doc="Length of supplied code string variable"),
                    Parameter('p7', type=Type.STRING, is_ref=True, size_of_param='p8',
                              doc="Returned Description"),
                    Parameter('p8', type=Type.INT32_T, default_length='TPAT_DESC_SIZE',
-                             doc="length of supplied code string variable"),
+                             doc="Length of supplied code string variable"),
                    Parameter('p9', type=Type.INT32_T, is_ref=True,
                              doc="Color.")
                ]),
@@ -144,13 +144,13 @@ gx_methods = {
                of fields found inside it.
                
                The following fields are identified. Only the "CODE" field is
-               required, as the "default" thematic pattern is a solid black colour.
+               required, as the "default" thematic pattern is a solid black color.
                
                CODE   The pattern code (required by all types - CASE SENSITIVE)
                LABEL  Longer text identifier to use in legends etc. (up to 31 characters)
                DESCRIPTION Much longer text string (up to 127 characters).
                
-               COLOR  Line colour used in patterns, and for solid colours, the colour.
+               COLOR  Line color used in patterns, and for solid colors, the color.
                If only this field is found (and none below), the pattern file
                is assumed to be type TPAT_TYPE_COLOR.
                

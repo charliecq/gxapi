@@ -55,14 +55,14 @@ gx_defines = [
            ]),
 
     Define('PGU_TRANS',
-           doc="transform methods for the columns",
+           doc="Transform methods for the columns",
            constants=[
                Constant('PGU_TRANS_NONE', value='0', type=Type.INT32_T),
                Constant('PGU_TRANS_LOG', value='1', type=Type.INT32_T)
            ]),
 
     Define('PGU_INTERP_ORDER',
-           doc="interpolation direction order",
+           doc="Interpolation direction order",
            constants=[
                Constant('PGU_INTERP_ORDER_XYZ', value='0', type=Type.INT32_T),
                Constant('PGU_INTERP_ORDER_XZY', value='1', type=Type.INT32_T),
@@ -82,7 +82,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.STRING,
                              doc="sRefFil - reference file for boolean mask flag.")
                ]),
@@ -97,7 +97,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin of grid"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -107,7 +107,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y cell size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="rotation angle (degrees CCW)."),
+                             doc="Rotation angle (degrees CCW)."),
                    Parameter('p7', type="DAT",
                              doc=":class:`DAT` source"),
                    Parameter('p8', type=Type.INT32_T,
@@ -124,7 +124,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input 3D :class:`PG`"),
+                             doc="Input 3D :class:`PG`"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin of 3D grid"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -138,7 +138,7 @@ gx_methods = {
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Z cell size"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="rotation angle (degrees CCW, vertical axis only)."),
+                             doc="Rotation angle (degrees CCW, vertical axis only)."),
                    Parameter('p9', type="DAT",
                              doc="3D :class:`DAT` source"),
                    Parameter('p10', type=Type.INT32_T,
@@ -155,7 +155,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin of grid"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -165,7 +165,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y cell size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="rotation angle (degrees CCW)."),
+                             doc="Rotation angle (degrees CCW)."),
                    Parameter('p7', type="DB",
                              doc="Database"),
                    Parameter('p8', type="DB_SYMB",
@@ -188,7 +188,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input 3D :class:`PG`"),
+                             doc="Input 3D :class:`PG`"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin of 3D grid"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -202,7 +202,7 @@ gx_methods = {
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Z cell size"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="rotation angle (degrees CCW, vertical axis only)."),
+                             doc="Rotation angle (degrees CCW, vertical axis only)."),
                    Parameter('p9', type="DB",
                              doc="Database"),
                    Parameter('p10', type="DB_SYMB",
@@ -227,7 +227,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin of grid"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -237,7 +237,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y cell size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="rotation angle (degrees CCW)."),
+                             doc="Rotation angle (degrees CCW)."),
                    Parameter('p7', type="VV",
                              doc="X locations of values"),
                    Parameter('p8', type="VV",
@@ -255,13 +255,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="original pager obj"),
+                             doc="Original pager obj"),
                    Parameter('p2', type="PG",
-                             doc="expanded pager obj"),
+                             doc="Expanded pager obj"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="% expansion"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="option  0 - rectangular, 1 - square"),
+                             doc="Option  0 - rectangular, 1 - square"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="X dimension to expand to (0 for expansion to FFT2D legal dimension)"),
                    Parameter('p6', type=Type.INT32_T,
@@ -274,7 +274,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Roll off weighting option: 1 - linear, 2 - square"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -303,7 +303,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Value to set in pager")
                ]),
@@ -314,17 +314,17 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number of time to pass smooth filter"),
+                             doc="Number of time to pass smooth filter"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="flag to use filter file"),
+                             doc="Flag to use filter file"),
                    Parameter('p4', type=Type.STRING,
-                             doc="file for filter values"),
+                             doc="File for filter values"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="size of filter window, 5/7/9"),
+                             doc="Size of filter window, 5/7/9"),
                    Parameter('p6', type="VV",
-                             doc="array of 6/10/15 filter coefficients")
+                             doc="Array of 6/10/15 filter coefficients")
                ]),
 
         Method('FiltSym5_PGU', module='geogxx', version='5.0.0',
@@ -333,15 +333,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="number of time to pass smooth filter"),
+                             doc="Number of time to pass smooth filter"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="flag to use filter file"),
+                             doc="Flag to use filter file"),
                    Parameter('p4', type=Type.STRING,
-                             doc="file for filter values"),
+                             doc="File for filter values"),
                    Parameter('p5', type="VV",
-                             doc="array of 6 filter coefficients at position 00, 10, 11, 20, 21, 22. Symmetric filters look like : 22 21 20 21 22 21 11 10 11 21 20 10 00 10 20 21 11 10 11 21 22 21 20 21 22")
+                             doc="Array of 6 filter coefficients at position 00, 10, 11, 20, 21, 22. Symmetric filters look like : 22 21 20 21 22 21 11 10 11 21 20 10 00 10 20 21 11 10 11 21 22 21 20 21 22")
                ]),
 
         Method('GridPeak_PGU', module='geogxx', version='5.0.0',
@@ -374,7 +374,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type="DAT",
                              doc=":class:`DAT` source"),
                    Parameter('p3', type="REG",
@@ -388,7 +388,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input 3D :class:`PG`"),
+                             doc="Input 3D :class:`PG`"),
                    Parameter('p2', type="DAT",
                              doc=":class:`DAT` source"),
                    Parameter('p3', type="REG",
@@ -422,7 +422,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type="DB",
                              doc="Database"),
                    Parameter('p3', type="DB_SYMB",
@@ -462,7 +462,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input 3D :class:`PG`"),
+                             doc="Input 3D :class:`PG`"),
                    Parameter('p2', type="DB",
                              doc="Database"),
                    Parameter('p3', type="DB_SYMB",
@@ -484,7 +484,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type="VV",
                              doc="X locations"),
                    Parameter('p3', type="VV",
@@ -603,7 +603,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input :class:`PG` object"),
+                             doc="Input :class:`PG` object"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -613,7 +613,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="DY"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="rotation angle"),
+                             doc="Rotation angle"),
                    Parameter('p7', type="TR",
                              doc="Trend information or NULL"),
                    Parameter('p8', type="IPJ",
@@ -654,23 +654,23 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="original pager obj"),
+                             doc="Original pager obj"),
                    Parameter('p2', type="PG",
-                             doc="trended pager obj"),
+                             doc="Trended pager obj"),
                    Parameter('p3', type="TR",
-                             doc="trend obj"),
+                             doc="Trend obj"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="option  0 - calculate, 1 - given in :class:`TR`, 2 - replace back from :class:`TR`"),
+                             doc="Option  0 - calculate, 1 - given in :class:`TR`, 2 - replace back from :class:`TR`"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="trend base on: 0 - all points, 1 - edge points"),
+                             doc="Trend base on: 0 - all points, 1 - edge points"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="trend orogin  rXo,"),
+                             doc="Trend origin  rXo,"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="trend orogin  rYo,"),
+                             doc="Trend origin  rYo,"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="inclrement in X directon  rDx,"),
+                             doc="Increment in X direction  rDx,"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="inclrement in Y directon  rDy")
+                             doc="Increment in Y direction  rDy")
                ])
     ],
     'Math Operations': [
@@ -713,9 +713,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input matrix"),
+                             doc="Input matrix"),
                    Parameter('p2', type="PG",
-                             doc="returned correlation matrix")
+                             doc="Returned correlation matrix")
                ]),
 
         Method('CorrelationMatrix2_PGU', module='geogxx', version='5.1.8',
@@ -724,11 +724,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input matrix"),
+                             doc="Input matrix"),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`PGU_CORR`"),
                    Parameter('p3', type="PG",
-                             doc="returned correlation matrix")
+                             doc="Returned correlation matrix")
                ]),
 
         Method('InvertMatrix_PGU', module='geogxx', version='5.0.0',
@@ -781,11 +781,11 @@ gx_methods = {
                    Parameter('p1', type="PG",
                              doc="LU decomposition of A"),
                    Parameter('p2', type="VV",
-                             doc="permutation vector (type INT)"),
+                             doc="Permutation vector (type INT)"),
                    Parameter('p3', type="VV",
-                             doc="right hand side vector B (input)"),
+                             doc="Right hand side vector B (input)"),
                    Parameter('p4', type="VV",
-                             doc="solution vector (output)")
+                             doc="Solution vector (output)")
                ]),
 
         Method('LUDecomp_PGU', module='geogxx', version='5.0.0',
@@ -806,11 +806,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input"),
+                             doc="Input"),
                    Parameter('p2', type="PG",
                              doc="LU decomposition (may be same pager as input)"),
                    Parameter('p3', type="VV",
-                             doc="permutation vector (type INT)")
+                             doc="Permutation vector (type INT)")
                ]),
 
         Method('MatrixMult_PGU', module='geogxx', version='5.0.0',
@@ -827,15 +827,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="matrix U"),
+                             doc="Matrix U"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="TRUE (1) if U should be transposed before multiplication"),
                    Parameter('p3', type="PG",
-                             doc="matrix V"),
+                             doc="Matrix V"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="TRUE (1) if V should be transposed before multiplication"),
                    Parameter('p5', type="PG",
-                             doc="returned matrix U*V")
+                             doc="Returned matrix U*V")
                ]),
 
         Method('MatrixVectorMult_PGU', module='geogxx', version='5.0.0',
@@ -852,11 +852,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="matrix U"),
+                             doc="Matrix U"),
                    Parameter('p2', type="VV",
-                             doc="vector x"),
+                             doc="Vector x"),
                    Parameter('p3', type="VV",
-                             doc="returned vector U*x")
+                             doc="Returned vector U*x")
                ]),
 
         Method('SVDecompose_PGU', module='geogxx', version='5.0.0',
@@ -931,7 +931,7 @@ gx_methods = {
                    Parameter('p1', type="PG",
                              doc="Input pager of the principal components"),
                    Parameter('p2', type="VV",
-                             doc="returned communality values")
+                             doc="Returned communality values")
                ]),
 
         Method('PCLoadings_PGU', module='geogxx', version='5.0.0',
@@ -952,9 +952,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="standardized data matrix (M by N)"),
+                             doc="Standardized data matrix (M by N)"),
                    Parameter('p2', type="PG",
-                             doc="principal component loadings (N by N)")
+                             doc="Principal component loadings (N by N)")
                ]),
 
         Method('PCLoadings2_PGU', module='geogxx', version='5.1.8',
@@ -964,9 +964,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="correllation matrix (N by N)"),
+                             doc="Correllation matrix (N by N)"),
                    Parameter('p2', type="PG",
-                             doc="principal component loadings (N by N)")
+                             doc="Principal component loadings (N by N)")
                ]),
 
         Method('PCScores_PGU', module='geogxx', version='5.0.0',
@@ -984,11 +984,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="standardized data matrix  (M by N)"),
+                             doc="Standardized data matrix  (M by N)"),
                    Parameter('p2', type="PG",
-                             doc="principal component loadings (input) (N by L, L<=N)"),
+                             doc="Principal component loadings (input) (N by L, L<=N)"),
                    Parameter('p3', type="PG",
-                             doc="principal component scores (returned) (M by L, L<=N)")
+                             doc="Principal component scores (returned) (M by L, L<=N)")
                ]),
 
         Method('PCStandardize_PGU', module='geogxx', version='5.0.0',
@@ -998,11 +998,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="matrix to standardize"),
+                             doc="Matrix to standardize"),
                    Parameter('p2', type="VV",
-                             doc="means"),
+                             doc="Means"),
                    Parameter('p3', type="VV",
-                             doc="standard deviations"),
+                             doc="Standard deviations"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`PGU_DIRECTION`")
                ]),
@@ -1020,15 +1020,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="matrix to standardize"),
+                             doc="Matrix to standardize"),
                    Parameter('p2', type="VV",
-                             doc="mask :class:`VV` for data selection (forward only)"),
+                             doc="Mask :class:`VV` for data selection (forward only)"),
                    Parameter('p3', type="VV",
-                             doc="means"),
+                             doc="Means"),
                    Parameter('p4', type="VV",
-                             doc="standard deviations"),
+                             doc="Standard deviations"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="forward or reverse")
+                             doc="Forward or reverse")
                ]),
 
         Method('PCTransform_PGU', module='geogxx', version='5.0.0',
@@ -1048,11 +1048,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="matrix to transform"),
+                             doc="Matrix to transform"),
                    Parameter('p2', type="VV",
-                             doc="detection limits for the columns"),
+                             doc="Detection limits for the columns"),
                    Parameter('p3', type="VV",
-                             doc="maximum values for the columns"),
+                             doc="Maximum values for the columns"),
                    Parameter('p4', type="VV",
                              doc=":def:`PGU_TRANS`"),
                    Parameter('p5', type=Type.INT32_T,
@@ -1072,9 +1072,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="principal component loadings (input) (N by M, M<=N)"),
+                             doc="Principal component loadings (input) (N by M, M<=N)"),
                    Parameter('p2', type="PG",
-                             doc="rotated principal component loadings (returned) (N by L, L<=M)")
+                             doc="Rotated principal component loadings (returned) (N by L, L<=M)")
                ])
     ],
     'Specialized Operations': [
@@ -1123,7 +1123,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="input grid"),
+                             doc="Input grid"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X origin of grid"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -1133,7 +1133,7 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y cell size"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="rotation angle (degrees CCW)."),
+                             doc="Rotation angle (degrees CCW)."),
                    Parameter('p7', type="VV",
                              doc="X locations of values"),
                    Parameter('p8', type="VV",
@@ -1141,9 +1141,9 @@ gx_methods = {
                    Parameter('p9', type="VV",
                              doc="Z values to grid"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="power weighting for averaging (set to 0 for straight average)"),
+                             doc="Power weighting for averaging (set to 0 for straight average)"),
                    Parameter('p11', type=Type.DOUBLE,
-                             doc="slope weighting for averaging (set to 0 for pure power-law weighting)")
+                             doc="Slope weighting for averaging (set to 0 for pure power-law weighting)")
                ]),
 
         Method('FFT2Filter_PGU', module='geogxx', version='5.0.0',
@@ -1153,7 +1153,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.STRING,
                              doc="sConFil - :class:`FFT` filter control file"),
                    Parameter('p3', type="TR",
@@ -1173,9 +1173,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="PG",
-                             doc="pager obj"),
+                             doc="Pager obj"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="option: 0 - forward transform, 1 - invers transform")
+                             doc="Option: 0 - forward transform, 1 - invers transform")
                ])
     ]
 }

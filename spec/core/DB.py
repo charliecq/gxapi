@@ -278,7 +278,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc=":class:`DB` input"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the Database File to Create")
+                             doc="Name of the Database File to Create")
                ]),
 
         Method('CreateDupComp_DB', module='geoengine.core', version='5.0.0',
@@ -293,7 +293,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc=":class:`DB` input"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the Database File to Create"),
+                             doc="Name of the Database File to Create"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DB_COMP`")
                ]),
@@ -341,17 +341,17 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index"),
+                             doc="Index"),
                    Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
-                             doc="string"),
+                             doc="String"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="length")
+                             doc="Length")
                ]),
 
         Method('GetChanVV_DB', module='geoengine.core', version='5.0.0',
@@ -428,7 +428,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p3', type="ITR",
                              doc=":class:`ITR` to fill in")
                ]),
@@ -477,9 +477,9 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc=":class:`REG` entry name"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="returned setting"),
+                             doc="Returned setting"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
-                             doc="string length")
+                             doc="String length")
                ]),
 
         Method('GetVaChanVV_DB', module='geoengine.core', version='5.1.1',
@@ -536,15 +536,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel handle"),
+                             doc="Channel handle"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="value to format"),
+                             doc="Value to format"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
-                             doc="string"),
+                             doc="String"),
                    Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="string length")
+                             doc="String length")
                ]),
 
         Method('iGetChanArraySize_DB', module='geoengine.core', version='6.0.1',
@@ -578,9 +578,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="returned class into"),
+                             doc="Returned class into"),
                    Parameter('p4', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
-                             doc="size of string")
+                             doc="Size of string")
                ]),
 
         Method('iGetChanDecimal_DB', module='geoengine.core', version='6.0.1',
@@ -632,13 +632,13 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index")
+                             doc="Index")
                ]),
 
         Method('IGetChanLabel_DB', module='geoengine.core', version='5.0.0',
@@ -657,9 +657,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="returned label into"),
+                             doc="Returned label into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="size of string")
+                             doc="Size of string")
                ]),
 
         Method('IGetChanName_DB', module='geoengine.core', version='5.0.0',
@@ -676,9 +676,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string to place name into"),
+                             doc="String to place name into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+                             doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
         Method('iGetChanProtect_DB', module='geoengine.core', version='6.0.1',
@@ -730,9 +730,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string to place unit into"),
+                             doc="String to place unit into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="size of string")
+                             doc="Size of string")
                ]),
 
         Method('iGetChanWidth_DB', module='geoengine.core', version='6.0.1',
@@ -761,9 +761,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`DB_NAME`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="name returned"),
+                             doc="Name returned"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="string size")
+                             doc="String size")
                ]),
 
         Method('iGetRegSymbSetting_DB', module='geoengine.core', version='6.2.0',
@@ -802,16 +802,16 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Symbol handle"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string to place name into"),
+                             doc="String to place name into"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+                             doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
         Method('iHaveITR_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Returns TRUE if channel has an :class:`ITR`.",
                notes="""
-               If a channel has an :class:`ITR`, the :class:`ITR` colours are  used to
+               If a channel has an :class:`ITR`, the :class:`ITR` colors are used to
                display channel values in the spreadsheet.
                
                If a channel does not have an :class:`ITR`, :func:`GetITR_DB` will not change
@@ -822,7 +822,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel")
+                             doc="Channel")
                ]),
 
         Method('IiCoordPair_DB', module='geoengine.core', version='5.0.0',
@@ -839,11 +839,11 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="channel name"),
+                             doc="Channel name"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string in which to place paired channel name"),
+                             doc="String in which to place paired channel name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="string length")
+                             doc="String length")
                ]),
 
         Method('iLinesMax_DB', module='geoengine.core', version='5.1.1',
@@ -956,13 +956,13 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index")
+                             doc="Index")
                ]),
 
         Method('rGetRegSymbSetting_DB', module='geoengine.core', version='6.2.0',
@@ -1019,7 +1019,7 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING,
-                             doc="class")
+                             doc="Class")
                ]),
 
         Method('SetChanDecimal_DB', module='geoengine.core', version='5.0.0',
@@ -1066,15 +1066,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index"),
+                             doc="Index"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="value")
+                             doc="Value")
                ]),
 
         Method('SetChanLabel_DB', module='geoengine.core', version='5.0.0',
@@ -1092,7 +1092,7 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING,
-                             doc="label")
+                             doc="Label")
                ]),
 
         Method('SetChanName_DB', module='geoengine.core', version='5.0.0',
@@ -1106,7 +1106,7 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string to set channel name to")
+                             doc="String to set channel name to")
                ]),
 
         Method('SetChanProtect_DB', module='geoengine.core', version='5.0.0',
@@ -1140,15 +1140,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index"),
+                             doc="Index"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="value")
+                             doc="Value")
                ]),
 
         Method('SetChanStr_DB', module='geoengine.core', version='5.0.0',
@@ -1161,14 +1161,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line"),
+                             doc="Line"),
                    Parameter('p3', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="index"),
-                   Parameter('p5', type=Type.STRING)
+                             doc="Index"),
+                   Parameter('p5', type=Type.STRING,
+                             doc="String")
                ]),
 
         Method('SetChanUnit_DB', module='geoengine.core', version='5.0.0',
@@ -1185,7 +1186,7 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Channel handle"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string to put channel unit")
+                             doc="String to put channel unit")
                ]),
 
         Method('SetChanWidth_DB', module='geoengine.core', version='5.0.0',
@@ -1231,7 +1232,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel"),
+                             doc="Channel"),
                    Parameter('p3', type="ITR",
                              doc=":class:`ITR` to fill in")
                ]),
@@ -1280,7 +1281,7 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc=":class:`REG` entry name"),
                    Parameter('p4', type=Type.STRING,
-                             doc="setting")
+                             doc="Setting")
                ]),
 
         Method('WriteBlobBF_DB', module='geoengine.core', version='5.0.0',
@@ -1328,7 +1329,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Create"),
+                             doc="Name of the Database File to Create"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
                    Parameter('p3', type=Type.INT32_T,
@@ -1355,7 +1356,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Create"),
+                             doc="Name of the Database File to Create"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
                    Parameter('p3', type=Type.INT32_T,
@@ -1386,7 +1387,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Create"),
+                             doc="Name of the Database File to Create"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
                    Parameter('p3', type=Type.INT32_T,
@@ -1460,7 +1461,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Create"),
+                             doc="Name of the Database File to Create"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
                    Parameter('p3', type=Type.INT32_T,
@@ -1485,7 +1486,7 @@ gx_methods = {
                return_doc=":def:`GEO_BOOL`",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Open"),
+                             doc="Name of the Database File to Open"),
                    Parameter('p2', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
                    Parameter('p3', type=Type.STRING,
@@ -1504,7 +1505,7 @@ gx_methods = {
                return_doc=":def:`GEO_BOOL`",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Open"),
+                             doc="Name of the Database File to Open"),
                    Parameter('p2', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
                    Parameter('p3', type=Type.STRING,
@@ -1562,7 +1563,7 @@ gx_methods = {
                return_doc=":class:`DB` Object",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Open"),
+                             doc="Name of the Database File to Open"),
                    Parameter('p2', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
                    Parameter('p3', type=Type.STRING,
@@ -1581,7 +1582,7 @@ gx_methods = {
                return_doc=":class:`DB` Object",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Open"),
+                             doc="Name of the Database File to Open"),
                    Parameter('p2', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
                    Parameter('p3', type=Type.STRING,
@@ -1594,7 +1595,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="name of the Database File to Create")
+                             doc="Name of the Database File to Create")
                ]),
 
         Method('Sync_DB', module='geoengine.core', version='7.0.0',
@@ -1959,13 +1960,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database"),
+                             doc="Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="line symbol"),
+                             doc="Line symbol"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string in which to place label"),
+                             doc="String in which to place label"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="string length"),
+                             doc="String length"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`DB_LINE_LABEL_FORMAT`")
                ]),
@@ -2317,7 +2318,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="source :class:`DB`"),
+                             doc="Source :class:`DB`"),
                    Parameter('p2', type="META",
                              doc="Meta object to add to database's meta")
                ])
@@ -2537,7 +2538,7 @@ gx_methods = {
                    Parameter('p2', type="LST",
                              doc=":class:`LST` object to populate"),
                    Parameter('p3', type=Type.STRING,
-                             doc="comma-separated list of channels")
+                             doc="Comma-separated list of channels")
                ]),
 
         Method('DeleteSymb_DB', module='geoengine.core', version='5.0.0',
@@ -2825,9 +2826,9 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="returned name"),
+                             doc="Returned name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="buffer length")
+                             doc="Buffer length")
                ]),
 
         Method('iSymbList_DB', module='geoengine.core', version='5.0.0',
@@ -2953,7 +2954,7 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`"),
                    Parameter('p3', type=Type.STRING,
-                             doc="channel name")
+                             doc="Channel name")
                ]),
 
         Method('StringChanLST_DB', module='geoengine.core', version='6.2.0',
@@ -3088,7 +3089,7 @@ gx_methods = {
                    Parameter('p2', type=Type.STRING,
                              doc="Comment"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="value"),
+                             doc="Value"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Indent comment one tab? :def:`GEO_BOOL`")
                ]),
@@ -3163,7 +3164,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="group line"),
+                             doc="Group line"),
                    Parameter('p3', type="DB_SYMB",
                              doc="Channel")
                ]),
@@ -3181,7 +3182,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="group line")
+                             doc="Group line")
                ]),
 
         Method('AssociateClass_DB', module='geoengine.core', version='5.1.1',
@@ -3257,7 +3258,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Base value (rDummy for none)"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
@@ -3273,7 +3274,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="First window (0 to N-2, iDummy for default)"),
                    Parameter('p4', type=Type.INT32_T, is_ref=True,
@@ -3289,7 +3290,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`DB_ARRAY_BASETYPE`"),
                    Parameter('p4', type=Type.DOUBLE,
@@ -3311,7 +3312,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READONLY`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READONLY`)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DB_ARRAY_BASETYPE`"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
@@ -3321,7 +3322,7 @@ gx_methods = {
                    Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
                              doc="Units"),
                    Parameter('p7', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="size of units string")
+                             doc="Size of units string")
                ]),
 
         Method('IGetGroupClass_DB', module='geoengine.core', version='5.0.8',
@@ -3341,9 +3342,9 @@ gx_methods = {
                    Parameter('p2', type="DB_SYMB",
                              doc="Group line - :def_val:`DB_LOCK_READWRITE` or :def_val:`DB_LOCK_READONLY`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="returned class name - max size = :def_val:`DB_GROUP_CLASS_SIZE` - 1"),
+                             doc="Returned class name - max size = :def_val:`DB_GROUP_CLASS_SIZE` - 1"),
                    Parameter('p4', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
-                             doc="buffer size")
+                             doc="Buffer size")
                ]),
 
         Method('iGetInfo_DB', module='geoengine.core', version='7.0.0',
@@ -3360,18 +3361,18 @@ gx_methods = {
 
         Method('IGetVAProfColorFile_DB', module='geoengine.core', version='5.1.5',
                availability=Availability.PUBLIC, 
-               doc="Get colours for a :class:`VA` channel when displayed in the profile window.",
+               doc="Get colors for a :class:`VA` channel when displayed in the profile window.",
                notes="See :func:`SetVAProfColorFile_DB`.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc='zone file name, "" to clear.'),
+                             doc='Zone file name, "" to clear.'),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="buffer size for string")
+                             doc="Buffer size for string")
                ]),
 
         Method('IGetVAProfSectOption_DB', module='geoengine.core', version='5.1.6',
@@ -3382,27 +3383,27 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc='Option  "Profile", "Section" or "Section and Profile"'),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="buffer size for string")
+                             doc="Buffer size for string")
                ]),
 
         Method('IGetVASectColorFile_DB', module='geoengine.core', version='5.1.6',
                availability=Availability.PUBLIC, 
-               doc="Get colours for a :class:`VA` channel when displayed section in the profile window.",
+               doc="Get colors for a :class:`VA` channel when displayed section in the profile window.",
                notes="Fails in the channel is not an array channel",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="zone file name"),
+                             doc="Zone file name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="buffer size for string")
+                             doc="Buffer size for string")
                ]),
 
         Method('iIsAssociated_DB', module='geoengine.core', version='5.1.3',
@@ -3484,26 +3485,26 @@ gx_methods = {
 
         Method('SetVAProfColorFile_DB', module='geoengine.core', version='5.1.5',
                availability=Availability.PUBLIC, 
-               doc="Set colours for a :class:`VA` channel when displayed in the profile window.",
+               doc="Set colors for a :class:`VA` channel when displayed in the profile window.",
                notes="""
                Fails in the channel is not an array channel, if the
-               file does not exist, or if it is not a valid colour zone file.
+               file does not exist, or if it is not a valid color zone file.
                
                The individual columns in the array channel are displayed using the input
-               zone file colours. A linear :class:`ITR` from 0 to 1 is created on the colour zones
+               zone file colors. A linear :class:`ITR` from 0 to 1 is created on the color zones
                to map to individual channel indices (expressed as a fraction as shown below).
                
-               For instance, for a file with 8 colours the ranges are as follows:
+               For instance, for a file with 8 colors the ranges are as follows:
                
-               Colour Range
-               Colour 1    0        > value >=  0.125
-               Colour 2    0.125    > value >=  0.25
-               Colour 3    0.25     > value >=  0.375
-               Colour 4    0.375    > value >=  0.5
-               Colour 5    0.5      > value >=  0.625
-               Colour 6    0.625    > value >=  0.75
-               Colour 7    0.75     > value >=  0.875
-               Colour 8    0.875    > value >=  1.0
+               Color Range
+               Color 1    0        > value >=  0.125
+               Color 2    0.125    > value >=  0.25
+               Color 3    0.25     > value >=  0.375
+               Color 4    0.375    > value >=  0.5
+               Color 5    0.5      > value >=  0.625
+               Color 6    0.625    > value >=  0.75
+               Color 7    0.75     > value >=  0.875
+               Color 8    0.875    > value >=  1.0
                
                When an array channel is displayed, the index of each element (column) is mapped
                into the corresponding range above using the following formula:
@@ -3512,7 +3513,7 @@ gx_methods = {
                
                For an array with 8 columns, you get the following values:
                
-               Column   Value    Colour
+               Column   Value    Color
                0        0        1
                1        0.14     2
                2        0.28     3
@@ -3522,16 +3523,16 @@ gx_methods = {
                6        0.86     7
                7        1.0      8
                
-               The colour file search path is: Local directory, then oasismontaj\\tbl.
+               The color file search path is: Local directory, then oasismontaj\\tbl.
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.STRING,
-                             doc='zone file name, "" to clear.')
+                             doc='Zone file name, "" to clear.')
                ]),
 
         Method('SetVAProfSectOption_DB', module='geoengine.core', version='5.1.6',
@@ -3542,7 +3543,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.STRING,
                              doc='Option  "Profile", "Section" or "Section and Profile"')
                ]),
@@ -3561,7 +3562,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Base value (rDummy for none)"),
                    Parameter('p4', type=Type.DOUBLE,
@@ -3570,19 +3571,19 @@ gx_methods = {
 
         Method('SetVASectColorFile_DB', module='geoengine.core', version='5.1.6',
                availability=Availability.PUBLIC, 
-               doc="Set colours for a :class:`VA` channel when displayed section in the profile window.",
+               doc="Set colors for a :class:`VA` channel when displayed section in the profile window.",
                notes="""
                Fails in the channel is not an array channel, if the
-               file does not exist, or if it is not a valid colour zone file.
+               file does not exist, or if it is not a valid color zone file.
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.STRING,
-                             doc="zone file name")
+                             doc="Zone file name")
                ]),
 
         Method('SetVAWindows_DB', module='geoengine.core', version='5.1.5',
@@ -3597,7 +3598,7 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="hDB"),
                    Parameter('p2', type="DB_SYMB",
-                             doc="channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="First window (0 to N-1, iDummy for default)"),
                    Parameter('p4', type=Type.INT32_T,

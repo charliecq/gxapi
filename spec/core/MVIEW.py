@@ -9,8 +9,8 @@ gx_class = Class('MVIEW',
                  different types of entities:
                  """,
                  notes="""
-                 :class:`CSYMB` groups (colour symbols) contain data and rules for
-                 presenting the data as colour symbols.  See :func:`ColSymbol_MVIEW`
+                 :class:`CSYMB` groups (color symbols) contain data and rules for
+                 presenting the data as color symbols.  See :func:`ColSymbol_MVIEW`
                  and the :class:`CSYMB` class.
                  
                  :class:`AGG` groups (aggregates) contain images.  See :func:`Aggregate_MVIEW`
@@ -261,7 +261,7 @@ gx_defines = [
     Define('MVIEW_NAME_LENGTH',
            is_constant=True,
            is_single_constant=True,
-           doc="maximum length for view and group names",
+           doc="Maximum length for view and group names",
            constants=[
                Constant('MVIEW_NAME_LENGTH', value='1040', type=Type.INT32_T,
                         doc="Maximum Length (1040)")
@@ -298,7 +298,7 @@ gx_defines = [
                         will be transformed to the view coordinate system.
                         """),
                Constant('MVIEW_PJ_ON', value='3', type=Type.INT32_T,
-                        doc="mode before the last :def_val:`MVIEW_PJ_OFF`.")
+                        doc="Mode before the last :def_val:`MVIEW_PJ_OFF`.")
            ]),
 
     Define('MVIEW_RELOCATE',
@@ -336,13 +336,13 @@ gx_defines = [
            doc="Coordinate systems defines",
            constants=[
                Constant('MVIEW_UNIT_VIEW', value='0', type=Type.INT32_T,
-                        doc="view coordinates"),
+                        doc="View coordinates"),
                Constant('MVIEW_UNIT_PLOT', value='1', type=Type.INT32_T,
-                        doc="plot hi-metric (mm*100) on the map."),
+                        doc="Plot hi-metric (mm*100) on the map."),
                Constant('MVIEW_UNIT_MM', value='2', type=Type.INT32_T,
-                        doc="plot mm on the map."),
+                        doc="Plot mm on the map."),
                Constant('MVIEW_UNIT_VIEW_UNWARPED', value='3', type=Type.INT32_T,
-                        doc="view coordinates without a warp if there is one")
+                        doc="View coordinates without a warp if there is one")
            ]),
 
     Define('MVIEW_EXTENT_UNIT',
@@ -584,9 +584,9 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p3', type="VV",
-                             doc="returned string :class:`VV` of type -:def_val:`STR_FILE`")
+                             doc="Returned string :class:`VV` of type -:def_val:`STR_FILE`")
                ]),
 
         Method('IGetMeta_MVIEW', module='geoengine.map', version='5.1.6',
@@ -668,17 +668,17 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="area X minimum"),
+                             doc="Area X minimum"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="area Y minimum"),
+                             doc="Area Y minimum"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="area X maximum"),
+                             doc="Area X maximum"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="area Y maximum"),
+                             doc="Area Y maximum"),
                    Parameter('p7', type=Type.INT32_T,
                              doc=":def:`MVIEW_RELOCATE`")
                ]),
@@ -744,7 +744,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="plane number to delete"),
+                             doc="Plane number to delete"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="TRUE to delete all groups on the plane")
                ]),
@@ -840,7 +840,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name of the plane")
+                             doc="Name of the plane")
                ]),
 
         Method('IGetDefPlane_MVIEW', module='geoengine.map', version='5.1.2',
@@ -857,9 +857,9 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="name"),
+                             doc="Name"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="maximum name length")
+                             doc="Maximum name length")
                ]),
 
         Method('iIsView3D_MVIEW', module='geoengine.map', version='5.1.2',
@@ -906,7 +906,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="plane number"),
+                             doc="Plane number"),
                    Parameter('p3', type="LST",
                              doc="List of plane names and numbers")
                ]),
@@ -964,7 +964,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="name")
+                             doc="Name")
                ]),
 
         Method('SetGroupToPlane_MVIEW', module='geoengine.map', version='5.1.2',
@@ -1481,29 +1481,29 @@ gx_methods = {
 
         Method('ColorDescr_MVIEW', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Convert a colour to a colour string label",
+               doc="Convert a color to a color string label",
                notes="See :func:`iColor_MVIEW`.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="COL_ANY variable"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="colour descriptor returned"),
+                             doc="Color descriptor returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="length of the string")
+                             doc="Length of the string")
                ]),
 
         Method('iColor_MVIEW', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Get a color from a colour string label",
+               doc="Get a color from a color string label",
                notes="""
-               Colour strings may be "R","G","B","C","M","Y",
+               Color strings may be "R","G","B","C","M","Y",
                "H","S","V", or "K" or a combination of these
                characters, each followed by up to three digits
                specifying a number between 0 and 255.
                An empty string produce C_ANY_NONE.
                
-               You must stay in the same colour model, RGB, CMY,
+               You must stay in the same color model, RGB, CMY,
                HSV or K.
                
                For example "R", "R127G22", "H255S127V32"
@@ -1512,10 +1512,10 @@ gx_methods = {
                """,
                see_also="iColorXXX_MVIEW macros",
                return_type=Type.INT32_T,
-               return_doc="colour int",
+               return_doc="Color int",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="colour name string")
+                             doc="Color name string")
                ]),
 
         Method('iColorCMY_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1524,7 +1524,7 @@ gx_methods = {
                notes="Color component intensities must be in the range 0-255.",
                see_also=":func:`iColor_MVIEW`",
                return_type=Type.INT32_T,
-               return_doc="colour int based on color model.",
+               return_doc="Color int based on color model.",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Cyan"),
@@ -1540,7 +1540,7 @@ gx_methods = {
                notes="Color component intensities must be in the range 0-255.",
                see_also=":func:`iColor_MVIEW`",
                return_type=Type.INT32_T,
-               return_doc="colour int based on color model.",
+               return_doc="Color int based on color model.",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Hue"),
@@ -1556,7 +1556,7 @@ gx_methods = {
                notes="Color component intensities must be in the range 0-255.",
                see_also=":func:`iColor_MVIEW`",
                return_type=Type.INT32_T,
-               return_doc="colour int based on color model.",
+               return_doc="Color int based on color model.",
                parameters = [
                    Parameter('p1', type=Type.INT32_T,
                              doc="Red"),
@@ -1602,7 +1602,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="color")
+                             doc="Color")
                ]),
 
         Method('LineColor_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1657,7 +1657,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="line thickness in view space units")
+                             doc="Line thickness in view space units")
                ]),
 
         Method('PatAngle_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1713,7 +1713,7 @@ gx_methods = {
                doc="Sets the pattern number",
                notes="""
                Pattern 0 is solid fill.(default)
-               Set the pattern colour using :func:`FillColor_MVIEW`.
+               Set the pattern color using :func:`FillColor_MVIEW`.
                
                Patterns are selected by ordinal value (pattern number)
                from those defined in default.pat.  If default.pat does
@@ -1794,7 +1794,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="angle in degrees CCW from +X")
+                             doc="Angle in degrees CCW from +X")
                ]),
 
         Method('SymbColor_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1805,7 +1805,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="color")
+                             doc="Color")
                ]),
 
         Method('SymbFillColor_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1834,7 +1834,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="face name"),
+                             doc="Face name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Geosoft font? :def:`GEO_BOOL`"),
                    Parameter('p4', type=Type.INT32_T,
@@ -1859,7 +1859,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="symbol number")
+                             doc="Symbol number")
                ]),
 
         Method('SymbSize_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1870,7 +1870,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="size in view units")
+                             doc="Size in view units")
                ]),
 
         Method('TextAngle_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1881,7 +1881,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="angle in degrees CCW from +X")
+                             doc="Angle in degrees CCW from +X")
                ]),
 
         Method('TextColor_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1892,7 +1892,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="color")
+                             doc="Color")
                ]),
 
         Method('TextFont_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1981,7 +1981,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="size in view units")
+                             doc="Size in view units")
                ]),
 
         Method('Transparency_MVIEW', module='geoengine.map', version='6.0.0',
@@ -2023,19 +2023,19 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="center x"),
+                             doc="Center x"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="center y"),
+                             doc="Center y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="radius"),
+                             doc="Radius"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="ratio x/y"),
+                             doc="Ratio x/y"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="angle"),
+                             doc="Angle"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="start angle"),
+                             doc="Start angle"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="end angle")
+                             doc="End angle")
                ]),
 
         Method('Chord_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2046,19 +2046,19 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="center x"),
+                             doc="Center x"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="center y"),
+                             doc="Center y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="radius"),
+                             doc="Radius"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="ratio x/y"),
+                             doc="Ratio x/y"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="angle"),
+                             doc="Angle"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="start angle"),
+                             doc="Start angle"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="end angle")
+                             doc="End angle")
                ]),
 
         Method('ClassifiedSymbols_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2070,7 +2070,7 @@ gx_methods = {
                
                "95,100,120"      maximums of each class
                "2.0,2.5,3.0"     sizes in mm
-               "y,g,r"           fill colours
+               "y,g,r"           fill colors
                """,
                return_type=Type.VOID,
                parameters = [
@@ -2083,15 +2083,15 @@ gx_methods = {
                    Parameter('p4', type="VV",
                              doc="Data :class:`VV`"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="scale factor to convert mm to view units"),
+                             doc="Scale factor to convert mm to view units"),
                    Parameter('p6', type=Type.DOUBLE,
                              doc="Classified minimum Z to plot"),
                    Parameter('p7', type=Type.STRING,
-                             doc="comma delimited list of Z maximums"),
+                             doc="Comma delimited list of Z maximums"),
                    Parameter('p8', type=Type.STRING,
-                             doc="comma delimited list of sizes in mm"),
+                             doc="Comma delimited list of sizes in mm"),
                    Parameter('p9', type=Type.STRING,
-                             doc="comma delimited list of colour strings")
+                             doc="Comma delimited list of color strings")
                ]),
 
         Method('ComplexPolygon_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2117,15 +2117,15 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="center x"),
+                             doc="Center x"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="center y"),
+                             doc="Center y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="radius"),
+                             doc="Radius"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="ratio x/y"),
+                             doc="Ratio x/y"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="angle")
+                             doc="Angle")
                ]),
 
         Method('Line_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2136,13 +2136,13 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="x0"),
+                             doc="X0"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="y0"),
+                             doc="Y0"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="x1"),
+                             doc="X1"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="y1")
+                             doc="Y1")
                ]),
 
         Method('LineVV_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2234,13 +2234,13 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="x0"),
+                             doc="X0"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="y0"),
+                             doc="Y0"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="x1"),
+                             doc="X1"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="y1")
+                             doc="Y1")
                ]),
 
         Method('Segment_MVIEW', module='geoengine.map', version='5.0.7',
@@ -2251,19 +2251,19 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="center x"),
+                             doc="Center x"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="center y"),
+                             doc="Center y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="radius"),
+                             doc="Radius"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="ratio x/y"),
+                             doc="Ratio x/y"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="angle"),
+                             doc="Angle"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="start angle"),
+                             doc="Start angle"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="end angle")
+                             doc="End angle")
                ]),
 
         Method('SizeSymbols_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2278,7 +2278,7 @@ gx_methods = {
                    Parameter('p3', type="VV",
                              doc="Y"),
                    Parameter('p4', type="VV",
-                             doc="symbol sizes (in view units)")
+                             doc="Symbol sizes (in view units)")
                ]),
 
         Method('Symbol_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2332,11 +2332,11 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="text to plot"),
+                             doc="Text to plot"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="x location of text"),
+                             doc="X location of text"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="y location of text")
+                             doc="Y location of text")
                ])
     ],
     'Drawing Object': [
@@ -2364,7 +2364,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="group number")
+                             doc="Group number")
                ]),
 
         Method('ChangeLineMessage_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2405,7 +2405,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="group number")
+                             doc="Group number")
                ]),
 
         Method('DATALINKD_MVIEW', module='geoengine.map', version='6.4.0',
@@ -2417,7 +2417,7 @@ gx_methods = {
                              doc="View"),
                    Parameter('p2', type="DATALINKD"),
                    Parameter('p3', type=Type.STRING,
-                             doc="name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
+                             doc="Name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
                ]),
 
         Method('GetDATALINKD_MVIEW', module='geoengine.map', version='9.2.0',
@@ -2430,7 +2430,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="group number")
+                             doc="Group number")
                ]),
 
         Method('EasyMaker_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2481,11 +2481,11 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Max Y"),
                    Parameter('p6', type=Type.STRING,
-                             doc="name of external object"),
+                             doc="Name of external object"),
                    Parameter('p7', type=Type.STRING,
-                             doc="class of external object"),
+                             doc="Class of external object"),
                    Parameter('p8', type=Type.STRING,
-                             doc="string data of external object")
+                             doc="String data of external object")
                ]),
 
         Method('Link_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2544,7 +2544,7 @@ gx_methods = {
                              doc="View"),
                    Parameter('p2', type="VOXD"),
                    Parameter('p3', type=Type.STRING,
-                             doc="name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
+                             doc="Name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
                ]),
 
         Method('GetVOXD_MVIEW', module='geoengine.map', version='8.2.0',
@@ -2557,7 +2557,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="group number")
+                             doc="Group number")
                ]),
 
         Method('DrawVectorVoxelVectors_MVIEW', module='geoengine.map', version='7.6.0',
@@ -2571,7 +2571,7 @@ gx_methods = {
                              doc="View"),
                    Parameter('p2', type="VOX"),
                    Parameter('p3', type=Type.STRING,
-                             doc="view group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
+                             doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
                    Parameter('p4', type="ITR",
                              doc="Image transform - must contain zones"),
                    Parameter('p5', type=Type.DOUBLE,
@@ -2596,7 +2596,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="group number")
+                             doc="Group number")
                ]),
 
         Method('DrawVectors3D_MVIEW', module='geoengine.map', version='8.0.1',
@@ -2608,7 +2608,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.STRING,
-                             doc="view group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
+                             doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
                    Parameter('p3', type="VV",
                              doc="X locations"),
                    Parameter('p4', type="VV",
@@ -2639,6 +2639,11 @@ gx_methods = {
         Method('SetGroupITR_MVIEW', module='geoengine.map', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Set group :class:`ITR`",
+               notes="""
+               A group :class:`ITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
@@ -2651,7 +2656,45 @@ gx_methods = {
         Method('GetGroupITR_MVIEW', module='geoengine.map', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Get group :class:`ITR`",
+               notes="""
+               A group :class:`ITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
                return_type="ITR",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number")
+               ]),
+
+        Method('iGroupITRExists_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Determine if group :class:`ITR` exists.",
+               notes="""
+               A group :class:`ITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
+               return_type=Type.INT32_T,
+               return_doc="1 - :class:`ITR` exists, 0 - :class:`ITR` does not exist",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number")
+               ]),
+
+        Method('DeleteGroupITR_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Deletes existing :class:`ITR` associated with a group.",
+               notes="""
+               A group :class:`ITR` associate a color distribution with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
+               return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
                              doc="View"),
@@ -2662,6 +2705,11 @@ gx_methods = {
         Method('SetGroupTPAT_MVIEW', module='geoengine.map', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Set group :class:`TPAT`",
+               notes="""
+               A group :class:`TPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
@@ -2674,12 +2722,110 @@ gx_methods = {
         Method('GetGroupTPAT_MVIEW', module='geoengine.map', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Get group :class:`TPAT`",
+               notes="""
+               A group :class:`TPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
                return_type="TPAT",
                parameters = [
                    Parameter('p1', type="MVIEW",
                              doc="View"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Group number")
+               ]),
+
+        Method('iGroupTPATExists_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Determine if group :class:`TPAT` exists.",
+               notes="""
+               A group :class:`TPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
+               return_type=Type.INT32_T,
+               return_doc="1 - :class:`TPAT` exists, 0 - :class:`TPAT` does not exist",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number")
+               ]),
+
+        Method('DeleteGroupTPAT_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Deletes existing :class:`TPAT` associated with a group.",
+               notes="""
+               A group :class:`TPAT` associate a thematic color map with mixed vector groups (e.g. Drillhole Lithology tubes) groups. Used by legend UI support in 3D.
+               Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
+               to refresh the objects.
+               """,
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number")
+               ]),
+
+        Method('iGroupStorageExists_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Determine if generic storage associated with a group exists.",
+               notes='External API users should not use storage names starting with "Geosoft"',
+               return_type=Type.INT32_T,
+               return_doc="1 - storage exists, 0 - storage does not exist",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Storage name")
+               ]),
+
+        Method('ReadGroupStorage_MVIEW', module='geoengine.map', version='5.0.0',
+               availability=Availability.PUBLIC, 
+               doc="Reads existing generic storage associated with a group into an in-memory :class:`BF`.",
+               notes='External API users should not use storage names starting with "Geosoft"',
+               return_type="BF",
+               return_doc=":class:`BF` Object",
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Storage name")
+               ]),
+
+        Method('DeleteGroupStorage_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Deletes existing generic storage associated with a group.",
+               notes='External API users should not use storage names starting with "Geosoft"',
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Storage name")
+               ]),
+
+        Method('WriteGroupStorage_MVIEW', module='geoengine.map', version='9.3.0',
+               availability=Availability.PUBLIC, 
+               doc="Open generic existing storage associated with a group for reading.",
+               notes='External API users should not use storage names starting with "Geosoft"',
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('p1', type="MVIEW",
+                             doc="View"),
+                   Parameter('p2', type=Type.INT32_T,
+                             doc="Group number"),
+                   Parameter('p3', type=Type.STRING,
+                             doc="Storage name"),
+                   Parameter('p4', type="BF",
+                             doc=":class:`BF` to read from")
                ]),
 
         Method('CopyMarkedGroups_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2716,7 +2862,7 @@ gx_methods = {
                return_type="CRC",
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.STRING,
                              doc="Group name"),
                    Parameter('p3', type="CRC",
@@ -2752,7 +2898,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum X, returned"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
@@ -2789,7 +2935,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.STRING,
                              doc="Group name"),
                    Parameter('p3', type="PLY",
@@ -2861,7 +3007,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`MVIEW_IS`")
                ]),
@@ -2875,7 +3021,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name")
+                             doc="Group name")
                ]),
 
         Method('iIsMovable_MVIEW', module='geoengine.map', version='6.4.0',
@@ -2910,7 +3056,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type="LST",
-                             doc="list"),
+                             doc="List"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`MVIEW_GROUP_LIST`")
                ]),
@@ -2955,7 +3101,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 - unmark, 1 - mark")
                ]),
@@ -3026,7 +3172,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 - not movable, 1 - movable")
                ]),
@@ -3094,7 +3240,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Start a group.",
                notes="""
-               Line and fill colours and thickness must be set
+               Line and fill colors and thickness must be set
                before drawing to a group.
                
                If the group name is NULL, output will be sent to
@@ -3358,11 +3504,11 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="group number, error if not valid"),
+                             doc="Group number, error if not valid"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Group Name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="maximum name length")
+                             doc="Maximum name length")
                ]),
 
         Method('Render_MVIEW', module='geoengine.map', version='6.4.0',
@@ -3375,21 +3521,21 @@ gx_methods = {
                    Parameter('p2', type="HDC", is_val=True,
                              doc="DC Handle"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="left value of the render rect in Windows coordinates (bottom>top)"),
+                             doc="Left value of the render rect in Windows coordinates (bottom>top)"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="bottom value"),
+                             doc="Bottom value"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="right value"),
+                             doc="Right value"),
                    Parameter('p6', type=Type.INT32_T,
-                             doc="top value"),
+                             doc="Top value"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="area X minimum"),
+                             doc="Area X minimum"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="area Y minimum"),
+                             doc="Area Y minimum"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="area X maximum"),
+                             doc="Area X maximum"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="area Y maximum")
+                             doc="Area Y maximum")
                ])
     ],
     'Utility Drawing': [
@@ -3413,19 +3559,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Y location in view units"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="left  X"),
+                             doc="Left  X"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="right X"),
+                             doc="Right X"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="major tick interval"),
+                             doc="Major tick interval"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="minor tick interval (half size of major)"),
+                             doc="Minor tick interval (half size of major)"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="tick size in view units (negative for down ticks)")
+                             doc="Tick size in view units (negative for down ticks)")
                ]),
 
         Method('AxisY_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3436,19 +3582,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X location in view units"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="bottom Y"),
+                             doc="Bottom Y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="top    Y"),
+                             doc="Top    Y"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="major tick interval"),
+                             doc="Major tick interval"),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="minor tick interval (half size of major)"),
+                             doc="Minor tick interval (half size of major)"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="tick size in view units (negative for left ticks)")
+                             doc="Tick size in view units (negative for left ticks)")
                ]),
 
         Method('Grid_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3462,7 +3608,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X grid increment"),
                    Parameter('p3', type=Type.DOUBLE,
@@ -3489,15 +3635,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type="VV",
                              doc="X :class:`VV`"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="fiducial start"),
+                             doc="Fiducial start"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="fiducial increment"),
+                             doc="Fiducial increment"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="fiducial label interval, default 100.0"),
+                             doc="Fiducial label interval, default 100.0"),
                    Parameter('p6', type=Type.DOUBLE,
                              doc="Y location in view unit"),
                    Parameter('p7', type=Type.DOUBLE,
@@ -3516,15 +3662,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Y location in view units"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="left  X"),
+                             doc="Left  X"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="right X"),
+                             doc="Right X"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="label interval"),
+                             doc="Label interval"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_JUST`"),
                    Parameter('p7', type=Type.INT32_T,
@@ -3545,15 +3691,15 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MVIEW",
-                             doc="view"),
+                             doc="View"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="X location in view units"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="bottom Y"),
+                             doc="Bottom Y"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="top    Y"),
+                             doc="Top    Y"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="label interval"),
+                             doc="Label interval"),
                    Parameter('p6', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_JUST`"),
                    Parameter('p7', type=Type.INT32_T,
@@ -3568,11 +3714,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.DOUBLE,
-                             doc="minimum of range"),
+                             doc="Minimum of range"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="maximum"),
+                             doc="Maximum"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
-                             doc="optimum interval")
+                             doc="Optimum interval")
                ])
     ],
     'View': [
@@ -3759,9 +3905,9 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc="View handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="view name returned"),
+                             doc="View name returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_VIEW',
-                             doc="view name string size")
+                             doc="View name string size")
                ]),
 
         Method('GetGUID_MVIEW', module='geoengine.map', version='9.3.0',
@@ -3857,13 +4003,13 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
                              doc="Y maximum  .."),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="min X in ground coordinate to fit to the area defined above"),
+                             doc="Min X in ground coordinate to fit to the area defined above"),
                    Parameter('p7', type=Type.DOUBLE, is_ref=True,
-                             doc="min Y in ground coordinate .."),
+                             doc="Min Y in ground coordinate .."),
                    Parameter('p8', type=Type.DOUBLE, is_ref=True,
-                             doc="max X in ground coordinate .."),
+                             doc="Max X in ground coordinate .."),
                    Parameter('p9', type=Type.DOUBLE, is_ref=True,
-                             doc="max Y in ground coordinate .."),
+                             doc="Max Y in ground coordinate .."),
                    Parameter('p10', type=Type.INT32_T,
                              doc=":def:`MVIEW_FIT`")
                ]),
@@ -3897,13 +4043,13 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y maximum  .."),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="min X in ground coordinate to fit to the area defined above"),
+                             doc="Min X in ground coordinate to fit to the area defined above"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="min Y in ground coordinate .."),
+                             doc="Min Y in ground coordinate .."),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="max X in ground coordinate .."),
+                             doc="Max X in ground coordinate .."),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="max Y in ground coordinate ..")
+                             doc="Max Y in ground coordinate ..")
                ]),
 
         Method('FitWindow_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3927,13 +4073,13 @@ gx_methods = {
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y maximum  .."),
                    Parameter('p6', type=Type.DOUBLE,
-                             doc="min X in ground coordinate to fit to the area defined above"),
+                             doc="Min X in ground coordinate to fit to the area defined above"),
                    Parameter('p7', type=Type.DOUBLE,
-                             doc="min Y in ground coordinate .."),
+                             doc="Min Y in ground coordinate .."),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="max X in ground coordinate .."),
+                             doc="Max X in ground coordinate .."),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="max Y in ground coordinate ..")
+                             doc="Max Y in ground coordinate ..")
                ]),
 
         Method('IGetClassName_MVIEW', module='geoengine.map', version='5.1.2',
@@ -3949,11 +4095,11 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="class"),
+                             doc="Class"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="name"),
+                             doc="Name"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
-                             doc="maximum name length")
+                             doc="Maximum name length")
                ]),
 
         Method('MapOrigin_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3982,7 +4128,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="scale factor (> 0.0)")
+                             doc="Scale factor (> 0.0)")
                ]),
 
         Method('rGetMapScale_MVIEW', module='geoengine.map', version='5.0.0',
@@ -4091,9 +4237,9 @@ gx_methods = {
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Y minimum"),
                    Parameter('p8', type=Type.DOUBLE,
-                             doc="horizontal scale (view unit/plot unit in mm)"),
+                             doc="Horizontal scale (view unit/plot unit in mm)"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="vertical scale")
+                             doc="Vertical scale")
                ]),
 
         Method('SetClassName_MVIEW', module='geoengine.map', version='5.1.2',
@@ -4109,9 +4255,9 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="class"),
+                             doc="Class"),
                    Parameter('p3', type=Type.STRING,
-                             doc="name")
+                             doc="Name")
                ]),
 
         Method('SetWindow_MVIEW', module='geoengine.map', version='5.0.0',
@@ -4212,7 +4358,7 @@ gx_methods = {
                composed using indexes into the vertices specified.
                As of v6.4, this method creates a single group with the name
                "surface". You should use the new Surface3D_MVIEW function,
-               which allows direct specification of a single colour, and the
+               which allows direct specification of a single color, and the
                group name.
                """,
                return_type=Type.VOID,
@@ -4233,7 +4379,7 @@ gx_methods = {
                    Parameter('p8', type="VV",
                              doc="Colors :class:`VV` or COL_ANY (can be NULL)"),
                    Parameter('p9', type="VV",
-                             doc="long :class:`VV` of triangle indexes,3 per triangle")
+                             doc="Long :class:`VV` of triangle indexes,3 per triangle")
                ]),
 
         Method('GetPlaneIPJ_MVIEW', module='geoengine.map', version='6.3.0',
@@ -4258,7 +4404,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.INT32_T, is_ref=True,
-                             doc="enable XYZ in for status bar display"),
+                             doc="Enable XYZ in for status bar display"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Z value in viewed section coordinates (dummy if not defined).")
                ]),
@@ -4311,7 +4457,7 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="enable XYZ in for status bar display"),
+                             doc="Enable XYZ in for status bar display"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Z value in viewed section coordinates")
                ]),

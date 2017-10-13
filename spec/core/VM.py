@@ -76,7 +76,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VM"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element wanted")
+                             doc="Element wanted")
                ]),
 
         Method('IGetString_VM', module='geoengine.core', version='5.0.0',
@@ -93,11 +93,11 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VM"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element wanted"),
+                             doc="Element wanted"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="string in which to place element"),
+                             doc="String in which to place element"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="maximum length of the string")
+                             doc="Maximum length of the string")
                ]),
 
         Method('iLength_VM', module='geoengine.core', version='5.0.0',
@@ -118,7 +118,7 @@ gx_methods = {
                    Parameter('p1', type="VM",
                              doc=":class:`VM` to resize"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="new size (number of elements)")
+                             doc="New size (number of elements)")
                ]),
 
         Method('rGetReal_VM', module='geoengine.core', version='5.0.0',
@@ -132,7 +132,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VM"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element wanted")
+                             doc="Element wanted")
                ]),
 
         Method('SetInt_VM', module='geoengine.core', version='5.0.0',
@@ -149,9 +149,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VM"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element to set"),
+                             doc="Element to set"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetReal_VM', module='geoengine.core', version='5.0.0',
@@ -168,9 +168,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VM"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element to set"),
+                             doc="Element to set"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="value to set")
+                             doc="Value to set")
                ]),
 
         Method('SetString_VM', module='geoengine.core', version='5.0.0',
@@ -187,9 +187,9 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="VM"),
                    Parameter('p2', type=Type.INT32_T,
-                             doc="element to set"),
+                             doc="Element to set"),
                    Parameter('p3', type=Type.STRING,
-                             doc="string to set")
+                             doc="String to set")
                ])
     ]
 }

@@ -18,11 +18,11 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="filename"),
+                             doc="Filename"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="resolution"),
+                             doc="Resolution"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="noclipping")
+                             doc="Noclipping")
                ]),
 
         Method('RenderToPage_PDF3D', module='geopdf3d', version='7.1.0',
@@ -33,13 +33,13 @@ gx_methods = {
                    Parameter('p1', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="filename"),
+                             doc="Filename"),
                    Parameter('p3', type=Type.INT32_T,
-                             doc="page number"),
+                             doc="Page number"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="resolution"),
+                             doc="Resolution"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="noclipping")
+                             doc="Noclipping")
                ]),
 
         Method('Export2D_PDF3D', module='geopdf3d', version='8.5.0',

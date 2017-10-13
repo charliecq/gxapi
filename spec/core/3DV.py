@@ -36,7 +36,6 @@ gx_methods = {
                unpacks the packed files in the same way that UnPackFilesEx in the :class:`MAP` class does.
                """,
                return_type=Type.VOID,
-               return_doc="nothing",
                parameters = [
                    Parameter('p1', type="3DV",
                              doc=":class:`3DV` Object"),

@@ -100,7 +100,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle"),
+                             doc="Database handle"),
                    Parameter('p2', type="DB_SYMB",
                              doc="Input line to convert")
                ]),
@@ -196,13 +196,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="overlay file name"),
+                             doc="Overlay file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="associated map"),
+                             doc="Associated map"),
                    Parameter('p3', type="MVIEW",
                              doc="View with group"),
                    Parameter('p4', type=Type.STRING,
-                             doc="group name"),
+                             doc="Group name"),
                    Parameter('p5', type=Type.INT32_T,
                              doc=":def:`SEMPLOT_PLOT`"),
                    Parameter('p6', type=Type.STRING,
@@ -300,7 +300,7 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc="Mineral channel"),
                    Parameter('p4', type=Type.STRING,
-                             doc='mineral (string) - "C", "I" etc.'),
+                             doc='Mineral (string) - "C", "I" etc.'),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Grain position")
                ]),
@@ -377,9 +377,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle"),
+                             doc="Database handle"),
                    Parameter('p2', type="LST",
-                             doc="list to hold items")
+                             doc="List to hold items")
                ]),
 
         Method('iCreateASCIITemplate_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -392,9 +392,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make")
+                             doc="Template to make")
                ]),
 
         Method('iCreateDatabaseTemplate_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -407,9 +407,9 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make")
+                             doc="Template to make")
                ]),
 
         Method('iEditFilter_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -480,13 +480,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make"),
+                             doc="Template to make"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc='anomaly name (can be "")'),
+                             doc='Anomaly name (can be "")'),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="buffer size")
+                             doc="Buffer size")
                ]),
 
         Method('IImportDatabaseODBC_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -495,13 +495,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
-                             doc="connection string (input and returned)"),
+                             doc="Connection string (input and returned)"),
                    Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
-                             doc="connection string buffer size"),
+                             doc="Connection string buffer size"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
-                             doc="template file (returned)"),
+                             doc="Template file (returned)"),
                    Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="templage file buffer size")
+                             doc="Templage file buffer size")
                ]),
 
         Method('ImportBIN_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -528,9 +528,9 @@ gx_methods = {
                    Parameter('p1', type="DB",
                              doc="Database"),
                    Parameter('p2', type=Type.STRING,
-                             doc="import data file name"),
+                             doc="Import data file name"),
                    Parameter('p3', type=Type.STRING,
-                             doc="import template name"),
+                             doc="Import template name"),
                    Parameter('p4', type=Type.STRING,
                              doc="Optional Line name (see note 3.)"),
                    Parameter('p5', type=Type.INT32_T,
@@ -545,9 +545,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make")
+                             doc="Template to make")
                ]),
 
         Method('InitGroupSymbolsUsed_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -561,7 +561,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle")
+                             doc="Database handle")
                ]),
 
         Method('iTemplateType_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -749,29 +749,29 @@ gx_methods = {
                    Parameter('p3', type=Type.STRING,
                              doc="View to replot"),
                    Parameter('p4', type=Type.STRING,
-                             doc="channel name"),
+                             doc="Channel name"),
                    Parameter('p5', type=Type.STRING,
-                             doc='mask channel (can be "")'),
+                             doc='Mask channel (can be "")'),
                    Parameter('p6', type=Type.STRING,
-                             doc="mineral channel ("),
+                             doc="Mineral channel ("),
                    Parameter('p7', type=Type.INT32_T,
-                             doc="linear (0) or logarithmic (1) scaling"),
+                             doc="Linear (0) or logarithmic (1) scaling"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="scale by diameter (0) or area (1)"),
+                             doc="Scale by diameter (0) or area (1)"),
                    Parameter('p9', type=Type.DOUBLE,
-                             doc="scale base (log) data units"),
+                             doc="Scale base (log) data units"),
                    Parameter('p10', type=Type.DOUBLE,
-                             doc="scale factor (log) data units/mm"),
+                             doc="Scale factor (log) data units/mm"),
                    Parameter('p11', type=Type.INT32_T,
-                             doc="symbol number"),
+                             doc="Symbol number"),
                    Parameter('p12', type=Type.INT32_T,
-                             doc="symbol weight"),
+                             doc="Symbol weight"),
                    Parameter('p13', type=Type.INT32_T,
-                             doc="symbol line color"),
+                             doc="Symbol line color"),
                    Parameter('p14', type=Type.INT32_T,
-                             doc="symbol fill color"),
+                             doc="Symbol fill color"),
                    Parameter('p15', type=Type.INT32_T,
-                             doc="plot legend?")
+                             doc="Plot legend?")
                ]),
 
         Method('Replot_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -843,7 +843,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle")
+                             doc="Database handle")
                ]),
 
         Method('SelectPoly_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -889,9 +889,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle"),
+                             doc="Database handle"),
                    Parameter('p2', type="LST",
-                             doc="channel names, handles")
+                             doc="Channel names, handles")
                ]),
 
         Method('SetChannelUnits_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -906,7 +906,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle")
+                             doc="Database handle")
                ]),
 
         Method('SetITR_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -987,7 +987,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="DB",
-                             doc="database handle"),
+                             doc="Database handle"),
                    Parameter('p2', type=Type.STRING,
                              doc="Mineral channel")
                ])
@@ -1005,9 +1005,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="data file name"),
+                             doc="Data file name"),
                    Parameter('p2', type=Type.STRING,
-                             doc="template to make")
+                             doc="Template to make")
                ])
     ]
 }

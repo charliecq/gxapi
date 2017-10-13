@@ -23,11 +23,11 @@ gx_methods = {
                    Parameter('p1', type="VOX",
                              doc=":class:`VOX` Object"),
                    Parameter('p2', type=Type.STRING,
-                             doc='colour table name, "" for default'),
+                             doc='Color table name, "" for default'),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`ITR_ZONE`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="colour contour interval or :def_val:`rDUMMY`")
+                             doc="Color contour interval or :def_val:`rDUMMY`")
                ]),
 
         Method('CreateITR_VOXD', module='geoengine.map', version='6.2.0',
@@ -151,9 +151,9 @@ gx_methods = {
                    Parameter('p1', type="VOXD",
                              doc=":class:`VOXD` handle"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
-                             doc="file name returned"),
+                             doc="File name returned"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
-                             doc="file name string size")
+                             doc="File name string size")
                ]),
 
         Method('GetITR_VOXD', module='geoengine.map', version='6.2.0',

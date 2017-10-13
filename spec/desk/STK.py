@@ -491,7 +491,7 @@ gx_methods = {
 
         Method('SetArrayColors_STK', module='geogxx', version='5.0.1',
                availability=Availability.LICENSED, 
-               doc="Set colours for individual channels in a :class:`VA`, via an :class:`ITR`",
+               doc="Set colors for individual channels in a :class:`VA`, via an :class:`ITR`",
                notes="""
                The :class:`ITR` is consulted by taking the channel index and dividing
                by the number of channels; hence the :class:`ITR` maximum values should
@@ -502,7 +502,7 @@ gx_methods = {
                    Parameter('p1', type="STK",
                              doc=":class:`STK`,"),
                    Parameter('p2', type="ITR",
-                             doc=":class:`ITR` object for colours")
+                             doc=":class:`ITR` object for colors")
                ]),
 
         Method('SetAxisFormat_STK', module='geogxx', version='5.1.5',
@@ -864,17 +864,17 @@ gx_methods = {
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Minimum value to apply logarithmic"),
                    Parameter('p4', type=Type.INT32_T,
-                             doc="future use"),
+                             doc="Future use"),
                    Parameter('p5', type=Type.INT32_T,
-                             doc="future use"),
+                             doc="Future use"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="Type of scaling for vertical axis"),
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Minimum value to apply logarithmic"),
                    Parameter('p8', type=Type.INT32_T,
-                             doc="future use"),
+                             doc="Future use"),
                    Parameter('p9', type=Type.INT32_T,
-                             doc="future use")
+                             doc="Future use")
                ]),
 
         Method('SetVAIndexStart_STK', module='geogxx', version='6.0.1',

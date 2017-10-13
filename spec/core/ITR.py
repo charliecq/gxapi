@@ -3,26 +3,26 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 gx_class = Class('ITR',
                  doc="""
                  The :class:`ITR` class provides access to :class:`ITR` files. An :class:`ITR` file maps
-                 ranges of values to specific colours. The :class:`ITR` object is typically
+                 ranges of values to specific colors. The :class:`ITR` object is typically
                  used in conjunction with :class:`MVIEW` objects (see :class:`MVIEW` and :class:`MVU`).
                  """,
                  notes="""
-                 Histogram ranges and colour zone ranges
+                 Histogram ranges and color zone ranges
                  
                  Histogram bins are defined with inclusive minima and exclusive maxima;
                  for instance if Min = 0 and Inc = 1, then the second bin would include
                  all values z such that  0 <= z < 1 (the first bin has all values < 0).
                  
-                 Colour zones used in displaying grids (:class:`ITR`, ZON etc...) are the
+                 Color zones used in displaying grids (:class:`ITR`, ZON etc...) are the
                  opposite, with exclusive minima and inclusive maxima.
                  For instance, if a zone is defined from 0 to 1, then it would
                  contain all values of z such that 0 < z <= 1.
                  
                  These definitions mean that it is impossible to perfectly assign
-                 :class:`ITR` colours to individual bars of a histogram. The best work-around
-                 when the data values are integers is to define the colour zones using
+                 :class:`ITR` colors to individual bars of a histogram. The best work-around
+                 when the data values are integers is to define the color zones using
                  0.5 values between the integers. A general work-around is to make the
-                 number of histogram bins much larger than the number of colour zones.
+                 number of histogram bins much larger than the number of color zones.
                  
                  The :def_val:`ITR_NULL` is used to hold a NULL handle to an :class:`ITR` class.
                  """)
@@ -39,7 +39,7 @@ gx_defines = [
 
     Define('ITR_NULL',
            is_null_handle=True,
-           doc="Null :class:`ITR` Object"),
+           doc="Null :class:`ITR` object"),
 
     Define('ITR_POWER',
            doc="Power Zoning defines",
@@ -87,8 +87,8 @@ gx_methods = {
                doc="Change the brightness.",
                notes="""
                0.0 brightness does nothing.
-               -1.0 to 0.0 makes colours darker, -1.0 is black
-               0.0 to 1.0 makes colours lighter, 1.0 is white
+               -1.0 to 0.0 makes colors darker, -1.0 is black
+               0.0 to 1.0 makes colors lighter, 1.0 is white
                """,
                return_type=Type.VOID,
                parameters = [
@@ -102,8 +102,8 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get color transform of a :class:`VV`.",
                notes="""
-               If the input value is a dummy, then the output colour
-               is 0 (no colour).
+               If the input value is a dummy, then the output color
+               is 0 (no color).
                """,
                return_type=Type.VOID,
                parameters = [
@@ -111,7 +111,7 @@ gx_methods = {
                    Parameter('p2', type="VV",
                              doc="Input :class:`VV` of values (none-string)"),
                    Parameter('p3', type="VV",
-                             doc="Output :class:`VV` of colours (type INT)")
+                             doc="Output :class:`VV` of colors (type INT)")
                ]),
 
         Method('Copy_ITR', module='geoengine.core', version='5.0.0',
@@ -127,18 +127,18 @@ gx_methods = {
 
         Method('Create_ITR', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Create an :class:`ITR` Object",
+               doc="Create an :class:`ITR` object",
                return_type="ITR",
-               return_doc=":class:`ITR` Object"),
+               return_doc=":class:`ITR` object"),
 
         Method('CreateFile_ITR', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Create an :class:`ITR` Object from an itr, tbl, zon, lut file.",
+               doc="Create an :class:`ITR` object from an itr, tbl, zon, lut file.",
                return_type="ITR",
-               return_doc=":class:`ITR` Object",
+               return_doc=":class:`ITR` object",
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="file name, type determined from extension")
+                             doc="File name, type determined from extension")
                ]),
 
         Method('CreateIMG_ITR', module='geoengine.core', version='5.1.0',
@@ -154,34 +154,34 @@ gx_methods = {
                added to the name part of the grid.
                """,
                return_type="ITR",
-               return_doc=":class:`ITR` Object",
+               return_doc=":class:`ITR` object",
                parameters = [
                    Parameter('p1', type="IMG"),
                    Parameter('p2', type=Type.STRING,
-                             doc="colour table name, NULL for default"),
+                             doc="Color table name, NULL for default"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`ITR_ZONE`"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="colour contour interval or :def_val:`rDUMMY`")
+                             doc="Color contour interval or :def_val:`rDUMMY`")
                ]),
 
         Method('CreateMap_ITR', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Create :class:`ITR` from Map with Agg Group name.",
+               doc="Create :class:`ITR` from Map with :class:`AGG` Group name.",
                return_type="ITR",
-               return_doc=":class:`ITR` Object",
+               return_doc=":class:`ITR` object",
                parameters = [
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Agg Group name")
+                             doc=":class:`AGG` Group name")
                ]),
 
         Method('CreateS_ITR', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Create an :class:`ITR` Object from a :class:`BF`",
+               doc="Create an :class:`ITR` object from a :class:`BF`",
                return_type="ITR",
-               return_doc=":class:`ITR` Object",
+               return_doc=":class:`ITR` object",
                parameters = [
                    Parameter('p1', type="BF",
                              doc=":class:`BF` to serialize from")
@@ -206,7 +206,7 @@ gx_methods = {
                    Parameter('p2', type="ST",
                              doc="Stat object with a histogram"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="colour contour interval or dummy for none")
+                             doc="Color contour interval or dummy for none")
                ]),
 
         Method('GetDataLimits_ITR', module='geoengine.core', version='6.0.0',
@@ -241,12 +241,12 @@ gx_methods = {
 
         Method('GetZoneColor_ITR', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Get the colour in a zone of the :class:`ITR`",
+               doc="Get the color in a zone of the :class:`ITR`",
                notes="Valid indices are 0 to N-1, where N is the size of the :class:`ITR`.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc=":class:`ITR` Object"),
+                             doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Number of the zone to set."),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
@@ -271,14 +271,14 @@ gx_methods = {
                return_doc="The number of zones.",
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc="The :class:`ITR` Object")
+                             doc="The :class:`ITR` object")
                ]),
 
         Method('iGetZoneModelType_ITR', module='geoengine.core', version='6.4.0',
                availability=Availability.PUBLIC, 
                doc="Get the :class:`ITR` zone model (e.g. Linear, LogLin, Equal Area).",
                notes="""
-               This function may be used to determine if a colour
+               This function may be used to determine if a color
                transform is included in an :class:`ITR`.
                """,
                return_type=Type.INT32_T,
@@ -296,11 +296,11 @@ gx_methods = {
                    Parameter('p1', type="ITR",
                              doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="minimum"),
+                             doc="Minimum"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="maximum"),
+                             doc="Maximum"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="colour contour interval or dummy for none")
+                             doc="Color contour interval or dummy for none")
                ]),
 
         Method('LoadA_ITR', module='geoengine.core', version='5.1.6',
@@ -310,7 +310,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="ITR"),
                    Parameter('p2', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ]),
 
         Method('LogLinear_ITR', module='geoengine.core', version='5.0.0',
@@ -322,11 +322,11 @@ gx_methods = {
                    Parameter('p1', type="ITR",
                              doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.DOUBLE,
-                             doc="minimum ( > 0)"),
+                             doc="Minimum ( > 0)"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="maximum ( > minimum)"),
+                             doc="Maximum ( > minimum)"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="colour contour interval or dummy for none")
+                             doc="Color contour interval or dummy for none")
                ]),
 
         Method('Normal_ITR', module='geoengine.core', version='5.1.2',
@@ -339,11 +339,11 @@ gx_methods = {
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Standard deviation"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="mean"),
+                             doc="Mean"),
                    Parameter('p4', type=Type.DOUBLE,
-                             doc="expansion, normally 1.0"),
+                             doc="Expansion, normally 1.0"),
                    Parameter('p5', type=Type.DOUBLE,
-                             doc="colour contour interval or dummy for none")
+                             doc="Color contour interval or dummy for none")
                ]),
 
         Method('PowerZone_ITR', module='geoengine.core', version='5.0.0',
@@ -362,7 +362,7 @@ gx_methods = {
                doc="Get the brightness setting of the :class:`ITR`",
                notes="""
                Brightness can range from -1.0 (black) to 1.0 (white).
-               This brightness control is relative to the normal colour
+               This brightness control is relative to the normal color
                when the :class:`ITR` is created.
                """,
                see_also=":func:`ChangeBrightness_ITR`, :func:`rGetBrightness_AGG`, :func:`ChangeBrightness_AGG`",
@@ -381,7 +381,7 @@ gx_methods = {
                return_doc="The value of the specified zone.",
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc=":class:`ITR` Object"),
+                             doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Number of the zone to set.")
                ]),
@@ -393,7 +393,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="ITR"),
                    Parameter('p2', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ]),
 
         Method('SaveFile_ITR', module='geoengine.core', version='8.2',
@@ -403,7 +403,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="ITR"),
                    Parameter('p2', type=Type.STRING,
-                             doc="file name")
+                             doc="File name")
                ]),
 
         Method('Serial_ITR', module='geoengine.core', version='5.0.0',
@@ -419,21 +419,21 @@ gx_methods = {
 
         Method('SetAggMap_ITR', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Set :class:`ITR` to an Agg in map",
+               doc="Set :class:`ITR` to an :class:`AGG` in map",
                notes="See the :func:`CreateMap_ITR` function",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Agg group name"),
+                             doc=":class:`AGG` group name"),
                    Parameter('p3', type="ITR",
                              doc=":class:`ITR` object to set")
                ]),
 
         Method('SetBrightContrast_ITR', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Set the brightness of the :class:`ITR` colours",
+               doc="Set the brightness of the :class:`ITR` colors",
                notes="""
                Brightness settings:
                0.0   - black
@@ -460,7 +460,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc=":class:`ITR` Object"),
+                             doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`ITR_COLOR_MODEL`")
                ]),
@@ -483,19 +483,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc=":class:`ITR` Object"),
+                             doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Number of zones to set :class:`ITR` to.")
                ]),
 
         Method('SetZoneColor_ITR', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Set the colour in a zone of the :class:`ITR`",
+               doc="Set the color in a zone of the :class:`ITR`",
                notes="Valid indices are 0 to N-1, where N is the size of the :class:`ITR`.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc=":class:`ITR` Object"),
+                             doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Number of the zone to set."),
                    Parameter('p3', type=Type.INT32_T,
@@ -509,7 +509,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type="ITR",
-                             doc=":class:`ITR` Object"),
+                             doc=":class:`ITR` object"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Number of the zone to set."),
                    Parameter('p3', type=Type.DOUBLE,
