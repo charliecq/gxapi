@@ -14,7 +14,7 @@ class Type(Enum):
     INT64_T = 9
     UINT64_T = 10
     STRING = 11
-    VOID = 11
+    VOID = 12
 
 
 class Availability(Enum):

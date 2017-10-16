@@ -26,9 +26,37 @@ class CythonParameter(Parameter):
     def c_type(self):
         return self.generator.get_c_type(self.type, is_ref=self.is_ref, is_val=self.is_val)
         
-    def cy_assign(self, index):
-        c_type = self.generator.get_c_type(self.type, is_val=True)
-        return c_type
+    @property
+    def cy_assign(self):
+        if self.type == Type.STRING:
+            c_type = self.generator.get_c_type(self.type, is_val=True)
+            if self.is_ref:
+                return "cdef char* c{} = <char*>malloc({})\n        strcpy(c{}, (<unicode>{}).encode('utf8'))".format(self.name, self.size_of_default, self.name, self.name)
+            else:
+                return "c{} = (<unicode>{}).encode('utf8')".format(self.name, self.name)
+        elif self.name in self.parent.size_of_params.keys():
+            return 'cdef int32_t c{} = {}'.format(self.name, self.utf8_default_length)
+        else:
+            c_type = self.generator.get_c_type(self.type, is_val=True)
+            return 'cdef {} c{} = {}'.format(c_type, self.name, self.name)
+
+    @property
+    def cy_pass(self):
+        if self.type == Type.STRING:
+            return "c{}".format(self.name)
+        else:
+            return '&c{}'.format(self.name)
+
+    @property
+    def utf8_default_length(self):
+        if self.default_length in self.generator.constants.keys():
+            return '4*{}'.format(self.generator.constants[self.default_length].value)
+        else:
+            return '4*{}'.format(self.default_length)
+
+    @property
+    def size_of_default(self):
+        return self.parent.param_dict[self.size_of_param].utf8_default_length
 
 class CythonMethod(Method):
     def __init__(self, other):
@@ -42,10 +70,11 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         if self.is_destroy_method:
             return ""
         else:
-            return self.generator.get_template("""
+            return self.generator.get_template("""{% if method.is_static %}    @classmethod{% endif %}
     def {{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
-        
-        pass
+{{ method.wrap_assign_c }}
+        {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}({% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
+        {{ method.wrap_return }}
 """).render(method=self)
     
     def render_c_parameters(self):
@@ -53,7 +82,35 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
 
     @property
     def wrap_parameters(self):
-        return self.generator.get_template("{% for param in in_params %}, {{ param.name }}{% endfor %}").render(in_params=self.in_params)
+        params = self.in_params if self.is_static else self.in_params[1:]
+        return self.generator.get_template("{% for param in params %}, {{ param.name }}{% endfor %}").render(params=params)
+
+    @property
+    def passed_parameters(self):
+        params = []
+        if not self.is_static:
+            params.append('&self.handle')
+        elif len(self.parameters):
+            params.append(self.parameters[0].cy_pass)
+        params.extend([p.cy_pass for p in self.parameters[1:]]) 
+        return self.generator.get_template("get_p_geo(){% for param in params %}, {{ param }}{% endfor %}").render(params=params)
+
+    @property
+    def wrap_assign_c(self):
+        params = self.parameters if self.is_static else self.parameters[1:]
+        return self.generator.get_template("""{% for param in params %}        {{ param.cy_assign }}
+{% endfor %}""").render(params=params)
+
+    @property
+    def wrap_return(self):
+        return_values = [] if self.returns_void else [ '_return_val' ]
+        return_values.extend(['c{}'.format(p.name) for p in self.ref_params]) 
+        if len(return_values) == 1:
+            return 'return {}'.format(return_values[0])
+        elif len(return_values) > 1:
+            return 'return ({})'.format(', '.join(return_values))
+        else:
+            return ''
 
     @property
     def wrap_first_parm(self):
@@ -63,6 +120,9 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
     def c_return_type(self):
         return self.generator.get_c_type(self.return_type, is_val=True)
 
+    @property
+    def returns_class(self):
+        return self.return_type in self.generator.classes.keys()
 
 class CythonClass(Class):
     def __init__(self, other):
@@ -218,6 +278,7 @@ class CythonCodeGenerator(CodeGeneratorBase):
 
 from libc.stdint cimport int32_t, int16_t
 from libc.stdlib cimport malloc, free
+from libc.string cimport strcpy, strcat, strncat, memset, memchr, memcmp, memcpy, memmove
 
 import threading
 from threading import current_thread

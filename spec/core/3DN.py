@@ -140,6 +140,7 @@ gx_methods = {
                ]),
 
         Method('_SetAxisColor_3DN', module='geoengine.map', version='5.1.6',
+               external_name='SetAxisColor_3DN',
                availability=Availability.PUBLIC, 
                doc="Set the Axis draw color",
                return_type=Type.VOID,
@@ -151,6 +152,7 @@ gx_methods = {
                ]),
 
         Method('_SetAxisFont_3DN', module='geoengine.map', version='5.1.6',
+               external_name='SetAxisFont_3DN',
                availability=Availability.PUBLIC, 
                doc="Set the Axis font",
                return_type=Type.VOID,
@@ -162,6 +164,7 @@ gx_methods = {
                ]),
 
         Method('_SetBackgroundColor_3DN', module='geoengine.map', version='5.1.6',
+               external_name='SetBackgroundColor_3DN',
                availability=Availability.PUBLIC, 
                doc="Set the window background color",
                return_type=Type.VOID,

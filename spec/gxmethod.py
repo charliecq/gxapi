@@ -16,6 +16,8 @@ class Parameter(SpecBase):
 
 
 class Method(SpecBase):
+    _parameters = None
+
     def __init__(self, name, module=None, version=None, external_name=None, availability=Availability.UNKNOWN,
                  is_obsolete=False, is_app=False, is_gui=False, no_gxh=False, no_csharp=False, no_cpp=False,
                  return_type=Type.UNKNOWN, return_doc=None,
@@ -44,9 +46,29 @@ class Method(SpecBase):
         
         self.exposed_name = external_name if external_name else 'App_{}'.format(self.name) if self.is_app else self.name
         
-        self.size_of_params = { p.size_of_param: p for p in self.parameters if p.size_of_param }
-        self.in_params = [ p for p in self.parameters if not p in self.size_of_params ]
-        self.ref_params = [ p for p in self.parameters if p.is_ref ]
+
+    @property
+    def parameters(self):
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, value):
+        self._parameters = value        
+    
+        self.param_dict = { p.name : p for p in self._parameters }
+        self.size_of_params = { p.size_of_param: p.name for p in self._parameters if p.size_of_param }
+        self.in_params = [ p for p in self._parameters if not p.name in self.size_of_params.keys() ]
+        self.ref_params = [ p for p in self._parameters if p.is_ref ]
+
+    @property
+    def returns_void(self):
+        return self.return_type == Type.VOID
+
+    @property
+    def returns_void(self):
+        return self.return_type == Type.VOID
+
+
 
     @property
     def ext_method_name(self):

@@ -11,8 +11,11 @@ from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 # Generate global dictionaries and sets of everything with their methods and definitions
 # only once per process execution for efficiency
 
-_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
-_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
+_core_files = ['E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py']
+_desk_files = []
+
+#_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
+#_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
 
 _classes = {}
 _class_method_groups = {}
@@ -114,7 +117,7 @@ class CodeGeneratorBase:
                         parameters = []
                         for p in m.parameters:
                             parameter = _opt_derive(p, parameter_type)
-                            parameter.parent = cl
+                            parameter.parent = method
                             parameter.generator = self
                             parameters.append(parameter)
                         method.parameters = parameters
