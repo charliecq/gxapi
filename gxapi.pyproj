@@ -148,6 +148,7 @@
     <Compile Include="spec\gxdefs.py" />
     <Compile Include="spec\gxmethod.py" />
     <Compile Include="spec\__init__.py" />
+    <Compile Include="test.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="gen" />

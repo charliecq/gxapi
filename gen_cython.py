@@ -255,17 +255,30 @@ cdef unicode tounicode_with_length_and_free(
     finally:
         free(s)
 
+ctypedef unsigned char char_type
+
+cdef char_type[:] _chars(s):
+    if isinstance(s, unicode):
+        # encode to the specific encoding used inside of the module
+        s = (<unicode>s).encode('utf8')
+    else:
+        unicode(s).encode('utf8')
+    return s
+
 cdef class WrapPGeo:
     cdef void* p_geo
     
-    def __cinit__(self, const char* app, const char* ver, wind_id=0):
-        cdef void* hParentWnd = <void *>wind_id
+    def __cinit__(self, application, version, wind_id, flags):
+        app = (<unicode>application).encode('utf8')
+        ver = (<unicode>version).encode('utf8')
+        cdef size_t wind_handle = wind_id
+        cdef void* hParentWnd = <void *>wind_handle
         cdef char* err = <char*>malloc(4096)
         try:
             tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
             if not tls_geo is None:
                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
-            self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, 0, err, 4096)
+            self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, flags, err, 4096)
             if self.p_geo == NULL:
                 raise GXAPIError(tounicode(err))
             thread_local.gxapi_cy_geo = <size_t>self.p_geo
@@ -305,9 +318,9 @@ cdef class WrapPGeo:
     
 cdef void* get_p_geo():
     tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
-    if not tls_geo is None:
+    if tls_geo is None:
         raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
-    return <void*>tls_geo
+    return <void*><size_t>tls_geo
 
 {% for key, cl in classes.items() %}
 {{ cl.class_wrapper }}

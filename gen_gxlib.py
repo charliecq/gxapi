@@ -58,7 +58,7 @@ class GXLibParameter(Parameter):
     @property
     def GXLib_type(self):
         if self.is_ref:
-            return 'var {}'.format(get_GXLib_type(self.type))
+            return '{}*'.format(get_GXLib_type(self.type))
         else:
             return get_GXLib_type(self.type)
 

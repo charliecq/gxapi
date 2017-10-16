@@ -73,7 +73,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc=":class:`TIN` file"),
-                   Parameter('p2', type="var CRC", is_ref=True,
+                   Parameter('p2', type="CRC", is_ref=True,
                              doc="CRC returned (Currently this is not implemented)"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")

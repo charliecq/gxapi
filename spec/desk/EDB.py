@@ -346,7 +346,7 @@ gx_methods = {
                              doc="Minimum x"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum x"),
-                   Parameter('p4', type="var DB_SYMB", is_ref=True,
+                   Parameter('p4', type="DB_SYMB", is_ref=True,
                              doc="X axis channel, :def_val:`NULLSYMB` if none")
                ]),
 

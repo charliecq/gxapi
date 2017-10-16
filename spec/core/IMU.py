@@ -276,7 +276,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc="Grid"),
-                   Parameter('p2', type="var CRC", is_ref=True,
+                   Parameter('p2', type="CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -289,7 +289,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type=Type.STRING,
                              doc="Grid"),
-                   Parameter('p2', type="var CRC", is_ref=True,
+                   Parameter('p2', type="CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -302,7 +302,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="var CRC", is_ref=True,
+                   Parameter('p2', type="CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
@@ -315,7 +315,7 @@ gx_methods = {
                parameters = [
                    Parameter('p1', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="var CRC", is_ref=True,
+                   Parameter('p2', type="CRC", is_ref=True,
                              doc="CRC returned"),
                    Parameter('p3', type=Type.STRING,
                              doc="Output XML file")
