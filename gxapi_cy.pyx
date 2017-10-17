@@ -1,6 +1,8 @@
 
 #cython: language_level=3, c_string_type=unicode, c_string_encoding=utf8
 
+from cython.view cimport array
+
 from libc.stdint cimport int32_t, int16_t
 from libc.stdlib cimport malloc, free
 from libc.string cimport strcpy, strcat, strncat, memset, memchr, memcmp, memcpy, memmove
@@ -20,7 +22,9 @@ cdef extern void Destr_SYS(void*, const int32_t* p1);
 cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
 cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);
 
-
+cdef void callback_free_data(void *p):
+    print("In callback_free_data")
+    free(p)
 
 # Class 3DN
 
@@ -31706,16 +31710,48 @@ cdef class WrapVV:
 
 
 
-
     def get_data(self, int32_t p2, int32_t p3, unsigned char* p4, int32_t p5):
 
         try:
-
 
             _return_val = iGetData_VV(get_p_geo(), &self.handle, p2, p3, p4, p5)
             return _return_val
         finally:
             pass
+
+
+    def get_data_array(self, int32_t p2, int32_t p3, int32_t p5):
+        """
+        Type code	C Type	Python Type	Minimum size in bytes	Notes
+        'b'	signed char	int	1	 
+        'B'	unsigned char	int	1	 
+        'u'	Py_UNICODE	Unicode character	2	(1)
+        'h'	signed short	int	2	 
+        'H'	unsigned short	int	2	 
+        'i'	signed int	int	2	 
+        'I'	unsigned int	int	2	 
+        'l'	signed long	int	4	 
+        'L'	unsigned long	int	4	 
+        'q'	signed long long	int	8	(2)
+        'Q'	unsigned long long	int	8	(2)
+        'f'	float	float	4	 
+        'd'	double	float	8	 
+        Notes:
+        """
+
+        cdef void* ap4 = NULL
+        cdef array arrp4
+
+        try:
+            ap4 = malloc(p3*8)
+            arrp4 = array(shape=(p3,), itemsize=sizeof(double), format="d", mode="c", allocate_buffer=False)
+            arrp4.data = <char*>ap4
+            arrp4.callback_free_data = callback_free_data
+            ap4 = NULL
+            _return_val = iGetData_VV(get_p_geo(), &self.handle, p2, 5, arrp4.data, p5)
+            return (_return_val, arrp4)
+        finally:
+            if (ap4): free(ap4)
 
 
     def set_data(self, int32_t p2, int32_t p3, const unsigned char* p4, int32_t p5):
