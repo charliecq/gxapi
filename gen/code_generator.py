@@ -11,7 +11,13 @@ from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 # Generate global dictionaries and sets of everything with their methods and definitions
 # only once per process execution for efficiency
 
-_core_files = ['E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py']
+_core_files = [
+    'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py',
+    'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
+    #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
+    #'E:\\ggit\\t\\gxapi\spec\\core\\3DN.py'
+    ]
 _desk_files = []
 
 #_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))

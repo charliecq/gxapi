@@ -9,5 +9,6 @@ setup(
             ['gxapi_cy.pyx'], 
             libraries=['geogx_utf8', 'geodist'],
             library_dirs=['../gxdeveloper/lib'],
+            extra_compile_args=["/GF"]
          )])
 )

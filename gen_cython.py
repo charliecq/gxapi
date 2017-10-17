@@ -41,23 +41,50 @@ class CythonParameter(Parameter):
     @property
     def c_type(self):
         return self.generator.get_c_type(self.type, is_ref=self.is_ref, is_val=self.is_val)
-        
+    
+    @property
+    def cy_encode_string(self):
+        return "cenc{} = (<unicode>{}).encode('utf8')".format(self.name, self.name)
+
+    @property
+    def cy_alloc(self):
+        return "c{} = <char*>malloc({})".format(self.name, self.size_of_default, self.name)
+
+    @property
+    def cy_free(self):
+        return "if c{}: free(c{})".format(self.name, self.name)
+
+    @property
+    def cy_type(self):
+        return self.generator.get_c_type(self.type, is_val=True)
+
+    @property
+    def cy_declare(self):
+        if self.type == Type.STRING:
+            if self.is_ref:
+                return "cdef char* c{} = NULL".format(self.name)
+            else:
+                return ''
+        elif self.name in self.parent.size_of_params.keys():
+            return 'cdef int32_t c{}'.format(self.name)
+        else:
+            return 'cdef {} c{}'.format(self.cy_type, self.name)
+            
+
     @property
     def cy_assign(self):
         if self.type == Type.STRING:
-            c_type = self.generator.get_c_type(self.type, is_val=True)
             if self.is_ref:
-                return "ca{} = (<unicode>{}).encode('utf8')\n        cdef char* c{} = <char*>malloc({})\n        strcpy(c{}, ca{})".format(self.name, self.name, self.name, self.size_of_default, self.name, self.name, self.name)
+                return "strcpy(c{}, cenc{})".format(self.name, self.name)
             else:
-                return "c{} = (<unicode>{}).encode('utf8')".format(self.name, self.name)
+                return "c{} = cenc{}".format(self.name, self.name)
         elif self.name in self.parent.size_of_params.keys():
-            return 'cdef int32_t c{} = {}'.format(self.name, self.utf8_default_length)
+            return 'c{} = {}'.format(self.name, self.utf8_default_length)
         else:
-            c_type = self.generator.get_c_type(self.type, is_val=True)
             if self.is_ptr_type:
-                return 'cdef {} c{} = <{}><size_t>{}'.format(c_type, self.name, c_type, self.name)
+                return 'c{} = <{}><size_t>{}'.format(self.name, self.cy_type, self.name)
             else:
-                return 'cdef {} c{} = {}'.format(c_type, self.name, self.name)
+                return 'c{} = {}'.format(self.name, self.name)
 
     @property
     def cy_pass(self):
@@ -80,7 +107,12 @@ class CythonParameter(Parameter):
         if self.size_of_param:
             return self.parent.param_dict[self.size_of_param].utf8_default_length
         else:
-            return "len(ca{})+1".format(self.name)
+            return "len(cenc{})+1".format(self.name)
+
+    @property
+    def is_ref_string(self):
+        return self.type == Type.STRING and self.is_ref
+
 
     @property
     def is_ptr_type(self):
@@ -104,9 +136,15 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         else:
             return self.generator.get_template("""{% if method.is_static %}    @classmethod{% endif %}
     def {{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
+{{ method.wrap_declare_c }}
+        try:
+{{ method.wrap_cy_encode_strings }}
+{{ method.wrap_alloc }}
 {{ method.wrap_assign_c }}
-        {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}({% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
-        {{ method.wrap_return }}
+            {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}({% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
+            {{ method.wrap_return }}
+        finally:
+{{ method.wrap_free }}
 """).render(method=self)
     
     def render_c_parameters(self):
@@ -128,10 +166,44 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         return self.generator.get_template("get_p_geo(){% for param in params %}, {{ param }}{% endfor %}").render(params=params)
 
     @property
+    def wrap_declare_c(self):
+        params = self.parameters if self.is_static else self.parameters[1:]
+        return self.generator.get_template("""{% for param in params %}        {{ param.cy_declare }}
+{% endfor %}""").render(params=params)
+
+    @property
     def wrap_assign_c(self):
         params = self.parameters if self.is_static else self.parameters[1:]
-        return self.generator.get_template("""{% for param in params %}        {{ param.cy_assign }}
+        return self.generator.get_template("""{% for param in params %}            {{ param.cy_assign }}
 {% endfor %}""").render(params=params)
+
+    @property
+    def wrap_cy_encode_strings(self):
+        params = [p for p in self.parameters if p.type == Type.STRING]
+        if len(params):
+            return self.generator.get_template("""{% for param in params %}            {{ param.cy_encode_string }}
+{% endfor %}""").render(params=params)
+        else:
+            return ''
+
+    @property
+    def wrap_alloc(self):
+        params = [p for p in self.parameters if p.is_ref_string]
+        if len(params):
+            return self.generator.get_template("""{% for param in params %}            {{ param.cy_alloc }}
+{% endfor %}""").render(params=params)
+        else:
+            return ''
+
+    @property
+    def wrap_free(self):
+        params = [p for p in self.parameters if p.is_ref_string]
+        if len(params):
+            return self.generator.get_template("""{% for param in params %}            {{ param.cy_free }}
+{% endfor %}""").render(params=params)
+        else:
+            return '            pass'
+
 
     @property
     def wrap_return(self):
@@ -291,7 +363,7 @@ class CythonCodeGenerator(CodeGeneratorBase):
 
     def render_pyx(self):
         return self.get_template('''
-# cython: c_string_type=unicode, c_string_encoding=utf8
+#cython: language_level=3, c_string_type=unicode, c_string_encoding=utf8
 
 from libc.stdint cimport int32_t, int16_t
 from libc.stdlib cimport malloc, free
@@ -319,19 +391,8 @@ cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t
 cdef extern void* pCreate_GEO(const char*, const char*, int32_t, void*, int32_t, char*, int32_t);
 cdef extern void Destroy_GEO(void *);
 
-cdef unicode tounicode(char* s):
-    return s.decode('UTF-8', 'strict')
-
-cdef unicode tounicode_with_length(
-        char* s, size_t length):
-    return s[:length].decode('UTF-8', 'strict')
-
-cdef unicode tounicode_with_length_and_free(
-        char* s, size_t length):
-    try:
-        return s[:length].decode('UTF-8', 'strict')
-    finally:
-        free(s)
+cdef unicode _tounicode(char* s):
+    return s.decode('UTF-8', 'backslashreplace')
 
 ctypedef unsigned char char_type
 
@@ -358,7 +419,7 @@ cdef class WrapPGeo:
                 raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, flags, err, 4096)
             if self.p_geo == NULL:
-                raise GXAPIError(tounicode(err))
+                raise GXAPIError(_tounicode(err))
             thread_local.gxapi_cy_geo = <size_t>self.p_geo
         finally:
             free(err)
@@ -385,9 +446,9 @@ cdef class WrapPGeo:
                     sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
-                        raise GXAPIError(tounicode(err));
+                        raise GXAPIError(_tounicode(err));
                     else:
-                        raise GXError(tounicode(err), tounicode(module), error_number)
+                        raise GXError(_tounicode(err), _tounicode(module), error_number)
                 finally:
                     if module != NULL:
                         free(module)
