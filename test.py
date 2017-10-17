@@ -10,9 +10,9 @@ try:
     try:
         print(dn)
 
-        print(dn.get_render_controls(9,9,"","",""))
-        print(dn.set_render_controls(0,0,"a","v","x"))
-        print(dn.get_render_controls(9,9,"","",""))
+        print(dn.get_render_controls(9,9,"".encode(),"".encode(),"".encode()))
+        print(dn.set_render_controls(0,0,"a".encode(),"v".encode(),"x".encode()))
+        print(dn.get_render_controls(9,9,"".encode(),"".encode(),"".encode()))
     finally:
         del dn
 finally:

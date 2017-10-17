@@ -176,15 +176,12 @@ cdef class Wrap3DN:
 
 
 
-    def copy(self, p2):
-        cdef int32_t cp2
+    def copy(self, int32_t p2):
 
         try:
 
 
-            cp2 = p2
-
-            Copy_3DN(get_p_geo(), &self.handle, &cp2)
+            Copy_3DN(get_p_geo(), &self.handle, &p2)
             
         finally:
             pass
@@ -195,7 +192,6 @@ cdef class Wrap3DN:
         try:
 
 
-
             _return_val = Wrap3DN(Create_3DN(get_p_geo()))
             return _return_val
         finally:
@@ -204,38 +200,24 @@ cdef class Wrap3DN:
 
 
 
-    def get_point_of_view(self, p2, p3, p4):
-        cdef double cp2
-        cdef double cp3
-        cdef double cp4
+    def get_point_of_view(self, double p2, double p3, double p4):
 
         try:
 
 
-            cp2 = p2
-            cp3 = p3
-            cp4 = p4
-
-            GetPointOfView_3DN(get_p_geo(), &self.handle, &cp2, &cp3, &cp4)
-            return (cp2, cp3, cp4)
+            GetPointOfView_3DN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            return (p2, p3, p4)
         finally:
             pass
 
 
-    def get_scale(self, p2, p3, p4):
-        cdef double cp2
-        cdef double cp3
-        cdef double cp4
+    def get_scale(self, double p2, double p3, double p4):
 
         try:
 
 
-            cp2 = p2
-            cp3 = p3
-            cp4 = p4
-
-            GetScale_3DN(get_p_geo(), &self.handle, &cp2, &cp3, &cp4)
-            return (cp2, cp3, cp4)
+            GetScale_3DN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            return (p2, p3, p4)
         finally:
             pass
 
@@ -245,26 +227,22 @@ cdef class Wrap3DN:
         try:
 
 
-
             _return_val = iGetAxisColor_3DN(get_p_geo(), &self.handle)
             return _return_val
         finally:
             pass
 
 
-    def get_axis_font(self, p2):
+    def get_axis_font(self, const char* p2):
+        cdef int32_t p3 = 4*1024
         cdef char* cp2 = NULL
-        cdef int32_t cp3
 
         try:
-            cencp2 = (<unicode>p2).encode('utf8')
-
             cp2 = <char*>malloc(4*1024)
 
-            strcpy(cp2, cencp2)
-            cp3 = 4*1024
+            strcpy(cp2, p2)
 
-            IGetAxisFont_3DN(get_p_geo(), &self.handle, cp2, &cp3)
+            IGetAxisFont_3DN(get_p_geo(), &self.handle, cp2, &p3)
             return cp2
         finally:
             if cp2: free(cp2)
@@ -276,43 +254,31 @@ cdef class Wrap3DN:
         try:
 
 
-
             _return_val = iGetBackgroundColor_3DN(get_p_geo(), &self.handle)
             return _return_val
         finally:
             pass
 
 
-    def get_render_controls(self, p2, p3, p4, p6, p8):
-        cdef int32_t cp2
-        cdef int32_t cp3
+    def get_render_controls(self, int32_t p2, int32_t p3, const char* p4, const char* p6, const char* p8):
+        cdef int32_t p5 = 4*1024
+        cdef int32_t p7 = 4*1024
+        cdef int32_t p9 = 4*1024
         cdef char* cp4 = NULL
-        cdef int32_t cp5
         cdef char* cp6 = NULL
-        cdef int32_t cp7
         cdef char* cp8 = NULL
-        cdef int32_t cp9
 
         try:
-            cencp4 = (<unicode>p4).encode('utf8')
-            cencp6 = (<unicode>p6).encode('utf8')
-            cencp8 = (<unicode>p8).encode('utf8')
-
             cp4 = <char*>malloc(4*1024)
             cp6 = <char*>malloc(4*1024)
             cp8 = <char*>malloc(4*1024)
 
-            cp2 = p2
-            cp3 = p3
-            strcpy(cp4, cencp4)
-            cp5 = 4*1024
-            strcpy(cp6, cencp6)
-            cp7 = 4*1024
-            strcpy(cp8, cencp8)
-            cp9 = 4*1024
+            strcpy(cp4, p4)
+            strcpy(cp6, p6)
+            strcpy(cp8, p8)
 
-            IGetRenderControls_3DN(get_p_geo(), &self.handle, &cp2, &cp3, cp4, &cp5, cp6, &cp7, cp8, &cp9)
-            return (cp2, cp3, cp4, cp6, cp8)
+            IGetRenderControls_3DN(get_p_geo(), &self.handle, &p2, &p3, cp4, &p5, cp6, &p7, cp8, &p9)
+            return (p2, p3, cp4, cp6, cp8)
         finally:
             if cp4: free(cp4)
             if cp6: free(cp6)
@@ -325,126 +291,84 @@ cdef class Wrap3DN:
         try:
 
 
-
             _return_val = iGetShading_3DN(get_p_geo(), &self.handle)
             return _return_val
         finally:
             pass
 
 
-    def set_axis_color(self, p2):
-        cdef int32_t cp2
+    def set_axis_color(self, int32_t p2):
 
         try:
 
 
-            cp2 = p2
-
-            SetAxisColor_3DN(get_p_geo(), &self.handle, &cp2)
+            SetAxisColor_3DN(get_p_geo(), &self.handle, &p2)
             
         finally:
             pass
 
 
-    def set_axis_font(self, p2):
-        
+    def set_axis_font(self, const char* p2):
 
         try:
-            cencp2 = (<unicode>p2).encode('utf8')
 
 
-            cp2 = cencp2
-
-            SetAxisFont_3DN(get_p_geo(), &self.handle, cp2)
+            SetAxisFont_3DN(get_p_geo(), &self.handle, p2)
             
         finally:
             pass
 
 
-    def set_background_color(self, p2):
-        cdef int32_t cp2
+    def set_background_color(self, int32_t p2):
 
         try:
 
 
-            cp2 = p2
-
-            SetBackgroundColor_3DN(get_p_geo(), &self.handle, &cp2)
+            SetBackgroundColor_3DN(get_p_geo(), &self.handle, &p2)
             
         finally:
             pass
 
 
-    def set_point_of_view(self, p2, p3, p4):
-        cdef double cp2
-        cdef double cp3
-        cdef double cp4
+    def set_point_of_view(self, double p2, double p3, double p4):
 
         try:
 
 
-            cp2 = p2
-            cp3 = p3
-            cp4 = p4
-
-            SetPointOfView_3DN(get_p_geo(), &self.handle, &cp2, &cp3, &cp4)
+            SetPointOfView_3DN(get_p_geo(), &self.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
 
-    def set_render_controls(self, p2, p3, p4, p5, p6):
-        cdef int32_t cp2
-        cdef int32_t cp3
-        
-        
-        
+    def set_render_controls(self, int32_t p2, int32_t p3, const char* p4, const char* p5, const char* p6):
 
         try:
-            cencp4 = (<unicode>p4).encode('utf8')
-            cencp5 = (<unicode>p5).encode('utf8')
-            cencp6 = (<unicode>p6).encode('utf8')
 
 
-            cp2 = p2
-            cp3 = p3
-            cp4 = cencp4
-            cp5 = cencp5
-            cp6 = cencp6
-
-            SetRenderControls_3DN(get_p_geo(), &self.handle, &cp2, &cp3, cp4, cp5, cp6)
+            SetRenderControls_3DN(get_p_geo(), &self.handle, &p2, &p3, p4, p5, p6)
             
         finally:
             pass
 
 
-    def set_scale(self, p2, p3, p4):
-        cdef double cp2
-        cdef double cp3
-        cdef double cp4
+    def set_scale(self, double p2, double p3, double p4):
 
         try:
 
 
-            cp2 = p2
-            cp3 = p3
-            cp4 = p4
-
-            SetScale_3DN(get_p_geo(), &self.handle, &cp2, &cp3, &cp4)
+            SetScale_3DN(get_p_geo(), &self.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
 
-    def set_shading(self, p2):
-        cdef int32_t cp2
+    def set_shading(self, int32_t p2):
 
         try:
 
 
-            cp2 = p2
-
-            SetShading_3DN(get_p_geo(), &self.handle, &cp2)
+            SetShading_3DN(get_p_geo(), &self.handle, &p2)
             
         finally:
             pass

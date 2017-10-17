@@ -43,10 +43,6 @@ class CythonParameter(Parameter):
         return self.generator.get_c_type(self.type, is_ref=self.is_ref, is_val=self.is_val)
     
     @property
-    def cy_encode_string(self):
-        return "cenc{} = (<unicode>{}).encode('utf8')".format(self.name, self.name)
-
-    @property
     def cy_alloc(self):
         return "c{} = <char*>malloc({})".format(self.name, self.size_of_default, self.name)
 
@@ -65,35 +61,25 @@ class CythonParameter(Parameter):
                 return "cdef char* c{} = NULL".format(self.name)
             else:
                 return ''
-        elif self.name in self.parent.size_of_params.keys():
-            return 'cdef int32_t c{}'.format(self.name)
         else:
-            return 'cdef {} c{}'.format(self.cy_type, self.name)
+            return 'cdef int32_t {} = {}'.format(self.name, self.utf8_default_length)
             
 
     @property
     def cy_assign(self):
-        if self.type == Type.STRING:
-            if self.is_ref:
-                return "strcpy(c{}, cenc{})".format(self.name, self.name)
-            else:
-                return "c{} = cenc{}".format(self.name, self.name)
-        elif self.name in self.parent.size_of_params.keys():
-            return 'c{} = {}'.format(self.name, self.utf8_default_length)
-        else:
-            if self.is_ptr_type:
-                return 'c{} = <{}><size_t>{}'.format(self.name, self.cy_type, self.name)
-            else:
-                return 'c{} = {}'.format(self.name, self.name)
+        return "strcpy(c{}, {})".format(self.name, self.name)
 
     @property
     def cy_pass(self):
         if self.type == Type.STRING:
-            return "c{}".format(self.name)
+            if self.is_ref:
+                return "c{}".format(self.name)
+            else:
+                return '{}'.format(self.name)
         elif self.is_val or (isinstance(self.type, str) and not self.type.find('*') == -1):
-            return 'c{}'.format(self.name)
+            return '{}'.format(self.name)
         else:
-            return '&c{}'.format(self.name)
+            return '&{}'.format(self.name)
 
     @property
     def utf8_default_length(self):
@@ -123,8 +109,10 @@ class CythonParameter(Parameter):
             
 
 class CythonMethod(Method):
+    _ref_string_params = None
     def __init__(self, other):
         super().construct_copy(other)
+        
 
     def render_c(self):
         return self.generator.get_template("""
@@ -138,7 +126,6 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
     def {{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
 {{ method.wrap_declare_c }}
         try:
-{{ method.wrap_cy_encode_strings }}
 {{ method.wrap_alloc }}
 {{ method.wrap_assign_c }}
             {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}({% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
@@ -151,9 +138,15 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         return self.generator.get_template("""(void*{% for param in parameters %}, {{ param.c_type }} {{ param.name }}{% endfor %});""").render(parameters=self.parameters)
 
     @property
+    def ref_string_params(self):
+        if not self._ref_string_params:
+            self._ref_string_params = [p for p in self.parameters if p.is_ref_string]
+        return self._ref_string_params
+
+    @property
     def wrap_parameters(self):
         params = self.in_params if self.is_static else self.in_params[1:]
-        return self.generator.get_template("{% for param in params %}, {{ param.name }}{% endfor %}").render(params=params)
+        return self.generator.get_template("{% for param in params %}, {{ param.cy_type }} {{ param.name }}{% endfor %}").render(params=params)
 
     @property
     def passed_parameters(self):
@@ -167,40 +160,35 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
 
     @property
     def wrap_declare_c(self):
-        params = self.parameters if self.is_static else self.parameters[1:]
-        return self.generator.get_template("""{% for param in params %}        {{ param.cy_declare }}
+        params = [p for p in self.parameters if p.name in self.size_of_params.keys()]
+        params.extend(self.ref_string_params)
+        if len(params):
+            return self.generator.get_template("""{% for param in params %}        {{ param.cy_declare }}
 {% endfor %}""").render(params=params)
+        else:
+            return ''
 
     @property
     def wrap_assign_c(self):
-        params = self.parameters if self.is_static else self.parameters[1:]
-        return self.generator.get_template("""{% for param in params %}            {{ param.cy_assign }}
-{% endfor %}""").render(params=params)
-
-    @property
-    def wrap_cy_encode_strings(self):
-        params = [p for p in self.parameters if p.type == Type.STRING]
-        if len(params):
-            return self.generator.get_template("""{% for param in params %}            {{ param.cy_encode_string }}
-{% endfor %}""").render(params=params)
+        if len(self.ref_string_params):
+            return self.generator.get_template("""{% for param in params %}            {{ param.cy_assign }}
+{% endfor %}""").render(params=self.ref_string_params)
         else:
             return ''
 
     @property
     def wrap_alloc(self):
-        params = [p for p in self.parameters if p.is_ref_string]
-        if len(params):
+        if len(self.ref_string_params):
             return self.generator.get_template("""{% for param in params %}            {{ param.cy_alloc }}
-{% endfor %}""").render(params=params)
+{% endfor %}""").render(params=self.ref_string_params)
         else:
             return ''
 
     @property
     def wrap_free(self):
-        params = [p for p in self.parameters if p.is_ref_string]
-        if len(params):
+        if len(self.ref_string_params):
             return self.generator.get_template("""{% for param in params %}            {{ param.cy_free }}
-{% endfor %}""").render(params=params)
+{% endfor %}""").render(params=self.ref_string_params)
         else:
             return '            pass'
 
@@ -208,7 +196,7 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
     @property
     def wrap_return(self):
         return_values = [] if self.returns_void else [ '_return_val' ]
-        return_values.extend(['c{}'.format(p.name) for p in self.ref_params]) 
+        return_values.extend(['c{}'.format(p.name) if p.is_ref_string else '{}'.format(p.name) for p in self.ref_params]) 
         if len(return_values) == 1:
             return 'return {}'.format(return_values[0])
         elif len(return_values) > 1:
@@ -338,7 +326,12 @@ class CythonCodeGenerator(CodeGeneratorBase):
         if isinstance(type, str):
             is_val = is_val or not type.find('*') == -1
         c_type = type
-        if type == Type.VOID:
+        if type == Type.STRING:
+            if is_ref:
+                return 'char*'
+            else:
+                return 'const char*'
+        elif type == Type.VOID:
             c_type = "void"
         elif type == Type.DOUBLE:
             c_type = "double"
@@ -346,8 +339,6 @@ class CythonCodeGenerator(CodeGeneratorBase):
             c_type = "int32_t"
         elif type == Type.INT16_T:
             c_type = "int16_t"
-        elif type == Type.STRING:
-            c_type = "char"
         elif type in type_map:
             c_type = type_map[type]
         elif type in self.classes or type in self.definitions:
