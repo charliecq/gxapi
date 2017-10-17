@@ -4,6 +4,22 @@ from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
 import getopt
 
+type_map = {
+    'CRC': 'int32_t',
+    'WND': 'int32_t',
+    'PTMP': 'int32_t',
+    'FILTER': 'int32_t',
+    'DGW_OBJ': 'int32_t',
+    'TB_FIELD': 'int32_t',
+    'DB_SELECT': 'int32_t',
+    'DB_SYMB': 'int32_t',
+    'META_TOKEN': 'int32_t',
+    'HANDLE': 'int32_t',
+    'GEO_BOOL': 'bool'
+}
+
+
+
 class CythonConstant(Constant):
     def __init__(self, other):
         super().construct_copy(other)
@@ -31,19 +47,24 @@ class CythonParameter(Parameter):
         if self.type == Type.STRING:
             c_type = self.generator.get_c_type(self.type, is_val=True)
             if self.is_ref:
-                return "cdef char* c{} = <char*>malloc({})\n        strcpy(c{}, (<unicode>{}).encode('utf8'))".format(self.name, self.size_of_default, self.name, self.name)
+                return "ca{} = (<unicode>{}).encode('utf8')\n        cdef char* c{} = <char*>malloc({})\n        strcpy(c{}, ca{})".format(self.name, self.name, self.name, self.size_of_default, self.name, self.name, self.name)
             else:
                 return "c{} = (<unicode>{}).encode('utf8')".format(self.name, self.name)
         elif self.name in self.parent.size_of_params.keys():
             return 'cdef int32_t c{} = {}'.format(self.name, self.utf8_default_length)
         else:
             c_type = self.generator.get_c_type(self.type, is_val=True)
-            return 'cdef {} c{} = {}'.format(c_type, self.name, self.name)
+            if self.is_ptr_type:
+                return 'cdef {} c{} = <{}><size_t>{}'.format(c_type, self.name, c_type, self.name)
+            else:
+                return 'cdef {} c{} = {}'.format(c_type, self.name, self.name)
 
     @property
     def cy_pass(self):
         if self.type == Type.STRING:
             return "c{}".format(self.name)
+        elif self.is_val or (isinstance(self.type, str) and not self.type.find('*') == -1):
+            return 'c{}'.format(self.name)
         else:
             return '&c{}'.format(self.name)
 
@@ -56,7 +77,18 @@ class CythonParameter(Parameter):
 
     @property
     def size_of_default(self):
-        return self.parent.param_dict[self.size_of_param].utf8_default_length
+        if self.size_of_param:
+            return self.parent.param_dict[self.size_of_param].utf8_default_length
+        else:
+            return "len(ca{})+1".format(self.name)
+
+    @property
+    def is_ptr_type(self):
+        return (self.type != Type.VOID and self.type != Type.DOUBLE and self.type != Type.INT32_T and 
+                self.type != Type.INT16_T and self.type != Type.STRING and 
+                not (self.type in type_map or self.type in self.generator.classes or self.type in self.generator.definitions))
+
+            
 
 class CythonMethod(Method):
     def __init__(self, other):
@@ -219,20 +251,6 @@ cdef class Wrap{{ cl.name }}:
 {% endfor %}
 """).render(methods=method_group)
 
-type_map = {
-    'CRC': 'int32_t',
-    'WND': 'int32_t',
-    'PTMP': 'int32_t',
-    'FILTER': 'int32_t',
-    'DGW_OBJ': 'int32_t',
-    'TB_FIELD': 'int32_t',
-    'DB_SELECT': 'int32_t',
-    'DB_SYMB': 'int32_t',
-    'META_TOKEN': 'int32_t',
-    'HANDLE': 'int32_t',
-    'GEO_BOOL': 'bool'
-}
-
 class CythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
         super().__init__(constant_type=CythonConstant, define_type=CythonDefine, parameter_type=CythonParameter,
@@ -245,8 +263,7 @@ class CythonCodeGenerator(CodeGeneratorBase):
                 cl.method_groups[g_k] = [m for m in methods if not m.no_cpp]
 
     def get_c_type(self, type, is_val=False, is_ref=False):
-        if type is str:
-            type = type.replace("_stdcall", "")
+        if isinstance(type, str):
             is_val = is_val or not type.find('*') == -1
         c_type = type
         if type == Type.VOID:
