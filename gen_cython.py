@@ -52,7 +52,9 @@ class CythonParameter(Parameter):
 
     @property
     def cy_type(self):
-        return self.generator.get_c_type(self.type, is_val=True)
+        if self.type == "void*": return "unsigned char*"
+        elif self.type == "const void*": return "const unsigned char*"
+        else: return self.generator.get_c_type(self.type, is_val=True)
 
     @property
     def cy_declare(self):
@@ -93,7 +95,7 @@ class CythonParameter(Parameter):
         if self.size_of_param:
             return self.parent.param_dict[self.size_of_param].utf8_default_length
         else:
-            return "len(cenc{})+1".format(self.name)
+            return "len({})+1".format(self.name)
 
     @property
     def is_ref_string(self):
@@ -369,8 +371,8 @@ from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
 ctypedef Py_UNICODE WCHAR
 ctypedef const WCHAR* LPCWSTR
-ctypedef void* HWND
-ctypedef void* HDC
+ctypedef size_t HWND
+ctypedef size_t HDC
 cdef extern void Destr_SYS(void*, const int32_t* p1);
 cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
 cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);

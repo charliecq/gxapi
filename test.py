@@ -1,5 +1,4 @@
 import geosoft.gxapi_cy as gc
-import geosoft.gxapi as ga
 
 
 c = gc.WrapPGeo("a", "1.0", 0, 0)

@@ -20,8 +20,8 @@ _core_files = [
     ]
 _desk_files = []
 
-#_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
-#_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
+_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
+_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
 
 _classes = {}
 _class_method_groups = {}
