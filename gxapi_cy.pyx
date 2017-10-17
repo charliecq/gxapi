@@ -10669,12 +10669,12 @@ cdef class Wrap3DN:
 
 
 
-    def copy(self, int32_t p2):
+    def copy(self, Wrap3DN p2):
 
         try:
 
 
-            Copy_3DN(get_p_geo(), &self.handle, &p2)
+            Copy_3DN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -10898,7 +10898,7 @@ cdef class Wrap3DV:
             pass
 
 
-    def copy_to_map(self, int32_t p2, const char* p3, double p4, double p5, double p6, double p7, int32_t p8, const char* p9, const char* p11):
+    def copy_to_map(self, WrapMAP p2, const char* p3, double p4, double p5, double p6, double p7, int32_t p8, const char* p9, const char* p11):
         cdef int32_t p10 = 4*1040
         cdef int32_t p12 = 4*16384
         cdef char* cp9 = NULL
@@ -10911,7 +10911,7 @@ cdef class Wrap3DV:
             strcpy(cp9, p9)
             strcpy(cp11, p11)
 
-            ICopyToMAP_3DV(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8, cp9, &p10, cp11, &p12)
+            ICopyToMAP_3DV(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6, &p7, &p8, cp9, &p10, cp11, &p12)
             return (cp9, cp11)
         finally:
             if cp9: free(cp9)
@@ -10919,12 +10919,12 @@ cdef class Wrap3DV:
 
 
     @classmethod
-    def create_new(cls, const char* p1, int32_t p2):
+    def create_new(cls, const char* p1, WrapMVIEW p2):
 
         try:
 
 
-            _return_val = Wrap3DV(CreateNew_3DV(get_p_geo(), p1, &p2))
+            _return_val = Wrap3DV(CreateNew_3DV(get_p_geo(), p1, &p2.handle))
             return _return_val
         finally:
             pass
@@ -10941,12 +10941,12 @@ cdef class Wrap3DV:
             pass
 
     @classmethod
-    def from_map(cls, int32_t p1):
+    def from_map(cls, WrapMAP p1):
 
         try:
 
 
-            _return_val = Wrap3DV(FromMap_3DV(get_p_geo(), &p1))
+            _return_val = Wrap3DV(FromMap_3DV(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -11016,12 +11016,12 @@ cdef class WrapAGG:
             pass
 
     @classmethod
-    def create_map(cls, int32_t p1, const char* p2):
+    def create_map(cls, WrapMAP p1, const char* p2):
 
         try:
 
 
-            _return_val = WrapAGG(CreateMap_AGG(get_p_geo(), &p1, p2))
+            _return_val = WrapAGG(CreateMap_AGG(get_p_geo(), &p1.handle, p2))
             return _return_val
         finally:
             pass
@@ -11029,23 +11029,23 @@ cdef class WrapAGG:
 
 
 
-    def get_layer_itr(self, int32_t p2, int32_t p3):
+    def get_layer_itr(self, int32_t p2, WrapITR p3):
 
         try:
 
 
-            GetLayerITR_AGG(get_p_geo(), &self.handle, &p2, &p3)
+            GetLayerITR_AGG(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def list_img(self, int32_t p2):
+    def list_img(self, WrapVV p2):
 
         try:
 
 
-            _return_val = iListImg_AGG(get_p_geo(), &self.handle, &p2)
+            _return_val = iListImg_AGG(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -11106,12 +11106,12 @@ cdef class WrapAGG:
             pass
 
 
-    def set_layer_itr(self, int32_t p2, int32_t p3):
+    def set_layer_itr(self, int32_t p2, WrapITR p3):
 
         try:
 
 
-            SetLayerITR_AGG(get_p_geo(), &self.handle, &p2, &p3)
+            SetLayerITR_AGG(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -11170,12 +11170,12 @@ cdef class WrapBF:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapBF p2):
 
         try:
 
 
-            Copy_BF(get_p_geo(), &self.handle, &p2)
+            Copy_BF(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -11203,12 +11203,12 @@ cdef class WrapBF:
             pass
 
     @classmethod
-    def create_sbf(cls, int32_t p1, const char* p2, int32_t p3):
+    def create_sbf(cls, WrapSBF p1, const char* p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapBF(CreateSBF_BF(get_p_geo(), &p1, p2, &p3))
+            _return_val = WrapBF(CreateSBF_BF(get_p_geo(), &p1.handle, p2, &p3))
             return _return_val
         finally:
             pass
@@ -11300,12 +11300,12 @@ cdef class WrapBF:
             pass
 
 
-    def read_vv(self, int32_t p2, int32_t p3):
+    def read_vv(self, int32_t p2, WrapVV p3):
 
         try:
 
 
-            ReadVV_BF(get_p_geo(), &self.handle, &p2, &p3)
+            ReadVV_BF(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -11366,12 +11366,12 @@ cdef class WrapBF:
             pass
 
 
-    def write_vv(self, int32_t p2, int32_t p3):
+    def write_vv(self, int32_t p2, WrapVV p3):
 
         try:
 
 
-            WriteVV_BF(get_p_geo(), &self.handle, &p2, &p3)
+            WriteVV_BF(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -11397,12 +11397,12 @@ cdef class WrapDAT:
 
 
     @classmethod
-    def create_db(cls, int32_t p1, const char* p2, const char* p3, const char* p4):
+    def create_db(cls, WrapDB p1, const char* p2, const char* p3, const char* p4):
 
         try:
 
 
-            _return_val = WrapDAT(CreateDB_DAT(get_p_geo(), &p1, p2, p3, p4))
+            _return_val = WrapDAT(CreateDB_DAT(get_p_geo(), &p1.handle, p2, p3, p4))
             return _return_val
         finally:
             pass
@@ -11421,12 +11421,12 @@ cdef class WrapDAT:
 
 
     @classmethod
-    def get_lst(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4):
+    def get_lst(cls, WrapLST p1, const char* p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            GetLST_DAT(get_p_geo(), &p1, p2, &p3, &p4)
+            GetLST_DAT(get_p_geo(), &p1.handle, p2, &p3, &p4)
             
         finally:
             pass
@@ -11531,12 +11531,12 @@ cdef class WrapDATALINKD:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_DATALINKD(get_p_geo(), &self.handle, &p2)
+            GetIPJ_DATALINKD(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -11552,23 +11552,23 @@ cdef class WrapDATAMINE:
 
 
     @classmethod
-    def create_voxel(cls, const char* p1, const char* p2, int32_t p3, int32_t p4, const char* p5):
+    def create_voxel(cls, const char* p1, const char* p2, WrapIPJ p3, WrapMETA p4, const char* p5):
 
         try:
 
 
-            CreateVoxel_DATAMINE(get_p_geo(), p1, p2, &p3, &p4, p5)
+            CreateVoxel_DATAMINE(get_p_geo(), p1, p2, &p3.handle, &p4.handle, p5)
             
         finally:
             pass
 
     @classmethod
-    def numeric_field_lst(cls, const char* p1, int32_t p2):
+    def numeric_field_lst(cls, const char* p1, WrapLST p2):
 
         try:
 
 
-            NumericFieldLST_DATAMINE(get_p_geo(), p1, &p2)
+            NumericFieldLST_DATAMINE(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
@@ -11620,12 +11620,12 @@ cdef class WrapDB:
             pass
 
 
-    def dup_symb_across(self, int32_t p2, int32_t p3):
+    def dup_symb_across(self, WrapDB p2, int32_t p3):
 
         try:
 
 
-            _return_val = DupSymbAcross_DB(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = DupSymbAcross_DB(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
@@ -11658,56 +11658,56 @@ cdef class WrapDB:
 
 
 
-    def get_chan_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_chan_vv(self, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            GetChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def get_chan_vv_expanded(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_chan_vv_expanded(self, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            GetChanVVExpanded_DB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetChanVVExpanded_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def get_ipj(self, int32_t p2, int32_t p3):
+    def get_ipj(self, int32_t p2, WrapIPJ p3):
 
         try:
 
 
-            GetIPJ_DB(get_p_geo(), &self.handle, &p2, &p3)
+            GetIPJ_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def get_itr(self, int32_t p2, int32_t p3):
+    def get_itr(self, int32_t p2, WrapITR p3):
 
         try:
 
 
-            GetITR_DB(get_p_geo(), &self.handle, &p2, &p3)
+            GetITR_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def get_reg_symb(self, int32_t p2, int32_t p3):
+    def get_reg_symb(self, int32_t p2, WrapREG p3):
 
         try:
 
 
-            GetRegSymb_DB(get_p_geo(), &self.handle, &p2, &p3)
+            GetRegSymb_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -11729,12 +11729,12 @@ cdef class WrapDB:
 
 
 
-    def get_va_chan_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def get_va_chan_vv(self, int32_t p2, int32_t p3, WrapVV p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            GetVaChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            GetVaChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5, &p6)
             
         finally:
             pass
@@ -12022,34 +12022,34 @@ cdef class WrapDB:
             pass
 
 
-    def put_chan_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def put_chan_vv(self, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            PutChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            PutChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def put_va_chan_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def put_va_chan_vv(self, int32_t p2, int32_t p3, WrapVV p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            PutVaChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            PutVaChanVV_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5, &p6)
             
         finally:
             pass
 
 
-    def read_blob_bf(self, int32_t p2, int32_t p3):
+    def read_blob_bf(self, int32_t p2, WrapBF p3):
 
         try:
 
 
-            ReadBlobBF_DB(get_p_geo(), &self.handle, &p2, &p3)
+            ReadBlobBF_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -12209,34 +12209,34 @@ cdef class WrapDB:
             pass
 
 
-    def set_ipj(self, int32_t p2, int32_t p3, int32_t p4):
+    def set_ipj(self, int32_t p2, int32_t p3, WrapIPJ p4):
 
         try:
 
 
-            SetIPJ_DB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SetIPJ_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def set_itr(self, int32_t p2, int32_t p3):
+    def set_itr(self, int32_t p2, WrapITR p3):
 
         try:
 
 
-            SetITR_DB(get_p_geo(), &self.handle, &p2, &p3)
+            SetITR_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def set_reg_symb(self, int32_t p2, int32_t p3):
+    def set_reg_symb(self, int32_t p2, WrapREG p3):
 
         try:
 
 
-            SetRegSymb_DB(get_p_geo(), &self.handle, &p2, &p3)
+            SetRegSymb_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -12253,12 +12253,12 @@ cdef class WrapDB:
             pass
 
 
-    def write_blob_bf(self, int32_t p2, int32_t p3):
+    def write_blob_bf(self, int32_t p2, WrapBF p3):
 
         try:
 
 
-            WriteBlobBF_DB(get_p_geo(), &self.handle, &p2, &p3)
+            WriteBlobBF_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -12540,12 +12540,12 @@ cdef class WrapDB:
             pass
 
 
-    def window_va_ch2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def window_va_ch2(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            WindowVACh2_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            WindowVACh2_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
@@ -12944,23 +12944,23 @@ cdef class WrapDB:
 
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_DB(get_p_geo(), &self.handle, &p2)
+            GetMETA_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_DB(get_p_geo(), &self.handle, &p2)
+            SetMETA_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -12971,67 +12971,67 @@ cdef class WrapDB:
 
 
 
-    def array_lst(self, int32_t p2):
+    def array_lst(self, WrapLST p2):
 
         try:
 
 
-            ArrayLST_DB(get_p_geo(), &self.handle, &p2)
+            ArrayLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def array_size_lst(self, int32_t p2, int32_t p3):
+    def array_size_lst(self, int32_t p2, WrapLST p3):
 
         try:
 
 
-            ArraySizeLST_DB(get_p_geo(), &self.handle, &p2, &p3)
+            ArraySizeLST_DB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def chan_lst(self, int32_t p2):
+    def chan_lst(self, WrapLST p2):
 
         try:
 
 
-            ChanLST_DB(get_p_geo(), &self.handle, &p2)
+            ChanLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def normal_chan_lst(self, int32_t p2):
+    def normal_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            NormalChanLST_DB(get_p_geo(), &self.handle, &p2)
+            NormalChanLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def class_chan_lst(self, int32_t p2, const char* p3):
+    def class_chan_lst(self, WrapLST p2, const char* p3):
 
         try:
 
 
-            ClassChanLST_DB(get_p_geo(), &self.handle, &p2, p3)
+            ClassChanLST_DB(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def class_group_lst(self, int32_t p2, const char* p3):
+    def class_group_lst(self, WrapLST p2, const char* p3):
 
         try:
 
 
-            ClassGroupLST_DB(get_p_geo(), &self.handle, &p2, p3)
+            ClassGroupLST_DB(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -13059,12 +13059,12 @@ cdef class WrapDB:
             pass
 
 
-    def csv_chan_lst(self, int32_t p2, const char* p3):
+    def csv_chan_lst(self, WrapLST p2, const char* p3):
 
         try:
 
 
-            CSVChanLST_DB(get_p_geo(), &self.handle, &p2, p3)
+            CSVChanLST_DB(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -13136,12 +13136,12 @@ cdef class WrapDB:
             pass
 
 
-    def get_chan_order_lst(self, int32_t p2):
+    def get_chan_order_lst(self, WrapLST p2):
 
         try:
 
 
-            GetChanOrderLST_DB(get_p_geo(), &self.handle, &p2)
+            GetChanOrderLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -13158,12 +13158,12 @@ cdef class WrapDB:
             pass
 
 
-    def class_chan_list(self, int32_t p2, const char* p3):
+    def class_chan_list(self, WrapVV p2, const char* p3):
 
         try:
 
 
-            _return_val = iClassChanList_DB(get_p_geo(), &self.handle, &p2, p3)
+            _return_val = iClassChanList_DB(get_p_geo(), &self.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
@@ -13229,23 +13229,23 @@ cdef class WrapDB:
 
 
 
-    def symb_list(self, int32_t p2, int32_t p3):
+    def symb_list(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            _return_val = iSymbList_DB(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = iSymbList_DB(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def line_lst(self, int32_t p2):
+    def line_lst(self, WrapLST p2):
 
         try:
 
 
-            LineLST_DB(get_p_geo(), &self.handle, &p2)
+            LineLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -13262,34 +13262,34 @@ cdef class WrapDB:
             pass
 
 
-    def mask_chan_lst(self, int32_t p2):
+    def mask_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            MaskChanLST_DB(get_p_geo(), &self.handle, &p2)
+            MaskChanLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def selected_line_lst(self, int32_t p2):
+    def selected_line_lst(self, WrapLST p2):
 
         try:
 
 
-            SelectedLineLST_DB(get_p_geo(), &self.handle, &p2)
+            SelectedLineLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_chan_order_lst(self, int32_t p2):
+    def set_chan_order_lst(self, WrapLST p2):
 
         try:
 
 
-            SetChanOrderLST_DB(get_p_geo(), &self.handle, &p2)
+            SetChanOrderLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -13306,23 +13306,23 @@ cdef class WrapDB:
             pass
 
 
-    def string_chan_lst(self, int32_t p2):
+    def string_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            StringChanLST_DB(get_p_geo(), &self.handle, &p2)
+            StringChanLST_DB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def symb_lst(self, int32_t p2, int32_t p3):
+    def symb_lst(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            SymbLST_DB(get_p_geo(), &self.handle, &p2, &p3)
+            SymbLST_DB(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -13475,12 +13475,12 @@ cdef class WrapDB:
 
 
 
-    def get_chan_va(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_chan_va(self, int32_t p2, int32_t p3, WrapVA p4):
 
         try:
 
 
-            GetChanVA_DB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetChanVA_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
@@ -13508,18 +13508,18 @@ cdef class WrapDB:
             pass
 
 
-    def set_va_base_coordinate_info(self, int32_t p2, int32_t p3, double p4, int32_t p5, const char* p6, int32_t p7):
+    def set_va_base_coordinate_info(self, int32_t p2, int32_t p3, double p4, WrapVV p5, const char* p6, int32_t p7):
 
         try:
 
 
-            SetVABaseCoordinateInfo_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, p6, &p7)
+            SetVABaseCoordinateInfo_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle, p6, &p7)
             
         finally:
             pass
 
 
-    def get_va_base_coordinate_info(self, int32_t p2, int32_t p3, double p4, int32_t p5, const char* p6):
+    def get_va_base_coordinate_info(self, int32_t p2, int32_t p3, double p4, WrapVV p5, const char* p6):
         cdef int32_t p7 = 4*128
         cdef char* cp6 = NULL
 
@@ -13528,7 +13528,7 @@ cdef class WrapDB:
 
             strcpy(cp6, p6)
 
-            GetVABaseCoordinateInfo_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, cp6, &p7)
+            GetVABaseCoordinateInfo_DB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle, cp6, &p7)
             return (p3, p4, cp6)
         finally:
             if cp6: free(cp6)
@@ -13632,12 +13632,12 @@ cdef class WrapDB:
             pass
 
 
-    def put_chan_va(self, int32_t p2, int32_t p3, int32_t p4):
+    def put_chan_va(self, int32_t p2, int32_t p3, WrapVA p4):
 
         try:
 
 
-            PutChanVA_DB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            PutChanVA_DB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
@@ -13734,34 +13734,34 @@ cdef class WrapDBREAD:
 
 
     @classmethod
-    def create(cls, int32_t p1, int32_t p2):
+    def create(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            _return_val = WrapDBREAD(Create_DBREAD(get_p_geo(), &p1, &p2))
+            _return_val = WrapDBREAD(Create_DBREAD(get_p_geo(), &p1.handle, &p2.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_xy(cls, int32_t p1, int32_t p2):
+    def create_xy(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            _return_val = WrapDBREAD(CreateXY_DBREAD(get_p_geo(), &p1, &p2))
+            _return_val = WrapDBREAD(CreateXY_DBREAD(get_p_geo(), &p1.handle, &p2.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_xyz(cls, int32_t p1, int32_t p2):
+    def create_xyz(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            _return_val = WrapDBREAD(CreateXYZ_DBREAD(get_p_geo(), &p1, &p2))
+            _return_val = WrapDBREAD(CreateXYZ_DBREAD(get_p_geo(), &p1.handle, &p2.handle))
             return _return_val
         finally:
             pass
@@ -13903,34 +13903,34 @@ cdef class WrapDBWRITE:
 
 
     @classmethod
-    def create(cls, int32_t p1):
+    def create(cls, WrapDB p1):
 
         try:
 
 
-            _return_val = WrapDBWRITE(Create_DBWRITE(get_p_geo(), &p1))
+            _return_val = WrapDBWRITE(Create_DBWRITE(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_xy(cls, int32_t p1):
+    def create_xy(cls, WrapDB p1):
 
         try:
 
 
-            _return_val = WrapDBWRITE(CreateXY_DBWRITE(get_p_geo(), &p1))
+            _return_val = WrapDBWRITE(CreateXY_DBWRITE(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_xyz(cls, int32_t p1):
+    def create_xyz(cls, WrapDB p1):
 
         try:
 
 
-            _return_val = WrapDBWRITE(CreateXYZ_DBWRITE(get_p_geo(), &p1))
+            _return_val = WrapDBWRITE(CreateXYZ_DBWRITE(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -14058,12 +14058,12 @@ cdef class WrapDBWRITE:
             pass
 
 
-    def test_func(self, int32_t p2):
+    def test_func(self, WrapRA p2):
 
         try:
 
 
-            TestFunc_DBWRITE(get_p_geo(), &self.handle, &p2)
+            TestFunc_DBWRITE(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14147,12 +14147,12 @@ cdef class WrapDSEL:
             pass
 
 
-    def select_area(self, int32_t p2):
+    def select_area(self, WrapPLY p2):
 
         try:
 
 
-            SelectArea_DSEL(get_p_geo(), &self.handle, &p2)
+            SelectArea_DSEL(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14202,12 +14202,12 @@ cdef class WrapDSEL:
             pass
 
 
-    def set_ipj(self, int32_t p2, int32_t p3):
+    def set_ipj(self, WrapIPJ p2, int32_t p3):
 
         try:
 
 
-            SetIPJ_DSEL(get_p_geo(), &self.handle, &p2, &p3)
+            SetIPJ_DSEL(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -14276,12 +14276,12 @@ cdef class WrapEXT:
 
 
     @classmethod
-    def get_info(cls, const char* p1, double p2, double p3, double p4, double p5, int32_t p6):
+    def get_info(cls, const char* p1, double p2, double p3, double p4, double p5, WrapIPJ p6):
 
         try:
 
 
-            GetInfo_EXT(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6)
+            GetInfo_EXT(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6.handle)
             return (p2, p3, p4, p5)
         finally:
             pass
@@ -14332,78 +14332,78 @@ cdef class WrapGEOSTRING:
 
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_GEOSTRING(get_p_geo(), &self.handle, &p2)
+            GetIPJ_GEOSTRING(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_features(self, int32_t p2):
+    def get_features(self, WrapLST p2):
 
         try:
 
 
-            GetFeatures_GEOSTRING(get_p_geo(), &self.handle, &p2)
+            GetFeatures_GEOSTRING(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_sections(self, int32_t p2):
+    def get_sections(self, WrapLST p2):
 
         try:
 
 
-            GetSections_GEOSTRING(get_p_geo(), &self.handle, &p2)
+            GetSections_GEOSTRING(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_all_shapes(self, int32_t p2):
+    def get_all_shapes(self, WrapLST p2):
 
         try:
 
 
-            GetAllShapes_GEOSTRING(get_p_geo(), &self.handle, &p2)
+            GetAllShapes_GEOSTRING(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_shapes_for_feature(self, const char* p2, int32_t p3):
+    def get_shapes_for_feature(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetShapesForFeature_GEOSTRING(get_p_geo(), &self.handle, p2, &p3)
+            GetShapesForFeature_GEOSTRING(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
 
 
-    def get_shapes_for_section(self, const char* p2, int32_t p3):
+    def get_shapes_for_section(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetShapesForSection_GEOSTRING(get_p_geo(), &self.handle, p2, &p3)
+            GetShapesForSection_GEOSTRING(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
 
 
-    def get_shapes_for_feature_and_section(self, const char* p2, const char* p3, int32_t p4):
+    def get_shapes_for_feature_and_section(self, const char* p2, const char* p3, WrapLST p4):
 
         try:
 
 
-            GetShapesForFeatureAndSection_GEOSTRING(get_p_geo(), &self.handle, p2, p3, &p4)
+            GetShapesForFeatureAndSection_GEOSTRING(get_p_geo(), &self.handle, p2, p3, &p4.handle)
             
         finally:
             pass
@@ -14451,7 +14451,7 @@ cdef class WrapGEOSTRING:
 
 
 
-    def get_shape_properties(self, const char* p2, const char* p3, const char* p5, int32_t p7, int32_t p8, int32_t p9):
+    def get_shape_properties(self, const char* p2, const char* p3, const char* p5, WrapVV p7, WrapVV p8, WrapVV p9):
         cdef int32_t p4 = 4*64
         cdef int32_t p6 = 4*64
         cdef char* cp3 = NULL
@@ -14464,7 +14464,7 @@ cdef class WrapGEOSTRING:
             strcpy(cp3, p3)
             strcpy(cp5, p5)
 
-            GetShapeProperties_GEOSTRING(get_p_geo(), &self.handle, p2, cp3, &p4, cp5, &p6, &p7, &p8, &p9)
+            GetShapeProperties_GEOSTRING(get_p_geo(), &self.handle, p2, cp3, &p4, cp5, &p6, &p7.handle, &p8.handle, &p9.handle)
             return (cp3, cp5)
         finally:
             if cp3: free(cp3)
@@ -14503,12 +14503,12 @@ cdef class WrapGIS:
             pass
 
 
-    def create_map2_d(self, const char* p2, double p3, int32_t p4, int32_t p5):
+    def create_map2_d(self, const char* p2, double p3, WrapIPJ p4, int32_t p5):
 
         try:
 
 
-            CreateMap2D_GIS(get_p_geo(), &self.handle, p2, &p3, &p4, &p5)
+            CreateMap2D_GIS(get_p_geo(), &self.handle, p2, &p3, &p4.handle, &p5)
             
         finally:
             pass
@@ -14516,12 +14516,12 @@ cdef class WrapGIS:
 
 
 
-    def get_bpr_models_lst(self, const char* p2, int32_t p3):
+    def get_bpr_models_lst(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetBPRModelsLST_GIS(get_p_geo(), &self.handle, p2, &p3)
+            GetBPRModelsLST_GIS(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -14538,12 +14538,12 @@ cdef class WrapGIS:
             pass
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_GIS(get_p_geo(), &self.handle, &p2)
+            GetMETA_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14664,7 +14664,7 @@ cdef class WrapGIS:
             pass
 
     @classmethod
-    def scan_mi_raster_tab_file(cls, const char* p1, const char* p2, int32_t p4):
+    def scan_mi_raster_tab_file(cls, const char* p1, const char* p2, WrapIPJ p4):
         cdef int32_t p3 = 4*1040
         cdef char* cp2 = NULL
 
@@ -14673,85 +14673,85 @@ cdef class WrapGIS:
 
             strcpy(cp2, p2)
 
-            IScanMIRasterTabFile_GIS(get_p_geo(), p1, cp2, &p3, &p4)
+            IScanMIRasterTabFile_GIS(get_p_geo(), p1, cp2, &p3, &p4.handle)
             return cp2
         finally:
             if cp2: free(cp2)
 
 
 
-    def load_ascii(self, int32_t p2):
+    def load_ascii(self, WrapWA p2):
 
         try:
 
 
-            LoadASCII_GIS(get_p_geo(), &self.handle, &p2)
+            LoadASCII_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def load_gdb(self, int32_t p2):
+    def load_gdb(self, WrapDB p2):
 
         try:
 
 
-            LoadGDB_GIS(get_p_geo(), &self.handle, &p2)
+            LoadGDB_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def load_map(self, int32_t p2):
+    def load_map(self, WrapMVIEW p2):
 
         try:
 
 
-            LoadMAP_GIS(get_p_geo(), &self.handle, &p2)
+            LoadMAP_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def load_map_ex(self, int32_t p2, const char* p3):
+    def load_map_ex(self, WrapMAP p2, const char* p3):
 
         try:
 
 
-            LoadMAPEx_GIS(get_p_geo(), &self.handle, &p2, p3)
+            LoadMAPEx_GIS(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def load_meta_groups_map(self, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
+    def load_meta_groups_map(self, WrapMVIEW p2, WrapMETA p3, int32_t p4, const char* p5, const char* p6):
 
         try:
 
 
-            LoadMetaGroupsMAP_GIS(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, p6)
+            LoadMetaGroupsMAP_GIS(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5, p6)
             
         finally:
             pass
 
 
-    def load_ply(self, int32_t p2):
+    def load_ply(self, WrapPLY p2):
 
         try:
 
 
-            LoadPLY_GIS(get_p_geo(), &self.handle, &p2)
+            LoadPLY_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def load_shapes_gdb(self, int32_t p2):
+    def load_shapes_gdb(self, WrapDB p2):
 
         try:
 
 
-            LoadShapesGDB_GIS(get_p_geo(), &self.handle, &p2)
+            LoadShapesGDB_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14768,34 +14768,34 @@ cdef class WrapGIS:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_GIS(get_p_geo(), &self.handle, &p2)
+            SetIPJ_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_lst(self, int32_t p2):
+    def set_lst(self, WrapLST p2):
 
         try:
 
 
-            SetLST_GIS(get_p_geo(), &self.handle, &p2)
+            SetLST_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_GIS(get_p_geo(), &self.handle, &p2)
+            SetMETA_GIS(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14856,34 +14856,34 @@ cdef class WrapHGD:
             pass
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_HGD(get_p_geo(), &self.handle, &p2)
+            GetMETA_HGD(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def h_create_img(cls, int32_t p1, const char* p2):
+    def h_create_img(cls, WrapIMG p1, const char* p2):
 
         try:
 
 
-            _return_val = WrapHGD(hCreateIMG_HGD(get_p_geo(), &p1, p2))
+            _return_val = WrapHGD(hCreateIMG_HGD(get_p_geo(), &p1.handle, p2))
             return _return_val
         finally:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_HGD(get_p_geo(), &self.handle, &p2)
+            SetMETA_HGD(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14922,45 +14922,45 @@ cdef class WrapHXYZ:
 
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_HXYZ(get_p_geo(), &self.handle, &p2)
+            GetMETA_HXYZ(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def h_create_db(cls, int32_t p1, int32_t p2, const char* p3):
+    def h_create_db(cls, WrapDB p1, WrapVV p2, const char* p3):
 
         try:
 
 
-            _return_val = WrapHXYZ(hCreateDB_HXYZ(get_p_geo(), &p1, &p2, p3))
+            _return_val = WrapHXYZ(hCreateDB_HXYZ(get_p_geo(), &p1.handle, &p2.handle, p3))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def h_create_sql(cls, const char* p1, const char* p2, const char* p3, const char* p4, int32_t p5, const char* p6):
+    def h_create_sql(cls, const char* p1, const char* p2, const char* p3, const char* p4, WrapIPJ p5, const char* p6):
 
         try:
 
 
-            _return_val = WrapHXYZ(hCreateSQL_HXYZ(get_p_geo(), p1, p2, p3, p4, &p5, p6))
+            _return_val = WrapHXYZ(hCreateSQL_HXYZ(get_p_geo(), p1, p2, p3, p4, &p5.handle, p6))
             return _return_val
         finally:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_HXYZ(get_p_geo(), &self.handle, &p2)
+            SetMETA_HXYZ(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -14997,12 +14997,12 @@ cdef class WrapIGRF:
             pass
 
 
-    def calc_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def calc_vv(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            CalcVV_IGRF(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            CalcVV_IGRF(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle)
             
         finally:
             pass
@@ -15063,12 +15063,12 @@ cdef class WrapIMG:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapIMG p2):
 
         try:
 
 
-            Copy_IMG(get_p_geo(), &self.handle, &p2)
+            Copy_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -15118,45 +15118,45 @@ cdef class WrapIMG:
             pass
 
     @classmethod
-    def create_out_file(cls, int32_t p1, const char* p2, int32_t p3):
+    def create_out_file(cls, int32_t p1, const char* p2, WrapIMG p3):
 
         try:
 
 
-            _return_val = WrapIMG(CreateOutFile_IMG(get_p_geo(), &p1, p2, &p3))
+            _return_val = WrapIMG(CreateOutFile_IMG(get_p_geo(), &p1, p2, &p3.handle))
             return _return_val
         finally:
             pass
 
 
-    def create_projected(self, int32_t p2):
+    def create_projected(self, WrapIPJ p2):
 
         try:
 
 
-            CreateProjected_IMG(get_p_geo(), &self.handle, &p2)
+            CreateProjected_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def create_projected2(self, int32_t p2, double p3):
+    def create_projected2(self, WrapIPJ p2, double p3):
 
         try:
 
 
-            CreateProjected2_IMG(get_p_geo(), &self.handle, &p2, &p3)
+            CreateProjected2_IMG(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def create_projected3(self, int32_t p2, double p3, double p4):
+    def create_projected3(self, WrapIPJ p2, double p3, double p4):
 
         try:
 
 
-            CreateProjected3_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            CreateProjected3_IMG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
@@ -15186,56 +15186,56 @@ cdef class WrapIMG:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_IMG(get_p_geo(), &self.handle, &p2)
+            GetIPJ_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_IMG(get_p_geo(), &self.handle, &p2)
+            GetMETA_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_pg(self, int32_t p2):
+    def get_pg(self, WrapPG p2):
 
         try:
 
 
-            GetPG_IMG(get_p_geo(), &self.handle, &p2)
+            GetPG_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_projected_cell_size(self, int32_t p2, double p3):
+    def get_projected_cell_size(self, WrapIPJ p2, double p3):
 
         try:
 
 
-            GetProjectedCellSize_IMG(get_p_geo(), &self.handle, &p2, &p3)
+            GetProjectedCellSize_IMG(get_p_geo(), &self.handle, &p2.handle, &p3)
             return p3
         finally:
             pass
 
 
-    def get_tr(self, int32_t p2):
+    def get_tr(self, WrapTR p2):
 
         try:
 
 
-            GetTR_IMG(get_p_geo(), &self.handle, &p2)
+            GetTR_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -15263,12 +15263,12 @@ cdef class WrapIMG:
             pass
 
 
-    def get_def_itr(self, int32_t p2):
+    def get_def_itr(self, WrapITR p2):
 
         try:
 
 
-            _return_val = iGetDefITR_IMG(get_p_geo(), &self.handle, &p2)
+            _return_val = iGetDefITR_IMG(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -15323,23 +15323,23 @@ cdef class WrapIMG:
             pass
 
 
-    def inherit(self, int32_t p2, double p3):
+    def inherit(self, WrapIPJ p2, double p3):
 
         try:
 
 
-            Inherit_IMG(get_p_geo(), &self.handle, &p2, &p3)
+            Inherit_IMG(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def inherit_img(self, int32_t p2):
+    def inherit_img(self, WrapIMG p2):
 
         try:
 
 
-            InheritIMG_IMG(get_p_geo(), &self.handle, &p2)
+            InheritIMG_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -15400,12 +15400,12 @@ cdef class WrapIMG:
             pass
 
 
-    def set_def_itr(self, int32_t p2):
+    def set_def_itr(self, WrapITR p2):
 
         try:
 
 
-            _return_val = iSetDefITR_IMG(get_p_geo(), &self.handle, &p2)
+            _return_val = iSetDefITR_IMG(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -15422,12 +15422,12 @@ cdef class WrapIMG:
             pass
 
 
-    def load_img(self, int32_t p2):
+    def load_img(self, WrapIMG p2):
 
         try:
 
 
-            LoadIMG_IMG(get_p_geo(), &self.handle, &p2)
+            LoadIMG_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -15455,34 +15455,34 @@ cdef class WrapIMG:
             pass
 
 
-    def read_v(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def read_v(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            ReadV_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            ReadV_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def read_x(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def read_x(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            ReadX_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            ReadX_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def read_y(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def read_y(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            ReadY_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            ReadY_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
@@ -15510,23 +15510,23 @@ cdef class WrapIMG:
             pass
 
     @classmethod
-    def report(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def report(cls, const char* p1, WrapWA p2, int32_t p3, int32_t p4, const char* p5):
 
         try:
 
 
-            Report_IMG(get_p_geo(), p1, &p2, &p3, &p4, p5)
+            Report_IMG(get_p_geo(), p1, &p2.handle, &p3, &p4, p5)
             
         finally:
             pass
 
     @classmethod
-    def report_csv(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def report_csv(cls, const char* p1, WrapWA p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            ReportCSV_IMG(get_p_geo(), p1, &p2, &p3, &p4, &p5)
+            ReportCSV_IMG(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
@@ -15576,45 +15576,45 @@ cdef class WrapIMG:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_IMG(get_p_geo(), &self.handle, &p2)
+            SetIPJ_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_IMG(get_p_geo(), &self.handle, &p2)
+            SetMETA_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_pg(self, int32_t p2):
+    def set_pg(self, WrapPG p2):
 
         try:
 
 
-            SetPG_IMG(get_p_geo(), &self.handle, &p2)
+            SetPG_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_tr(self, int32_t p2):
+    def set_tr(self, WrapTR p2):
 
         try:
 
 
-            SetTR_IMG(get_p_geo(), &self.handle, &p2)
+            SetTR_IMG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -15631,34 +15631,34 @@ cdef class WrapIMG:
             pass
 
 
-    def write_v(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def write_v(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            WriteV_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            WriteV_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def write_x(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def write_x(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            WriteX_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            WriteX_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def write_y(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def write_y(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            WriteY_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            WriteY_IMG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
@@ -15696,23 +15696,23 @@ cdef class WrapIMU:
 
 
     @classmethod
-    def agg_to_geo_color(cls, int32_t p1, const char* p2, int32_t p3, double p4):
+    def agg_to_geo_color(cls, WrapAGG p1, const char* p2, WrapIPJ p3, double p4):
 
         try:
 
 
-            AggToGeoColor_IMU(get_p_geo(), &p1, p2, &p3, &p4)
+            AggToGeoColor_IMU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def crc(cls, int32_t p1, int32_t p2):
+    def crc(cls, WrapIMG p1, int32_t p2):
 
         try:
 
 
-            _return_val = CRC_IMU(get_p_geo(), &p1, &p2)
+            _return_val = CRC_IMU(get_p_geo(), &p1.handle, &p2)
             return _return_val
         finally:
             pass
@@ -15740,12 +15740,12 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def crc_inexact(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def crc_inexact(cls, WrapIMG p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            _return_val = CRCInexact_IMU(get_p_geo(), &p1, &p2, &p3, &p4)
+            _return_val = CRCInexact_IMU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             return _return_val
         finally:
             pass
@@ -15773,111 +15773,111 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def export_raw_xml(cls, int32_t p1, int32_t p2, const char* p3):
+    def export_raw_xml(cls, WrapIMG p1, int32_t p2, const char* p3):
 
         try:
 
 
-            ExportRawXML_IMU(get_p_geo(), &p1, &p2, p3)
+            ExportRawXML_IMU(get_p_geo(), &p1.handle, &p2, p3)
             return p2
         finally:
             pass
 
     @classmethod
-    def export_xml(cls, int32_t p1, int32_t p2, const char* p3):
+    def export_xml(cls, WrapIMG p1, int32_t p2, const char* p3):
 
         try:
 
 
-            ExportXML_IMU(get_p_geo(), &p1, &p2, p3)
+            ExportXML_IMU(get_p_geo(), &p1.handle, &p2, p3)
             return p2
         finally:
             pass
 
     @classmethod
-    def get_zvv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def get_zvv(cls, WrapIMG p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GetZVV_IMU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GetZVV_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_z_peaks_vv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def get_z_peaks_vv(cls, WrapIMG p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GetZPeaksVV_IMU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GetZPeaksVV_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_add(cls, int32_t p1, double p2, int32_t p3, double p4, int32_t p5):
+    def grid_add(cls, WrapIMG p1, double p2, WrapIMG p3, double p4, WrapIMG p5):
 
         try:
 
 
-            GridAdd_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            GridAdd_IMU(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_agc(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5):
+    def grid_agc(cls, WrapIMG p1, WrapIMG p2, int32_t p3, double p4, int32_t p5):
 
         try:
 
 
-            GridAGC_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            GridAGC_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def grid_bool(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6):
+    def grid_bool(cls, WrapIMG p1, WrapIMG p2, const char* p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            GridBool_IMU(get_p_geo(), &p1, &p2, p3, &p4, &p5, &p6)
+            GridBool_IMU(get_p_geo(), &p1.handle, &p2.handle, p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def grid_edge(cls, const char* p1, int32_t p2, int32_t p3):
+    def grid_edge(cls, const char* p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            GridEdge_IMU(get_p_geo(), p1, &p2, &p3)
+            GridEdge_IMU(get_p_geo(), p1, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_edge_ply(cls, int32_t p1, int32_t p2, int32_t p3):
+    def grid_edge_ply(cls, WrapIMG p1, WrapPLY p2, int32_t p3):
 
         try:
 
 
-            GridEdgePLY_IMU(get_p_geo(), &p1, &p2, &p3)
+            GridEdgePLY_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def grid_expand(cls, int32_t p1, const char* p2, double p3, int32_t p4, int32_t p5, int32_t p6):
+    def grid_expand(cls, WrapIMG p1, const char* p2, double p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            GridExpand_IMU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6)
+            GridExpand_IMU(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
@@ -15894,23 +15894,23 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def grid_fill(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9, int32_t p10, int32_t p11):
+    def grid_fill(cls, WrapIMG p1, WrapIMG p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9, int32_t p10, int32_t p11):
 
         try:
 
 
-            GridFill_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            GridFill_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def grid_filt(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5, int32_t p6, int32_t p7, const char* p8, int32_t p9):
+    def grid_filt(cls, WrapIMG p1, WrapIMG p2, int32_t p3, double p4, int32_t p5, int32_t p6, int32_t p7, const char* p8, WrapVV p9):
 
         try:
 
 
-            GridFilt_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, p8, &p9)
+            GridFilt_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, p8, &p9.handle)
             
         finally:
             pass
@@ -15927,67 +15927,67 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def grid_in_fill(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4):
+    def grid_in_fill(cls, WrapIMG p1, const char* p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            GridInFill_IMU(get_p_geo(), &p1, p2, &p3, &p4)
+            GridInFill_IMU(get_p_geo(), &p1.handle, p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def grid_mask(cls, const char* p1, const char* p2, int32_t p3, int32_t p4):
+    def grid_mask(cls, const char* p1, const char* p2, WrapPLY p3, int32_t p4):
 
         try:
 
 
-            GridMask_IMU(get_p_geo(), p1, p2, &p3, &p4)
+            GridMask_IMU(get_p_geo(), p1, p2, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def grid_peak(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def grid_peak(cls, const char* p1, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            GridPeak_IMU(get_p_geo(), p1, &p2, &p3, &p4, &p5)
+            GridPeak_IMU(get_p_geo(), p1, &p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_ply(cls, int32_t p1, int32_t p2, int32_t p3):
+    def grid_ply(cls, WrapIMG p1, WrapPLY p2, int32_t p3):
 
         try:
 
 
-            GridPLY_IMU(get_p_geo(), &p1, &p2, &p3)
+            GridPLY_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def grid_ply_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def grid_ply_ex(cls, WrapIMG p1, WrapPLY p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            GridPLYEx_IMU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GridPLYEx_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def grid_reproject_and_window(cls, const char* p1, const char* p2, int32_t p3, double p4, double p5, double p6, double p7):
+    def grid_reproject_and_window(cls, const char* p1, const char* p2, WrapIPJ p3, double p4, double p5, double p6, double p7):
 
         try:
 
 
-            GridReprojectAndWindow_IMU(get_p_geo(), p1, p2, &p3, &p4, &p5, &p6, &p7)
+            GridReprojectAndWindow_IMU(get_p_geo(), p1, p2, &p3.handle, &p4, &p5, &p6, &p7)
             
         finally:
             pass
@@ -16026,12 +16026,12 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def grid_st(cls, const char* p1, int32_t p2):
+    def grid_st(cls, const char* p1, WrapST p2):
 
         try:
 
 
-            GridST_IMU(get_p_geo(), p1, &p2)
+            GridST_IMU(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
@@ -16081,34 +16081,34 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def grid_stat_trend_ext(cls, const char* p1, int32_t p2, int32_t p3, double p4, double p5, int32_t p6):
+    def grid_stat_trend_ext(cls, const char* p1, int32_t p2, int32_t p3, double p4, double p5, WrapVM p6):
 
         try:
 
 
-            GridStatTrendExt_IMU(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6)
+            GridStatTrendExt_IMU(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6.handle)
             return (p2, p3, p4, p5)
         finally:
             pass
 
     @classmethod
-    def slope_standard_deviation(cls, int32_t p1):
+    def slope_standard_deviation(cls, WrapIMG p1):
 
         try:
 
 
-            _return_val = rSlopeStandardDeviation_IMU(get_p_geo(), &p1)
+            _return_val = rSlopeStandardDeviation_IMU(get_p_geo(), &p1.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def grid_stitch(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, int32_t p13):
+    def grid_stitch(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8, int32_t p9, int32_t p10, WrapPLY p11, double p12, int32_t p13):
 
         try:
 
 
-            GridStitch_IMU(get_p_geo(), p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
+            GridStitch_IMU(get_p_geo(), p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11.handle, &p12, &p13)
             
         finally:
             pass
@@ -16136,12 +16136,12 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def grid_trnd(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def grid_trnd(cls, WrapIMG p1, WrapIMG p2, int32_t p3, int32_t p4, int32_t p5, WrapVM p6, int32_t p7):
 
         try:
 
 
-            GridTrnd_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            GridTrnd_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle, &p7)
             
         finally:
             pass
@@ -16158,56 +16158,56 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def grid_vd(cls, int32_t p1, int32_t p2):
+    def grid_vd(cls, WrapIMG p1, WrapIMG p2):
 
         try:
 
 
-            GridVD_IMU(get_p_geo(), &p1, &p2)
+            GridVD_IMU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_vol(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6):
+    def grid_vol(cls, WrapIMG p1, double p2, double p3, double p4, double p5, double p6):
 
         try:
 
 
-            GridVol_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            GridVol_IMU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             return (p4, p5, p6)
         finally:
             pass
 
     @classmethod
-    def grid_wind(cls, int32_t p1, const char* p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, int32_t p12, const char* p13):
+    def grid_wind(cls, WrapIMG p1, const char* p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, int32_t p12, const char* p13):
 
         try:
 
 
-            GridWind_IMU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, p13)
+            GridWind_IMU(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, p13)
             
         finally:
             pass
 
     @classmethod
-    def grid_wind2(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9):
+    def grid_wind2(cls, WrapIMG p1, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9):
 
         try:
 
 
-            GridWind2_IMU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            GridWind2_IMU(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def grid_xyz(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def grid_xyz(cls, WrapIMG p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            GridXYZ_IMU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6)
+            GridXYZ_IMU(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
@@ -16257,111 +16257,111 @@ cdef class WrapIMU:
             pass
 
     @classmethod
-    def mosaic(cls, const char* p1, const char* p2, int32_t p3, double p4):
+    def mosaic(cls, const char* p1, const char* p2, WrapIPJ p3, double p4):
 
         try:
 
 
-            _return_val = WrapIMG(Mosaic_IMU(get_p_geo(), p1, p2, &p3, &p4))
+            _return_val = WrapIMG(Mosaic_IMU(get_p_geo(), p1, p2, &p3.handle, &p4))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def peak_size(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, double p5, int32_t p6):
+    def peak_size(cls, const char* p1, WrapVV p2, WrapVV p3, int32_t p4, double p5, WrapVV p6):
 
         try:
 
 
-            PeakSize_IMU(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6)
+            PeakSize_IMU(get_p_geo(), p1, &p2.handle, &p3.handle, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def peak_size2(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def peak_size2(cls, const char* p1, WrapVV p2, WrapVV p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            PeakSize2_IMU(get_p_geo(), p1, &p2, &p3, &p4, &p5)
+            PeakSize2_IMU(get_p_geo(), p1, &p2.handle, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def pigeon_hole(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def pigeon_hole(cls, WrapIMG p1, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            PigeonHole_IMU(get_p_geo(), &p1, &p2, &p3, &p4)
+            PigeonHole_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4)
             return p4
         finally:
             pass
 
     @classmethod
-    def profile(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, int32_t p7):
+    def profile(cls, WrapIMG p1, double p2, double p3, double p4, double p5, double p6, WrapVV p7):
 
         try:
 
 
-            Profile_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            Profile_IMU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def profile_vv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def profile_vv(cls, WrapIMG p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            ProfileVV_IMU(get_p_geo(), &p1, &p2, &p3, &p4)
+            ProfileVV_IMU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def range_grids(cls, const char* p1, int32_t p2, double p3, double p4, double p5, double p6):
+    def range_grids(cls, const char* p1, WrapIPJ p2, double p3, double p4, double p5, double p6):
 
         try:
 
 
-            RangeGrids_IMU(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6)
+            RangeGrids_IMU(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6)
             return (p3, p4, p5, p6)
         finally:
             pass
 
     @classmethod
-    def range_ll(cls, int32_t p1, double p2, double p3, double p4, double p5):
+    def range_ll(cls, WrapIMG p1, double p2, double p3, double p4, double p5):
 
         try:
 
 
-            RangeLL_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            RangeLL_IMU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             return (p2, p3, p4, p5)
         finally:
             pass
 
     @classmethod
-    def stat_window(cls, int32_t p1, double p2, double p3, double p4, double p5, int32_t p6, int32_t p7):
+    def stat_window(cls, WrapIMG p1, double p2, double p3, double p4, double p5, int32_t p6, WrapST p7):
 
         try:
 
 
-            StatWindow_IMU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            StatWindow_IMU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def update_ply(cls, int32_t p1, int32_t p2):
+    def update_ply(cls, WrapIMG p1, WrapPLY p2):
 
         try:
 
 
-            UpdatePLY_IMU(get_p_geo(), &p1, &p2)
+            UpdatePLY_IMU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
@@ -16464,12 +16464,12 @@ cdef class WrapIPJ:
             pass
 
 
-    def add_warp(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def add_warp(self, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6):
 
         try:
 
 
-            AddWarp_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            AddWarp_IPJ(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle)
             
         finally:
             pass
@@ -16497,34 +16497,34 @@ cdef class WrapIPJ:
             pass
 
 
-    def convert_orientation_warp_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def convert_orientation_warp_vv(self, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            ConvertOrientationWarpVV_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            ConvertOrientationWarpVV_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapIPJ p2):
 
         try:
 
 
-            Copy_IPJ(get_p_geo(), &self.handle, &p2)
+            Copy_IPJ(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def copy_projection(self, int32_t p2):
+    def copy_projection(self, WrapIPJ p2):
 
         try:
 
 
-            CopyProjection_IPJ(get_p_geo(), &self.handle, &p2)
+            CopyProjection_IPJ(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -16541,12 +16541,12 @@ cdef class WrapIPJ:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapIPJ(CreateS_IPJ(get_p_geo(), &p1))
+            _return_val = WrapIPJ(CreateS_IPJ(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -16587,23 +16587,23 @@ cdef class WrapIPJ:
             pass
 
 
-    def get_crooked_section_view_v_vs(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def get_crooked_section_view_v_vs(self, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            GetCrookedSectionViewVVs_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            GetCrookedSectionViewVVs_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             return p5
         finally:
             pass
 
     @classmethod
-    def get_list(cls, int32_t p1, const char* p2, int32_t p3):
+    def get_list(cls, int32_t p1, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetList_IPJ(get_p_geo(), &p1, p2, &p3)
+            GetList_IPJ(get_p_geo(), &p1, p2, &p3.handle)
             
         finally:
             pass
@@ -16631,23 +16631,23 @@ cdef class WrapIPJ:
             pass
 
 
-    def get_plane_equation2(self, int32_t p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, double p15):
+    def get_plane_equation2(self, WrapIPJ p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, double p15):
 
         try:
 
 
-            GetPlaneEquation2_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15)
+            GetPlaneEquation2_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15)
             return (p7, p8, p9, p10, p11, p12, p13, p14, p15)
         finally:
             pass
 
 
-    def compare_datums(self, int32_t p2):
+    def compare_datums(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iCompareDatums_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iCompareDatums_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -16664,34 +16664,34 @@ cdef class WrapIPJ:
             pass
 
 
-    def convert_warp_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def convert_warp_vv(self, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            _return_val = iConvertWarpVV_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            _return_val = iConvertWarpVV_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4)
             return _return_val
         finally:
             pass
 
 
-    def coordinate_systems_are_the_same(self, int32_t p2):
+    def coordinate_systems_are_the_same(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iCoordinateSystemsAreTheSame_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iCoordinateSystemsAreTheSame_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
 
 
-    def coordinate_systems_are_the_same_within_a_small_tolerance(self, int32_t p2):
+    def coordinate_systems_are_the_same_within_a_small_tolerance(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iCoordinateSystemsAreTheSameWithinASmallTolerance_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iCoordinateSystemsAreTheSameWithinASmallTolerance_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -16912,23 +16912,23 @@ cdef class WrapIPJ:
             pass
 
 
-    def orientations_are_the_same(self, int32_t p2):
+    def orientations_are_the_same(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iOrientationsAreTheSame_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iOrientationsAreTheSame_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
 
 
-    def orientations_are_the_same_within_a_small_tolerance(self, int32_t p2):
+    def orientations_are_the_same_within_a_small_tolerance(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iOrientationsAreTheSameWithinASmallTolerance_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iOrientationsAreTheSameWithinASmallTolerance_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -16978,12 +16978,12 @@ cdef class WrapIPJ:
             pass
 
 
-    def support_datum_transform(self, int32_t p2):
+    def support_datum_transform(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iSupportDatumTransform_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iSupportDatumTransform_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -17016,23 +17016,23 @@ cdef class WrapIPJ:
             pass
 
 
-    def warps_are_the_same(self, int32_t p2):
+    def warps_are_the_same(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iWarpsAreTheSame_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iWarpsAreTheSame_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
 
 
-    def warps_are_the_same_within_a_small_tolerance(self, int32_t p2):
+    def warps_are_the_same_within_a_small_tolerance(self, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iWarpsAreTheSameWithinASmallTolerance_IPJ(get_p_geo(), &self.handle, &p2)
+            _return_val = iWarpsAreTheSameWithinASmallTolerance_IPJ(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -17060,12 +17060,12 @@ cdef class WrapIPJ:
             pass
 
 
-    def new_box_resolution(self, int32_t p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10):
+    def new_box_resolution(self, WrapIPJ p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10):
 
         try:
 
 
-            NewBoxResolution_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            NewBoxResolution_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             return (p8, p9, p10)
         finally:
             pass
@@ -17115,12 +17115,12 @@ cdef class WrapIPJ:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_IPJ(get_p_geo(), &self.handle, &p2)
+            Serial_IPJ(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -17214,12 +17214,12 @@ cdef class WrapIPJ:
             pass
 
 
-    def set_crooked_section_view(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def set_crooked_section_view(self, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            SetCrookedSectionView_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            SetCrookedSectionView_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
@@ -17357,12 +17357,12 @@ cdef class WrapIPJ:
             pass
 
 
-    def reproject_section_grid(self, int32_t p2, double p3, double p4, double p5, double p6, double p7):
+    def reproject_section_grid(self, WrapIPJ p2, double p3, double p4, double p5, double p6, double p7):
 
         try:
 
 
-            ReprojectSectionGrid_IPJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            ReprojectSectionGrid_IPJ(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7)
             return (p3, p4, p5, p6, p7)
         finally:
             pass
@@ -17399,23 +17399,23 @@ cdef class WrapITR:
             pass
 
 
-    def color_vv(self, int32_t p2, int32_t p3):
+    def color_vv(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            ColorVV_ITR(get_p_geo(), &self.handle, &p2, &p3)
+            ColorVV_ITR(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapITR p2):
 
         try:
 
 
-            Copy_ITR(get_p_geo(), &self.handle, &p2)
+            Copy_ITR(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -17443,34 +17443,34 @@ cdef class WrapITR:
             pass
 
     @classmethod
-    def create_img(cls, int32_t p1, const char* p2, int32_t p3, double p4):
+    def create_img(cls, WrapIMG p1, const char* p2, int32_t p3, double p4):
 
         try:
 
 
-            _return_val = WrapITR(CreateIMG_ITR(get_p_geo(), &p1, p2, &p3, &p4))
+            _return_val = WrapITR(CreateIMG_ITR(get_p_geo(), &p1.handle, p2, &p3, &p4))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_map(cls, int32_t p1, const char* p2):
+    def create_map(cls, WrapMAP p1, const char* p2):
 
         try:
 
 
-            _return_val = WrapITR(CreateMap_ITR(get_p_geo(), &p1, p2))
+            _return_val = WrapITR(CreateMap_ITR(get_p_geo(), &p1.handle, p2))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapITR(CreateS_ITR(get_p_geo(), &p1))
+            _return_val = WrapITR(CreateS_ITR(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -17478,12 +17478,12 @@ cdef class WrapITR:
 
 
 
-    def equal_area(self, int32_t p2, double p3):
+    def equal_area(self, WrapST p2, double p3):
 
         try:
 
 
-            EqualArea_ITR(get_p_geo(), &self.handle, &p2, &p3)
+            EqualArea_ITR(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -17654,23 +17654,23 @@ cdef class WrapITR:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_ITR(get_p_geo(), &self.handle, &p2)
+            Serial_ITR(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def set_agg_map(cls, int32_t p1, const char* p2, int32_t p3):
+    def set_agg_map(cls, WrapMAP p1, const char* p2, WrapITR p3):
 
         try:
 
 
-            SetAggMap_ITR(get_p_geo(), &p1, p2, &p3)
+            SetAggMap_ITR(get_p_geo(), &p1.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -17910,12 +17910,12 @@ cdef class WrapLL2:
 
 
     @classmethod
-    def create(cls, double p1, double p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def create(cls, double p1, double p2, double p3, double p4, int32_t p5, int32_t p6, WrapIPJ p7, WrapIPJ p8):
 
         try:
 
 
-            _return_val = WrapLL2(Create_LL2(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8))
+            _return_val = WrapLL2(Create_LL2(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle))
             return _return_val
         finally:
             pass
@@ -17934,12 +17934,12 @@ cdef class WrapLL2:
             pass
 
 
-    def set_row(self, int32_t p2, int32_t p3, int32_t p4):
+    def set_row(self, int32_t p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            SetRow_LL2(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SetRow_LL2(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -17978,23 +17978,23 @@ cdef class WrapLPT:
 
 
 
-    def get_lst(self, int32_t p2):
+    def get_lst(self, WrapLST p2):
 
         try:
 
 
-            GetLST_LPT(get_p_geo(), &self.handle, &p2)
+            GetLST_LPT(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_standard_lst(self, int32_t p2):
+    def get_standard_lst(self, WrapLST p2):
 
         try:
 
 
-            GetStandardLST_LPT(get_p_geo(), &self.handle, &p2)
+            GetStandardLST_LPT(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -18053,12 +18053,12 @@ cdef class WrapLST:
             pass
 
 
-    def append(self, int32_t p2):
+    def append(self, WrapLST p2):
 
         try:
 
 
-            Append_LST(get_p_geo(), &self.handle, &p2)
+            Append_LST(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -18097,12 +18097,12 @@ cdef class WrapLST:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapLST p2):
 
         try:
 
 
-            Copy_LST(get_p_geo(), &self.handle, &p2)
+            Copy_LST(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -18119,12 +18119,12 @@ cdef class WrapLST:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapLST(CreateS_LST(get_p_geo(), &p1))
+            _return_val = WrapLST(CreateS_LST(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -18143,12 +18143,12 @@ cdef class WrapLST:
 
 
 
-    def find_items(self, int32_t p2, int32_t p3, int32_t p4):
+    def find_items(self, int32_t p2, WrapLST p3, WrapVV p4):
 
         try:
 
 
-            FindItems_LST(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            FindItems_LST(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -18312,23 +18312,23 @@ cdef class WrapLST:
             pass
 
 
-    def select_csv_string_items(self, const char* p2, int32_t p3):
+    def select_csv_string_items(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            SelectCSVStringItems_LST(get_p_geo(), &self.handle, p2, &p3)
+            SelectCSVStringItems_LST(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_LST(get_p_geo(), &self.handle, &p2)
+            Serial_LST(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -18387,12 +18387,12 @@ cdef class WrapLTB:
             pass
 
 
-    def contract(self, int32_t p2):
+    def contract(self, WrapLTB p2):
 
         try:
 
 
-            _return_val = WrapLTB(Contract_LTB(get_p_geo(), &self.handle, &p2))
+            _return_val = WrapLTB(Contract_LTB(get_p_geo(), &self.handle, &p2.handle))
             return _return_val
         finally:
             pass
@@ -18444,34 +18444,34 @@ cdef class WrapLTB:
 
 
 
-    def get_con_lst(self, int32_t p2, const char* p3, int32_t p4, int32_t p5):
+    def get_con_lst(self, int32_t p2, const char* p3, int32_t p4, WrapLST p5):
 
         try:
 
 
-            GetConLST_LTB(get_p_geo(), &self.handle, &p2, p3, &p4, &p5)
+            GetConLST_LTB(get_p_geo(), &self.handle, &p2, p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def get_lst(self, int32_t p2, int32_t p3):
+    def get_lst(self, int32_t p2, WrapLST p3):
 
         try:
 
 
-            GetLST_LTB(get_p_geo(), &self.handle, &p2, &p3)
+            GetLST_LTB(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def get_lst2(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_lst2(self, int32_t p2, int32_t p3, WrapLST p4):
 
         try:
 
 
-            GetLST2_LTB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetLST2_LTB(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
@@ -18591,12 +18591,12 @@ cdef class WrapLTB:
             pass
 
 
-    def merge(self, int32_t p2):
+    def merge(self, WrapLTB p2):
 
         try:
 
 
-            _return_val = WrapLTB(Merge_LTB(get_p_geo(), &self.handle, &p2))
+            _return_val = WrapLTB(Merge_LTB(get_p_geo(), &self.handle, &p2.handle))
             return _return_val
         finally:
             pass
@@ -18752,12 +18752,12 @@ cdef class WrapMAP:
 
 
 
-    def create_linked_3d_view(self, int32_t p2, const char* p3, double p4, double p5, double p6, double p7):
+    def create_linked_3d_view(self, WrapMVIEW p2, const char* p3, double p4, double p5, double p6, double p7):
 
         try:
 
 
-            CreateLinked3DView_MAP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7)
+            CreateLinked3DView_MAP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
@@ -18768,23 +18768,23 @@ cdef class WrapMAP:
 
 
 
-    def agg_list(self, int32_t p2, int32_t p3):
+    def agg_list(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            AGGList_MAP(get_p_geo(), &self.handle, &p2, &p3)
+            AGGList_MAP(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def agg_list_ex(self, int32_t p2, int32_t p3, int32_t p4):
+    def agg_list_ex(self, WrapLST p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            AGGListEx_MAP(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            AGGListEx_MAP(get_p_geo(), &self.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
@@ -18880,12 +18880,12 @@ cdef class WrapMAP:
             pass
 
 
-    def dup_map(self, int32_t p2, int32_t p3):
+    def dup_map(self, WrapMAP p2, int32_t p3):
 
         try:
 
 
-            DupMap_MAP(get_p_geo(), &self.handle, &p2, &p3)
+            DupMap_MAP(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -18935,23 +18935,23 @@ cdef class WrapMAP:
             pass
 
 
-    def group_list(self, int32_t p2):
+    def group_list(self, WrapLST p2):
 
         try:
 
 
-            GroupList_MAP(get_p_geo(), &self.handle, &p2)
+            GroupList_MAP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def group_list_ex(self, int32_t p2, int32_t p3):
+    def group_list_ex(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            GroupListEx_MAP(get_p_geo(), &self.handle, &p2, &p3)
+            GroupListEx_MAP(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -19196,23 +19196,23 @@ cdef class WrapMAP:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_MAP(get_p_geo(), &self.handle, &p2)
+            SetMETA_MAP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_reg(self, int32_t p2):
+    def set_reg(self, WrapREG p2):
 
         try:
 
 
-            SetREG_MAP(get_p_geo(), &self.handle, &p2)
+            SetREG_MAP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -19240,23 +19240,23 @@ cdef class WrapMAP:
             pass
 
 
-    def view_list(self, int32_t p2):
+    def view_list(self, WrapLST p2):
 
         try:
 
 
-            ViewList_MAP(get_p_geo(), &self.handle, &p2)
+            ViewList_MAP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def view_list_ex(self, int32_t p2, int32_t p3):
+    def view_list_ex(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            ViewListEx_MAP(get_p_geo(), &self.handle, &p2, &p3)
+            ViewListEx_MAP(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -19305,12 +19305,12 @@ cdef class WrapMAPL:
             pass
 
     @classmethod
-    def create_reg(cls, const char* p1, const char* p2, int32_t p3, int32_t p4):
+    def create_reg(cls, const char* p1, const char* p2, int32_t p3, WrapREG p4):
 
         try:
 
 
-            _return_val = WrapMAPL(CreateREG_MAPL(get_p_geo(), p1, p2, &p3, &p4))
+            _return_val = WrapMAPL(CreateREG_MAPL(get_p_geo(), p1, p2, &p3, &p4.handle))
             return _return_val
         finally:
             pass
@@ -19318,12 +19318,12 @@ cdef class WrapMAPL:
 
 
 
-    def process(self, int32_t p2):
+    def process(self, WrapMAP p2):
 
         try:
 
 
-            Process_MAPL(get_p_geo(), &self.handle, &p2)
+            Process_MAPL(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -20024,12 +20024,12 @@ cdef class WrapMETA:
 
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapMETA p2):
 
         try:
 
 
-            Copy_META(get_p_geo(), &self.handle, &p2)
+            Copy_META(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -20046,12 +20046,12 @@ cdef class WrapMETA:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapMETA(CreateS_META(get_p_geo(), &p1))
+            _return_val = WrapMETA(CreateS_META(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -20059,12 +20059,12 @@ cdef class WrapMETA:
 
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_META(get_p_geo(), &self.handle, &p2)
+            Serial_META(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -20184,12 +20184,12 @@ cdef class WrapMETA:
             pass
 
 
-    def write_text(self, int32_t p2):
+    def write_text(self, WrapWA p2):
 
         try:
 
 
-            WriteText_META(get_p_geo(), &self.handle, &p2)
+            WriteText_META(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -20347,67 +20347,67 @@ cdef class WrapMETA:
 
 
 
-    def h_copy_across_attribute(self, int32_t p2, int32_t p3):
+    def h_copy_across_attribute(self, WrapMETA p2, int32_t p3):
 
         try:
 
 
-            _return_val = hCopyAcrossAttribute_META(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = hCopyAcrossAttribute_META(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def h_copy_across_class(self, int32_t p2, int32_t p3):
+    def h_copy_across_class(self, WrapMETA p2, int32_t p3):
 
         try:
 
 
-            _return_val = hCopyAcrossClass_META(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = hCopyAcrossClass_META(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def h_copy_across_data(self, int32_t p2, int32_t p3):
+    def h_copy_across_data(self, WrapMETA p2, int32_t p3):
 
         try:
 
 
-            _return_val = hCopyAcrossData_META(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = hCopyAcrossData_META(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def h_copy_across_item(self, int32_t p2, int32_t p3):
+    def h_copy_across_item(self, WrapMETA p2, int32_t p3):
 
         try:
 
 
-            _return_val = hCopyAcrossItem_META(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = hCopyAcrossItem_META(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def h_copy_across_type(self, int32_t p2, int32_t p3):
+    def h_copy_across_type(self, WrapMETA p2, int32_t p3):
 
         try:
 
 
-            _return_val = hCopyAcrossType_META(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = hCopyAcrossType_META(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def move_datas_across(self, int32_t p2, int32_t p3, int32_t p4):
+    def move_datas_across(self, WrapMETA p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            MoveDatasAcross_META(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            MoveDatasAcross_META(get_p_geo(), &self.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
@@ -20552,23 +20552,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def draw_object_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def draw_object_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapVV p10, WrapVV p11, WrapVV p12, WrapVV p13, WrapVV p14):
 
         try:
 
 
-            DrawObject3D_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            DrawObject3D_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10.handle, &p11.handle, &p12.handle, &p13.handle, &p14.handle)
             
         finally:
             pass
 
 
-    def draw_surface_3d_ex(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def draw_surface_3d_ex(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, WrapVV p11, WrapVV p12, WrapVV p13, WrapIPJ p14):
 
         try:
 
 
-            DrawSurface3DEx_MVIEW(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            DrawSurface3DEx_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10, &p11.handle, &p12.handle, &p13.handle, &p14.handle)
             
         finally:
             pass
@@ -20585,23 +20585,23 @@ cdef class WrapMVIEW:
             pass
 
     @classmethod
-    def font_weight_lst(cls, int32_t p1):
+    def font_weight_lst(cls, WrapLST p1):
 
         try:
 
 
-            FontWeightLST_MVIEW(get_p_geo(), &p1)
+            FontWeightLST_MVIEW(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
 
-    def get_agg_file_names(self, const char* p2, int32_t p3):
+    def get_agg_file_names(self, const char* p2, WrapVV p3):
 
         try:
 
 
-            GetAGGFileNames_MVIEW(get_p_geo(), &self.handle, p2, &p3)
+            GetAGGFileNames_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -20645,12 +20645,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def poly_line_3d(self, int32_t p2, int32_t p3, int32_t p4):
+    def poly_line_3d(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            PolyLine3D_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            PolyLine3D_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -20667,12 +20667,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def set_meta(self, const char* p2, int32_t p3, const char* p4):
+    def set_meta(self, const char* p2, WrapMETA p3, const char* p4):
 
         try:
 
 
-            SetMeta_MVIEW(get_p_geo(), &self.handle, p2, &p3, p4)
+            SetMeta_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle, p4)
             
         finally:
             pass
@@ -20689,12 +20689,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def update_met_afrom_group(self, const char* p2, int32_t p3):
+    def update_met_afrom_group(self, const char* p2, WrapMETA p3):
 
         try:
 
 
-            UpdateMETAfromGroup_MVIEW(get_p_geo(), &self.handle, p2, &p3)
+            UpdateMETAfromGroup_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -20716,12 +20716,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def get_plane_clip_ply(self, int32_t p2, int32_t p3):
+    def get_plane_clip_ply(self, int32_t p2, WrapPLY p3):
 
         try:
 
 
-            GetPlaneClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            GetPlaneClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -20809,23 +20809,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def list_plane_groups(self, int32_t p2, int32_t p3):
+    def list_plane_groups(self, int32_t p2, WrapLST p3):
 
         try:
 
 
-            ListPlaneGroups_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            ListPlaneGroups_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def list_planes(self, int32_t p2):
+    def list_planes(self, WrapLST p2):
 
         try:
 
 
-            ListPlanes_MVIEW(get_p_geo(), &self.handle, &p2)
+            ListPlanes_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -20875,12 +20875,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def set_h_3dn(self, int32_t p2):
+    def set_h_3dn(self, Wrap3DN p2):
 
         try:
 
 
-            SetH3DN_MVIEW(get_p_geo(), &self.handle, &p2)
+            SetH3DN_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -20908,12 +20908,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def set_plane_clip_ply(self, int32_t p2, int32_t p3):
+    def set_plane_clip_ply(self, int32_t p2, WrapPLY p3):
 
         try:
 
 
-            SetPlaneClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            SetPlaneClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -20995,12 +20995,12 @@ cdef class WrapMVIEW:
 
 
 
-    def clip_poly_ex(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def clip_poly_ex(self, WrapVV p2, WrapVV p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            _ClipPolyEx_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            _ClipPolyEx_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
@@ -21050,12 +21050,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def clip_poly(self, int32_t p2, int32_t p3, int32_t p4):
+    def clip_poly(self, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            ClipPoly_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            ClipPoly_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
@@ -21083,34 +21083,34 @@ cdef class WrapMVIEW:
             pass
 
 
-    def ext_clip_ply_list(self, int32_t p2):
+    def ext_clip_ply_list(self, WrapLST p2):
 
         try:
 
 
-            ExtClipPLYList_MVIEW(get_p_geo(), &self.handle, &p2)
+            ExtClipPLYList_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_clip_ply(self, int32_t p2):
+    def get_clip_ply(self, WrapPLY p2):
 
         try:
 
 
-            GetClipPLY_MVIEW(get_p_geo(), &self.handle, &p2)
+            GetClipPLY_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_ext_clip_ply(self, int32_t p2, int32_t p3):
+    def get_ext_clip_ply(self, int32_t p2, WrapPLY p3):
 
         try:
 
 
-            GetExtClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            GetExtClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -21127,12 +21127,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def get_ply(self, int32_t p2):
+    def get_ply(self, WrapPLY p2):
 
         try:
 
 
-            GetPLY_MVIEW(get_p_geo(), &self.handle, &p2)
+            GetPLY_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -21176,23 +21176,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def set_ext_clip_ply(self, int32_t p2, const char* p3, int32_t p4):
+    def set_ext_clip_ply(self, int32_t p2, const char* p3, WrapPLY p4):
 
         try:
 
 
-            _return_val = iSetExtClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, p3, &p4)
+            _return_val = iSetExtClipPLY_MVIEW(get_p_geo(), &self.handle, &p2, p3, &p4.handle)
             return _return_val
         finally:
             pass
 
 
-    def set_clip_ply(self, int32_t p2):
+    def set_clip_ply(self, WrapPLY p2):
 
         try:
 
 
-            SetClipPLY_MVIEW(get_p_geo(), &self.handle, &p2)
+            SetClipPLY_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -21592,23 +21592,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def classified_symbols(self, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, const char* p7, const char* p8, const char* p9):
+    def classified_symbols(self, WrapVV p2, WrapVV p3, WrapVV p4, double p5, double p6, const char* p7, const char* p8, const char* p9):
 
         try:
 
 
-            ClassifiedSymbols_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, p7, p8, p9)
+            ClassifiedSymbols_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, p7, p8, p9)
             
         finally:
             pass
 
 
-    def complex_polygon(self, int32_t p2, int32_t p3, int32_t p4):
+    def complex_polygon(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            ComplexPolygon_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            ComplexPolygon_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -21636,67 +21636,67 @@ cdef class WrapMVIEW:
             pass
 
 
-    def line_vv(self, int32_t p2):
+    def line_vv(self, WrapVV p2):
 
         try:
 
 
-            LineVV_MVIEW(get_p_geo(), &self.handle, &p2)
+            LineVV_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def polygon_dm(self, int32_t p2, int32_t p3):
+    def polygon_dm(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            PolygonDm_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            PolygonDm_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def polygon_ply(self, int32_t p2):
+    def polygon_ply(self, WrapPLY p2):
 
         try:
 
 
-            PolygonPLY_MVIEW(get_p_geo(), &self.handle, &p2)
+            PolygonPLY_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def poly_line(self, int32_t p2, int32_t p3, int32_t p4):
+    def poly_line(self, int32_t p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            PolyLine_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            PolyLine_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def poly_line_dm(self, int32_t p2, int32_t p3):
+    def poly_line_dm(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            PolyLineDm_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            PolyLineDm_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def poly_wrap(self, int32_t p2, int32_t p3):
+    def poly_wrap(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            PolyWrap_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            PolyWrap_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -21724,12 +21724,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def size_symbols(self, int32_t p2, int32_t p3, int32_t p4):
+    def size_symbols(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            SizeSymbols_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SizeSymbols_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -21746,23 +21746,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def symbols(self, int32_t p2, int32_t p3):
+    def symbols(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Symbols_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            Symbols_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def symbols_itr(self, const char* p2, int32_t p3, int32_t p4, int32_t p5):
+    def symbols_itr(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            SymbolsITR_MVIEW(get_p_geo(), &self.handle, p2, &p3, &p4, &p5)
+            SymbolsITR_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
@@ -21784,12 +21784,12 @@ cdef class WrapMVIEW:
 
 
 
-    def aggregate(self, int32_t p2, const char* p3):
+    def aggregate(self, WrapAGG p2, const char* p3):
 
         try:
 
 
-            Aggregate_MVIEW(get_p_geo(), &self.handle, &p2, p3)
+            Aggregate_MVIEW(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -21817,12 +21817,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def col_symbol(self, const char* p2, int32_t p3):
+    def col_symbol(self, const char* p2, WrapCSYMB p3):
 
         try:
 
 
-            ColSymbol_MVIEW(get_p_geo(), &self.handle, p2, &p3)
+            ColSymbol_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -21839,12 +21839,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def datalinkd(self, int32_t p2, const char* p3):
+    def datalinkd(self, WrapDATALINKD p2, const char* p3):
 
         try:
 
 
-            DATALINKD_MVIEW(get_p_geo(), &self.handle, &p2, p3)
+            DATALINKD_MVIEW(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -21894,12 +21894,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def link(self, int32_t p2, const char* p3):
+    def link(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            Link_MVIEW(get_p_geo(), &self.handle, &p2, p3)
+            Link_MVIEW(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -21916,23 +21916,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def meta(self, int32_t p2, const char* p3):
+    def meta(self, WrapMETA p2, const char* p3):
 
         try:
 
 
-            Meta_MVIEW(get_p_geo(), &self.handle, &p2, p3)
+            Meta_MVIEW(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def voxd(self, int32_t p2, const char* p3):
+    def voxd(self, WrapVOXD p2, const char* p3):
 
         try:
 
 
-            VOXD_MVIEW(get_p_geo(), &self.handle, &p2, p3)
+            VOXD_MVIEW(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -21949,12 +21949,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def draw_vector_voxel_vectors(self, int32_t p2, const char* p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9):
+    def draw_vector_voxel_vectors(self, WrapVOX p2, const char* p3, WrapITR p4, double p5, double p6, double p7, double p8, int32_t p9):
 
         try:
 
 
-            DrawVectorVoxelVectors_MVIEW(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            DrawVectorVoxelVectors_MVIEW(get_p_geo(), &self.handle, &p2.handle, p3, &p4.handle, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
@@ -21971,12 +21971,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def draw_vectors_3d(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11, double p12):
+    def draw_vectors_3d(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapITR p9, double p10, double p11, double p12):
 
         try:
 
 
-            DrawVectors3D_MVIEW(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            DrawVectors3D_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10, &p11, &p12)
             
         finally:
             pass
@@ -21987,12 +21987,12 @@ cdef class WrapMVIEW:
 
 
 
-    def set_group_itr(self, int32_t p2, int32_t p3):
+    def set_group_itr(self, int32_t p2, WrapITR p3):
 
         try:
 
 
-            SetGroupITR_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            SetGroupITR_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -22031,12 +22031,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def set_group_tpat(self, int32_t p2, int32_t p3):
+    def set_group_tpat(self, int32_t p2, WrapTPAT p3):
 
         try:
 
 
-            SetGroupTPAT_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            SetGroupTPAT_MVIEW(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -22108,34 +22108,34 @@ cdef class WrapMVIEW:
             pass
 
 
-    def write_group_storage(self, int32_t p2, const char* p3, int32_t p4):
+    def write_group_storage(self, int32_t p2, const char* p3, WrapBF p4):
 
         try:
 
 
-            WriteGroupStorage_MVIEW(get_p_geo(), &self.handle, &p2, p3, &p4)
+            WriteGroupStorage_MVIEW(get_p_geo(), &self.handle, &p2, p3, &p4.handle)
             
         finally:
             pass
 
 
-    def copy_marked_groups(self, int32_t p2):
+    def copy_marked_groups(self, WrapMVIEW p2):
 
         try:
 
 
-            CopyMarkedGroups_MVIEW(get_p_geo(), &self.handle, &p2)
+            CopyMarkedGroups_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def copy_raw_marked_groups(self, int32_t p2):
+    def copy_raw_marked_groups(self, WrapMVIEW p2):
 
         try:
 
 
-            CopyRawMarkedGroups_MVIEW(get_p_geo(), &self.handle, &p2)
+            CopyRawMarkedGroups_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -22196,12 +22196,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def group_to_ply(self, const char* p2, int32_t p3):
+    def group_to_ply(self, const char* p2, WrapPLY p3):
 
         try:
 
 
-            GroupToPLY_MVIEW(get_p_geo(), &self.handle, p2, &p3)
+            GroupToPLY_MVIEW(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -22300,12 +22300,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def list_groups(self, int32_t p2, int32_t p3):
+    def list_groups(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            _return_val = iListGroups_MVIEW(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = iListGroups_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
@@ -22519,12 +22519,12 @@ cdef class WrapMVIEW:
 
 
 
-    def set_working_ipj(self, int32_t p2):
+    def set_working_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            _SetWorkingIPJ_MVIEW(get_p_geo(), &self.handle, &p2)
+            _SetWorkingIPJ_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -22552,23 +22552,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_MVIEW(get_p_geo(), &self.handle, &p2)
+            GetIPJ_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_user_ipj(self, int32_t p2):
+    def get_user_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetUserIPJ_MVIEW(get_p_geo(), &self.handle, &p2)
+            GetUserIPJ_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -22596,23 +22596,23 @@ cdef class WrapMVIEW:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_MVIEW(get_p_geo(), &self.handle, &p2)
+            SetIPJ_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_user_ipj(self, int32_t p2):
+    def set_user_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetUserIPJ_MVIEW(get_p_geo(), &self.handle, &p2)
+            SetUserIPJ_MVIEW(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -22765,12 +22765,12 @@ cdef class WrapMVIEW:
             pass
 
 
-    def label_fid(self, int32_t p2, double p3, double p4, double p5, double p6, double p7):
+    def label_fid(self, WrapVV p2, double p3, double p4, double p5, double p6, double p7):
 
         try:
 
 
-            LabelFid_MVIEW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            LabelFid_MVIEW(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
@@ -22814,34 +22814,34 @@ cdef class WrapMVIEW:
 
 
     @classmethod
-    def create(cls, int32_t p1, const char* p2, int32_t p3):
+    def create(cls, WrapMAP p1, const char* p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapMVIEW(Create_MVIEW(get_p_geo(), &p1, p2, &p3))
+            _return_val = WrapMVIEW(Create_MVIEW(get_p_geo(), &p1.handle, p2, &p3))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_crooked_section(cls, int32_t p1, int32_t p2, const char* p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, int32_t p13, int32_t p14):
+    def create_crooked_section(cls, WrapMAP p1, WrapIPJ p2, const char* p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, double p11, WrapVV p12, WrapVV p13, WrapVV p14):
 
         try:
 
 
-            _return_val = WrapMVIEW(CreateCrookedSection_MVIEW(get_p_geo(), &p1, &p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14))
+            _return_val = WrapMVIEW(CreateCrookedSection_MVIEW(get_p_geo(), &p1.handle, &p2.handle, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12.handle, &p13.handle, &p14.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_crooked_section_data_profile(cls, int32_t p1, int32_t p2, const char* p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15):
+    def create_crooked_section_data_profile(cls, WrapMAP p1, WrapIPJ p2, const char* p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, WrapVV p13, WrapVV p14, WrapVV p15):
 
         try:
 
 
-            _return_val = WrapMVIEW(CreateCrookedSectionDataProfile_MVIEW(get_p_geo(), &p1, &p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15))
+            _return_val = WrapMVIEW(CreateCrookedSectionDataProfile_MVIEW(get_p_geo(), &p1.handle, &p2.handle, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13.handle, &p14.handle, &p15.handle))
             return _return_val
         finally:
             pass
@@ -23155,276 +23155,276 @@ cdef class WrapMVU:
 
 
     @classmethod
-    def arrow(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8):
+    def arrow(cls, WrapMVIEW p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8):
 
         try:
 
 
-            Arrow_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            Arrow_MVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def arrow_vector_vv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, double p11):
+    def arrow_vector_vv(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, double p11):
 
         try:
 
 
-            ArrowVectorVV_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            ArrowVectorVV_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def bar_chart(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, const char* p5, const char* p6, const char* p7, double p8, const char* p9, double p10, const char* p11, double p12, double p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, double p21, double p22, double p23, double p24, double p25, double p26, double p27, double p28):
+    def bar_chart(cls, WrapMVIEW p1, const char* p2, WrapDB p3, int32_t p4, const char* p5, const char* p6, const char* p7, double p8, const char* p9, double p10, const char* p11, double p12, double p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, double p21, double p22, double p23, double p24, double p25, double p26, double p27, double p28):
 
         try:
 
 
-            BarChart_MVU(get_p_geo(), &p1, p2, &p3, &p4, p5, p6, p7, &p8, p9, &p10, p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28)
+            BarChart_MVU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, p5, p6, p7, &p8, p9, &p10, p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28)
             
         finally:
             pass
 
     @classmethod
-    def cdi_pixel_plot(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def cdi_pixel_plot(cls, WrapMVIEW p1, const char* p2, WrapVA p3, WrapVA p4, WrapVV p5, WrapITR p6):
 
         try:
 
 
-            CDIPixelPlot_MVU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6)
+            CDIPixelPlot_MVU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def cdi_pixel_plot_3d(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def cdi_pixel_plot_3d(cls, WrapMVIEW p1, const char* p2, WrapVA p3, WrapVA p4, WrapVV p5, WrapVV p6, WrapITR p7):
 
         try:
 
 
-            CDIPixelPlot3D_MVU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7)
+            CDIPixelPlot3D_MVU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def color_bar(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, double p8):
+    def color_bar(cls, WrapMVIEW p1, WrapITR p2, int32_t p3, double p4, double p5, double p6, double p7, double p8):
 
         try:
 
 
-            ColorBar_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            ColorBar_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def color_bar2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9):
+    def color_bar2(cls, WrapMVIEW p1, WrapITR p2, WrapITR p3, int32_t p4, double p5, double p6, double p7, double p8, double p9):
 
         try:
 
 
-            ColorBar2_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            ColorBar2_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def color_bar2_style(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, int32_t p10):
+    def color_bar2_style(cls, WrapMVIEW p1, WrapITR p2, WrapITR p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, int32_t p10):
 
         try:
 
 
-            ColorBar2Style_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            ColorBar2Style_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def color_bar_hor(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, int32_t p9):
+    def color_bar_hor(cls, WrapMVIEW p1, WrapITR p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, int32_t p9):
 
         try:
 
 
-            ColorBarHor_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            ColorBarHor_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def color_bar_hor2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, int32_t p10):
+    def color_bar_hor2(cls, WrapMVIEW p1, WrapITR p2, WrapITR p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, int32_t p10):
 
         try:
 
 
-            ColorBarHor2_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            ColorBarHor2_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def color_bar_hor2_style(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, int32_t p10, int32_t p11):
+    def color_bar_hor2_style(cls, WrapMVIEW p1, WrapITR p2, WrapITR p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, int32_t p10, int32_t p11):
 
         try:
 
 
-            ColorBarHor2Style_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            ColorBarHor2Style_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def color_bar_hor_style(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
+    def color_bar_hor_style(cls, WrapMVIEW p1, WrapITR p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
 
         try:
 
 
-            ColorBarHorStyle_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            ColorBarHorStyle_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def color_bar_style(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, int32_t p9):
+    def color_bar_style(cls, WrapMVIEW p1, WrapITR p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, int32_t p9):
 
         try:
 
 
-            ColorBarStyle_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            ColorBarStyle_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def color_bar_reg(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def color_bar_reg(cls, WrapMVIEW p1, WrapITR p2, WrapITR p3, WrapREG p4):
 
         try:
 
 
-            ColorBarREG_MVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            ColorBarREG_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def contour(cls, int32_t p1, const char* p2, const char* p3):
+    def contour(cls, WrapMVIEW p1, const char* p2, const char* p3):
 
         try:
 
 
-            Contour_MVU(get_p_geo(), &p1, p2, p3)
+            Contour_MVU(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def contour_ply(cls, int32_t p1, int32_t p2, const char* p3, const char* p4):
+    def contour_ply(cls, WrapMVIEW p1, WrapPLY p2, const char* p3, const char* p4):
 
         try:
 
 
-            ContourPLY_MVU(get_p_geo(), &p1, &p2, p3, p4)
+            ContourPLY_MVU(get_p_geo(), &p1.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
     @classmethod
-    def c_symb_legend(cls, int32_t p1, double p2, double p3, double p4, double p5, const char* p6, const char* p7, const char* p8):
+    def c_symb_legend(cls, WrapMVIEW p1, double p2, double p3, double p4, double p5, const char* p6, const char* p7, const char* p8):
 
         try:
 
 
-            CSymbLegend_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, p7, p8)
+            CSymbLegend_MVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, p7, p8)
             
         finally:
             pass
 
     @classmethod
-    def decay_curve(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, double p19, int32_t p20, const char* p21):
+    def decay_curve(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVA p4, WrapVA p5, int32_t p6, double p7, double p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, double p19, int32_t p20, const char* p21):
 
         try:
 
 
-            DecayCurve_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, p21)
+            DecayCurve_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, p21)
             
         finally:
             pass
 
     @classmethod
-    def direction_plot(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, int32_t p6):
+    def direction_plot(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, double p4, double p5, int32_t p6):
 
         try:
 
 
-            DirectionPlot_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            DirectionPlot_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def em_forward(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, double p9, double p10, double p11, double p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18):
+    def em_forward(cls, WrapMVIEW p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, double p9, double p10, double p11, double p12, WrapVV p13, WrapVV p14, WrapVV p15, WrapVV p16, int32_t p17, int32_t p18):
 
         try:
 
 
-            EMForward_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
+            EMForward_MVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13.handle, &p14.handle, &p15.handle, &p16.handle, &p17, &p18)
             
         finally:
             pass
 
     @classmethod
-    def export_datamine_string(cls, int32_t p1, int32_t p2, const char* p3):
+    def export_datamine_string(cls, WrapMVIEW p1, WrapLST p2, const char* p3):
 
         try:
 
 
-            ExportDatamineString_MVU(get_p_geo(), &p1, &p2, p3)
+            ExportDatamineString_MVU(get_p_geo(), &p1.handle, &p2.handle, p3)
             
         finally:
             pass
 
     @classmethod
-    def export_dxf_3d(cls, int32_t p1, int32_t p2, int32_t p3):
+    def export_dxf_3d(cls, WrapMVIEW p1, WrapLST p2, WrapWA p3):
 
         try:
 
 
-            ExportDXF3D_MVU(get_p_geo(), &p1, &p2, &p3)
+            ExportDXF3D_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def export_surpac_str(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def export_surpac_str(cls, WrapMVIEW p1, WrapLST p2, WrapWA p3, WrapWA p4):
 
         try:
 
 
-            ExportSurpacSTR_MVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            ExportSurpacSTR_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def flight_plot(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5, double p6, int32_t p7, double p8, double p9):
+    def flight_plot(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, const char* p4, int32_t p5, double p6, int32_t p7, double p8, double p9):
 
         try:
 
 
-            FlightPlot_MVU(get_p_geo(), &p1, &p2, &p3, p4, &p5, &p6, &p7, &p8, &p9)
+            FlightPlot_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def gen_areas(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, double p5):
+    def gen_areas(cls, WrapMVIEW p1, const char* p2, WrapVV p3, WrapVV p4, double p5):
 
         try:
 
 
-            GenAreas_MVU(get_p_geo(), &p1, p2, &p3, &p4, &p5)
+            GenAreas_MVU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
@@ -23441,67 +23441,67 @@ cdef class WrapMVU:
             pass
 
     @classmethod
-    def histogram(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18):
+    def histogram(cls, WrapMVIEW p1, WrapST p2, WrapST p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, WrapST p18):
 
         try:
 
 
-            Histogram_MVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
+            Histogram_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18.handle)
             
         finally:
             pass
 
     @classmethod
-    def histogram2(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, double p6, const char* p7, double p8, const char* p9, double p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, int32_t p19, int32_t p20, int32_t p21, int32_t p22, double p23):
+    def histogram2(cls, WrapMVIEW p1, WrapST p2, WrapST p3, const char* p4, const char* p5, double p6, const char* p7, double p8, const char* p9, double p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, int32_t p19, int32_t p20, int32_t p21, WrapST p22, double p23):
 
         try:
 
 
-            Histogram2_MVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, p7, &p8, p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23)
+            Histogram2_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, p5, &p6, p7, &p8, p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22.handle, &p23)
             
         finally:
             pass
 
     @classmethod
-    def histogram3(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20):
+    def histogram3(cls, WrapMVIEW p1, WrapST p2, WrapST p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, WrapST p20):
 
         try:
 
 
-            Histogram3_MVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20)
+            Histogram3_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20.handle)
             
         finally:
             pass
 
     @classmethod
-    def histogram4(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21):
+    def histogram4(cls, WrapMVIEW p1, WrapST p2, WrapST p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, WrapST p21):
 
         try:
 
 
-            Histogram4_MVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21)
+            Histogram4_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21.handle)
             
         finally:
             pass
 
     @classmethod
-    def histogram5(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, double p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21, int32_t p22, int32_t p23):
+    def histogram5(cls, WrapMVIEW p1, WrapST p2, WrapST p3, const char* p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, double p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21, WrapST p22, WrapITR p23):
 
         try:
 
 
-            Histogram5_MVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23)
+            Histogram5_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22.handle, &p23.handle)
             
         finally:
             pass
 
     @classmethod
-    def exportable_dxf_3d_groups_lst(cls, int32_t p1, int32_t p2):
+    def exportable_dxf_3d_groups_lst(cls, WrapMVIEW p1, WrapLST p2):
 
         try:
 
 
-            _return_val = iExportableDXF3DGroupsLST_MVU(get_p_geo(), &p1, &p2)
+            _return_val = iExportableDXF3DGroupsLST_MVU(get_p_geo(), &p1.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -23529,276 +23529,276 @@ cdef class WrapMVU:
             pass
 
     @classmethod
-    def import_gocad_surface(cls, int32_t p1, const char* p2, int32_t p3):
+    def import_gocad_surface(cls, WrapMVIEW p1, const char* p2, int32_t p3):
 
         try:
 
 
-            ImportGOCADSurface_MVU(get_p_geo(), &p1, p2, &p3)
+            ImportGOCADSurface_MVU(get_p_geo(), &p1.handle, p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def load_plot(cls, int32_t p1, const char* p2):
+    def load_plot(cls, WrapMAP p1, const char* p2):
 
         try:
 
 
-            LoadPlot_MVU(get_p_geo(), &p1, p2)
+            LoadPlot_MVU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def map_from_plt(cls, int32_t p1, const char* p2, const char* p3, const char* p4, double p5, double p6):
+    def map_from_plt(cls, WrapMAP p1, const char* p2, const char* p3, const char* p4, double p5, double p6):
 
         try:
 
 
-            MapFromPLT_MVU(get_p_geo(), &p1, p2, p3, p4, &p5, &p6)
+            MapFromPLT_MVU(get_p_geo(), &p1.handle, p2, p3, p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def map_mdf(cls, int32_t p1, const char* p2, const char* p3):
+    def map_mdf(cls, WrapMAP p1, const char* p2, const char* p3):
 
         try:
 
 
-            MapMDF_MVU(get_p_geo(), &p1, p2, p3)
+            MapMDF_MVU(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def mapset(cls, int32_t p1, const char* p2, const char* p3, double p4, double p5, double p6, double p7, const char* p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17):
+    def mapset(cls, WrapMAP p1, const char* p2, const char* p3, double p4, double p5, double p6, double p7, const char* p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17):
 
         try:
 
 
-            Mapset_MVU(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17)
+            Mapset_MVU(get_p_geo(), &p1.handle, p2, p3, &p4, &p5, &p6, &p7, p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17)
             
         finally:
             pass
 
     @classmethod
-    def mapset2(cls, int32_t p1, const char* p2, const char* p3, double p4, double p5, double p6, double p7, const char* p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18):
+    def mapset2(cls, WrapMAP p1, const char* p2, const char* p3, double p4, double p5, double p6, double p7, const char* p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18):
 
         try:
 
 
-            Mapset2_MVU(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
+            Mapset2_MVU(get_p_geo(), &p1.handle, p2, p3, &p4, &p5, &p6, &p7, p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
             
         finally:
             pass
 
     @classmethod
-    def mdf(cls, int32_t p1, const char* p2, const char* p3, const char* p4):
+    def mdf(cls, WrapMAP p1, const char* p2, const char* p3, const char* p4):
 
         try:
 
 
-            MDF_MVU(get_p_geo(), &p1, p2, p3, p4)
+            MDF_MVU(get_p_geo(), &p1.handle, p2, p3, p4)
             
         finally:
             pass
 
     @classmethod
-    def path_plot(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5, double p6, int32_t p7, double p8, double p9, double p10):
+    def path_plot(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, const char* p4, int32_t p5, double p6, int32_t p7, double p8, double p9, double p10):
 
         try:
 
 
-            PathPlot_MVU(get_p_geo(), &p1, &p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            PathPlot_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def path_plot_ex(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5, int32_t p6, double p7, int32_t p8, double p9, double p10, double p11):
+    def path_plot_ex(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, const char* p4, int32_t p5, int32_t p6, double p7, int32_t p8, double p9, double p10, double p11):
 
         try:
 
 
-            PathPlotEx_MVU(get_p_geo(), &p1, &p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            PathPlotEx_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def path_plot_ex2(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5, int32_t p6, double p7, int32_t p8, double p9, double p10, double p11, int32_t p12):
+    def path_plot_ex2(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, const char* p4, int32_t p5, int32_t p6, double p7, int32_t p8, double p9, double p10, double p11, int32_t p12):
 
         try:
 
 
-            PathPlotEx2_MVU(get_p_geo(), &p1, &p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            PathPlotEx2_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def plot_voxel_surface(cls, int32_t p1, int32_t p2, double p3, int32_t p4, double p5):
+    def plot_voxel_surface(cls, WrapMVIEW p1, WrapVOX p2, double p3, int32_t p4, double p5):
 
         try:
 
 
-            PlotVoxelSurface_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            PlotVoxelSurface_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def plot_voxel_surface2(cls, int32_t p1, int32_t p2, double p3, int32_t p4, double p5, double p6, const char* p7):
+    def plot_voxel_surface2(cls, WrapMVIEW p1, WrapVOX p2, double p3, int32_t p4, double p5, double p6, const char* p7):
 
         try:
 
 
-            PlotVoxelSurface2_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, p7)
+            PlotVoxelSurface2_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, p7)
             
         finally:
             pass
 
     @classmethod
-    def generate_surface_from_voxel(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, int32_t p7, double p8, double p9, const char* p10):
+    def generate_surface_from_voxel(cls, WrapMVIEW p1, WrapVOX p2, int32_t p3, int32_t p4, double p5, double p6, int32_t p7, double p8, double p9, const char* p10):
 
         try:
 
 
-            GenerateSurfaceFromVoxel_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, p10)
+            GenerateSurfaceFromVoxel_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, p10)
             
         finally:
             pass
 
     @classmethod
-    def post(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10):
+    def post(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10):
 
         try:
 
 
-            Post_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            Post_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def post_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, double p13, int32_t p14, double p15, int32_t p16, double p17, int32_t p18, double p19, int32_t p20):
+    def post_ex(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, int32_t p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, double p13, int32_t p14, double p15, int32_t p16, double p17, int32_t p18, double p19, int32_t p20):
 
         try:
 
 
-            PostEx_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20)
+            PostEx_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20)
             
         finally:
             pass
 
     @classmethod
-    def probability(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, int32_t p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18):
+    def probability(cls, WrapMVIEW p1, WrapST p2, WrapST p3, const char* p4, const char* p5, int32_t p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, WrapITR p18):
 
         try:
 
 
-            Probability_MVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
+            Probability_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18.handle)
             
         finally:
             pass
 
     @classmethod
-    def profile_plot(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, int32_t p6, double p7, double p8, double p9, int32_t p10):
+    def profile_plot(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5, int32_t p6, double p7, double p8, double p9, int32_t p10):
 
         try:
 
 
-            ProfilePlot_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            ProfilePlot_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def profile_plot_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, int32_t p6, double p7, double p8, double p9, int32_t p10, int32_t p11, double p12, int32_t p13, const char* p14, const char* p15):
+    def profile_plot_ex(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5, int32_t p6, double p7, double p8, double p9, int32_t p10, int32_t p11, double p12, int32_t p13, const char* p14, const char* p15):
 
         try:
 
 
-            ProfilePlotEx_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, p14, p15)
+            ProfilePlotEx_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, p14, p15)
             
         finally:
             pass
 
     @classmethod
-    def prop_symb_legend(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, double p8, double p9, const char* p10, const char* p11):
+    def prop_symb_legend(cls, WrapMVIEW p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, double p8, double p9, const char* p10, const char* p11):
 
         try:
 
 
-            PropSymbLegend_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, p10, p11)
+            PropSymbLegend_MVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, p10, p11)
             
         finally:
             pass
 
     @classmethod
-    def re_gen_areas(cls, int32_t p1, const char* p2):
+    def re_gen_areas(cls, WrapMVIEW p1, const char* p2):
 
         try:
 
 
-            ReGenAreas_MVU(get_p_geo(), &p1, p2)
+            ReGenAreas_MVU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def symb_off(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6):
+    def symb_off(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5, double p6):
 
         try:
 
 
-            SymbOff_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            SymbOff_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def text_box(cls, int32_t p1, double p2, double p3, double p4, double p5, const char* p6, double p7, int32_t p8):
+    def text_box(cls, WrapMVIEW p1, double p2, double p3, double p4, double p5, const char* p6, double p7, int32_t p8):
 
         try:
 
 
-            TextBox_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, &p7, &p8)
+            TextBox_MVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def tick(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8):
+    def tick(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5, double p6, double p7, double p8):
 
         try:
 
 
-            Tick_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            Tick_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def tick_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9):
+    def tick_ex(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5, double p6, double p7, double p8, double p9):
 
         try:
 
 
-            TickEx_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            TickEx_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def trnd_path(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5):
+    def trnd_path(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, int32_t p4, double p5):
 
         try:
 
 
-            TrndPath_MVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            TrndPath_MVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
@@ -23880,12 +23880,12 @@ cdef class WrapPAT:
 
 
 
-    def get_lst(self, const char* p2, int32_t p3):
+    def get_lst(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetLST_PAT(get_p_geo(), &self.handle, p2, &p3)
+            GetLST_PAT(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -23915,23 +23915,23 @@ cdef class WrapPG:
 
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapPG p2):
 
         try:
 
 
-            Copy_PG(get_p_geo(), &self.handle, &p2)
+            Copy_PG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def copy_subset(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def copy_subset(self, WrapPG p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            CopySubset_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            CopySubset_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
@@ -23948,12 +23948,12 @@ cdef class WrapPG:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapPG(CreateS_PG(get_p_geo(), &p1))
+            _return_val = WrapPG(CreateS_PG(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -24038,23 +24038,23 @@ cdef class WrapPG:
             pass
 
 
-    def read_col(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def read_col(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            ReadCol_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            ReadCol_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def read_row(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def read_row(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            ReadRow_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            ReadRow_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
@@ -24071,45 +24071,45 @@ cdef class WrapPG:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_PG(get_p_geo(), &self.handle, &p2)
+            Serial_PG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def statistics(self, int32_t p2):
+    def statistics(self, WrapST p2):
 
         try:
 
 
-            Statistics_PG(get_p_geo(), &self.handle, &p2)
+            Statistics_PG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def write_col(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def write_col(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            WriteCol_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            WriteCol_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def write_row(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def write_row(self, int32_t p2, int32_t p3, int32_t p4, WrapVV p5):
 
         try:
 
 
-            WriteRow_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            WriteRow_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
@@ -24120,12 +24120,12 @@ cdef class WrapPG:
 
 
 
-    def copy_subset_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
+    def copy_subset_3d(self, WrapPG p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
 
         try:
 
 
-            CopySubset3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            CopySubset3D_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
@@ -24142,34 +24142,34 @@ cdef class WrapPG:
             pass
 
 
-    def read_col_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def read_col_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            ReadCol3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            ReadCol3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
 
-    def read_row_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def read_row_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            ReadRow3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            ReadRow3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
 
-    def read_trace_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def read_trace_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            ReadTrace3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            ReadTrace3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
@@ -24186,34 +24186,34 @@ cdef class WrapPG:
             pass
 
 
-    def write_col_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def write_col_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            WriteCol3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            WriteCol3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
 
-    def write_row_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def write_row_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            WriteRow3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            WriteRow3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
 
-    def write_trace_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def write_trace_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            WriteTrace3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            WriteTrace3D_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
@@ -24224,56 +24224,56 @@ cdef class WrapPG:
 
 
 
-    def read_bf(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def read_bf(self, WrapBF p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            ReadBF_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            ReadBF_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
 
-    def read_ra(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, const char* p7):
+    def read_ra(self, WrapRA p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, const char* p7):
 
         try:
 
 
-            ReadRA_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, p7)
+            ReadRA_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, p7)
             
         finally:
             pass
 
 
-    def write_bf(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def write_bf(self, WrapBF p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            WriteBF_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            WriteBF_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
 
-    def write_bf_ex(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8):
+    def write_bf_ex(self, WrapBF p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8):
 
         try:
 
 
-            WriteBFEx_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            WriteBFEx_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
 
-    def write_wa(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, const char* p7):
+    def write_wa(self, WrapWA p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, const char* p7):
 
         try:
 
 
-            WriteWA_PG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, p7)
+            WriteWA_PG(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, p7)
             
         finally:
             pass
@@ -24300,34 +24300,34 @@ cdef class WrapPJ:
 
 
 
-    def clip_ply(self, double p2, double p3, double p4, double p5, double p6, int32_t p7):
+    def clip_ply(self, double p2, double p3, double p4, double p5, double p6, WrapPLY p7):
 
         try:
 
 
-            ClipPLY_PJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            ClipPLY_PJ(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
 
-    def convert_vv(self, int32_t p2, int32_t p3):
+    def convert_vv(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            ConvertVV_PJ(get_p_geo(), &self.handle, &p2, &p3)
+            ConvertVV_PJ(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def convert_vv3(self, int32_t p2, int32_t p3, int32_t p4):
+    def convert_vv3(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            ConvertVV3_PJ(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            ConvertVV3_PJ(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -24377,12 +24377,12 @@ cdef class WrapPJ:
             pass
 
     @classmethod
-    def create_ipj(cls, int32_t p1, int32_t p2):
+    def create_ipj(cls, WrapIPJ p1, WrapIPJ p2):
 
         try:
 
 
-            _return_val = WrapPJ(CreateIPJ_PJ(get_p_geo(), &p1, &p2))
+            _return_val = WrapPJ(CreateIPJ_PJ(get_p_geo(), &p1.handle, &p2.handle))
             return _return_val
         finally:
             pass
@@ -24520,34 +24520,34 @@ cdef class WrapPLY:
 
 
 
-    def add_polygon(self, int32_t p2, int32_t p3):
+    def add_polygon(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            AddPolygon_PLY(get_p_geo(), &self.handle, &p2, &p3)
+            AddPolygon_PLY(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def add_polygon_ex(self, int32_t p2, int32_t p3, int32_t p4):
+    def add_polygon_ex(self, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            AddPolygonEx_PLY(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            AddPolygonEx_PLY(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
 
-    def change_ipj(self, int32_t p2):
+    def change_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            ChangeIPJ_PLY(get_p_geo(), &self.handle, &p2)
+            ChangeIPJ_PLY(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -24564,12 +24564,12 @@ cdef class WrapPLY:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapPLY p2):
 
         try:
 
 
-            Copy_PLY(get_p_geo(), &self.handle, &p2)
+            Copy_PLY(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -24586,12 +24586,12 @@ cdef class WrapPLY:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapPLY(CreateS_PLY(get_p_geo(), &p1))
+            _return_val = WrapPLY(CreateS_PLY(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -24610,34 +24610,34 @@ cdef class WrapPLY:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_PLY(get_p_geo(), &self.handle, &p2)
+            GetIPJ_PLY(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_polygon(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_polygon(self, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            GetPolygon_PLY(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetPolygon_PLY(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
 
-    def get_polygon_ex(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def get_polygon_ex(self, WrapVV p2, WrapVV p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            GetPolygonEx_PLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            GetPolygonEx_PLY(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, &p5)
             return p5
         finally:
             pass
@@ -24654,23 +24654,23 @@ cdef class WrapPLY:
             pass
 
 
-    def clip_line_int(self, double p2, double p3, double p4, double p5, int32_t p6, double p7, int32_t p8):
+    def clip_line_int(self, double p2, double p3, double p4, double p5, WrapVV p6, double p7, int32_t p8):
 
         try:
 
 
-            _return_val = iClipLineInt_PLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            _return_val = iClipLineInt_PLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6.handle, &p7, &p8)
             return (_return_val, p8)
         finally:
             pass
 
 
-    def clip_ply(self, int32_t p2, int32_t p3):
+    def clip_ply(self, WrapPLY p2, WrapPLY p3):
 
         try:
 
 
-            _return_val = iClipPLY_PLY(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = iClipPLY_PLY(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             return _return_val
         finally:
             pass
@@ -24758,12 +24758,12 @@ cdef class WrapPLY:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_PLY(get_p_geo(), &self.handle, &p2)
+            Serial_PLY(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -24780,12 +24780,12 @@ cdef class WrapPLY:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_PLY(get_p_geo(), &self.handle, &p2)
+            SetIPJ_PLY(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -24833,12 +24833,12 @@ cdef class WrapRA:
             pass
 
     @classmethod
-    def create_sbf(cls, int32_t p1, const char* p2):
+    def create_sbf(cls, WrapSBF p1, const char* p2):
 
         try:
 
 
-            _return_val = WrapRA(CreateSBF_RA(get_p_geo(), &p1, p2))
+            _return_val = WrapRA(CreateSBF_RA(get_p_geo(), &p1.handle, p2))
             return _return_val
         finally:
             pass
@@ -24926,12 +24926,12 @@ cdef class WrapREG:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapREG p2):
 
         try:
 
 
-            Copy_REG(get_p_geo(), &self.handle, &p2)
+            Copy_REG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -24948,12 +24948,12 @@ cdef class WrapREG:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapREG(CreateS_REG(get_p_geo(), &p1))
+            _return_val = WrapREG(CreateS_REG(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -25058,12 +25058,12 @@ cdef class WrapREG:
 
 
 
-    def merge(self, int32_t p2, int32_t p3):
+    def merge(self, WrapREG p2, int32_t p3):
 
         try:
 
 
-            Merge_REG(get_p_geo(), &self.handle, &p2, &p3)
+            Merge_REG(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -25080,12 +25080,12 @@ cdef class WrapREG:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_REG(get_p_geo(), &self.handle, &p2)
+            Serial_REG(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -25155,12 +25155,12 @@ cdef class WrapSBF:
             pass
 
 
-    def create_obj_list(self, int32_t p2, int32_t p3):
+    def create_obj_list(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            CreateObjList_SBF(get_p_geo(), &self.handle, &p2, &p3)
+            CreateObjList_SBF(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -25190,23 +25190,23 @@ cdef class WrapSBF:
 
 
     @classmethod
-    def h_get_db(cls, int32_t p1):
+    def h_get_db(cls, WrapDB p1):
 
         try:
 
 
-            _return_val = WrapSBF(hGetDB_SBF(get_p_geo(), &p1))
+            _return_val = WrapSBF(hGetDB_SBF(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def h_get_map(cls, int32_t p1):
+    def h_get_map(cls, WrapMAP p1):
 
         try:
 
 
-            _return_val = WrapSBF(hGetMAP_SBF(get_p_geo(), &p1))
+            _return_val = WrapSBF(hGetMAP_SBF(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -25309,12 +25309,12 @@ cdef class WrapST:
             pass
 
 
-    def data_vv(self, int32_t p2):
+    def data_vv(self, WrapVV p2):
 
         try:
 
 
-            DataVV_ST(get_p_geo(), &self.handle, &p2)
+            DataVV_ST(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -25322,12 +25322,12 @@ cdef class WrapST:
 
 
 
-    def get_histogram_bins(self, int32_t p2):
+    def get_histogram_bins(self, WrapVV p2):
 
         try:
 
 
-            GetHistogramBins_ST(get_p_geo(), &self.handle, &p2)
+            GetHistogramBins_ST(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -25474,12 +25474,12 @@ cdef class WrapST2:
             pass
 
 
-    def data_vv(self, int32_t p2, int32_t p3):
+    def data_vv(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            DataVV_ST2(get_p_geo(), &self.handle, &p2, &p3)
+            DataVV_ST2(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -26371,12 +26371,12 @@ cdef class WrapSTR:
 
 
     @classmethod
-    def parse_list(cls, const char* p1, int32_t p2):
+    def parse_list(cls, const char* p1, WrapVV p2):
 
         try:
 
 
-            ParseList_STR(get_p_geo(), p1, &p2)
+            ParseList_STR(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
@@ -26403,12 +26403,12 @@ cdef class WrapSURFACE:
 
 
     @classmethod
-    def create(cls, const char* p1, int32_t p2):
+    def create(cls, const char* p1, WrapIPJ p2):
 
         try:
 
 
-            _return_val = WrapSURFACE(Create_SURFACE(get_p_geo(), p1, &p2))
+            _return_val = WrapSURFACE(Create_SURFACE(get_p_geo(), p1, &p2.handle))
             return _return_val
         finally:
             pass
@@ -26427,34 +26427,34 @@ cdef class WrapSURFACE:
 
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_SURFACE(get_p_geo(), &self.handle, &p2)
+            GetIPJ_SURFACE(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_SURFACE(get_p_geo(), &self.handle, &p2)
+            SetIPJ_SURFACE(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_surface_items(self, int32_t p2):
+    def get_surface_items(self, WrapLST p2):
 
         try:
 
 
-            GetSurfaceItems_SURFACE(get_p_geo(), &self.handle, &p2)
+            GetSurfaceItems_SURFACE(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -26471,34 +26471,34 @@ cdef class WrapSURFACE:
             pass
 
 
-    def add_surface_item(self, int32_t p2):
+    def add_surface_item(self, WrapSURFACEITEM p2):
 
         try:
 
 
-            AddSurfaceItem_SURFACE(get_p_geo(), &self.handle, &p2)
+            AddSurfaceItem_SURFACE(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_surface_names(cls, const char* p1, int32_t p2):
+    def get_surface_names(cls, const char* p1, WrapLST p2):
 
         try:
 
 
-            GetSurfaceNames_SURFACE(get_p_geo(), p1, &p2)
+            GetSurfaceNames_SURFACE(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_closed_surface_names(cls, const char* p1, int32_t p2):
+    def get_closed_surface_names(cls, const char* p1, WrapLST p2):
 
         try:
 
 
-            GetClosedSurfaceNames_SURFACE(get_p_geo(), p1, &p2)
+            GetClosedSurfaceNames_SURFACE(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
@@ -26537,34 +26537,34 @@ cdef class WrapSURFACE:
             pass
 
     @classmethod
-    def create_from_dxf(cls, int32_t p1, const char* p2, const char* p3):
+    def create_from_dxf(cls, WrapIPJ p1, const char* p2, const char* p3):
 
         try:
 
 
-            CreateFromDXF_SURFACE(get_p_geo(), &p1, p2, p3)
+            CreateFromDXF_SURFACE(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def create_from_vulcan_triangulation(cls, const char* p1, int32_t p2, const char* p3):
+    def create_from_vulcan_triangulation(cls, const char* p1, WrapIPJ p2, const char* p3):
 
         try:
 
 
-            CreateFromVulcanTriangulation_SURFACE(get_p_geo(), p1, &p2, p3)
+            CreateFromVulcanTriangulation_SURFACE(get_p_geo(), p1, &p2.handle, p3)
             
         finally:
             pass
 
     @classmethod
-    def append_vulcan_triangulation(cls, const char* p1, int32_t p2, const char* p3):
+    def append_vulcan_triangulation(cls, const char* p1, WrapIPJ p2, const char* p3):
 
         try:
 
 
-            AppendVulcanTriangulation_SURFACE(get_p_geo(), p1, &p2, p3)
+            AppendVulcanTriangulation_SURFACE(get_p_geo(), p1, &p2.handle, p3)
             
         finally:
             pass
@@ -26756,23 +26756,23 @@ cdef class WrapSURFACEITEM:
             pass
 
 
-    def add_mesh(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def add_mesh(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            _return_val = iAddMesh_SURFACEITEM(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            _return_val = iAddMesh_SURFACEITEM(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle)
             return _return_val
         finally:
             pass
 
 
-    def get_mesh(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def get_mesh(self, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8):
 
         try:
 
 
-            GetMesh_SURFACEITEM(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            GetMesh_SURFACEITEM(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle)
             
         finally:
             pass
@@ -27300,12 +27300,12 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def find_files_vv(cls, int32_t p1, const char* p2):
+    def find_files_vv(cls, WrapVV p1, const char* p2):
 
         try:
 
 
-            FindFilesVV_SYS(get_p_geo(), &p1, p2)
+            FindFilesVV_SYS(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
@@ -27679,12 +27679,12 @@ cdef class WrapSYS:
 
 
     @classmethod
-    def get_settings_meta(cls, int32_t p1):
+    def get_settings_meta(cls, WrapMETA p1):
 
         try:
 
 
-            GetSettingsMETA_SYS(get_p_geo(), &p1)
+            GetSettingsMETA_SYS(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -27750,12 +27750,12 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def set_settings_meta(cls, int32_t p1):
+    def set_settings_meta(cls, WrapMETA p1):
 
         try:
 
 
-            SetSettingsMETA_SYS(get_p_geo(), &p1)
+            SetSettingsMETA_SYS(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -28021,34 +28021,34 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def get_loaded_menus(cls, int32_t p1, int32_t p2, int32_t p3):
+    def get_loaded_menus(cls, WrapLST p1, WrapLST p2, WrapLST p3):
 
         try:
 
 
-            App_GetLoadedMenus_SYS(get_p_geo(), &p1, &p2, &p3)
+            App_GetLoadedMenus_SYS(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def set_loaded_menus(cls, int32_t p1, int32_t p2, int32_t p3):
+    def set_loaded_menus(cls, WrapLST p1, WrapLST p2, WrapLST p3):
 
         try:
 
 
-            App_SetLoadedMenus_SYS(get_p_geo(), &p1, &p2, &p3)
+            App_SetLoadedMenus_SYS(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_entitlement_rights(cls, int32_t p1):
+    def get_entitlement_rights(cls, WrapLST p1):
 
         try:
 
 
-            GetEntitlementRights_SYS(get_p_geo(), &p1)
+            GetEntitlementRights_SYS(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -28130,12 +28130,12 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def font_lst(cls, int32_t p1, int32_t p2):
+    def font_lst(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            FontLST_SYS(get_p_geo(), &p1, &p2)
+            FontLST_SYS(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
@@ -28299,12 +28299,12 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def get_reg(cls, int32_t p1, const char* p2):
+    def get_reg(cls, WrapREG p1, const char* p2):
 
         try:
 
 
-            GetREG_SYS(get_p_geo(), &p1, p2)
+            GetREG_SYS(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
@@ -28474,12 +28474,12 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def set_reg(cls, int32_t p1):
+    def set_reg(cls, WrapREG p1):
 
         try:
 
 
-            SetREG_SYS(get_p_geo(), &p1)
+            SetREG_SYS(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -28833,12 +28833,12 @@ cdef class WrapSYS:
             pass
 
     @classmethod
-    def display_task_dialog_ui(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, const char* p7, int32_t p8, const char* p9, int32_t p10, const char* p11, const char* p12, const char* p13):
+    def display_task_dialog_ui(cls, const char* p1, const char* p2, const char* p3, int32_t p4, WrapLST p5, int32_t p6, const char* p7, int32_t p8, const char* p9, int32_t p10, const char* p11, const char* p12, const char* p13):
 
         try:
 
 
-            _return_val = iDisplayTaskDialogUI_SYS(get_p_geo(), p1, p2, p3, &p4, &p5, &p6, p7, &p8, p9, &p10, p11, p12, p13)
+            _return_val = iDisplayTaskDialogUI_SYS(get_p_geo(), p1, p2, p3, &p4, &p5.handle, &p6, p7, &p8, p9, &p10, p11, p12, p13)
             return (_return_val, p10)
         finally:
             pass
@@ -28931,23 +28931,23 @@ cdef class WrapSYS:
 
 
     @classmethod
-    def get_workspace_reg(cls, int32_t p1):
+    def get_workspace_reg(cls, WrapREG p1):
 
         try:
 
 
-            GetWorkspaceREG_SYS(get_p_geo(), &p1)
+            GetWorkspaceREG_SYS(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def set_workspace_reg(cls, int32_t p1):
+    def set_workspace_reg(cls, WrapREG p1):
 
         try:
 
 
-            SetWorkspaceREG_SYS(get_p_geo(), &p1)
+            SetWorkspaceREG_SYS(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -29071,23 +29071,23 @@ cdef class WrapTB:
             pass
 
     @classmethod
-    def create_db(cls, int32_t p1):
+    def create_db(cls, WrapDB p1):
 
         try:
 
 
-            _return_val = WrapTB(CreateDB_TB(get_p_geo(), &p1))
+            _return_val = WrapTB(CreateDB_TB(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_ltb(cls, int32_t p1):
+    def create_ltb(cls, WrapLTB p1):
 
         try:
 
 
-            _return_val = WrapTB(CreateLTB_TB(get_p_geo(), &p1))
+            _return_val = WrapTB(CreateLTB_TB(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -29204,12 +29204,12 @@ cdef class WrapTB:
             pass
 
 
-    def load_db(self, int32_t p2, int32_t p3):
+    def load_db(self, WrapDB p2, int32_t p3):
 
         try:
 
 
-            LoadDB_TB(get_p_geo(), &self.handle, &p2, &p3)
+            LoadDB_TB(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -29237,12 +29237,12 @@ cdef class WrapTB:
             pass
 
 
-    def save_db(self, int32_t p2, int32_t p3):
+    def save_db(self, WrapDB p2, int32_t p3):
 
         try:
 
 
-            SaveDB_TB(get_p_geo(), &self.handle, &p2, &p3)
+            SaveDB_TB(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -29406,12 +29406,12 @@ cdef class WrapTPAT:
             pass
 
 
-    def setup_translation_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def setup_translation_vv(self, WrapLTB p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            SetupTranslationVV_TPAT(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SetupTranslationVV_TPAT(get_p_geo(), &self.handle, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
@@ -29450,12 +29450,12 @@ cdef class WrapTR:
 
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapTR p2):
 
         try:
 
 
-            Copy_TR(get_p_geo(), &self.handle, &p2)
+            Copy_TR(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -29538,12 +29538,12 @@ cdef class WrapUSERMETA:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_USERMETA(get_p_geo(), &self.handle, &p2)
+            GetIPJ_USERMETA(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -29571,12 +29571,12 @@ cdef class WrapUSERMETA:
             pass
 
 
-    def compare(self, int32_t p2):
+    def compare(self, WrapUSERMETA p2):
 
         try:
 
 
-            _return_val = iCompare_USERMETA(get_p_geo(), &self.handle, &p2)
+            _return_val = iCompare_USERMETA(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -29728,12 +29728,12 @@ cdef class WrapUSERMETA:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_USERMETA(get_p_geo(), &self.handle, &p2)
+            SetIPJ_USERMETA(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -29783,12 +29783,12 @@ cdef class WrapUSERMETA:
             pass
 
     @classmethod
-    def update_extents2_d(cls, const char* p1, int32_t p2, double p3, double p4, double p5, double p6):
+    def update_extents2_d(cls, const char* p1, WrapIPJ p2, double p3, double p4, double p5, double p6):
 
         try:
 
 
-            UpdateExtents2D_USERMETA(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6)
+            UpdateExtents2D_USERMETA(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6)
             
         finally:
             pass
@@ -29858,56 +29858,56 @@ cdef class WrapVA:
             pass
 
 
-    def add_elevations_vv_to_depths(self, int32_t p2, int32_t p3):
+    def add_elevations_vv_to_depths(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            AddElevationsVVToDepths_VA(get_p_geo(), &self.handle, &p2, &p3)
+            AddElevationsVVToDepths_VA(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def append(self, int32_t p2):
+    def append(self, WrapVA p2):
 
         try:
 
 
-            Append_VA(get_p_geo(), &self.handle, &p2)
+            Append_VA(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def average(self, int32_t p2, int32_t p3):
+    def average(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            Average_VA(get_p_geo(), &self.handle, &p2, &p3)
+            Average_VA(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapVA p2):
 
         try:
 
 
-            Copy_VA(get_p_geo(), &self.handle, &p2)
+            Copy_VA(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def copy2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def copy2(self, int32_t p2, int32_t p3, WrapVA p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            Copy2_VA(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            Copy2_VA(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5, &p6, &p7, &p8)
             
         finally:
             pass
@@ -29935,12 +29935,12 @@ cdef class WrapVA:
             pass
 
     @classmethod
-    def create_vv(cls, int32_t p1, int32_t p2, int32_t p3):
+    def create_vv(cls, WrapVV p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapVA(CreateVV_VA(get_p_geo(), &p1, &p2, &p3))
+            _return_val = WrapVA(CreateVV_VA(get_p_geo(), &p1.handle, &p2, &p3))
             return _return_val
         finally:
             pass
@@ -29959,12 +29959,12 @@ cdef class WrapVA:
             pass
 
 
-    def get_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_vv(self, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            GetVV_VA(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetVV_VA(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
@@ -30019,23 +30019,23 @@ cdef class WrapVA:
             pass
 
     @classmethod
-    def index_order(cls, int32_t p1, int32_t p2):
+    def index_order(cls, WrapVV p1, WrapVA p2):
 
         try:
 
 
-            IndexOrder_VA(get_p_geo(), &p1, &p2)
+            IndexOrder_VA(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def lookup_index(self, int32_t p2, int32_t p3):
+    def lookup_index(self, WrapVV p2, WrapVA p3):
 
         try:
 
 
-            LookupIndex_VA(get_p_geo(), &self.handle, &p2, &p3)
+            LookupIndex_VA(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -30173,12 +30173,12 @@ cdef class WrapVA:
             pass
 
 
-    def set_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def set_vv(self, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            SetVV_VA(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SetVV_VA(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
@@ -30195,45 +30195,45 @@ cdef class WrapVA:
             pass
 
 
-    def window(self, int32_t p2, int32_t p3, int32_t p4):
+    def window(self, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            Window_VA(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            Window_VA(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def window2(self, double p2, double p3, int32_t p4):
+    def window2(self, double p2, double p3, WrapVV p4):
 
         try:
 
 
-            Window2_VA(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            Window2_VA(get_p_geo(), &self.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def check_for_repeating(self, int32_t p2, int32_t p3, int32_t p4, double p5):
+    def check_for_repeating(self, WrapVV p2, int32_t p3, WrapVV p4, double p5):
 
         try:
 
 
-            _return_val = iCheckForRepeating_VA(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            _return_val = iCheckForRepeating_VA(get_p_geo(), &self.handle, &p2.handle, &p3, &p4.handle, &p5)
             return _return_val
         finally:
             pass
 
 
-    def check_for_repeating2(self, int32_t p2, int32_t p3, int32_t p4, double p5, int32_t p6, int32_t p7):
+    def check_for_repeating2(self, WrapVV p2, int32_t p3, WrapVV p4, double p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            _return_val = iCheckForRepeating2_VA(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            _return_val = iCheckForRepeating2_VA(get_p_geo(), &self.handle, &p2.handle, &p3, &p4.handle, &p5, &p6, &p7)
             return (_return_val, p6, p7)
         finally:
             pass
@@ -30261,23 +30261,23 @@ cdef class WrapVECTOR3D:
 
 
 
-    def get_itr(self, int32_t p2):
+    def get_itr(self, WrapITR p2):
 
         try:
 
 
-            GetITR_VECTOR3D(get_p_geo(), &self.handle, &p2)
+            GetITR_VECTOR3D(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_itr(self, int32_t p2):
+    def set_itr(self, WrapITR p2):
 
         try:
 
 
-            SetITR_VECTOR3D(get_p_geo(), &self.handle, &p2)
+            SetITR_VECTOR3D(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -30440,12 +30440,12 @@ cdef class WrapVOX:
 
 
 
-    def calc_stats(self, int32_t p2):
+    def calc_stats(self, WrapST p2):
 
         try:
 
 
-            CalcStats_VOX(get_p_geo(), &self.handle, &p2)
+            CalcStats_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -30574,67 +30574,67 @@ cdef class WrapVOX:
             pass
 
     @classmethod
-    def generate_db(cls, const char* p1, int32_t p2, int32_t p3):
+    def generate_db(cls, const char* p1, WrapDB p2, int32_t p3):
 
         try:
 
 
-            GenerateDB_VOX(get_p_geo(), p1, &p2, &p3)
+            GenerateDB_VOX(get_p_geo(), p1, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def generate_vector_voxel_from_db(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8):
+    def generate_vector_voxel_from_db(cls, const char* p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8):
 
         try:
 
 
-            GenerateVectorVoxelFromDB_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            GenerateVectorVoxelFromDB_VOX(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def generate_pg(cls, const char* p1, int32_t p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
+    def generate_pg(cls, const char* p1, WrapPG p2, double p3, double p4, double p5, double p6, double p7, double p8, WrapIPJ p9, WrapMETA p10):
 
         try:
 
 
-            _return_val = WrapVOX(GeneratePG_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10))
+            _return_val = WrapVOX(GeneratePG_VOX(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9.handle, &p10.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def generate_constant_value(cls, const char* p1, double p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def generate_constant_value(cls, const char* p1, double p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, WrapIPJ p13, WrapMETA p14):
 
         try:
 
 
-            _return_val = WrapVOX(GenerateConstantValue_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14))
+            _return_val = WrapVOX(GenerateConstantValue_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13.handle, &p14.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def generate_pgvv(cls, const char* p1, int32_t p2, double p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10):
+    def generate_pgvv(cls, const char* p1, WrapPG p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapIPJ p9, WrapMETA p10):
 
         try:
 
 
-            _return_val = WrapVOX(GeneratePGVV_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10))
+            _return_val = WrapVOX(GeneratePGVV_VOX(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def generate_constant_value_vv(cls, const char* p1, double p2, int32_t p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
+    def generate_constant_value_vv(cls, const char* p1, double p2, int32_t p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapIPJ p10, WrapMETA p11):
 
         try:
 
 
-            _return_val = WrapVOX(GenerateConstantValueVV_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11))
+            _return_val = WrapVOX(GenerateConstantValueVV_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10.handle, &p11.handle))
             return _return_val
         finally:
             pass
@@ -30651,23 +30651,23 @@ cdef class WrapVOX:
             pass
 
 
-    def add_generate_by_subset_pg(self, int32_t p2, int32_t p3, int32_t p4):
+    def add_generate_by_subset_pg(self, WrapPG p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            AddGenerateBySubsetPG_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            AddGenerateBySubsetPG_VOX(get_p_geo(), &self.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
 
 
-    def end_generate_by_subset_pg(self, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
+    def end_generate_by_subset_pg(self, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, WrapIPJ p9, WrapMETA p10):
 
         try:
 
 
-            EndGenerateBySubsetPG_VOX(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            EndGenerateBySubsetPG_VOX(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9.handle, &p10.handle)
             
         finally:
             pass
@@ -30717,12 +30717,12 @@ cdef class WrapVOX:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_VOX(get_p_geo(), &self.handle, &p2)
+            GetIPJ_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -30750,34 +30750,34 @@ cdef class WrapVOX:
             pass
 
 
-    def get_location(self, double p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7):
+    def get_location(self, double p2, double p3, double p4, WrapVV p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            GetLocation_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            GetLocation_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle, &p6.handle, &p7.handle)
             return (p2, p3, p4)
         finally:
             pass
 
 
-    def get_location_points(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_location_points(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GetLocationPoints_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetLocationPoints_VOX(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_VOX(get_p_geo(), &self.handle, &p2)
+            GetMETA_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -30816,45 +30816,45 @@ cdef class WrapVOX:
             pass
 
 
-    def get_tpat(self, int32_t p2):
+    def get_tpat(self, WrapTPAT p2):
 
         try:
 
 
-            GetTPAT_VOX(get_p_geo(), &self.handle, &p2)
+            GetTPAT_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_points(cls, const char* p1, const char* p2, double p3, int32_t p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20):
+    def grid_points(cls, const char* p1, const char* p2, double p3, int32_t p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11, double p12, double p13, double p14, int32_t p15, WrapVV p16, WrapVV p17, WrapVV p18, WrapVV p19, WrapIPJ p20):
 
         try:
 
 
-            _return_val = WrapVOX(GridPoints_VOX(get_p_geo(), p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20))
+            _return_val = WrapVOX(GridPoints_VOX(get_p_geo(), p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16.handle, &p17.handle, &p18.handle, &p19.handle, &p20.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def grid_points_z(cls, const char* p1, const char* p2, double p3, const char* p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21):
+    def grid_points_z(cls, const char* p1, const char* p2, double p3, const char* p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, int32_t p16, WrapVV p17, WrapVV p18, WrapVV p19, WrapVV p20, WrapIPJ p21):
 
         try:
 
 
-            _return_val = WrapVOX(GridPointsZ_VOX(get_p_geo(), p1, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21))
+            _return_val = WrapVOX(GridPointsZ_VOX(get_p_geo(), p1, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17.handle, &p18.handle, &p19.handle, &p20.handle, &p21.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def grid_points_z_ex(cls, const char* p1, const char* p2, double p3, const char* p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, double p19, double p20, int32_t p21, int32_t p22, int32_t p23, int32_t p24, int32_t p25, int32_t p26):
+    def grid_points_z_ex(cls, const char* p1, const char* p2, double p3, const char* p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, double p19, double p20, int32_t p21, WrapVV p22, WrapVV p23, WrapVV p24, WrapVV p25, WrapIPJ p26):
 
         try:
 
 
-            _return_val = WrapVOX(GridPointsZEx_VOX(get_p_geo(), p1, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26))
+            _return_val = WrapVOX(GridPointsZEx_VOX(get_p_geo(), p1, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22.handle, &p23.handle, &p24.handle, &p25.handle, &p26.handle))
             return (_return_val, p12, p13, p15)
         finally:
             pass
@@ -30930,56 +30930,56 @@ cdef class WrapVOX:
             pass
 
     @classmethod
-    def log_grid_points_z_ex(cls, const char* p1, const char* p2, double p3, const char* p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, double p19, double p20, int32_t p21, double p22, int32_t p23, int32_t p24, int32_t p25, int32_t p26, int32_t p27, int32_t p28):
+    def log_grid_points_z_ex(cls, const char* p1, const char* p2, double p3, const char* p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, double p11, double p12, double p13, double p14, double p15, double p16, double p17, double p18, double p19, double p20, int32_t p21, double p22, int32_t p23, WrapVV p24, WrapVV p25, WrapVV p26, WrapVV p27, WrapIPJ p28):
 
         try:
 
 
-            _return_val = WrapVOX(LogGridPointsZEx_VOX(get_p_geo(), p1, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28))
+            _return_val = WrapVOX(LogGridPointsZEx_VOX(get_p_geo(), p1, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24.handle, &p25.handle, &p26.handle, &p27.handle, &p28.handle))
             return (_return_val, p12, p13, p15)
         finally:
             pass
 
     @classmethod
-    def krig(cls, const char* p1, double p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def krig(cls, const char* p1, double p2, int32_t p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapIPJ p8, WrapREG p9):
 
         try:
 
 
-            _return_val = WrapVOX(Krig_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9))
+            _return_val = WrapVOX(Krig_VOX(get_p_geo(), p1, &p2, &p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def math(cls, const char* p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6):
+    def math(cls, const char* p1, const char* p2, const char* p3, const char* p4, const char* p5, WrapLST p6):
 
         try:
 
 
-            _return_val = WrapVOX(Math_VOX(get_p_geo(), p1, p2, p3, p4, p5, &p6))
+            _return_val = WrapVOX(Math_VOX(get_p_geo(), p1, p2, p3, p4, p5, &p6.handle))
             return _return_val
         finally:
             pass
 
 
-    def merge(self, int32_t p2, int32_t p3, const char* p4):
+    def merge(self, WrapVOX p2, WrapREG p3, const char* p4):
 
         try:
 
 
-            Merge_VOX(get_p_geo(), &self.handle, &p2, &p3, p4)
+            Merge_VOX(get_p_geo(), &self.handle, &p2.handle, &p3.handle, p4)
             
         finally:
             pass
 
     @classmethod
-    def nearest_neighbour_grid(cls, const char* p1, double p2, double p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def nearest_neighbour_grid(cls, const char* p1, double p2, double p3, int32_t p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapIPJ p9):
 
         try:
 
 
-            _return_val = WrapVOX(NearestNeighbourGrid_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9))
+            _return_val = WrapVOX(NearestNeighbourGrid_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle))
             return _return_val
         finally:
             pass
@@ -30996,23 +30996,23 @@ cdef class WrapVOX:
             pass
 
 
-    def re_grid(self, int32_t p2, int32_t p3, const char* p4):
+    def re_grid(self, WrapVOX p2, WrapREG p3, const char* p4):
 
         try:
 
 
-            ReGrid_VOX(get_p_geo(), &self.handle, &p2, &p3, p4)
+            ReGrid_VOX(get_p_geo(), &self.handle, &p2.handle, &p3.handle, p4)
             
         finally:
             pass
 
 
-    def resample_pg(self, int32_t p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, double p13, int32_t p14):
+    def resample_pg(self, WrapIPJ p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, double p13, int32_t p14):
 
         try:
 
 
-            _return_val = WrapPG(ResamplePG_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14))
+            _return_val = WrapPG(ResamplePG_VOX(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14))
             return _return_val
         finally:
             pass
@@ -31029,67 +31029,67 @@ cdef class WrapVOX:
             pass
 
 
-    def sample_cdi(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, const char* p10):
+    def sample_cdi(self, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, const char* p10):
 
         try:
 
 
-            SampleCDI_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, p10)
+            SampleCDI_VOX(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, p10)
             
         finally:
             pass
 
 
-    def sample_cdi_to_topography(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, const char* p8, const char* p9):
+    def sample_cdi_to_topography(self, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6, int32_t p7, const char* p8, const char* p9):
 
         try:
 
 
-            SampleCDIToTopography_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, p8, p9)
+            SampleCDIToTopography_VOX(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, &p6.handle, &p7, p8, p9)
             
         finally:
             pass
 
 
-    def sample_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def sample_vv(self, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            SampleVV_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            SampleVV_VOX(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6.handle)
             
         finally:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_VOX(get_p_geo(), &self.handle, &p2)
+            SetIPJ_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_location(self, double p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7):
+    def set_location(self, double p2, double p3, double p4, WrapVV p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            SetLocation_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            SetLocation_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle, &p6.handle, &p7.handle)
             
         finally:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_VOX(get_p_geo(), &self.handle, &p2)
+            SetMETA_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31117,34 +31117,34 @@ cdef class WrapVOX:
             pass
 
 
-    def set_tpat(self, int32_t p2):
+    def set_tpat(self, WrapTPAT p2):
 
         try:
 
 
-            SetTPAT_VOX(get_p_geo(), &self.handle, &p2)
+            SetTPAT_VOX(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def slice_ipj(self, const char* p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
+    def slice_ipj(self, const char* p2, WrapIPJ p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
 
         try:
 
 
-            SliceIPJ_VOX(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            SliceIPJ_VOX(get_p_geo(), &self.handle, p2, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
 
-    def slice_multi_layer_ipj(self, const char* p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, double p13):
+    def slice_multi_layer_ipj(self, const char* p2, WrapIPJ p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, double p12, double p13):
 
         try:
 
 
-            SliceMultiLayerIPJ_VOX(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
+            SliceMultiLayerIPJ_VOX(get_p_geo(), &self.handle, p2, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
             
         finally:
             pass
@@ -31172,12 +31172,12 @@ cdef class WrapVOX:
             pass
 
 
-    def window_ply(self, int32_t p2, int32_t p3, double p4, double p5, const char* p6, int32_t p7):
+    def window_ply(self, WrapPLY p2, int32_t p3, double p4, double p5, const char* p6, int32_t p7):
 
         try:
 
 
-            WindowPLY_VOX(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, p6, &p7)
+            WindowPLY_VOX(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5, p6, &p7)
             
         finally:
             pass
@@ -31205,23 +31205,23 @@ cdef class WrapVOX:
             pass
 
 
-    def convert_numeric_to_thematic(self, int32_t p2, const char* p3):
+    def convert_numeric_to_thematic(self, WrapVV p2, const char* p3):
 
         try:
 
 
-            ConvertNumericToThematic_VOX(get_p_geo(), &self.handle, &p2, p3)
+            ConvertNumericToThematic_VOX(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def convert_thematic_to_numeric(self, int32_t p2, const char* p3):
+    def convert_thematic_to_numeric(self, WrapVV p2, const char* p3):
 
         try:
 
 
-            ConvertThematicToNumeric_VOX(get_p_geo(), &self.handle, &p2, p3)
+            ConvertThematicToNumeric_VOX(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -31271,23 +31271,23 @@ cdef class WrapVOX:
             pass
 
     @classmethod
-    def dw_grid_db(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def dw_grid_db(cls, const char* p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, WrapREG p7):
 
         try:
 
 
-            IDWGridDB_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            IDWGridDB_VOX(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def tin_grid_db(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def tin_grid_db(cls, const char* p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, WrapVV p8, WrapREG p9):
 
         try:
 
 
-            TINGridDB_VOX(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            TINGridDB_VOX(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8.handle, &p9.handle)
             
         finally:
             pass
@@ -31309,67 +31309,67 @@ cdef class WrapVOX:
 
 
     @classmethod
-    def generate_gocad(cls, const char* p1, const char* p2, const char* p3, int32_t p4):
+    def generate_gocad(cls, const char* p1, const char* p2, const char* p3, WrapIPJ p4):
 
         try:
 
 
-            _return_val = WrapVOX(GenerateGOCAD_VOX(get_p_geo(), p1, p2, p3, &p4))
+            _return_val = WrapVOX(GenerateGOCAD_VOX(get_p_geo(), p1, p2, p3, &p4.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def generate_oriented_gocad(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5):
+    def generate_oriented_gocad(cls, const char* p1, const char* p2, const char* p3, WrapIPJ p4, int32_t p5):
 
         try:
 
 
-            _return_val = WrapVOX(GenerateOrientedGOCAD_VOX(get_p_geo(), p1, p2, p3, &p4, &p5))
+            _return_val = WrapVOX(GenerateOrientedGOCAD_VOX(get_p_geo(), p1, p2, p3, &p4.handle, &p5))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def generate_ubc(cls, const char* p1, const char* p2, const char* p3, double p4, int32_t p5):
+    def generate_ubc(cls, const char* p1, const char* p2, const char* p3, double p4, WrapIPJ p5):
 
         try:
 
 
-            _return_val = WrapVOX(GenerateUBC_VOX(get_p_geo(), p1, p2, p3, &p4, &p5))
+            _return_val = WrapVOX(GenerateUBC_VOX(get_p_geo(), p1, p2, p3, &p4, &p5.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def generate_xyz(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4):
+    def generate_xyz(cls, const char* p1, WrapRA p2, int32_t p3, WrapIPJ p4):
 
         try:
 
 
-            GenerateXYZ_VOX(get_p_geo(), p1, &p2, &p3, &p4)
+            GenerateXYZ_VOX(get_p_geo(), p1, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def list_gocad_properties(cls, const char* p1, int32_t p2):
+    def list_gocad_properties(cls, const char* p1, WrapLST p2):
 
         try:
 
 
-            ListGOCADProperties_VOX(get_p_geo(), p1, &p2)
+            ListGOCADProperties_VOX(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
 
 
-    def export_db(self, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def export_db(self, WrapDB p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            ExportDB_VOX(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8)
+            ExportDB_VOX(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
@@ -31395,34 +31395,34 @@ cdef class WrapVOXD:
 
 
     @classmethod
-    def create(cls, int32_t p1, const char* p2, int32_t p3, double p4):
+    def create(cls, WrapVOX p1, const char* p2, int32_t p3, double p4):
 
         try:
 
 
-            _return_val = WrapVOXD(Create_VOXD(get_p_geo(), &p1, p2, &p3, &p4))
+            _return_val = WrapVOXD(Create_VOXD(get_p_geo(), &p1.handle, p2, &p3, &p4))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_itr(cls, int32_t p1, int32_t p2):
+    def create_itr(cls, WrapVOX p1, WrapITR p2):
 
         try:
 
 
-            _return_val = WrapVOXD(CreateITR_VOXD(get_p_geo(), &p1, &p2))
+            _return_val = WrapVOXD(CreateITR_VOXD(get_p_geo(), &p1.handle, &p2.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_thematic(cls, int32_t p1):
+    def create_thematic(cls, WrapVOX p1):
 
         try:
 
 
-            _return_val = WrapVOXD(CreateThematic_VOXD(get_p_geo(), &p1))
+            _return_val = WrapVOXD(CreateThematic_VOXD(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -31439,23 +31439,23 @@ cdef class WrapVOXD:
             pass
 
 
-    def get_thematic_info(self, int32_t p2, int32_t p3):
+    def get_thematic_info(self, WrapTPAT p2, WrapVV p3):
 
         try:
 
 
-            GetThematicInfo_VOXD(get_p_geo(), &self.handle, &p2, &p3)
+            GetThematicInfo_VOXD(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def set_thematic_selection(self, int32_t p2):
+    def set_thematic_selection(self, WrapVV p2):
 
         try:
 
 
-            SetThematicSelection_VOXD(get_p_geo(), &self.handle, &p2)
+            SetThematicSelection_VOXD(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31490,12 +31490,12 @@ cdef class WrapVOXD:
 
 
 
-    def get_itr(self, int32_t p2):
+    def get_itr(self, WrapITR p2):
 
         try:
 
 
-            GetITR_VOXD(get_p_geo(), &self.handle, &p2)
+            GetITR_VOXD(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31523,12 +31523,12 @@ cdef class WrapVOXD:
             pass
 
 
-    def set_itr(self, int32_t p2):
+    def set_itr(self, WrapITR p2):
 
         try:
 
 
-            SetITR_VOXD(get_p_geo(), &self.handle, &p2)
+            SetITR_VOXD(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31565,12 +31565,12 @@ cdef class WrapVOXE:
 
 
     @classmethod
-    def create(cls, int32_t p1):
+    def create(cls, WrapVOX p1):
 
         try:
 
 
-            _return_val = WrapVOXE(Create_VOXE(get_p_geo(), &p1))
+            _return_val = WrapVOXE(Create_VOXE(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -31578,12 +31578,12 @@ cdef class WrapVOXE:
 
 
 
-    def profile(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def profile(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, int32_t p6):
 
         try:
 
 
-            Profile_VOXE(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            Profile_VOXE(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6)
             
         finally:
             pass
@@ -31600,12 +31600,12 @@ cdef class WrapVOXE:
             pass
 
 
-    def vector(self, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, int32_t p9):
+    def vector(self, double p2, double p3, double p4, double p5, double p6, double p7, WrapVV p8, int32_t p9):
 
         try:
 
 
-            Vector_VOXE(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            Vector_VOXE(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8.handle, &p9)
             
         finally:
             pass
@@ -31643,45 +31643,45 @@ cdef class WrapVULCAN:
             pass
 
     @classmethod
-    def triangulation_to_view(cls, const char* p1, int32_t p2, int32_t p3, const char* p4):
+    def triangulation_to_view(cls, const char* p1, WrapIPJ p2, WrapMVIEW p3, const char* p4):
 
         try:
 
 
-            TriangulationToView_VULCAN(get_p_geo(), p1, &p2, &p3, p4)
+            TriangulationToView_VULCAN(get_p_geo(), p1, &p2.handle, &p3.handle, p4)
             
         finally:
             pass
 
     @classmethod
-    def get_block_model_variable_info(cls, const char* p1, int32_t p2, int32_t p3):
+    def get_block_model_variable_info(cls, const char* p1, int32_t p2, WrapLST p3):
 
         try:
 
 
-            GetBlockModelVariableInfo_VULCAN(get_p_geo(), p1, &p2, &p3)
+            GetBlockModelVariableInfo_VULCAN(get_p_geo(), p1, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_block_model_string_variable_values(cls, const char* p1, const char* p2, int32_t p3):
+    def get_block_model_string_variable_values(cls, const char* p1, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetBlockModelStringVariableValues_VULCAN(get_p_geo(), p1, p2, &p3)
+            GetBlockModelStringVariableValues_VULCAN(get_p_geo(), p1, p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def block_model_to_voxel(cls, const char* p1, int32_t p2, const char* p3, const char* p4, int32_t p5, const char* p6):
+    def block_model_to_voxel(cls, const char* p1, WrapIPJ p2, const char* p3, const char* p4, int32_t p5, const char* p6):
 
         try:
 
 
-            BlockModelToVoxel_VULCAN(get_p_geo(), p1, &p2, p3, p4, &p5, p6)
+            BlockModelToVoxel_VULCAN(get_p_geo(), p1, &p2.handle, p3, p4, &p5, p6)
             
         finally:
             pass
@@ -31729,23 +31729,23 @@ cdef class WrapVV:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapVV p2):
 
         try:
 
 
-            _Copy_VV(get_p_geo(), &self.handle, &p2)
+            _Copy_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def copy2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def copy2(self, int32_t p2, WrapVV p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            _Copy2_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            _Copy2_VV(get_p_geo(), &self.handle, &p2, &p3.handle, &p4, &p5)
             
         finally:
             pass
@@ -31773,12 +31773,12 @@ cdef class WrapVV:
             pass
 
 
-    def mask(self, int32_t p2):
+    def mask(self, WrapVV p2):
 
         try:
 
 
-            _Mask_VV(get_p_geo(), &self.handle, &p2)
+            _Mask_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31795,12 +31795,12 @@ cdef class WrapVV:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            _Serial_VV(get_p_geo(), &self.handle, &p2)
+            _Serial_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31828,34 +31828,34 @@ cdef class WrapVV:
             pass
 
 
-    def add(self, int32_t p2, int32_t p3):
+    def add(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Add_VV(get_p_geo(), &self.handle, &p2, &p3)
+            Add_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def add2(self, double p2, int32_t p3, double p4, int32_t p5):
+    def add2(self, double p2, WrapVV p3, double p4, WrapVV p5):
 
         try:
 
 
-            Add2_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            Add2_VV(get_p_geo(), &self.handle, &p2, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
 
 
-    def append(self, int32_t p2):
+    def append(self, WrapVV p2):
 
         try:
 
 
-            Append_VV(get_p_geo(), &self.handle, &p2)
+            Append_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -31905,12 +31905,12 @@ cdef class WrapVV:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapVV(CreateS_VV(get_p_geo(), &p1))
+            _return_val = WrapVV(CreateS_VV(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -31929,23 +31929,23 @@ cdef class WrapVV:
             pass
 
 
-    def divide(self, int32_t p2, int32_t p3):
+    def divide(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Divide_VV(get_p_geo(), &self.handle, &p2, &p3)
+            Divide_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def fid_norm(self, int32_t p2):
+    def fid_norm(self, WrapVV p2):
 
         try:
 
 
-            FidNorm_VV(get_p_geo(), &self.handle, &p2)
+            FidNorm_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -32066,23 +32066,23 @@ cdef class WrapVV:
             pass
 
 
-    def index_insert(self, int32_t p2, int32_t p3):
+    def index_insert(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            IndexInsert_VV(get_p_geo(), &self.handle, &p2, &p3)
+            IndexInsert_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def index_order(self, int32_t p2):
+    def index_order(self, WrapVV p2):
 
         try:
 
 
-            IndexOrder_VV(get_p_geo(), &self.handle, &p2)
+            IndexOrder_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -32121,23 +32121,23 @@ cdef class WrapVV:
             pass
 
 
-    def lines_to_xy(self, int32_t p2, int32_t p3):
+    def lines_to_xy(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            LinesToXY_VV(get_p_geo(), &self.handle, &p2, &p3)
+            LinesToXY_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def lookup_index(self, int32_t p2, int32_t p3):
+    def lookup_index(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            LookupIndex_VV(get_p_geo(), &self.handle, &p2, &p3)
+            LookupIndex_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -32154,89 +32154,89 @@ cdef class WrapVV:
             pass
 
 
-    def mask_and(self, int32_t p2, int32_t p3):
+    def mask_and(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            MaskAND_VV(get_p_geo(), &self.handle, &p2, &p3)
+            MaskAND_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def mask_or(self, int32_t p2, int32_t p3):
+    def mask_or(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            MaskOR_VV(get_p_geo(), &self.handle, &p2, &p3)
+            MaskOR_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def mask_str(self, int32_t p2, const char* p3):
+    def mask_str(self, WrapVV p2, const char* p3):
 
         try:
 
 
-            MaskStr_VV(get_p_geo(), &self.handle, &p2, p3)
+            MaskStr_VV(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def multiply(self, int32_t p2, int32_t p3):
+    def multiply(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Multiply_VV(get_p_geo(), &self.handle, &p2, &p3)
+            Multiply_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def amplitude_3d(self, int32_t p2, int32_t p3, int32_t p4):
+    def amplitude_3d(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            Amplitude3D_VV(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            Amplitude3D_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def polygon_mask(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def polygon_mask(self, WrapVV p2, WrapVV p3, WrapPLY p4, int32_t p5):
 
         try:
 
 
-            PolygonMask_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
-            
-        finally:
-            pass
-
-    @classmethod
-    def project(cls, int32_t p1, int32_t p2, int32_t p3):
-
-        try:
-
-
-            Project_VV(get_p_geo(), &p1, &p2, &p3)
+            PolygonMask_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def project_3d(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def project(cls, WrapPJ p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Project3D_VV(get_p_geo(), &p1, &p2, &p3, &p4)
+            Project_VV(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
+            
+        finally:
+            pass
+
+    @classmethod
+    def project_3d(cls, WrapPJ p1, WrapVV p2, WrapVV p3, WrapVV p4):
+
+        try:
+
+
+            Project3D_VV(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -32264,12 +32264,12 @@ cdef class WrapVV:
             pass
 
 
-    def re_fid_vv(self, int32_t p2):
+    def re_fid_vv(self, WrapVV p2):
 
         try:
 
 
-            ReFidVV_VV(get_p_geo(), &self.handle, &p2)
+            ReFidVV_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -32330,12 +32330,12 @@ cdef class WrapVV:
             pass
 
 
-    def weighted_mean(self, int32_t p2):
+    def weighted_mean(self, WrapVV p2):
 
         try:
 
 
-            _return_val = rWeightedMean_VV(get_p_geo(), &self.handle, &p2)
+            _return_val = rWeightedMean_VV(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -32451,12 +32451,12 @@ cdef class WrapVV:
             pass
 
 
-    def setup_index(self, int32_t p2, int32_t p3, int32_t p4, double p5):
+    def setup_index(self, WrapVV p2, WrapVV p3, int32_t p4, double p5):
 
         try:
 
 
-            SetupIndex_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            SetupIndex_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
@@ -32473,78 +32473,78 @@ cdef class WrapVV:
             pass
 
 
-    def sort_index(self, int32_t p2):
+    def sort_index(self, WrapVV p2):
 
         try:
 
 
-            SortIndex_VV(get_p_geo(), &self.handle, &p2)
+            SortIndex_VV(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def sort_index1(self, int32_t p2, int32_t p3):
+    def sort_index1(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            SortIndex1_VV(get_p_geo(), &self.handle, &p2, &p3)
+            SortIndex1_VV(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def sort_index2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def sort_index2(self, WrapVV p2, WrapVV p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            SortIndex2_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            SortIndex2_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
 
 
-    def sort_index3(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def sort_index3(self, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            SortIndex3_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            SortIndex3_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7)
             
         finally:
             pass
 
 
-    def sort_index4(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def sort_index4(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
 
         try:
 
 
-            SortIndex4_VV(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            SortIndex4_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def statistics(cls, int32_t p1, int32_t p2):
+    def statistics(cls, WrapST p1, WrapVV p2):
 
         try:
 
 
-            Statistics_VV(get_p_geo(), &p1, &p2)
+            Statistics_VV(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def subtract(self, int32_t p2, int32_t p3):
+    def subtract(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Subtract_VV(get_p_geo(), &self.handle, &p2, &p3)
+            Subtract_VV(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -32636,23 +32636,23 @@ cdef class WrapWA:
             pass
 
     @classmethod
-    def create_sbf(cls, int32_t p1, const char* p2, int32_t p3):
+    def create_sbf(cls, WrapSBF p1, const char* p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapWA(CreateSBF_WA(get_p_geo(), &p1, p2, &p3))
+            _return_val = WrapWA(CreateSBF_WA(get_p_geo(), &p1.handle, p2, &p3))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_sbf_ex(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4):
+    def create_sbf_ex(cls, WrapSBF p1, const char* p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            _return_val = WrapWA(CreateSBFEx_WA(get_p_geo(), &p1, p2, &p3, &p4))
+            _return_val = WrapWA(CreateSBFEx_WA(get_p_geo(), &p1.handle, p2, &p3, &p4))
             return _return_val
         finally:
             pass
@@ -32702,12 +32702,12 @@ cdef class WrapACQUIRE:
             pass
 
 
-    def delete_empty_chan(self, int32_t p2):
+    def delete_empty_chan(self, WrapDB p2):
 
         try:
 
 
-            DeleteEmptyChan_ACQUIRE(get_p_geo(), &self.handle, &p2)
+            DeleteEmptyChan_ACQUIRE(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -32715,23 +32715,23 @@ cdef class WrapACQUIRE:
 
 
 
-    def import_hole(self, const char* p2, const char* p3, const char* p4, int32_t p5, int32_t p6, int32_t p7):
+    def import_hole(self, const char* p2, const char* p3, const char* p4, WrapVV p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            _return_val = iImportHole_ACQUIRE(get_p_geo(), &self.handle, p2, p3, p4, &p5, &p6, &p7)
+            _return_val = iImportHole_ACQUIRE(get_p_geo(), &self.handle, p2, p3, p4, &p5.handle, &p6, &p7)
             return _return_val
         finally:
             pass
 
 
-    def import_point(self, int32_t p2, const char* p3, int32_t p4):
+    def import_point(self, WrapDB p2, const char* p3, int32_t p4):
 
         try:
 
 
-            _return_val = iImportPoint_ACQUIRE(get_p_geo(), &self.handle, &p2, p3, &p4)
+            _return_val = iImportPoint_ACQUIRE(get_p_geo(), &self.handle, &p2.handle, p3, &p4)
             return _return_val
         finally:
             pass
@@ -32801,23 +32801,23 @@ cdef class WrapARCDB:
             pass
 
 
-    def export_to_db(self, int32_t p2, const char* p3, const char* p4):
+    def export_to_db(self, WrapDB p2, const char* p3, const char* p4):
 
         try:
 
 
-            ExportToDB_ARCDB(get_p_geo(), &self.handle, &p2, p3, p4)
+            ExportToDB_ARCDB(get_p_geo(), &self.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
 
-    def field_lst(self, int32_t p2):
+    def field_lst(self, WrapLST p2):
 
         try:
 
 
-            FieldLST_ARCDB(get_p_geo(), &self.handle, &p2)
+            FieldLST_ARCDB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -32834,12 +32834,12 @@ cdef class WrapARCDB:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_ARCDB(get_p_geo(), &self.handle, &p2)
+            GetIPJ_ARCDB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -33238,12 +33238,12 @@ cdef class WrapARCMAP:
             pass
 
     @classmethod
-    def map_view_to_shape(cls, const char* p1, const char* p2, const char* p3, int32_t p4):
+    def map_view_to_shape(cls, const char* p1, const char* p2, const char* p3, WrapLST p4):
 
         try:
 
 
-            MapViewToShape_ARCMAP(get_p_geo(), p1, p2, p3, &p4)
+            MapViewToShape_ARCMAP(get_p_geo(), p1, p2, p3, &p4.handle)
             
         finally:
             pass
@@ -33282,23 +33282,23 @@ cdef class WrapARCMAP:
             pass
 
     @classmethod
-    def get_ipj_for_predefined_esri_gcs(cls, int32_t p1, int32_t p2):
+    def get_ipj_for_predefined_esri_gcs(cls, WrapIPJ p1, int32_t p2):
 
         try:
 
 
-            GetIPJForPredefinedEsriGCS_ARCMAP(get_p_geo(), &p1, &p2)
+            GetIPJForPredefinedEsriGCS_ARCMAP(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def get_ipj_for_predefined_esri_pcs(cls, int32_t p1, int32_t p2):
+    def get_ipj_for_predefined_esri_pcs(cls, WrapIPJ p1, int32_t p2):
 
         try:
 
 
-            GetIPJForPredefinedEsriPCS_ARCMAP(get_p_geo(), &p1, &p2)
+            GetIPJForPredefinedEsriPCS_ARCMAP(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
@@ -33423,23 +33423,23 @@ cdef class WrapBIGRID:
             pass
 
 
-    def run(self, const char* p2, int32_t p3, int32_t p4):
+    def run(self, const char* p2, WrapDAT p3, WrapDAT p4):
 
         try:
 
 
-            Run_BIGRID(get_p_geo(), &self.handle, p2, &p3, &p4)
+            Run_BIGRID(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def run2(self, const char* p2, int32_t p3, int32_t p4, int32_t p5):
+    def run2(self, const char* p2, WrapDAT p3, WrapDAT p4, WrapIPJ p5):
 
         try:
 
 
-            Run2_BIGRID(get_p_geo(), &self.handle, p2, &p3, &p4, &p5)
+            Run2_BIGRID(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
@@ -33466,122 +33466,122 @@ cdef class WrapCHIMERA:
 
 
     @classmethod
-    def bar_plot(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11):
+    def bar_plot(cls, WrapMVIEW p1, const char* p2, const char* p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, int32_t p8, int32_t p9, double p10, double p11):
 
         try:
 
 
-            BarPlot_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            BarPlot_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def categorize_by_value(cls, int32_t p1, int32_t p2, int32_t p3):
+    def categorize_by_value(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            CategorizeByValue_CHIMERA(get_p_geo(), &p1, &p2, &p3)
+            CategorizeByValue_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def categorize_by_value_det_limit(cls, int32_t p1, int32_t p2, double p3, int32_t p4):
+    def categorize_by_value_det_limit(cls, WrapVV p1, WrapVV p2, double p3, WrapVV p4):
 
         try:
 
 
-            CategorizeByValueDetLimit_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4)
+            CategorizeByValueDetLimit_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def clip_to_detect_limit(cls, int32_t p1, double p2, int32_t p3):
+    def clip_to_detect_limit(cls, WrapVV p1, double p2, int32_t p3):
 
         try:
 
 
-            ClipToDetectLimit_CHIMERA(get_p_geo(), &p1, &p2, &p3)
+            ClipToDetectLimit_CHIMERA(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def draw_circle_offset_markers(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
+    def draw_circle_offset_markers(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6):
 
         try:
 
 
-            DrawCircleOffsetMarkers_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            DrawCircleOffsetMarkers_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6)
             
         finally:
             pass
 
     @classmethod
-    def draw_rectangle_offset_markers(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8):
+    def draw_rectangle_offset_markers(cls, WrapMVIEW p1, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6, double p7, double p8):
 
         try:
 
 
-            DrawRectangleOffsetMarkers_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            DrawRectangleOffsetMarkers_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def duplicate_chem(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5, int32_t p6, const char* p7, const char* p8, double p9, double p10, double p11, double p12):
+    def duplicate_chem(cls, WrapMVIEW p1, WrapVV p2, int32_t p3, double p4, int32_t p5, WrapVV p6, const char* p7, const char* p8, double p9, double p10, double p11, double p12):
 
         try:
 
 
-            DuplicateChem_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, p7, p8, &p9, &p10, &p11, &p12)
+            DuplicateChem_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle, p7, p8, &p9, &p10, &p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def duplicate_chem_view(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, double p7, int32_t p8, int32_t p9, const char* p10, const char* p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, double p16, double p17):
+    def duplicate_chem_view(cls, WrapMAP p1, const char* p2, const char* p3, WrapIPJ p4, WrapVV p5, int32_t p6, double p7, int32_t p8, WrapVV p9, const char* p10, const char* p11, WrapVV p12, WrapVV p13, WrapVV p14, WrapDB p15, double p16, double p17):
 
         try:
 
 
-            DuplicateChemView_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, p10, p11, &p12, &p13, &p14, &p15, &p16, &p17)
+            DuplicateChemView_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9.handle, p10, p11, &p12.handle, &p13.handle, &p14.handle, &p15.handle, &p16, &p17)
             return (p16, p17)
         finally:
             pass
 
     @classmethod
-    def get_expression_data_vv(cls, int32_t p1, int32_t p2, const char* p3, const char* p4, const char* p5, int32_t p6):
+    def get_expression_data_vv(cls, WrapDB p1, int32_t p2, const char* p3, const char* p4, const char* p5, WrapVV p6):
 
         try:
 
 
-            GetExpressionDataVV_CHIMERA(get_p_geo(), &p1, &p2, p3, p4, p5, &p6)
+            GetExpressionDataVV_CHIMERA(get_p_geo(), &p1.handle, &p2, p3, p4, p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_lithogeochem_data(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def get_lithogeochem_data(cls, WrapDB p1, WrapLST p2, int32_t p3, WrapVV p4, int32_t p5, WrapVV p6, int32_t p7, WrapVV p8, WrapVV p9, WrapVV p10, WrapVV p11, WrapVV p12, WrapVV p13, WrapVV p14):
 
         try:
 
 
-            GetLithogeochemData_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            GetLithogeochemData_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4.handle, &p5, &p6.handle, &p7, &p8.handle, &p9.handle, &p10.handle, &p11.handle, &p12.handle, &p13.handle, &p14.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_transform(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, double p5):
+    def get_transform(cls, WrapDB p1, const char* p2, int32_t p3, int32_t p4, double p5):
 
         try:
 
 
-            GetTransform_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5)
+            GetTransform_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5)
             return (p4, p5)
         finally:
             pass
@@ -33663,56 +33663,56 @@ cdef class WrapCHIMERA:
             pass
 
     @classmethod
-    def mask_chan_lst(cls, int32_t p1, int32_t p2):
+    def mask_chan_lst(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            MaskChanLST_CHIMERA(get_p_geo(), &p1, &p2)
+            MaskChanLST_CHIMERA(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def ordered_channel_lst(cls, int32_t p1, int32_t p2):
+    def ordered_channel_lst(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            OrderedChannelLST_CHIMERA(get_p_geo(), &p1, &p2)
+            OrderedChannelLST_CHIMERA(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def pie_plot(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11):
+    def pie_plot(cls, WrapMVIEW p1, const char* p2, const char* p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, int32_t p8, int32_t p9, double p10, double p11):
 
         try:
 
 
-            PiePlot_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            PiePlot_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def pie_plot2(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11, double p12):
+    def pie_plot2(cls, WrapMVIEW p1, const char* p2, const char* p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, int32_t p8, int32_t p9, double p10, double p11, double p12):
 
         try:
 
 
-            PiePlot2_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            PiePlot2_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8, &p9, &p10, &p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def plot_string_classified_symbols_legend_from_class_file(cls, int32_t p1, const char* p2, double p3, double p4, double p5, const char* p6, int32_t p7):
+    def plot_string_classified_symbols_legend_from_class_file(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, const char* p6, WrapVV p7):
 
         try:
 
 
-            PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, p6, &p7)
+            PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, p6, &p7.handle)
             
         finally:
             pass
@@ -33729,155 +33729,155 @@ cdef class WrapCHIMERA:
             pass
 
     @classmethod
-    def rose_plot(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10):
+    def rose_plot(cls, WrapMVIEW p1, const char* p2, const char* p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, int32_t p8, int32_t p9, double p10):
 
         try:
 
 
-            RosePlot_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            RosePlot_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def rose_plot2(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11):
+    def rose_plot2(cls, WrapMVIEW p1, const char* p2, const char* p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, int32_t p8, int32_t p9, double p10, double p11):
 
         try:
 
 
-            RosePlot2_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            RosePlot2_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def scatter2(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, const char* p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, const char* p14, const char* p15, const char* p16, const char* p17, double p18, double p19, double p20, double p21, double p22, double p23, double p24, double p25, int32_t p26, int32_t p27, int32_t p28, int32_t p29, int32_t p30, int32_t p31):
+    def scatter2(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, const char* p9, WrapVV p10, WrapVV p11, WrapVV p12, int32_t p13, const char* p14, const char* p15, const char* p16, const char* p17, double p18, double p19, double p20, double p21, double p22, double p23, double p24, double p25, int32_t p26, int32_t p27, int32_t p28, int32_t p29, int32_t p30, int32_t p31):
 
         try:
 
 
-            Scatter2_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, p9, &p10, &p11, &p12, &p13, p14, p15, p16, p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28, &p29, &p30, &p31)
+            Scatter2_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, p9, &p10.handle, &p11.handle, &p12.handle, &p13, p14, p15, p16, p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28, &p29, &p30, &p31)
             
         finally:
             pass
 
     @classmethod
-    def fixed_symbol_scatter_plot(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, const char* p11, int32_t p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, const char* p21, const char* p22, const char* p23, const char* p24, double p25, double p26, double p27, double p28, int32_t p29, int32_t p30, const char* p31):
+    def fixed_symbol_scatter_plot(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, const char* p11, int32_t p12, double p13, double p14, int32_t p15, int32_t p16, WrapDB p17, WrapVV p18, WrapVV p19, int32_t p20, const char* p21, const char* p22, const char* p23, const char* p24, double p25, double p26, double p27, double p28, int32_t p29, int32_t p30, const char* p31):
 
         try:
 
 
-            FixedSymbolScatterPlot_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, p21, p22, p23, p24, &p25, &p26, &p27, &p28, &p29, &p30, p31)
+            FixedSymbolScatterPlot_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10, p11, &p12, &p13, &p14, &p15, &p16, &p17.handle, &p18.handle, &p19.handle, &p20, p21, p22, p23, p24, &p25, &p26, &p27, &p28, &p29, &p30, p31)
             
         finally:
             pass
 
     @classmethod
-    def zone_coloured_scatter_plot(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, const char* p12, const char* p13, int32_t p14, double p15, double p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21, int32_t p22, int32_t p23, const char* p24, const char* p25, const char* p26, const char* p27, double p28, double p29, double p30, double p31, int32_t p32, int32_t p33, const char* p34):
+    def zone_coloured_scatter_plot(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, WrapVV p11, const char* p12, const char* p13, int32_t p14, double p15, double p16, int32_t p17, int32_t p18, int32_t p19, WrapDB p20, WrapVV p21, WrapVV p22, int32_t p23, const char* p24, const char* p25, const char* p26, const char* p27, double p28, double p29, double p30, double p31, int32_t p32, int32_t p33, const char* p34):
 
         try:
 
 
-            ZoneColouredScatterPlot_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, p12, p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, &p23, p24, p25, p26, p27, &p28, &p29, &p30, &p31, &p32, &p33, p34)
+            ZoneColouredScatterPlot_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10, &p11.handle, p12, p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20.handle, &p21.handle, &p22.handle, &p23, p24, p25, p26, p27, &p28, &p29, &p30, &p31, &p32, &p33, p34)
             
         finally:
             pass
 
     @classmethod
-    def string_classified_scatter_plot(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, const char* p12, double p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, const char* p18, const char* p19, const char* p20, const char* p21, double p22, double p23, double p24, double p25, int32_t p26, int32_t p27, const char* p28):
+    def string_classified_scatter_plot(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, WrapVV p11, const char* p12, double p13, WrapDB p14, WrapVV p15, WrapVV p16, int32_t p17, const char* p18, const char* p19, const char* p20, const char* p21, double p22, double p23, double p24, double p25, int32_t p26, int32_t p27, const char* p28):
 
         try:
 
 
-            StringClassifiedScatterPlot_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, p12, &p13, &p14, &p15, &p16, &p17, p18, p19, p20, p21, &p22, &p23, &p24, &p25, &p26, &p27, p28)
+            StringClassifiedScatterPlot_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10, &p11.handle, p12, &p13, &p14.handle, &p15.handle, &p16.handle, &p17, p18, p19, p20, p21, &p22, &p23, &p24, &p25, &p26, &p27, p28)
             
         finally:
             pass
 
     @classmethod
-    def set_lithogeochem_data(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10):
+    def set_lithogeochem_data(cls, WrapDB p1, WrapLST p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapVV p10):
 
         try:
 
 
-            SetLithogeochemData_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            SetLithogeochemData_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10.handle)
             
         finally:
             pass
 
     @classmethod
-    def stacked_bar_plot(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11):
+    def stacked_bar_plot(cls, WrapMVIEW p1, const char* p2, const char* p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, int32_t p8, int32_t p9, double p10, double p11):
 
         try:
 
 
-            StackedBarPlot_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            StackedBarPlot_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def standard(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, const char* p7, const char* p8, double p9, double p10, double p11, double p12):
+    def standard(cls, WrapMVIEW p1, WrapVV p2, int32_t p3, double p4, double p5, double p6, const char* p7, const char* p8, double p9, double p10, double p11, double p12):
 
         try:
 
 
-            Standard_CHIMERA(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, p7, p8, &p9, &p10, &p11, &p12)
+            Standard_CHIMERA(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, p7, p8, &p9, &p10, &p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def standard_view(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9, const char* p10, const char* p11, double p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16, double p17, double p18):
+    def standard_view(cls, WrapMAP p1, const char* p2, const char* p3, WrapIPJ p4, WrapVV p5, int32_t p6, double p7, double p8, double p9, const char* p10, const char* p11, double p12, WrapVV p13, WrapVV p14, WrapVV p15, WrapDB p16, double p17, double p18):
 
         try:
 
 
-            StandardView_CHIMERA(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, &p8, &p9, p10, p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
+            StandardView_CHIMERA(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, p10, p11, &p12, &p13.handle, &p14.handle, &p15.handle, &p16.handle, &p17, &p18)
             return (p17, p18)
         finally:
             pass
 
     @classmethod
-    def tri_plot2(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, const char* p11, int32_t p12, int32_t p13, int32_t p14, const char* p15, const char* p16, const char* p17, double p18, double p19, double p20, double p21, double p22, double p23, int32_t p24, int32_t p25, int32_t p26, int32_t p27, int32_t p28, int32_t p29, int32_t p30, double p31, double p32):
+    def tri_plot2(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapVV p10, const char* p11, WrapVV p12, WrapVV p13, WrapVV p14, const char* p15, const char* p16, const char* p17, double p18, double p19, double p20, double p21, double p22, double p23, int32_t p24, int32_t p25, int32_t p26, int32_t p27, int32_t p28, int32_t p29, int32_t p30, double p31, double p32):
 
         try:
 
 
-            TriPlot2_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, p11, &p12, &p13, &p14, p15, p16, p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28, &p29, &p30, &p31, &p32)
+            TriPlot2_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10.handle, p11, &p12.handle, &p13.handle, &p14.handle, p15, p16, p17, &p18, &p19, &p20, &p21, &p22, &p23, &p24, &p25, &p26, &p27, &p28, &p29, &p30, &p31, &p32)
             
         finally:
             pass
 
     @classmethod
-    def fixed_symbol_tri_plot(cls, int32_t p1, const char* p2, double p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, const char* p11, int32_t p12, double p13, double p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, const char* p20, const char* p21, const char* p22, int32_t p23, double p24, double p25, const char* p26):
+    def fixed_symbol_tri_plot(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, const char* p11, int32_t p12, double p13, double p14, int32_t p15, int32_t p16, WrapDB p17, WrapVV p18, WrapVV p19, const char* p20, const char* p21, const char* p22, int32_t p23, double p24, double p25, const char* p26):
 
         try:
 
 
-            FixedSymbolTriPlot_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, p20, p21, p22, &p23, &p24, &p25, p26)
+            FixedSymbolTriPlot_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10, p11, &p12, &p13, &p14, &p15, &p16, &p17.handle, &p18.handle, &p19.handle, p20, p21, p22, &p23, &p24, &p25, p26)
             
         finally:
             pass
 
     @classmethod
-    def zone_coloured_tri_plot(cls, int32_t p1, const char* p2, double p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, const char* p12, const char* p13, int32_t p14, double p15, double p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21, int32_t p22, const char* p23, const char* p24, const char* p25, int32_t p26, double p27, double p28, const char* p29):
+    def zone_coloured_tri_plot(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, WrapVV p11, const char* p12, const char* p13, int32_t p14, double p15, double p16, int32_t p17, int32_t p18, int32_t p19, WrapDB p20, WrapVV p21, WrapVV p22, const char* p23, const char* p24, const char* p25, int32_t p26, double p27, double p28, const char* p29):
 
         try:
 
 
-            ZoneColouredTriPlot_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, p12, p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21, &p22, p23, p24, p25, &p26, &p27, &p28, p29)
+            ZoneColouredTriPlot_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10, &p11.handle, p12, p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20.handle, &p21.handle, &p22.handle, p23, p24, p25, &p26, &p27, &p28, p29)
             
         finally:
             pass
 
     @classmethod
-    def string_classified_tri_plot(cls, int32_t p1, const char* p2, double p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, const char* p12, double p13, int32_t p14, int32_t p15, int32_t p16, const char* p17, const char* p18, const char* p19, int32_t p20, double p21, double p22, const char* p23):
+    def string_classified_tri_plot(cls, WrapMVIEW p1, const char* p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, WrapVV p11, const char* p12, double p13, WrapDB p14, WrapVV p15, WrapVV p16, const char* p17, const char* p18, const char* p19, int32_t p20, double p21, double p22, const char* p23):
 
         try:
 
 
-            StringClassifiedTriPlot_CHIMERA(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, p12, &p13, &p14, &p15, &p16, p17, p18, p19, &p20, &p21, &p22, p23)
+            StringClassifiedTriPlot_CHIMERA(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10, &p11.handle, p12, &p13, &p14.handle, &p15.handle, &p16.handle, p17, p18, p19, &p20, &p21, &p22, p23)
             
         finally:
             pass
@@ -34013,34 +34013,34 @@ cdef class WrapCOM:
 
 
 
-    def read_em61_lines_wa(self, int32_t p2, int32_t p3):
+    def read_em61_lines_wa(self, int32_t p2, WrapWA p3):
 
         try:
 
 
-            ReadEM61LinesWA_COM(get_p_geo(), &self.handle, &p2, &p3)
+            ReadEM61LinesWA_COM(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def read_file2_wa(self, int32_t p2):
+    def read_file2_wa(self, WrapWA p2):
 
         try:
 
 
-            ReadFile2WA_COM(get_p_geo(), &self.handle, &p2)
+            ReadFile2WA_COM(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def read_lines_wa(self, int32_t p2, int32_t p3):
+    def read_lines_wa(self, int32_t p2, WrapWA p3):
 
         try:
 
 
-            ReadLinesWA_COM(get_p_geo(), &self.handle, &p2, &p3)
+            ReadLinesWA_COM(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -34165,12 +34165,12 @@ cdef class WrapCSYMB:
             pass
 
 
-    def add_data(self, int32_t p2, int32_t p3, int32_t p4):
+    def add_data(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            AddData_CSYMB(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            AddData_CSYMB(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -34189,12 +34189,12 @@ cdef class WrapCSYMB:
 
 
 
-    def get_itr(self, int32_t p2):
+    def get_itr(self, WrapITR p2):
 
         try:
 
 
-            GetITR_CSYMB(get_p_geo(), &self.handle, &p2)
+            GetITR_CSYMB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -34255,12 +34255,12 @@ cdef class WrapDGW:
 
 
 
-    def get_info_meta(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def get_info_meta(self, int32_t p2, int32_t p3, WrapMETA p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            App_GetInfoMETA_DGW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            App_GetInfoMETA_DGW(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5, &p6)
             
         finally:
             pass
@@ -34326,12 +34326,12 @@ cdef class WrapDGW:
             pass
 
 
-    def set_info_meta(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def set_info_meta(self, int32_t p2, int32_t p3, WrapMETA p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            App_SetInfoMETA_DGW(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            App_SetInfoMETA_DGW(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5, &p6)
             
         finally:
             pass
@@ -34399,78 +34399,78 @@ cdef class WrapDH:
 
 
 
-    def creat_chan_lst(self, int32_t p2):
+    def creat_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            CreatChanLST_DH(get_p_geo(), &self.handle, &p2)
+            CreatChanLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def depth_data_lst(self, int32_t p2):
+    def depth_data_lst(self, WrapLST p2):
 
         try:
 
 
-            DepthDataLST_DH(get_p_geo(), &self.handle, &p2)
+            DepthDataLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def from_to_data_lst(self, const char* p2, int32_t p3):
+    def from_to_data_lst(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            FromToDataLST_DH(get_p_geo(), &self.handle, p2, &p3)
+            FromToDataLST_DH(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
 
 
-    def get_geology_contacts(self, int32_t p2, const char* p3, const char* p4, int32_t p5, double p6, int32_t p7, int32_t p8, int32_t p9):
+    def get_geology_contacts(self, WrapLST p2, const char* p3, const char* p4, int32_t p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9):
 
         try:
 
 
-            GetGeologyContacts_DH(get_p_geo(), &self.handle, &p2, p3, p4, &p5, &p6, &p7, &p8, &p9)
+            GetGeologyContacts_DH(get_p_geo(), &self.handle, &p2.handle, p3, p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle)
             
         finally:
             pass
 
 
-    def get_oriented_core_dip_dir(self, int32_t p2, const char* p3, const char* p4, int32_t p5, const char* p6, const char* p7):
+    def get_oriented_core_dip_dir(self, WrapLST p2, const char* p3, const char* p4, int32_t p5, const char* p6, const char* p7):
 
         try:
 
 
-            GetOrientedCoreDipDir_DH(get_p_geo(), &self.handle, &p2, p3, p4, &p5, p6, p7)
+            GetOrientedCoreDipDir_DH(get_p_geo(), &self.handle, &p2.handle, p3, p4, &p5, p6, p7)
             
         finally:
             pass
 
 
-    def get_unique_channel_items(self, const char* p2, int32_t p3, int32_t p4):
+    def get_unique_channel_items(self, const char* p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            GetUniqueChannelItems_DH(get_p_geo(), &self.handle, p2, &p3, &p4)
+            GetUniqueChannelItems_DH(get_p_geo(), &self.handle, p2, &p3, &p4.handle)
             
         finally:
             pass
 
 
-    def get_unique_channel_items_from_collar(self, const char* p2, int32_t p3, int32_t p4):
+    def get_unique_channel_items_from_collar(self, const char* p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            GetUniqueChannelItemsFromCollar_DH(get_p_geo(), &self.handle, p2, &p3, &p4)
+            GetUniqueChannelItemsFromCollar_DH(get_p_geo(), &self.handle, p2, &p3, &p4.handle)
             
         finally:
             pass
@@ -34487,12 +34487,12 @@ cdef class WrapDH:
             pass
 
 
-    def find_hole_intersection(self, int32_t p2, int32_t p3, double p4, double p5, double p6):
+    def find_hole_intersection(self, int32_t p2, WrapIMG p3, double p4, double p5, double p6):
 
         try:
 
 
-            _return_val = iFindHoleIntersection_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            _return_val = iFindHoleIntersection_DH(get_p_geo(), &self.handle, &p2, &p3.handle, &p4, &p5, &p6)
             return (_return_val, p4, p5, p6)
         finally:
             pass
@@ -34525,67 +34525,67 @@ cdef class WrapDH:
             pass
 
 
-    def litho_grid_3d(self, const char* p2, int32_t p3, const char* p4, double p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10):
+    def litho_grid_3d(self, const char* p2, WrapTPAT p3, const char* p4, double p5, double p6, double p7, int32_t p8, WrapREG p9, int32_t p10):
 
         try:
 
 
-            LithoGrid3D_DH(get_p_geo(), &self.handle, p2, &p3, p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            LithoGrid3D_DH(get_p_geo(), &self.handle, p2, &p3.handle, p4, &p5, &p6, &p7, &p8, &p9.handle, &p10)
             
         finally:
             pass
 
 
-    def numeric_chan_lst(self, int32_t p2):
+    def numeric_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            NumericChanLST_DH(get_p_geo(), &self.handle, &p2)
+            NumericChanLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def numeric_from_to_data_lst(self, const char* p2, int32_t p3):
+    def numeric_from_to_data_lst(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            NumericFromToDataLST_DH(get_p_geo(), &self.handle, p2, &p3)
+            NumericFromToDataLST_DH(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
 
 
-    def punch_grid_holes(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
+    def punch_grid_holes(self, WrapIMG p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6):
 
         try:
 
 
-            PunchGridHoles_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            PunchGridHoles_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6)
             
         finally:
             pass
 
 
-    def string_chan_lst(self, int32_t p2):
+    def string_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            StringChanLST_DH(get_p_geo(), &self.handle, &p2)
+            StringChanLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def string_from_to_data_lst(self, const char* p2, int32_t p3):
+    def string_from_to_data_lst(self, const char* p2, WrapLST p3):
 
         try:
 
 
-            StringFromToDataLST_DH(get_p_geo(), &self.handle, p2, &p3)
+            StringFromToDataLST_DH(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -34695,23 +34695,23 @@ cdef class WrapDH:
             pass
 
 
-    def assay_hole_lst(self, int32_t p2, int32_t p3):
+    def assay_hole_lst(self, int32_t p2, WrapLST p3):
 
         try:
 
 
-            AssayHoleLST_DH(get_p_geo(), &self.handle, &p2, &p3)
+            AssayHoleLST_DH(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
 
 
-    def assay_lst(self, int32_t p2):
+    def assay_lst(self, WrapLST p2):
 
         try:
 
 
-            AssayLST_DH(get_p_geo(), &self.handle, &p2)
+            AssayLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -34739,12 +34739,12 @@ cdef class WrapDH:
             pass
 
 
-    def composite_db(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, const char* p7, const char* p8, const char* p9, double p10, double p11, double p12, int32_t p13, const char* p14):
+    def composite_db(self, WrapDB p2, WrapDB p3, int32_t p4, int32_t p5, double p6, const char* p7, const char* p8, const char* p9, double p10, double p11, double p12, int32_t p13, const char* p14):
 
         try:
 
 
-            CompositeDB_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, p7, p8, p9, &p10, &p11, &p12, &p13, p14)
+            CompositeDB_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, p7, p8, p9, &p10, &p11, &p12, &p13, p14)
             
         finally:
             pass
@@ -34783,12 +34783,12 @@ cdef class WrapDH:
             pass
 
     @classmethod
-    def convert_old_line_names(cls, int32_t p1, int32_t p2):
+    def convert_old_line_names(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            ConvertOldLineNames_DH(get_p_geo(), &p1, &p2)
+            ConvertOldLineNames_DH(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
@@ -34849,12 +34849,12 @@ cdef class WrapDH:
             pass
 
 
-    def delete_holes(self, int32_t p2):
+    def delete_holes(self, WrapLST p2):
 
         try:
 
 
-            DeleteHoles_DH(get_p_geo(), &self.handle, &p2)
+            DeleteHoles_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -34873,7 +34873,7 @@ cdef class WrapDH:
             pass
 
 
-    def export_geodatabase_lst(self, int32_t p2, const char* p3, const char* p4, const char* p5, int32_t p7):
+    def export_geodatabase_lst(self, WrapLST p2, const char* p3, const char* p4, const char* p5, int32_t p7):
         cdef int32_t p6 = 4*1040
         cdef char* cp5 = NULL
 
@@ -34882,7 +34882,7 @@ cdef class WrapDH:
 
             strcpy(cp5, p5)
 
-            ExportGeodatabaseLST_DH(get_p_geo(), &self.handle, &p2, p3, p4, cp5, &p6, &p7)
+            ExportGeodatabaseLST_DH(get_p_geo(), &self.handle, &p2.handle, p3, p4, cp5, &p6, &p7)
             return cp5
         finally:
             if cp5: free(cp5)
@@ -34900,12 +34900,12 @@ cdef class WrapDH:
             pass
 
 
-    def export_lst(self, int32_t p2, const char* p3, int32_t p4):
+    def export_lst(self, WrapLST p2, const char* p3, int32_t p4):
 
         try:
 
 
-            ExportLST_DH(get_p_geo(), &self.handle, &p2, p3, &p4)
+            ExportLST_DH(get_p_geo(), &self.handle, &p2.handle, p3, &p4)
             
         finally:
             pass
@@ -34922,34 +34922,34 @@ cdef class WrapDH:
             pass
 
 
-    def get_databases_vv(self, int32_t p2):
+    def get_databases_vv(self, WrapVV p2):
 
         try:
 
 
-            GetDatabasesVV_DH(get_p_geo(), &self.handle, &p2)
+            GetDatabasesVV_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_databases_sorted_vv(self, int32_t p2):
+    def get_databases_sorted_vv(self, WrapVV p2):
 
         try:
 
 
-            GetDatabasesSortedVV_DH(get_p_geo(), &self.handle, &p2)
+            GetDatabasesSortedVV_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_data_type(self, int32_t p2, int32_t p3):
+    def get_data_type(self, WrapDB p2, int32_t p3):
 
         try:
 
 
-            GetDataType_DH(get_p_geo(), &self.handle, &p2, &p3)
+            GetDataType_DH(get_p_geo(), &self.handle, &p2.handle, &p3)
             return p3
         finally:
             pass
@@ -34977,34 +34977,34 @@ cdef class WrapDH:
             pass
 
 
-    def get_hole_survey(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def get_hole_survey(self, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6):
 
         try:
 
 
-            GetHoleSurvey_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            GetHoleSurvey_DH(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle)
             
         finally:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_DH(get_p_geo(), &self.handle, &p2)
+            GetIPJ_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_map_names_vv(self, int32_t p2):
+    def get_map_names_vv(self, WrapVV p2):
 
         try:
 
 
-            GetMapNamesVV_DH(get_p_geo(), &self.handle, &p2)
+            GetMapNamesVV_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -35043,45 +35043,45 @@ cdef class WrapDH:
             pass
 
 
-    def get_selected_holes_vv(self, int32_t p2):
+    def get_selected_holes_vv(self, WrapVV p2):
 
         try:
 
 
-            GetSelectedHolesVV_DH(get_p_geo(), &self.handle, &p2)
+            GetSelectedHolesVV_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_table_default_chan_lst(cls, int32_t p1, int32_t p2):
+    def get_table_default_chan_lst(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            GetTableDefaultChanLST_DH(get_p_geo(), &p1, &p2)
+            GetTableDefaultChanLST_DH(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
 
-    def hole_lst(self, int32_t p2):
+    def hole_lst(self, WrapLST p2):
 
         try:
 
 
-            HoleLST_DH(get_p_geo(), &self.handle, &p2)
+            HoleLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def hole_lst2(self, int32_t p2):
+    def hole_lst2(self, WrapLST p2):
 
         try:
 
 
-            HoleLST2_DH(get_p_geo(), &self.handle, &p2)
+            HoleLST2_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -35109,12 +35109,12 @@ cdef class WrapDH:
             pass
 
 
-    def compositing_tool_gui(self, int32_t p2, double p3, double p4, double p5):
+    def compositing_tool_gui(self, WrapMAP p2, double p3, double p4, double p5):
 
         try:
 
 
-            _return_val = iCompositingToolGUI_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            _return_val = iCompositingToolGUI_DH(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5)
             return _return_val
         finally:
             pass
@@ -35152,12 +35152,12 @@ cdef class WrapDH:
 
 
 
-    def delete_will_delete_db(self, int32_t p2):
+    def delete_will_delete_db(self, WrapLST p2):
 
         try:
 
 
-            _return_val = iDeleteWillDeleteDB_DH(get_p_geo(), &self.handle, &p2)
+            _return_val = iDeleteWillDeleteDB_DH(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -35238,12 +35238,12 @@ cdef class WrapDH:
 
 
     @classmethod
-    def get_template_blob(cls, int32_t p1, const char* p2, int32_t p3):
+    def get_template_blob(cls, WrapDB p1, const char* p2, int32_t p3):
 
         try:
 
 
-            _return_val = iGetTemplateBlob_DH(get_p_geo(), &p1, p2, &p3)
+            _return_val = iGetTemplateBlob_DH(get_p_geo(), &p1.handle, p2, &p3)
             return (_return_val, p3)
         finally:
             pass
@@ -35270,7 +35270,7 @@ cdef class WrapDH:
 
 
     @classmethod
-    def get_template_info_ex(cls, const char* p1, int32_t p2, const char* p3, const char* p5, int32_t p7):
+    def get_template_info_ex(cls, const char* p1, int32_t p2, const char* p3, const char* p5, WrapLST p7):
         cdef int32_t p4 = 4*1040
         cdef int32_t p6 = 4*1040
         cdef char* cp3 = NULL
@@ -35283,7 +35283,7 @@ cdef class WrapDH:
             strcpy(cp3, p3)
             strcpy(cp5, p5)
 
-            IGetTemplateInfoEx_DH(get_p_geo(), p1, &p2, cp3, &p4, cp5, &p6, &p7)
+            IGetTemplateInfoEx_DH(get_p_geo(), p1, &p2, cp3, &p4, cp5, &p6, &p7.handle)
             return (p2, cp3, cp5)
         finally:
             if cp3: free(cp3)
@@ -35345,12 +35345,12 @@ cdef class WrapDH:
             pass
 
     @classmethod
-    def hole_select_from_list_gui(cls, int32_t p1, int32_t p2):
+    def hole_select_from_list_gui(cls, WrapLST p1, WrapLST p2):
 
         try:
 
 
-            _return_val = iHoleSelectFromListGUI_DH(get_p_geo(), &p1, &p2)
+            _return_val = iHoleSelectFromListGUI_DH(get_p_geo(), &p1.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -35482,12 +35482,12 @@ cdef class WrapDH:
             pass
 
     @classmethod
-    def modify_rock_codes_gui2(cls, int32_t p1, const char* p2):
+    def modify_rock_codes_gui2(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            _return_val = iModifyRockCodesGUI2_DH(get_p_geo(), &p1, p2)
+            _return_val = iModifyRockCodesGUI2_DH(get_p_geo(), &p1.handle, p2)
             return _return_val
         finally:
             pass
@@ -35548,34 +35548,34 @@ cdef class WrapDH:
             pass
 
     @classmethod
-    def modify_structure_codes_gui2(cls, int32_t p1, const char* p2):
+    def modify_structure_codes_gui2(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            _return_val = iModifyStructureCodesGUI2_DH(get_p_geo(), &p1, p2)
+            _return_val = iModifyStructureCodesGUI2_DH(get_p_geo(), &p1.handle, p2)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def import2(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, int32_t p6, const char* p7):
+    def import2(cls, const char* p1, WrapDB p2, int32_t p3, int32_t p4, const char* p5, int32_t p6, const char* p7):
 
         try:
 
 
-            Import2_DH(get_p_geo(), p1, &p2, &p3, &p4, p5, &p6, p7)
+            Import2_DH(get_p_geo(), p1, &p2.handle, &p3, &p4, p5, &p6, p7)
             
         finally:
             pass
 
 
-    def import_las(self, const char* p2, const char* p3, double p4, int32_t p5, int32_t p6):
+    def import_las(self, const char* p2, const char* p3, double p4, int32_t p5, WrapWA p6):
 
         try:
 
 
-            ImportLAS_DH(get_p_geo(), &self.handle, p2, p3, &p4, &p5, &p6)
+            ImportLAS_DH(get_p_geo(), &self.handle, p2, p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
@@ -35603,45 +35603,45 @@ cdef class WrapDH:
             pass
 
 
-    def qa_dip_az_curvature_lst(self, int32_t p2, double p3, int32_t p4):
+    def qa_dip_az_curvature_lst(self, WrapLST p2, double p3, WrapWA p4):
 
         try:
 
 
-            _return_val = iQADipAzCurvatureLST_DH(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            _return_val = iQADipAzCurvatureLST_DH(get_p_geo(), &self.handle, &p2.handle, &p3, &p4.handle)
             return _return_val
         finally:
             pass
 
 
-    def qa_dip_az_survey_lst(self, int32_t p2, int32_t p3):
+    def qa_dip_az_survey_lst(self, WrapLST p2, WrapWA p3):
 
         try:
 
 
-            _return_val = iQADipAzSurveyLST_DH(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = iQADipAzSurveyLST_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             return _return_val
         finally:
             pass
 
 
-    def qa_east_north_curvature_lst(self, int32_t p2, double p3, int32_t p4):
+    def qa_east_north_curvature_lst(self, WrapLST p2, double p3, WrapWA p4):
 
         try:
 
 
-            _return_val = iQAEastNorthCurvatureLST_DH(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            _return_val = iQAEastNorthCurvatureLST_DH(get_p_geo(), &self.handle, &p2.handle, &p3, &p4.handle)
             return _return_val
         finally:
             pass
 
 
-    def qa_east_north_survey_lst(self, int32_t p2, int32_t p3):
+    def qa_east_north_survey_lst(self, WrapLST p2, WrapWA p3):
 
         try:
 
 
-            _return_val = iQAEastNorthSurveyLST_DH(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = iQAEastNorthSurveyLST_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             return _return_val
         finally:
             pass
@@ -35669,12 +35669,12 @@ cdef class WrapDH:
             pass
 
 
-    def load_data_parameters_ini(self, int32_t p2, const char* p3):
+    def load_data_parameters_ini(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            LoadDataParametersINI_DH(get_p_geo(), &self.handle, &p2, p3)
+            LoadDataParametersINI_DH(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -35702,12 +35702,12 @@ cdef class WrapDH:
             pass
 
 
-    def mask_ply(self, int32_t p2, int32_t p3, double p4, const char* p5, int32_t p6, int32_t p7):
+    def mask_ply(self, WrapPLY p2, WrapIPJ p3, double p4, const char* p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            MaskPLY_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7)
+            MaskPLY_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5, &p6, &p7)
             
         finally:
             pass
@@ -35735,155 +35735,155 @@ cdef class WrapDH:
             pass
 
 
-    def plot_hole_traces(self, int32_t p2, const char* p3):
+    def plot_hole_traces(self, WrapMAP p2, const char* p3):
 
         try:
 
 
-            PlotHoleTraces_DH(get_p_geo(), &self.handle, &p2, p3)
+            PlotHoleTraces_DH(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def plot_hole_traces_3d(self, int32_t p2, const char* p3):
+    def plot_hole_traces_3d(self, WrapMVIEW p2, const char* p3):
 
         try:
 
 
-            PlotHoleTraces3D_DH(get_p_geo(), &self.handle, &p2, p3)
+            PlotHoleTraces3D_DH(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def plot_symbols_3d(self, int32_t p2, const char* p3):
+    def plot_symbols_3d(self, WrapMVIEW p2, const char* p3):
 
         try:
 
 
-            PlotSymbols3D_DH(get_p_geo(), &self.handle, &p2, p3)
+            PlotSymbols3D_DH(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def qa_collar(self, int32_t p2):
+    def qa_collar(self, WrapWA p2):
 
         try:
 
 
-            QACollar_DH(get_p_geo(), &self.handle, &p2)
+            QACollar_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def qa_collar_lst(self, int32_t p2, int32_t p3):
+    def qa_collar_lst(self, WrapLST p2, WrapWA p3):
 
         try:
 
 
-            QACollarLST_DH(get_p_geo(), &self.handle, &p2, &p3)
+            QACollarLST_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def qa_dip_az_curvature(self, int32_t p2, double p3):
+    def qa_dip_az_curvature(self, WrapWA p2, double p3):
 
         try:
 
 
-            QADipAzCurvature_DH(get_p_geo(), &self.handle, &p2, &p3)
+            QADipAzCurvature_DH(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def qa_dip_az_curvature2(self, int32_t p2, double p3, const char* p4):
+    def qa_dip_az_curvature2(self, WrapWA p2, double p3, const char* p4):
 
         try:
 
 
-            QADipAzCurvature2_DH(get_p_geo(), &self.handle, &p2, &p3, p4)
+            QADipAzCurvature2_DH(get_p_geo(), &self.handle, &p2.handle, &p3, p4)
             
         finally:
             pass
 
 
-    def qa_dip_az_survey(self, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def qa_dip_az_survey(self, WrapDB p2, WrapWA p3, int32_t p4, const char* p5):
 
         try:
 
 
-            QADipAzSurvey_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, p5)
+            QADipAzSurvey_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5)
             
         finally:
             pass
 
 
-    def qa_east_north_curvature(self, int32_t p2, double p3):
+    def qa_east_north_curvature(self, WrapWA p2, double p3):
 
         try:
 
 
-            QAEastNorthCurvature_DH(get_p_geo(), &self.handle, &p2, &p3)
+            QAEastNorthCurvature_DH(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def qa_east_north_curvature2(self, int32_t p2, double p3, const char* p4):
+    def qa_east_north_curvature2(self, WrapWA p2, double p3, const char* p4):
 
         try:
 
 
-            QAEastNorthCurvature2_DH(get_p_geo(), &self.handle, &p2, &p3, p4)
+            QAEastNorthCurvature2_DH(get_p_geo(), &self.handle, &p2.handle, &p3, p4)
             
         finally:
             pass
 
 
-    def qa_east_north_survey(self, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def qa_east_north_survey(self, WrapDB p2, WrapWA p3, int32_t p4, const char* p5):
 
         try:
 
 
-            QAEastNorthSurvey_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, p5)
+            QAEastNorthSurvey_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5)
             
         finally:
             pass
 
 
-    def qa_from_to_data(self, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def qa_from_to_data(self, WrapDB p2, WrapWA p3, int32_t p4, const char* p5):
 
         try:
 
 
-            QAFromToData_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, p5)
+            QAFromToData_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5)
             
         finally:
             pass
 
 
-    def qa_point_data(self, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def qa_point_data(self, WrapDB p2, WrapWA p3, int32_t p4, const char* p5):
 
         try:
 
 
-            QAPointData_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, p5)
+            QAPointData_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5)
             
         finally:
             pass
 
 
-    def qa_write_unregistered_holes(self, int32_t p2, int32_t p3):
+    def qa_write_unregistered_holes(self, WrapDB p2, WrapWA p3):
 
         try:
 
 
-            QAWriteUnregisteredHoles_DH(get_p_geo(), &self.handle, &p2, &p3)
+            QAWriteUnregisteredHoles_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -35911,67 +35911,67 @@ cdef class WrapDH:
             pass
 
 
-    def re_survey_east_north(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9, double p10, double p11):
+    def re_survey_east_north(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, double p7, double p8, double p9, double p10, double p11):
 
         try:
 
 
-            ReSurveyEastNorth_DH(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            ReSurveyEastNorth_DH(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7, &p8, &p9, &p10, &p11)
             return p11
         finally:
             pass
 
 
-    def re_survey_pol_fit(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17):
+    def re_survey_pol_fit(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, int32_t p13, WrapVV p14, WrapVV p15, WrapVV p16, WrapVV p17):
 
         try:
 
 
-            ReSurveyPolFit_DH(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17)
+            ReSurveyPolFit_DH(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14.handle, &p15.handle, &p16.handle, &p17.handle)
             
         finally:
             pass
 
 
-    def re_survey_rad_curve(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16):
+    def re_survey_rad_curve(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, WrapVV p13, WrapVV p14, WrapVV p15, WrapVV p16):
 
         try:
 
 
-            ReSurveyRadCurve_DH(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            ReSurveyRadCurve_DH(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13.handle, &p14.handle, &p15.handle, &p16.handle)
             
         finally:
             pass
 
 
-    def re_survey_straight(self, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15):
+    def re_survey_straight(self, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, WrapVV p12, WrapVV p13, WrapVV p14, WrapVV p15):
 
         try:
 
 
-            ReSurveyStraight_DH(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15)
+            ReSurveyStraight_DH(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12.handle, &p13.handle, &p14.handle, &p15.handle)
             
         finally:
             pass
 
 
-    def re_survey_straight_seg(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16):
+    def re_survey_straight_seg(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6, double p7, double p8, double p9, double p10, double p11, int32_t p12, WrapVV p13, WrapVV p14, WrapVV p15, WrapVV p16):
 
         try:
 
 
-            ReSurveyStraightSeg_DH(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            ReSurveyStraightSeg_DH(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13.handle, &p14.handle, &p15.handle, &p16.handle)
             
         finally:
             pass
 
 
-    def save_data_parameters_ini(self, int32_t p2, const char* p3):
+    def save_data_parameters_ini(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            SaveDataParametersINI_DH(get_p_geo(), &self.handle, &p2, p3)
+            SaveDataParametersINI_DH(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -36021,12 +36021,12 @@ cdef class WrapDH:
             pass
 
 
-    def select_holes(self, int32_t p2, int32_t p3):
+    def select_holes(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            SelectHoles_DH(get_p_geo(), &self.handle, &p2, &p3)
+            SelectHoles_DH(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -36043,34 +36043,34 @@ cdef class WrapDH:
             pass
 
 
-    def select_ply(self, int32_t p2):
+    def select_ply(self, WrapPLY p2):
 
         try:
 
 
-            SelectPLY_DH(get_p_geo(), &self.handle, &p2)
+            SelectPLY_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def select_ply2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def select_ply2(self, WrapPLY p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            SelectPLY2_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            SelectPLY2_DH(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
 
 
-    def set_crooked_section_ipj(self, int32_t p2):
+    def set_crooked_section_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetCrookedSectionIPJ_DH(get_p_geo(), &self.handle, &p2)
+            SetCrookedSectionIPJ_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36098,23 +36098,23 @@ cdef class WrapDH:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_DH(get_p_geo(), &self.handle, &p2)
+            SetIPJ_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_map(self, int32_t p2):
+    def set_map(self, WrapMAP p2):
 
         try:
 
 
-            SetMAP_DH(get_p_geo(), &self.handle, &p2)
+            SetMAP_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36131,45 +36131,45 @@ cdef class WrapDH:
             pass
 
 
-    def set_selected_holes_vv(self, int32_t p2, int32_t p3):
+    def set_selected_holes_vv(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            SetSelectedHolesVV_DH(get_p_geo(), &self.handle, &p2, &p3)
+            SetSelectedHolesVV_DH(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def set_template_blob(cls, int32_t p1, const char* p2, int32_t p3):
+    def set_template_blob(cls, WrapDB p1, const char* p2, int32_t p3):
 
         try:
 
 
-            SetTemplateBlob_DH(get_p_geo(), &p1, p2, &p3)
+            SetTemplateBlob_DH(get_p_geo(), &p1.handle, p2, &p3)
             
         finally:
             pass
 
 
-    def significant_intersections_db(self, int32_t p2, int32_t p3, int32_t p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12):
+    def significant_intersections_db(self, WrapDB p2, WrapDB p3, int32_t p4, const char* p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12):
 
         try:
 
 
-            SignificantIntersectionsDB_DH(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            SignificantIntersectionsDB_DH(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
             
         finally:
             pass
 
 
-    def test_import_las(self, const char* p2, const char* p3, double p4, int32_t p5, int32_t p6):
+    def test_import_las(self, const char* p2, const char* p3, double p4, WrapWA p5, int32_t p6):
 
         try:
 
 
-            TestImportLAS_DH(get_p_geo(), &self.handle, p2, p3, &p4, &p5, &p6)
+            TestImportLAS_DH(get_p_geo(), &self.handle, p2, p3, &p4, &p5.handle, &p6)
             return p6
         finally:
             pass
@@ -36186,12 +36186,12 @@ cdef class WrapDH:
             pass
 
 
-    def un_selected_hole_lst(self, int32_t p2):
+    def un_selected_hole_lst(self, WrapLST p2):
 
         try:
 
 
-            UnSelectedHoleLST_DH(get_p_geo(), &self.handle, &p2)
+            UnSelectedHoleLST_DH(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36230,12 +36230,12 @@ cdef class WrapDH:
             pass
 
 
-    def surface_intersections(self, int32_t p2, const char* p3, int32_t p4):
+    def surface_intersections(self, WrapDB p2, const char* p3, int32_t p4):
 
         try:
 
 
-            SurfaceIntersections_DH(get_p_geo(), &self.handle, &p2, p3, &p4)
+            SurfaceIntersections_DH(get_p_geo(), &self.handle, &p2.handle, p3, &p4)
             
         finally:
             pass
@@ -36273,12 +36273,12 @@ cdef class WrapDMPPLY:
             pass
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapDMPPLY p2):
 
         try:
 
 
-            Copy_DMPPLY(get_p_geo(), &self.handle, &p2)
+            Copy_DMPPLY(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36319,12 +36319,12 @@ cdef class WrapDMPPLY:
             pass
 
 
-    def get_joins(self, int32_t p2, int32_t p3):
+    def get_joins(self, int32_t p2, WrapVV p3):
 
         try:
 
 
-            GetJoins_DMPPLY(get_p_geo(), &self.handle, &p2, &p3)
+            GetJoins_DMPPLY(get_p_geo(), &self.handle, &p2, &p3.handle)
             
         finally:
             pass
@@ -36341,12 +36341,12 @@ cdef class WrapDMPPLY:
             pass
 
 
-    def get_poly(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def get_poly(self, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            GetPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            GetPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
@@ -36429,23 +36429,23 @@ cdef class WrapDMPPLY:
             pass
 
 
-    def project_poly(self, int32_t p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10):
+    def project_poly(self, int32_t p2, double p3, double p4, double p5, double p6, double p7, WrapVV p8, WrapVV p9, WrapVV p10):
 
         try:
 
 
-            ProjectPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            ProjectPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8.handle, &p9.handle, &p10.handle)
             
         finally:
             pass
 
 
-    def re_project_poly(self, int32_t p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
+    def re_project_poly(self, int32_t p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapVV p10, WrapVV p11):
 
         try:
 
 
-            ReProjectPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            ReProjectPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10.handle, &p11.handle)
             
         finally:
             pass
@@ -36462,12 +36462,12 @@ cdef class WrapDMPPLY:
             pass
 
 
-    def set_poly(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def set_poly(self, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            SetPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            SetPoly_DMPPLY(get_p_geo(), &self.handle, &p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
@@ -36493,12 +36493,12 @@ cdef class WrapDOCU:
 
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapDOCU p2):
 
         try:
 
 
-            Copy_DOCU(get_p_geo(), &self.handle, &p2)
+            Copy_DOCU(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36515,12 +36515,12 @@ cdef class WrapDOCU:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapDOCU(CreateS_DOCU(get_p_geo(), &p1))
+            _return_val = WrapDOCU(CreateS_DOCU(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -36550,12 +36550,12 @@ cdef class WrapDOCU:
             pass
 
 
-    def get_meta(self, int32_t p2):
+    def get_meta(self, WrapMETA p2):
 
         try:
 
 
-            GetMETA_DOCU(get_p_geo(), &self.handle, &p2)
+            GetMETA_DOCU(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36626,12 +36626,12 @@ cdef class WrapDOCU:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_DOCU(get_p_geo(), &self.handle, &p2)
+            Serial_DOCU(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36659,12 +36659,12 @@ cdef class WrapDOCU:
             pass
 
 
-    def set_meta(self, int32_t p2):
+    def set_meta(self, WrapMETA p2):
 
         try:
 
 
-            SetMETA_DOCU(get_p_geo(), &self.handle, &p2)
+            SetMETA_DOCU(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -36680,551 +36680,551 @@ cdef class WrapDU:
 
 
     @classmethod
-    def table_look1(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6, int32_t p7, double p8, int32_t p9):
+    def table_look1(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6, int32_t p7, double p8, WrapTB p9):
 
         try:
 
 
-            _TableLook1_DU(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6, &p7, &p8, &p9)
+            _TableLook1_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, p5, p6, &p7, &p8, &p9.handle)
             
         finally:
             pass
 
     @classmethod
-    def table_look2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, double p10, int32_t p11):
+    def table_look2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, double p10, WrapTB p11):
 
         try:
 
 
-            _TableLook2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, &p10, &p11)
+            _TableLook2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, &p10, &p11.handle)
             
         finally:
             pass
 
     @classmethod
-    def table_look_i2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, double p10, int32_t p11):
+    def table_look_i2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, double p10, WrapTB p11):
 
         try:
 
 
-            _TableLookI2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, &p10, &p11)
+            _TableLookI2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, &p10, &p11.handle)
             
         finally:
             pass
 
     @classmethod
-    def table_look_r2(cls, int32_t p1, int32_t p2, double p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, double p10, int32_t p11):
+    def table_look_r2(cls, WrapDB p1, int32_t p2, double p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, double p10, WrapTB p11):
 
         try:
 
 
-            _TableLookR2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, &p10, &p11)
+            _TableLookR2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, &p10, &p11.handle)
             
         finally:
             pass
 
     @classmethod
-    def ado_table_names(cls, const char* p1, int32_t p2):
+    def ado_table_names(cls, const char* p1, WrapVV p2):
 
         try:
 
 
-            ADOTableNames_DU(get_p_geo(), p1, &p2)
+            ADOTableNames_DU(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def an_sig(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def an_sig(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            AnSig_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            AnSig_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def append(cls, int32_t p1, int32_t p2, int32_t p3):
+    def append(cls, WrapDB p1, WrapDB p2, int32_t p3):
 
         try:
 
 
-            Append_DU(get_p_geo(), &p1, &p2, &p3)
+            Append_DU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def avg_azimuth(cls, int32_t p1, double p2, double p3):
+    def avg_azimuth(cls, WrapDB p1, double p2, double p3):
 
         try:
 
 
-            AvgAzimuth_DU(get_p_geo(), &p1, &p2, &p3)
+            AvgAzimuth_DU(get_p_geo(), &p1.handle, &p2, &p3)
             return p3
         finally:
             pass
 
     @classmethod
-    def base_data(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def base_data(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapTB p6):
 
         try:
 
 
-            BaseData_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            BaseData_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def base_data_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def base_data_ex(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapTB p6, int32_t p7):
 
         try:
 
 
-            BaseDataEx_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            BaseDataEx_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6.handle, &p7)
             
         finally:
             pass
 
     @classmethod
-    def bound_line(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def bound_line(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, WrapPLY p5):
 
         try:
 
 
-            BoundLine_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            BoundLine_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def bp_filt(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, int32_t p7):
+    def bp_filt(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, int32_t p7):
 
         try:
 
 
-            BPFilt_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            BPFilt_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def break_line(cls, int32_t p1, int32_t p2, int32_t p3):
+    def break_line(cls, WrapDB p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            BreakLine_DU(get_p_geo(), &p1, &p2, &p3)
+            BreakLine_DU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def break_line2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def break_line2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            BreakLine2_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            BreakLine2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def break_line_to_groups(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4):
+    def break_line_to_groups(cls, WrapDB p1, int32_t p2, int32_t p3, const char* p4):
 
         try:
 
 
-            BreakLineToGroups_DU(get_p_geo(), &p1, &p2, &p3, p4)
+            BreakLineToGroups_DU(get_p_geo(), &p1.handle, &p2, &p3, p4)
             
         finally:
             pass
 
     @classmethod
-    def break_line_to_groups2(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5):
+    def break_line_to_groups2(cls, WrapDB p1, int32_t p2, int32_t p3, const char* p4, int32_t p5):
 
         try:
 
 
-            BreakLineToGroups2_DU(get_p_geo(), &p1, &p2, &p3, p4, &p5)
+            BreakLineToGroups2_DU(get_p_geo(), &p1.handle, &p2, &p3, p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def b_spline(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7):
+    def b_spline(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7):
 
         try:
 
 
-            BSpline_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            BSpline_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def closest_point(cls, int32_t p1, double p2, double p3, double p4, double p5, int32_t p6, double p7):
+    def closest_point(cls, WrapDB p1, double p2, double p3, double p4, double p5, int32_t p6, double p7):
 
         try:
 
 
-            ClosestPoint_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            ClosestPoint_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             return (p4, p5, p6, p7)
         finally:
             pass
 
     @classmethod
-    def copy_line(cls, int32_t p1, int32_t p2, int32_t p3):
+    def copy_line(cls, WrapDB p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            CopyLine_DU(get_p_geo(), &p1, &p2, &p3)
+            CopyLine_DU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def copy_line_across(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def copy_line_across(cls, WrapDB p1, int32_t p2, WrapDB p3, int32_t p4):
 
         try:
 
 
-            CopyLineAcross_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            CopyLineAcross_DU(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def copy_line_chan_across(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def copy_line_chan_across(cls, WrapDB p1, int32_t p2, WrapVV p3, WrapDB p4, int32_t p5):
 
         try:
 
 
-            CopyLineChanAcross_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            CopyLineChanAcross_DU(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def copy_line_masked(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def copy_line_masked(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            CopyLineMasked_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            CopyLineMasked_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def dao_table_names(cls, const char* p1, const char* p2, int32_t p3):
+    def dao_table_names(cls, const char* p1, const char* p2, WrapVV p3):
 
         try:
 
 
-            DAOTableNames_DU(get_p_geo(), p1, p2, &p3)
+            DAOTableNames_DU(get_p_geo(), p1, p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def decimate(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def decimate(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            Decimate_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Decimate_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def diff(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def diff(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            Diff_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Diff_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def distance(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def distance(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            Distance_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Distance_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def distance_3d(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def distance_3d(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            Distance3D_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            Distance3D_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def distline(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5):
+    def distline(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5):
 
         try:
 
 
-            Distline_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Distline_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             return p5
         finally:
             pass
 
     @classmethod
-    def dup_chan_locks(cls, int32_t p1, int32_t p2):
+    def dup_chan_locks(cls, WrapDB p1, WrapDB p2):
 
         try:
 
 
-            DupChanLocks_DU(get_p_geo(), &p1, &p2)
+            DupChanLocks_DU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def dup_chans(cls, int32_t p1, int32_t p2):
+    def dup_chans(cls, WrapDB p1, WrapDB p2):
 
         try:
 
 
-            DupChans_DU(get_p_geo(), &p1, &p2)
+            DupChans_DU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def edit_duplicates(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7):
+    def edit_duplicates(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7):
 
         try:
 
 
-            EditDuplicates_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            EditDuplicates_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def export(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4, int32_t p5, const char* p6, int32_t p7, int32_t p8):
+    def export(cls, WrapDB p1, int32_t p2, const char* p3, WrapVV p4, int32_t p5, const char* p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            Export_DU(get_p_geo(), &p1, &p2, p3, &p4, &p5, p6, &p7, &p8)
+            Export_DU(get_p_geo(), &p1.handle, &p2, p3, &p4.handle, &p5, p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def export2(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4, int32_t p5, const char* p6, int32_t p7, int32_t p8, int32_t p9):
+    def export2(cls, WrapDB p1, int32_t p2, const char* p3, WrapVV p4, int32_t p5, const char* p6, int32_t p7, int32_t p8, int32_t p9):
 
         try:
 
 
-            Export2_DU(get_p_geo(), &p1, &p2, p3, &p4, &p5, p6, &p7, &p8, &p9)
+            Export2_DU(get_p_geo(), &p1.handle, &p2, p3, &p4.handle, &p5, p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def export_amira(cls, int32_t p1, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11):
+    def export_amira(cls, WrapDB p1, WrapWA p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11):
 
         try:
 
 
-            ExportAMIRA_DU(get_p_geo(), &p1, &p2, p3, p4, p5, p6, p7, p8, p9, p10, p11)
+            ExportAMIRA_DU(get_p_geo(), &p1.handle, &p2.handle, p3, p4, p5, p6, p7, p8, p9, p10, p11)
             
         finally:
             pass
 
     @classmethod
-    def export_aseg(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
+    def export_aseg(cls, WrapDB p1, const char* p2, WrapVV p3, int32_t p4, const char* p5, const char* p6):
 
         try:
 
 
-            ExportAseg_DU(get_p_geo(), &p1, p2, &p3, &p4, p5, p6)
+            ExportAseg_DU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, p5, p6)
             
         finally:
             pass
 
     @classmethod
-    def export_aseg_proj(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, const char* p5, const char* p6, const char* p7, int32_t p8):
+    def export_aseg_proj(cls, WrapDB p1, const char* p2, WrapVV p3, int32_t p4, const char* p5, const char* p6, const char* p7, WrapIPJ p8):
 
         try:
 
 
-            ExportAsegProj_DU(get_p_geo(), &p1, p2, &p3, &p4, p5, p6, p7, &p8)
+            ExportAsegProj_DU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, p5, p6, p7, &p8.handle)
             
         finally:
             pass
 
     @classmethod
-    def export_chan_crc(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4):
+    def export_chan_crc(cls, WrapDB p1, int32_t p2, int32_t p3, const char* p4):
 
         try:
 
 
-            ExportChanCRC_DU(get_p_geo(), &p1, &p2, &p3, p4)
+            ExportChanCRC_DU(get_p_geo(), &p1.handle, &p2, &p3, p4)
             return p3
         finally:
             pass
 
     @classmethod
-    def export_csv(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, const char* p5, int32_t p6, int32_t p7):
+    def export_csv(cls, WrapDB p1, const char* p2, WrapVV p3, int32_t p4, const char* p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            ExportCSV_DU(get_p_geo(), &p1, p2, &p3, &p4, p5, &p6, &p7)
+            ExportCSV_DU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def export_database_crc(cls, int32_t p1, int32_t p2, const char* p3):
+    def export_database_crc(cls, WrapDB p1, int32_t p2, const char* p3):
 
         try:
 
 
-            ExportDatabaseCRC_DU(get_p_geo(), &p1, &p2, p3)
+            ExportDatabaseCRC_DU(get_p_geo(), &p1.handle, &p2, p3)
             return p2
         finally:
             pass
 
     @classmethod
-    def export_gbn(cls, int32_t p1, int32_t p2, const char* p3):
+    def export_gbn(cls, WrapDB p1, WrapVV p2, const char* p3):
 
         try:
 
 
-            ExportGBN_DU(get_p_geo(), &p1, &p2, p3)
+            ExportGBN_DU(get_p_geo(), &p1.handle, &p2.handle, p3)
             
         finally:
             pass
 
     @classmethod
-    def export_mdb(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, const char* p6):
+    def export_mdb(cls, WrapDB p1, const char* p2, WrapVV p3, int32_t p4, int32_t p5, const char* p6):
 
         try:
 
 
-            ExportMDB_DU(get_p_geo(), &p1, p2, &p3, &p4, &p5, p6)
+            ExportMDB_DU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, &p5, p6)
             
         finally:
             pass
 
     @classmethod
-    def export_geodatabase(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, const char* p8):
+    def export_geodatabase(cls, WrapDB p1, const char* p2, const char* p3, WrapVV p4, int32_t p5, int32_t p6, int32_t p7, const char* p8):
 
         try:
 
 
-            ExportGeodatabase_DU(get_p_geo(), &p1, p2, p3, &p4, &p5, &p6, &p7, p8)
+            ExportGeodatabase_DU(get_p_geo(), &p1.handle, p2, p3, &p4.handle, &p5, &p6, &p7, p8)
             
         finally:
             pass
 
     @classmethod
-    def get_existing_feature_classes_in_geodatabase(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4):
+    def get_existing_feature_classes_in_geodatabase(cls, WrapDB p1, const char* p2, WrapLST p3, WrapVV p4):
 
         try:
 
 
-            _return_val = GetExistingFeatureClassesInGeodatabase_DU(get_p_geo(), &p1, p2, &p3, &p4)
+            _return_val = GetExistingFeatureClassesInGeodatabase_DU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def export_shp(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, int32_t p7):
+    def export_shp(cls, WrapDB p1, const char* p2, WrapVV p3, int32_t p4, int32_t p5, const char* p6, WrapLST p7):
 
         try:
 
 
-            ExportSHP_DU(get_p_geo(), &p1, p2, &p3, &p4, &p5, p6, &p7)
+            ExportSHP_DU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, &p5, p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def export_xyz(cls, int32_t p1, const char* p2, const char* p3):
+    def export_xyz(cls, WrapDB p1, const char* p2, const char* p3):
 
         try:
 
 
-            ExportXYZ_DU(get_p_geo(), &p1, p2, p3)
+            ExportXYZ_DU(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def export_xyz2(cls, int32_t p1, int32_t p2, int32_t p3):
+    def export_xyz2(cls, WrapDB p1, WrapWA p2, WrapRA p3):
 
         try:
 
 
-            ExportXYZ2_DU(get_p_geo(), &p1, &p2, &p3)
+            ExportXYZ2_DU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def fft(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def fft(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            FFT_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            FFT_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def filter(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def filter(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            Filter_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Filter_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def gen_lev(cls, int32_t p1, const char* p2, const char* p3, double p4, int32_t p5):
+    def gen_lev(cls, WrapDB p1, const char* p2, const char* p3, double p4, int32_t p5):
 
         try:
 
 
-            GenLev_DU(get_p_geo(), &p1, p2, p3, &p4, &p5)
+            GenLev_DU(get_p_geo(), &p1.handle, p2, p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def gen_lev_db(cls, int32_t p1, const char* p2, double p3, int32_t p4):
+    def gen_lev_db(cls, WrapDB p1, const char* p2, double p3, int32_t p4):
 
         try:
 
 
-            GenLevDB_DU(get_p_geo(), &p1, p2, &p3, &p4)
+            GenLevDB_DU(get_p_geo(), &p1.handle, p2, &p3, &p4)
             
         finally:
             pass
@@ -37252,95 +37252,95 @@ cdef class WrapDU:
             pass
 
     @classmethod
-    def get_chan_data_lst(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def get_chan_data_lst(cls, WrapDB p1, int32_t p2, int32_t p3, WrapLST p4):
 
         try:
 
 
-            GetChanDataLST_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GetChanDataLST_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_chan_data_vv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def get_chan_data_vv(cls, WrapDB p1, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            GetChanDataVV_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GetChanDataVV_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def gradient(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11):
+    def gradient(cls, WrapDB p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, double p10, double p11):
 
         try:
 
 
-            Gradient_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            Gradient_DU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def grav_drift(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def grav_drift(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            GravDrift_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            GravDrift_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def grav_tide(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, int32_t p8):
+    def grav_tide(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, int32_t p8):
 
         try:
 
 
-            GravTide_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            GravTide_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def grid_load(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def grid_load(cls, WrapDB p1, WrapIMG p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            GridLoad_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            GridLoad_DU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def grid_load_xyz(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10):
+    def grid_load_xyz(cls, WrapDB p1, WrapIMG p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10):
 
         try:
 
 
-            GridLoadXYZ_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            GridLoadXYZ_DU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
 
     @classmethod
-    def head(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
+    def head(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, WrapTB p5, double p6):
 
         try:
 
 
-            Head_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            Head_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5.handle, &p6)
             
         finally:
             pass
 
     @classmethod
-    def import_bin3(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p6, double p7, int32_t p8):
+    def import_bin3(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, int32_t p6, double p7, WrapWA p8):
         cdef int32_t p5 = 4*16384
         cdef char* cp4 = NULL
 
@@ -37349,305 +37349,305 @@ cdef class WrapDU:
 
             strcpy(cp4, p4)
 
-            IImportBIN3_DU(get_p_geo(), &p1, p2, p3, cp4, &p5, &p6, &p7, &p8)
+            IImportBIN3_DU(get_p_geo(), &p1.handle, p2, p3, cp4, &p5, &p6, &p7, &p8.handle)
             return cp4
         finally:
             if cp4: free(cp4)
 
 
     @classmethod
-    def imp_cb_ply(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4, int32_t p5):
+    def imp_cb_ply(cls, WrapDB p1, WrapPJ p2, const char* p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            ImpCBPly_DU(get_p_geo(), &p1, &p2, p3, &p4, &p5)
+            ImpCBPly_DU(get_p_geo(), &p1.handle, &p2.handle, p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def import_ado(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5):
+    def import_ado(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            ImportADO_DU(get_p_geo(), &p1, p2, p3, p4, p5)
+            ImportADO_DU(get_p_geo(), &p1.handle, p2, p3, p4, p5)
             
         finally:
             pass
 
     @classmethod
-    def import_all_ado(cls, int32_t p1, const char* p2, int32_t p3):
+    def import_all_ado(cls, WrapDB p1, const char* p2, int32_t p3):
 
         try:
 
 
-            ImportAllADO_DU(get_p_geo(), &p1, p2, &p3)
+            ImportAllADO_DU(get_p_geo(), &p1.handle, p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def import_all_dao(cls, int32_t p1, const char* p2, const char* p3, int32_t p4):
+    def import_all_dao(cls, WrapDB p1, const char* p2, const char* p3, int32_t p4):
 
         try:
 
 
-            ImportAllDAO_DU(get_p_geo(), &p1, p2, p3, &p4)
+            ImportAllDAO_DU(get_p_geo(), &p1.handle, p2, p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def import_amira(cls, int32_t p1, int32_t p2, int32_t p3):
+    def import_amira(cls, WrapDB p1, WrapRA p2, WrapWA p3):
 
         try:
 
 
-            ImportAMIRA_DU(get_p_geo(), &p1, &p2, &p3)
+            ImportAMIRA_DU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def import_aseg(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6):
+    def import_aseg(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6):
 
         try:
 
 
-            ImportAseg_DU(get_p_geo(), &p1, p2, p3, p4, p5, &p6)
+            ImportAseg_DU(get_p_geo(), &p1.handle, p2, p3, p4, p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def import_aseg_proj(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6, const char* p7, const char* p8, const char* p9):
+    def import_aseg_proj(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6, const char* p7, const char* p8, const char* p9):
 
         try:
 
 
-            ImportAsegProj_DU(get_p_geo(), &p1, p2, p3, p4, p5, &p6, p7, p8, p9)
+            ImportAsegProj_DU(get_p_geo(), &p1.handle, p2, p3, p4, p5, &p6, p7, p8, p9)
             
         finally:
             pass
 
     @classmethod
-    def import_bin(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5, double p6):
+    def import_bin(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, int32_t p5, double p6):
 
         try:
 
 
-            ImportBIN_DU(get_p_geo(), &p1, p2, p3, p4, &p5, &p6)
+            ImportBIN_DU(get_p_geo(), &p1.handle, p2, p3, p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def import_bin2(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5, double p6, int32_t p7):
+    def import_bin2(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, int32_t p5, double p6, WrapWA p7):
 
         try:
 
 
-            ImportBIN2_DU(get_p_geo(), &p1, p2, p3, p4, &p5, &p6, &p7)
+            ImportBIN2_DU(get_p_geo(), &p1.handle, p2, p3, p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def import_bin4(cls, int32_t p1, int32_t p2, const char* p3, const char* p4, const char* p5, int32_t p6, double p7, int32_t p8):
+    def import_bin4(cls, WrapDB p1, int32_t p2, const char* p3, const char* p4, const char* p5, int32_t p6, double p7, WrapWA p8):
 
         try:
 
 
-            ImportBIN4_DU(get_p_geo(), &p1, &p2, p3, p4, p5, &p6, &p7, &p8)
+            ImportBIN4_DU(get_p_geo(), &p1.handle, &p2, p3, p4, p5, &p6, &p7, &p8.handle)
             
         finally:
             pass
 
     @classmethod
-    def import_daarc500_serial(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4, int32_t p5):
+    def import_daarc500_serial(cls, WrapDB p1, int32_t p2, const char* p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            ImportDAARC500Serial_DU(get_p_geo(), &p1, &p2, p3, &p4, &p5)
+            ImportDAARC500Serial_DU(get_p_geo(), &p1.handle, &p2, p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def import_daarc500_serial_gps(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4):
+    def import_daarc500_serial_gps(cls, WrapDB p1, int32_t p2, const char* p3, int32_t p4):
 
         try:
 
 
-            ImportDAARC500SerialGPS_DU(get_p_geo(), &p1, &p2, p3, &p4)
+            ImportDAARC500SerialGPS_DU(get_p_geo(), &p1.handle, &p2, p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def import_dao(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6):
+    def import_dao(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6):
 
         try:
 
 
-            ImportDAO_DU(get_p_geo(), &p1, p2, p3, p4, p5, p6)
+            ImportDAO_DU(get_p_geo(), &p1.handle, p2, p3, p4, p5, p6)
             
         finally:
             pass
 
     @classmethod
-    def import_esri(cls, int32_t p1, const char* p2, const char* p3, const char* p4):
+    def import_esri(cls, WrapDB p1, const char* p2, const char* p3, const char* p4):
 
         try:
 
 
-            ImportESRI_DU(get_p_geo(), &p1, p2, p3, p4)
+            ImportESRI_DU(get_p_geo(), &p1.handle, p2, p3, p4)
             
         finally:
             pass
 
     @classmethod
-    def import_gbn(cls, int32_t p1, const char* p2):
+    def import_gbn(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            ImportGBN_DU(get_p_geo(), &p1, p2)
+            ImportGBN_DU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def import_oddf(cls, int32_t p1, const char* p2):
+    def import_oddf(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            ImportODDF_DU(get_p_geo(), &p1, p2)
+            ImportODDF_DU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def import_pico(cls, int32_t p1, const char* p2, const char* p3, int32_t p4):
+    def import_pico(cls, WrapDB p1, const char* p2, const char* p3, int32_t p4):
 
         try:
 
 
-            ImportPico_DU(get_p_geo(), &p1, p2, p3, &p4)
+            ImportPico_DU(get_p_geo(), &p1.handle, p2, p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def import_ubc_mod_msh(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, double p5):
+    def import_ubc_mod_msh(cls, WrapDB p1, const char* p2, const char* p3, int32_t p4, double p5):
 
         try:
 
 
-            ImportUBCModMsh_DU(get_p_geo(), &p1, p2, p3, &p4, &p5)
+            ImportUBCModMsh_DU(get_p_geo(), &p1.handle, p2, p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def import_usgs_post(cls, int32_t p1, const char* p2):
+    def import_usgs_post(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            ImportUSGSPost_DU(get_p_geo(), &p1, p2)
+            ImportUSGSPost_DU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def import_xyz(cls, int32_t p1, int32_t p2, const char* p3, const char* p4):
+    def import_xyz(cls, WrapDB p1, int32_t p2, const char* p3, const char* p4):
 
         try:
 
 
-            ImportXYZ_DU(get_p_geo(), &p1, &p2, p3, p4)
+            ImportXYZ_DU(get_p_geo(), &p1.handle, &p2, p3, p4)
             
         finally:
             pass
 
     @classmethod
-    def import_xyz2(cls, int32_t p1, int32_t p2, const char* p3, const char* p4, int32_t p5):
+    def import_xyz2(cls, WrapDB p1, int32_t p2, const char* p3, const char* p4, WrapWA p5):
 
         try:
 
 
-            ImportXYZ2_DU(get_p_geo(), &p1, &p2, p3, p4, &p5)
+            ImportXYZ2_DU(get_p_geo(), &p1.handle, &p2, p3, p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def import_io_gas(cls, int32_t p1, const char* p2, const char* p3):
+    def import_io_gas(cls, WrapDB p1, const char* p2, const char* p3):
 
         try:
 
 
-            ImportIoGAS_DU(get_p_geo(), &p1, p2, p3)
+            ImportIoGAS_DU(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def index_order(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def index_order(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            IndexOrder_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            IndexOrder_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def interp(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def interp(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            Interp_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            Interp_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def interp_gap(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def interp_gap(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            InterpGap_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            InterpGap_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def intersect(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, const char* p6):
+    def intersect(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, const char* p6):
 
         try:
 
 
-            Intersect_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6)
+            Intersect_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6)
             
         finally:
             pass
 
     @classmethod
-    def intersect_all(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, const char* p6):
+    def intersect_all(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, const char* p6):
 
         try:
 
 
-            IntersectAll_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6)
+            IntersectAll_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6)
             
         finally:
             pass
@@ -37664,12 +37664,12 @@ cdef class WrapDU:
             pass
 
     @classmethod
-    def intersect_old(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
+    def intersect_old(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
 
         try:
 
 
-            IntersectOld_DU(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6)
+            IntersectOld_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, p5, p6)
             
         finally:
             pass
@@ -37697,276 +37697,276 @@ cdef class WrapDU:
             pass
 
     @classmethod
-    def load_gravity(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4):
+    def load_gravity(cls, WrapDB p1, WrapREG p2, int32_t p3, const char* p4):
 
         try:
 
 
-            LoadGravity_DU(get_p_geo(), &p1, &p2, &p3, p4)
+            LoadGravity_DU(get_p_geo(), &p1.handle, &p2.handle, &p3, p4)
             
         finally:
             pass
 
     @classmethod
-    def load_ltb(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def load_ltb(cls, WrapDB p1, int32_t p2, WrapLTB p3, int32_t p4):
 
         try:
 
 
-            LoadLTB_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            LoadLTB_DU(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def make_fid(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def make_fid(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            MakeFid_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            MakeFid_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def mask(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def mask(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            Mask_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            Mask_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def math(cls, int32_t p1, int32_t p2, int32_t p3):
+    def math(cls, WrapDB p1, int32_t p2, WrapEXP p3):
 
         try:
 
 
-            Math_DU(get_p_geo(), &p1, &p2, &p3)
+            Math_DU(get_p_geo(), &p1.handle, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def merge_line(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def merge_line(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            MergeLine_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            MergeLine_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def mod_fid_range(cls, int32_t p1, int32_t p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7):
+    def mod_fid_range(cls, WrapDB p1, int32_t p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            ModFidRange_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            ModFidRange_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def move(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def move(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            Move_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            Move_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def nl_filt(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
+    def nl_filt(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
 
         try:
 
 
-            NLFilt_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            NLFilt_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def normal(cls, int32_t p1, int32_t p2, int32_t p3):
+    def normal(cls, WrapDB p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            Normal_DU(get_p_geo(), &p1, &p2, &p3)
+            Normal_DU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def poly_fill(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def poly_fill(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapPLY p6, int32_t p7):
 
         try:
 
 
-            PolyFill_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            PolyFill_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6.handle, &p7)
             
         finally:
             pass
 
     @classmethod
-    def poly_mask(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def poly_mask(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapPLY p6, int32_t p7):
 
         try:
 
 
-            PolyMask_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            PolyMask_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6.handle, &p7)
             
         finally:
             pass
 
     @classmethod
-    def project_data(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def project_data(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, WrapPJ p7):
 
         try:
 
 
-            ProjectData_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            ProjectData_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def project_xyz(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def project_xyz(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, WrapPJ p9):
 
         try:
 
 
-            ProjectXYZ_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            ProjectXYZ_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9.handle)
             
         finally:
             pass
 
     @classmethod
-    def proj_points(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20):
+    def proj_points(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20):
 
         try:
 
 
-            ProjPoints_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20)
+            ProjPoints_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20)
             
         finally:
             pass
 
     @classmethod
-    def qc_init_separation(cls, int32_t p1, double p2, double p3):
+    def qc_init_separation(cls, WrapDB p1, double p2, double p3):
 
         try:
 
 
-            QCInitSeparation_DU(get_p_geo(), &p1, &p2, &p3)
+            QCInitSeparation_DU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def qc_survey_plan(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, int32_t p8, int32_t p9, double p10, double p11, double p12, double p13, int32_t p14, int32_t p15, int32_t p16, double p17, double p18):
+    def qc_survey_plan(cls, WrapDB p1, WrapWA p2, WrapPLY p3, double p4, double p5, double p6, double p7, int32_t p8, int32_t p9, double p10, double p11, double p12, double p13, int32_t p14, int32_t p15, int32_t p16, double p17, double p18):
 
         try:
 
 
-            _return_val = QCSurveyPlan_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
+            _return_val = QCSurveyPlan_DU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def direction(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def direction(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            _return_val = rDirection_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            _return_val = rDirection_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def re_fid(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9):
+    def re_fid(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9):
 
         try:
 
 
-            ReFid_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            ReFid_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def re_fid_all_ch(cls, int32_t p1, int32_t p2, int32_t p3):
+    def re_fid_all_ch(cls, WrapDB p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            ReFidAllCh_DU(get_p_geo(), &p1, &p2, &p3)
+            ReFidAllCh_DU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def re_fid_ch(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def re_fid_ch(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            ReFidCh_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            ReFidCh_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def rotate(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9):
+    def rotate(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9):
 
         try:
 
 
-            Rotate_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            Rotate_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def sample_gd(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def sample_gd(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapGD p6):
 
         try:
 
 
-            SampleGD_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            SampleGD_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def sample_img(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def sample_img(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, WrapIMG p6):
 
         try:
 
 
-            SampleIMG_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            SampleIMG_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def sample_img_line_lst(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def sample_img_line_lst(cls, WrapDB p1, WrapLST p2, int32_t p3, int32_t p4, int32_t p5, WrapIMG p6):
 
         try:
 
 
-            SampleIMGLineLST_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            SampleIMGLineLST_DU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
@@ -38016,331 +38016,331 @@ cdef class WrapDU:
             pass
 
     @classmethod
-    def sort(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def sort(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            Sort_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            Sort_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def sort_index(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def sort_index(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            SortIndex_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            SortIndex_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def sort_index2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def sort_index2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            SortIndex2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            SortIndex2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def split_line(cls, int32_t p1, int32_t p2, int32_t p3, double p4):
+    def split_line(cls, WrapDB p1, int32_t p2, int32_t p3, double p4):
 
         try:
 
 
-            SplitLine_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            SplitLine_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def split_line2(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5):
+    def split_line2(cls, WrapDB p1, int32_t p2, int32_t p3, double p4, int32_t p5):
 
         try:
 
 
-            SplitLine2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            SplitLine2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def split_line_xy(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10):
+    def split_line_xy(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10):
 
         try:
 
 
-            SplitLineXY_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            SplitLineXY_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             return p9
         finally:
             pass
 
     @classmethod
-    def split_line_xy2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
+    def split_line_xy2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
 
         try:
 
 
-            SplitLineXY2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            SplitLineXY2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             return p9
         finally:
             pass
 
     @classmethod
-    def split_line_xy3(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12):
+    def split_line_xy3(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12):
 
         try:
 
 
-            SplitLineXY3_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            SplitLineXY3_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
             return p9
         finally:
             pass
 
     @classmethod
-    def split_line_by_direction(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13):
+    def split_line_by_direction(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13):
 
         try:
 
 
-            SplitLineByDirection_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
+            SplitLineByDirection_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
             return p11
         finally:
             pass
 
     @classmethod
-    def split_line_by_direction2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def split_line_by_direction2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
 
         try:
 
 
-            SplitLineByDirection2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            SplitLineByDirection2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
             return p11
         finally:
             pass
 
     @classmethod
-    def stat(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def stat(cls, WrapDB p1, int32_t p2, int32_t p3, WrapST p4):
 
         try:
 
 
-            Stat_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            Stat_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def table_line_fid(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def table_line_fid(cls, WrapDB p1, int32_t p2, int32_t p3, WrapTB p4, int32_t p5):
 
         try:
 
 
-            TableLineFid_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            TableLineFid_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def table_selected_lines_fid(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def table_selected_lines_fid(cls, WrapDB p1, int32_t p2, int32_t p3, WrapTB p4, int32_t p5):
 
         try:
 
 
-            TableSelectedLinesFid_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            TableSelectedLinesFid_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def time_constant(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def time_constant(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            TimeConstant_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            TimeConstant_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def trend(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def trend(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            Trend_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Trend_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def update_intersect_db(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def update_intersect_db(cls, WrapDB p1, int32_t p2, int32_t p3, WrapDB p4):
 
         try:
 
 
-            UpdateIntersectDB_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            UpdateIntersectDB_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def voxel_section(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, double p7, double p8, int32_t p9):
+    def voxel_section(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, WrapVOX p5, const char* p6, double p7, double p8, int32_t p9):
 
         try:
 
 
-            VoxelSection_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, &p7, &p8, &p9)
+            VoxelSection_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5.handle, p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def write_wa(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def write_wa(cls, WrapDB p1, int32_t p2, WrapLST p3, WrapWA p4):
 
         try:
 
 
-            WriteWA_DU(get_p_geo(), &p1, &p2, &p3, &p4)
+            WriteWA_DU(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def xyz_line(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
+    def xyz_line(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6):
 
         try:
 
 
-            XyzLine_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            XyzLine_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def xyz_line2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7):
+    def xyz_line2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7):
 
         try:
 
 
-            XyzLine2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            XyzLine2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def xyz_line3(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8):
+    def xyz_line3(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8):
 
         try:
 
 
-            XyzLine3_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            XyzLine3_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def z_mask(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6):
+    def z_mask(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6):
 
         try:
 
 
-            ZMask_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            ZMask_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def range_xy(cls, int32_t p1, double p2, double p3, double p4, double p5):
+    def range_xy(cls, WrapDB p1, double p2, double p3, double p4, double p5):
 
         try:
 
 
-            RangeXY_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            RangeXY_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             return (p2, p3, p4, p5)
         finally:
             pass
 
     @classmethod
-    def range_xyz(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11):
+    def range_xyz(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11):
 
         try:
 
 
-            RangeXYZ_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            RangeXYZ_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             return (p5, p6, p7, p8, p9, p10, p11)
         finally:
             pass
 
     @classmethod
-    def range_xyz_data(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, int32_t p14):
+    def range_xyz_data(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9, double p10, double p11, double p12, double p13, int32_t p14):
 
         try:
 
 
-            RangeXYZData_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            RangeXYZData_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
             return (p6, p7, p8, p9, p10, p11, p12, p13, p14)
         finally:
             pass
 
     @classmethod
-    def create_drillhole_parameter_weight_constraint_database(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4):
+    def create_drillhole_parameter_weight_constraint_database(cls, WrapDB p1, int32_t p2, WrapREG p3, const char* p4):
 
         try:
 
 
-            CreateDrillholeParameterWeightConstraintDatabase_DU(get_p_geo(), &p1, &p2, &p3, p4)
+            CreateDrillholeParameterWeightConstraintDatabase_DU(get_p_geo(), &p1.handle, &p2, &p3.handle, p4)
             
         finally:
             pass
 
     @classmethod
-    def calculate_draped_survey_altitude(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, double p9, int32_t p10, double p11, double p12):
+    def calculate_draped_survey_altitude(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, WrapIMG p5, int32_t p6, double p7, double p8, double p9, int32_t p10, double p11, double p12):
 
         try:
 
 
-            CalculateDrapedSurveyAltitude_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            CalculateDrapedSurveyAltitude_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def calculate_draped_survey_altitude2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8, double p9, double p10, double p11, int32_t p12, double p13, double p14):
+    def calculate_draped_survey_altitude2(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, WrapIMG p5, int32_t p6, int32_t p7, double p8, double p9, double p10, double p11, int32_t p12, double p13, double p14):
 
         try:
 
 
-            CalculateDrapedSurveyAltitude2_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            CalculateDrapedSurveyAltitude2_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5.handle, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
             
         finally:
             pass
 
     @classmethod
-    def direct_grid_data_to_voxel(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, double p13, double p14, double p15, int32_t p16):
+    def direct_grid_data_to_voxel(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, double p13, double p14, double p15, int32_t p16):
 
         try:
 
 
-            DirectGridDataToVoxel_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            DirectGridDataToVoxel_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
             
         finally:
             pass
 
     @classmethod
-    def direct_grid_item_counts_to_voxel(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, double p13, double p14, double p15, int32_t p16):
+    def direct_grid_item_counts_to_voxel(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, double p13, double p14, double p15, int32_t p16):
 
         try:
 
 
-            DirectGridItemCountsToVoxel_DU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            DirectGridItemCountsToVoxel_DU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
             
         finally:
             pass
@@ -38379,23 +38379,23 @@ cdef class WrapDXFI:
 
 
     @classmethod
-    def dxf2_ply(cls, int32_t p1, int32_t p2):
+    def dxf2_ply(cls, WrapPLY p1, WrapDXFI p2):
 
         try:
 
 
-            DXF2PLY_DXFI(get_p_geo(), &p1, &p2)
+            DXF2PLY_DXFI(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def dxf2_view_ex(self, int32_t p2, int32_t p3, int32_t p4, const char* p5, int32_t p6, int32_t p7):
+    def dxf2_view_ex(self, WrapMVIEW p2, int32_t p3, int32_t p4, const char* p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            DXF2ViewEx_DXFI(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7)
+            DXF2ViewEx_DXFI(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, p5, &p6, &p7)
             
         finally:
             pass
@@ -38625,12 +38625,12 @@ cdef class WrapEDB:
             pass
 
 
-    def get_profile_split_vv(self, int32_t p2):
+    def get_profile_split_vv(self, WrapVV p2):
 
         try:
 
 
-            App_GetProfileSplitVV_EDB(get_p_geo(), &self.handle, &p2)
+            App_GetProfileSplitVV_EDB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -38691,23 +38691,23 @@ cdef class WrapEDB:
             pass
 
 
-    def histogram(self, int32_t p2, double p3, double p4, int32_t p5):
+    def histogram(self, WrapST p2, double p3, double p4, int32_t p5):
 
         try:
 
 
-            App_Histogram_EDB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            App_Histogram_EDB(get_p_geo(), &self.handle, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
 
 
-    def all_chan_list(self, int32_t p2):
+    def all_chan_list(self, WrapVV p2):
 
         try:
 
 
-            _return_val = App_iAllChanList_EDB(get_p_geo(), &self.handle, &p2)
+            _return_val = App_iAllChanList_EDB(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -38724,34 +38724,34 @@ cdef class WrapEDB:
             pass
 
 
-    def disp_chan_list(self, int32_t p2):
+    def disp_chan_list(self, WrapVV p2):
 
         try:
 
 
-            _return_val = App_iDispChanList_EDB(get_p_geo(), &self.handle, &p2)
+            _return_val = App_iDispChanList_EDB(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
 
 
-    def disp_chan_lst(self, int32_t p2):
+    def disp_chan_lst(self, WrapLST p2):
 
         try:
 
 
-            _return_val = App_iDispChanLST_EDB(get_p_geo(), &self.handle, &p2)
+            _return_val = App_iDispChanLST_EDB(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
 
 
-    def disp_class_chan_lst(self, int32_t p2, const char* p3):
+    def disp_class_chan_lst(self, WrapLST p2, const char* p3):
 
         try:
 
 
-            _return_val = App_iDispClassChanLST_EDB(get_p_geo(), &self.handle, &p2, p3)
+            _return_val = App_iDispClassChanLST_EDB(get_p_geo(), &self.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
@@ -38768,12 +38768,12 @@ cdef class WrapEDB:
             pass
 
 
-    def find_nearest(self, double p2, double p3, double p4, int32_t p5):
+    def find_nearest(self, double p2, double p3, double p4, WrapIPJ p5):
 
         try:
 
 
-            _return_val = App_iFindNearest_EDB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            _return_val = App_iFindNearest_EDB(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5.handle)
             return (_return_val, p2, p3, p4)
         finally:
             pass
@@ -38869,34 +38869,34 @@ cdef class WrapEDB:
 
 
     @classmethod
-    def get_databases_lst(cls, int32_t p1, int32_t p2):
+    def get_databases_lst(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            _return_val = App_iGetDatabasesLST_EDB(get_p_geo(), &p1, &p2)
+            _return_val = App_iGetDatabasesLST_EDB(get_p_geo(), &p1.handle, &p2)
             return _return_val
         finally:
             pass
 
 
-    def get_mark_chan_vv(self, int32_t p2, int32_t p3):
+    def get_mark_chan_vv(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            _return_val = App_iGetMarkChanVV_EDB(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = App_iGetMarkChanVV_EDB(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
 
 
-    def get_mark_chan_va(self, int32_t p2, int32_t p3):
+    def get_mark_chan_va(self, WrapVA p2, int32_t p3):
 
         try:
 
 
-            _return_val = App_iGetMarkChanVA_EDB(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = App_iGetMarkChanVA_EDB(get_p_geo(), &self.handle, &p2.handle, &p3)
             return _return_val
         finally:
             pass
@@ -39138,12 +39138,12 @@ cdef class WrapEDB:
             pass
 
     @classmethod
-    def load_with_view(cls, const char* p1, int32_t p2):
+    def load_with_view(cls, const char* p1, WrapEDB p2):
 
         try:
 
 
-            _return_val = WrapEDB(App_LoadWithView_EDB(get_p_geo(), p1, &p2))
+            _return_val = WrapEDB(App_LoadWithView_EDB(get_p_geo(), p1, &p2.handle))
             return _return_val
         finally:
             pass
@@ -39336,12 +39336,12 @@ cdef class WrapEDB:
             pass
 
 
-    def set_profile_split_vv(self, int32_t p2):
+    def set_profile_split_vv(self, WrapVV p2):
 
         try:
 
 
-            App_SetProfileSplitVV_EDB(get_p_geo(), &self.handle, &p2)
+            App_SetProfileSplitVV_EDB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -39380,12 +39380,12 @@ cdef class WrapEDB:
             pass
 
 
-    def statistics(self, int32_t p2):
+    def statistics(self, WrapST p2):
 
         try:
 
 
-            App_Statistics_EDB(get_p_geo(), &self.handle, &p2)
+            App_Statistics_EDB(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -39506,12 +39506,12 @@ cdef class WrapEDB:
             pass
 
     @classmethod
-    def load_with_view_control(cls, const char* p1, int32_t p2, HWND p3):
+    def load_with_view_control(cls, const char* p1, WrapEDB p2, HWND p3):
 
         try:
 
 
-            App_LoadWithViewControl_EDB(get_p_geo(), p1, &p2, p3)
+            App_LoadWithViewControl_EDB(get_p_geo(), p1, &p2.handle, p3)
             
         finally:
             pass
@@ -39593,12 +39593,12 @@ cdef class WrapEDOC:
 
 
     @classmethod
-    def get_documents_lst(cls, int32_t p1, int32_t p2, int32_t p3):
+    def get_documents_lst(cls, WrapLST p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            _return_val = App_iGetDocumentsLST_EDOC(get_p_geo(), &p1, &p2, &p3)
+            _return_val = App_iGetDocumentsLST_EDOC(get_p_geo(), &p1.handle, &p2, &p3)
             return _return_val
         finally:
             pass
@@ -40086,12 +40086,12 @@ cdef class WrapEMAP:
             pass
 
 
-    def font_lst(self, int32_t p2, int32_t p3):
+    def font_lst(self, WrapLST p2, int32_t p3):
 
         try:
 
 
-            App_FontLST_EMAP(get_p_geo(), &self.handle, &p2, &p3)
+            App_FontLST_EMAP(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -40108,12 +40108,12 @@ cdef class WrapEMAP:
             pass
 
 
-    def create_group_snapshot(self, int32_t p2):
+    def create_group_snapshot(self, WrapLST p2):
 
         try:
 
 
-            _return_val = App_iCreateGroupSnapshot_EMAP(get_p_geo(), &self.handle, &p2)
+            _return_val = App_iCreateGroupSnapshot_EMAP(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -40167,12 +40167,12 @@ cdef class WrapEMAP:
 
 
     @classmethod
-    def get_maps_lst(cls, int32_t p1, int32_t p2):
+    def get_maps_lst(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            _return_val = App_iGetMapsLST_EMAP(get_p_geo(), &p1, &p2)
+            _return_val = App_iGetMapsLST_EMAP(get_p_geo(), &p1.handle, &p2)
             return _return_val
         finally:
             pass
@@ -40320,12 +40320,12 @@ cdef class WrapEMAP:
             pass
 
 
-    def doubleize_group_snapshot(self, int32_t p2):
+    def doubleize_group_snapshot(self, WrapLST p2):
 
         try:
 
 
-            _return_val = App_iRealizeGroupSnapshot_EMAP(get_p_geo(), &self.handle, &p2)
+            _return_val = App_iRealizeGroupSnapshot_EMAP(get_p_geo(), &self.handle, &p2.handle)
             return _return_val
         finally:
             pass
@@ -40342,12 +40342,12 @@ cdef class WrapEMAP:
             pass
 
 
-    def get_view_ipj(self, const char* p2, int32_t p3):
+    def get_view_ipj(self, const char* p2, WrapIPJ p3):
 
         try:
 
 
-            App_GetViewIPJ_EMAP(get_p_geo(), &self.handle, p2, &p3)
+            App_GetViewIPJ_EMAP(get_p_geo(), &self.handle, p2, &p3.handle)
             
         finally:
             pass
@@ -40375,12 +40375,12 @@ cdef class WrapEMAP:
             pass
 
     @classmethod
-    def load_with_view(cls, const char* p1, int32_t p2):
+    def load_with_view(cls, const char* p1, WrapEMAP p2):
 
         try:
 
 
-            _return_val = WrapEMAP(App_LoadWithView_EMAP(get_p_geo(), p1, &p2))
+            _return_val = WrapEMAP(App_LoadWithView_EMAP(get_p_geo(), p1, &p2.handle))
             return _return_val
         finally:
             pass
@@ -40545,45 +40545,45 @@ cdef class WrapEMAP:
             pass
 
 
-    def digitize(self, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6, const char* p7, int32_t p8):
+    def digitize(self, WrapWA p2, WrapIMG p3, int32_t p4, const char* p5, const char* p6, const char* p7, int32_t p8):
 
         try:
 
 
-            _return_val = App_iDigitize_EMAP(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, p6, p7, &p8)
+            _return_val = App_iDigitize_EMAP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, p5, p6, p7, &p8)
             return _return_val
         finally:
             pass
 
 
-    def digitize2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, int32_t p7):
+    def digitize2(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapIMG p5, const char* p6, int32_t p7):
 
         try:
 
 
-            _return_val = App_iDigitize2_EMAP(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, p6, &p7)
+            _return_val = App_iDigitize2_EMAP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, p6, &p7)
             return _return_val
         finally:
             pass
 
 
-    def digitize_peaks(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, int32_t p7):
+    def digitize_peaks(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapIMG p5, const char* p6, int32_t p7):
 
         try:
 
 
-            _return_val = App_iDigitizePeaks_EMAP(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, p6, &p7)
+            _return_val = App_iDigitizePeaks_EMAP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, p6, &p7)
             return _return_val
         finally:
             pass
 
 
-    def digitize_polygon(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, int32_t p7, int32_t p8):
+    def digitize_polygon(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapIMG p5, const char* p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            _return_val = App_iDigitizePolygon_EMAP(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, p6, &p7, &p8)
+            _return_val = App_iDigitizePolygon_EMAP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, p6, &p7, &p8)
             return _return_val
         finally:
             pass
@@ -40688,23 +40688,23 @@ cdef class WrapEMAP:
             pass
 
 
-    def get_poly_line(self, const char* p2, int32_t p3, int32_t p4):
+    def get_poly_line(self, const char* p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            _return_val = App_iGetPolyLine_EMAP(get_p_geo(), &self.handle, p2, &p3, &p4)
+            _return_val = App_iGetPolyLine_EMAP(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle)
             return _return_val
         finally:
             pass
 
 
-    def get_poly_line_xyz(self, const char* p2, int32_t p3, int32_t p4, int32_t p5):
+    def get_poly_line_xyz(self, const char* p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            _return_val = App_iGetPolyLineXYZ_EMAP(get_p_geo(), &self.handle, p2, &p3, &p4, &p5)
+            _return_val = App_iGetPolyLineXYZ_EMAP(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle)
             return _return_val
         finally:
             pass
@@ -40775,12 +40775,12 @@ cdef class WrapEMAP:
 
 
 
-    def get_selected_vertices(self, int32_t p2, int32_t p3):
+    def get_selected_vertices(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            App_GetSelectedVertices_EMAP(get_p_geo(), &self.handle, &p2, &p3)
+            App_GetSelectedVertices_EMAP(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -40818,12 +40818,12 @@ cdef class WrapEMAP:
             pass
 
     @classmethod
-    def load_with_view_control(cls, const char* p1, int32_t p2, HWND p3):
+    def load_with_view_control(cls, const char* p1, WrapEMAP p2, HWND p3):
 
         try:
 
 
-            App_LoadWithViewControl_EMAP(get_p_geo(), p1, &p2, p3)
+            App_LoadWithViewControl_EMAP(get_p_geo(), p1, &p2.handle, p3)
             
         finally:
             pass
@@ -40916,12 +40916,12 @@ cdef class WrapEMAPTEMPLATE:
 
 
     @classmethod
-    def get_map_templates_lst(cls, int32_t p1, int32_t p2):
+    def get_map_templates_lst(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            _return_val = App_iGetMapTemplatesLST_EMAPTEMPLATE(get_p_geo(), &p1, &p2)
+            _return_val = App_iGetMapTemplatesLST_EMAPTEMPLATE(get_p_geo(), &p1.handle, &p2)
             return _return_val
         finally:
             pass
@@ -41324,23 +41324,23 @@ cdef class WrapEUL3:
             pass
 
     @classmethod
-    def creat(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, int32_t p9, double p10, double p11):
+    def creat(cls, WrapIMG p1, WrapIMG p2, WrapIMG p3, WrapIMG p4, int32_t p5, double p6, double p7, double p8, int32_t p9, double p10, double p11):
 
         try:
 
 
-            _return_val = WrapEUL3(Creat_EUL3(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11))
+            _return_val = WrapEUL3(Creat_EUL3(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8, &p9, &p10, &p11))
             return _return_val
         finally:
             pass
 
 
-    def get_result(self, int32_t p2, int32_t p3):
+    def get_result(self, WrapVV p2, int32_t p3):
 
         try:
 
 
-            GetResult_EUL3(get_p_geo(), &self.handle, &p2, &p3)
+            GetResult_EUL3(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
@@ -41357,23 +41357,23 @@ cdef class WrapEUL3:
             pass
 
     @classmethod
-    def ex_euler_derive(cls, int32_t p1, double p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def ex_euler_derive(cls, WrapVV p1, double p2, WrapVV p3, int32_t p4, WrapVV p5, WrapVV p6, int32_t p7):
 
         try:
 
 
-            _return_val = ExEulerDerive_EUL3(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            _return_val = ExEulerDerive_EUL3(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4, &p5.handle, &p6.handle, &p7)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def ex_euler_calc(cls, int32_t p1, double p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20):
+    def ex_euler_calc(cls, int32_t p1, double p2, int32_t p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, WrapVV p12, WrapVV p13, WrapVV p14, WrapVV p15, int32_t p16, WrapVV p17, WrapVV p18, WrapVV p19, WrapVV p20):
 
         try:
 
 
-            _return_val = ExEulerCalc_EUL3(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20)
+            _return_val = ExEulerCalc_EUL3(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12.handle, &p13.handle, &p14.handle, &p15.handle, &p16, &p17.handle, &p18.handle, &p19.handle, &p20.handle)
             return _return_val
         finally:
             pass
@@ -41399,23 +41399,23 @@ cdef class WrapEXP:
 
 
     @classmethod
-    def create(cls, int32_t p1, const char* p2, int32_t p3):
+    def create(cls, WrapDB p1, const char* p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapEXP(Create_EXP(get_p_geo(), &p1, p2, &p3))
+            _return_val = WrapEXP(Create_EXP(get_p_geo(), &p1.handle, p2, &p3))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_file(cls, int32_t p1, const char* p2):
+    def create_file(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            _return_val = WrapEXP(CreateFile_EXP(get_p_geo(), &p1, p2))
+            _return_val = WrapEXP(CreateFile_EXP(get_p_geo(), &p1.handle, p2))
             return _return_val
         finally:
             pass
@@ -41520,45 +41520,45 @@ cdef class WrapFFT:
             pass
 
     @classmethod
-    def create(cls, int32_t p1, double p2, int32_t p3):
+    def create(cls, WrapVV p1, double p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapFFT(Create_FFT(get_p_geo(), &p1, &p2, &p3))
+            _return_val = WrapFFT(Create_FFT(get_p_geo(), &p1.handle, &p2, &p3))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_ex(cls, int32_t p1, double p2, int32_t p3, double p4):
+    def create_ex(cls, WrapVV p1, double p2, int32_t p3, double p4):
 
         try:
 
 
-            _return_val = WrapFFT(CreateEx_FFT(get_p_geo(), &p1, &p2, &p3, &p4))
+            _return_val = WrapFFT(CreateEx_FFT(get_p_geo(), &p1.handle, &p2, &p3, &p4))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_ref(cls, int32_t p1, double p2, int32_t p3):
+    def create_ref(cls, WrapVV p1, double p2, int32_t p3):
 
         try:
 
 
-            _return_val = WrapFFT(CreateRef_FFT(get_p_geo(), &p1, &p2, &p3))
+            _return_val = WrapFFT(CreateRef_FFT(get_p_geo(), &p1.handle, &p2, &p3))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_ref_ex(cls, int32_t p1, double p2, int32_t p3, double p4, double p5):
+    def create_ref_ex(cls, WrapVV p1, double p2, int32_t p3, double p4, double p5):
 
         try:
 
 
-            _return_val = WrapFFT(CreateRefEx_FFT(get_p_geo(), &p1, &p2, &p3, &p4, &p5))
+            _return_val = WrapFFT(CreateRefEx_FFT(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5))
             return _return_val
         finally:
             pass
@@ -41577,12 +41577,12 @@ cdef class WrapFFT:
             pass
 
 
-    def get_vv(self, int32_t p2, int32_t p3):
+    def get_vv(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            GetVV_FFT(get_p_geo(), &self.handle, &p2, &p3)
+            GetVV_FFT(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -41621,12 +41621,12 @@ cdef class WrapFFT:
             pass
 
 
-    def inverse(self, int32_t p2, int32_t p3):
+    def inverse(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            Inverse_FFT(get_p_geo(), &self.handle, &p2, &p3)
+            Inverse_FFT(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -41687,23 +41687,23 @@ cdef class WrapFFT:
             pass
 
 
-    def set_vv(self, int32_t p2, int32_t p3):
+    def set_vv(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            SetVV_FFT(get_p_geo(), &self.handle, &p2, &p3)
+            SetVV_FFT(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def spectrum(self, int32_t p2):
+    def spectrum(self, WrapVV p2):
 
         try:
 
 
-            Spectrum_FFT(get_p_geo(), &self.handle, &p2)
+            Spectrum_FFT(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -41731,12 +41731,12 @@ cdef class WrapFFT:
             pass
 
 
-    def write_spectrum(self, int32_t p2, const char* p3):
+    def write_spectrum(self, WrapVV p2, const char* p3):
 
         try:
 
 
-            WriteSpectrum_FFT(get_p_geo(), &self.handle, &p2, p3)
+            WriteSpectrum_FFT(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -41752,111 +41752,111 @@ cdef class WrapFFT2:
 
 
     @classmethod
-    def fft2_in(cls, int32_t p1, const char* p2, const char* p3):
+    def fft2_in(cls, WrapIMG p1, const char* p2, const char* p3):
 
         try:
 
 
-            Fft2In_FFT2(get_p_geo(), &p1, p2, p3)
+            Fft2In_FFT2(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def filter_pg(cls, int32_t p1, const char* p2, int32_t p3, double p4, double p5, double p6):
+    def filter_pg(cls, WrapPG p1, const char* p2, WrapTR p3, double p4, double p5, double p6):
 
         try:
 
 
-            FilterPG_FFT2(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6)
+            FilterPG_FFT2(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def flt(cls, int32_t p1, const char* p2, const char* p3):
+    def flt(cls, WrapIMG p1, const char* p2, const char* p3):
 
         try:
 
 
-            Flt_FFT2(get_p_geo(), &p1, p2, p3)
+            Flt_FFT2(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def flt_inv(cls, int32_t p1, const char* p2, const char* p3):
+    def flt_inv(cls, WrapIMG p1, const char* p2, const char* p3):
 
         try:
 
 
-            FltInv_FFT2(get_p_geo(), &p1, p2, p3)
+            FltInv_FFT2(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def pow_spc(cls, int32_t p1, const char* p2):
+    def pow_spc(cls, WrapIMG p1, const char* p2):
 
         try:
 
 
-            PowSpc_FFT2(get_p_geo(), &p1, p2)
+            PowSpc_FFT2(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def rad_spc(cls, int32_t p1, const char* p2):
+    def rad_spc(cls, WrapIMG p1, const char* p2):
 
         try:
 
 
-            RadSpc_FFT2(get_p_geo(), &p1, p2)
+            RadSpc_FFT2(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def rad_spc1(cls, int32_t p1, int32_t p2):
+    def rad_spc1(cls, WrapIMG p1, WrapVV p2):
 
         try:
 
 
-            RadSpc1_FFT2(get_p_geo(), &p1, &p2)
+            RadSpc1_FFT2(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def rad_spc2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def rad_spc2(cls, WrapIMG p1, WrapIMG p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            RadSpc2_FFT2(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            RadSpc2_FFT2(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def td_xd_y(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4):
+    def td_xd_y(cls, WrapIMG p1, WrapIMG p2, const char* p3, int32_t p4):
 
         try:
 
 
-            TdXdY_FFT2(get_p_geo(), &p1, &p2, p3, &p4)
+            TdXdY_FFT2(get_p_geo(), &p1.handle, &p2.handle, p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def trans_pg(cls, int32_t p1, int32_t p2):
+    def trans_pg(cls, WrapPG p1, int32_t p2):
 
         try:
 
 
-            TransPG_FFT2(get_p_geo(), &p1, &p2)
+            TransPG_FFT2(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
@@ -42053,166 +42053,166 @@ cdef class WrapGU:
             pass
 
     @classmethod
-    def em_half_space_inv(cls, double p1, double p2, int32_t p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, double p12):
+    def em_half_space_inv(cls, double p1, double p2, int32_t p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10, int32_t p11, double p12):
 
         try:
 
 
-            EMHalfSpaceInv_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            EMHalfSpaceInv_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10, &p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def em_half_space_vv(cls, double p1, double p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def em_half_space_vv(cls, double p1, double p2, int32_t p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            EMHalfSpaceVV_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            EMHalfSpaceVV_GU(get_p_geo(), &p1, &p2, &p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def geometrics2_db(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8, double p9, double p10, double p11):
+    def geometrics2_db(cls, WrapDB p1, WrapRA p2, WrapWA p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8, double p9, double p10, double p11):
 
         try:
 
 
-            Geometrics2DB_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            Geometrics2DB_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def geometrics2_tbl(cls, int32_t p1, int32_t p2, int32_t p3):
+    def geometrics2_tbl(cls, WrapRA p1, WrapWA p2, WrapWA p3):
 
         try:
 
 
-            Geometrics2TBL_GU(get_p_geo(), &p1, &p2, &p3)
+            Geometrics2TBL_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def geometrics_qc(cls, int32_t p1, const char* p2, int32_t p3, double p4, double p5, double p6, int32_t p7, int32_t p8):
+    def geometrics_qc(cls, WrapWA p1, const char* p2, WrapVV p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8):
 
         try:
 
 
-            GeometricsQC_GU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            GeometricsQC_GU(get_p_geo(), &p1.handle, p2, &p3.handle, &p4, &p5, &p6, &p7.handle, &p8.handle)
             
         finally:
             pass
 
     @classmethod
-    def geonics3138_dump2_db(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6):
+    def geonics3138_dump2_db(cls, WrapDB p1, WrapRA p2, WrapRA p3, WrapWA p4, double p5, double p6):
 
         try:
 
 
-            Geonics3138Dump2DB_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            Geonics3138Dump2DB_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def geonics61_dump2_db(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5):
+    def geonics61_dump2_db(cls, WrapDB p1, WrapRA p2, WrapWA p3, double p4, double p5):
 
         try:
 
 
-            Geonics61Dump2DB_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Geonics61Dump2DB_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def geonics_dat2_db(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5):
+    def geonics_dat2_db(cls, WrapDB p1, WrapRA p2, WrapWA p3, double p4, double p5):
 
         try:
 
 
-            GeonicsDAT2DB_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            GeonicsDAT2DB_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def gr_curv_cor(cls, int32_t p1, int32_t p2, int32_t p3):
+    def gr_curv_cor(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            GrCurvCor_GU(get_p_geo(), &p1, &p2, &p3)
+            GrCurvCor_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def gr_curv_cor_ex(cls, int32_t p1, int32_t p2, int32_t p3, double p4):
+    def gr_curv_cor_ex(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4):
 
         try:
 
 
-            GrCurvCorEx_GU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GrCurvCorEx_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def gr_demvv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def gr_demvv(cls, WrapIMG p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GrDEMVV_GU(get_p_geo(), &p1, &p2, &p3, &p4)
+            GrDEMVV_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def gr_test(cls, double p1, double p2, double p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def gr_test(cls, double p1, double p2, double p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9):
 
         try:
 
 
-            GrTest_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            GrTest_GU(get_p_geo(), &p1, &p2, &p3, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle)
             
         finally:
             pass
 
     @classmethod
-    def gravity_still_reading_correction(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, int32_t p6):
+    def gravity_still_reading_correction(cls, WrapDB p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, int32_t p6):
 
         try:
 
 
-            GravityStillReadingCorrection_GU(get_p_geo(), &p1, &p2, &p3, &p4, p5, &p6)
+            GravityStillReadingCorrection_GU(get_p_geo(), &p1.handle, &p2, &p3, &p4, p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def em_layer(cls, double p1, double p2, double p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8, double p9):
+    def em_layer(cls, double p1, double p2, double p3, int32_t p4, int32_t p5, WrapVV p6, WrapVV p7, double p8, double p9):
 
         try:
 
 
-            _return_val = iEMLayer_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            _return_val = iEMLayer_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8, &p9)
             return (_return_val, p8, p9)
         finally:
             pass
 
     @classmethod
-    def em_plate(cls, double p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, int32_t p10, int32_t p11, int32_t p12, double p13, double p14, double p15, int32_t p16, int32_t p17, int32_t p18, int32_t p19, int32_t p20, int32_t p21):
+    def em_plate(cls, double p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, int32_t p10, WrapVV p11, int32_t p12, double p13, double p14, double p15, WrapVV p16, WrapVV p17, WrapVV p18, WrapVV p19, WrapVV p20, WrapVV p21):
 
         try:
 
 
-            _return_val = iEMPlate_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16, &p17, &p18, &p19, &p20, &p21)
+            _return_val = iEMPlate_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11.handle, &p12, &p13, &p14, &p15, &p16.handle, &p17.handle, &p18.handle, &p19.handle, &p20.handle, &p21.handle)
             return _return_val
         finally:
             pass
@@ -42256,23 +42256,23 @@ cdef class WrapGU:
             pass
 
     @classmethod
-    def import_p190(cls, int32_t p1, const char* p2, const char* p3, int32_t p4):
+    def import_p190(cls, WrapDB p1, const char* p2, const char* p3, WrapWA p4):
 
         try:
 
 
-            ImportP190_GU(get_p_geo(), &p1, p2, p3, &p4)
+            ImportP190_GU(get_p_geo(), &p1.handle, p2, p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def lag_daarc500_gps(cls, int32_t p1, int32_t p2, int32_t p3):
+    def lag_daarc500_gps(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            LagDAARC500GPS_GU(get_p_geo(), &p1, &p2, &p3)
+            LagDAARC500GPS_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -42300,34 +42300,34 @@ cdef class WrapGU:
             pass
 
     @classmethod
-    def scan_daarc500_serial(cls, const char* p1, int32_t p2, int32_t p3):
+    def scan_daarc500_serial(cls, const char* p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            ScanDAARC500Serial_GU(get_p_geo(), p1, &p2, &p3)
+            ScanDAARC500Serial_GU(get_p_geo(), p1, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def vv_euler(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, double p14, double p15, int32_t p16):
+    def vv_euler(cls, WrapVV p1, WrapVV p2, WrapIMG p3, WrapIMG p4, WrapIMG p5, WrapIMG p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapVV p10, WrapVV p11, WrapVV p12, int32_t p13, double p14, double p15, int32_t p16):
 
         try:
 
 
-            VVEuler_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            VVEuler_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10.handle, &p11.handle, &p12.handle, &p13, &p14, &p15, &p16)
             
         finally:
             pass
 
     @classmethod
-    def vv_euler2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, double p14, double p15, int32_t p16):
+    def vv_euler2(cls, WrapVV p1, WrapVV p2, WrapIMG p3, WrapIMG p4, WrapIMG p5, WrapIMG p6, WrapVV p7, WrapVV p8, WrapVV p9, WrapVV p10, WrapVV p11, WrapVV p12, WrapVV p13, double p14, double p15, int32_t p16):
 
         try:
 
 
-            VVEuler2_GU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            VVEuler2_GU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle, &p10.handle, &p11.handle, &p12.handle, &p13.handle, &p14, &p15, &p16)
             
         finally:
             pass
@@ -42376,12 +42376,12 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def get_printer_lst(cls, int32_t p1):
+    def get_printer_lst(cls, WrapLST p1):
 
         try:
 
 
-            App_GetPrinterLST_GUI(get_p_geo(), &p1)
+            App_GetPrinterLST_GUI(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -42475,45 +42475,45 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def color_transform(cls, int32_t p1, int32_t p2):
+    def color_transform(cls, WrapITR p1, WrapST p2):
 
         try:
 
 
-            _return_val = App_iColorTransform_GUI(get_p_geo(), &p1, &p2)
+            _return_val = App_iColorTransform_GUI(get_p_geo(), &p1.handle, &p2.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def coord_sys_wizard(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5):
+    def coord_sys_wizard(cls, WrapIPJ p1, int32_t p2, int32_t p3, const char* p4, const char* p5):
 
         try:
 
 
-            _return_val = App_iCoordSysWizard_GUI(get_p_geo(), &p1, &p2, &p3, p4, p5)
+            _return_val = App_iCoordSysWizard_GUI(get_p_geo(), &p1.handle, &p2, &p3, p4, p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def coord_sys_wizard_licensed(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5):
+    def coord_sys_wizard_licensed(cls, WrapIPJ p1, int32_t p2, int32_t p3, const char* p4, const char* p5):
 
         try:
 
 
-            _return_val = App_iCoordSysWizardLicensed_GUI(get_p_geo(), &p1, &p2, &p3, p4, p5)
+            _return_val = App_iCoordSysWizardLicensed_GUI(get_p_geo(), &p1.handle, &p2, &p3, p4, p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def coord_sys_wizard_grid(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6, int32_t p7, int32_t p8, double p9, double p10, double p11, double p12, double p13):
+    def coord_sys_wizard_grid(cls, WrapIPJ p1, WrapIPJ p2, int32_t p3, int32_t p4, const char* p5, const char* p6, int32_t p7, int32_t p8, double p9, double p10, double p11, double p12, double p13):
 
         try:
 
 
-            _return_val = App_iCoordSysWizardGrid_GUI(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
+            _return_val = App_iCoordSysWizardGrid_GUI(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13)
             return (_return_val, p9, p10, p11, p12, p13)
         finally:
             pass
@@ -42546,18 +42546,18 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def export_xyz_template_editor(cls, int32_t p1, const char* p2, int32_t p3):
+    def export_xyz_template_editor(cls, WrapDB p1, const char* p2, int32_t p3):
 
         try:
 
 
-            _return_val = App_iExportXYZTemplateEditor_GUI(get_p_geo(), &p1, p2, &p3)
+            _return_val = App_iExportXYZTemplateEditor_GUI(get_p_geo(), &p1.handle, p2, &p3)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def export_xyz_template_editor_ex(cls, int32_t p1, const char* p2):
+    def export_xyz_template_editor_ex(cls, WrapEDB p1, const char* p2):
         cdef int32_t p3 = 4*1040
         cdef char* cp2 = NULL
 
@@ -42566,7 +42566,7 @@ cdef class WrapGUI:
 
             strcpy(cp2, p2)
 
-            _return_val = App_iExportXYZTemplateEditorEx_GUI(get_p_geo(), &p1, cp2, &p3)
+            _return_val = App_iExportXYZTemplateEditorEx_GUI(get_p_geo(), &p1.handle, cp2, &p3)
             return (_return_val, cp2)
         finally:
             if cp2: free(cp2)
@@ -42584,56 +42584,56 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def gcs_datum_warning_shp(cls, const char* p1, int32_t p2):
+    def gcs_datum_warning_shp(cls, const char* p1, WrapIPJ p2):
 
         try:
 
 
-            _return_val = iGCSDatumWarningSHP_GUI(get_p_geo(), p1, &p2)
+            _return_val = iGCSDatumWarningSHP_GUI(get_p_geo(), p1, &p2.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def gcs_datum_warning_shpdb_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def gcs_datum_warning_shpdb_ex(cls, WrapLST p1, WrapLST p2, WrapLST p3, WrapDB p4):
 
         try:
 
 
-            _return_val = iGCSDatumWarningSHPDBEx_GUI(get_p_geo(), &p1, &p2, &p3, &p4)
+            _return_val = iGCSDatumWarningSHPDBEx_GUI(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def gcs_datum_warning_shp_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def gcs_datum_warning_shp_ex(cls, WrapLST p1, WrapLST p2, WrapLST p3, WrapMVIEW p4):
 
         try:
 
 
-            _return_val = iGCSDatumWarningSHPEx_GUI(get_p_geo(), &p1, &p2, &p3, &p4)
+            _return_val = iGCSDatumWarningSHPEx_GUI(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def get_area_of_interest(cls, double p1, double p2, double p3, double p4, int32_t p5, int32_t p6):
+    def get_area_of_interest(cls, double p1, double p2, double p3, double p4, WrapPLY p5, WrapIPJ p6):
 
         try:
 
 
-            _return_val = App_iGetAreaOfInterest_GUI(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            _return_val = App_iGetAreaOfInterest_GUI(get_p_geo(), &p1, &p2, &p3, &p4, &p5.handle, &p6.handle)
             return (_return_val, p1, p2, p3, p4)
         finally:
             pass
 
     @classmethod
-    def get_area_of_interest_3d(cls, double p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8):
+    def get_area_of_interest_3d(cls, double p1, double p2, double p3, double p4, double p5, double p6, WrapPLY p7, WrapIPJ p8):
 
         try:
 
 
-            _return_val = App_iGetAreaOfInterest3D_GUI(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            _return_val = App_iGetAreaOfInterest3D_GUI(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle)
             return (_return_val, p1, p2, p3, p4, p5, p6)
         finally:
             pass
@@ -42718,7 +42718,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def color_transform_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def color_transform_ex(cls, WrapITR p1, WrapST p2, int32_t p3, int32_t p4, const char* p5):
         cdef int32_t p6 = 4*1040
         cdef char* cp5 = NULL
 
@@ -42727,14 +42727,14 @@ cdef class WrapGUI:
 
             strcpy(cp5, p5)
 
-            _return_val = App_IiColorTransformEx_GUI(get_p_geo(), &p1, &p2, &p3, &p4, cp5, &p6)
+            _return_val = App_IiColorTransformEx_GUI(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, cp5, &p6)
             return (_return_val, cp5)
         finally:
             if cp5: free(cp5)
 
 
     @classmethod
-    def cumulative_percent(cls, const char* p1, int32_t p3):
+    def cumulative_percent(cls, const char* p1, WrapITR p3):
         cdef int32_t p2 = 4*1040
         cdef char* cp1 = NULL
 
@@ -42743,7 +42743,7 @@ cdef class WrapGUI:
 
             strcpy(cp1, p1)
 
-            _return_val = App_IiCumulativePercent_GUI(get_p_geo(), cp1, &p2, &p3)
+            _return_val = App_IiCumulativePercent_GUI(get_p_geo(), cp1, &p2, &p3.handle)
             return (_return_val, cp1)
         finally:
             if cp1: free(cp1)
@@ -42766,7 +42766,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def gen_file_form(cls, const char* p1, int32_t p2, int32_t p3, const char* p4, const char* p5, int32_t p7, int32_t p8):
+    def gen_file_form(cls, const char* p1, WrapVV p2, int32_t p3, const char* p4, const char* p5, int32_t p7, int32_t p8):
         cdef int32_t p6 = 4*16384
         cdef char* cp5 = NULL
 
@@ -42775,7 +42775,7 @@ cdef class WrapGUI:
 
             strcpy(cp5, p5)
 
-            _return_val = App_IiGenFileForm_GUI(get_p_geo(), p1, &p2, &p3, p4, cp5, &p6, &p7, &p8)
+            _return_val = App_IiGenFileForm_GUI(get_p_geo(), p1, &p2.handle, &p3, p4, cp5, &p6, &p7, &p8)
             return (_return_val, cp5)
         finally:
             if cp5: free(cp5)
@@ -42798,7 +42798,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def import_drill_database_ado2(cls, const char* p1, const char* p2, const char* p4, int32_t p6, int32_t p7):
+    def import_drill_database_ado2(cls, const char* p1, const char* p2, const char* p4, int32_t p6, WrapREG p7):
         cdef int32_t p3 = 4*1040
         cdef int32_t p5 = 4*1040
         cdef char* cp2 = NULL
@@ -42811,7 +42811,7 @@ cdef class WrapGUI:
             strcpy(cp2, p2)
             strcpy(cp4, p4)
 
-            _return_val = App_IiImportDrillDatabaseADO2_GUI(get_p_geo(), p1, cp2, &p3, cp4, &p5, &p6, &p7)
+            _return_val = App_IiImportDrillDatabaseADO2_GUI(get_p_geo(), p1, cp2, &p3, cp4, &p5, &p6, &p7.handle)
             return (_return_val, cp2, cp4, p6)
         finally:
             if cp2: free(cp2)
@@ -42819,7 +42819,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def import_drill_database_esri(cls, const char* p1, const char* p2, const char* p4, int32_t p6, int32_t p7, int32_t p8):
+    def import_drill_database_esri(cls, const char* p1, const char* p2, const char* p4, int32_t p6, int32_t p7, WrapREG p8):
         cdef int32_t p3 = 4*1040
         cdef int32_t p5 = 4*1040
         cdef char* cp2 = NULL
@@ -42832,7 +42832,7 @@ cdef class WrapGUI:
             strcpy(cp2, p2)
             strcpy(cp4, p4)
 
-            _return_val = App_IiImportDrillDatabaseESRI_GUI(get_p_geo(), p1, cp2, &p3, cp4, &p5, &p6, &p7, &p8)
+            _return_val = App_IiImportDrillDatabaseESRI_GUI(get_p_geo(), p1, cp2, &p3, cp4, &p5, &p6, &p7, &p8.handle)
             return (_return_val, cp2, cp4, p6)
         finally:
             if cp2: free(cp2)
@@ -42840,7 +42840,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def import_drill_database_odbc(cls, const char* p1, const char* p3, const char* p5, int32_t p7, int32_t p8):
+    def import_drill_database_odbc(cls, const char* p1, const char* p3, const char* p5, int32_t p7, WrapREG p8):
         cdef int32_t p2 = 4*16384
         cdef int32_t p4 = 4*1040
         cdef int32_t p6 = 4*1040
@@ -42857,7 +42857,7 @@ cdef class WrapGUI:
             strcpy(cp3, p3)
             strcpy(cp5, p5)
 
-            _return_val = App_IiImportDrillDatabaseODBC_GUI(get_p_geo(), cp1, &p2, cp3, &p4, cp5, &p6, &p7, &p8)
+            _return_val = App_IiImportDrillDatabaseODBC_GUI(get_p_geo(), cp1, &p2, cp3, &p4, cp5, &p6, &p7, &p8.handle)
             return (_return_val, cp1, cp3, cp5, p7)
         finally:
             if cp1: free(cp1)
@@ -42866,7 +42866,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def import_drill_database_odbc_maxwell(cls, const char* p1, const char* p3, const char* p5, int32_t p7, int32_t p8):
+    def import_drill_database_odbc_maxwell(cls, const char* p1, const char* p3, const char* p5, int32_t p7, WrapREG p8):
         cdef int32_t p2 = 4*16384
         cdef int32_t p4 = 4*1040
         cdef int32_t p6 = 4*1040
@@ -42883,7 +42883,7 @@ cdef class WrapGUI:
             strcpy(cp3, p3)
             strcpy(cp5, p5)
 
-            _return_val = App_IiImportDrillDatabaseODBCMaxwell_GUI(get_p_geo(), cp1, &p2, cp3, &p4, cp5, &p6, &p7, &p8)
+            _return_val = App_IiImportDrillDatabaseODBCMaxwell_GUI(get_p_geo(), cp1, &p2, cp3, &p4, cp5, &p6, &p7, &p8.handle)
             return (_return_val, cp1, cp3, cp5, p7)
         finally:
             if cp1: free(cp1)
@@ -42999,7 +42999,7 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def import_drill_database_ado(cls, const char* p1, const char* p2, const char* p3, int32_t p5, int32_t p6):
+    def import_drill_database_ado(cls, const char* p1, const char* p2, const char* p3, int32_t p5, WrapREG p6):
         cdef int32_t p4 = 4*1040
         cdef char* cp3 = NULL
 
@@ -43008,7 +43008,7 @@ cdef class WrapGUI:
 
             strcpy(cp3, p3)
 
-            _return_val = App_iImportDrillDatabaseADO_GUI(get_p_geo(), p1, p2, cp3, &p4, &p5, &p6)
+            _return_val = App_iImportDrillDatabaseADO_GUI(get_p_geo(), p1, p2, cp3, &p4, &p5, &p6.handle)
             return (_return_val, cp3, p5)
         finally:
             if cp3: free(cp3)
@@ -43037,12 +43037,12 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def import_xyz_template_editor(cls, int32_t p1, const char* p2, int32_t p3, const char* p4):
+    def import_xyz_template_editor(cls, WrapDB p1, const char* p2, int32_t p3, const char* p4):
 
         try:
 
 
-            _return_val = App_iImportXYZTemplateEditor_GUI(get_p_geo(), &p1, p2, &p3, p4)
+            _return_val = App_iImportXYZTemplateEditor_GUI(get_p_geo(), &p1.handle, p2, &p3, p4)
             return _return_val
         finally:
             pass
@@ -43085,12 +43085,12 @@ cdef class WrapGUI:
 
 
     @classmethod
-    def meta_data_tool(cls, int32_t p1, int32_t p2, int32_t p3):
+    def meta_data_tool(cls, WrapMETA p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            _return_val = App_iMetaDataTool_GUI(get_p_geo(), &p1, &p2, &p3)
+            _return_val = App_iMetaDataTool_GUI(get_p_geo(), &p1.handle, &p2, &p3)
             return _return_val
         finally:
             pass
@@ -43107,12 +43107,12 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def import_drill_wizard(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5, int32_t p6):
+    def import_drill_wizard(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5, WrapREG p6):
 
         try:
 
 
-            App_ImportDrillWizard_GUI(get_p_geo(), p1, p2, p3, &p4, &p5, &p6)
+            App_ImportDrillWizard_GUI(get_p_geo(), p1, p2, p3, &p4, &p5, &p6.handle)
             return p5
         finally:
             pass
@@ -43151,122 +43151,122 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def two_panel_selection(cls, int32_t p1, int32_t p2, const char* p3):
+    def two_panel_selection(cls, WrapLST p1, WrapLST p2, const char* p3):
 
         try:
 
 
-            _return_val = App_iTwoPanelSelection_GUI(get_p_geo(), &p1, &p2, p3)
+            _return_val = App_iTwoPanelSelection_GUI(get_p_geo(), &p1.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def two_panel_selection2(cls, int32_t p1, int32_t p2, const char* p3):
+    def two_panel_selection2(cls, WrapLST p1, WrapLST p2, const char* p3):
 
         try:
 
 
-            _return_val = App_iTwoPanelSelection2_GUI(get_p_geo(), &p1, &p2, p3)
+            _return_val = App_iTwoPanelSelection2_GUI(get_p_geo(), &p1.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def two_panel_selection_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5):
+    def two_panel_selection_ex(cls, WrapLST p1, WrapLST p2, int32_t p3, int32_t p4, const char* p5):
 
         try:
 
 
-            _return_val = App_iTwoPanelSelectionEx_GUI(get_p_geo(), &p1, &p2, &p3, &p4, p5)
+            _return_val = App_iTwoPanelSelectionEx_GUI(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def two_panel_selection_ex2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
+    def two_panel_selection_ex2(cls, WrapLST p1, WrapLST p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
 
         try:
 
 
-            _return_val = App_iTwoPanelSelectionEx2_GUI(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6)
+            _return_val = App_iTwoPanelSelectionEx2_GUI(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, p5, p6)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def launch_single_geo_dotnetx_tool(cls, const char* p1, const char* p2, int32_t p3):
+    def launch_single_geo_dotnetx_tool(cls, const char* p1, const char* p2, WrapMETA p3):
 
         try:
 
 
-            App_LaunchSingleGeoDOTNETXTool_GUI(get_p_geo(), p1, p2, &p3)
+            App_LaunchSingleGeoDOTNETXTool_GUI(get_p_geo(), p1, p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def launch_geo_dotnetx_tool(cls, const char* p1, const char* p2, int32_t p3):
+    def launch_geo_dotnetx_tool(cls, const char* p1, const char* p2, WrapMETA p3):
 
         try:
 
 
-            App_LaunchGeoDOTNETXTool_GUI(get_p_geo(), p1, p2, &p3)
+            App_LaunchGeoDOTNETXTool_GUI(get_p_geo(), p1, p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def launch_geo_x_tool(cls, const char* p1, const char* p2, int32_t p3):
+    def launch_geo_x_tool(cls, const char* p1, const char* p2, WrapMETA p3):
 
         try:
 
 
-            App_LaunchGeoXTool_GUI(get_p_geo(), p1, p2, &p3)
+            App_LaunchGeoXTool_GUI(get_p_geo(), p1, p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def launch_single_geo_dotnetx_tool_ex(cls, const char* p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def launch_single_geo_dotnetx_tool_ex(cls, const char* p1, const char* p2, WrapMETA p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            App_LaunchSingleGeoDOTNETXToolEx_GUI(get_p_geo(), p1, p2, &p3, &p4, &p5, &p6, &p7)
+            App_LaunchSingleGeoDOTNETXToolEx_GUI(get_p_geo(), p1, p2, &p3.handle, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def launch_geo_dotnetx_tool_ex(cls, const char* p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def launch_geo_dotnetx_tool_ex(cls, const char* p1, const char* p2, WrapMETA p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            App_LaunchGeoDOTNETXToolEx_GUI(get_p_geo(), p1, p2, &p3, &p4, &p5, &p6, &p7)
+            App_LaunchGeoDOTNETXToolEx_GUI(get_p_geo(), p1, p2, &p3.handle, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def launch_geo_x_tool_ex(cls, const char* p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def launch_geo_x_tool_ex(cls, const char* p1, const char* p2, WrapMETA p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            App_LaunchGeoXToolEx_GUI(get_p_geo(), p1, p2, &p3, &p4, &p5, &p6, &p7)
+            App_LaunchGeoXToolEx_GUI(get_p_geo(), p1, p2, &p3.handle, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def meta_data_viewer(cls, int32_t p1, int32_t p2, int32_t p3):
+    def meta_data_viewer(cls, WrapMETA p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            App_MetaDataViewer_GUI(get_p_geo(), &p1, &p2, &p3)
+            App_MetaDataViewer_GUI(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
@@ -43338,45 +43338,45 @@ cdef class WrapGUI:
             pass
 
     @classmethod
-    def show_direct_hist(cls, double p1, double p2, double p3, double p4, double p5, int32_t p6, int32_t p7):
+    def show_direct_hist(cls, double p1, double p2, double p3, double p4, double p5, int32_t p6, WrapVV p7):
 
         try:
 
 
-            App_ShowDirectHist_GUI(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            App_ShowDirectHist_GUI(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def show_hist(cls, int32_t p1):
+    def show_hist(cls, WrapST p1):
 
         try:
 
 
-            App_ShowHist_GUI(get_p_geo(), &p1)
+            App_ShowHist_GUI(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def simple_map_dialog(cls, int32_t p1, const char* p2, const char* p3):
+    def simple_map_dialog(cls, WrapMAP p1, const char* p2, const char* p3):
 
         try:
 
 
-            App_SimpleMapDialog_GUI(get_p_geo(), &p1, p2, p3)
+            App_SimpleMapDialog_GUI(get_p_geo(), &p1.handle, p2, p3)
             
         finally:
             pass
 
     @classmethod
-    def thematic_voxel_info(cls, int32_t p1):
+    def thematic_voxel_info(cls, WrapVOX p1):
 
         try:
 
 
-            App_ThematicVoxelInfo_GUI(get_p_geo(), &p1)
+            App_ThematicVoxelInfo_GUI(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -43426,45 +43426,45 @@ cdef class WrapHTTP:
 
 
 
-    def download(self, const char* p2, int32_t p3, int32_t p4):
+    def download(self, const char* p2, WrapBF p3, int32_t p4):
 
         try:
 
 
-            Download_HTTP(get_p_geo(), &self.handle, p2, &p3, &p4)
+            Download_HTTP(get_p_geo(), &self.handle, p2, &p3.handle, &p4)
             
         finally:
             pass
 
 
-    def silent_download(self, const char* p2, int32_t p3, int32_t p4):
+    def silent_download(self, const char* p2, WrapBF p3, int32_t p4):
 
         try:
 
 
-            SilentDownload_HTTP(get_p_geo(), &self.handle, p2, &p3, &p4)
+            SilentDownload_HTTP(get_p_geo(), &self.handle, p2, &p3.handle, &p4)
             
         finally:
             pass
 
 
-    def get(self, const char* p2, const char* p3, int32_t p4, int32_t p5):
+    def get(self, const char* p2, const char* p3, WrapBF p4, WrapBF p5):
 
         try:
 
 
-            Get_HTTP(get_p_geo(), &self.handle, p2, p3, &p4, &p5)
+            Get_HTTP(get_p_geo(), &self.handle, p2, p3, &p4.handle, &p5.handle)
             
         finally:
             pass
 
 
-    def post(self, const char* p2, const char* p3, int32_t p4):
+    def post(self, const char* p2, const char* p3, WrapBF p4):
 
         try:
 
 
-            Post_HTTP(get_p_geo(), &self.handle, p2, p3, &p4)
+            Post_HTTP(get_p_geo(), &self.handle, p2, p3, &p4.handle)
             
         finally:
             pass
@@ -43501,12 +43501,12 @@ cdef class WrapIEXP:
 
 
 
-    def add_grid(self, int32_t p2, const char* p3):
+    def add_grid(self, WrapIMG p2, const char* p3):
 
         try:
 
 
-            AddGrid_IEXP(get_p_geo(), &self.handle, &p2, p3)
+            AddGrid_IEXP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -43592,12 +43592,12 @@ cdef class WrapIP:
 
 
     @classmethod
-    def convert_ubcip2_d_to_grid(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, double p8, int32_t p9):
+    def convert_ubcip2_d_to_grid(cls, const char* p1, WrapPG p2, WrapVV p3, WrapVV p4, double p5, double p6, double p7, double p8, int32_t p9):
 
         try:
 
 
-            ConvertUBCIP2DToGrid_IP(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            ConvertUBCIP2DToGrid_IP(get_p_geo(), p1, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
@@ -43614,12 +43614,12 @@ cdef class WrapIP:
             pass
 
 
-    def export_ubcip3(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, double p8):
+    def export_ubcip3(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, double p8):
 
         try:
 
 
-            ExportUBCIP3_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6, p7, &p8)
+            ExportUBCIP3_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6, p7, &p8)
             
         finally:
             pass
@@ -43647,12 +43647,12 @@ cdef class WrapIP:
             pass
 
 
-    def export_ubc_res3(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, double p9):
+    def export_ubc_res3(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, double p9):
 
         try:
 
 
-            ExportUBCRes3_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6, p7, p8, &p9)
+            ExportUBCRes3_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6, p7, p8, &p9)
             
         finally:
             pass
@@ -43680,12 +43680,12 @@ cdef class WrapIP:
             pass
 
 
-    def export_data_to_ubc_3d(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, const char* p10, const char* p11):
+    def export_data_to_ubc_3d(self, WrapDB p2, WrapLST p3, int32_t p4, int32_t p5, const char* p6, const char* p7, const char* p8, int32_t p9, const char* p10, const char* p11):
 
         try:
 
 
-            ExportDataToUBC3D_IP(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, p6, p7, p8, &p9, p10, p11)
+            ExportDataToUBC3D_IP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4, &p5, p6, p7, p8, &p9, p10, p11)
             
         finally:
             pass
@@ -43702,23 +43702,23 @@ cdef class WrapIP:
             pass
 
     @classmethod
-    def import_ubc2_dmsh(cls, const char* p1, double p2, double p3, int32_t p4, int32_t p5):
+    def import_ubc2_dmsh(cls, const char* p1, double p2, double p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            ImportUBC2DMSH_IP(get_p_geo(), p1, &p2, &p3, &p4, &p5)
+            ImportUBC2DMSH_IP(get_p_geo(), p1, &p2, &p3, &p4.handle, &p5.handle)
             return (p2, p3)
         finally:
             pass
 
     @classmethod
-    def import_ubc2_d_topo(cls, const char* p1, double p2, int32_t p3, int32_t p4):
+    def import_ubc2_d_topo(cls, const char* p1, double p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            ImportUBC2DTopo_IP(get_p_geo(), p1, &p2, &p3, &p4)
+            ImportUBC2DTopo_IP(get_p_geo(), p1, &p2, &p3.handle, &p4.handle)
             return p2
         finally:
             pass
@@ -43746,34 +43746,34 @@ cdef class WrapIP:
             pass
 
     @classmethod
-    def trim_ubc2_d_model(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7):
+    def trim_ubc2_d_model(cls, WrapPG p1, int32_t p2, int32_t p3, int32_t p4, WrapVV p5, WrapVV p6, double p7):
 
         try:
 
 
-            _return_val = WrapPG(TrimUBC2DModel_IP(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7))
+            _return_val = WrapPG(TrimUBC2DModel_IP(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5.handle, &p6.handle, &p7))
             return (_return_val, p7)
         finally:
             pass
 
 
-    def write_distant_electrodes(self, int32_t p2):
+    def write_distant_electrodes(self, WrapDB p2):
 
         try:
 
 
-            WriteDistantElectrodes_IP(get_p_geo(), &self.handle, &p2)
+            WriteDistantElectrodes_IP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def write_distant_electrodes_lst(self, int32_t p2, int32_t p3):
+    def write_distant_electrodes_lst(self, WrapDB p2, WrapLST p3):
 
         try:
 
 
-            WriteDistantElectrodesLST_IP(get_p_geo(), &self.handle, &p2, &p3)
+            WriteDistantElectrodesLST_IP(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
@@ -43784,12 +43784,12 @@ cdef class WrapIP:
 
 
 
-    def average_duplicates_qc(self, int32_t p2, const char* p3, const char* p4, int32_t p5):
+    def average_duplicates_qc(self, WrapDB p2, const char* p3, const char* p4, int32_t p5):
 
         try:
 
 
-            AverageDuplicatesQC_IP(get_p_geo(), &self.handle, &p2, p3, p4, &p5)
+            AverageDuplicatesQC_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, &p5)
             
         finally:
             pass
@@ -43808,111 +43808,111 @@ cdef class WrapIP:
 
 
 
-    def export_i2_x(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, const char* p12):
+    def export_i2_x(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, const char* p12):
 
         try:
 
 
-            ExportI2X_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12)
+            ExportI2X_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12)
             
         finally:
             pass
 
 
-    def export_ipdata(self, int32_t p2, const char* p3, const char* p4):
+    def export_ipdata(self, WrapDB p2, const char* p3, const char* p4):
 
         try:
 
 
-            ExportIPDATA_IP(get_p_geo(), &self.handle, &p2, p3, p4)
+            ExportIPDATA_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
 
-    def export_ipdata_dir(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def export_ipdata_dir(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            ExportIPDATADir_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            ExportIPDATADir_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
 
-    def export_ipred(self, int32_t p2, const char* p3, const char* p4, const char* p5, int32_t p6, const char* p7, double p8, double p9, int32_t p10):
+    def export_ipred(self, WrapDB p2, const char* p3, const char* p4, const char* p5, int32_t p6, const char* p7, double p8, double p9, int32_t p10):
 
         try:
 
 
-            ExportIPRED_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, &p6, p7, &p8, &p9, &p10)
+            ExportIPRED_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, &p6, p7, &p8, &p9, &p10)
             
         finally:
             pass
 
 
-    def export_ipred_dir(self, int32_t p2, const char* p3, const char* p4, const char* p5, int32_t p6, const char* p7, double p8, double p9, int32_t p10, const char* p11):
+    def export_ipred_dir(self, WrapDB p2, const char* p3, const char* p4, const char* p5, int32_t p6, const char* p7, double p8, double p9, int32_t p10, const char* p11):
 
         try:
 
 
-            ExportIPREDDir_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, &p6, p7, &p8, &p9, &p10, p11)
+            ExportIPREDDir_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, &p6, p7, &p8, &p9, &p10, p11)
             
         finally:
             pass
 
 
-    def export_line_ipdata(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def export_line_ipdata(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            ExportLineIPDATA_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            ExportLineIPDATA_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
 
-    def export_sgdf(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def export_sgdf(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            ExportSGDF_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            ExportSGDF_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
 
-    def get_n_value_lst(self, int32_t p2, int32_t p3):
+    def get_n_value_lst(self, WrapDB p2, WrapLST p3):
 
         try:
 
 
-            GetNValueLST_IP(get_p_geo(), &self.handle, &p2, &p3)
+            GetNValueLST_IP(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def get_topo_line(self, int32_t p2, const char* p3, double p4, double p5, double p6, int32_t p7):
+    def get_topo_line(self, WrapDB p2, const char* p3, double p4, double p5, double p6, WrapVV p7):
 
         try:
 
 
-            GetTopoLine_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7)
+            GetTopoLine_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
 
-    def get_chan_domain(self, int32_t p2, const char* p3):
+    def get_chan_domain(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            _return_val = iGetChanDomain_IP(get_p_geo(), &self.handle, &p2, p3)
+            _return_val = iGetChanDomain_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
@@ -43939,298 +43939,298 @@ cdef class WrapIP:
 
 
 
-    def get_channel_info(self, int32_t p2, const char* p3, int32_t p4, double p5, int32_t p6, int32_t p7):
+    def get_channel_info(self, WrapDB p2, const char* p3, int32_t p4, double p5, int32_t p6, WrapVV p7):
 
         try:
 
 
-            GetChannelInfo_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7)
+            GetChannelInfo_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6, &p7.handle)
             return (p4, p5, p6)
         finally:
             pass
 
 
-    def set_channel_info(self, int32_t p2, const char* p3, int32_t p4, double p5, int32_t p6, int32_t p7):
+    def set_channel_info(self, WrapDB p2, const char* p3, int32_t p4, double p5, int32_t p6, WrapVV p7):
 
         try:
 
 
-            SetChannelInfo_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7)
+            SetChannelInfo_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
 
-    def import_dump(self, int32_t p2, int32_t p3, const char* p4):
+    def import_dump(self, int32_t p2, WrapDB p3, const char* p4):
 
         try:
 
 
-            ImportDump_IP(get_p_geo(), &self.handle, &p2, &p3, p4)
+            ImportDump_IP(get_p_geo(), &self.handle, &p2, &p3.handle, p4)
             
         finally:
             pass
 
 
-    def import_grid(self, int32_t p2, const char* p3, const char* p4):
+    def import_grid(self, WrapDB p2, const char* p3, const char* p4):
 
         try:
 
 
-            ImportGrid_IP(get_p_geo(), &self.handle, &p2, p3, p4)
+            ImportGrid_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
 
-    def import_i2_x(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, const char* p12, int32_t p13):
+    def import_i2_x(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, const char* p12, int32_t p13):
 
         try:
 
 
-            ImportI2X_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, &p13)
+            ImportI2X_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, &p13)
             
         finally:
             pass
 
 
-    def import_i2_x_ex(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, const char* p12, const char* p13, const char* p14, int32_t p15):
+    def import_i2_x_ex(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, const char* p12, const char* p13, const char* p14, int32_t p15):
 
         try:
 
 
-            ImportI2XEx_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, &p15)
+            ImportI2XEx_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, &p15)
             
         finally:
             pass
 
 
-    def import_instrumentation_gdd(self, int32_t p2, const char* p3):
+    def import_instrumentation_gdd(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            ImportInstrumentationGDD_IP(get_p_geo(), &self.handle, &p2, p3)
+            ImportInstrumentationGDD_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def import_ipdata(self, int32_t p2, const char* p3, const char* p4):
+    def import_ipdata(self, WrapDB p2, const char* p3, const char* p4):
 
         try:
 
 
-            ImportIPDATA_IP(get_p_geo(), &self.handle, &p2, p3, p4)
+            ImportIPDATA_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
 
-    def import_ipdata2(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def import_ipdata2(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            ImportIPDATA2_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            ImportIPDATA2_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
 
-    def import_ipred(self, int32_t p2, const char* p3, const char* p4):
+    def import_ipred(self, WrapDB p2, const char* p3, const char* p4):
 
         try:
 
 
-            ImportIPRED_IP(get_p_geo(), &self.handle, &p2, p3, p4)
+            ImportIPRED_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
 
-    def import_merge_ipred(self, int32_t p2, const char* p3, const char* p4):
+    def import_merge_ipred(self, WrapDB p2, const char* p3, const char* p4):
 
         try:
 
 
-            ImportMergeIPRED_IP(get_p_geo(), &self.handle, &p2, p3, p4)
+            ImportMergeIPRED_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4)
             
         finally:
             pass
 
 
-    def import_sgdf(self, int32_t p2, const char* p3):
+    def import_sgdf(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            ImportSGDF_IP(get_p_geo(), &self.handle, &p2, p3)
+            ImportSGDF_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def import_topo_csv(self, int32_t p2, const char* p3):
+    def import_topo_csv(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            ImportTopoCSV_IP(get_p_geo(), &self.handle, &p2, p3)
+            ImportTopoCSV_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def import_topo_grid(self, int32_t p2, const char* p3):
+    def import_topo_grid(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            ImportTopoGrid_IP(get_p_geo(), &self.handle, &p2, p3)
+            ImportTopoGrid_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
 
 
-    def import_zonge_avg(self, int32_t p2, const char* p3, double p4, int32_t p5, double p6):
+    def import_zonge_avg(self, WrapDB p2, const char* p3, double p4, int32_t p5, double p6):
 
         try:
 
 
-            ImportZongeAVG_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6)
+            ImportZongeAVG_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6)
             
         finally:
             pass
 
 
-    def import_zonge_fld(self, int32_t p2, const char* p3, int32_t p4, double p5):
+    def import_zonge_fld(self, WrapDB p2, const char* p3, int32_t p4, double p5):
 
         try:
 
 
-            ImportZongeFLD_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5)
+            ImportZongeFLD_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5)
             
         finally:
             pass
 
 
-    def new_xy_database(self, int32_t p2, int32_t p3, int32_t p4, const char* p5, double p6):
+    def new_xy_database(self, WrapDB p2, WrapDB p3, WrapVV p4, const char* p5, double p6):
 
         try:
 
 
-            NewXYDatabase_IP(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6)
+            NewXYDatabase_IP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, p5, &p6)
             
         finally:
             pass
 
 
-    def pseudo_plot(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def pseudo_plot(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            PseudoPlot_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            PseudoPlot_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
 
-    def pseudo_plot2(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6):
+    def pseudo_plot2(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6):
 
         try:
 
 
-            PseudoPlot2_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6)
+            PseudoPlot2_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6)
             
         finally:
             pass
 
 
-    def pseudo_plot2_dir(self, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7):
+    def pseudo_plot2_dir(self, WrapDB p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7):
 
         try:
 
 
-            PseudoPlot2Dir_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5, p6, p7)
+            PseudoPlot2Dir_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5, p6, p7)
             
         finally:
             pass
 
 
-    def ps_stack(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def ps_stack(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            PSStack_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            PSStack_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
 
-    def ps_stack2(self, int32_t p2, const char* p3, const char* p4, int32_t p5, const char* p6):
+    def ps_stack2(self, WrapDB p2, const char* p3, const char* p4, int32_t p5, const char* p6):
 
         try:
 
 
-            PSStack2_IP(get_p_geo(), &self.handle, &p2, p3, p4, &p5, p6)
+            PSStack2_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, &p5, p6)
             
         finally:
             pass
 
 
-    def ps_stack2_dir(self, int32_t p2, const char* p3, const char* p4, int32_t p5, const char* p6, const char* p7):
+    def ps_stack2_dir(self, WrapDB p2, const char* p3, const char* p4, int32_t p5, const char* p6, const char* p7):
 
         try:
 
 
-            PSStack2Dir_IP(get_p_geo(), &self.handle, &p2, p3, p4, &p5, p6, p7)
+            PSStack2Dir_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, &p5, p6, p7)
             
         finally:
             pass
 
 
-    def qc_chan_lst(self, int32_t p2, int32_t p3):
+    def qc_chan_lst(self, WrapDB p2, WrapLST p3):
 
         try:
 
 
-            QCChanLST_IP(get_p_geo(), &self.handle, &p2, &p3)
+            QCChanLST_IP(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def recalculate(self, int32_t p2):
+    def recalculate(self, WrapDB p2):
 
         try:
 
 
-            Recalculate_IP(get_p_geo(), &self.handle, &p2)
+            Recalculate_IP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def recalculate_ex(self, int32_t p2, int32_t p3):
+    def recalculate_ex(self, WrapDB p2, int32_t p3):
 
         try:
 
 
-            RecalculateEx_IP(get_p_geo(), &self.handle, &p2, &p3)
+            RecalculateEx_IP(get_p_geo(), &self.handle, &p2.handle, &p3)
             
         finally:
             pass
 
 
-    def recalculate_z(self, int32_t p2):
+    def recalculate_z(self, WrapDB p2):
 
         try:
 
 
-            RecalculateZ_IP(get_p_geo(), &self.handle, &p2)
+            RecalculateZ_IP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -44258,67 +44258,67 @@ cdef class WrapIP:
             pass
 
 
-    def window(self, int32_t p2, const char* p3, const char* p4, const char* p5):
+    def window(self, WrapDB p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            Window_IP(get_p_geo(), &self.handle, &p2, p3, p4, p5)
+            Window_IP(get_p_geo(), &self.handle, &p2.handle, p3, p4, p5)
             
         finally:
             pass
 
     @classmethod
-    def winnow_chan_list(cls, int32_t p1):
+    def winnow_chan_list(cls, WrapLST p1):
 
         try:
 
 
-            WinnowChanList_IP(get_p_geo(), &p1)
+            WinnowChanList_IP(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def winnow_chan_list2(cls, int32_t p1, int32_t p2):
+    def winnow_chan_list2(cls, WrapLST p1, WrapDB p2):
 
         try:
 
 
-            WinnowChanList2_IP(get_p_geo(), &p1, &p2)
+            WinnowChanList2_IP(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def is_valid_line(self, int32_t p2, const char* p3):
+    def is_valid_line(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            _return_val = isValidLine_IP(get_p_geo(), &self.handle, &p2, p3)
+            _return_val = isValidLine_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
 
 
-    def line_array_type(self, int32_t p2, const char* p3):
+    def line_array_type(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            _return_val = iLineArrayType_IP(get_p_geo(), &self.handle, &p2, p3)
+            _return_val = iLineArrayType_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
 
 
-    def a_spacing(self, int32_t p2, const char* p3):
+    def a_spacing(self, WrapDB p2, const char* p3):
 
         try:
 
 
-            _return_val = rASpacing_IP(get_p_geo(), &self.handle, &p2, p3)
+            _return_val = rASpacing_IP(get_p_geo(), &self.handle, &p2.handle, p3)
             return _return_val
         finally:
             pass
@@ -44335,51 +44335,51 @@ cdef class WrapIP:
             pass
 
 
-    def get_electrode_locations_and_mask_values(self, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def get_electrode_locations_and_mask_values(self, WrapDB p2, const char* p3, int32_t p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8):
 
         try:
 
 
-            GetElectrodeLocationsAndMaskValues_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8)
+            GetElectrodeLocationsAndMaskValues_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5.handle, &p6.handle, &p7.handle, &p8.handle)
             
         finally:
             pass
 
 
-    def get_electrode_locations_and_mask_values2(self, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def get_electrode_locations_and_mask_values2(self, WrapDB p2, const char* p3, int32_t p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9):
 
         try:
 
 
-            GetElectrodeLocationsAndMaskValues2_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            GetElectrodeLocationsAndMaskValues2_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9.handle)
             
         finally:
             pass
 
 
-    def set_electrode_mask_values(self, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def set_electrode_mask_values(self, WrapDB p2, const char* p3, int32_t p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapVV p8):
 
         try:
 
 
-            SetElectrodeMaskValues_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8)
+            SetElectrodeMaskValues_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5.handle, &p6.handle, &p7.handle, &p8.handle)
             
         finally:
             pass
 
 
-    def set_electrode_mask_values_single_qc_channel(self, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def set_electrode_mask_values_single_qc_channel(self, WrapDB p2, const char* p3, int32_t p4, int32_t p5, WrapVV p6, WrapVV p7, WrapVV p8):
 
         try:
 
 
-            SetElectrodeMaskValuesSingleQCChannel_IP(get_p_geo(), &self.handle, &p2, p3, &p4, &p5, &p6, &p7, &p8)
+            SetElectrodeMaskValuesSingleQCChannel_IP(get_p_geo(), &self.handle, &p2.handle, p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_qc_channel(cls, int32_t p1, int32_t p2, const char* p3):
+    def get_qc_channel(cls, WrapDB p1, int32_t p2, const char* p3):
         cdef int32_t p4 = 4*64
         cdef char* cp3 = NULL
 
@@ -44388,7 +44388,7 @@ cdef class WrapIP:
 
             strcpy(cp3, p3)
 
-            _return_val = GetQCChannel_IP(get_p_geo(), &p1, &p2, cp3, &p4)
+            _return_val = GetQCChannel_IP(get_p_geo(), &p1.handle, &p2, cp3, &p4)
             return (_return_val, cp3)
         finally:
             if cp3: free(cp3)
@@ -44406,12 +44406,12 @@ cdef class WrapIPGUI:
 
 
     @classmethod
-    def modify_job(cls, int32_t p1, int32_t p2, const char* p3, int32_t p4, int32_t p5):
+    def modify_job(cls, WrapIP p1, WrapDB p2, const char* p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            _return_val = iModifyJob_IPGUI(get_p_geo(), &p1, &p2, p3, &p4, &p5)
+            _return_val = iModifyJob_IPGUI(get_p_geo(), &p1.handle, &p2.handle, p3, &p4, &p5)
             return (_return_val, p5)
         finally:
             pass
@@ -44505,34 +44505,34 @@ cdef class WrapKGRD:
             pass
 
 
-    def run(self, const char* p2, int32_t p3, int32_t p4, int32_t p5, const char* p6, const char* p7, int32_t p8, int32_t p9, int32_t p10):
+    def run(self, const char* p2, WrapDAT p3, WrapDAT p4, WrapDAT p5, const char* p6, const char* p7, int32_t p8, int32_t p9, int32_t p10):
 
         try:
 
 
-            _return_val = iRun_KGRD(get_p_geo(), &self.handle, p2, &p3, &p4, &p5, p6, p7, &p8, &p9, &p10)
+            _return_val = iRun_KGRD(get_p_geo(), &self.handle, p2, &p3.handle, &p4.handle, &p5.handle, p6, p7, &p8, &p9, &p10)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def run2(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, int32_t p10):
+    def run2(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, int32_t p10):
 
         try:
 
 
-            _return_val = iRun2_KGRD(get_p_geo(), &p1, p2, p3, p4, p5, p6, p7, p8, p9, &p10)
+            _return_val = iRun2_KGRD(get_p_geo(), &p1.handle, p2, p3, p4, p5, p6, p7, p8, p9, &p10)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def run3(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, int32_t p11):
+    def run3(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, int32_t p11):
 
         try:
 
 
-            _return_val = iRun3_KGRD(get_p_geo(), &p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, &p11)
+            _return_val = iRun3_KGRD(get_p_geo(), &p1.handle, p2, p3, p4, p5, p6, p7, p8, p9, p10, &p11)
             return _return_val
         finally:
             pass
@@ -44559,23 +44559,23 @@ cdef class WrapLMSG:
 
 
     @classmethod
-    def goto_point(cls, double p1, double p2, double p3, int32_t p4):
+    def goto_point(cls, double p1, double p2, double p3, WrapIPJ p4):
 
         try:
 
 
-            GotoPoint_LMSG(get_p_geo(), &p1, &p2, &p3, &p4)
+            GotoPoint_LMSG(get_p_geo(), &p1, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def view_area(cls, double p1, double p2, double p3, double p4, int32_t p5):
+    def view_area(cls, double p1, double p2, double p3, double p4, WrapIPJ p5):
 
         try:
 
 
-            ViewArea_LMSG(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            ViewArea_LMSG(get_p_geo(), &p1, &p2, &p3, &p4, &p5.handle)
             
         finally:
             pass
@@ -44655,12 +44655,12 @@ cdef class WrapMSTK:
             pass
 
 
-    def chan_list_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def chan_list_vv(self, WrapDB p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            ChanListVV_MSTK(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7)
+            ChanListVV_MSTK(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle)
             
         finally:
             pass
@@ -44679,12 +44679,12 @@ cdef class WrapMSTK:
 
 
 
-    def draw_profile(self, int32_t p2, int32_t p3, int32_t p4):
+    def draw_profile(self, WrapDB p2, int32_t p3, WrapMAP p4):
 
         try:
 
 
-            DrawProfile_MSTK(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            DrawProfile_MSTK(get_p_geo(), &self.handle, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
@@ -44701,12 +44701,12 @@ cdef class WrapMSTK:
             pass
 
 
-    def find_stk2(self, const char* p2, int32_t p3, int32_t p4):
+    def find_stk2(self, const char* p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            FindSTK2_MSTK(get_p_geo(), &self.handle, p2, &p3, &p4)
+            FindSTK2_MSTK(get_p_geo(), &self.handle, p2, &p3, &p4.handle)
             return p3
         finally:
             pass
@@ -44771,23 +44771,23 @@ cdef class WrapMSTK:
             pass
 
 
-    def read_ini(self, int32_t p2):
+    def read_ini(self, WrapRA p2):
 
         try:
 
 
-            ReadINI_MSTK(get_p_geo(), &self.handle, &p2)
+            ReadINI_MSTK(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def save_profile(self, int32_t p2):
+    def save_profile(self, WrapWA p2):
 
         try:
 
 
-            SaveProfile_MSTK(get_p_geo(), &self.handle, &p2)
+            SaveProfile_MSTK(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -44803,12 +44803,12 @@ cdef class WrapMULTIVOXSET:
 
 
     @classmethod
-    def import_from_xyz(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4):
+    def import_from_xyz(cls, const char* p1, WrapRA p2, int32_t p3, WrapIPJ p4):
 
         try:
 
 
-            ImportFromXYZ_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4)
+            ImportFromXYZ_MULTIVOXSET(get_p_geo(), p1, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
@@ -44858,56 +44858,56 @@ cdef class WrapMULTIVOXSET:
             pass
 
     @classmethod
-    def import_from_ubc(cls, const char* p1, const char* p2, const char* p3, double p4, int32_t p5):
+    def import_from_ubc(cls, const char* p1, const char* p2, const char* p3, double p4, WrapIPJ p5):
 
         try:
 
 
-            ImportFromUBC_MULTIVOXSET(get_p_geo(), p1, p2, p3, &p4, &p5)
+            ImportFromUBC_MULTIVOXSET(get_p_geo(), p1, p2, p3, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def import_from_gocad(cls, const char* p1, const char* p2, const char* p3, int32_t p4, int32_t p5):
+    def import_from_gocad(cls, const char* p1, const char* p2, const char* p3, WrapIPJ p4, int32_t p5):
 
         try:
 
 
-            ImportFromGOCAD_MULTIVOXSET(get_p_geo(), p1, p2, p3, &p4, &p5)
+            ImportFromGOCAD_MULTIVOXSET(get_p_geo(), p1, p2, p3, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def list_properties_gocad(cls, const char* p1, int32_t p2):
+    def list_properties_gocad(cls, const char* p1, WrapLST p2):
 
         try:
 
 
-            ListPropertiesGOCAD_MULTIVOXSET(get_p_geo(), p1, &p2)
+            ListPropertiesGOCAD_MULTIVOXSET(get_p_geo(), p1, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def import_from_gdb(cls, const char* p1, int32_t p2, int32_t p3):
+    def import_from_gdb(cls, const char* p1, WrapDB p2, int32_t p3):
 
         try:
 
 
-            ImportFromGDB_MULTIVOXSET(get_p_geo(), p1, &p2, &p3)
+            ImportFromGDB_MULTIVOXSET(get_p_geo(), p1, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def import_from_vector_gdb(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8):
+    def import_from_vector_gdb(cls, const char* p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8):
 
         try:
 
 
-            ImportFromVectorGDB_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            ImportFromVectorGDB_MULTIVOXSET(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
@@ -44924,23 +44924,23 @@ cdef class WrapMULTIVOXSET:
             pass
 
     @classmethod
-    def export_to_gdb(cls, const char* p1, int32_t p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
+    def export_to_gdb(cls, const char* p1, WrapDB p2, const char* p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8):
 
         try:
 
 
-            ExportToGDB_MULTIVOXSET(get_p_geo(), p1, &p2, p3, &p4, &p5, &p6, &p7, &p8)
+            ExportToGDB_MULTIVOXSET(get_p_geo(), p1, &p2.handle, p3, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def export_to_wa(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, const char* p7):
+    def export_to_wa(cls, const char* p1, WrapWA p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, const char* p7):
 
         try:
 
 
-            ExportToWA_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, p7)
+            ExportToWA_MULTIVOXSET(get_p_geo(), p1, &p2.handle, &p3, &p4, &p5, &p6, p7)
             
         finally:
             pass
@@ -44968,67 +44968,67 @@ cdef class WrapMULTIVOXSET:
             pass
 
     @classmethod
-    def create_double_constant(cls, const char* p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12):
+    def create_double_constant(cls, const char* p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, WrapIPJ p12):
 
         try:
 
 
-            CreateDoubleConstant_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            CreateDoubleConstant_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12.handle)
             
         finally:
             pass
 
     @classmethod
-    def create_thematic_constant(cls, const char* p1, int32_t p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12):
+    def create_thematic_constant(cls, const char* p1, int32_t p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, WrapIPJ p12):
 
         try:
 
 
-            CreateThematicConstant_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12)
+            CreateThematicConstant_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12.handle)
             
         finally:
             pass
 
     @classmethod
-    def create_vector_constant(cls, const char* p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def create_vector_constant(cls, const char* p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, WrapIPJ p14):
 
         try:
 
 
-            CreateVectorConstant_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            CreateVectorConstant_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14.handle)
             
         finally:
             pass
 
     @classmethod
-    def create_double_constant_vv(cls, const char* p1, double p2, double p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def create_double_constant_vv(cls, const char* p1, double p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapIPJ p9):
 
         try:
 
 
-            CreateDoubleConstantVV_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            CreateDoubleConstantVV_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle)
             
         finally:
             pass
 
     @classmethod
-    def create_thematic_constant_vv(cls, const char* p1, int32_t p2, double p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def create_thematic_constant_vv(cls, const char* p1, int32_t p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapIPJ p9):
 
         try:
 
 
-            CreateThematicConstantVV_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            CreateThematicConstantVV_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle)
             
         finally:
             pass
 
     @classmethod
-    def create_vector_constant_vv(cls, const char* p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
+    def create_vector_constant_vv(cls, const char* p1, double p2, double p3, double p4, double p5, double p6, double p7, WrapVV p8, WrapVV p9, WrapVV p10, WrapIPJ p11):
 
         try:
 
 
-            CreateVectorConstantVV_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            CreateVectorConstantVV_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8.handle, &p9.handle, &p10.handle, &p11.handle)
             
         finally:
             pass
@@ -45061,12 +45061,12 @@ cdef class WrapMULTIVOXSET:
 
 
     @classmethod
-    def import_from_datamine(cls, const char* p1, const char* p2, int32_t p3, const char* p4):
+    def import_from_datamine(cls, const char* p1, const char* p2, WrapIPJ p3, const char* p4):
 
         try:
 
 
-            ImportFromDATAMINE_MULTIVOXSET(get_p_geo(), p1, p2, &p3, p4)
+            ImportFromDATAMINE_MULTIVOXSET(get_p_geo(), p1, p2, &p3.handle, p4)
             
         finally:
             pass
@@ -45094,12 +45094,12 @@ cdef class WrapMULTIVOXSET:
             pass
 
     @classmethod
-    def grid_direct_from_gdb(cls, const char* p1, double p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7, double p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16):
+    def grid_direct_from_gdb(cls, const char* p1, double p2, double p3, double p4, int32_t p5, int32_t p6, int32_t p7, double p8, double p9, double p10, int32_t p11, WrapDB p12, int32_t p13, int32_t p14, int32_t p15, int32_t p16):
 
         try:
 
 
-            GridDirectFromGDB_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, &p16)
+            GridDirectFromGDB_MULTIVOXSET(get_p_geo(), p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12.handle, &p13, &p14, &p15, &p16)
             
         finally:
             pass
@@ -45147,12 +45147,12 @@ cdef class WrapMVG:
             pass
 
     @classmethod
-    def create(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10):
+    def create(cls, WrapMAP p1, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10):
 
         try:
 
 
-            _return_val = WrapMVG(Create_MVG(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10))
+            _return_val = WrapMVG(Create_MVG(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10))
             return _return_val
         finally:
             pass
@@ -45204,23 +45204,23 @@ cdef class WrapMVG:
             pass
 
 
-    def poly_line_va(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def poly_line_va(self, int32_t p2, int32_t p3, WrapVV p4, WrapVA p5, WrapVV p6):
 
         try:
 
 
-            PolyLineVA_MVG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6)
+            PolyLineVA_MVG(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5.handle, &p6.handle)
             
         finally:
             pass
 
 
-    def poly_line_vv(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def poly_line_vv(self, int32_t p2, int32_t p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            PolyLineVV_MVG(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            PolyLineVV_MVG(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5.handle)
             
         finally:
             pass
@@ -45258,23 +45258,23 @@ cdef class WrapPDF3D:
 
 
     @classmethod
-    def render(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4):
+    def render(cls, WrapMVIEW p1, const char* p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            Render_PDF3D(get_p_geo(), &p1, p2, &p3, &p4)
+            Render_PDF3D(get_p_geo(), &p1.handle, p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def render_to_page(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5):
+    def render_to_page(cls, WrapMVIEW p1, const char* p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            RenderToPage_PDF3D(get_p_geo(), &p1, p2, &p3, &p4, &p5)
+            RenderToPage_PDF3D(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5)
             
         finally:
             pass
@@ -45311,12 +45311,12 @@ cdef class WrapPGEXP:
 
 
 
-    def add_pager(self, int32_t p2, const char* p3):
+    def add_pager(self, WrapPG p2, const char* p3):
 
         try:
 
 
-            AddPager_PGEXP(get_p_geo(), &self.handle, &p2, p3)
+            AddPager_PGEXP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -45360,210 +45360,210 @@ cdef class WrapPGU:
 
 
     @classmethod
-    def bool(cls, int32_t p1, const char* p2):
+    def bool(cls, WrapPG p1, const char* p2):
 
         try:
 
 
-            Bool_PGU(get_p_geo(), &p1, p2)
+            Bool_PGU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def direct_gridding_dat(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8):
+    def direct_gridding_dat(cls, WrapPG p1, double p2, double p3, double p4, double p5, double p6, WrapDAT p7, int32_t p8):
 
         try:
 
 
-            DirectGriddingDAT_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            DirectGriddingDAT_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8)
             
         finally:
             pass
 
     @classmethod
-    def direct_gridding_dat_3d(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10):
+    def direct_gridding_dat_3d(cls, WrapPG p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, WrapDAT p9, int32_t p10):
 
         try:
 
 
-            DirectGriddingDAT3D_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            DirectGriddingDAT3D_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9.handle, &p10)
             
         finally:
             pass
 
     @classmethod
-    def direct_gridding_db(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
+    def direct_gridding_db(cls, WrapPG p1, double p2, double p3, double p4, double p5, double p6, WrapDB p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11):
 
         try:
 
 
-            DirectGriddingDB_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11)
+            DirectGriddingDB_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8, &p9, &p10, &p11)
             
         finally:
             pass
 
     @classmethod
-    def direct_gridding_db_3d(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
+    def direct_gridding_db_3d(cls, WrapPG p1, double p2, double p3, double p4, double p5, double p6, double p7, double p8, WrapDB p9, int32_t p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14):
 
         try:
 
 
-            DirectGriddingDB3D_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14)
+            DirectGriddingDB3D_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9.handle, &p10, &p11, &p12, &p13, &p14)
             
         finally:
             pass
 
     @classmethod
-    def direct_gridding_vv(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10):
+    def direct_gridding_vv(cls, WrapPG p1, double p2, double p3, double p4, double p5, double p6, WrapVV p7, WrapVV p8, WrapVV p9, int32_t p10):
 
         try:
 
 
-            DirectGriddingVV_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            DirectGriddingVV_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, &p9.handle, &p10)
             
         finally:
             pass
 
     @classmethod
-    def expand(cls, int32_t p1, int32_t p2, double p3, int32_t p4, int32_t p5, int32_t p6):
+    def expand(cls, WrapPG p1, WrapPG p2, double p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            Expand_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            Expand_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def fill(cls, int32_t p1, int32_t p2, double p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, int32_t p9, int32_t p10, const char* p11):
+    def fill(cls, WrapPG p1, int32_t p2, double p3, int32_t p4, int32_t p5, int32_t p6, double p7, double p8, int32_t p9, int32_t p10, const char* p11):
 
         try:
 
 
-            Fill_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, p11)
+            Fill_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, p11)
             
         finally:
             pass
 
     @classmethod
-    def fill_value(cls, int32_t p1, double p2):
+    def fill_value(cls, WrapPG p1, double p2):
 
         try:
 
 
-            FillValue_PGU(get_p_geo(), &p1, &p2)
+            FillValue_PGU(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def filt_sym(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5, int32_t p6):
+    def filt_sym(cls, WrapPG p1, int32_t p2, int32_t p3, const char* p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            FiltSym_PGU(get_p_geo(), &p1, &p2, &p3, p4, &p5, &p6)
+            FiltSym_PGU(get_p_geo(), &p1.handle, &p2, &p3, p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def filt_sym5(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, int32_t p5):
+    def filt_sym5(cls, WrapPG p1, int32_t p2, int32_t p3, const char* p4, WrapVV p5):
 
         try:
 
 
-            FiltSym5_PGU(get_p_geo(), &p1, &p2, &p3, p4, &p5)
+            FiltSym5_PGU(get_p_geo(), &p1.handle, &p2, &p3, p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def grid_peak(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def grid_peak(cls, const char* p1, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            GridPeak_PGU(get_p_geo(), p1, &p2, &p3, &p4, &p5)
+            GridPeak_PGU(get_p_geo(), p1, &p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def dw_gridding_dat(cls, int32_t p1, int32_t p2, int32_t p3):
+    def dw_gridding_dat(cls, WrapPG p1, WrapDAT p2, WrapREG p3):
 
         try:
 
 
-            IDWGriddingDAT_PGU(get_p_geo(), &p1, &p2, &p3)
+            IDWGriddingDAT_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def dw_gridding_dat_3d(cls, int32_t p1, int32_t p2, int32_t p3):
+    def dw_gridding_dat_3d(cls, WrapPG p1, WrapDAT p2, WrapREG p3):
 
         try:
 
 
-            IDWGriddingDAT3D_PGU(get_p_geo(), &p1, &p2, &p3)
+            IDWGriddingDAT3D_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def dw_gridding_db(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def dw_gridding_db(cls, WrapPG p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, WrapREG p6):
 
         try:
 
 
-            IDWGriddingDB_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            IDWGriddingDB_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def dw_gridding_db_3d(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7):
+    def dw_gridding_db_3d(cls, WrapPG p1, WrapDB p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, WrapREG p7):
 
         try:
 
 
-            IDWGriddingDB3D_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            IDWGriddingDB3D_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def dw_gridding_vv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def dw_gridding_vv(cls, WrapPG p1, WrapVV p2, WrapVV p3, WrapVV p4, WrapREG p5):
 
         try:
 
 
-            IDWGriddingVV_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            IDWGriddingVV_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def numeric_to_thematic(cls, int32_t p1, int32_t p2, int32_t p3):
+    def numeric_to_thematic(cls, WrapPG p1, WrapVV p2, WrapPG p3):
 
         try:
 
 
-            NumericToThematic_PGU(get_p_geo(), &p1, &p2, &p3)
+            NumericToThematic_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def peakedness(cls, const char* p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def peakedness(cls, const char* p1, int32_t p2, WrapVV p3, WrapVV p4, WrapVV p5):
 
         try:
 
 
-            Peakedness_PGU(get_p_geo(), p1, &p2, &p3, &p4, &p5)
+            Peakedness_PGU(get_p_geo(), p1, &p2, &p3.handle, &p4.handle, &p5.handle)
             
         finally:
             pass
@@ -45580,45 +45580,45 @@ cdef class WrapPGU:
             pass
 
     @classmethod
-    def ref_file(cls, int32_t p1, const char* p2):
+    def ref_file(cls, WrapPG p1, const char* p2):
 
         try:
 
 
-            RefFile_PGU(get_p_geo(), &p1, p2)
+            RefFile_PGU(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def save_file(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, int32_t p7, int32_t p8, const char* p9):
+    def save_file(cls, WrapPG p1, double p2, double p3, double p4, double p5, double p6, WrapTR p7, WrapIPJ p8, const char* p9):
 
         try:
 
 
-            SaveFile_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, p9)
+            SaveFile_PGU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7.handle, &p8.handle, p9)
             
         finally:
             pass
 
     @classmethod
-    def thematic_to_numeric(cls, int32_t p1, int32_t p2, int32_t p3):
+    def thematic_to_numeric(cls, WrapPG p1, WrapVV p2, WrapPG p3):
 
         try:
 
 
-            ThematicToNumeric_PGU(get_p_geo(), &p1, &p2, &p3)
+            ThematicToNumeric_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def trend(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9):
+    def trend(cls, WrapPG p1, WrapPG p2, WrapTR p3, int32_t p4, int32_t p5, double p6, double p7, double p8, double p9):
 
         try:
 
 
-            Trend_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            Trend_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
@@ -45629,23 +45629,23 @@ cdef class WrapPGU:
 
 
     @classmethod
-    def add_scalar(cls, int32_t p1, double p2):
+    def add_scalar(cls, WrapPG p1, double p2):
 
         try:
 
 
-            AddScalar_PGU(get_p_geo(), &p1, &p2)
+            AddScalar_PGU(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def multiply_scalar(cls, int32_t p1, double p2):
+    def multiply_scalar(cls, WrapPG p1, double p2):
 
         try:
 
 
-            MultiplyScalar_PGU(get_p_geo(), &p1, &p2)
+            MultiplyScalar_PGU(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
@@ -45656,111 +45656,111 @@ cdef class WrapPGU:
 
 
     @classmethod
-    def correlation_matrix(cls, int32_t p1, int32_t p2):
+    def correlation_matrix(cls, WrapPG p1, WrapPG p2):
 
         try:
 
 
-            CorrelationMatrix_PGU(get_p_geo(), &p1, &p2)
+            CorrelationMatrix_PGU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def correlation_matrix2(cls, int32_t p1, int32_t p2, int32_t p3):
+    def correlation_matrix2(cls, WrapPG p1, int32_t p2, WrapPG p3):
 
         try:
 
 
-            CorrelationMatrix2_PGU(get_p_geo(), &p1, &p2, &p3)
+            CorrelationMatrix2_PGU(get_p_geo(), &p1.handle, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def invert_matrix(cls, int32_t p1, int32_t p2):
+    def invert_matrix(cls, WrapPG p1, WrapPG p2):
 
         try:
 
 
-            InvertMatrix_PGU(get_p_geo(), &p1, &p2)
+            InvertMatrix_PGU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def jacobi(cls, int32_t p1, int32_t p2, int32_t p3):
+    def jacobi(cls, WrapPG p1, WrapVV p2, WrapPG p3):
 
         try:
 
 
-            Jacobi_PGU(get_p_geo(), &p1, &p2, &p3)
+            Jacobi_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def lu_back_sub(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def lu_back_sub(cls, WrapPG p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            LUBackSub_PGU(get_p_geo(), &p1, &p2, &p3, &p4)
+            LUBackSub_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def lu_decomp(cls, int32_t p1, int32_t p2, int32_t p3):
+    def lu_decomp(cls, WrapPG p1, WrapPG p2, WrapVV p3):
 
         try:
 
 
-            LUDecomp_PGU(get_p_geo(), &p1, &p2, &p3)
+            LUDecomp_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def matrix_mult(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def matrix_mult(cls, WrapPG p1, int32_t p2, WrapPG p3, int32_t p4, WrapPG p5):
 
         try:
 
 
-            MatrixMult_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            MatrixMult_PGU(get_p_geo(), &p1.handle, &p2, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def matrix_vector_mult(cls, int32_t p1, int32_t p2, int32_t p3):
+    def matrix_vector_mult(cls, WrapPG p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            MatrixVectorMult_PGU(get_p_geo(), &p1, &p2, &p3)
+            MatrixVectorMult_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def sv_decompose(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def sv_decompose(cls, WrapPG p1, WrapPG p2, WrapVV p3, WrapPG p4):
 
         try:
 
 
-            SVDecompose_PGU(get_p_geo(), &p1, &p2, &p3, &p4)
+            SVDecompose_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def sv_recompose(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5):
+    def sv_recompose(cls, WrapPG p1, WrapVV p2, WrapPG p3, double p4, WrapPG p5):
 
         try:
 
 
-            SVRecompose_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            SVRecompose_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
@@ -45771,89 +45771,89 @@ cdef class WrapPGU:
 
 
     @classmethod
-    def pc_communality(cls, int32_t p1, int32_t p2):
+    def pc_communality(cls, WrapPG p1, WrapVV p2):
 
         try:
 
 
-            PCCommunality_PGU(get_p_geo(), &p1, &p2)
+            PCCommunality_PGU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def pc_loadings(cls, int32_t p1, int32_t p2):
+    def pc_loadings(cls, WrapPG p1, WrapPG p2):
 
         try:
 
 
-            PCLoadings_PGU(get_p_geo(), &p1, &p2)
+            PCLoadings_PGU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def pc_loadings2(cls, int32_t p1, int32_t p2):
+    def pc_loadings2(cls, WrapPG p1, WrapPG p2):
 
         try:
 
 
-            PCLoadings2_PGU(get_p_geo(), &p1, &p2)
+            PCLoadings2_PGU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def pc_scores(cls, int32_t p1, int32_t p2, int32_t p3):
+    def pc_scores(cls, WrapPG p1, WrapPG p2, WrapPG p3):
 
         try:
 
 
-            PCScores_PGU(get_p_geo(), &p1, &p2, &p3)
+            PCScores_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def pc_standardize(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def pc_standardize(cls, WrapPG p1, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            PCStandardize_PGU(get_p_geo(), &p1, &p2, &p3, &p4)
+            PCStandardize_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def pc_standardize2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def pc_standardize2(cls, WrapPG p1, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            PCStandardize2_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            PCStandardize2_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def pc_transform(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def pc_transform(cls, WrapPG p1, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            PCTransform_PGU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            PCTransform_PGU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def pc_varimax(cls, int32_t p1, int32_t p2):
+    def pc_varimax(cls, WrapPG p1, WrapPG p2):
 
         try:
 
 
-            PCVarimax_PGU(get_p_geo(), &p1, &p2)
+            PCVarimax_PGU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
@@ -45864,12 +45864,12 @@ cdef class WrapPGU:
 
 
     @classmethod
-    def maximum_terrain_steepness(cls, int32_t p1, int32_t p2):
+    def maximum_terrain_steepness(cls, WrapPG p1, int32_t p2):
 
         try:
 
 
-            _return_val = rMaximumTerrainSteepness_PGU(get_p_geo(), &p1, &p2)
+            _return_val = rMaximumTerrainSteepness_PGU(get_p_geo(), &p1.handle, &p2)
             return _return_val
         finally:
             pass
@@ -45960,23 +45960,23 @@ cdef class WrapPROJ:
             pass
 
     @classmethod
-    def list_documents(cls, int32_t p1, const char* p2):
+    def list_documents(cls, WrapVV p1, const char* p2):
 
         try:
 
 
-            _return_val = App_iListDocuments_PROJ(get_p_geo(), &p1, p2)
+            _return_val = App_iListDocuments_PROJ(get_p_geo(), &p1.handle, p2)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def list_loaded_documents(cls, int32_t p1, const char* p2):
+    def list_loaded_documents(cls, WrapVV p1, const char* p2):
 
         try:
 
 
-            _return_val = App_iListLoadedDocuments_PROJ(get_p_geo(), &p1, p2)
+            _return_val = App_iListLoadedDocuments_PROJ(get_p_geo(), &p1.handle, p2)
             return _return_val
         finally:
             pass
@@ -46019,12 +46019,12 @@ cdef class WrapPROJ:
 
 
     @classmethod
-    def list_tools(cls, int32_t p1, int32_t p2):
+    def list_tools(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            _return_val = App_iListTools_PROJ(get_p_geo(), &p1, &p2)
+            _return_val = App_iListTools_PROJ(get_p_geo(), &p1.handle, &p2)
             return _return_val
         finally:
             pass
@@ -46122,12 +46122,12 @@ cdef class WrapRGRD:
             pass
 
     @classmethod
-    def create_img(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
+    def create_img(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapIPJ p4, const char* p5, const char* p6):
 
         try:
 
 
-            _return_val = WrapIMG(CreateIMG_RGRD(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6))
+            _return_val = WrapIMG(CreateIMG_RGRD(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, p5, p6))
             return _return_val
         finally:
             pass
@@ -46135,12 +46135,12 @@ cdef class WrapRGRD:
 
 
 
-    def default(self, const char* p2, int32_t p3):
+    def default(self, const char* p2, WrapDAT p3):
 
         try:
 
 
-            _return_val = iDefault_RGRD(get_p_geo(), &self.handle, p2, &p3)
+            _return_val = iDefault_RGRD(get_p_geo(), &self.handle, p2, &p3.handle)
             return _return_val
         finally:
             pass
@@ -46157,23 +46157,23 @@ cdef class WrapRGRD:
             pass
 
 
-    def run(self, int32_t p2, int32_t p3):
+    def run(self, WrapDAT p2, WrapDAT p3):
 
         try:
 
 
-            _return_val = iRun_RGRD(get_p_geo(), &self.handle, &p2, &p3)
+            _return_val = iRun_RGRD(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def run2(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6):
+    def run2(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, const char* p6):
 
         try:
 
 
-            _return_val = iRun2_RGRD(get_p_geo(), &p1, p2, p3, p4, p5, p6)
+            _return_val = iRun2_RGRD(get_p_geo(), &p1.handle, p2, p3, p4, p5, p6)
             return _return_val
         finally:
             pass
@@ -46190,12 +46190,12 @@ cdef class WrapRGRD:
             pass
 
     @classmethod
-    def run_vv(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6):
+    def run_vv(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapIPJ p4, const char* p5, const char* p6):
 
         try:
 
 
-            RunVV_RGRD(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6)
+            RunVV_RGRD(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, p5, p6)
             
         finally:
             pass
@@ -46211,199 +46211,199 @@ cdef class WrapSEMPLOT:
 
 
     @classmethod
-    def apply_filter_to_mask(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6):
+    def apply_filter_to_mask(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6):
 
         try:
 
 
-            ApplyFilterToMask_SEMPLOT(get_p_geo(), &p1, p2, p3, p4, p5, &p6)
+            ApplyFilterToMask_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, p4, p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def convert_dummies(cls, int32_t p1, int32_t p2):
+    def convert_dummies(cls, WrapDB p1, int32_t p2):
 
         try:
 
 
-            ConvertDummies_SEMPLOT(get_p_geo(), &p1, &p2)
+            ConvertDummies_SEMPLOT(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def create_groups(cls, int32_t p1, const char* p2):
+    def create_groups(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            CreateGroups_SEMPLOT(get_p_geo(), &p1, p2)
+            CreateGroups_SEMPLOT(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def default_groups(cls, int32_t p1):
+    def default_groups(cls, WrapDB p1):
 
         try:
 
 
-            DefaultGroups_SEMPLOT(get_p_geo(), &p1)
+            DefaultGroups_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def edit_map_plot_parameters(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, const char* p5):
+    def edit_map_plot_parameters(cls, WrapDB p1, const char* p2, const char* p3, WrapMAP p4, const char* p5):
 
         try:
 
 
-            EditMapPlotParameters_SEMPLOT(get_p_geo(), &p1, p2, p3, &p4, p5)
+            EditMapPlotParameters_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, &p4.handle, p5)
             
         finally:
             pass
 
     @classmethod
-    def edit_plot_components(cls, int32_t p1, const char* p2):
+    def edit_plot_components(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            EditPlotComponents_SEMPLOT(get_p_geo(), &p1, p2)
+            EditPlotComponents_SEMPLOT(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def edit_plot_parameters(cls, int32_t p1, const char* p2):
+    def edit_plot_parameters(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            EditPlotParameters_SEMPLOT(get_p_geo(), &p1, p2)
+            EditPlotParameters_SEMPLOT(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def export_overlay(cls, const char* p1, const char* p2, int32_t p3, const char* p4, int32_t p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, int32_t p12):
+    def export_overlay(cls, const char* p1, const char* p2, WrapMVIEW p3, const char* p4, int32_t p5, const char* p6, const char* p7, const char* p8, const char* p9, const char* p10, const char* p11, int32_t p12):
 
         try:
 
 
-            ExportOverlay_SEMPLOT(get_p_geo(), p1, p2, &p3, p4, &p5, p6, p7, p8, p9, p10, p11, &p12)
+            ExportOverlay_SEMPLOT(get_p_geo(), p1, p2, &p3.handle, p4, &p5, p6, p7, p8, p9, p10, p11, &p12)
             
         finally:
             pass
 
     @classmethod
-    def export_view(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6, const char* p7):
+    def export_view(cls, WrapDB p1, WrapLST p2, WrapDB p3, int32_t p4, const char* p5, const char* p6, const char* p7):
 
         try:
 
 
-            ExportView_SEMPLOT(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6, p7)
+            ExportView_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, p5, p6, p7)
             
         finally:
             pass
 
     @classmethod
-    def export_view2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, const char* p5, const char* p6, const char* p7, int32_t p8):
+    def export_view2(cls, WrapDB p1, WrapLST p2, WrapDB p3, int32_t p4, const char* p5, const char* p6, const char* p7, int32_t p8):
 
         try:
 
 
-            ExportView2_SEMPLOT(get_p_geo(), &p1, &p2, &p3, &p4, p5, p6, p7, &p8)
+            ExportView2_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, p5, p6, p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def filter_lst(cls, int32_t p1):
+    def filter_lst(cls, WrapLST p1):
 
         try:
 
 
-            FilterLST_SEMPLOT(get_p_geo(), &p1)
+            FilterLST_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def filter_mineral_pos_data(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5):
+    def filter_mineral_pos_data(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, int32_t p5):
 
         try:
 
 
-            FilterMineralPosData_SEMPLOT(get_p_geo(), &p1, p2, p3, p4, &p5)
+            FilterMineralPosData_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def get_associated_lst(cls, int32_t p1, int32_t p2, int32_t p3):
+    def get_associated_lst(cls, WrapDB p1, int32_t p2, WrapLST p3):
 
         try:
 
 
-            GetAssociatedLST_SEMPLOT(get_p_geo(), &p1, &p2, &p3)
+            GetAssociatedLST_SEMPLOT(get_p_geo(), &p1.handle, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_current_mineral_lst(cls, int32_t p1, const char* p2, int32_t p3):
+    def get_current_mineral_lst(cls, WrapDB p1, const char* p2, WrapLST p3):
 
         try:
 
 
-            GetCurrentMineralLST_SEMPLOT(get_p_geo(), &p1, p2, &p3)
+            GetCurrentMineralLST_SEMPLOT(get_p_geo(), &p1.handle, p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_current_position_lst(cls, int32_t p1, int32_t p2):
+    def get_current_position_lst(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            GetCurrentPositionLST_SEMPLOT(get_p_geo(), &p1, &p2)
+            GetCurrentPositionLST_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_full_mineral_lst(cls, int32_t p1):
+    def get_full_mineral_lst(cls, WrapLST p1):
 
         try:
 
 
-            GetFullMineralLST_SEMPLOT(get_p_geo(), &p1)
+            GetFullMineralLST_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_full_position_lst(cls, int32_t p1):
+    def get_full_position_lst(cls, WrapLST p1):
 
         try:
 
 
-            GetFullPositionLST_SEMPLOT(get_p_geo(), &p1)
+            GetFullPositionLST_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def get_grouping_lst(cls, int32_t p1, int32_t p2):
+    def get_grouping_lst(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            GetGroupingLST_SEMPLOT(get_p_geo(), &p1, &p2)
+            GetGroupingLST_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
@@ -46431,18 +46431,18 @@ cdef class WrapSEMPLOT:
             pass
 
     @classmethod
-    def edit_filter(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5):
+    def edit_filter(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5):
 
         try:
 
 
-            _return_val = iEditFilter_SEMPLOT(get_p_geo(), &p1, p2, p3, p4, p5)
+            _return_val = iEditFilter_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, p4, p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def get_mineral_channel_name(cls, int32_t p1, const char* p2):
+    def get_mineral_channel_name(cls, WrapDB p1, const char* p2):
         cdef int32_t p3 = 4*64
         cdef char* cp2 = NULL
 
@@ -46451,7 +46451,7 @@ cdef class WrapSEMPLOT:
 
             strcpy(cp2, p2)
 
-            IGetMineralChannelName_SEMPLOT(get_p_geo(), &p1, cp2, &p3)
+            IGetMineralChannelName_SEMPLOT(get_p_geo(), &p1.handle, cp2, &p3)
             return cp2
         finally:
             if cp2: free(cp2)
@@ -46495,12 +46495,12 @@ cdef class WrapSEMPLOT:
 
 
     @classmethod
-    def import_bin(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5, double p6):
+    def import_bin(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, int32_t p5, double p6):
 
         try:
 
 
-            ImportBIN_SEMPLOT(get_p_geo(), &p1, p2, p3, p4, &p5, &p6)
+            ImportBIN_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, p4, &p5, &p6)
             
         finally:
             pass
@@ -46517,12 +46517,12 @@ cdef class WrapSEMPLOT:
             pass
 
     @classmethod
-    def init_group_symbols_used(cls, int32_t p1):
+    def init_group_symbols_used(cls, WrapDB p1):
 
         try:
 
 
-            InitGroupSymbolsUsed_SEMPLOT(get_p_geo(), &p1)
+            InitGroupSymbolsUsed_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
@@ -46539,23 +46539,23 @@ cdef class WrapSEMPLOT:
             pass
 
     @classmethod
-    def view_type(cls, int32_t p1, const char* p2):
+    def view_type(cls, WrapMAP p1, const char* p2):
 
         try:
 
 
-            _return_val = iViewType_SEMPLOT(get_p_geo(), &p1, p2)
+            _return_val = iViewType_SEMPLOT(get_p_geo(), &p1.handle, p2)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def mineral_id(cls, int32_t p1, double p2, int32_t p3, int32_t p4):
+    def mineral_id(cls, WrapDB p1, double p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            MineralID_SEMPLOT(get_p_geo(), &p1, &p2, &p3, &p4)
+            MineralID_SEMPLOT(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
@@ -46583,166 +46583,166 @@ cdef class WrapSEMPLOT:
             pass
 
     @classmethod
-    def overlay_lst(cls, int32_t p1, int32_t p2, int32_t p3):
+    def overlay_lst(cls, WrapLST p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            OverlayLST_SEMPLOT(get_p_geo(), &p1, &p2, &p3)
+            OverlayLST_SEMPLOT(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def plot(cls, int32_t p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6, int32_t p7):
+    def plot(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, const char* p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            Plot_SEMPLOT(get_p_geo(), &p1, p2, p3, p4, p5, &p6, &p7)
+            Plot_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, p4, p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def plot_symbol_legend(cls, int32_t p1, int32_t p2, double p3, double p4, double p5, double p6):
+    def plot_symbol_legend(cls, WrapDB p1, WrapMVIEW p2, double p3, double p4, double p5, double p6):
 
         try:
 
 
-            PlotSymbolLegend_SEMPLOT(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            PlotSymbolLegend_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def prop_symb(cls, int32_t p1, int32_t p2, const char* p3, const char* p4, const char* p5, const char* p6, int32_t p7, int32_t p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15):
+    def prop_symb(cls, WrapDB p1, WrapMAP p2, const char* p3, const char* p4, const char* p5, const char* p6, int32_t p7, int32_t p8, double p9, double p10, int32_t p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15):
 
         try:
 
 
-            PropSymb_SEMPLOT(get_p_geo(), &p1, &p2, p3, p4, p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15)
+            PropSymb_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle, p3, p4, p5, p6, &p7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15)
             
         finally:
             pass
 
     @classmethod
-    def replot(cls, int32_t p1, const char* p2, const char* p3, int32_t p4, const char* p5):
+    def replot(cls, WrapDB p1, const char* p2, const char* p3, WrapMAP p4, const char* p5):
 
         try:
 
 
-            Replot_SEMPLOT(get_p_geo(), &p1, p2, p3, &p4, p5)
+            Replot_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, &p4.handle, p5)
             
         finally:
             pass
 
     @classmethod
-    def re_plot_symbol_legend(cls, int32_t p1, int32_t p2):
+    def re_plot_symbol_legend(cls, WrapDB p1, WrapMVIEW p2):
 
         try:
 
 
-            RePlotSymbolLegend_SEMPLOT(get_p_geo(), &p1, &p2)
+            RePlotSymbolLegend_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def reset_groups(cls, int32_t p1, const char* p2):
+    def reset_groups(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            ResetGroups_SEMPLOT(get_p_geo(), &p1, p2)
+            ResetGroups_SEMPLOT(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
 
     @classmethod
-    def reset_used_channel(cls, int32_t p1):
+    def reset_used_channel(cls, WrapDB p1):
 
         try:
 
 
-            ResetUsedChannel_SEMPLOT(get_p_geo(), &p1)
+            ResetUsedChannel_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def select_poly(cls, int32_t p1, int32_t p2, const char* p3, const char* p4, int32_t p5, int32_t p6):
+    def select_poly(cls, WrapDB p1, WrapMVIEW p2, const char* p3, const char* p4, WrapPLY p5, int32_t p6):
 
         try:
 
 
-            SelectPoly_SEMPLOT(get_p_geo(), &p1, &p2, p3, p4, &p5, &p6)
+            SelectPoly_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle, p3, p4, &p5.handle, &p6)
             
         finally:
             pass
 
     @classmethod
-    def set_channel_order(cls, int32_t p1, int32_t p2):
+    def set_channel_order(cls, WrapDB p1, WrapLST p2):
 
         try:
 
 
-            SetChannelOrder_SEMPLOT(get_p_geo(), &p1, &p2)
+            SetChannelOrder_SEMPLOT(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def set_channel_units(cls, int32_t p1):
+    def set_channel_units(cls, WrapDB p1):
 
         try:
 
 
-            SetChannelUnits_SEMPLOT(get_p_geo(), &p1)
+            SetChannelUnits_SEMPLOT(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def set_itr(cls, int32_t p1, int32_t p2, int32_t p3):
+    def set_itr(cls, WrapDB p1, int32_t p2, WrapITR p3):
 
         try:
 
 
-            SetITR_SEMPLOT(get_p_geo(), &p1, &p2, &p3)
+            SetITR_SEMPLOT(get_p_geo(), &p1.handle, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def set_mask(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5, int32_t p6):
+    def set_mask(cls, WrapDB p1, const char* p2, const char* p3, const char* p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            SetMask_SEMPLOT(get_p_geo(), &p1, p2, p3, p4, &p5, &p6)
+            SetMask_SEMPLOT(get_p_geo(), &p1.handle, p2, p3, p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def sort_data(cls, int32_t p1, int32_t p2, int32_t p3):
+    def sort_data(cls, WrapDB p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            SortData_SEMPLOT(get_p_geo(), &p1, &p2, &p3)
+            SortData_SEMPLOT(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def template_lst(cls, int32_t p1, int32_t p2):
+    def template_lst(cls, WrapLST p1, int32_t p2):
 
         try:
 
 
-            TemplateLST_SEMPLOT(get_p_geo(), &p1, &p2)
+            TemplateLST_SEMPLOT(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
@@ -46759,12 +46759,12 @@ cdef class WrapSEMPLOT:
             pass
 
     @classmethod
-    def total_oxides(cls, int32_t p1, const char* p2):
+    def total_oxides(cls, WrapDB p1, const char* p2):
 
         try:
 
 
-            TotalOxides_SEMPLOT(get_p_geo(), &p1, p2)
+            TotalOxides_SEMPLOT(get_p_geo(), &p1.handle, p2)
             
         finally:
             pass
@@ -46913,23 +46913,23 @@ cdef class WrapSHP:
             pass
 
 
-    def set_arc(self, int32_t p2, int32_t p3):
+    def set_arc(self, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            SetArc_SHP(get_p_geo(), &self.handle, &p2, &p3)
+            SetArc_SHP(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def set_arc_z(self, int32_t p2, int32_t p3, int32_t p4):
+    def set_arc_z(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            SetArcZ_SHP(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SetArcZ_SHP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -46946,12 +46946,12 @@ cdef class WrapSHP:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_SHP(get_p_geo(), &self.handle, &p2)
+            SetIPJ_SHP(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -46979,23 +46979,23 @@ cdef class WrapSHP:
             pass
 
 
-    def set_polygon(self, int32_t p2, int32_t p3, int32_t p4):
+    def set_polygon(self, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            SetPolygon_SHP(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            SetPolygon_SHP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
 
-    def set_polygon_z(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def set_polygon_z(self, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            SetPolygonZ_SHP(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5)
+            SetPolygonZ_SHP(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
@@ -47066,23 +47066,23 @@ cdef class WrapSQLSRV:
             pass
 
     @classmethod
-    def get_database_languages_lst(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5):
+    def get_database_languages_lst(cls, WrapLST p1, const char* p2, const char* p3, const char* p4, int32_t p5):
 
         try:
 
 
-            _return_val = iGetDatabaseLanguagesLST_SQLSRV(get_p_geo(), &p1, p2, p3, p4, &p5)
+            _return_val = iGetDatabaseLanguagesLST_SQLSRV(get_p_geo(), &p1.handle, p2, p3, p4, &p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def get_databases_lst(cls, int32_t p1, const char* p2, const char* p3, const char* p4, int32_t p5):
+    def get_databases_lst(cls, WrapLST p1, const char* p2, const char* p3, const char* p4, int32_t p5):
 
         try:
 
 
-            _return_val = iGetDatabasesLST_SQLSRV(get_p_geo(), &p1, p2, p3, p4, &p5)
+            _return_val = iGetDatabasesLST_SQLSRV(get_p_geo(), &p1.handle, p2, p3, p4, &p5)
             return _return_val
         finally:
             pass
@@ -47109,12 +47109,12 @@ cdef class WrapSQLSRV:
 
 
     @classmethod
-    def get_servers_lst(cls, int32_t p1):
+    def get_servers_lst(cls, WrapLST p1):
 
         try:
 
 
-            _return_val = iGetServersLST_SQLSRV(get_p_geo(), &p1)
+            _return_val = iGetServersLST_SQLSRV(get_p_geo(), &p1.handle)
             return _return_val
         finally:
             pass
@@ -47140,12 +47140,12 @@ cdef class WrapSTK:
 
 
 
-    def get_trans_parms(self, int32_t p2, double p3, int32_t p4, int32_t p5, int32_t p6, double p7, int32_t p8, int32_t p9):
+    def get_trans_parms(self, int32_t p2, double p3, WrapVV p4, WrapVV p5, int32_t p6, double p7, WrapVV p8, WrapVV p9):
 
         try:
 
 
-            GetTransParms_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            GetTransParms_STK(get_p_geo(), &self.handle, &p2, &p3, &p4.handle, &p5.handle, &p6, &p7, &p8.handle, &p9.handle)
             return (p2, p3, p6, p7)
         finally:
             pass
@@ -47273,7 +47273,7 @@ cdef class WrapSTK:
 
 
 
-    def get_profile(self, int32_t p2, double p3, double p4, const char* p5, int32_t p7, int32_t p8, int32_t p9, int32_t p10, const char* p11, int32_t p13, const char* p14, double p16, const char* p17, int32_t p19):
+    def get_profile(self, int32_t p2, double p3, double p4, const char* p5, int32_t p7, int32_t p8, int32_t p9, WrapVV p10, const char* p11, int32_t p13, const char* p14, double p16, const char* p17, int32_t p19):
         cdef int32_t p6 = 4*64
         cdef int32_t p12 = 4*128
         cdef int32_t p15 = 4*64
@@ -47294,7 +47294,7 @@ cdef class WrapSTK:
             strcpy(cp14, p14)
             strcpy(cp17, p17)
 
-            IGetProfile_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, cp5, &p6, &p7, &p8, &p9, &p10, cp11, &p12, &p13, cp14, &p15, &p16, cp17, &p18, &p19)
+            IGetProfile_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, cp5, &p6, &p7, &p8, &p9, &p10.handle, cp11, &p12, &p13, cp14, &p15, &p16, cp17, &p18, &p19)
             return (p2, p3, p4, cp5, p7, p8, p9, cp11, p13, cp14, p16, cp17, p19)
         finally:
             if cp5: free(cp5)
@@ -47304,7 +47304,7 @@ cdef class WrapSTK:
 
 
 
-    def get_profile_ex(self, int32_t p2, double p3, double p4, const char* p5, int32_t p7, int32_t p8, int32_t p9, int32_t p10, int32_t p11, const char* p12, int32_t p14, const char* p15, double p17, const char* p18, int32_t p20):
+    def get_profile_ex(self, int32_t p2, double p3, double p4, const char* p5, int32_t p7, int32_t p8, int32_t p9, int32_t p10, WrapVV p11, const char* p12, int32_t p14, const char* p15, double p17, const char* p18, int32_t p20):
         cdef int32_t p6 = 4*64
         cdef int32_t p13 = 4*128
         cdef int32_t p16 = 4*64
@@ -47325,7 +47325,7 @@ cdef class WrapSTK:
             strcpy(cp15, p15)
             strcpy(cp18, p18)
 
-            IGetProfileEx_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, cp5, &p6, &p7, &p8, &p9, &p10, &p11, cp12, &p13, &p14, cp15, &p16, &p17, cp18, &p19, &p20)
+            IGetProfileEx_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, cp5, &p6, &p7, &p8, &p9, &p10, &p11.handle, cp12, &p13, &p14, cp15, &p16, &p17, cp18, &p19, &p20)
             return (p2, p3, p4, cp5, p7, p8, p9, p10, cp12, p14, cp15, p17, cp18, p20)
         finally:
             if cp5: free(cp5)
@@ -47335,7 +47335,7 @@ cdef class WrapSTK:
 
 
 
-    def get_symb_parms(self, const char* p2, double p4, const char* p5, const char* p7, int32_t p9, int32_t p10, double p11, int32_t p12, int32_t p13, int32_t p14, int32_t p15, const char* p16, double p18, const char* p19):
+    def get_symb_parms(self, const char* p2, double p4, const char* p5, const char* p7, int32_t p9, int32_t p10, double p11, int32_t p12, WrapVV p13, WrapVV p14, int32_t p15, const char* p16, double p18, const char* p19):
         cdef int32_t p3 = 4*64
         cdef int32_t p6 = 4*64
         cdef int32_t p8 = 4*64
@@ -47360,7 +47360,7 @@ cdef class WrapSTK:
             strcpy(cp16, p16)
             strcpy(cp19, p19)
 
-            IGetSymbParms_STK(get_p_geo(), &self.handle, cp2, &p3, &p4, cp5, &p6, cp7, &p8, &p9, &p10, &p11, &p12, &p13, &p14, &p15, cp16, &p17, &p18, cp19, &p20)
+            IGetSymbParms_STK(get_p_geo(), &self.handle, cp2, &p3, &p4, cp5, &p6, cp7, &p8, &p9, &p10, &p11, &p12, &p13.handle, &p14.handle, &p15, cp16, &p17, &p18, cp19, &p20)
             return (cp2, p4, cp5, cp7, p9, p10, p11, p12, p15, cp16, p18, cp19)
         finally:
             if cp2: free(cp2)
@@ -47413,12 +47413,12 @@ cdef class WrapSTK:
             pass
 
 
-    def set_array_colors(self, int32_t p2):
+    def set_array_colors(self, WrapITR p2):
 
         try:
 
 
-            SetArrayColors_STK(get_p_geo(), &self.handle, &p2)
+            SetArrayColors_STK(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -47501,34 +47501,34 @@ cdef class WrapSTK:
             pass
 
 
-    def set_profile(self, int32_t p2, double p3, double p4, const char* p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, const char* p10, int32_t p11, const char* p12, double p13, const char* p14, int32_t p15):
+    def set_profile(self, int32_t p2, double p3, double p4, const char* p5, int32_t p6, int32_t p7, int32_t p8, WrapVV p9, const char* p10, int32_t p11, const char* p12, double p13, const char* p14, int32_t p15):
 
         try:
 
 
-            SetProfile_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7, &p8, &p9, p10, &p11, p12, &p13, p14, &p15)
+            SetProfile_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7, &p8, &p9.handle, p10, &p11, p12, &p13, p14, &p15)
             
         finally:
             pass
 
 
-    def set_profile_ex(self, int32_t p2, double p3, double p4, const char* p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, int32_t p10, const char* p11, int32_t p12, const char* p13, double p14, const char* p15, int32_t p16):
+    def set_profile_ex(self, int32_t p2, double p3, double p4, const char* p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9, WrapVV p10, const char* p11, int32_t p12, const char* p13, double p14, const char* p15, int32_t p16):
 
         try:
 
 
-            SetProfileEx_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7, &p8, &p9, &p10, p11, &p12, p13, &p14, p15, &p16)
+            SetProfileEx_STK(get_p_geo(), &self.handle, &p2, &p3, &p4, p5, &p6, &p7, &p8, &p9, &p10.handle, p11, &p12, p13, &p14, p15, &p16)
             
         finally:
             pass
 
 
-    def set_symb_parms(self, const char* p2, double p3, const char* p4, const char* p5, int32_t p6, int32_t p7, double p8, int32_t p9, int32_t p10, int32_t p11, int32_t p12, const char* p13, double p14, const char* p15):
+    def set_symb_parms(self, const char* p2, double p3, const char* p4, const char* p5, int32_t p6, int32_t p7, double p8, int32_t p9, WrapVV p10, WrapVV p11, int32_t p12, const char* p13, double p14, const char* p15):
 
         try:
 
 
-            SetSymbParms_STK(get_p_geo(), &self.handle, p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10, &p11, &p12, p13, &p14, p15)
+            SetSymbParms_STK(get_p_geo(), &self.handle, p2, &p3, p4, p5, &p6, &p7, &p8, &p9, &p10.handle, &p11.handle, &p12, p13, &p14, p15)
             
         finally:
             pass
@@ -47608,23 +47608,23 @@ cdef class WrapTC:
 
 
     @classmethod
-    def create(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, double p9, int32_t p10):
+    def create(cls, WrapIMG p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, double p9, int32_t p10):
 
         try:
 
 
-            _return_val = WrapTC(Create_TC(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10))
+            _return_val = WrapTC(Create_TC(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_ex(cls, int32_t p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, double p9, int32_t p10, int32_t p11):
+    def create_ex(cls, WrapIMG p1, double p2, double p3, double p4, double p5, double p6, double p7, int32_t p8, double p9, int32_t p10, int32_t p11):
 
         try:
 
 
-            _return_val = WrapTC(CreateEx_TC(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11))
+            _return_val = WrapTC(CreateEx_TC(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10, &p11))
             return _return_val
         finally:
             pass
@@ -47632,45 +47632,45 @@ cdef class WrapTC:
 
 
 
-    def grregter(self, int32_t p2, int32_t p3):
+    def grregter(self, WrapIMG p2, WrapIMG p3):
 
         try:
 
 
-            Grregter_TC(get_p_geo(), &self.handle, &p2, &p3)
+            Grregter_TC(get_p_geo(), &self.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
 
-    def grterain(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, double p8):
+    def grterain(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapIMG p7, double p8):
 
         try:
 
 
-            Grterain_TC(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            Grterain_TC(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8)
             
         finally:
             pass
 
 
-    def grterain2(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, int32_t p7, int32_t p8, double p9):
+    def grterain2(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, WrapVV p7, WrapIMG p8, double p9):
 
         try:
 
 
-            Grterain2_TC(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            Grterain2_TC(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7.handle, &p8.handle, &p9)
             
         finally:
             pass
 
 
-    def g_gterain(self, int32_t p2, int32_t p3, int32_t p4, int32_t p5, double p6, double p7, int32_t p8):
+    def g_gterain(self, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, double p6, double p7, int32_t p8):
 
         try:
 
 
-            GGterain_TC(get_p_geo(), &self.handle, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            GGterain_TC(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6, &p7, &p8)
             
         finally:
             pass
@@ -47761,34 +47761,34 @@ cdef class WrapTIN:
 
 
 
-    def copy(self, int32_t p2):
+    def copy(self, WrapTIN p2):
 
         try:
 
 
-            Copy_TIN(get_p_geo(), &self.handle, &p2)
+            Copy_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def create(cls, int32_t p1, int32_t p2, int32_t p3):
+    def create(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            _return_val = WrapTIN(Create_TIN(get_p_geo(), &p1, &p2, &p3))
+            _return_val = WrapTIN(Create_TIN(get_p_geo(), &p1.handle, &p2.handle, &p3.handle))
             return _return_val
         finally:
             pass
 
     @classmethod
-    def create_s(cls, int32_t p1):
+    def create_s(cls, WrapBF p1):
 
         try:
 
 
-            _return_val = WrapTIN(CreateS_TIN(get_p_geo(), &p1))
+            _return_val = WrapTIN(CreateS_TIN(get_p_geo(), &p1.handle))
             return _return_val
         finally:
             pass
@@ -47807,67 +47807,67 @@ cdef class WrapTIN:
             pass
 
 
-    def get_convex_hull(self, int32_t p2):
+    def get_convex_hull(self, WrapPLY p2):
 
         try:
 
 
-            GetConvexHull_TIN(get_p_geo(), &self.handle, &p2)
+            GetConvexHull_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_ipj(self, int32_t p2):
+    def get_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            GetIPJ_TIN(get_p_geo(), &self.handle, &p2)
+            GetIPJ_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_joins(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_joins(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GetJoins_TIN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetJoins_TIN(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def get_mesh(self, int32_t p2):
+    def get_mesh(self, WrapVV p2):
 
         try:
 
 
-            GetMesh_TIN(get_p_geo(), &self.handle, &p2)
+            GetMesh_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def get_nodes(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_nodes(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GetNodes_TIN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetNodes_TIN(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def get_triangles(self, int32_t p2, int32_t p3, int32_t p4):
+    def get_triangles(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            GetTriangles_TIN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            GetTriangles_TIN(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -47884,12 +47884,12 @@ cdef class WrapTIN:
             pass
 
 
-    def get_voronoi_edges(self, int32_t p2):
+    def get_voronoi_edges(self, WrapVV p2):
 
         try:
 
 
-            GetVoronoiEdges_TIN(get_p_geo(), &self.handle, &p2)
+            GetVoronoiEdges_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -47928,12 +47928,12 @@ cdef class WrapTIN:
             pass
 
 
-    def interp_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def interp_vv(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            InterpVV_TIN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            InterpVV_TIN(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -47950,23 +47950,23 @@ cdef class WrapTIN:
             pass
 
 
-    def linear_interp_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def linear_interp_vv(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            LinearInterpVV_TIN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            LinearInterpVV_TIN(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
 
-    def nearest_vv(self, int32_t p2, int32_t p3, int32_t p4):
+    def nearest_vv(self, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            NearestVV_TIN(get_p_geo(), &self.handle, &p2, &p3, &p4)
+            NearestVV_TIN(get_p_geo(), &self.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -47983,23 +47983,23 @@ cdef class WrapTIN:
             pass
 
 
-    def serial(self, int32_t p2):
+    def serial(self, WrapBF p2):
 
         try:
 
 
-            Serial_TIN(get_p_geo(), &self.handle, &p2)
+            Serial_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
 
 
-    def set_ipj(self, int32_t p2):
+    def set_ipj(self, WrapIPJ p2):
 
         try:
 
 
-            SetIPJ_TIN(get_p_geo(), &self.handle, &p2)
+            SetIPJ_TIN(get_p_geo(), &self.handle, &p2.handle)
             
         finally:
             pass
@@ -48015,34 +48015,34 @@ cdef class WrapTRND:
 
 
     @classmethod
-    def get_max_min(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6, double p7, int32_t p8):
+    def get_max_min(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapVV p4, WrapVV p5, WrapVV p6, double p7, int32_t p8):
 
         try:
 
 
-            GetMaxMin_TRND(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            GetMaxMin_TRND(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5.handle, &p6.handle, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def get_mesh(cls, int32_t p1, const char* p2, double p3, double p4, int32_t p5, int32_t p6):
+    def get_mesh(cls, WrapDB p1, const char* p2, double p3, double p4, WrapVV p5, int32_t p6):
 
         try:
 
 
-            GetMesh_TRND(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6)
+            GetMesh_TRND(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5.handle, &p6)
             
         finally:
             pass
 
     @classmethod
-    def trnd_db(cls, int32_t p1, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10):
+    def trnd_db(cls, WrapDB p1, const char* p2, double p3, double p4, double p5, double p6, double p7, double p8, double p9, double p10):
 
         try:
 
 
-            TrndDB_TRND(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            TrndDB_TRND(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
             
         finally:
             pass
@@ -48096,12 +48096,12 @@ cdef class WrapUNC:
 
 
     @classmethod
-    def validate_symbols(cls, int32_t p1, const char* p2, int32_t p3):
+    def validate_symbols(cls, WrapVV p1, const char* p2, int32_t p3):
 
         try:
 
 
-            ValidateSymbols_UNC(get_p_geo(), &p1, p2, &p3)
+            ValidateSymbols_UNC(get_p_geo(), &p1.handle, p2, &p3)
             
         finally:
             pass
@@ -48117,23 +48117,23 @@ cdef class WrapVAU:
 
 
     @classmethod
-    def prune(cls, int32_t p1, int32_t p2, int32_t p3):
+    def prune(cls, WrapVA p1, WrapVV p2, int32_t p3):
 
         try:
 
 
-            Prune_VAU(get_p_geo(), &p1, &p2, &p3)
+            Prune_VAU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def total_vector(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def total_vector(cls, WrapVA p1, WrapVA p2, WrapVA p3, WrapVA p4):
 
         try:
 
 
-            TotalVector_VAU(get_p_geo(), &p1, &p2, &p3, &p4)
+            TotalVector_VAU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
@@ -48159,12 +48159,12 @@ cdef class WrapVVEXP:
 
 
 
-    def add_vv(self, int32_t p2, const char* p3):
+    def add_vv(self, WrapVV p2, const char* p3):
 
         try:
 
 
-            AddVV_VVEXP(get_p_geo(), &self.handle, &p2, p3)
+            AddVV_VVEXP(get_p_geo(), &self.handle, &p2.handle, p3)
             
         finally:
             pass
@@ -48204,815 +48204,815 @@ cdef class WrapVVU:
 
 
     @classmethod
-    def average_repeat(cls, int32_t p1, int32_t p2):
+    def average_repeat(cls, WrapVV p1, WrapVV p2):
 
         try:
 
 
-            AverageRepeat_VVU(get_p_geo(), &p1, &p2)
+            AverageRepeat_VVU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def average_repeat_ex(cls, int32_t p1, int32_t p2, int32_t p3):
+    def average_repeat_ex(cls, WrapVV p1, WrapVV p2, int32_t p3):
 
         try:
 
 
-            AverageRepeatEx_VVU(get_p_geo(), &p1, &p2, &p3)
+            AverageRepeatEx_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def average_repeat2(cls, int32_t p1, int32_t p2, int32_t p3):
+    def average_repeat2(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            AverageRepeat2_VVU(get_p_geo(), &p1, &p2, &p3)
+            AverageRepeat2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def average_repeat2_ex(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def average_repeat2_ex(cls, WrapVV p1, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            AverageRepeat2Ex_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            AverageRepeat2Ex_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def binary_search(cls, int32_t p1, double p2, int32_t p3, int32_t p4):
+    def binary_search(cls, WrapVV p1, double p2, int32_t p3, int32_t p4):
 
         try:
 
 
-            BinarySearch_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            BinarySearch_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             return (p3, p4)
         finally:
             pass
 
     @classmethod
-    def box_cox(cls, int32_t p1, double p2):
+    def box_cox(cls, WrapVV p1, double p2):
 
         try:
 
 
-            BoxCox_VVU(get_p_geo(), &p1, &p2)
+            BoxCox_VVU(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def bp_filt(cls, int32_t p1, int32_t p2, double p3, double p4, int32_t p5):
+    def bp_filt(cls, WrapVV p1, WrapVV p2, double p3, double p4, int32_t p5):
 
         try:
 
 
-            BPFilt_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            BPFilt_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def clip(cls, int32_t p1, double p2, double p3, int32_t p4):
+    def clip(cls, WrapVV p1, double p2, double p3, int32_t p4):
 
         try:
 
 
-            Clip_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            Clip_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def clip_to_detect_limit(cls, int32_t p1, double p2, int32_t p3):
+    def clip_to_detect_limit(cls, WrapVV p1, double p2, int32_t p3):
 
         try:
 
 
-            ClipToDetectLimit_VVU(get_p_geo(), &p1, &p2, &p3)
+            ClipToDetectLimit_VVU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def decimate(cls, int32_t p1, int32_t p2):
+    def decimate(cls, WrapVV p1, int32_t p2):
 
         try:
 
 
-            Decimate_VVU(get_p_geo(), &p1, &p2)
+            Decimate_VVU(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def deviation(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, int32_t p8):
+    def deviation(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, double p6, double p7, int32_t p8):
 
         try:
 
 
-            Deviation_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            Deviation_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def distance(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7):
+    def distance(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, double p6, double p7):
 
         try:
 
 
-            Distance_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            Distance_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def distance_non_cumulative(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7):
+    def distance_non_cumulative(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, double p6, double p7):
 
         try:
 
 
-            DistanceNonCumulative_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            DistanceNonCumulative_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7)
             
         finally:
             pass
 
     @classmethod
-    def distance_3d(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5):
+    def distance_3d(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, WrapVV p5):
 
         try:
 
 
-            Distance3D_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Distance3D_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def find_gaps_3d(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5):
+    def find_gaps_3d(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, WrapVV p5):
 
         try:
 
 
-            FindGaps3D_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            FindGaps3D_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5.handle)
             
         finally:
             pass
 
     @classmethod
-    def dummy_range(cls, int32_t p1, double p2, double p3, int32_t p4, int32_t p5):
+    def dummy_range(cls, WrapVV p1, double p2, double p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            DummyRange_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            DummyRange_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def dummy_range_ex(cls, int32_t p1, double p2, double p3, int32_t p4, int32_t p5, int32_t p6):
+    def dummy_range_ex(cls, WrapVV p1, double p2, double p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            DummyRangeEx_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            DummyRangeEx_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def dummy_repeat(cls, int32_t p1, int32_t p2):
+    def dummy_repeat(cls, WrapVV p1, int32_t p2):
 
         try:
 
 
-            DummyRepeat_VVU(get_p_geo(), &p1, &p2)
+            DummyRepeat_VVU(get_p_geo(), &p1.handle, &p2)
             
         finally:
             pass
 
     @classmethod
-    def dup_stats(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def dup_stats(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            DupStats_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            DupStats_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def exp_dist(cls, int32_t p1, int32_t p2, double p3, int32_t p4):
+    def exp_dist(cls, WrapVV p1, int32_t p2, double p3, int32_t p4):
 
         try:
 
 
-            ExpDist_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            ExpDist_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def filter(cls, int32_t p1, int32_t p2, int32_t p3):
+    def filter(cls, WrapVV p1, WrapVV p2, int32_t p3):
 
         try:
 
 
-            Filter_VVU(get_p_geo(), &p1, &p2, &p3)
+            Filter_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def find_string_items(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def find_string_items(cls, WrapVV p1, WrapVV p2, int32_t p3, int32_t p4, int32_t p5, WrapVV p6):
 
         try:
 
 
-            FindStringItems_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            FindStringItems_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def fractal_filter(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def fractal_filter(cls, WrapVV p1, int32_t p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            FractalFilter_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            FractalFilter_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def close_xy(cls, int32_t p1, int32_t p2, double p3, double p4):
+    def close_xy(cls, WrapVV p1, WrapVV p2, double p3, double p4):
 
         try:
 
 
-            _return_val = iCloseXY_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            _return_val = iCloseXY_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def close_xym(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5):
+    def close_xym(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5):
 
         try:
 
 
-            _return_val = iCloseXYM_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            _return_val = iCloseXYM_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def close_xyz(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6):
+    def close_xyz(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, double p6):
 
         try:
 
 
-            _return_val = iCloseXYZ_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            _return_val = iCloseXYZ_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def close_xyzm(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7):
+    def close_xyzm(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5, double p6, double p7):
 
         try:
 
 
-            _return_val = iCloseXYZM_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            _return_val = iCloseXYZM_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5, &p6, &p7)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def dummy_back_tracks(cls, int32_t p1):
+    def dummy_back_tracks(cls, WrapVV p1):
 
         try:
 
 
-            _return_val = iDummyBackTracks_VVU(get_p_geo(), &p1)
+            _return_val = iDummyBackTracks_VVU(get_p_geo(), &p1.handle)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def find_dummy(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def find_dummy(cls, WrapVV p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            _return_val = iFindDummy_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            _return_val = iFindDummy_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def interp(cls, int32_t p1, int32_t p2, int32_t p3):
+    def interp(cls, WrapVV p1, int32_t p2, int32_t p3):
 
         try:
 
 
-            Interp_VVU(get_p_geo(), &p1, &p2, &p3)
+            Interp_VVU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def qc_fill_gaps(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5):
+    def qc_fill_gaps(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapVV p4, double p5):
 
         try:
 
 
-            _return_val = iQCFillGaps_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            _return_val = iQCFillGaps_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def search_text(cls, int32_t p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
+    def search_text(cls, WrapVV p1, const char* p2, int32_t p3, int32_t p4, int32_t p5, int32_t p6):
 
         try:
 
 
-            _return_val = iSearchText_VVU(get_p_geo(), &p1, p2, &p3, &p4, &p5, &p6)
+            _return_val = iSearchText_VVU(get_p_geo(), &p1.handle, p2, &p3, &p4, &p5, &p6)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def mask(cls, int32_t p1, int32_t p2):
+    def mask(cls, WrapVV p1, WrapVV p2):
 
         try:
 
 
-            Mask_VVU(get_p_geo(), &p1, &p2)
+            Mask_VVU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def mask_and(cls, int32_t p1, int32_t p2, int32_t p3):
+    def mask_and(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            MaskAND_VVU(get_p_geo(), &p1, &p2, &p3)
+            MaskAND_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def mask_or(cls, int32_t p1, int32_t p2, int32_t p3):
+    def mask_or(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            MaskOR_VVU(get_p_geo(), &p1, &p2, &p3)
+            MaskOR_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def nl_filt(cls, int32_t p1, int32_t p2, int32_t p3, double p4):
+    def nl_filt(cls, WrapVV p1, WrapVV p2, int32_t p3, double p4):
 
         try:
 
 
-            NLFilt_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            NLFilt_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def noise_check(cls, int32_t p1, int32_t p2, double p3, int32_t p4):
+    def noise_check(cls, WrapVV p1, WrapVV p2, double p3, int32_t p4):
 
         try:
 
 
-            NoiseCheck_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            NoiseCheck_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def noise_check2(cls, int32_t p1, int32_t p2, int32_t p3, double p4, int32_t p5):
+    def noise_check2(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, int32_t p5):
 
         try:
 
 
-            NoiseCheck2_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            NoiseCheck2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def normal_dist(cls, int32_t p1, int32_t p2, double p3, double p4, int32_t p5):
+    def normal_dist(cls, WrapVV p1, int32_t p2, double p3, double p4, int32_t p5):
 
         try:
 
 
-            NormalDist_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            NormalDist_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def offset_circles(cls, int32_t p1, int32_t p2, double p3, double p4, int32_t p5, int32_t p6):
+    def offset_circles(cls, WrapVV p1, WrapVV p2, double p3, double p4, WrapVV p5, WrapVV p6):
 
         try:
 
 
-            OffsetCircles_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            OffsetCircles_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5.handle, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def offset_correct(cls, int32_t p1, int32_t p2, double p3, int32_t p4, int32_t p5, int32_t p6):
+    def offset_correct(cls, WrapVV p1, WrapVV p2, double p3, int32_t p4, WrapVV p5, WrapVV p6):
 
         try:
 
 
-            OffsetCorrect_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            OffsetCorrect_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5.handle, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def offset_correct2(cls, int32_t p1, int32_t p2, double p3, double p4, int32_t p5, int32_t p6):
+    def offset_correct2(cls, WrapVV p1, WrapVV p2, double p3, double p4, WrapVV p5, WrapVV p6):
 
         try:
 
 
-            OffsetCorrect2_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6)
+            OffsetCorrect2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5.handle, &p6.handle)
             
         finally:
             pass
 
     @classmethod
-    def offset_correct3(cls, int32_t p1, int32_t p2, double p3, double p4, double p5, int32_t p6, int32_t p7):
+    def offset_correct3(cls, WrapVV p1, WrapVV p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            OffsetCorrect3_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            OffsetCorrect3_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def offset_correct_xyz(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, int32_t p8, int32_t p9, int32_t p10):
+    def offset_correct_xyz(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, double p6, double p7, WrapVV p8, WrapVV p9, WrapVV p10):
 
         try:
 
 
-            OffsetCorrectXYZ_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9, &p10)
+            OffsetCorrectXYZ_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8.handle, &p9.handle, &p10.handle)
             
         finally:
             pass
 
     @classmethod
-    def offset_rectangles(cls, int32_t p1, int32_t p2, double p3, double p4, double p5, int32_t p6, int32_t p7):
+    def offset_rectangles(cls, WrapVV p1, WrapVV p2, double p3, double p4, double p5, WrapVV p6, WrapVV p7):
 
         try:
 
 
-            OffsetRectangles_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7)
+            OffsetRectangles_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5, &p6.handle, &p7.handle)
             
         finally:
             pass
 
     @classmethod
-    def pick_peak(cls, int32_t p1, int32_t p2, double p3, int32_t p4):
+    def pick_peak(cls, WrapVV p1, WrapVV p2, double p3, int32_t p4):
 
         try:
 
 
-            PickPeak_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            PickPeak_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def pick_peak2(cls, int32_t p1, int32_t p2, double p3, double p4):
+    def pick_peak2(cls, WrapVV p1, WrapVV p2, double p3, double p4):
 
         try:
 
 
-            PickPeak2_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            PickPeak2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             
         finally:
             pass
 
     @classmethod
-    def pick_peak3(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, int32_t p6, int32_t p7, int32_t p8, int32_t p9):
+    def pick_peak3(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, WrapVV p6, WrapVV p7, WrapVV p8, WrapVV p9):
 
         try:
 
 
-            PickPeak3_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            PickPeak3_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6.handle, &p7.handle, &p8.handle, &p9.handle)
             
         finally:
             pass
 
     @classmethod
-    def poly_fill(cls, int32_t p1, int32_t p2, int32_t p3):
+    def poly_fill(cls, WrapVV p1, int32_t p2, WrapVV p3):
 
         try:
 
 
-            PolyFill_VVU(get_p_geo(), &p1, &p2, &p3)
+            PolyFill_VVU(get_p_geo(), &p1.handle, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def poly_fill2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def poly_fill2(cls, WrapVV p1, WrapVV p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            PolyFill2_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            PolyFill2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def polygon_mask(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def polygon_mask(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapPLY p4, int32_t p5):
 
         try:
 
 
-            PolygonMask_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            PolygonMask_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def prune(cls, int32_t p1, int32_t p2, int32_t p3):
+    def prune(cls, WrapVV p1, WrapVV p2, int32_t p3):
 
         try:
 
 
-            Prune_VVU(get_p_geo(), &p1, &p2, &p3)
+            Prune_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def qc(cls, int32_t p1, int32_t p2, int32_t p3, double p4, double p5, double p6, double p7, int32_t p8):
+    def qc(cls, WrapVV p1, WrapVV p2, WrapVV p3, double p4, double p5, double p6, double p7, int32_t p8):
 
         try:
 
 
-            QC_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8)
+            QC_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8)
             
         finally:
             pass
 
     @classmethod
-    def range_vector_mag(cls, int32_t p1, int32_t p2, double p3, double p4):
+    def range_vector_mag(cls, WrapVV p1, WrapVV p2, double p3, double p4):
 
         try:
 
 
-            RangeVectorMag_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            RangeVectorMag_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             return (p3, p4)
         finally:
             pass
 
     @classmethod
-    def regress(cls, int32_t p1, int32_t p2, double p3, double p4):
+    def regress(cls, WrapVV p1, WrapVV p2, double p3, double p4):
 
         try:
 
 
-            Regress_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            Regress_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             return (p3, p4)
         finally:
             pass
 
     @classmethod
-    def rel_var_dup(cls, int32_t p1, int32_t p2, double p3, int32_t p4):
+    def rel_var_dup(cls, WrapVV p1, WrapVV p2, double p3, int32_t p4):
 
         try:
 
 
-            RelVarDup_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            RelVarDup_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4)
             return (p3, p4)
         finally:
             pass
 
     @classmethod
-    def remove_dummy(cls, int32_t p1):
+    def remove_dummy(cls, WrapVV p1):
 
         try:
 
 
-            RemoveDummy_VVU(get_p_geo(), &p1)
+            RemoveDummy_VVU(get_p_geo(), &p1.handle)
             
         finally:
             pass
 
     @classmethod
-    def remove_dummy2(cls, int32_t p1, int32_t p2):
+    def remove_dummy2(cls, WrapVV p1, WrapVV p2):
 
         try:
 
 
-            RemoveDummy2_VVU(get_p_geo(), &p1, &p2)
+            RemoveDummy2_VVU(get_p_geo(), &p1.handle, &p2.handle)
             
         finally:
             pass
 
     @classmethod
-    def remove_dummy3(cls, int32_t p1, int32_t p2, int32_t p3):
+    def remove_dummy3(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            RemoveDummy3_VVU(get_p_geo(), &p1, &p2, &p3)
+            RemoveDummy3_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def remove_dummy4(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def remove_dummy4(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapVV p4):
 
         try:
 
 
-            RemoveDummy4_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            RemoveDummy4_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def remove_dup(cls, int32_t p1, int32_t p2, int32_t p3):
+    def remove_dup(cls, WrapVV p1, WrapVV p2, int32_t p3):
 
         try:
 
 
-            RemoveDup_VVU(get_p_geo(), &p1, &p2, &p3)
+            RemoveDup_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3)
             
         finally:
             pass
 
     @classmethod
-    def remove_xy_dup(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def remove_xy_dup(cls, WrapVV p1, WrapVV p2, WrapVV p3, int32_t p4):
 
         try:
 
 
-            RemoveXYDup_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            RemoveXYDup_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4)
             
         finally:
             pass
 
     @classmethod
-    def remove_xy_dup_index(cls, int32_t p1, int32_t p2, int32_t p3):
+    def remove_xy_dup_index(cls, WrapVV p1, WrapVV p2, WrapVV p3):
 
         try:
 
 
-            RemoveXYDupIndex_VVU(get_p_geo(), &p1, &p2, &p3)
+            RemoveXYDupIndex_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def rolling_stats(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def rolling_stats(cls, WrapVV p1, WrapVV p2, int32_t p3, int32_t p4, int32_t p5):
 
         try:
 
 
-            RollingStats_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            RollingStats_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4, &p5)
             
         finally:
             pass
 
     @classmethod
-    def search_replace(cls, int32_t p1, double p2, double p3):
+    def search_replace(cls, WrapVV p1, double p2, double p3):
 
         try:
 
 
-            SearchReplace_VVU(get_p_geo(), &p1, &p2, &p3)
+            SearchReplace_VVU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def search_replace_text(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, int32_t p6):
+    def search_replace_text(cls, WrapVV p1, int32_t p2, int32_t p3, const char* p4, const char* p5, int32_t p6):
 
         try:
 
 
-            SearchReplaceText_VVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6)
+            SearchReplaceText_VVU(get_p_geo(), &p1.handle, &p2, &p3, p4, p5, &p6)
             
         finally:
             pass
 
     @classmethod
-    def search_replace_text_ex(cls, int32_t p1, int32_t p2, int32_t p3, const char* p4, const char* p5, int32_t p6, int32_t p7):
+    def search_replace_text_ex(cls, WrapVV p1, int32_t p2, int32_t p3, const char* p4, const char* p5, int32_t p6, int32_t p7):
 
         try:
 
 
-            SearchReplaceTextEx_VVU(get_p_geo(), &p1, &p2, &p3, p4, p5, &p6, &p7)
+            SearchReplaceTextEx_VVU(get_p_geo(), &p1.handle, &p2, &p3, p4, p5, &p6, &p7)
             return p7
         finally:
             pass
 
     @classmethod
-    def spline(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, double p5, double p6, double p7, int32_t p8, int32_t p9):
+    def spline(cls, WrapVV p1, WrapVV p2, WrapVV p3, int32_t p4, double p5, double p6, double p7, int32_t p8, int32_t p9):
 
         try:
 
 
-            Spline_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5, &p6, &p7, &p8, &p9)
+            Spline_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4, &p5, &p6, &p7, &p8, &p9)
             
         finally:
             pass
 
     @classmethod
-    def spline2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4, int32_t p5):
+    def spline2(cls, WrapVV p1, WrapVV p2, WrapVV p3, WrapVV p4, int32_t p5):
 
         try:
 
 
-            Spline2_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            Spline2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3.handle, &p4.handle, &p5)
             
         finally:
             pass
 
     @classmethod
-    def tokenize_to_values(cls, int32_t p1, const char* p2):
+    def tokenize_to_values(cls, WrapVV p1, const char* p2):
 
         try:
 
 
-            _return_val = iTokenizeToValues_VVU(get_p_geo(), &p1, p2)
+            _return_val = iTokenizeToValues_VVU(get_p_geo(), &p1.handle, p2)
             return _return_val
         finally:
             pass
 
     @classmethod
-    def translate(cls, int32_t p1, double p2, double p3):
+    def translate(cls, WrapVV p1, double p2, double p3):
 
         try:
 
 
-            Translate_VVU(get_p_geo(), &p1, &p2, &p3)
+            Translate_VVU(get_p_geo(), &p1.handle, &p2, &p3)
             
         finally:
             pass
 
     @classmethod
-    def trend(cls, int32_t p1, int32_t p2, int32_t p3):
+    def trend(cls, WrapVV p1, int32_t p2, WrapVV p3):
 
         try:
 
 
-            Trend_VVU(get_p_geo(), &p1, &p2, &p3)
+            Trend_VVU(get_p_geo(), &p1.handle, &p2, &p3.handle)
             
         finally:
             pass
 
     @classmethod
-    def trend2(cls, int32_t p1, int32_t p2, int32_t p3, int32_t p4):
+    def trend2(cls, WrapVV p1, WrapVV p2, int32_t p3, WrapVV p4):
 
         try:
 
 
-            Trend2_VVU(get_p_geo(), &p1, &p2, &p3, &p4)
+            Trend2_VVU(get_p_geo(), &p1.handle, &p2.handle, &p3, &p4.handle)
             
         finally:
             pass
 
     @classmethod
-    def uniform_dist(cls, int32_t p1, int32_t p2, double p3, double p4, int32_t p5):
+    def uniform_dist(cls, WrapVV p1, int32_t p2, double p3, double p4, int32_t p5):
 
         try:
 
 
-            UniformDist_VVU(get_p_geo(), &p1, &p2, &p3, &p4, &p5)
+            UniformDist_VVU(get_p_geo(), &p1.handle, &p2, &p3, &p4, &p5)
             
         finally:
             pass

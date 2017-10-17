@@ -54,6 +54,8 @@ class CythonParameter(Parameter):
     def cy_type(self):
         if self.type == "void*": return "unsigned char*"
         elif self.type == "const void*": return "const unsigned char*"
+        elif self.type in self.generator.classes:
+            return "Wrap{}".format(self.type)
         else: return self.generator.get_c_type(self.type, is_val=True)
 
     @property
@@ -80,6 +82,8 @@ class CythonParameter(Parameter):
                 return '{}'.format(self.name)
         elif self.is_val or (isinstance(self.type, str) and not self.type.find('*') == -1):
             return '{}'.format(self.name)
+        elif self.type in self.generator.classes:
+            return "&{}.handle".format(self.name)
         else:
             return '&{}'.format(self.name)
 
