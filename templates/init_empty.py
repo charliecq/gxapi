@@ -11,6 +11,12 @@
 ### endblock Constants
 {{ "### endblock Constants" }}
 
+{{ "### block ClassImports" }}
+### block ClassImports
+### endblock ClassImports
+{{ "### endblock ClassImports" }}
+
+
 {{ "### block Footer" }}
 ### block Footer
 # NOTICE: The code generator will not replace the code in this block

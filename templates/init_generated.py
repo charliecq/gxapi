@@ -2,11 +2,39 @@
 
 ### block Constants
 {{ "### block Constants" }}
-# NOTICE: Do not edit anything in this block, it is generated code
+# NOTICE: Do not edit anything here, it is generated code
 ### for cl in classes
-class GX{{ cl }}Defines:
-    pass
+
+# BEGIN GX{{ cl }} Constants
+# NOTICE: Do not edit anything here, it is generated code
+
+{% for name, define in classes[cl].defines.items() %}{% if not name == "GEO_BOOL" and not define.is_null_handle %}
+{% for constant in define.constants %}
+{{ constant.name }} = {{ constant.python_value }}
+{% endfor %}
+{% endif %}{% endfor %}	
+
+# BEGIN GX{{ cl }} Constants
+
 ### endfor
 {{ "### endblock Constants" }}
 ### endblock Constants
+
+### block ClassImports
+{{ "### block ClassImports" }}
+# NOTICE: Do not edit anything here, it is generated code
+
+__all__ = [
+### for cl in classes
+    'GX{{ cl }}',
+### endfor
+]
+
+### for cl in classes
+from . import GX{{ cl }}
+### endfor
+
+{{ "### endblock ClassImports" }}
+### endblock ClassImports
+
 

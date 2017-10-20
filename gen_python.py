@@ -26,11 +26,19 @@ class PythonConstant(Constant):
     def __init__(self, other):
         super().construct_copy(other)
 
-    def render(self):
+    @property
+    def python_value(self):
+        val = self.value
+        if self.value in self.generator.constants.keys():
+            val = self.generator.constants[val].python_value
         if self.type == Type.STRING:
-            return self.generator.parse_template('#define {{ constant.name }} "{{ constant.value }}"').render(constant=self)
+            return '\"{}\"'.format(val)
         else:
-            return self.generator.parse_template('#define {{ constant.name }} {{ constant.value }}').render(constant=self)
+            last_char = val[-1]
+            if 'U' == last_char or 'f' == last_char or 'L' == last_char:
+                return val[:-1]
+            else:
+                return val
 
 class PythonDefine(Define):
     def __init__(self, other):
@@ -363,16 +371,21 @@ class PythonCodeGenerator(CodeGeneratorBase):
             return 'const {}*'.format(c_type)
 
     def _regen_py(self, template_prefix, output_file, **kwargs):
+        empty_template = 'templates/{}_empty.py'.format(template_prefix)
+        cur_gen_template = 'templates/{}_cur.gen.py'.format(template_prefix)
+        generated_template_name = '{}_generated.py'.format(template_prefix)
+        generated_gen_template = 'templates/{}_generated.gen.py'.format(template_prefix)
+
         if not os.path.exists(output_file):
-            copyfile('templates/init_empty.py', 'templates/init_cur.gen.py')
+            copyfile(empty_template, cur_gen_template)
         else:
-            copyfile(output_file, 'templates/init_cur.gen.py')
+            copyfile(output_file, cur_gen_template)
         
-        gen_template = self.get_template('init_generated.py')
-        with open('templates\init_generated.gen.py', 'wb') as f:
+        gen_template = self.get_template(generated_template_name)
+        with open(generated_gen_template, 'wb') as f:
             f.write(gen_template.render(**kwargs).encode('UTF-8'))
 
-        final_template = self.get_template('init_generated.gen.py')
+        final_template = self.get_template(os.path.split(generated_gen_template)[1])
         with open(output_file, 'wb') as f:
             f.write(final_template.render(**kwargs).encode('UTF-8'))
 
