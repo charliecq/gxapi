@@ -26,12 +26,12 @@
 
 __all__ = [
 ### for cl in classes
-    'GX{{ cl }}',
+{% if not classes[cl].no_cpp %}    'GX{{ cl }}',{% endif %}
 ### endfor
 ]
 
 ### for cl in classes
-from . import GX{{ cl }}
+{% if not classes[cl].no_cpp %}from . import GX{{ cl }}{% endif %}
 ### endfor
 
 {{ "### endblock ClassImports" }}

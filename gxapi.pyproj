@@ -5,13 +5,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>gen_cython.py</StartupFile>
+    <StartupFile>gen_python.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -25,6 +26,11 @@
     <Compile Include="gen_cython.py" />
     <Compile Include="gen_gxh.py" />
     <Compile Include="gen_gxlib.py" />
+    <Compile Include="gen_python.py" />
+    <Compile Include="templates\class_cur.gen.py" />
+    <Compile Include="templates\class_empty.py" />
+    <Compile Include="templates\class_generated.gen.py" />
+    <Compile Include="templates\class_generated.py" />
     <Compile Include="spec\core\3DN.py" />
     <Compile Include="spec\core\3DV.py" />
     <Compile Include="spec\core\AGG.py" />
@@ -148,15 +154,22 @@
     <Compile Include="spec\gxdefs.py" />
     <Compile Include="spec\gxmethod.py" />
     <Compile Include="spec\__init__.py" />
+    <Compile Include="templates\init_cur.gen.py" />
+    <Compile Include="templates\init_empty.py" />
+    <Compile Include="templates\init_generated.gen.py" />
+    <Compile Include="templates\init_generated.py" />
     <Compile Include="test.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="gen" />
+    <Folder Include="templates\" />
     <Folder Include="spec" />
     <Folder Include="spec\core" />
     <Folder Include="spec\desk" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="compile.bat" />
     <Content Include="gxapi.pyx" />
     <Content Include="gxapi_cy.pyx" />
   </ItemGroup>

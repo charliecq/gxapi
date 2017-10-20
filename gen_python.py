@@ -393,8 +393,18 @@ class PythonCodeGenerator(CodeGeneratorBase):
         output_file = os.path.join(self.gxapi_outdir, '__init__.py')
         self._regen_py('init', output_file, classes=self.classes)
 
+    def regen_classes(self):
+        for key, cl in self.classes.items():
+            if not cl.no_cpp:
+                output_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(key))
+                self._regen_py('class', output_file, cl=cl)
+
+    def generate(self):
+        gen.regen_init()
+        gen.regen_classes()
+
 
 if __name__ == "__main__":
     gen = PythonCodeGenerator()
-    gen.regen_init()
+    gen.generate()
     
