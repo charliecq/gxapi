@@ -4,7 +4,8 @@ import os
 import re
 import copy
 import itertools
-from jinja2 import Environment, StrictUndefined
+import inspect
+from jinja2 import Environment, StrictUndefined, FileSystemLoader
 
 from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
@@ -14,14 +15,14 @@ from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 _core_files = [
     'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py',
     'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
-    #'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
+    'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
     #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
     #'E:\\ggit\\t\\gxapi\spec\\core\\3DN.py'
     ]
 _desk_files = []
 
-_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
-_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
+#_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
+#_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
 
 _classes = {}
 _class_method_groups = {}
@@ -62,13 +63,14 @@ class CodeGeneratorBase:
     # and allows resolution of any pertinent information where only the child object is
     # available.
     def __init__(self, *, constant_type=None, define_type=None, parameter_type=None,
-                 method_type=None, class_type=None, no_obsolete=True):
+                 method_type=None, class_type=None, no_obsolete=True, template_dirs = []):
         self.classes = {}
         self.methods = {}
         self.constants = {}
         self.definitions = {}
-
-        self.j2env = Environment() #trim_blocks=True, lstrip_blocks=True)
+        
+        loader = FileSystemLoader(template_dirs) if len(template_dirs) else None
+        self.j2env = Environment(loader=loader, line_statement_prefix='###')
         self.j2env.filters['comment'] = do_comment
         self.j2env.undefined = StrictUndefined
 
@@ -150,6 +152,11 @@ class CodeGeneratorBase:
                     cl.method_groups[g_k] = methods
             self.classes[c_name] = cl
 
-    def get_template(self, source, globals=None, template_class=None):
+    def parse_template(self, source, globals=None, template_class=None):
         return self.j2env.from_string(source, globals=globals, template_class=template_class)
+
+    def get_template(self, name, parent=None, globals=None):
+        return self.j2env.get_template(name, parent=parent, globals=globals)
+
+    
 

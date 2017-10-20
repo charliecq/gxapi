@@ -3,6 +3,8 @@ from gen import CodeGeneratorBase
 from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
 import getopt
+import inspect
+from shutil import copyfile
 
 type_map = {
     'CRC': 'int32_t',
@@ -20,7 +22,7 @@ type_map = {
 
 
 
-class CythonConstant(Constant):
+class PythonConstant(Constant):
     def __init__(self, other):
         super().construct_copy(other)
 
@@ -30,11 +32,11 @@ class CythonConstant(Constant):
         else:
             return self.generator.parse_template('#define {{ constant.name }} {{ constant.value }}').render(constant=self)
 
-class CythonDefine(Define):
+class PythonDefine(Define):
     def __init__(self, other):
         super().construct_copy(other)
 
-class CythonParameter(Parameter):
+class PythonParameter(Parameter):
     def __init__(self, other):
         super().construct_copy(other)
 
@@ -114,7 +116,7 @@ class CythonParameter(Parameter):
 
             
 
-class CythonMethod(Method):
+class PythonMethod(Method):
     _ref_string_params = None
     def __init__(self, other):
         super().construct_copy(other)
@@ -222,7 +224,7 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
     def returns_class(self):
         return self.return_type in self.generator.classes.keys()
 
-class CythonClass(Class):
+class PythonClass(Class):
     def __init__(self, other):
         super().construct_copy(other)
 
@@ -317,10 +319,13 @@ cdef class Wrap{{ cl.name }}:
 {% endfor %}
 """).render(methods=method_group)
 
-class CythonCodeGenerator(CodeGeneratorBase):
+class PythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
-        super().__init__(constant_type=CythonConstant, define_type=CythonDefine, parameter_type=CythonParameter,
-                         method_type=CythonMethod, class_type=CythonClass)
+        cur_dir = os.path.dirname(os.path.join(os.getcwd(), inspect.getfile(self.__class__)))
+        self.gxapi_outdir = os.path.join(cur_dir, '..', 'gxpy', 'geosoft', 'gxapi')
+        template_dirs = [ os.path.join(cur_dir, 'templates') ]
+        super().__init__(constant_type=PythonConstant, define_type=PythonDefine, parameter_type=PythonParameter,
+                         method_type=PythonMethod, class_type=PythonClass, template_dirs=template_dirs)
         self._remove_no_cpp_methods()
 
     def _remove_no_cpp_methods(self):
@@ -357,148 +362,26 @@ class CythonCodeGenerator(CodeGeneratorBase):
         else:
             return 'const {}*'.format(c_type)
 
-
-    def render_pyx(self):
-        return self.parse_template('''
-#cython: language_level=3, c_string_type=unicode, c_string_encoding=utf8
-
-from libc.stdint cimport int32_t, int16_t
-from libc.stdlib cimport malloc, free
-from libc.string cimport strcpy, strcat, strncat, memset, memchr, memcmp, memcpy, memmove
-
-import threading
-from threading import current_thread
-
-thread_local = threading.local()
-
-from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
-
-ctypedef Py_UNICODE WCHAR
-ctypedef const WCHAR* LPCWSTR
-ctypedef size_t HWND
-ctypedef size_t HDC
-cdef extern void Destr_SYS(void*, const int32_t* p1);
-cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
-cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);
-
-{% for key, cl in classes.items() %}
-{{ cl.cdef_declarations }}
-{% endfor %}
-
-cdef extern void* pCreate_GEO(const char*, const char*, int32_t, void*, int32_t, char*, int32_t);
-cdef extern void Destroy_GEO(void *);
-
-cdef unicode _tounicode(char* s):
-    return s.decode('UTF-8', 'backslashreplace')
-
-ctypedef unsigned char char_type
-
-cdef char_type[:] _chars(s):
-    if isinstance(s, unicode):
-        # encode to the specific encoding used inside of the module
-        s = (<unicode>s).encode('utf8')
-    else:
-        unicode(s).encode('utf8')
-    return s
-
-cdef class WrapPGeo:
-    cdef void* p_geo
-    
-    def __cinit__(self, application, version, wind_id, flags):
-        app = (<unicode>application).encode('utf8')
-        ver = (<unicode>version).encode('utf8')
-        cdef size_t wind_handle = wind_id
-        cdef void* hParentWnd = <void *>wind_handle
-        cdef char* err = <char*>malloc(4096)
-        try:
-            tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
-            if not tls_geo is None:
-                raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
-            self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, flags, err, 4096)
-            if self.p_geo == NULL:
-                raise GXAPIError(_tounicode(err))
-            thread_local.gxapi_cy_geo = <size_t>self.p_geo
-        finally:
-            free(err)
+    def _regen_py(self, template_prefix, output_file, **kwargs):
+        if not os.path.exists(output_file):
+            copyfile('templates/init_empty.py', 'templates/init_cur.gen.py')
+        else:
+            copyfile(output_file, 'templates/init_cur.gen.py')
         
-    def __dealloc__(self):
-        if self.p_geo != NULL:
-            Destroy_GEO(self.p_geo)
-        thread_local.gxapi_cy_geo = None
+        gen_template = self.get_template('init_generated.py')
+        with open('templates\init_generated.gen.py', 'wb') as f:
+            f.write(gen_template.render(**kwargs).encode('UTF-8'))
 
-    cdef _raise_on_gx_errors(self, void* p_geo):
-        cdef int32_t term
-        cdef char* module
-        cdef char* err
-        cdef int32_t error_number
-        if iCheckTerminate_SYS(p_geo, &term) > 0:
-            if term == 0:
-                raise GXExit()
-            elif term == -1:
-                raise GXCancel()
-            else:
-                module = <char*>malloc(1024)
-                err = <char*>malloc(4096)
-                try:
-                    sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
-                    if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
-                        error_number == 31009 or error_number == 31011):  # wrapper bind errors
-                        raise GXAPIError(_tounicode(err));
-                    else:
-                        raise GXError(_tounicode(err), _tounicode(module), error_number)
-                finally:
-                    if module != NULL:
-                        free(module)
-                    if err != NULL:
-                        free(err)
-    
-cdef void* get_p_geo():
-    tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
-    if tls_geo is None:
-        raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
-    return <void*><size_t>tls_geo
+        final_template = self.get_template('init_generated.gen.py')
+        with open(output_file, 'wb') as f:
+            f.write(final_template.render(**kwargs).encode('UTF-8'))
 
-{% for key, cl in classes.items() %}
-{{ cl.class_wrapper }}
-{% endfor %}
+    def regen_init(self):
+        output_file = os.path.join(self.gxapi_outdir, '__init__.py')
+        self._regen_py('init', output_file, classes=self.classes)
 
-''').render(classes=self.classes)
 
 if __name__ == "__main__":
-    outputfile = 'gxapi_cy.pyx'
-    with open(outputfile, 'wb') as f:
-        gen = CythonCodeGenerator()
-        f.write(gen.render_pyx().encode('UTF-8'))
-
-        def get_data_array(self, int32_t p2, int32_t p3, int32_t p5):
-        """
-        Type code	C Type	Cython Type	Minimum size in bytes	Notes
-        'b'	signed char	int	1	 
-        'B'	unsigned char	int	1	 
-        'u'	Py_UNICODE	Unicode character	2	(1)
-        'h'	signed short	int	2	 
-        'H'	unsigned short	int	2	 
-        'i'	signed int	int	2	 
-        'I'	unsigned int	int	2	 
-        'l'	signed long	int	4	 
-        'L'	unsigned long	int	4	 
-        'q'	signed long long	int	8	(2)
-        'Q'	unsigned long long	int	8	(2)
-        'f'	float	float	4	 
-        'd'	double	float	8	 
-        Notes:
-        """
-
-        cdef void* ap4 = NULL
-        cdef array arrp4
-
-        try:
-            ap4 = malloc(p3*8)
-            arrp4 = array(shape=(p3,), itemsize=sizeof(double), format="d", mode="c", allocate_buffer=False)
-            arrp4.data = <char*>ap4
-            arrp4.callback_free_data = callback_free_data
-            ap4 = NULL
-            _return_val = iGetData_VV(get_p_geo(), &self.handle, p2, 5, arrp4.data, p5)
-            return (_return_val, arrp4)
-        finally:
-            if (ap4): free(ap4)
+    gen = PythonCodeGenerator()
+    gen.regen_init()
+    

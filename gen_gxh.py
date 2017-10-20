@@ -9,16 +9,16 @@ class GXHConstant(Constant):
 
     def render(self):
         if self.type == Type.STRING:
-            return self.generator.get_template('#define {{ constant.name }} "{{ constant.value }}"').render(constant=self)
+            return self.generator.parse_template('#define {{ constant.name }} "{{ constant.value }}"').render(constant=self)
         else:
-            return self.generator.get_template('#define {{ constant.name }} {{ constant.value }}').render(constant=self)
+            return self.generator.parse_template('#define {{ constant.name }} {{ constant.value }}').render(constant=self)
 
 class GXHDefine(Define):
     def __init__(self, other):
         super().construct_copy(other)
 
     def render(self):
-        return self.generator.get_template("""
+        return self.generator.parse_template("""
 //===========================================================================================================
 //
 // Define {{ define.name }}
@@ -66,11 +66,11 @@ class GXHParameter(Parameter):
 
     def render_gxh_doc(self, indent_spaces):
         if self.doc:
-            return self.generator.get_template(
+            return self.generator.parse_template(
                 '{% set type_len = param.gxh_type|length %}{{ param.doc | doc_sanitize | comment(comment_first_line=True) | indent(indent_spaces-type_len, True) | indent(indent_spaces+1) }}'
             ).render(param=self, indent_spaces=indent_spaces)
         else:
-            return self.generator.get_template(
+            return self.generator.parse_template(
                 '{% set type_len = param.gxh_type|length %}{{ "//" | indent(indent_spaces-type_len, True) }}').render(param=self, indent_spaces=indent_spaces)
 
 
@@ -80,7 +80,7 @@ class GXHMethod(Method):
         super().construct_copy(other)
 
     def render(self):
-        return self.generator.get_template("""{% set name_len = method.exposed_name|length %} {% set ret_len = method.gxh_return_type|length %} {% set avail_len = method.availability_prefix|length %}
+        return self.generator.parse_template("""{% set name_len = method.exposed_name|length %} {% set ret_len = method.gxh_return_type|length %} {% set avail_len = method.availability_prefix|length %}
 //-----------------------------------------------------------------------------------------------------------
 // {{ method.exposed_name }} {%if method.doc %}{{ method.doc | doc_sanitize | comment(extra_spaces=name_len+1) }}{% endif %}
 {% if method.return_doc %}//
@@ -131,7 +131,7 @@ class GXHMethod(Method):
         max_type_len = 0
         for param in self.parameters:
             max_type_len = max(max_type_len, len(param.gxh_type))
-        return self.generator.get_template("""{% for param in parameters %}{% if loop.first %}({% else %} {% endif %}{{ param.gxh_type }}{% if not loop.last %}, {{ param.render_gxh_doc(max_type_len + 2) }}
+        return self.generator.parse_template("""{% for param in parameters %}{% if loop.first %}({% else %} {% endif %}{{ param.gxh_type }}{% if not loop.last %}, {{ param.render_gxh_doc(max_type_len + 2) }}
 {% else %});{{ param.render_gxh_doc(max_type_len + 2) }}{% endif %}{% else %}();{% endfor %}""").render(parameters=self.parameters, max_type_len=max_type_len)
 
     @property
@@ -156,7 +156,7 @@ class GXHClass(Class):
         super().construct_copy(other)
 
     def render(self):
-        return self.generator.get_template("""
+        return self.generator.parse_template("""
 {{- cl.header -}}
 {{- cl.gxh_definitions -}}
 {{- cl.gxh_methods -}}
@@ -165,7 +165,7 @@ class GXHClass(Class):
 
     @property
     def header(self):
-        return self.generator.get_template("""
+        return self.generator.parse_template("""
 //===========================================================================================================
 //
 // Class {{ cl.name }}
@@ -190,11 +190,11 @@ class GXHClass(Class):
 
     @property
     def footer(self):
-        return self.generator.get_template('#endif').render(cl=self)
+        return self.generator.parse_template('#endif').render(cl=self)
 
     @property
     def gxh_definitions(self):
-        return self.generator.get_template("""
+        return self.generator.parse_template("""
 {% for _, define in cl.defines.items() %}
 {{ define.render() }}
 {% endfor %}
@@ -206,7 +206,7 @@ class GXHClass(Class):
             method_group = next(iter(self.method_groups.values()))
             return self.render_method_group(method_group)
         else:
-            return self.generator.get_template("""
+            return self.generator.parse_template("""
 {% for key, method_group in cl.method_groups.items() %}
 //===========================================================================================================
 //
@@ -219,7 +219,7 @@ class GXHClass(Class):
 """).render(cl=self)
 
     def render_method_group(self, method_group):
-        return self.generator.get_template("""
+        return self.generator.parse_template("""
 {% for method in methods %}
 {{ method.render() }}
 {% endfor %}
