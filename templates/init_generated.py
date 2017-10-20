@@ -31,7 +31,7 @@ __all__ = [
 ]
 
 ### for cl in classes
-{% if not classes[cl].no_cpp %}from . import GX{{ cl }}{% endif %}
+{% if not classes[cl].no_cpp %}from .GX{{ cl }} import GX{{ cl }}{% endif %}
 ### endfor
 
 {{ "### endblock ClassImports" }}
