@@ -164,7 +164,8 @@ class PythonMethod(Method):
         parameters = []
         if self.is_static:
             parameters.append('GXContext._get_tls_geo()')
-        for p in self.in_params[1:]:
+        passed_params = self.in_params if self.is_static else self.in_params[1:]
+        for p in passed_params:
             if p.type == Type.STRING:
                 if p.is_ref:
                     parameters.append("{}.value.encode()".format(p.name))
@@ -173,6 +174,8 @@ class PythonMethod(Method):
             else:
                 if p.is_ref:
                     parameters.append("{}.value".format(p.name))
+                elif p.type in self.generator.classes:
+                    parameters.append("{}._wrapper".format(p.name))
                 else:
                     parameters.append(p.name)
         if not parameters:

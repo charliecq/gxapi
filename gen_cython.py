@@ -90,9 +90,9 @@ class CythonParameter(Parameter):
     @property
     def utf8_default_length(self):
         if self.default_length in self.generator.constants.keys():
-            return '4*{}'.format(self.generator.constants[self.default_length].value)
+            return '{}'.format(self.generator.constants[self.default_length].value)
         else:
-            return '4*{}'.format(self.default_length)
+            return '{}'.format(self.default_length)
 
     @property
     def size_of_default(self):
@@ -373,7 +373,7 @@ class CythonCodeGenerator(CodeGeneratorBase):
         return self.parse_template('''
 #cython: language_level=3, c_string_type=unicode, c_string_encoding=utf8
 
-from libc.stdint cimport int32_t, int16_t
+from libc.stdint cimport uintptr_t, int32_t, int16_t
 from libc.stdlib cimport malloc, free
 from libc.string cimport strcpy, strcat, strncat, memset, memchr, memcmp, memcpy, memmove
 
@@ -381,55 +381,64 @@ from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
 ctypedef Py_UNICODE WCHAR
 ctypedef const WCHAR* LPCWSTR
-ctypedef size_t HWND
-ctypedef size_t HDC
+ctypedef uintptr_t HWND
+ctypedef uintptr_t HDC
+cdef extern void* pCreate_GEO(const char*, const char*, int32_t, void*, int32_t, char*, int32_t);
+cdef extern void Destroy_GEO(void *);
 cdef extern void Destr_SYS(void*, const int32_t* p1);
+cdef extern int32_t iCheckError_SYS(void*)
 cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
 cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);
+cdef extern HWND hGetMainWnd_GEO();
+cdef extern hGetActiveMainWnd_GEO();
+cdef extern EnableApplicationWindows_GEO(bool);
 
 {% for key, cl in classes.items() %}
 {{ cl.cdef_declarations }}
 {% endfor %}
 
-cdef extern void* pCreate_GEO(const char*, const char*, int32_t, void*, int32_t, char*, int32_t);
-cdef extern void Destroy_GEO(void *);
-
-cdef unicode _tounicode(char* s):
-    return s.decode('UTF-8', 'backslashreplace')
-
-ctypedef unsigned char char_type
-
-cdef char_type[:] _chars(s):
-    if isinstance(s, unicode):
-        # encode to the specific encoding used inside of the module
-        s = (<unicode>s).encode('utf8')
-    else:
-        unicode(s).encode('utf8')
-    return s
-
-
 cdef class WrapPGeo:
     cdef void* p_geo
+    cdef bint destroy_p_geo
     
-    def __cinit__(self, application, version, wind_id, flags):
-        app = (<unicode>application).encode('utf8')
-        ver = (<unicode>version).encode('utf8')
-        cdef size_t wind_handle = wind_id
+    def __cinit__(self):
+        self.destroy_p_geo = False
+
+    def _create(self, application, version, wind_id, flags):
+        app = (<unicode>application).encode()
+        ver = (<unicode>version).encode()
+        cdef uintptr_t wind_handle = wind_id
         cdef void* hParentWnd = <void *>wind_handle
         cdef char* err = <char*>malloc(4096)
         try:
             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, flags, err, 4096)
             if self.p_geo == NULL:
-                raise GXAPIError(_tounicode(err))
-            print("WrapPGeo alloc")
+                raise GXAPIError(err)
+            self.destroy_p_geo = True
+            #print("WrapPGeo alloc")
         finally:
             free(err)
+
+    def _create_internal(self, p_geo):
+        self.p_geo = <void*><uintptr_t>p_geo
         
     def __dealloc__(self):
-        if self.p_geo != NULL:
+        if self.p_geo != NULL and self.destroy_p_geo:
             Destroy_GEO(self.p_geo)
-            print("WrapPGeo dealloc")
+            #print("WrapPGeo dealloc")
 
+    cpdef uintptr_t _internal_p(self):
+        return <uintptr_t>self.p_geo
+
+    cpdef uintptr_t get_main_wnd(self):
+        return <uintptr_t>hGetMainWnd_GEO()
+
+    cpdef uintptr_t get_active_wnd(self):
+        return <uintptr_t>hGetActiveMainWnd_GEO()
+
+    def enable_application_windows(self, enable):
+        EnableApplicationWindows_GEO(enable);
+        
     cdef void* get_p_geo(self):
         return self.p_geo
 
@@ -438,7 +447,9 @@ cdef class WrapPGeo:
         cdef char* module
         cdef char* err
         cdef int32_t error_number
+        cdef int32_t check_err
         if iCheckTerminate_SYS(self.p_geo, &term) > 0:
+            check_err = iCheckError_SYS(self.p_geo)
             if term == 0:
                 raise GXExit()
             elif term == -1:
@@ -450,9 +461,9 @@ cdef class WrapPGeo:
                     sGetError_GEO(self.p_geo, module, 1024, err, 4096, &error_number)
                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
-                        raise GXAPIError(_tounicode(err));
+                        raise GXAPIError(err);
                     else:
-                        raise GXError(_tounicode(err), _tounicode(module), error_number)
+                        raise GXError(err, module, error_number)
                 finally:
                     if module != NULL:
                         free(module)
