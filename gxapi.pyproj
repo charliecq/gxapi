@@ -170,7 +170,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="compile.bat" />
-    <Content Include="gxapi.pyx" />
+    <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

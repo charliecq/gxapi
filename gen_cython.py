@@ -135,7 +135,7 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
 {{ method.wrap_alloc }}
 {{ method.wrap_assign_c }}
             {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}(_geo, {% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
-            _geo._raise_on_gx_errors()
+            _raise_on_gx_errors(_geo.p_geo)
             {{ method.wrap_return }}
         finally:
 {{ method.wrap_free }}
@@ -163,7 +163,7 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         elif len(self.parameters):
             params.append(self.parameters[0].cy_pass)
         params.extend([p.cy_pass for p in self.parameters[1:]]) 
-        return self.generator.parse_template("_geo.get_p_geo(){% for param in params %}, {{ param }}{% endfor %}").render(params=params)
+        return self.generator.parse_template("_geo.p_geo{% for param in params %}, {{ param }}{% endfor %}").render(params=params)
 
     @property
     def wrap_declare_c(self):
@@ -269,7 +269,8 @@ cdef class Wrap{{ cl.name }}:
     
     def __dealloc__(self):
         if self._handle != 0:
-            {{ cl.default_destroy_method }}(self._geo.get_p_geo(), &self._handle)
+            {{ cl.default_destroy_method }}(self._geo.p_geo, &self._handle)
+        self._geo = None
 
     @property
     def handle(self):
@@ -397,6 +398,34 @@ cdef extern EnableApplicationWindows_GEO(bool);
 {{ cl.cdef_declarations }}
 {% endfor %}
 
+cdef _raise_on_gx_errors(void* p_geo):
+    cdef int32_t term
+    cdef char* module
+    cdef char* err
+    cdef int32_t error_number
+    cdef int32_t check_err
+    if iCheckTerminate_SYS(p_geo, &term) > 0:
+        check_err = iCheckError_SYS(p_geo)
+        if term == 0:
+            raise GXExit()
+        elif term == -1:
+            raise GXCancel()
+        else:
+            module = <char*>malloc(1024)
+            err = <char*>malloc(4096)
+            try:
+                sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
+                if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
+                    error_number == 31009 or error_number == 31011):  # wrapper bind errors
+                    raise GXAPIError(err);
+                else:
+                    raise GXError(err, module, error_number)
+            finally:
+                if module != NULL:
+                    free(module)
+                if err != NULL:
+                    free(err)
+
 cdef class WrapPGeo:
     cdef void* p_geo
     cdef bint destroy_p_geo
@@ -442,33 +471,6 @@ cdef class WrapPGeo:
     cdef void* get_p_geo(self):
         return self.p_geo
 
-    cdef _raise_on_gx_errors(self):
-        cdef int32_t term
-        cdef char* module
-        cdef char* err
-        cdef int32_t error_number
-        cdef int32_t check_err
-        if iCheckTerminate_SYS(self.p_geo, &term) > 0:
-            check_err = iCheckError_SYS(self.p_geo)
-            if term == 0:
-                raise GXExit()
-            elif term == -1:
-                raise GXCancel()
-            else:
-                module = <char*>malloc(1024)
-                err = <char*>malloc(4096)
-                try:
-                    sGetError_GEO(self.p_geo, module, 1024, err, 4096, &error_number)
-                    if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
-                        error_number == 31009 or error_number == 31011):  # wrapper bind errors
-                        raise GXAPIError(err);
-                    else:
-                        raise GXError(err, module, error_number)
-                finally:
-                    if module != NULL:
-                        free(module)
-                    if err != NULL:
-                        free(err)
     
 {% for key, cl in classes.items() %}
 {{ cl.class_wrapper }}
