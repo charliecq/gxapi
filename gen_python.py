@@ -7,16 +7,18 @@ import inspect
 from shutil import copyfile
 
 type_map = {
-    'CRC': 'int32_t',
-    'WND': 'int32_t',
-    'PTMP': 'int32_t',
-    'FILTER': 'int32_t',
-    'DGW_OBJ': 'int32_t',
-    'TB_FIELD': 'int32_t',
-    'DB_SELECT': 'int32_t',
-    'DB_SYMB': 'int32_t',
-    'META_TOKEN': 'int32_t',
-    'HANDLE': 'int32_t',
+    'HDC': 'int',
+    'HWND': 'int',
+    'CRC': 'int',
+    'WND': 'int',
+    'PTMP': 'int',
+    'FILTER': 'int',
+    'DGW_OBJ': 'int',
+    'TB_FIELD': 'int',
+    'DB_SELECT': 'int',
+    'DB_SYMB': 'int',
+    'META_TOKEN': 'int',
+    'HANDLE': 'int',
     'GEO_BOOL': 'bool'
 }
 
@@ -48,25 +50,24 @@ class PythonParameter(Parameter):
     def __init__(self, other):
         super().construct_copy(other)
 
-    @property
-    def c_type(self):
-        return self.generator.get_c_type(self.type, is_ref=self.is_ref, is_val=self.is_val)
-    
-    @property
-    def cy_alloc(self):
-        return "c{} = <char*>malloc({})".format(self.name, self.size_of_default, self.name)
 
     @property
-    def cy_free(self):
-        return "if c{}: free(c{})".format(self.name, self.name)
+    def py_type(self):
+        return self.generator.get_py_type(self.type, is_val=self.is_val, is_ref=self.is_ref)
 
     @property
-    def cy_type(self):
-        if self.type == "void*": return "unsigned char*"
-        elif self.type == "const void*": return "const unsigned char*"
-        elif self.type in self.generator.classes:
-            return "Wrap{}".format(self.type)
-        else: return self.generator.get_c_type(self.type, is_val=True)
+    def py_type_hint(self):
+        py_type = self.py_type
+        if py_type == 'bytearray':
+            return 'type(bytearray)'
+        elif self.is_class:
+            return "'{}'".format(py_type)
+        else:
+            return py_type
+
+    @property
+    def is_class(self):
+        return self.type in self.generator.classes.keys()
 
     @property
     def cy_declare(self):
@@ -130,39 +131,60 @@ class PythonMethod(Method):
         super().construct_copy(other)
         
 
-    def render_c(self):
-        return self.generator.parse_template("""
-cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render_c_parameters() }}""").render(method=self)
-
-    def render_wrapper(self):
-        if self.is_destroy_method:
-            return ""
+    @property
+    def call_wrapper(self):
+        if self.is_static:
+            return 'gxapi_cy.Wrap{}.{}'.format(self.parent.name, self.ext_method_name) 
         else:
-            return self.generator.parse_template("""{% if method.is_static %}    @classmethod{% endif %}
-    def {{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
-{{ method.wrap_declare_c }}
-        try:
-{{ method.wrap_alloc }}
-{{ method.wrap_assign_c }}
-            {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}({% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
-            {{ method.wrap_return }}
-        finally:
-{{ method.wrap_free }}
-""").render(method=self)
-    
-    def render_c_parameters(self):
-        return self.generator.parse_template("""(void*{% for param in parameters %}, {{ param.c_type }} {{ param.name }}{% endfor %});""").render(parameters=self.parameters)
+            return 'self._wrapper.{}'.format(self.ext_method_name)
+
+    @property
+    def py_return(self):
+        if self.returns_void:
+            return ''
+        elif self.returns_class:
+            return "return {}(ret_val)".format(self.py_return_type)
+        else:
+            return "return ret_val"
+
+
+    @property
+    def assign_return_values(self):
+        return_values = []
+        if not self.returns_void:
+            return_values.append('ret_val')
+        return_values.extend(['{}.value'.format(p.name) for p in self.ref_params])
+        if not return_values:
+            return ''
+        else:
+            return '{} = '.format(', '.join(return_values))
+
+    @property
+    def pass_py_parameters(self):
+        parameters = []
+        if self.is_static:
+            parameters.append('GXContext._get_tls_geo()')
+        for p in self.in_params[1:]:
+            if p.type == Type.STRING:
+                if p.is_ref:
+                    parameters.append("{}.value.encode()".format(p.name))
+                else:
+                    parameters.append("{}.encode()".format(p.name))
+            else:
+                if p.is_ref:
+                    parameters.append("{}.value".format(p.name))
+                else:
+                    parameters.append(p.name)
+        if not parameters:
+            return ''
+        else:
+            return '{}'.format(', '.join(parameters))
 
     @property
     def ref_string_params(self):
         if not self._ref_string_params:
             self._ref_string_params = [p for p in self.parameters if p.is_ref_string]
         return self._ref_string_params
-
-    @property
-    def wrap_parameters(self):
-        params = self.in_params if self.is_static else self.in_params[1:]
-        return self.generator.parse_template("{% for param in params %}, {{ param.cy_type }} {{ param.name }}{% endfor %}").render(params=params)
 
     @property
     def passed_parameters(self):
@@ -219,14 +241,25 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
             return 'return ({})'.format(', '.join(return_values))
         else:
             return ''
+        
+    @property
+    def return_hint(self):
+        if self.returns_class:
+            return "'{}'".format(self.py_return_type)
+        else:
+            return self.py_return_type
 
     @property
-    def wrap_first_parm(self):
+    def py_first_parm(self):
         return "cls" if self.is_static else "self"
 
     @property
-    def c_return_type(self):
-        return self.generator.get_c_type(self.return_type, is_val=True)
+    def py_parameters(self):
+        return self.in_params if self.is_static else self.in_params[1:]
+
+    @property
+    def py_return_type(self):
+        return self.generator.get_py_type(self.return_type, is_val=True)
 
     @property
     def returns_class(self):
@@ -236,96 +269,6 @@ class PythonClass(Class):
     def __init__(self, other):
         super().construct_copy(other)
 
-    @property
-    def cdef_declarations(self):
-        return self.generator.parse_template("""
-{{- cl.header -}}
-{{- cl.c_methods -}}
-""").render(cl=self)
-
-    @property
-    def class_wrapper(self):
-        if not self.has_methods:
-            return ""
-        else:
-            return self.generator.parse_template("""
-
-cdef class Wrap{{ cl.name }}:
-    
-{{ cl.init_dealloc }}
-
-{{ cl.wrap_methods }}
-    pass
-""").render(cl=self)
-
-    @property
-    def init_dealloc(self):
-        if self.is_static:
-            return ""
-        else:
-            return self.generator.parse_template("""
-
-    cdef int32_t handle
-    
-    def __cinit__(self, handle):
-        self.handle = handle
-        
-    def __dealloc__(self):
-        if self.handle != 0:
-            {{ cl.default_destroy_method }}(get_p_geo(), &self.handle)
-
-""").render(cl=self)
-
-
-    @property
-    def header(self):
-        return self.generator.parse_template("""
-# Class {{ cl.name }}
-""").render(cl=self)
-
-
-    @property
-    def c_methods(self):
-        if len(self.method_groups) == 1:
-            method_group = next(iter(self.method_groups.values()))
-            return self.render_c_method_group(method_group)
-        else:
-            return self.generator.parse_template("""
-{% for key, method_group in cl.method_groups.items() %}
-# {{ key }}
-
-{{ cl.render_c_method_group(method_group) }}
-{% endfor %}
-""").render(cl=self)
-
-    def render_c_method_group(self, method_group):
-        return self.generator.parse_template("""
-{% for method in methods %}
-{{ method.render_c() }}
-{% endfor %}
-""").render(methods=method_group)
-
-
-    @property
-    def wrap_methods(self):
-        if len(self.method_groups) == 1:
-            method_group = next(iter(self.method_groups.values()))
-            return self.render_wrap_method_group(method_group)
-        else:
-            return self.generator.parse_template("""
-{% for key, method_group in cl.method_groups.items() %}
-# {{ key }}
-
-{{ cl.render_wrap_method_group(method_group) }}
-{% endfor %}
-""").render(cl=self)
-
-    def render_wrap_method_group(self, method_group):
-        return self.generator.parse_template("""
-{% for method in methods %}
-{{ method.render_wrapper() }}
-{% endfor %}
-""").render(methods=method_group)
 
 class PythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
@@ -341,53 +284,50 @@ class PythonCodeGenerator(CodeGeneratorBase):
             for g_k, methods in cl.method_groups.items():
                 cl.method_groups[g_k] = [m for m in methods if not m.no_cpp]
 
-    def get_c_type(self, type, is_val=False, is_ref=False):
+    def get_py_type(self, type, is_val=False, is_ref=False):
         if isinstance(type, str):
             is_val = is_val or not type.find('*') == -1
-        c_type = type
-        if type == Type.STRING:
-            if is_ref:
-                return 'char*'
-            else:
-                return 'const char*'
+        py_type = type
+
+        if type == "void*" or type == "const void*":
+            py_type = 'bytearray'
+        elif type == Type.STRING:
+            py_type = 'str'
         elif type == Type.VOID:
-            c_type = "void"
+            py_type = "None"
         elif type == Type.DOUBLE:
-            c_type = "double"
+            py_type = "float"
         elif type == Type.INT32_T:
-            c_type = "int32_t"
+            py_type = "int"
         elif type == Type.INT16_T:
-            c_type = "int16_t"
+            py_type = "int"
         elif type in type_map:
-            c_type = type_map[type]
-        elif type in self.classes or type in self.definitions:
-            c_type = "int32_t"
+            py_type = type_map[type]
+        elif type in self.definitions:
+            py_type = "int"
+        elif type in self.classes:
+            py_type = "GX{}".format(py_type)
         
         if is_ref:
-            return '{}*'.format(c_type)
-        elif is_val:
-            return c_type
+            return '{}_ref'.format(py_type)
         else:
-            return 'const {}*'.format(c_type)
+            return py_type
 
     def _regen_py(self, template_prefix, output_file, **kwargs):
         empty_template = 'templates/{}_empty.py'.format(template_prefix)
         cur_gen_template = 'templates/{}_cur.gen.py'.format(template_prefix)
         generated_template_name = '{}_generated.py'.format(template_prefix)
         generated_gen_template = 'templates/{}_generated.gen.py'.format(template_prefix)
-
         if not os.path.exists(output_file):
             copyfile(empty_template, cur_gen_template)
         else:
             copyfile(output_file, cur_gen_template)
-        
+
         gen_template = self.get_template(generated_template_name)
-        with open(generated_gen_template, 'wb') as f:
-            f.write(gen_template.render(**kwargs).encode('UTF-8'))
+        self.refresh_file_contents(generated_gen_template, gen_template.render(**kwargs))
 
         final_template = self.get_template(os.path.split(generated_gen_template)[1])
-        with open(output_file, 'wb') as f:
-            f.write(final_template.render(**kwargs).encode('UTF-8'))
+        self.refresh_file_contents(output_file, final_template.render(**kwargs))
 
     def regen_init(self):
         output_file = os.path.join(self.gxapi_outdir, '__init__.py')

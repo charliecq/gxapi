@@ -1,7 +1,10 @@
 {{ "### extends 'class_empty.py'" }}
+from . import gxapi_cy
+
+from geosoft.gxapi import GXContext, int_ref, float_ref, str_ref
+
 {{ "### block Header" }}
 ### block Header
-from . import gxapi_cy
 # NOTICE: The code generator will not replace the code in this block
 ### endblock Header
 {{ "### endblock Header" }}

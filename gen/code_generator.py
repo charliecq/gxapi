@@ -17,12 +17,11 @@ _core_files = [
     'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
     'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
     #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
-    #'E:\\ggit\\t\\gxapi\spec\\core\\3DN.py'
     ]
 _desk_files = []
 
-#_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
-#_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
+_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
+_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
 
 _classes = {}
 _class_method_groups = {}
@@ -157,6 +156,15 @@ class CodeGeneratorBase:
 
     def get_template(self, name, parent=None, globals=None):
         return self.j2env.get_template(name, parent=parent, globals=globals)
+
+    def refresh_file_contents(self, file_name, contents):
+        cur_contents = None
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as f:
+                cur_contents = f.read()
+        if contents != cur_contents:
+            with open(file_name, 'wb') as f:
+                f.write(contents.encode('UTF-8'))
 
     
 

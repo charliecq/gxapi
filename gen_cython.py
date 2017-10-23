@@ -83,7 +83,7 @@ class CythonParameter(Parameter):
         elif self.is_val or (isinstance(self.type, str) and not self.type.find('*') == -1):
             return '{}'.format(self.name)
         elif self.type in self.generator.classes:
-            return "&{}.handle".format(self.name)
+            return "&{}._handle".format(self.name)
         else:
             return '&{}'.format(self.name)
 
@@ -134,7 +134,8 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
         try:
 {{ method.wrap_alloc }}
 {{ method.wrap_assign_c }}
-            {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}({% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
+            {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}(_geo, {% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
+            _geo._raise_on_gx_errors()
             {{ method.wrap_return }}
         finally:
 {{ method.wrap_free }}
@@ -158,21 +159,25 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
     def passed_parameters(self):
         params = []
         if not self.is_static:
-            params.append('&self.handle')
+            params.append('&self._handle')
         elif len(self.parameters):
             params.append(self.parameters[0].cy_pass)
         params.extend([p.cy_pass for p in self.parameters[1:]]) 
-        return self.generator.parse_template("get_p_geo(){% for param in params %}, {{ param }}{% endfor %}").render(params=params)
+        return self.generator.parse_template("_geo.get_p_geo(){% for param in params %}, {{ param }}{% endfor %}").render(params=params)
 
     @property
     def wrap_declare_c(self):
         params = [p for p in self.parameters if p.name in self.size_of_params.keys()]
         params.extend(self.ref_string_params)
         if len(params):
-            return self.generator.parse_template("""{% for param in params %}        {{ param.cy_declare }}
+            declarations = self.generator.parse_template("""{% for param in params %}        {{ param.cy_declare }}
 {% endfor %}""").render(params=params)
         else:
-            return ''
+            declarations = ''
+        if self.is_static:
+            return declarations
+        else:
+            return '        _geo = self._geo\n{}'.format(declarations)
 
     @property
     def wrap_assign_c(self):
@@ -212,7 +217,7 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
 
     @property
     def wrap_first_parm(self):
-        return "cls" if self.is_static else "self"
+        return "cls, WrapPGeo _geo" if self.is_static else "self"
 
     @property
     def c_return_type(self):
@@ -255,14 +260,20 @@ cdef class Wrap{{ cl.name }}:
         else:
             return self.generator.parse_template("""
 
-    cdef int32_t handle
+    cdef int32_t _handle
+    cdef WrapPGeo _geo;
     
-    def __cinit__(self, handle):
-        self.handle = handle
-        
+    def __cinit__(self, WrapPGeo geo, int32_t handle):
+        self._geo = geo
+        self._handle = handle
+    
     def __dealloc__(self):
-        if self.handle != 0:
-            {{ cl.default_destroy_method }}(get_p_geo(), &self.handle)
+        if self._handle != 0:
+            {{ cl.default_destroy_method }}(self._geo.get_p_geo(), &self._handle)
+
+    @property
+    def handle(self):
+        return self._handle
 
 """).render(cl=self)
 
@@ -366,11 +377,6 @@ from libc.stdint cimport int32_t, int16_t
 from libc.stdlib cimport malloc, free
 from libc.string cimport strcpy, strcat, strncat, memset, memchr, memcmp, memcpy, memmove
 
-import threading
-from threading import current_thread
-
-thread_local = threading.local()
-
 from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
 ctypedef Py_UNICODE WCHAR
@@ -401,6 +407,7 @@ cdef char_type[:] _chars(s):
         unicode(s).encode('utf8')
     return s
 
+
 cdef class WrapPGeo:
     cdef void* p_geo
     
@@ -411,27 +418,27 @@ cdef class WrapPGeo:
         cdef void* hParentWnd = <void *>wind_handle
         cdef char* err = <char*>malloc(4096)
         try:
-            tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
-            if not tls_geo is None:
-                raise GXAPIError("Only one gxapi_cy.WrapPGeo instance per thread allowed.");
             self.p_geo = pCreate_GEO(app, ver, 0, hParentWnd, flags, err, 4096)
             if self.p_geo == NULL:
                 raise GXAPIError(_tounicode(err))
-            thread_local.gxapi_cy_geo = <size_t>self.p_geo
+            print("WrapPGeo alloc")
         finally:
             free(err)
         
     def __dealloc__(self):
         if self.p_geo != NULL:
             Destroy_GEO(self.p_geo)
-        thread_local.gxapi_cy_geo = None
+            print("WrapPGeo dealloc")
 
-    cdef _raise_on_gx_errors(self, void* p_geo):
+    cdef void* get_p_geo(self):
+        return self.p_geo
+
+    cdef _raise_on_gx_errors(self):
         cdef int32_t term
         cdef char* module
         cdef char* err
         cdef int32_t error_number
-        if iCheckTerminate_SYS(p_geo, &term) > 0:
+        if iCheckTerminate_SYS(self.p_geo, &term) > 0:
             if term == 0:
                 raise GXExit()
             elif term == -1:
@@ -440,7 +447,7 @@ cdef class WrapPGeo:
                 module = <char*>malloc(1024)
                 err = <char*>malloc(4096)
                 try:
-                    sGetError_GEO(p_geo, module, 1024, err, 4096, &error_number)
+                    sGetError_GEO(self.p_geo, module, 1024, err, 4096, &error_number)
                     if (error_number == 21023 or error_number == 21031 or # These two due to GXX asserts, Abort_SYS etc
                         error_number == 31009 or error_number == 31011):  # wrapper bind errors
                         raise GXAPIError(_tounicode(err));
@@ -452,12 +459,6 @@ cdef class WrapPGeo:
                     if err != NULL:
                         free(err)
     
-cdef void* get_p_geo():
-    tls_geo = getattr(thread_local, 'gxapi_cy_geo', None)
-    if tls_geo is None:
-        raise GXAPIError("A gxapi_cy.WrapPGeo instance has not been instantiated on current thread yet.");
-    return <void*><size_t>tls_geo
-
 {% for key, cl in classes.items() %}
 {{ cl.class_wrapper }}
 {% endfor %}
@@ -469,36 +470,3 @@ if __name__ == "__main__":
     with open(outputfile, 'wb') as f:
         gen = CythonCodeGenerator()
         f.write(gen.render_pyx().encode('UTF-8'))
-
-        def get_data_array(self, int32_t p2, int32_t p3, int32_t p5):
-        """
-        Type code	C Type	Cython Type	Minimum size in bytes	Notes
-        'b'	signed char	int	1	 
-        'B'	unsigned char	int	1	 
-        'u'	Py_UNICODE	Unicode character	2	(1)
-        'h'	signed short	int	2	 
-        'H'	unsigned short	int	2	 
-        'i'	signed int	int	2	 
-        'I'	unsigned int	int	2	 
-        'l'	signed long	int	4	 
-        'L'	unsigned long	int	4	 
-        'q'	signed long long	int	8	(2)
-        'Q'	unsigned long long	int	8	(2)
-        'f'	float	float	4	 
-        'd'	double	float	8	 
-        Notes:
-        """
-
-        cdef void* ap4 = NULL
-        cdef array arrp4
-
-        try:
-            ap4 = malloc(p3*8)
-            arrp4 = array(shape=(p3,), itemsize=sizeof(double), format="d", mode="c", allocate_buffer=False)
-            arrp4.data = <char*>ap4
-            arrp4.callback_free_data = callback_free_data
-            ap4 = NULL
-            _return_val = iGetData_VV(get_p_geo(), &self.handle, p2, 5, arrp4.data, p5)
-            return (_return_val, arrp4)
-        finally:
-            if (ap4): free(ap4)
