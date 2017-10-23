@@ -3,6 +3,9 @@ __pycache__/
 *.py[co]
 *$py.class
 *.gen.py
+*.c
+*.pyd
+gxapi_cy.pyx
 
 # C extensions
 *.so
