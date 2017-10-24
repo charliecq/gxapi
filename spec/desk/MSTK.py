@@ -130,8 +130,8 @@ gx_methods = {
                    Parameter('p2', type=Type.INT32_T,
                              doc="Index to :class:`STK` to get")
                ]),
-
-        Method('IDelete_MSTK', module='geogxx', version='5.0.0',
+       
+        Method('IDelete_MSTK', module='geogxx', version='5.0.0', cpp_post="_stk",
                availability=Availability.LICENSED, 
                doc="Delete a :class:`STK` object",
                notes="0 is the first one",

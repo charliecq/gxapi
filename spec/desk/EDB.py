@@ -806,7 +806,7 @@ gx_methods = {
                              doc="Size of the String")
                ]),
 
-        Method('iGetProfileParm_EDB', module='None', version='5.0.0',
+        Method('iGetProfileParm_EDB', module='None', version='5.0.0', cpp_post="_int",
                availability=Availability.PUBLIC, is_app=True, 
                doc="Get integer profile parameter",
                return_type=Type.INT32_T,
@@ -1150,7 +1150,7 @@ gx_methods = {
                    Parameter('p1', type="EDB")
                ]),
 
-        Method('rGetProfileParm_EDB', module='None', version='5.0.0',
+        Method('rGetProfileParm_EDB', module='None', version='5.0.0', cpp_post="_double",
                availability=Availability.PUBLIC, is_app=True, 
                doc="Get real profile parameter",
                return_type=Type.DOUBLE,

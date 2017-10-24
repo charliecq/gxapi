@@ -82,12 +82,10 @@ class Class(SpecBase):
     def _ext_method_name(self, method):
         method_name = self._ext_method_name_no_polish(method)
         
-        # TODO
-        #if method.cpp_post:
-        #    method_name = method_name + method.cpp_post
+        if method.cpp_post:
+            method_name = method_name + method.cpp_post
         
         # Stops keyword and macro collisions
-        # TODO Can improve the names a bit
         if (self.name == "MATH" or method_name == 'char' or method_name == 'assert' or 
             method_name == 'exit' or method_name == 'cancel' or method_name == 'global' or 
             method_name == 'print' ):

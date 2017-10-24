@@ -75,8 +75,8 @@ gx_defines = [
 
 gx_methods = {
     'General': [
-
-        Method('Bool_PGU', module='geogxx', version='5.0.0',
+        
+        Method('Bool_PGU', module='geogxx', version='5.0.0', cpp_post="_mask",
                availability=Availability.LICENSED, 
                doc="Apply reference file boolean mask to pager",
                return_type=Type.VOID,

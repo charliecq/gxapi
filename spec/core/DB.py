@@ -445,7 +445,7 @@ gx_methods = {
                    Parameter('p3', type="REG",
                              doc=":class:`REG` to copy data into")
                ]),
-
+                
         Method('GetRegSymbSetting_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Get a :class:`REG` string setting from a symbol reg",
@@ -766,7 +766,7 @@ gx_methods = {
                              doc="String size")
                ]),
 
-        Method('iGetRegSymbSetting_DB', module='geoengine.core', version='6.2.0',
+        Method('iGetRegSymbSetting_DB', module='geoengine.core', version='6.2.0', cpp_post="_int",
                availability=Availability.PUBLIC, 
                doc="Get an integer-valued :class:`REG` setting from a symbol reg",
                notes="""
@@ -965,7 +965,7 @@ gx_methods = {
                              doc="Index")
                ]),
 
-        Method('rGetRegSymbSetting_DB', module='geoengine.core', version='6.2.0',
+        Method('rGetRegSymbSetting_DB', module='geoengine.core', version='6.2.0', cpp_post="_double",
                availability=Availability.PUBLIC, 
                doc="Get a real-valued :class:`REG` setting from a symbol reg",
                notes="""

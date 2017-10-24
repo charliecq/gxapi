@@ -1009,8 +1009,8 @@ gx_methods = {
                    Parameter('p7', type=Type.DOUBLE,
                              doc="Fiducial number (required if :def_val:`DB_DUPEDIT_SINGLE`)")
                ]),
-
-        Method('Export_DU', module='geogxx', version='5.0.0',
+        
+        Method('Export_DU', module='geogxx', version='5.0.0', cpp_post="1",
                availability=Availability.PUBLIC, 
                doc="Export to a specific format.",
                notes="""

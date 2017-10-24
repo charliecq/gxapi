@@ -39,7 +39,7 @@ gx_methods = {
                              doc="Z3 component (output)")
                ]),
 
-        Method('iAbs_MATH', module='geoengine.core', version='6.0.1',
+        Method('iAbs_MATH', module='geoengine.core', version='6.0.1', cpp_post="_int",
                availability=Availability.PUBLIC, 
                doc="Calculate absolute value",
                notes="Dummy values return dummy",
@@ -67,7 +67,7 @@ gx_methods = {
                              doc="B")
                ]),
 
-        Method('iMod_MATH', module='geoengine.core', version='6.0.1',
+        Method('iMod_MATH', module='geoengine.core', version='6.0.1', cpp_post="_int",
                availability=Availability.PUBLIC, 
                doc="Calculates the modulus of two integers",
                notes="If A or B is a dummy, returns dummy.",
@@ -97,7 +97,7 @@ gx_methods = {
                              doc="B")
                ]),
 
-        Method('iRound_MATH', module='geoengine.core', version='6.0.1',
+        Method('iRound_MATH', module='geoengine.core', version='6.0.1', cpp_post="_int",
                availability=Availability.PUBLIC, 
                doc="Round to the nearest whole number",
                notes="""
@@ -188,7 +188,7 @@ gx_methods = {
                              doc="Z component (altered)")
                ]),
 
-        Method('rAbs_MATH', module='geoengine.core', version='6.0.1',
+        Method('rAbs_MATH', module='geoengine.core', version='6.0.1', cpp_post="_double",
                availability=Availability.PUBLIC, 
                doc="Calculate absolute value",
                notes="Dummy values return dummy",
@@ -409,7 +409,7 @@ gx_methods = {
                              doc="Log Minimum (must be greater than 0)")
                ]),
 
-        Method('rMod_MATH', module='geoengine.core', version='6.0.1',
+        Method('rMod_MATH', module='geoengine.core', version='6.0.1', cpp_post="_double",
                availability=Availability.PUBLIC, 
                doc="Calculates the modulus of two reals (A mod B)",
                notes="""
@@ -488,7 +488,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="A real number"),
 
-        Method('rRound_MATH', module='geoengine.core', version='6.0.1',
+        Method('rRound_MATH', module='geoengine.core', version='6.0.1', cpp_post="_double",
                availability=Availability.PUBLIC, 
                doc="Round to n significant digits",
                notes="""

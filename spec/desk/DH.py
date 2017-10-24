@@ -930,7 +930,7 @@ gx_methods = {
                              doc=":class:`DH` Handle")
                ]),
 
-        Method('Export_DH', module='geodh', version='5.0.0',
+        Method('Export_DH', module='geodh', version='5.0.0', cpp_post="_file",
                availability=Availability.EXTENSION, 
                doc="Exports a Drill Hole database to an external file.",
                return_type=Type.VOID,

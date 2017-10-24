@@ -557,7 +557,7 @@ gx_methods = {
                              doc="Source :class:`IMG`")
                ]),
 
-        Method('iQuery_IMG', module='geoengine.core', version='5.0.5',
+        Method('iQuery_IMG', module='geoengine.core', version='5.0.5', cpp_post="_int",
                availability=Availability.PUBLIC, 
                doc="Query information about the :class:`IMG`",
                notes="""
@@ -778,7 +778,7 @@ gx_methods = {
                              doc="Y location in the grid projection")
                ]),
 
-        Method('rQuery_IMG', module='geoengine.core', version='5.0.5',
+        Method('rQuery_IMG', module='geoengine.core', version='5.0.5', cpp_post="_double",
                availability=Availability.PUBLIC, 
                doc="Query information about the :class:`IMG`",
                notes="""

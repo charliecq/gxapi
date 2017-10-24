@@ -1100,7 +1100,7 @@ gx_methods = {
                    Parameter('p1', type="IPJ")
                ]),
 
-        Method('iSetGXF_IPJ', module='geoengine.core', version='7.0.0',
+        Method('iSetGXF_IPJ', module='geoengine.core', version='7.0.0', cpp_post="_safe",
                availability=Availability.PUBLIC, 
                doc="Same as :func:`SetGXF_IPJ`, but fails gracefully.",
                notes="""

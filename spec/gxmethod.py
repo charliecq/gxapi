@@ -18,7 +18,7 @@ class Parameter(SpecBase):
 class Method(SpecBase):
     _parameters = None
 
-    def __init__(self, name, module=None, version=None, external_name=None, availability=Availability.UNKNOWN,
+    def __init__(self, name, module=None, version=None, cpp_post=None, external_name=None, availability=Availability.UNKNOWN,
                  is_obsolete=False, is_app=False, is_gui=False, no_gxh=False, no_csharp=False, no_cpp=False,
                  return_type=Type.UNKNOWN, return_doc=None,
                  doc=None, notes=None, see_also=None, parameters=[]):
@@ -27,6 +27,7 @@ class Method(SpecBase):
         self.name = name
         self.module = module
         self.version = StrictVersion(version)
+        self.cpp_post = cpp_post
         self.external_name = external_name if external_name else self.name
         self.availability = availability
         self.is_obsolete = is_obsolete
