@@ -3,6 +3,9 @@ from distutils.extension import Extension
 from Cython.Build import cythonize
 import Cython.Compiler.Options
 
+compile_args = ["/GF", "/Gy"]
+link_args = ["/OPT:ICF", "/OPT:REF"]
+
 setup(
     ext_modules=cythonize(
         [Extension(
@@ -11,7 +14,8 @@ setup(
             libraries=['geogx_utf8', 'geodist'],
             library_dirs=['../gxdeveloper/lib'],
             include_dirs = ['../gxdeveloper/include'],
-            extra_compile_args=["/GF"]
+            extra_compile_args=compile_args,
+            extra_link_args=link_args
          ),
          Extension(
             "gxapi_cy_extend", 
@@ -19,6 +23,7 @@ setup(
             libraries=['geogx_utf8', 'geodist'],
             library_dirs=['../gxdeveloper/lib'],
             include_dirs = ['../gxdeveloper/include'],
-            extra_compile_args=["/GF"]
+            extra_compile_args=compile_args,
+            extra_link_args=link_args
          )])
 )
