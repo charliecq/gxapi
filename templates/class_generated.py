@@ -1,5 +1,14 @@
 {{ "### extends 'class_cur.gen.py'" }}
 {% set class_name = "GX" ~ cl.name %}
+### block ClassImports
+{{ "### block ClassImports" }}
+# NOTICE: Do not edit anything here, it is generated code
+from . import gxapi_cy
+from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+{{ cl.gxapi_imports }}
+{{ "### endblock ClassImports" }}
+### endblock ClassImports
+
 
 ### block ClassImplementation
 {{ "### block ClassImplementation" }}

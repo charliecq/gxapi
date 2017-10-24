@@ -1,7 +1,8 @@
 {{ "### extends 'class_empty.py'" }}
-from . import gxapi_cy
-
-from geosoft.gxapi import GXContext, int_ref, float_ref, str_ref
+{{ "### block ClassImports" }}
+### block ClassImports
+### endblock ClassImports
+{{ "### endblock ClassImports" }}
 
 {{ "### block Header" }}
 ### block Header

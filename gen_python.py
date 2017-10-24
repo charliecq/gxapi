@@ -272,6 +272,14 @@ class PythonClass(Class):
     def __init__(self, other):
         super().construct_copy(other)
 
+    @property
+    def gxapi_imports(self):
+        imports = set()
+        for _, group_methods in self.method_groups.items():
+            imports |= set([m.py_return_type for m in group_methods if m.returns_class and not m.return_type == self.name])
+        imports = list(imports)
+        imports.sort()
+        return "\r\n".join(["from .{} import {}".format(i, i) for i in imports])
 
 class PythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
