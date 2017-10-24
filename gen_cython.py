@@ -391,7 +391,7 @@ cdef extern int32_t iCheckError_SYS(void*)
 cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
 cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);
 cdef extern HWND hGetMainWnd_GEO();
-cdef extern hGetActiveMainWnd_GEO();
+cdef extern HWND hGetActiveMainWnd_GEO();
 cdef extern EnableApplicationWindows_GEO(bool);
 
 {% for key, cl in classes.items() %}
@@ -480,6 +480,5 @@ cdef class WrapPGeo:
 
 if __name__ == "__main__":
     outputfile = 'gxapi_cy.pyx'
-    with open(outputfile, 'wb') as f:
-        gen = CythonCodeGenerator()
-        f.write(gen.render_pyx().encode('UTF-8'))
+    gen = CythonCodeGenerator()
+    gen.refresh_file_contents('gxapi_cy.pyx', gen.render_pyx())
