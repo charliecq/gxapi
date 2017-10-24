@@ -14,8 +14,8 @@ from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
 _core_files = [
     'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py',
-    'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
-    'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
+    'E:\\ggit\\t\\gxapi\\spec\\core\\IMG.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
     #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
     ]
 _desk_files = []
@@ -157,7 +157,10 @@ class CodeGeneratorBase:
     def get_template(self, name, parent=None, globals=None):
         return self.j2env.get_template(name, parent=parent, globals=globals)
 
+    def normalize_line_endings(self, contents):
+        return contents.replace('\r\n', '~~---NL~~---').replace('\n', '~~---NL~~---').replace('~~---NL~~---', '\r\n')
     def refresh_file_contents(self, file_name, contents):
+        contents = self.normalize_line_endings(contents)
         cur_contents = None
         if os.path.exists(file_name):
             with open(file_name, 'r') as f:
