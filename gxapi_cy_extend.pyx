@@ -44,33 +44,17 @@ cdef _raise_on_gx_errors(void* p_geo):
                     free(err)
 
 
-cdef extern int32_t iGetData_VV(void*, const int32_t* p1, int32_t p2, int32_t p3, void* p4, int32_t p5);
-cdef extern int32_t iSetData_VV(void*, const int32_t* p1, int32_t p2, int32_t p3, const void* p4, int32_t p5);
+cdef extern void iGetData_VV(void*, const int32_t* vv, int32_t start, int32_t elements, void* data, int32_t gs_type);
+cdef extern void iSetData_VV(void*, const int32_t* vv, int32_t start, int32_t elements, const void* data, int32_t gs_type);
 
+cdef extern void iGetArray_VA(void*, const int32_t* va, int32_t start_row, int32_t start_col, int32_t rows, int32_t cols, void* data, int32_t gs_type);
+cdef extern void iSetArray_VA(void*, const int32_t* va, int32_t start_row, int32_t start_col, int32_t rows, int32_t cols, const void* data, int32_t gs_type);
 
-cdef class WrapVVExtra:
+cdef class GXMemMethods:
     @classmethod
-    def get_data_array_vv(cls, uintptr_t p_geo, int32_t vv_handle, int32_t start, int32_t elements, int32_t gs_type):
-        """
-        Type code	C Type	Python Type	Minimum size in bytes	Notes
-        'b'	signed char	int	1	 
-        'B'	unsigned char	int	1	 
-        'u'	Py_UNICODE	Unicode character	2	(1)
-        'h'	signed short	int	2	 
-        'H'	unsigned short	int	2	 
-        'i'	signed int	int	2	 
-        'I'	unsigned int	int	2	 
-        'l'	signed long	int	4	 
-        'L'	unsigned long	int	4	 
-        'q'	signed long long	int	8	(2)
-        'Q'	unsigned long long	int	8	(2)
-        'f'	float	float	4	 
-        'd'	double	float	8	 
-        Notes:
-        """
-    
-        cdef void* ap4 = NULL
-        cdef array arrp4
+    def get_array_data_va(cls, uintptr_t p_geo, int32_t va_handle, int32_t start_row, int32_t start_col, int32_t rows, int32_t cols, int32_t gs_type):
+        cdef void* buff = NULL
+        cdef array arr
         cdef size_t itemsize
         try:
             if gs_type == 0:
@@ -114,16 +98,74 @@ cdef class WrapVVExtra:
                 format = 'Q'
                 itemsize = 8
         
-            ap4 = malloc(elements*itemsize)
-            arrp4 = array(shape=(elements,), itemsize=itemsize, format=format, mode="c", allocate_buffer=False)
-            arrp4.data = <char*>ap4
-            arrp4.callback_free_data = callback_free_data
-            ap4 = NULL
-            _return_val = iGetData_VV(<void*>p_geo, &vv_handle, start, elements, <void*>arrp4.data, gs_type)
+            buff = malloc(rows*cols*itemsize)
+            arr = array(shape=(rows,cols), itemsize=itemsize, format=format, mode="c", allocate_buffer=False)
+            arr.data = <char*>buff
+            arr.callback_free_data = callback_free_data
+            buff = NULL
+            iGetArray_VA(<void*>p_geo, &va_handle, start_row, start_col, rows, cols, <void*>arr.data, gs_type)
             _raise_on_gx_errors(<void*>p_geo)
-            return (_return_val, arrp4)
+            return arr
         finally:
-            if (ap4): free(ap4)
+            if (buff): free(buff)
+
+    @classmethod
+    def get_data_array_vv(cls, uintptr_t p_geo, int32_t vv_handle, int32_t start, int32_t elements, int32_t gs_type):
+        cdef void* buff = NULL
+        cdef array arr
+        cdef size_t itemsize
+        try:
+            if gs_type == 0:
+                # GS_BYTE
+                format = 'b'
+                itemsize = 1
+            elif gs_type == 1:
+                #  GS_USHORT
+                format = 'H'
+                itemsize = 2
+            elif gs_type == 2:
+                #  GS_SHORT
+                format = 'h'
+                itemsize = 2
+            elif gs_type == 3:
+                # GS_LONG
+                format = 'i'
+                itemsize = 4
+            elif gs_type == 4:
+                # GS_FLOAT
+                format = 'f'
+                itemsize = 4
+            elif gs_type == 5:
+                # GS_DOUBLE
+                format = 'd'
+                itemsize =  8
+            elif gs_type == 6:
+                # GS_UBYTE
+                format = 'B'
+                itemsize = 1
+            elif gs_type == 7:
+                # GS_ULONG
+                format = 'I'
+                itemsize = 4
+            elif gs_type == 8:
+                # GS_LONG64
+                format = 'q'
+                itemsize = 8
+            elif gs_type == 9:
+                # GS_ULONG64
+                format = 'Q'
+                itemsize = 8
+        
+            buff = malloc(elements*itemsize)
+            arr = array(shape=(elements,), itemsize=itemsize, format=format, mode="c", allocate_buffer=False)
+            arr.data = <char*>buff
+            arr.callback_free_data = callback_free_data
+            buff = NULL
+            iGetData_VV(<void*>p_geo, &vv_handle, start, elements, <void*>arr.data, gs_type)
+            _raise_on_gx_errors(<void*>p_geo)
+            return arr
+        finally:
+            if (buff): free(buff)
 
         
 
