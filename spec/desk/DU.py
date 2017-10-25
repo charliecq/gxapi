@@ -1365,7 +1365,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Export XYZdata from a database to an XYZ file.",
                notes="""
-               1. The export template can be in the local directory or the :class:`GEOSOFT`
+               1. The export template can be in the local directory or the GEOSOFT
                directory.  The import data file must include the path if it is not
                in the local directory.
                
@@ -1754,7 +1754,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Import an external database table into a group using ADO.",
                notes="""
-               1. The import template can be in the local directory or the :class:`GEOSOFT`
+               1. The import template can be in the local directory or the GEOSOFT
                directory.
                
                2. Only the import template must be specified. The database connection string,
@@ -1854,9 +1854,8 @@ gx_methods = {
                All the constant declarations are stored within the database
                under \\TEM\\CONSTANTS. The format is as follows:
                
-               1. Lines stored in the file beginning with "/" are comments
-               2. Each constant occupies a line in the file. It uses the format:
-               CONSTANT=VALUE
+                   1. Lines stored in the file beginning with "/" are comments
+                   2. Each constant occupies a line in the file. It uses the format: CONSTANT=VALUE
                """,
                return_type=Type.VOID,
                parameters = [
@@ -2054,7 +2053,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Import an external database table into a group using DAO.",
                notes="""
-               1. The import template can be in the local directory or the :class:`GEOSOFT`
+               1. The import template can be in the local directory or the GEOSOFT
                directory.  The import data file must include the path if it is not
                in the local directory.
                
@@ -2085,7 +2084,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Import an ArcGIS Geodatabase table or feature class into a GDB group",
                notes="""
-               1. The import template can be in the local directory or the :class:`GEOSOFT`
+               1. The import template can be in the local directory or the GEOSOFT
                directory.
                
                2. Only the import template must be specified. The Geodatabase connection string
@@ -2179,7 +2178,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Import XYZ data into the database.",
                notes="""
-               1. The import template can be in the local directory or the :class:`GEOSOFT`
+               1. The import template can be in the local directory or the GEOSOFT
                directory.  The import data file must include the path if it is not
                in the local directory.
                
@@ -2201,7 +2200,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Import XYZ data into the database.",
                notes="""
-               1. The import template can be in the local directory or the :class:`GEOSOFT`
+               1. The import template can be in the local directory or the GEOSOFT
                directory.  The import data file must include the path if it is not
                in the local directory.
                

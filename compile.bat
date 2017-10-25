@@ -1,7 +1,8 @@
 e:\Python36\python cysetup.py build_ext --inplace
 xcopy /Y /D gxapi_cy.cp36-win_amd64.pyd ..\gxpy\
 xcopy /Y /D gxapi_cy_extend.cp36-win_amd64.pyd ..\gxpy\
-
+xcopy /Y /D gxapi_cy.cp36-win_amd64.pyd ..\gxpy\geosoft\gxapi\gxapi_cy.pyd
+xcopy /Y /D gxapi_cy_extend.cp36-win_amd64.pyd ..\gxpy\geosoft\gxapi\gxapi_cy_extend.pyd
 
 mkdir build\temp.win-amd64-3.4\
 mkdir build\temp.win-amd64-3.4\Release
@@ -22,5 +23,3 @@ xcopy /Y /D gxapi_cy.cp35-win_amd64.pyd ..\gxpy\
 xcopy /Y /D gxapi_cy_extend.cp35-win_amd64.pyd ..\gxpy\
 
 
-xcopy /Y /D gxapi_cy.cp36-win_amd64.pyd ..\gxpy\geosoft\gxapi\gxapi_cy.pyd
-xcopy /Y /D gxapi_cy_extend.cp36-win_amd64.pyd ..\gxpy\geosoft\gxapi\gxapi_cy_extend.pyd

@@ -122,7 +122,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="File name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
+                             doc="File name, .csv assumed, searched locally then in GEOSOFT."),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
                    Parameter('p3', type=Type.INT32_T,
@@ -142,7 +142,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="File name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
+                             doc="File name, .csv assumed, searched locally then in GEOSOFT."),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
                    Parameter('p3', type=Type.INT32_T,
@@ -166,7 +166,7 @@ gx_methods = {
                """,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="File name, .csv assumed, searched locally then in :class:`GEOSOFT`."),
+                             doc="File name, .csv assumed, searched locally then in GEOSOFT."),
                    Parameter('p2', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
                    Parameter('p3', type=Type.INT32_T,

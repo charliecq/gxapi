@@ -952,10 +952,10 @@ gx_methods = {
                Use this function to register your own error
                messages when an error occurs in your code.  Your
                errors can be provided in your own :class:`GER` file.  See
-               :class:`GEOSOFT`.:class:`GER` for an example of the :class:`GER` file format.
+               GEOSOFT.:class:`GER` for an example of the :class:`GER` file format.
                
                If the error # is not found in your error file, the
-               OE32.:class:`GER` file, then the :class:`GEOSOFT`.:class:`GER` file will be
+               OE32.:class:`GER` file, then the GEOSOFT.:class:`GER` file will be
                searched.
                """,
                return_type=Type.VOID,
@@ -1636,7 +1636,7 @@ gx_methods = {
                The returned string will be empty if the parameter is
                not found.
                
-               Parameters are derived from :class:`GEOSOFT`.INI.
+               Parameters are derived from GEOSOFT.INI.
                This is a standard Windows style INI
                file that contains [GROUPS], PARAMETERS and SETTINGS
                as follows

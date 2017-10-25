@@ -71,7 +71,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Export data from an :class:`ARCDB` table into a group in a Geosoft GDB using a template.",
                notes="""
-               1. The import template can be in the local directory or the :class:`GEOSOFT`
+               1. The import template can be in the local directory or the GEOSOFT
                   directory.
                
                3. If the line already exists, the data will overwrite the existing data.

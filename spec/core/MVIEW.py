@@ -1824,7 +1824,7 @@ gx_methods = {
                doc="Set the symbol font and style.",
                notes="""
                If the font cannot be found, the DEFAULT_SYMBOL_FONT
-               specified in the [MONTAJ] section of :class:`GEOSOFT`.INI
+               specified in the [MONTAJ] section of GEOSOFT.INI
                will be used.
                
                See :func:`TextFont_MVIEW` for the font name syntax.
@@ -1929,7 +1929,7 @@ gx_methods = {
                Decorated name qualifiers take precedence over passed parameters.
                
                If the font cannot be found, or if "Default" is used, the DEFAULT_MAP_FONT
-               specified in the [MONTAJ] section of :class:`GEOSOFT`.INI
+               specified in the [MONTAJ] section of GEOSOFT.INI
                will be used.
                """,
                return_type=Type.VOID,

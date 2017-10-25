@@ -98,12 +98,12 @@ gx_methods = {
                Items can be on the same line, separated by commas, or on
                separate lines (and combinations of both).
                If this function is used in combination with the lFindItemMask_LST
-               function, then you can use mask-strings such as "*ppm"
+               function, then you can use mask-strings such as "``*ppm``"
                The following is a sample file:
                
-               *ppm, *(ppm), *PPM, *(PPM), FeCl, MnO2
-               "Fe %"
-               FeO
+               ``*ppm, *(ppm), *PPM, *(PPM), FeCl, MnO2``
+               ``"Fe %"``
+               ``FeO``
                
                If the file is not found, or if no items are parsed, the list
                is returned with zero size.
@@ -303,10 +303,10 @@ gx_methods = {
                doc="Searches the list for a specified item, list contains masks.",
                notes="""
                Comparsions are case-intolerant (unlike :func:`iFindItem_LST`).
-               This means items in the list such as "*(ppm)" will be
+               This means items in the list such as "``*(ppm)``" will be
                found if the input search string is "Ni (ppm)" or "Ni(ppm)",
                but not if it is "Ni (PPM)", so you should include
-               both "*ppm*" and "*PPM*".
+               both "``*ppm*``" and "``*PPM*``".
                
                It is NOT the input string that should be the mask, but
                the :class:`LST` items themselves
@@ -408,7 +408,7 @@ gx_methods = {
                ignored.
                
                The default extension is .lst.  If the file cannot
-               be found in the local directory, the :class:`GEOSOFT`\\etc directory
+               be found in the local directory, the GEOSOFT\\etc directory
                is searched.
                If it cannot be found, the list will be
                empty.  Not finding a file is not an error.
@@ -468,8 +468,8 @@ gx_methods = {
                
                The default extension is .lst.  If the file has a full path
                it will be created as specified.  Otherwise we look for the
-               file in the local then the :class:`GEOSOFT`\\etc directory.  If the file
-               does not exist it will be created in the :class:`GEOSOFT`\\etc directory.
+               file in the local then the GEOSOFT\\etc directory.  If the file
+               does not exist it will be created in the GEOSOFT\\etc directory.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -582,7 +582,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Name of the projection datum file (*.DTM file)")
+                             doc="Name of the projection datum file (``*.DTM`` file)")
                ]),
 
         Method('iLoadProjCodes_LST', module='geoengine.core', version='5.0.0',
@@ -604,7 +604,7 @@ gx_methods = {
                    Parameter('p1', type="LST",
                              doc=":class:`LST` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Name of the projection datum file (*.DTM file)")
+                             doc="Name of the projection datum file (``*.DTM`` file)")
                ]),
 
         Method('MakeREG_LST', module='geoengine.core', version='5.0.0',

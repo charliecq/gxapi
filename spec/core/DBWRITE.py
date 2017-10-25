@@ -92,8 +92,7 @@ gx_methods = {
                doc="Get the :class:`VV` handle for a channel.",
                notes="""
                Call only for single-column (regular) channels. You can call the :func:`iGetChanArraySize_DBWRITE`
-               			 function to find the number fo columns in a given channel.
-               		    The :class:`VV` is filled anew for each block served up.
+               function to find the number fo columns in a given channel. The :class:`VV` is filled anew for each block served up.
                """,
                return_type="VV",
                return_doc=":class:`VV` handle",

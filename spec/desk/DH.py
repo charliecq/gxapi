@@ -893,14 +893,15 @@ gx_methods = {
                notes="""
                Creates three CSV files and the accompanying template files
                ready for batch ASCII import into a drill project.
-                  Project_Collar.csv, .i3
-                  Project_Survey.csv, .i3
-                  Project_Assay.csv,  .i3
+
+                    Project_Collar.csv, .i3
+                    Project_Survey.csv, .i3
+                    Project_Assay.csv,  .i3
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('p1', type=Type.STRING,
-                             doc="Datamine database file to import (*.dm)"),
+                             doc="Datamine database file to import (``*.dm``)"),
                    Parameter('p2', type=Type.STRING,
                              doc="Drillhole project name")
                ]),
@@ -1421,7 +1422,7 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Retrieve the file, :class:`DH` Table name and type from an import template.",
                notes="""
-               As of version 6.0, the import templates (*.i3, *.i4) produced
+               As of version 6.0, the import templates (``*.i3, *.i4``) produced
                by the Wholeplot import wizards contain the following lines:
                
                 FILE assay.txt  (except for ODBC)
@@ -1460,7 +1461,7 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Retrieve the file, :class:`DH` Table name, type and channel list from an import template.",
                notes="""
-               As of version 6.0, the import templates (*.i3, *.i4) produced
+               As of version 6.0, the import templates (``*.i3, *.i4``) produced
                by the Wholeplot import wizards contain the following lines:
                
                 FILE assay.txt  (except for ODBC)
@@ -1582,7 +1583,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name   (*.in3)"),
+                             doc="Job Name   (``*.in3``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
@@ -1629,7 +1630,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.ins)"),
+                             doc="Job Name (``*.ins``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Tab page ID.")
                ]),
@@ -1648,7 +1649,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.ins)"),
+                             doc="Job Name (``*.ins``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
@@ -1719,7 +1720,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.inp)"),
+                             doc="Job Name (``*.inp``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
@@ -1737,7 +1738,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.ins)"),
+                             doc="Job Name (``*.ins``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Tab Page ID")
                ]),
@@ -1798,7 +1799,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.ins)"),
+                             doc="Job Name (``*.ins``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
@@ -1819,7 +1820,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.ins)"),
+                             doc="Job Name (``*.ins``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Tab page ID.")
                ]),
@@ -1846,7 +1847,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name (*.ins)"),
+                             doc="Job Name (``*.ins``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
@@ -1863,7 +1864,7 @@ gx_methods = {
                    Parameter('p1', type="DH",
                              doc=":class:`DH` Handle"),
                    Parameter('p2', type=Type.STRING,
-                             doc="Job Name   (*.inl)"),
+                             doc="Job Name   (``*.inl``)"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),

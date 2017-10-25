@@ -57,13 +57,10 @@ class PythonParameter(Parameter):
 
     @property
     def py_type_hint(self):
-        py_type = self.py_type
-        if py_type == 'bytearray':
-            return 'type(bytearray)'
-        elif self.is_class:
-            return "'{}'".format(py_type)
+        if self.is_class:
+            return "'{}'".format(self.py_type)
         else:
-            return py_type
+            return self.py_type
 
     @property
     def is_class(self):
@@ -277,9 +274,23 @@ class PythonClass(Class):
         imports = set()
         for _, group_methods in self.method_groups.items():
             imports |= set([m.py_return_type for m in group_methods if m.returns_class and not m.return_type == self.name])
+            #for m in group_methods:
+            #    imports |= set([p.py_type for p in m.parameters if p.is_class and not p.type == self.name])
         imports = list(imports)
         imports.sort()
-        return "\r\n".join(["from .{} import {}".format(i, i) for i in imports])
+        return imports
+
+    @property
+    def gxapi_imports_typing(self):
+        gxapi_imports = set(self.gxapi_imports)
+        imports = set()
+        for _, group_methods in self.method_groups.items():
+            for m in group_methods:
+                imports |= set([p.py_type for p in m.parameters if p.is_class and not p.type == self.name]) - gxapi_imports
+        imports = list(imports)
+        imports.sort()
+        return imports
+        #return "\r\n".join(["from .{} import {}".format(i, i) for i in imports])
 
 class PythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
@@ -292,10 +303,10 @@ class PythonCodeGenerator(CodeGeneratorBase):
         self._remove_no_cpp_methods()
 
     def doc_sanitize(self, s):
-        s = self.re_class.sub(r':class:`GX\1`', s)
+        s = self.re_class.sub(r':class:`geosoft.gxapi.GX\1`', s)
         s = self.re_def.sub(r'`\1`', s)
         s = self.re_func.sub(r'\1', s)
-        s = self.re_def_val.sub(r':attr:`\1`', s)
+        s = self.re_def_val.sub(r':attr:`geosoft.gxapi.\1`', s)
         s = textwrap.dedent(s).strip()
         return s.replace('\\', '\\\\')
 

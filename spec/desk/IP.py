@@ -252,7 +252,7 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Export of :class:`IP` data to UBC format.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC 2D inversion programme IPINV2D.
                Include error channel output and version-specific formatting.
                """,
@@ -356,7 +356,7 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Export of :class:`IP` Resistivity data to UBC format.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC 2D inversion programme DCINV2D.
                Voltage and current channels should be in units such that
                V/I gives volts/amp (or mV/mA).
@@ -462,7 +462,7 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Export of :class:`IP` data to UBC 3D :class:`IP` format.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC :class:`IP` 3D inversion programmes.
                """,
                return_type=Type.VOID,
@@ -1788,7 +1788,7 @@ gx_methods = {
                availability=Availability.EXTENSION, is_obsolete=True, 
                doc="Export an :class:`IP` OBS file to use in the UBC IPINV2D programme.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC 2D inversion programme IPINV2D.
                """,
                return_type=Type.VOID,
@@ -1811,7 +1811,7 @@ gx_methods = {
                availability=Availability.EXTENSION, is_obsolete=True, 
                doc="Same as :func:`ExportUBCIP_IP`, with error channel output.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC 2D inversion programme IPINV2D.
                """,
                return_type=Type.VOID,
@@ -1836,7 +1836,7 @@ gx_methods = {
                availability=Availability.EXTENSION, is_obsolete=True, 
                doc="Export a RES OBS file to use in the UBC DCINV2D programme.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC 2D inversion programme DCINV2D.
                Voltage and current channels should be in units such that
                V/I gives volts/amp (or mV/mA).
@@ -1863,7 +1863,7 @@ gx_methods = {
                availability=Availability.EXTENSION, is_obsolete=True, 
                doc="Same as :func:`ExportUBCRes_IP`, with error channel output.",
                notes="""
-               Outputs a *.:class:`DAT`" file of the survey data for use in the
+               Outputs a ``*.DAT`` file of the survey data for use in the
                UBC 2D inversion programme DCINV2D.
                Voltage and current channels should be in units such that
                V/I gives volts/amp (or mV/mA).

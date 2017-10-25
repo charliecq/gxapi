@@ -3,7 +3,7 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 gx_class = Class('MAPTEMPLATE',
                  doc="""
                  A :class:`MAPTEMPLATE` wraps and provides manipulation and usage for the XML content in map template files.
-                 See the annotated schema file maptemplate.xsd in the <:class:`GEOSOFT`>\\maptemplate folder and the accompanying
+                 See the annotated schema file maptemplate.xsd in the <GEOSOFT>\\maptemplate folder and the accompanying
                  documentation in that folder for documentation on the file format.
                  """)
 

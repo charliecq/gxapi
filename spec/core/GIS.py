@@ -102,7 +102,7 @@ gx_methods = {
                Value: Sub-directory file path  "Standard\\Rock Type_5.BLK", (includes the extension).
                
                The Gemcom BPR and BPR2 files keep their block models in one
-               or more sub-directories, identified in the *.CAT file located
+               or more sub-directories, identified in the ``*.CAT`` file located
                beside the input BPR or BPR2.
                """,
                return_type=Type.VOID,
@@ -196,15 +196,15 @@ gx_methods = {
 
         Method('iIsMIMapFile_GIS', module='geoengine.interoperability', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Returns TRUE if file is a MapInfo :class:`MAP` file.",
+               doc="Returns TRUE if file is a MapInfo MAP file.",
                notes="""
-               It is important not to overwrite a MapInfo :class:`MAP` file
-               with a :class:`GEOSOFT` one. Use this function to test the :class:`MAP`
+               It is important not to overwrite a MapInfo MAP file
+               with a Geosoft one. Use this function to test the MAP
                file (looks at the first few bytes).
                """,
                return_type=Type.INT32_T,
                return_doc="""
-               0 if not a MapInfo :class:`MAP` file
+               0 if not a MapInfo MAP file
                1 if it is.
                """,
                parameters = [
@@ -231,11 +231,11 @@ gx_methods = {
                notes="""
                Returns 1 if:
                
-               a) This is a MapInfo RASTER file
-               b) A three-point warp is defined.
-               c) The warp requires a rotation in order to exactly map
-               the input and output warp points. The rotation must
-               be at least 1.e-6 radians.
+                   a) This is a MapInfo RASTER file
+                   b) A three-point warp is defined.
+                   c) The warp requires a rotation in order to exactly map
+                      the input and output warp points. The rotation must
+                      be at least 1.e-6 radians.
                
                This function will register an error (and return 0)
                if problems are encountered opening or reading the TAB file.
@@ -358,7 +358,7 @@ gx_methods = {
 
         Method('LoadMAP_GIS', module='geoengine.interoperability', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Load :class:`GIS` table drawing into a :class:`MAP`.",
+               doc="Load :class:`GIS` table drawing into a :class:`MVIEW`.",
                notes="The :class:`GIS` drawing will be drawin in the current group.",
                return_type=Type.VOID,
                parameters = [
@@ -384,7 +384,7 @@ gx_methods = {
 
         Method('LoadMetaGroupsMAP_GIS', module='geoengine.interoperability', version='5.1.8',
                availability=Availability.PUBLIC, 
-               doc="Load :class:`GIS` table drawing into a :class:`MAP`.",
+               doc="Load :class:`GIS` table drawing into a :class:`MVIEW`.",
                notes="""
                The :class:`GIS` drawing will be drawn in the current group.
                A group will be created for every entity and data items

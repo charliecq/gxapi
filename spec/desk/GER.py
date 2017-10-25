@@ -10,7 +10,7 @@ gx_class = Class('GER',
                  """,
                  notes="""
                  :class:`GER` message files contain numbered messages that can be used within GXs.
-                 Following is an example from the file :class:`GEOSOFT`.:class:`GER`:
+                 Following is an example from the file GEOSOFT.:class:`GER`:
                  
                  
                        #20008
@@ -40,7 +40,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Opens an ASCII error file to read from.",
                notes="""
-               The :class:`GER` file may be in the local directory or the :class:`GEOSOFT`
+               The :class:`GER` file may be in the local directory or the GEOSOFT
                directory.
                """,
                return_type="GER",

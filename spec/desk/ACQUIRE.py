@@ -49,8 +49,8 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Import Drillhole data acQuire database into a GDB",
                notes="""
-               Point data and polygon data are saved into D### lines in GDB,
-               ### representing incremental number starting from 0
+               Point data and polygon data are saved into Dnnn lines in GDB,
+               nnn representing incremental number starting from 0
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -79,8 +79,8 @@ gx_methods = {
                doc="Import Point Sample data acQuire database into a GDB",
                notes="""
                Data existing in the receiving GDB file will be over-written.
-               Point data and polygon data are saved into D### lines in GDB,
-               ### representing incremental number starting from 0
+               Point data and polygon data are saved into Dnnn lines in GDB,
+               nnn representing incremental number starting from 0
                """,
                return_type=Type.INT32_T,
                return_doc="""

@@ -163,9 +163,10 @@ class CodeGeneratorBase:
         contents = self.normalize_line_endings(contents)
         cur_contents = None
         if os.path.exists(file_name):
-            with open(file_name, 'r') as f:
+            with open(file_name, 'r', newline='') as f:
                 cur_contents = f.read()
         if contents != cur_contents:
+            if not file_name.startswith('templates/'): print('Updating {}'.format(file_name))
             with open(file_name, 'wb') as f:
                 f.write(contents.encode('UTF-8'))
 
