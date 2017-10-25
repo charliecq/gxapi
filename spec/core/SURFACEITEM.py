@@ -2,7 +2,7 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
 gx_class = Class('SURFACEITEM',
                  doc="""
-                 The :class:`SURFACEITEM` allows you to create, read and alter Geosurface files (*.geosoft_surface).
+                 The :class:`SURFACEITEM` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).
                  A Geosurface file can contain one or more surface items (see :class:`SURFACE` class). A surface item can
                  contains one or more triangular polyhedral meshes.
                  """)

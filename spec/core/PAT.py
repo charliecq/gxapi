@@ -2,15 +2,12 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
 gx_class = Class('PAT',
                  doc="""
-                 A :class:`PAT` object is created from a Geosoft-format pattern file.
+                 A :class:`PAT` object is created from a Geosoft format pattern file.
                  It contains all the individual patterns listed in the file.
                  
-                 Notes		You may create your own fill patterns should be added to the "user.pat"
-                 le in the <geosoft>\\user\\etc directory.
-                 
-                 you wish to add your own fill patterns, create a file named user.pat in
-                 e <geosoft>/User/ directory and add your own fill patterns in the number
-                 nge 20000 to 29999.
+                 Notes: You may create your own fill patterns. They can be added to the "user.pat"
+                 file in the <geosoft>\\user\\etc directory. User pattern numbers should be in the 
+                 range between 20000 and 29999.
                  """)
 
 

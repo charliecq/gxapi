@@ -6,7 +6,7 @@ gx_class = Class('DB',
                  Database symbols are objects inside databases, such as lines, channels and blobs
                  """,
                  notes="""
-                 The follwing defines are not used by any methods but are
+                 The following defines are not used by any methods but are
                  used by GX's:
                  
                  :def_val:`DB_ACTIVITY_BLOB`

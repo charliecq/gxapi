@@ -288,7 +288,16 @@ class PythonCodeGenerator(CodeGeneratorBase):
         template_dirs = [ os.path.join(cur_dir, 'templates') ]
         super().__init__(constant_type=PythonConstant, define_type=PythonDefine, parameter_type=PythonParameter,
                          method_type=PythonMethod, class_type=PythonClass, template_dirs=template_dirs)
+        self.j2env.filters['doc_sanitize'] = self.doc_sanitize
         self._remove_no_cpp_methods()
+
+    def doc_sanitize(self, s):
+        s = self.re_class.sub(r':class:`GX\1`', s)
+        s = self.re_def.sub(r'`\1`', s)
+        s = self.re_func.sub(r'\1', s)
+        s = self.re_def_val.sub(r':attr:`\1`', s)
+        s = textwrap.dedent(s).strip()
+        return s.replace('\\', '\\\\')
 
     def _remove_no_cpp_methods(self):
         for _, cl in self.classes.items():
@@ -346,7 +355,7 @@ class PythonCodeGenerator(CodeGeneratorBase):
 
     def regen_classes(self):
         for key, cl in self.classes.items():
-            if not cl.no_cpp:
+            if not cl.no_cpp and not key == 'GEO':
                 output_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(key))
                 self._regen_py('class', output_file, cl=cl)
 

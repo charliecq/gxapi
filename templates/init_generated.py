@@ -28,13 +28,13 @@ __all__ = [
 
     'GXContext',
 ### for cl in classes
-{% if not classes[cl].no_cpp %}    'GX{{ cl }}',{% endif %}
+{% if not classes[cl].no_cpp and not cl == 'GEO' %}    'GX{{ cl }}',{% endif %}
 ### endfor
 ]
 
 from .GXContext import GXContext
 ### for cl in classes
-{% if not classes[cl].no_cpp %}from .GX{{ cl }} import GX{{ cl }}{% endif %}
+{% if not classes[cl].no_cpp and not cl == 'GEO' %}from .GX{{ cl }} import GX{{ cl }}{% endif %}
 ### endfor
 
 {{ "### endblock ClassImports" }}

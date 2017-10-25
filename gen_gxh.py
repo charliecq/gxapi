@@ -232,8 +232,8 @@ class GXHCodeGenerator(CodeGeneratorBase):
         s = self.re_def.sub(r'\1', s)
         s = self.re_func.sub(r'\1', s)
         s = self.re_def_val.sub(r'\1', s)
-
-        return textwrap.dedent(s).strip()
+        s = textwrap.dedent(s).strip()
+        return s.replace('``', '')
 
     def __init__(self):
         super().__init__(constant_type=GXHConstant, define_type=GXHDefine, parameter_type=GXHParameter,

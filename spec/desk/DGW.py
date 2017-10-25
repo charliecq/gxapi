@@ -22,8 +22,7 @@ gx_class = Class('DGW',
                  using the following parameters:
                  
                  MONTAJ.GX_CAPTION_FONT="Caption_Font": Font for the field captions (labels)
-                 MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse"
-                                                 button
+                 MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse" button
                  MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see :func:`SetTitle_DGW`).
                  
                  The font used for the text in edit windows remains the default, or the

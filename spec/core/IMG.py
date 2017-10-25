@@ -28,9 +28,9 @@ gx_class = Class('IMG',
                  
                  Different grid types support different features.  For example, not all
                  grid types support projection information.  Geosoft will always create
-                 a *.gi file that is used to store all such information that we require
+                 a ``*.gi`` file that is used to store all such information that we require
                  from a grid.  If the grid does support this information, both the grid
-                 and the *.gi file will contain the information.
+                 and the ``*.gi`` file will contain the information.
                  """)
 
 

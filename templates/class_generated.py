@@ -15,6 +15,13 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 # NOTICE: Do not edit anything here, it is generated code
 class {{ class_name }}:
     """
+    {{ class_name }} class.
+
+    {{ cl.doc | doc_sanitize | indent }}{% if cl.notes %}
+
+    **Note:**
+
+    {{ cl.notes | doc_sanitize | indent }}{% endif %}
     """
 
     def __enter__(self):
@@ -34,7 +41,7 @@ class {{ class_name }}:
         """
         A null (undefined) instance of :class:`{{ class_name }}`
         
-        :returns: A null :class:`GX3DN`
+        :returns: A null :class:`{{ class_name }}`
         """
         return cls()
 
