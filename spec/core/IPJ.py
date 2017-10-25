@@ -677,8 +677,7 @@ gx_methods = {
                in one PCS, and an oriented grid from a different PCS is
                to be displayed in that view.
                
-               If the two input IPJs share the same PCS (determined
-               using the :func:`iSame_IPJ` function), then the :func:`GetPlaneEquation_IPJ`
+               If the two input IPJs share the same PCS then the :func:`GetPlaneEquation_IPJ`
                function is called directly, using the input :class:`IPJ`.
                """,
                return_type=Type.VOID,
@@ -2019,9 +2018,8 @@ gx_methods = {
                0 - No
                1 - Yes
                
-               Notes			 This does not compare LDT information in the :class:`IPJ`, use :func:`iCompareDatums_IPJ` for a full comparison.
-               This function does not act like :func:`iSame_IPJ` in that it will return 0 if the one :class:`IPJ` is IPJ_CS_UNKNOWN
-               and not the other.
+               Notes
+                    This does not compare LDT information in the :class:`IPJ`, use :func:`iCompareDatums_IPJ` for a full comparison.
                """,
                parameters = [
                    Parameter('p1', type="IPJ",
@@ -2038,7 +2036,8 @@ gx_methods = {
                0 - No
                1 - If the IPJs are the same, or if either :class:`IPJ` is IPJ_CS_UNKNOWN.
                
-               Notes			 This does not compare LDT information in the :class:`IPJ`, use :func:`iCompareDatums_IPJ` for a full comparison.
+               Notes
+                    This does not compare LDT information in the :class:`IPJ`, use :func:`iCompareDatums_IPJ` for a full comparison.
                """,
                parameters = [
                    Parameter('p1', type="IPJ",

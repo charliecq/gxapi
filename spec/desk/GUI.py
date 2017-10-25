@@ -792,12 +792,6 @@ gx_methods = {
                using a complex dialog. The template name
                may change during editing.
                """,
-               notes="""
-               Will use the :class:`EDB` passed in. This function replaces
-               the 'buggy' function :func:`ExportXYZTemplateEditor_GUI`.
-               This extended function actually uses the :class:`EDB` handle
-               passed to it and not just the current :class:`DB`.
-               """,
                return_type=Type.INT32_T,
                return_doc="""
                0 - OK

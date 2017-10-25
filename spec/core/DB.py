@@ -1653,7 +1653,7 @@ gx_methods = {
                doc="Returns the # of elements in a channel.",
                notes="""
                Returns the actual number of data items (rows) in a channel. For :class:`VA` channels no correction is
-               necessary for the number of columns (which was true of the obsoleted function :func:`iGetLength_DB`).
+               necessary for the number of columns.
                """,
                return_type=Type.INT32_T,
                return_doc="# of elements",

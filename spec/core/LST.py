@@ -412,9 +412,6 @@ gx_methods = {
                is searched.
                If it cannot be found, the list will be
                empty.  Not finding a file is not an error.
-               
-               This function replaces the :func:`iLoadFile_LST` function which
-               actually always returned 0, or terminated on an error.
                """,
                return_type=Type.VOID,
                parameters = [

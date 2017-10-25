@@ -16,10 +16,6 @@ gx_class = Class('MVIEW',
                  :class:`AGG` groups (aggregates) contain images.  See :func:`Aggregate_MVIEW`
                  and the :class:`AGG` class.
                  
-                 PAGG groups (poly-aggregates) contain images with multiple
-                 frames that make up an animation.  See :func:`PolyAggregate_MVIEW`
-                 and the PAGG class.
-                 
                  Standard groups contain symbols, lines, polylines, and polygons.
                  See :func:`StartGroup_MVIEW`.
                  """)
@@ -2783,7 +2779,7 @@ gx_methods = {
                              doc="Storage name")
                ]),
 
-        Method('ReadGroupStorage_MVIEW', module='geoengine.map', version='5.0.0',
+        Method('ReadGroupStorage_MVIEW', module='geoengine.map', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Reads existing generic storage associated with a group into an in-memory :class:`BF`.",
                notes='External API users should not use storage names starting with "Geosoft"',
