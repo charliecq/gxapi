@@ -20,11 +20,11 @@ class {{ class_name }}:
     """
     {{ class_name }} class.
 
-    {{ cl.doc | doc_sanitize | indent }}{% if cl.notes %}
+    {{ cl.doc | doc_sanitize(cl.name) | indent }}{% if cl.notes %}
 
     **Note:**
 
-    {{ cl.notes | doc_sanitize | indent }}{% endif %}
+    {{ cl.notes | doc_sanitize(cl.name) | indent }}{% endif %}
     """
 
     def __enter__(self):
@@ -42,17 +42,17 @@ class {{ class_name }}:
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of :class:`geosoft.gxapi.{{ class_name }}`
+        A null (undefined) instance of `{{ class_name }}`
         
-        :returns: A null :class:`geosoft.gxapi.{{ class_name }}`
+        :returns: A null `{{ class_name }}`
         """
         return cls()
 
     def is_null(self):
         """
-        Check if the instance of :class:`geosoft.gxapi.{{ class_name }}` is null (undefined)`
+        Check if the instance of `{{ class_name }}` is null (undefined)`
         
-        :returns: True if this is a null (undefined) instance of :class:`geosoft.gxapi.{{ class_name }}`, False otherwise.
+        :returns: True if this is a null (undefined) instance of `{{ class_name }}`, False otherwise.
         """
         return self._wrapper.handle == 0
 
@@ -66,11 +66,15 @@ class {{ class_name }}:
 {% if method.is_static %}    @classmethod{% endif %}
     def {{ method.ext_method_name }}({{ method.py_first_parm }}{% for param in method.py_parameters %}, {{ param.name }}{% endfor %}):
         """
-        {{ method.doc | doc_sanitize | indent(8) }}{% if method.notes %}
+        {{ method.doc | doc_sanitize(cl.name) | indent(8) }}{% if method.notes %}
 
         **Note:**
 
-        {{ method.notes | doc_sanitize | indent(8) }}{% endif %}
+        {{ method.notes | doc_sanitize(cl.name) | indent(8) }}{% endif %}{% if method.see_also %}
+
+        .. seealso::
+
+            {{ method.see_also | doc_sanitize(cl.name) | indent(12) }}{% endif %}
         """
         {{ method.assign_return_values }}{{ method.call_wrapper }}({{ method.pass_py_parameters }})
         {{ method.py_return }}

@@ -144,6 +144,12 @@ class PythonMethod(Method):
         else:
             return "return ret_val"
 
+    def py_doc_ref(self, ref_class):
+        if ref_class == self.parent.name:
+            return "`{}`".format(self.ext_method_name)
+        else:
+            return "`GX{}.{}`".format(self.parent.name, self.ext_method_name)
+    
 
     @property
     def assign_return_values(self):
@@ -302,11 +308,11 @@ class PythonCodeGenerator(CodeGeneratorBase):
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
         self._remove_no_cpp_methods()
 
-    def doc_sanitize(self, s):
-        s = self.re_class.sub(r':class:`geosoft.gxapi.GX\1`', s)
+    def doc_sanitize(self, s, ref_class):
+        s = self.re_class.sub(r'`GX\1`', s)
         s = self.re_def.sub(r'`\1`', s)
-        s = self.re_func.sub(r'\1', s)
-        s = self.re_def_val.sub(r':attr:`geosoft.gxapi.\1`', s)
+        s = self.re_func.sub(lambda m: self.methods[m.group(1)].py_doc_ref(ref_class), s)
+        s = self.re_def_val.sub(r'`\1`', s)
         s = textwrap.dedent(s).strip()
         return s.replace('\\', '\\\\')
 

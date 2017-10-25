@@ -3,9 +3,9 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 gx_class = Class('DBREAD',
                  doc="""
                  The :class:`DBREAD` class is used to open and read from databases. Very large lines
-                   are split into blocks and served up sequentially to prevent the over-use of virtual memory when channels are read into VVs or VAs.
-                   Individual data blocks are limited by default to 1 MB (which is user-alterable). Single lines smaller than the block size
-                   are served up whole, one block per line.
+                 are split into blocks and served up sequentially to prevent the over-use of virtual memory when channels are read into VVs or VAs.
+                 Individual data blocks are limited by default to 1 MB (which is user-alterable). Single lines smaller than the block size
+                 are served up whole, one block per line.
                  """)
 
 

@@ -3,9 +3,9 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 gx_class = Class('DBWRITE',
                  doc="""
                  The :class:`DBWRITE` class is used to open and write to databases. Large blocks of data
-                   are split into blocks and served up sequentially to prevent the over-use of virtual memory when VVs or VAs are being written to channels.
-                   Individual data blocks are limited by default to 1 MB (which is user-alterable). Data less than the block size
-                   are served up whole, one block per line.
+                 are split into blocks and served up sequentially to prevent the over-use of virtual memory when VVs or VAs are being written to channels.
+                 Individual data blocks are limited by default to 1 MB (which is user-alterable). Data less than the block size
+                 are served up whole, one block per line.
                  """)
 
 
@@ -32,7 +32,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBWRITE` object for a XY-located data. Add channels using the
-               		               :func:`iAddChannel_DBWRITE`() method.
+               :func:`iAddChannel_DBWRITE`() method.
                """,
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",
