@@ -16,19 +16,16 @@ gx_class = Class('EMAP',
                  
                  :class:`MAP` Redraw Rules:
                  
-                 1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
-                 You can safely call other GX's and the map will not redraw. If you need the
-                 map to redraw immediately use :func:`Redraw_EMAP` instead.
-                 
-                 2. If the final GX calls :func:`Cancel_SYS`, the map redraw is not done. If you
-                 need to force a redraw when the user hits cancel use the :func:`Redraw_EMAP` function.
-                 
-                 3. You can set the redraw flag to :def_val:`EMAP_REDRAW_YES` or :def_val:`EMAP_REDRAW_NO` at any
-                 time using :func:`SetRedrawFlag_EMAP`. This flag will only be looked at, when
-                 the last call to :func:`UnLock_EMAP` occurs and is ignored on a :func:`Cancel_SYS`.
-                 
-                 4. :func:`Redraw_EMAP` only works if the current map is not locked. It will do nothing
-                 if the map is locked.  Issue an :func:`UnLock_EMAP` before using this function.
+                     1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
+                        You can safely call other GX's and the map will not redraw. If you need the
+                        map to redraw immediately use :func:`Redraw_EMAP` instead.
+                     2. If the final GX calls :func:`Cancel_SYS`, the map redraw is not done. If you
+                        need to force a redraw when the user hits cancel use the :func:`Redraw_EMAP` function.
+                     3. You can set the redraw flag to :def_val:`EMAP_REDRAW_YES` or :def_val:`EMAP_REDRAW_NO` at any
+                         time using :func:`SetRedrawFlag_EMAP`. This flag will only be looked at, when
+                         the last call to :func:`UnLock_EMAP` occurs and is ignored on a :func:`Cancel_SYS`.
+                     4. :func:`Redraw_EMAP` only works if the current map is not locked. It will do nothing
+                        if the map is locked.  Issue an :func:`UnLock_EMAP` before using this function.
                  
                  
                  VIRTUAL :class:`EMAP` SUPPORT
@@ -40,28 +37,24 @@ gx_class = Class('EMAP',
                  
                  Supported methods on Virtual EMAPS are:
                  
-                 :func:`Current_EMAP`
-                 :func:`CurrentNoActivate_EMAP`
-                 :func:`MakeCurrent_EMAP`
-                 :func:`iHaveCurrent_EMAP`
-                 :func:`CurrentIfExists_EMAP`
-                 :func:`Current_MAP`
-                 
-                 :func:`Lock_EMAP`
-                 :func:`UnLock_EMAP`
-                 :func:`iIsLocked_EMAP`
-                 
-                 :func:`IGetName_EMAP`
-                 :func:`SetRedrawFlag_EMAP`
-                 :func:`Redraw_EMAP`
-                 
-                 :func:`iLoaded_EMAP`
-                 :func:`Load_EMAP`
-                 :func:`LoadNoActivate_EMAP`
-                 :func:`UnLoadVerify_EMAP`
-                 :func:`UnLoad_EMAP`
-                 
-                 :func:`CreateVirtual_EMAP`
+                     | :func:`Current_EMAP`
+                     | :func:`CurrentNoActivate_EMAP`
+                     | :func:`MakeCurrent_EMAP`
+                     | :func:`iHaveCurrent_EMAP`
+                     | :func:`CurrentIfExists_EMAP`
+                     | :func:`Current_MAP`
+                     | :func:`Lock_EMAP`
+                     | :func:`UnLock_EMAP`
+                     | :func:`iIsLocked_EMAP`
+                     | :func:`IGetName_EMAP`
+                     | :func:`SetRedrawFlag_EMAP`
+                     | :func:`Redraw_EMAP`
+                     | :func:`iLoaded_EMAP`
+                     | :func:`Load_EMAP`
+                     | :func:`LoadNoActivate_EMAP`
+                     | :func:`UnLoadVerify_EMAP`
+                     | :func:`UnLoad_EMAP`
+                     | :func:`CreateVirtual_EMAP`
                  """)
 
 
@@ -193,12 +186,12 @@ gx_methods = {
                notes="""
                Four objects are placed on the clipboard:
                
-               1. Georefernce Text
-               2. Bitmap of current window screen resolution
-               3. EMF of current window screen resolution
-               4. Entire map as a Geosoft View (go to view mode
-               and hit paste). The coordinates are placed
-               in the current view coordinates.
+                   1. Georefernce Text
+                   2. Bitmap of current window screen resolution
+                   3. EMF of current window screen resolution
+                   4. Entire map as a Geosoft View (go to view mode and hit paste). The coordinates are placed
+                      in the current view coordinates.
+
                """,
                return_type=Type.VOID,
                parameters = [

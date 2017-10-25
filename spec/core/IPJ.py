@@ -895,19 +895,25 @@ gx_methods = {
 
         Method('SetVCS_IPJ', module='geoengine.core', version='9.2.0',
                availability=Availability.PUBLIC, 
-               doc="Set the Verical Coordinate System in the :class:`IPJ` name string",
+               doc="Set the Vertical Coordinate System in the :class:`IPJ` name string",
                notes="""
+
                The vertical coordinate system (vcs) describes the datum used for vertical coordinates. The vcs name, if
-               			known, will appear in square brackets as part of the coordinate system name.
+               known, will appear in square brackets as part of the coordinate system name.
                
-               			Examples:
-                              "WGS 84 [geoid]"
-                              "WGS 84 / UTM zone 12S" - the vcs is not known.
-               			   "WGS 84 / UTM zone 12S [NAVD88]"
+               Examples:
+
+               ::
+
+                   "WGS 84 [geoid]"
+                   "WGS 84 / UTM zone 12S" - the vcs is not known.
+                   "WGS 84 / UTM zone 12S [NAVD88]"
                
-                           Valid inputs:
-                             "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
-                             ""                - Clears the vcs
+               Valid inputs:
+
+                    "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
+                    ""                - Clears the vcs
+
                """,
                return_type=Type.VOID,
                return_doc="Nothing",
@@ -1586,18 +1592,29 @@ gx_methods = {
                
                The coordinate system may also be oriented arbitrarily in 3D relative to
                the base coordinate system by specifying the orientation as a set of
-               6 comma-separated values between angled brackets after the coordinate system name:
+               6 comma-separated values between angled brackets after the coordinate 
+               system name, e.g:
                
-               "datum / projection"<oX,oY,oZ,rX,rY,rZ>
-               21037<oX,oY,oZ,rX,rY,rZ>
+               ::
+               
+                    "datum / projection"<oX,oY,oZ,rX,rY,rZ>
+                    21037<oX,oY,oZ,rX,rY,rZ>
                
                where:
+               
                oX,oY,oZ    is the location of the local origin on the CS
+               
                rX,rY,rZ    are rotations in degrees azimuth (clockwise) of
-               the local axis frame around the X, Y and Z axis
-               respectively.  A simple plane rotation will only have
-               a rotation around Z.  For example:
-               "Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>
+                           the local axis frame around the X, Y and Z axis
+                           respectively.  A simple plane rotation will only have
+                           a rotation around Z.  
+                           
+               For example:
+
+               ::
+               
+                    "Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>
+
                defines a local system with origin at (525000,2500000)
                with a rotation of 15 degrees azimuth.
                
@@ -1623,7 +1640,9 @@ gx_methods = {
                For a non-EPSG datum, you can define your own datum parameters in the
                Datum stringfield as follows:
                
-               "*YourDatumName",major_axis,flattening(or eccentricity)[,prime_meridian]
+               ::
+
+                    "*YourDatumName",major_axis,flattening(or eccentricity)[,prime_meridian]
                
                where
                The * before "YourDatumName" indicates this is a non-EPSG name.
@@ -1640,17 +1659,22 @@ gx_methods = {
                Projection names not defined in "transform.csv" can be defined in the
                "projection" string as follows:
                
-               method,length_units,P1,P2,...
+               ::
+               
+                    method,length_units,P1,P2,...
                
                where:
                
-               "method" is a method from the table "transform_parameters.csv".
-               "length_units" is a "Unit_length" from units.csv.
-               P1 through P8 (or fewer) are the projection parameters for the method
-               as defined in "transform_parameters.csv", and in the order defined.
-               Parameters that are blank in "transform_parameters.csv" are omitted
-               from the list so that each method will have a minimum list of
-               parameters.
+                   method
+                        is a method from the table "transform_parameters.csv".
+               
+                   length_units
+                        is a "Unit_length" from units.csv.
+                        P1 through P8 (or fewer) are the projection parameters for the method
+                        as defined in "transform_parameters.csv", and in the order defined.
+                        Parameters that are blank in "transform_parameters.csv" are omitted
+                        from the list so that each method will have a minimum list of
+                        parameters.
                
                Angular parameters must always be degrees, and may be defined a
                decimal degree fromat, or "DEG.MM.SS.ssss".
@@ -1658,26 +1682,29 @@ gx_methods = {
                defined in the "length_units" (string 4).
                
                Examples:
+
+               ::
                
-               Geographic long,lat on datum "Arc 1960":
-               "4210","","","",""
-               "Arc 1960","","","",""
-               "","Arc 1960","","",""
+                   Geographic long,lat on datum "Arc 1960":
+                   "4210","","","",""
+                   "Arc 1960","","","",""
+                   "","Arc 1960","","",""
                
-               Projected Coordinate System, UTM zone 37S
-               "21037","","","",""
-               "","4210","16137","",""
-               ""Arc 1960 / UTM zone 37S"","","","",""
-               "",""Arc 1960"","UTM zone 37S","",""
-               "",""Arc 1960"","UTM zone 37S","m",""
-               "",""Arc 1960"","UTM zone 37S","m,1.0",""
-               "",""Arc 1960"","UTM zone 37S","m,1.0","");
-               "",""Arc 1960"","UTM zone 37S","m","Arc 1960 to WGS 84 (1)"
+                   Projected Coordinate System, UTM zone 37S
+                   "21037","","","",""
+                   "","4210","16137","",""
+                   ""Arc 1960 / UTM zone 37S"","","","",""
+                   "",""Arc 1960"","UTM zone 37S","",""
+                   "",""Arc 1960"","UTM zone 37S","m",""
+                   "",""Arc 1960"","UTM zone 37S","m,1.0",""
+                   "",""Arc 1960"","UTM zone 37S","m,1.0","");
+                   "",""Arc 1960"","UTM zone 37S","m","Arc 1960 to WGS 84 (1)"
                
-               Locally oriented coordinate system (origin at 525000,2500000, rotated 15 deg):
-               "21037<525000,2500000,0,0,0,15>","","","",""
-               "<525000,2500000,0,0,0,15>","4210","16137","",""
-               ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
+                   Locally oriented coordinate system (origin at 525000,2500000, rotated 15 deg):
+                   "21037<525000,2500000,0,0,0,15>","","","",""
+                   "<525000,2500000,0,0,0,15>","4210","16137","",""
+                   ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
+
                """,
                return_type=Type.VOID,
                parameters = [

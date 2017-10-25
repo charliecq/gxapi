@@ -131,7 +131,7 @@ gx_defines = [
                         L100.2 -------------------------- L100.2
                         
                         dOffA controls distance from label to line.
-                        dOffB controls verical offset from center.
+                        dOffB controls vertical offset from center.
                         """),
                Constant('MVU_FLIGHT_LOCATE_ABOVE', value='2', type=Type.INT32_T,
                         doc="""
@@ -807,6 +807,7 @@ gx_methods = {
                the forward model curves. This is useful for trouble-shooting
                or understanding why a certain inversion result was obtained.
                The earth model is a simple halfspace.
+
                The forward model is plotted either as a function of
                resistivity at a single height, or as a function of height at
                a single resistivity. In either case, the relevant VVs must be
@@ -857,8 +858,8 @@ gx_methods = {
                doc="Export selected map groups in a map view to a Datamine coordinate string file.",
                notes="""
                The lines, rectangles and polygons in the specified groups
-               will be exported to a Datamine coordinate string (*.dm) file.
-               The function attemps to duplicate the colors, etc. used.
+               will be exported to a Datamine coordinate string (``*.dm``) file.
+               The function attempts to duplicate the colors, etc. used.
                Complex polygon objects will be exported as independent
                single polygons.
                """,
@@ -870,7 +871,7 @@ gx_methods = {
                    Parameter('p2', type="LST",
                              doc=":class:`LST` with group names in the name part of the :class:`LST`."),
                    Parameter('p3', type=Type.STRING,
-                             doc="Datamine string file (*.dm) to export to")
+                             doc="Datamine string file (``*.dm``) to export to")
                ]),
 
         Method('ExportDXF3D_MVU', module='geoengine.interoperability', version='6.2.0',

@@ -3321,8 +3321,8 @@ gx_methods = {
                doc="Returns 1 if the view projection and view user projection are both empty (undefined).",
                notes="""
                Use, for instance, to see if the map view contains projection information. The first time you add data that
-               				has projection information you should set up an empty view projection so that subsequent data added with a different
-               			   projection is properly displayed in relation to the initial data.
+               has projection information you should set up an empty view projection so that subsequent data added with a different
+               projection is properly displayed in relation to the initial data.
                """,
                return_type=Type.INT32_T,
                return_doc="1 if the view projection and view user projection are both empty.",

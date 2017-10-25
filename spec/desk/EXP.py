@@ -24,21 +24,28 @@ gx_methods = {
                applied to channels in a database.  For example, following
                an expression:
                
+               ::
+
                   "@a = mag-64000; @b = gravity*100;
                    $sRatio = @a/@b;
                    MULT = @a *@b;"
                
                Rules:
                
-                  ;  - terminates a sub-expression
-                  @  - prefix to a temporary name, which is a double precision
-                       floating point number to be used later in the same
-                       expression.
-                  $  - prefix to a local GX variable name.  Such names will be
-                       evaluated to the variable value at the time :func:`Create_EXP`
-                       is called.
+                  ``;``
+                    terminates a sub-expression
+
+                  ``@``
+                    prefix to a temporary name, which is a double precision
+                    floating point number to be used later in the same
+                    expression.
+
+                  ``$``
+                    prefix to a local GX variable name.  Such names will be
+                    evaluated to the variable value at the time :func:`Create_EXP`
+                    is called.
                
-                  All other tokens are assumed to be channel names.
+               All other tokens are assumed to be channel names.
                """,
                return_type="EXP",
                return_doc=":class:`EXP` Object",

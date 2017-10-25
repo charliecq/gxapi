@@ -738,7 +738,7 @@ gx_methods = {
                This is an "in-place" operation, and set up so that the input and
                output pagers may be the same handle. (If they are different, the
                input pager remains unchanged).
-               Pagers and VVs must be type REAL.
+               Pagers and VVs must be type :def_val:`GS_DOUBLE`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -773,7 +773,7 @@ gx_methods = {
                of the matrix a
                The LU decomposition and the permutation vector are obtained
                from :func:`LUBackSub_PGU`.
-               Pagers and VVs must be type REAL except for the permutation vector,
+               Pagers and VVs must be type :def_val:`GS_DOUBLE` except for the permutation vector,
                which should be INT
                """,
                return_type=Type.VOID,
@@ -801,7 +801,7 @@ gx_methods = {
                input pager remains unchanged).
                The LU decomposition, and the permutation vector are used for
                :func:`LUBackSub_PGU`.
-               Pagers must be type REAL and the permutation vector type INT
+               Pagers must be type :def_val:`GS_DOUBLE` and the permutation vector type INT
                """,
                return_type=Type.VOID,
                parameters = [
@@ -845,8 +845,12 @@ gx_methods = {
                The matrix is input as an M rows (data) by N columns (variables) :class:`PG`.
                The vector must be of length N. The output :class:`VV` is set to length M.
                The :class:`PG` and VVs must be type :def_val:`GS_DOUBLE`.
-               Terminates if: Matrices, :class:`VV` are not expected sizes (taken from U)
-                              PGs are not REAL.
+               
+               Terminates if: 
+               
+                    Matrices, :class:`VV` are not expected sizes (taken from U)
+                    PGs are not :def_val:`GS_DOUBLE`.
+
                Dummies are treated as 0 values.
                """,
                return_type=Type.VOID,
@@ -864,15 +868,20 @@ gx_methods = {
                doc="Do a singular value decomposition on a matrix stored as a :class:`PG`",
                notes="""
                The matrix is input as an N rows (data) by M columns (variables) :class:`PG`.
-               On return, the matrix is decomposed to A = U * W * Vt.
-               If M<N, then an error will be registered. In this case, augment the
-               "A" :class:`PG` with rows of zero values.
+               On return, the matrix is decomposed to A = U * W * Vt. If M<N, then an error will 
+               be registered. In this case, augment the "A" :class:`PG` with rows of zero values.
+               
                The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W :class:`VV`
                is set by sSVD_PGU to N.
-               The Pagers must be type REAL.
-               Terminates if: U is not M by N. (Taken from size of A)
-                              V is not N by N. (Taken from #columns in A).
-                              PGs, :class:`VV` are not REAL
+               
+               The Pagers must be type :def_val:`GS_DOUBLE`.
+               
+               Terminates if: 
+               
+                    U is not M by N. (Taken from size of A)
+                    V is not N by N. (Taken from #columns in A).
+                    PGs, VV are not :def_val:`GS_DOUBLE`
+
                """,
                return_type=Type.VOID,
                parameters = [
@@ -897,9 +906,13 @@ gx_methods = {
                The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W :class:`VV`
                is set by sSVDecompose_PGU to N.
                The Pagers must be type :def_val:`GS_DOUBLE`.
-               Terminates if: U is not M by N. (Taken from size of A)
-                              V is not N by N. (Taken from #columns in A).
-                              PGs, :class:`VV` are not REAL.
+               
+               Terminates if: 
+                    
+                    U is not M by N. (Taken from size of A)
+                    V is not N by N. (Taken from #columns in A).
+                    PGs, VV are not :def_val:`GS_DOUBLE`.
+
                Dummies are treated as 0 values.
                """,
                return_type=Type.VOID,

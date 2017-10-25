@@ -384,18 +384,22 @@ gx_methods = {
                function will return the log value.
                """,
                notes="""
-               Mode = 0 (regular log mode)
+               Mode = 0 (regular log mode) returns:
+
+               ::
+
+                   Log10(Z)  for Z > minimum
+                   Log10(minimum) for Z <= minimum
                
-               Returns:
-               Log10(Z)  for Z > minimum
-               Log10(minimum) for Z <= minimum
                
-               Mode = 1 (log / linear / negative log mode)
+               Mode = 1 (log / linear / negative log mode) returns:
                
-               Returns:
-               minimum * ( log10( |Z| / minimum) + 1 )   for Z > minimum
-               Z for |Z| <= minimum   (the linear part of the range)
-               -minimum * ( log10( |Z| / minimum) + 1 )   for Z < -minimum
+               ::
+
+                   minimum * ( log10( |Z| / minimum) + 1 )   for Z > minimum
+                   Z for |Z| <= minimum   (the linear part of the range)
+                   -minimum * ( log10( |Z| / minimum) + 1 )   for Z < -minimum
+
                """,
                see_also=":func:`rUnLogZ_MATH`",
                return_type=Type.DOUBLE,

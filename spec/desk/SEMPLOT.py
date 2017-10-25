@@ -583,7 +583,7 @@ gx_methods = {
                doc="Test to see if a view is an XYPlot or Triplot view.",
                notes="""
                First checks the view name to see if it starts with
-               "XYplt_" or "Triplt_". Failing that it looks in the
+               ``"XYplt_"`` or ``"Triplt_"``. Failing that it looks in the
                view :class:`REG` for a value for "Components.Type", which will
                be either "XYPlot" or "TriPlot".
                If the view does not appear to be an XYPlot or a TriPlot view,

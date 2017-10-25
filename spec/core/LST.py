@@ -570,7 +570,7 @@ gx_methods = {
                descriptions read from a projection datum file.
                """,
                notes="""
-               Was based on the old Mapproj.dtm file. Superceded by the current
+               Was based on the old Mapproj.dtm file. Superseded by the current
                projection engine.
                """,
                return_type=Type.INT32_T,
@@ -592,7 +592,7 @@ gx_methods = {
                datum file.
                """,
                notes="""
-               Was based on the old Mapproj.dtm file. Superceded by the current
+               Was based on the old Mapproj.dtm file. Superseded by the current
                projection engine.
                """,
                return_type=Type.INT32_T,

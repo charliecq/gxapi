@@ -253,7 +253,7 @@ gx_methods = {
                doc="Export of :class:`IP` data to UBC format.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC 2D inversion programme IPINV2D.
+               UBC 2D inversion program IPINV2D.
                Include error channel output and version-specific formatting.
                """,
                return_type=Type.VOID,
@@ -278,11 +278,11 @@ gx_methods = {
 
         Method('ExportUBCIPControl_IP', module='geogxx', version='6.4.0',
                availability=Availability.EXTENSION, 
-               doc="Export a control file for using in the UBC IPINV2D programme.",
+               doc="Export a control file for using in the UBC IPINV2D program.",
                notes="""
                UBC Version 3 Control file.
                Outputs a control file for use in the
-               UBC 2D :class:`IP` inversion programme IPINV2D.
+               UBC 2D :class:`IP` inversion program IPINV2D.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -314,7 +314,7 @@ gx_methods = {
 
         Method('ExportUBCIPControlV5_IP', module='geogxx', version='8.1.0',
                availability=Availability.EXTENSION, 
-               doc="Export a control file for using in the UBC IPINV2D programme.",
+               doc="Export a control file for using in the UBC IPINV2D program.",
                notes="UBC Version 5 Control file.",
                return_type=Type.VOID,
                parameters = [
@@ -357,7 +357,7 @@ gx_methods = {
                doc="Export of :class:`IP` Resistivity data to UBC format.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC 2D inversion programme DCINV2D.
+               UBC 2D inversion program DCINV2D.
                Voltage and current channels should be in units such that
                V/I gives volts/amp (or mV/mA).
                """,
@@ -385,12 +385,11 @@ gx_methods = {
 
         Method('ExportUBCResControl_IP', module='geogxx', version='6.4.0',
                availability=Availability.EXTENSION, 
-               doc="Export a control file for using in the UBC DCINV2D programme.",
+               doc="Export a control file for using in the UBC DCINV2D program.",
                notes="""
                UBC Version 3.
                Outputs a control file for use in the
-               UBC 2D resistivity inversion programme DCINV2D.
-               Superceded by ExportUBCResControl2_IP, which has a selection for output version number.
+               UBC 2D resistivity inversion program DCINV2D.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -420,11 +419,11 @@ gx_methods = {
 
         Method('ExportUBCResControlV5_IP', module='geogxx', version='8.1.0',
                availability=Availability.EXTENSION, 
-               doc="Export a control file for using in the UBC DCINV2D programme.",
+               doc="Export a control file for using in the UBC DCINV2D program.",
                notes="""
-               UBC Version 5
-               			  Outputs a control file for use in the
-               UBC 2D resistivity inversion programme DCINV2D.
+               UBC Version 5.
+               Outputs a control file for use in the
+               UBC 2D resistivity inversion program DCINV2D.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -463,7 +462,7 @@ gx_methods = {
                doc="Export of :class:`IP` data to UBC 3D :class:`IP` format.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC :class:`IP` 3D inversion programmes.
+               UBC :class:`IP` 3D inversion programs.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -493,7 +492,7 @@ gx_methods = {
 
         Method('ImportUBC2DMOD_IP', module='geogxx', version='7.1.0',
                availability=Availability.EXTENSION, 
-               doc="Import a MOD file from the UBC IPINV2D programme.",
+               doc="Import a MOD file from the UBC IPINV2D program.",
                notes="""
                Imports the MOD file values to a :class:`PG` object.
                The CON/CHG selection is necessary because the import sets
@@ -510,7 +509,7 @@ gx_methods = {
 
         Method('ImportUBC2DMSH_IP', module='geogxx', version='7.1.0',
                availability=Availability.EXTENSION, 
-               doc="Import a MSH file from the UBC IPINV2D programme.",
+               doc="Import a MSH file from the UBC IPINV2D program.",
                notes="Imports the MSH file geometry.",
                return_type=Type.VOID,
                parameters = [
@@ -528,7 +527,7 @@ gx_methods = {
 
         Method('ImportUBC2DTopo_IP', module='geogxx', version='7.1.0',
                availability=Availability.EXTENSION, 
-               doc="Import a Topography file from the UBC IPINV2D programme.",
+               doc="Import a Topography file from the UBC IPINV2D program.",
                notes="""
                Imports the maximum elevation (top of mesh)
                as well as the topo (X, Z) values.
@@ -1413,15 +1412,16 @@ gx_methods = {
                notes="""
                This function recalculates "derived" channel values from
                "core" data.
-               1. Recalculates the "STN" and "N" channels, using the TX1,
-                  TX2, RX1 and RX2 channels (depending on the system).
-               2. Recalculates the apparent resistivity "ResCalc",
-                  average "IP_Avg" and metal factor "MF" channels
-               3. Recalculates the "X" and "Y" channels. One of these will
-                  be equal to "STN", the other to the internally stored
-                  line number for the current line.
-               4. Recalculate the "Z" channel, based on the current "Topo"
-                  channel, and the "N" values.
+               
+                   1. Recalculates the "STN" and "N" channels, using the TX1,
+                      TX2, RX1 and RX2 channels (depending on the system).
+                   2. Recalculates the apparent resistivity "ResCalc",
+                      average "IP_Avg" and metal factor "MF" channels
+                   3. Recalculates the "X" and "Y" channels. One of these will
+                      be equal to "STN", the other to the internally stored
+                      line number for the current line.
+                   4. Recalculate the "Z" channel, based on the current "Topo"
+                      channel, and the "N" values.
                
                Warning: If you make a change to an electrode location, you
                would have to call :func:`Recalculate_IP`, then recalculate "Topo"
@@ -1786,10 +1786,10 @@ gx_methods = {
 
         Method('ExportUBCIP_IP', module='geogxx', version='6.4.0',
                availability=Availability.EXTENSION, is_obsolete=True, 
-               doc="Export an :class:`IP` OBS file to use in the UBC IPINV2D programme.",
+               doc="Export an :class:`IP` OBS file to use in the UBC IPINV2D program.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC 2D inversion programme IPINV2D.
+               UBC 2D inversion program IPINV2D.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1812,7 +1812,7 @@ gx_methods = {
                doc="Same as :func:`ExportUBCIP_IP`, with error channel output.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC 2D inversion programme IPINV2D.
+               UBC 2D inversion program IPINV2D.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1834,10 +1834,10 @@ gx_methods = {
 
         Method('ExportUBCRes_IP', module='geogxx', version='6.4.0',
                availability=Availability.EXTENSION, is_obsolete=True, 
-               doc="Export a RES OBS file to use in the UBC DCINV2D programme.",
+               doc="Export a RES OBS file to use in the UBC DCINV2D program.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC 2D inversion programme DCINV2D.
+               UBC 2D inversion program DCINV2D.
                Voltage and current channels should be in units such that
                V/I gives volts/amp (or mV/mA).
                """,
@@ -1864,7 +1864,7 @@ gx_methods = {
                doc="Same as :func:`ExportUBCRes_IP`, with error channel output.",
                notes="""
                Outputs a ``*.DAT`` file of the survey data for use in the
-               UBC 2D inversion programme DCINV2D.
+               UBC 2D inversion program DCINV2D.
                Voltage and current channels should be in units such that
                V/I gives volts/amp (or mV/mA).
                """,

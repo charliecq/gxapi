@@ -110,12 +110,14 @@ gx_methods = {
                doc="Get joins from a :class:`TIN` mesh.",
                notes="""
                The join information is returned in three VVs.
-               - The joins :class:`VV` is a list off the adjacent nodes for
-                 each node, arranged for 1st node, 2nd node etc.
-               - The index :class:`VV` gives the starting index in the
-                 joins :class:`VV` for the adjacent nodes to each node.
-               - The number :class:`VV` gives the number of adjacent nodes
-                 for each node.
+               
+                   - The joins :class:`VV` is a list off the adjacent nodes for
+                     each node, arranged for 1st node, 2nd node etc.
+                   - The index :class:`VV` gives the starting index in the
+                     joins :class:`VV` for the adjacent nodes to each node.
+                   - The number :class:`VV` gives the number of adjacent nodes
+                     for each node.
+
                All VVs must be type :def_val:`GS_LONG`.
                """,
                return_type=Type.VOID,
@@ -224,17 +226,22 @@ gx_methods = {
                doc="Get the index of the triangle containing X, Y.",
                notes="""
                Index returned begins at 0, but could be negative.
-               -1 If X,Y is not contained in a triangle (or triangle not found)
-               -2 If the location is on an edge
-                  This is for "fall-back" purposes only.
-               	Frequently edge positions are located as being part of
-                  a triangle, so do not rely on this result to determine
-                  if a node position is on an edge.
-               -3 If the location is a vertex.
-                  This is for "fall-back" purposes only in the code.
-                  Normal operation is to include a node position
-                  inside a triangle, so do not rely on this result to determine
-                  if a node position is input.
+
+                   -1: If X,Y is not contained in a triangle (or triangle not found)
+               
+                   -2: If the location is on an edge
+                       This is for "fall-back" purposes only.
+               	       
+                       Frequently edge positions are located as being part of
+                       a triangle, so do not rely on this result to determine
+                       if a node position is on an edge.
+
+                   -3: If the location is a vertex.
+                       This is for "fall-back" purposes only in the code.
+                       Normal operation is to include a node position
+                       inside a triangle, so do not rely on this result to determine
+                       if a node position is input.
+
                """,
                return_type=Type.INT32_T,
                return_doc="The index of the triangle containing X, Y.",

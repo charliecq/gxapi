@@ -1426,7 +1426,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method closes a database and destroys the :class:`DB` object.",
                notes="""
-               This method has been largely superceded by the use of the :class:`EDB` object,
+               This method has been largely superseded by the use of the :class:`EDB` object,
                which when locked returns a :class:`DB` object that must NOT be destroyed.
                
                EData = :func:`Current_EDB`();       // get current edited database
@@ -3643,7 +3643,7 @@ gx_methods = {
                EData = :func:`Current_EDB`();       // get current edited database
                Data = :func:`Lock_EDB`(EData);      // lock the database
                
-               and has been superceded by this construction in all Geosoft GXs.
+               and has been superseded by this construction in all Geosoft GXs.
                """,
                return_type="DB",
                return_doc=":class:`DB` Object"),
@@ -3654,7 +3654,7 @@ gx_methods = {
                notes="""
                This function is is called to destruct database handle object.
                
-               This method has been superceded by the use of the :class:`EDB` object,
+               This method has been superseded by the use of the :class:`EDB` object,
                which when locked returns a :class:`DB` object that must NOT be destroyed.
                
                EData = :func:`Current_EDB`();       // get current edited database
@@ -3693,7 +3693,7 @@ gx_methods = {
                availability=Availability.PUBLIC, is_obsolete=True, is_app=True, 
                doc="Sets the current database to this database (obsolete).",
                notes="""
-               This method has been superceded by the following usage:
+               This method has been superseded by the following usage:
                
                :func:`MakeCurrent_EDB`(EData);
                Data = :func:`Lock_EDB`(EData);      // lock the database
@@ -3709,7 +3709,7 @@ gx_methods = {
                doc="Returns the # of elements in a channel.",
                notes="""
                This method did not account for array channels correctly (you had to divide by the number of columns
-               to get the correct number of rows). Superceded by :func:`iGetChannelLength_DB`.
+               to get the correct number of rows). Superseded by :func:`iGetChannelLength_DB`.
                """,
                return_type=Type.INT32_T,
                return_doc="# of elements",
