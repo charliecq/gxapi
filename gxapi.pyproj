@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>gen_python.py</StartupFile>
+    <StartupFile>update_param_names.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -27,6 +27,9 @@
     <Compile Include="gen_gxh.py" />
     <Compile Include="gen_gxlib.py" />
     <Compile Include="gen_python.py" />
+    <Compile Include="spec\core\E3DV.py" />
+    <Compile Include="spec\core\VECTOR3D.py" />
+    <Compile Include="spec\desk\MULTIVOXSET.py" />
     <Compile Include="templates\class_cur.gen.py" />
     <Compile Include="templates\class_empty.py" />
     <Compile Include="templates\class_generated.gen.py" />
@@ -159,6 +162,9 @@
     <Compile Include="templates\init_generated.gen.py" />
     <Compile Include="templates\init_generated.py" />
     <Compile Include="test.py" />
+    <Compile Include="update_param_names.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="gen" />
