@@ -20,9 +20,9 @@ gx_methods = {
                doc="Copy one :class:`3DN` object to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('dest', type="3DN",
                              doc="Destination :class:`3DN` to copy to"),
-                   Parameter('p2', type="3DN",
+                   Parameter('source', type="3DN",
                              doc="Source :class:`3DN` to Copy from")
                ]),
 
@@ -37,7 +37,7 @@ gx_methods = {
                doc="Destroys a :class:`3DN` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle")
                ]),
 
@@ -46,13 +46,13 @@ gx_methods = {
                doc="Get location of the point we are looking from",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('distance', type=Type.DOUBLE, is_ref=True,
                              doc="Distance from center relative to longest grid dimension (which is 1.0)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('declination', type=Type.DOUBLE, is_ref=True,
                              doc="Declination, 0 to 360 CW from Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('inclination', type=Type.DOUBLE, is_ref=True,
                              doc="Inclination, -90 to +90")
                ]),
 
@@ -61,13 +61,13 @@ gx_methods = {
                doc="Get the axis relative scales.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X Scale"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Scale"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z Scale")
                ]),
 
@@ -77,7 +77,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Axis Color",
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle")
                ]),
 
@@ -86,11 +86,11 @@ gx_methods = {
                doc="Get the Axis font",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('font', type=Type.STRING, is_ref=True, size_of_param='font_size',
                              doc="Font name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('font_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Font Buffer Size")
                ]),
 
@@ -100,7 +100,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Background Color value",
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle")
                ]),
 
@@ -109,23 +109,23 @@ gx_methods = {
                doc="Get the rendering controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('box', type=Type.INT32_T, is_ref=True,
                              doc="Render Bounding Box (0 or 1)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('axis', type=Type.INT32_T, is_ref=True,
                              doc="Render Axis (0 or 1)"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('label_x', type=Type.STRING, is_ref=True, size_of_param='label_size_x',
                              doc="Label for X axis"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('label_size_x', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of X Buffer"),
-                   Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('label_y', type=Type.STRING, is_ref=True, size_of_param='label_size_y',
                              doc="Label for Y axis"),
-                   Parameter('p7', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('label_size_y', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of Y Buffer"),
-                   Parameter('p8', type=Type.STRING, is_ref=True, size_of_param='p9',
+                   Parameter('label_z', type=Type.STRING, is_ref=True, size_of_param='label_size_z',
                              doc="Label for Z axis"),
-                   Parameter('p9', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('label_size_z', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of Z Buffer")
                ]),
 
@@ -135,7 +135,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Shading On/Off",
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle")
                ]),
 
@@ -145,9 +145,9 @@ gx_methods = {
                doc="Set the Axis draw color",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Axis Color")
                ]),
 
@@ -157,9 +157,9 @@ gx_methods = {
                doc="Set the Axis font",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('font', type=Type.STRING,
                              doc="Font name")
                ]),
 
@@ -169,9 +169,9 @@ gx_methods = {
                doc="Set the window background color",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Background Color")
                ]),
 
@@ -180,13 +180,13 @@ gx_methods = {
                doc="Set location of the point we are looking from",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('distance', type=Type.DOUBLE,
                              doc="Distance from center relative to longest grid dimension (which is 1.0)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('declination', type=Type.DOUBLE,
                              doc="Declination, 0 to 360 CW from Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('inclination', type=Type.DOUBLE,
                              doc="Inclination, -90 to +90")
                ]),
 
@@ -195,17 +195,17 @@ gx_methods = {
                doc="Set the rendering controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('box', type=Type.INT32_T,
                              doc="Render Bounding Box (0 or 1)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('axis', type=Type.INT32_T,
                              doc="Render Axis (0 or 1)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('label_x', type=Type.STRING,
                              doc="Label for X axis"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('label_y', type=Type.STRING,
                              doc="Label for Y axis"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('label_z', type=Type.STRING,
                              doc="Label for Z axis")
                ]),
 
@@ -222,13 +222,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X Scale (default 1.0)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y Scale (default 1.0)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z Scale (default 1.0)")
                ]),
 
@@ -237,9 +237,9 @@ gx_methods = {
                doc="Set the shading control on or off",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('shading', type=Type.INT32_T,
                              doc="0: Off, 1:  On.")
                ])
     ]

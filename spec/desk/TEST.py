@@ -15,7 +15,7 @@ gx_methods = {
                doc="Forcefully disable ArEngine license availability for testing purposes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('enable', type=Type.INT32_T,
                              doc="Enable/disable? :def:`GEO_BOOL`")
                ]),
 
@@ -36,9 +36,9 @@ gx_methods = {
                doc="Test to make sure all wrappers are valid linking",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('funcs', type=Type.STRING,
                              doc="List of functions to test"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('log', type=Type.STRING,
                              doc="Output log file")
                ]),
 
@@ -47,9 +47,9 @@ gx_methods = {
                doc="Generic Class Test Wrapper",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Name of class to test"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('log', type=Type.STRING,
                              doc="Output log file")
                ])
     ]

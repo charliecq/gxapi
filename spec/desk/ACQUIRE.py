@@ -30,9 +30,9 @@ gx_methods = {
                doc="Delete empty channels",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ACQUIRE",
+                   Parameter('acqio', type="ACQUIRE",
                              doc="acQuire Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -41,7 +41,7 @@ gx_methods = {
                doc="Destroy :class:`ACQUIRE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ACQUIRE",
+                   Parameter('acqio', type="ACQUIRE",
                              doc="acQuire Object")
                ]),
 
@@ -58,19 +58,19 @@ gx_methods = {
                1 - Error (Will not stop GX)
                """,
                parameters = [
-                   Parameter('p1', type="ACQUIRE",
+                   Parameter('acqio', type="ACQUIRE",
                              doc="acQuire Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('proj', type=Type.STRING,
                              doc="Project name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Project directory"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('para', type=Type.STRING,
                              doc="Parameter File"),
-                   Parameter('p5', type="VV",
+                   Parameter('geo_vv', type="VV",
                              doc="List of geology name database"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('delete', type=Type.INT32_T,
                              doc="0: Write to existing databases (overwrite holes), 1: Delete existing databases."),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('convert', type=Type.INT32_T,
                              doc="Convert Negatives (0,1)")
                ]),
 
@@ -88,13 +88,13 @@ gx_methods = {
                1 - Error (Will not stop GX)
                """,
                parameters = [
-                   Parameter('p1', type="ACQUIRE",
+                   Parameter('acqio', type="ACQUIRE",
                              doc="acQuire Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Geosoft GDB"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('para', type=Type.STRING,
                              doc="Parameter File"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('convert', type=Type.INT32_T,
                              doc="Convert Negatives (0,1)")
                ]),
 
@@ -112,11 +112,11 @@ gx_methods = {
                1 - if user cancels
                """,
                parameters = [
-                   Parameter('p1', type="ACQUIRE",
+                   Parameter('acqio', type="ACQUIRE",
                              doc="acQuire Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('selection_file', type=Type.STRING,
                              doc="Selection File Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`ACQUIRE_SEL`")
                ])
     ]

@@ -21,9 +21,9 @@ gx_methods = {
                doc="Copy :class:`DOCU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU",
+                   Parameter('doc_ud', type="DOCU",
                              doc="Destination :class:`DOCU`"),
-                   Parameter('p2', type="DOCU",
+                   Parameter('doc_us', type="DOCU",
                              doc="Source :class:`DOCU`")
                ]),
 
@@ -39,7 +39,7 @@ gx_methods = {
                return_type="DOCU",
                return_doc=":class:`DOCU` Object",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` from which to read :class:`DOCU`")
                ]),
 
@@ -48,7 +48,7 @@ gx_methods = {
                doc="Destroy",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU",
+                   Parameter('docu', type="DOCU",
                              doc=":class:`DOCU` Handle")
                ]),
 
@@ -57,8 +57,8 @@ gx_methods = {
                doc="Get the document and place in a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('docu', type="DOCU"),
+                   Parameter('file', type=Type.STRING,
                              doc="File to which to write document")
                ]),
 
@@ -76,8 +76,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('docu', type="DOCU"),
+                   Parameter('file', type=Type.STRING,
                              doc="File to which to write document")
                ]),
 
@@ -86,8 +86,8 @@ gx_methods = {
                doc="Get the document's meta",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type="META",
+                   Parameter('docu', type="DOCU"),
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to fill in with the document's meta")
                ]),
 
@@ -96,10 +96,10 @@ gx_methods = {
                doc="The document name.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('docu', type="DOCU"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Buffer to fill with document name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of buffer")
                ]),
 
@@ -108,10 +108,10 @@ gx_methods = {
                doc="The original document file name.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('docu', type="DOCU"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Buffer to fill with document file name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of buffer")
                ]),
 
@@ -121,7 +121,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="DOCU")
+                   Parameter('docu', type="DOCU")
                ]),
 
         Method('iIsReference_DOCU', module='geogxx', version='5.1.6',
@@ -130,7 +130,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 - Yes, 0 - No",
                parameters = [
-                   Parameter('p1', type="DOCU",
+                   Parameter('docu', type="DOCU",
                              doc="Document")
                ]),
 
@@ -143,8 +143,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('docu', type="DOCU"),
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`DOCU_OPEN`")
                ]),
 
@@ -153,8 +153,8 @@ gx_methods = {
                doc="Serialize :class:`DOCU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type="BF",
+                   Parameter('docu', type="DOCU"),
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` in which to write object")
                ]),
 
@@ -197,12 +197,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('docu', type="DOCU"),
+                   Parameter('type', type=Type.STRING,
                              doc="Document type"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc='Document name, if "" file name will be used'),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Document file, must exist")
                ]),
 
@@ -228,12 +228,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('docu', type="DOCU"),
+                   Parameter('type', type=Type.STRING,
                              doc="Document type extension"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Document name, if NULL use file name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Document file or URL")
                ]),
 
@@ -242,8 +242,8 @@ gx_methods = {
                doc="Set the document's meta",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DOCU"),
-                   Parameter('p2', type="META",
+                   Parameter('docu', type="DOCU"),
+                   Parameter('meta', type="META",
                              doc=":class:`META` to add to the document's meta")
                ])
     ]

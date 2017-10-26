@@ -28,7 +28,7 @@ gx_methods = {
                doc="Destroys a pattern object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PAT",
+                   Parameter('pat', type="PAT",
                              doc=":class:`PAT` Handle")
                ]),
 
@@ -42,11 +42,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PAT",
+                   Parameter('pat', type="PAT",
                              doc=":class:`PAT` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc='Class name ("" for all classes)'),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle")
                ])
     ],
@@ -58,9 +58,9 @@ gx_methods = {
                notes="Was not correctly implemented or used",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PAT",
+                   Parameter('dest', type="PAT",
                              doc="Destination :class:`PAT` to copy to"),
-                   Parameter('p2', type="PAT",
+                   Parameter('source', type="PAT",
                              doc="Source :class:`PAT` to Copy from")
                ]),
 
@@ -70,9 +70,9 @@ gx_methods = {
                notes="Was not correctly implemented or used",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PAT",
+                   Parameter('pat', type="PAT",
                              doc=":class:`PAT` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Pattern file name")
                ])
     ]

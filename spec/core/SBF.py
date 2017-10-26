@@ -45,11 +45,11 @@ gx_methods = {
                return_type="SBF",
                return_doc=":class:`SBF` object, terminates if fails.",
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbfp', type="SBF",
                              doc="Parent :class:`SBF`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Directory name to open / create"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('status', type=Type.INT32_T,
                              doc=":def:`SBF_OPEN`")
                ]),
 
@@ -64,11 +64,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc=":class:`SBF` handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`SBF_TYPE`")
                ]),
 
@@ -77,9 +77,9 @@ gx_methods = {
                doc="Delete a directory (storage) from this storage.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc=":class:`SBF` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Dir/Storage Name")
                ]),
 
@@ -88,9 +88,9 @@ gx_methods = {
                doc="Delete a file from this storage.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc=":class:`SBF` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -99,7 +99,7 @@ gx_methods = {
                doc="Destroy :class:`SBF` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc=":class:`SBF` handle")
                ]),
 
@@ -109,7 +109,7 @@ gx_methods = {
                return_type="SBF",
                return_doc=":class:`SBF` Object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -119,7 +119,7 @@ gx_methods = {
                return_type="SBF",
                return_doc=":class:`SBF` Object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -138,9 +138,9 @@ gx_methods = {
                1 - Exists
                """,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc=":class:`SBF` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Dir/Storage Name")
                ]),
 
@@ -153,9 +153,9 @@ gx_methods = {
                1 - Exists
                """,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc=":class:`SBF` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -164,13 +164,13 @@ gx_methods = {
                doc="Save an embedded file to an ASCII file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbfp', type="SBF",
                              doc=":class:`SBF` Parent"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Directory name in the Parent :class:`SBF`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name in the directory"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('file_save', type=Type.STRING,
                              doc="File to save as (as an ASCII file)"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Append Mode: 0 - New file, 1 - Append file")

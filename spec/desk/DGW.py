@@ -86,7 +86,7 @@ gx_methods = {
                return_type="DGW",
                return_doc="Handle to the :class:`DGW` object.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the Window Resource to use")
                ]),
 
@@ -95,7 +95,7 @@ gx_methods = {
                doc="Destroys a Dialog Window.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog to Destroy")
                ]),
 
@@ -125,15 +125,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog"),
-                   Parameter('p2', type="DGW_OBJ",
+                   Parameter('id', type="DGW_OBJ",
                              doc="Dialog Object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name of the Variable"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Variable name")
                ]),
 
@@ -146,9 +146,9 @@ gx_methods = {
                return_type="LST",
                return_doc="The List Object",
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog"),
-                   Parameter('p2', type="DGW_OBJ",
+                   Parameter('id', type="DGW_OBJ",
                              doc="Dialog Object")
                ]),
 
@@ -160,15 +160,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog"),
-                   Parameter('p2', type="DGW_OBJ",
+                   Parameter('id', type="DGW_OBJ",
                              doc="Handle to the TEXT Object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('buff', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Where to place the String"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the String")
                ]),
 
@@ -178,7 +178,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The Exit Code of the Dialog window.",
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog Window")
                ]),
 
@@ -190,13 +190,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog"),
-                   Parameter('p2', type="DGW_OBJ",
+                   Parameter('id', type="DGW_OBJ",
                              doc="Handle to the TEXT Object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('buff', type=Type.STRING,
                              doc="String to set the Text To")
                ]),
 
@@ -227,15 +227,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog"),
-                   Parameter('p2', type="DGW_OBJ",
+                   Parameter('id', type="DGW_OBJ",
                              doc="Dialog Object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc=":def:`DGW_OBJECT`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name of the Variable"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Variable name")
                ]),
 
@@ -260,9 +260,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DGW",
+                   Parameter('dlg', type="DGW",
                              doc="Dialog"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title to set")
                ])
     ]

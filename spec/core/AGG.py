@@ -84,8 +84,8 @@ gx_methods = {
                doc="Sets the Color Model",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('agg', type="AGG"),
+                   Parameter('model', type=Type.INT32_T,
                              doc=":def:`AGG_MODEL`")
                ]),
 
@@ -99,9 +99,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG",
+                   Parameter('agg', type="AGG",
                              doc=":class:`AGG` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('brt', type=Type.DOUBLE,
                              doc="-1.0 - black; 0.0 no change; 1.0 white")
                ]),
 
@@ -123,9 +123,9 @@ gx_methods = {
                return_type="AGG",
                return_doc=":class:`AGG` object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`AGG` group name")
                ]),
 
@@ -134,7 +134,7 @@ gx_methods = {
                doc="Destroy the :class:`AGG` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG",
+                   Parameter('agg', type="AGG",
                              doc=":class:`AGG` Handle")
                ]),
 
@@ -151,10 +151,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('agg', type="AGG"),
+                   Parameter('layer', type=Type.INT32_T,
                              doc="Layer number"),
-                   Parameter('p3', type="ITR")
+                   Parameter('itr', type="ITR")
                ]),
 
         Method('ILayerPIC_AGG', module='geoengine.core', version='5.1.6',
@@ -167,11 +167,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type="PIC"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('agg', type="AGG"),
+                   Parameter('pic', type="PIC"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Temp File name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Max Temp File name length")
                ]),
 
@@ -182,9 +182,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of IMGs.",
                parameters = [
-                   Parameter('p1', type="AGG",
+                   Parameter('agg', type="AGG",
                              doc=":class:`AGG` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of type -:def_val:`STR_FILE`")
                ]),
 
@@ -194,7 +194,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of layers in an aggregate.",
                parameters = [
-                   Parameter('p1', type="AGG")
+                   Parameter('agg', type="AGG")
                ]),
 
         Method('LayerIMG_AGG', module='geoengine.core', version='5.0.0',
@@ -203,14 +203,14 @@ gx_methods = {
                see_also=":func:`LayerShadeIMG_AGG`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('agg', type="AGG"),
+                   Parameter('name', type=Type.STRING,
                              doc="Grid name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc=":def:`AGG_LAYER_ZONE` transform to use if color table has none defined."),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('color', type=Type.STRING,
                              doc='Color table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('cont', type=Type.DOUBLE,
                              doc="Color contour interval or :def_val:`rDUMMY` for default")
                ]),
 
@@ -220,18 +220,18 @@ gx_methods = {
                see_also=":func:`LayerShadeIMG_AGG`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('agg', type="AGG"),
+                   Parameter('name', type=Type.STRING,
                              doc="Grid name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc=":def:`AGG_LAYER_ZONE` transform to use if color table has none defined."),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('color', type=Type.STRING,
                              doc='Color table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum value or :def_val:`rDUMMY` for default"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum value or :def_val:`rDUMMY` for default"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('cont', type=Type.DOUBLE,
                              doc="Color contour interval or :def_val:`rDUMMY` for default")
                ]),
 
@@ -248,16 +248,16 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('agg', type="AGG"),
+                   Parameter('name', type=Type.STRING,
                              doc="Grid name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('color', type=Type.STRING,
                              doc='Color table name, "" for default'),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Inclination"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dec', type=Type.DOUBLE,
                              doc="Declination"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('scl', type=Type.DOUBLE, is_ref=True,
                              doc="Scale (:def_val:`rDUMMY` for default, returns value used)")
                ]),
 
@@ -279,7 +279,7 @@ gx_methods = {
                see_also=":func:`ChangeBrightness_AGG`, :func:`rGetBrightness_AGG`, :func:`ChangeBrightness_AGG`",
                return_type=Type.DOUBLE,
                parameters = [
-                   Parameter('p1', type="AGG",
+                   Parameter('agg', type="AGG",
                              doc=":class:`AGG` object")
                ]),
 
@@ -296,10 +296,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('agg', type="AGG"),
+                   Parameter('layer', type=Type.INT32_T,
                              doc="Layer number"),
-                   Parameter('p3', type="ITR")
+                   Parameter('itr', type="ITR")
                ]),
 
         Method('SetRenderMethod_AGG', module='geoengine.core', version='5.1.1',
@@ -307,8 +307,8 @@ gx_methods = {
                doc="Sets the Rendering Method",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('agg', type="AGG"),
+                   Parameter('method', type=Type.INT32_T,
                              doc=":def:`AGG_RENDER`")
                ]),
 
@@ -317,11 +317,11 @@ gx_methods = {
                doc="Update the thumbnail of an :class:`IMG` from an :class:`AGG`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="AGG",
+                   Parameter('agg', type="AGG",
                              doc=":class:`AGG` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Name of the grid to update"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('size', type=Type.INT32_T,
                              doc="Size of the thumbnail in pixels (64 is typical) the minimum size if 16 (16x16)")
                ])
     ]

@@ -91,9 +91,9 @@ gx_methods = {
                doc="Changes the size of a file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('size', type=Type.INT32_T,
                              doc="New length in bytes")
                ]),
 
@@ -106,11 +106,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('offset', type=Type.INT32_T,
                              doc="Number of bytes from reference point"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ref', type=Type.INT32_T,
                              doc=":def:`BF_SEEK`")
                ]),
 
@@ -119,9 +119,9 @@ gx_methods = {
                doc="Copy entire contents of a source :class:`BF` to a destination :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('b_fr', type="BF",
                              doc="Source :class:`BF`"),
-                   Parameter('p2', type="BF",
+                   Parameter('b_fw', type="BF",
                              doc="Destination :class:`BF`")
                ]),
 
@@ -131,11 +131,11 @@ gx_methods = {
                return_type="CRC",
                return_doc="CRC Value",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('size', type=Type.INT32_T,
                              doc="Number of bytes to CRC"),
-                   Parameter('p3', type="CRC",
+                   Parameter('crc', type="CRC",
                              doc="CRC start (use :def_val:`CRC_INIT_VALUE` for new)")
                ]),
 
@@ -158,9 +158,9 @@ gx_methods = {
                return_type="BF",
                return_doc=":class:`BF` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc='File name to open ("" is a temporary file)'),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('status', type=Type.INT32_T,
                              doc=":def:`BF_OPEN_MODE`")
                ]),
 
@@ -171,11 +171,11 @@ gx_methods = {
                return_type="BF",
                return_doc=":class:`BF` Object",
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc="Storage"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc='File name to open ("" is a temporary file)'),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('status', type=Type.INT32_T,
                              doc=":def:`BF_OPEN_MODE`")
                ]),
 
@@ -185,9 +185,9 @@ gx_methods = {
                notes="The DestroyEx call implies :def_val:`BF_KEEP`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('status', type=Type.INT32_T,
                              doc="BF_?")
                ]),
 
@@ -196,7 +196,7 @@ gx_methods = {
                doc="Destroy :class:`BF` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle")
                ]),
 
@@ -209,7 +209,7 @@ gx_methods = {
                0 if not at the end of the file
                """,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle")
                ]),
 
@@ -222,7 +222,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle")
                ]),
 
@@ -231,15 +231,15 @@ gx_methods = {
                doc="Reads string data from current position in :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('bytes', type=Type.INT32_T,
                              doc="Number of bytes to read"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('encoding', type=Type.INT32_T,
                              doc=":def:`BF_ENCODE`"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Data"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of the string buffer")
                ]),
 
@@ -249,7 +249,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="File size in bytes.",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle")
                ]),
 
@@ -259,7 +259,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Current file pointer location",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle")
                ]),
 
@@ -280,9 +280,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Data")
@@ -305,9 +305,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Data")
@@ -330,9 +330,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type="VM",
                              doc=":class:`VM` data to read, :class:`VM` length is read")
@@ -355,9 +355,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type="VV",
                              doc=":class:`VV` data to read, :class:`VV` length is read")
@@ -368,9 +368,9 @@ gx_methods = {
                doc="Set the flag to delete the file on close",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('status', type=Type.INT32_T,
                              doc=":def:`BF_CLOSE`")
                ]),
 
@@ -379,11 +379,11 @@ gx_methods = {
                doc="Write a binary string to a :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('encoding', type=Type.INT32_T,
                              doc=":def:`BF_ENCODE`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="String to write out")
                ]),
 
@@ -392,7 +392,7 @@ gx_methods = {
                doc="Writes a null byte (0) to :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle")
                ]),
 
@@ -408,9 +408,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Data")
@@ -428,9 +428,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Data")
@@ -448,9 +448,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type="VM",
                              doc="Data")
@@ -468,9 +468,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type="VV",
                              doc="Data")
@@ -485,7 +485,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc='File name to open ("" is a temporary file)')
                ]),
 
@@ -506,9 +506,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Data"),
@@ -521,9 +521,9 @@ gx_methods = {
                doc="Writes a string of bytes to :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="Data string to write (no nulls)")
                ]),
 
@@ -539,9 +539,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
                    Parameter('p3', type=Type.STRING,
                              doc="Data")

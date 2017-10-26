@@ -15,9 +15,9 @@ gx_methods = {
                doc="Launch Digitization modeless window",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('stringfile', type=Type.STRING,
                              doc="String file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('feature_guid', type=Type.STRING,
                              doc="Definition guid")
                ])
     ]

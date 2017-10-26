@@ -15,7 +15,7 @@ gx_methods = {
                doc="Destroy a :class:`VECTOR3D`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VECTOR3D",
+                   Parameter('vector_3d', type="VECTOR3D",
                              doc=":class:`VECTOR3D` to destroy.")
                ]),
 
@@ -24,9 +24,9 @@ gx_methods = {
                doc="Get the :class:`ITR` of the :class:`VECTOR3D`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VECTOR3D",
+                   Parameter('vector_3d', type="VECTOR3D",
                              doc=":class:`VECTOR3D` object"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -35,9 +35,9 @@ gx_methods = {
                doc="Set the :class:`ITR` of the :class:`VECTOR3D`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VECTOR3D",
+                   Parameter('vector_3d', type="VECTOR3D",
                              doc=":class:`VECTOR3D` object"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ])
     ]

@@ -21,11 +21,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IEXP",
+                   Parameter('iexp', type="IEXP",
                              doc=":class:`IEXP` object"),
-                   Parameter('p2', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image to add"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('var', type=Type.STRING,
                              doc="Variable name")
                ]),
 
@@ -40,7 +40,7 @@ gx_methods = {
                doc="This method destroys a :class:`IEXP` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IEXP",
+                   Parameter('iexp', type="IEXP",
                              doc="Destroy a :class:`IEXP` object")
                ]),
 
@@ -49,11 +49,11 @@ gx_methods = {
                doc="This method runs a formula on the grids.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IEXP",
+                   Parameter('iexp', type="IEXP",
                              doc=":class:`IEXP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('formula', type=Type.STRING,
                              doc="Formula"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('max_len', type=Type.INT32_T,
                              doc="Max. Buff size")
                ])
     ]

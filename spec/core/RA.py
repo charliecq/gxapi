@@ -20,7 +20,7 @@ gx_methods = {
                return_type="RA",
                return_doc=":class:`RA` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file")
                ]),
 
@@ -38,9 +38,9 @@ gx_methods = {
                return_type="RA",
                return_doc=":class:`RA` Object",
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc="Storage"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file")
                ]),
 
@@ -49,7 +49,7 @@ gx_methods = {
                doc="Destroy :class:`RA`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` to destroy")
                ]),
 
@@ -62,11 +62,11 @@ gx_methods = {
                1 - End of file
                """,
                parameters = [
-                   Parameter('p1', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('strbuff', type=Type.STRING, is_ref=True, size_of_param='strsize',
                              doc="Buffer in which to place string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string buffer")
                ]),
 
@@ -76,7 +76,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of lines in the :class:`RA`.",
                parameters = [
-                   Parameter('p1', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` handle")
                ]),
 
@@ -87,7 +87,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The current read line location.",
                parameters = [
-                   Parameter('p1', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` handle")
                ]),
 
@@ -100,9 +100,9 @@ gx_methods = {
                1 if outside range, line pointer will not be moved.
                """,
                parameters = [
-                   Parameter('p1', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('line', type=Type.INT32_T,
                              doc="Line #, 0 is the first.")
                ])
     ]

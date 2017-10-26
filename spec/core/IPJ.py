@@ -252,7 +252,7 @@ gx_methods = {
                doc="Clear warp parameters (if any) from an :class:`IPJ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -262,7 +262,7 @@ gx_methods = {
                notes="This function does nothing if the :class:`IPJ` is not a projected coordinate system.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to modify")
                ]),
 
@@ -271,7 +271,7 @@ gx_methods = {
                doc="Make a WGS 84 geographic projection",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -280,10 +280,10 @@ gx_methods = {
                doc="Set unit parameters",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('ipj', type="IPJ"),
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Factor to meters, must be >= 0.0"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc='Abbreviation, can be ""')
                ]),
 
@@ -292,19 +292,19 @@ gx_methods = {
                doc="Add a warp to :class:`IPJ` to exaggerate X, Y and Z.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x_exag', type=Type.DOUBLE,
                              doc="X exaggeration, must be > 0.0"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y_exag', type=Type.DOUBLE,
                              doc="Y exaggeration, must be > 0.0"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z_exag', type=Type.DOUBLE,
                              doc="Z exaggeration, must be > 0.0"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x_orig', type=Type.DOUBLE,
                              doc="X reference origin"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('y_orig', type=Type.DOUBLE,
                              doc="Y reference origin"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('z_orig', type=Type.DOUBLE,
                              doc="Z reference origin")
                ]),
 
@@ -313,11 +313,11 @@ gx_methods = {
                doc="Add a warp to :class:`IPJ` to log one or both coordinantes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('x', type=Type.INT32_T,
                              doc="Log in X?"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('y', type=Type.INT32_T,
                              doc="Log in Y?")
                ]),
 
@@ -326,39 +326,39 @@ gx_methods = {
                doc="Add a warp to :class:`IPJ` using a matrix",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('v00', type=Type.DOUBLE,
                              doc="Row 0 Element 0"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('v01', type=Type.DOUBLE,
                              doc="Row 0 Element 1"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('v02', type=Type.DOUBLE,
                              doc="Row 0 Element 2"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('v03', type=Type.DOUBLE,
                              doc="Row 0 Element 3"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('v10', type=Type.DOUBLE,
                              doc="Row 1 Element 0"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('v11', type=Type.DOUBLE,
                              doc="Row 1 Element 1"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('v12', type=Type.DOUBLE,
                              doc="Row 1 Element 2"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('v13', type=Type.DOUBLE,
                              doc="Row 1 Element 3"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('v20', type=Type.DOUBLE,
                              doc="Row 2 Element 0"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('v21', type=Type.DOUBLE,
                              doc="Row 2 Element 1"),
-                   Parameter('p12', type=Type.DOUBLE,
+                   Parameter('v22', type=Type.DOUBLE,
                              doc="Row 2 Element 2"),
-                   Parameter('p13', type=Type.DOUBLE,
+                   Parameter('v23', type=Type.DOUBLE,
                              doc="Row 2 Element 3"),
-                   Parameter('p14', type=Type.DOUBLE,
+                   Parameter('v30', type=Type.DOUBLE,
                              doc="Row 3 Element 0"),
-                   Parameter('p15', type=Type.DOUBLE,
+                   Parameter('v31', type=Type.DOUBLE,
                              doc="Row 3 Element 1"),
-                   Parameter('p16', type=Type.DOUBLE,
+                   Parameter('v32', type=Type.DOUBLE,
                              doc="Row 3 Element 2"),
-                   Parameter('p17', type=Type.DOUBLE,
+                   Parameter('v33', type=Type.DOUBLE,
                              doc="Row 3 Element 3")
                ]),
 
@@ -378,17 +378,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`IPJ_TYPE`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx_old', type="VV",
                              doc="Old X :class:`VV` (real)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy_old', type="VV",
                              doc="Old Y :class:`VV` (real)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vx_new', type="VV",
                              doc="New X :class:`VV` (real)"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vy_new', type="VV",
                              doc="New Y :class:`VV` (real)")
                ]),
 
@@ -401,7 +401,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ")
+                   Parameter('ipj', type="IPJ")
                ]),
 
         Method('ClearOrientation_IPJ', module='geoengine.core', version='5.1.6',
@@ -409,7 +409,7 @@ gx_methods = {
                doc="Clear an orientation warp from an :class:`IPJ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -418,15 +418,15 @@ gx_methods = {
                doc="Convert X,Y and Z VVs using the orientation warp from an :class:`IPJ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Grid file name"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV` coordinates converted on output"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV` coordinates converted on output"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z :class:`VV` coordinates converted on output"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('f_forward', type=Type.INT32_T,
                              doc="1 -  Forward (raw -> coordinate) , 0 - (coordinate -> raw)")
                ]),
 
@@ -435,9 +435,9 @@ gx_methods = {
                doc="Copy IPJs",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ip_js', type="IPJ",
                              doc="Source :class:`IPJ`"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ip_jd', type="IPJ",
                              doc="Destination :class:`IPJ`")
                ]),
 
@@ -450,9 +450,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ip_js', type="IPJ",
                              doc="Destination"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ip_jd', type="IPJ",
                              doc="Source")
                ]),
 
@@ -468,7 +468,7 @@ gx_methods = {
                return_type="IPJ",
                return_doc=":class:`IPJ` Object",
                parameters = [
-                   Parameter('p1', type="BF")
+                   Parameter('bf', type="BF")
                ]),
 
         Method('CreateXML_IPJ', module='geoengine.core', version='7.0.0',
@@ -477,7 +477,7 @@ gx_methods = {
                return_type="IPJ",
                return_doc=":class:`IPJ` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -486,7 +486,7 @@ gx_methods = {
                doc="This method destroys a projection object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to Destroy")
                ]),
 
@@ -496,25 +496,25 @@ gx_methods = {
                notes="The view must have a 3D orientation",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rx', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation in X"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ry', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation in Y"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rz', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation in Z"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('sx', type=Type.DOUBLE, is_ref=True,
                              doc="Scaling in X"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('sy', type=Type.DOUBLE, is_ref=True,
                              doc="Scaling in Y"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('str_val', type=Type.DOUBLE, is_ref=True,
                              doc="Scaling in Z")
                ]),
 
@@ -524,29 +524,29 @@ gx_methods = {
                notes="The view must have a 3D orientation",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rx', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation in X"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ry', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation in Y"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rz', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation in Z"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('sx', type=Type.DOUBLE, is_ref=True,
                              doc="Scaling in X"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('sy', type=Type.DOUBLE, is_ref=True,
                              doc="Scaling in Y"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('str_val', type=Type.DOUBLE, is_ref=True,
                              doc="Scaling in Z"),
-                   Parameter('p11', type=Type.INT32_T, is_ref=True,
+                   Parameter('rotate', type=Type.INT32_T, is_ref=True,
                              doc=":def:`IPJ_3D_ROTATE`"),
-                   Parameter('p12', type=Type.INT32_T, is_ref=True,
+                   Parameter('flags', type=Type.INT32_T, is_ref=True,
                              doc=":def:`IPJ_3D_FLAG`")
                ]),
 
@@ -556,15 +556,15 @@ gx_methods = {
                notes="Returns the orignal VVs used to set up the crooked section path.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('dist_vv', type="VV",
                              doc="Section X locations (e.g. distance along the curve)"),
-                   Parameter('p3', type="VV",
+                   Parameter('xvv', type="VV",
                              doc="True X"),
-                   Parameter('p4', type="VV",
+                   Parameter('yvv', type="VV",
                              doc="True Y"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('log_z', type=Type.INT32_T, is_ref=True,
                              doc="Use logarithmic Y-axis (usually for data profiles) 0:No, 1:Yes")
                ]),
 
@@ -577,11 +577,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`IPJ_PARM_LST`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('datum', type=Type.STRING,
                              doc='Datum filter, "" for no filter'),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List returned")
                ]),
 
@@ -609,15 +609,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` handle"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="Plane Origin X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Plane Origin Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Plane Origin Z"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('az', type=Type.DOUBLE, is_ref=True,
                              doc="Plane Azimuth (section) or Rotation (plan)"),
                    Parameter('p6', type=Type.DOUBLE, is_ref=True,
                              doc="Plane Swing   (section)")
@@ -635,17 +635,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X of surface"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y of surface"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X of surface"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y of surface"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('pitch', type=Type.DOUBLE, is_ref=True,
                              doc="Pitch angle (between -360 and 360)"),
                    Parameter('p7', type=Type.DOUBLE, is_ref=True,
                              doc="Yaw angle (between -360 and 360)"),
@@ -682,19 +682,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ip_ji', type="IPJ",
                              doc=":class:`IPJ` object of the input grid or view"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ip_jo', type="IPJ",
                              doc=":class:`IPJ` object for the output values"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X of surface (in grid coords)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y of surface"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X of surface"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y of surface"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('pitch', type=Type.DOUBLE, is_ref=True,
                              doc="Pitch angle (between -360 and 360) (in view coords)"),
                    Parameter('p8', type=Type.DOUBLE, is_ref=True,
                              doc="Yaw angle (between -360 and 360)"),
@@ -733,9 +733,9 @@ gx_methods = {
                2 - Datums and LTD are the same
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -745,15 +745,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 if ok - 1 otherwise",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Grid file name"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinates converted on output"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y coordinates converted on output"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z coordinates converted on output"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('f_forward', type=Type.INT32_T,
                              doc="1 -  Forward (raw -> coordinate) , 0 - (coordinate -> raw)")
                ]),
 
@@ -763,13 +763,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 if ok - 1 otherwise",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Grid file name"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV` coordinates converted on output"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV` coordinates converted on output"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('f_forward', type=Type.INT32_T,
                              doc="1 -  Forward (raw -> coordinate) , 0 - (coordinate -> raw)")
                ]),
 
@@ -783,9 +783,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -798,9 +798,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -809,11 +809,11 @@ gx_methods = {
                doc="Get a name for display purposes from :class:`IPJ`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -826,11 +826,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('esri', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="ESRI projection string returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="String length, should be at least 1024")
                ]),
 
@@ -844,19 +844,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('str1', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Projection name"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('str2', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Datum name, major axis, elipticity"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('str3', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Method name, parameters"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('str4', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Unit name, factor"),
-                   Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('str5', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Local transform name,dX,dY,dZ,rX,rY,rZ,Scale"),
-                   Parameter('p7', type=Type.INT32_T, default_length='STR_GXF',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_GXF',
                              doc="Maximum length of all strings")
                ]),
 
@@ -865,15 +865,15 @@ gx_methods = {
                doc="Store coordinate system in MapInfo coordsys pair",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('coord', type=Type.STRING, is_ref=True, size_of_param='len_coord',
                              doc="MapInfo coordsys string returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len_coord', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Coordsys string length"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='len_units',
                              doc="MapInfo unit string returned"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len_units', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Unit string length")
                ]),
 
@@ -882,13 +882,13 @@ gx_methods = {
                doc="Get an :class:`IPJ` name",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`IPJ_NAME`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name returned"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -933,7 +933,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`IPJ_ORIENT`",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -942,11 +942,11 @@ gx_methods = {
                doc="Get a name for display purposes from :class:`IPJ`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -955,12 +955,12 @@ gx_methods = {
                doc="Get unit parameters",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ipj', type="IPJ"),
+                   Parameter('scale', type=Type.DOUBLE, is_ref=True,
                              doc="Factor to meters"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Abbreviation"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of string")
                ]),
 
@@ -969,11 +969,11 @@ gx_methods = {
                doc="Get an Geosoft Metadata XML string from an :class:`IPJ`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="XML string returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="String length, should be at least 1024")
                ]),
 
@@ -986,7 +986,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -999,7 +999,7 @@ gx_methods = {
                1 - Yes (inverted)
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` Object")
                ]),
 
@@ -1012,7 +1012,7 @@ gx_methods = {
                1 - Yes (inverted)
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` Object")
                ]),
 
@@ -1025,7 +1025,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -1038,9 +1038,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -1053,9 +1053,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -1083,7 +1083,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ")
+                   Parameter('ipj', type="IPJ")
                ]),
 
         Method('iProjectionTypeIsFullySupported_IPJ', module='geoengine.core', version='7.2.0',
@@ -1102,7 +1102,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ")
+                   Parameter('ipj', type="IPJ")
                ]),
 
         Method('iSetGXF_IPJ', module='geoengine.core', version='7.0.0', cpp_post="_safe",
@@ -1119,17 +1119,17 @@ gx_methods = {
                1 - success: :class:`IPJ` set using input values.
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str1', type=Type.STRING,
                              doc='"projection name" or PCS_NAME from ipj_pcs.csv (datum / projection) or EPSG coordinate system code number or "<file.prj>" projection file name or "<file.wrp>" warp file name'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str2', type=Type.STRING,
                              doc='"datum name"[, major axis, elipticity, prime meridian] or DATUM from datum.csv or EPSG datum code number'),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('str3', type=Type.STRING,
                              doc='"method name", parameters (P1 through P8) or "projection name"[,"method name","Units",P1,P2...] or TRANSFORM from transform.csv or EPSG transform method code number'),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('str4', type=Type.STRING,
                              doc='"unit name", convertion to metres or UNIT_LENGTH from units.csv'),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('str5', type=Type.STRING,
                              doc='"local transform name"[,dX,dY,dZ,rX,rY,rZ,Scale] or DATUM_TRF from datumtrf.csv or AREA_OF_USE from ldatum.csv or EPSG local datum transform code number')
                ]),
 
@@ -1139,7 +1139,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`IPJ_TYPE`",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -1163,9 +1163,9 @@ gx_methods = {
                for each coordinate system.
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -1174,13 +1174,13 @@ gx_methods = {
                doc="Get a unit name given a scale factor",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Factor to meters"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`IPJ_UNIT`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc='Name returned, "" if cannot find unit'),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of string")
                ]),
 
@@ -1190,7 +1190,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -1203,9 +1203,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -1218,9 +1218,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -1230,7 +1230,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`IPJ_WARP`",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")
                ]),
 
@@ -1247,15 +1247,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to modify"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_lon', type=Type.DOUBLE,
                              doc="Minimum longitude"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_lat', type=Type.DOUBLE,
                              doc="Minimum latitude"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_lon', type=Type.DOUBLE,
                              doc="Maximum longitude"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_lat', type=Type.DOUBLE,
                              doc="Maximum latitude")
                ]),
 
@@ -1269,25 +1269,25 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ip_ji', type="IPJ",
                              doc="Original :class:`IPJ`"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ip_jo', type="IPJ",
                              doc="New :class:`IPJ`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('res', type=Type.DOUBLE,
                              doc="Data resolution in original :class:`IPJ`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum of bounding box in new :class:`IPJ`"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimum"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_res', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum data resolution in new :class:`IPJ`,"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_res', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum data resolution in new :class:`IPJ`"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('diag_res', type=Type.DOUBLE, is_ref=True,
                              doc="Diagonal data resolution in new :class:`IPJ`")
                ]),
 
@@ -1296,15 +1296,15 @@ gx_methods = {
                doc="Read and define an :class:`IPJ` from a standard file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`IPJ_TYPE`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str1', type=Type.STRING,
                              doc="String 1"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('str2', type=Type.STRING,
                              doc="String 2"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('str3', type=Type.STRING,
                              doc="String 3")
                ]),
 
@@ -1314,9 +1314,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Parameter setting, :def_val:`rDUMMY` if dot used",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`IPJ_CSP`")
                ]),
 
@@ -1330,11 +1330,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Azimuth (degrees CW) of geographic north from grid north at a location.",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Input X location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Input Y location")
                ]),
 
@@ -1345,9 +1345,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Scale factor m/unit",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Unit name, abbreviation or full name"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('default', type=Type.DOUBLE,
                              doc="Default to return if name not found")
                ]),
 
@@ -1356,8 +1356,8 @@ gx_methods = {
                doc="Serialize :class:`IPJ` to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ"),
-                   Parameter('p2', type="BF")
+                   Parameter('ipj', type="IPJ"),
+                   Parameter('bf', type="BF")
                ]),
 
         Method('SerialFGDCXML_IPJ', module='geoengine.core', version='7.0.0',
@@ -1365,9 +1365,9 @@ gx_methods = {
                doc="Write the :class:`IPJ` as a FDGC MetaData XML object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to export to")
                ]),
 
@@ -1376,9 +1376,9 @@ gx_methods = {
                doc="Write the :class:`IPJ` as a ISO MetaData XML object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to export to")
                ]),
 
@@ -1387,9 +1387,9 @@ gx_methods = {
                doc="Write the :class:`IPJ` as a Geosoft MetaData XML object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to export to")
                ]),
 
@@ -1398,9 +1398,9 @@ gx_methods = {
                doc="Set whether a view is inverted (must be 3D already)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('inverted', type=Type.INT32_T,
                              doc="Inverted (0 or 1)")
                ]),
 
@@ -1409,9 +1409,9 @@ gx_methods = {
                doc="Set whether the angles in this view are inverted (must be 3D already)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('inverted', type=Type.INT32_T,
                              doc="Inverted (0 or 1)")
                ]),
 
@@ -1424,25 +1424,25 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('rx', type=Type.DOUBLE,
                              doc="Rotation in X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('ry', type=Type.DOUBLE,
                              doc="Rotation in Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('rz', type=Type.DOUBLE,
                              doc="Rotation in Z"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('sx', type=Type.DOUBLE,
                              doc="Scaling in X"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('sy', type=Type.DOUBLE,
                              doc="Scaling in Y"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('str_val', type=Type.DOUBLE,
                              doc="Scaling in Z")
                ]),
 
@@ -1455,29 +1455,29 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('rx', type=Type.DOUBLE,
                              doc="Rotation in X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('ry', type=Type.DOUBLE,
                              doc="Rotation in Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('rz', type=Type.DOUBLE,
                              doc="Rotation in Z"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('sx', type=Type.DOUBLE,
                              doc="Scaling in X"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('sy', type=Type.DOUBLE,
                              doc="Scaling in Y"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('str_val', type=Type.DOUBLE,
                              doc="Scaling in Z"),
-                   Parameter('p11', type=Type.INT32_T,
+                   Parameter('rotate', type=Type.INT32_T,
                              doc=":def:`IPJ_3D_ROTATE`"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc=":def:`IPJ_3D_FLAG`")
                ]),
 
@@ -1490,31 +1490,31 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X axis X component"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('x2', type=Type.DOUBLE,
                              doc="X axis Y component"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('x3', type=Type.DOUBLE,
                              doc="X axis Z component"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y axis X component"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('y2', type=Type.DOUBLE,
                              doc="Y axis Y component"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('y3', type=Type.DOUBLE,
                              doc="Y axis Z component"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('sx', type=Type.DOUBLE,
                              doc="Scaling in X"),
-                   Parameter('p12', type=Type.DOUBLE,
+                   Parameter('sy', type=Type.DOUBLE,
                              doc="Scaling in Y"),
-                   Parameter('p13', type=Type.DOUBLE,
+                   Parameter('str_val', type=Type.DOUBLE,
                              doc="Scaling in Z")
                ]),
 
@@ -1527,15 +1527,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('dist_vv', type="VV",
                              doc="Section X locations (e.g. distance along the curve)"),
-                   Parameter('p3', type="VV",
+                   Parameter('xvv', type="VV",
                              doc="True X"),
-                   Parameter('p4', type="VV",
+                   Parameter('yvv', type="VV",
                              doc="True Y"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('log_z', type=Type.INT32_T,
                              doc="Use logarithmic Y-axis (usually for data profiles) 0:No, 1:Yes")
                ]),
 
@@ -1544,9 +1544,9 @@ gx_methods = {
                doc="Set depth section orientation parameters",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('depth', type=Type.DOUBLE,
                              doc="View Y value for Depth = 0.0.")
                ]),
 
@@ -1559,9 +1559,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('esri', type=Type.STRING,
                              doc="ESRI prj format projection string")
                ]),
 
@@ -1727,11 +1727,11 @@ gx_methods = {
                notes="If parameter is not valid, nothing happens.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`IPJ_CSP`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('parm', type=Type.DOUBLE,
                              doc="Parameter value")
                ]),
 
@@ -1740,11 +1740,11 @@ gx_methods = {
                doc="Set coordinate system from a MapInfo coordsys command",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('coord', type=Type.STRING,
                              doc="MapInfo Coordinate System"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('units', type=Type.STRING,
                              doc="MapInfo Units")
                ]),
 
@@ -1758,17 +1758,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('azimuth', type=Type.DOUBLE,
                              doc="Section azimuth - degrees CCW from north"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('swing', type=Type.DOUBLE,
                              doc="Section swing -90 < swing < 90.")
                ]),
 
@@ -1786,15 +1786,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('rot', type=Type.DOUBLE,
                              doc="Rotation CCW from normal XY coords")
                ]),
 
@@ -1817,17 +1817,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of view origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of view origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location of view origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('azimuth', type=Type.DOUBLE,
                              doc="Section azimuth - degrees CCW from north"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('swing', type=Type.DOUBLE,
                              doc="Section swing -90 < swing < 90.")
                ]),
 
@@ -1860,17 +1860,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('coord', type=Type.STRING,
                              doc="WMS style coordinate string"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Minimum X bounding box"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Minimum Y"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Maximum X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Maximum Y")
                ]),
 
@@ -1879,9 +1879,9 @@ gx_methods = {
                doc="Set an :class:`IPJ` from a Geosoft Metadata XML string",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="XML string to set")
                ]),
 
@@ -1890,39 +1890,39 @@ gx_methods = {
                doc="Gets the coefficients of a 3D matrix orientation.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v00', type=Type.DOUBLE, is_ref=True,
                              doc="Row 0 Element 0"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v01', type=Type.DOUBLE, is_ref=True,
                              doc="Row 0 Element 1"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v02', type=Type.DOUBLE, is_ref=True,
                              doc="Row 0 Element 2"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v03', type=Type.DOUBLE, is_ref=True,
                              doc="Row 0 Element 3"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v10', type=Type.DOUBLE, is_ref=True,
                              doc="Row 1 Element 0"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v11', type=Type.DOUBLE, is_ref=True,
                              doc="Row 1 Element 1"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v12', type=Type.DOUBLE, is_ref=True,
                              doc="Row 1 Element 2"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v13', type=Type.DOUBLE, is_ref=True,
                              doc="Row 1 Element 3"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v20', type=Type.DOUBLE, is_ref=True,
                              doc="Row 2 Element 0"),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v21', type=Type.DOUBLE, is_ref=True,
                              doc="Row 2 Element 1"),
-                   Parameter('p12', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v22', type=Type.DOUBLE, is_ref=True,
                              doc="Row 2 Element 2"),
-                   Parameter('p13', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v23', type=Type.DOUBLE, is_ref=True,
                              doc="Row 2 Element 3"),
-                   Parameter('p14', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v30', type=Type.DOUBLE, is_ref=True,
                              doc="Row 3 Element 0"),
-                   Parameter('p15', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v31', type=Type.DOUBLE, is_ref=True,
                              doc="Row 3 Element 1"),
-                   Parameter('p16', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v32', type=Type.DOUBLE, is_ref=True,
                              doc="Row 3 Element 2"),
-                   Parameter('p17', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v33', type=Type.DOUBLE, is_ref=True,
                              doc="Row 3 Element 3")
                ]),
 
@@ -1931,39 +1931,39 @@ gx_methods = {
                doc="Apply a 3D orientation directly using matrix coefficients.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('v00', type=Type.DOUBLE,
                              doc="Row 0 Element 0"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('v01', type=Type.DOUBLE,
                              doc="Row 0 Element 1"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('v02', type=Type.DOUBLE,
                              doc="Row 0 Element 2"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('v03', type=Type.DOUBLE,
                              doc="Row 0 Element 3"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('v10', type=Type.DOUBLE,
                              doc="Row 1 Element 0"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('v11', type=Type.DOUBLE,
                              doc="Row 1 Element 1"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('v12', type=Type.DOUBLE,
                              doc="Row 1 Element 2"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('v13', type=Type.DOUBLE,
                              doc="Row 1 Element 3"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('v20', type=Type.DOUBLE,
                              doc="Row 2 Element 0"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('v21', type=Type.DOUBLE,
                              doc="Row 2 Element 1"),
-                   Parameter('p12', type=Type.DOUBLE,
+                   Parameter('v22', type=Type.DOUBLE,
                              doc="Row 2 Element 2"),
-                   Parameter('p13', type=Type.DOUBLE,
+                   Parameter('v23', type=Type.DOUBLE,
                              doc="Row 2 Element 3"),
-                   Parameter('p14', type=Type.DOUBLE,
+                   Parameter('v30', type=Type.DOUBLE,
                              doc="Row 3 Element 0"),
-                   Parameter('p15', type=Type.DOUBLE,
+                   Parameter('v31', type=Type.DOUBLE,
                              doc="Row 3 Element 1"),
-                   Parameter('p16', type=Type.DOUBLE,
+                   Parameter('v32', type=Type.DOUBLE,
                              doc="Row 3 Element 2"),
-                   Parameter('p17', type=Type.DOUBLE,
+                   Parameter('v33', type=Type.DOUBLE,
                              doc="Row 3 Element 3")
                ]),
 
@@ -1976,22 +1976,22 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('input_ipj', type="IPJ",
                              doc="Initial projected :class:`IPJ`, optionally including an orientation"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('output_ipj', type="IPJ",
                              doc="""
                              Reprojected :class:`IPJ` on input (need not include an orientation). On output contains the same
                              						type of orientation as the initial :class:`IPJ`, adjusted to be in the same location.
                              """),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x0', type=Type.DOUBLE, is_ref=True,
                              doc="X origin of grid (input initial value, output new value)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y0', type=Type.DOUBLE, is_ref=True,
                              doc="Y origin of grid (input initial value, output new value)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('dx', type=Type.DOUBLE, is_ref=True,
                              doc="X cell size of grid (input initial value, output new value)"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('dy', type=Type.DOUBLE, is_ref=True,
                              doc="Y cell size of grid (input initial value, output new value)"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rot', type=Type.DOUBLE, is_ref=True,
                              doc="Grid rotation (degrees CCW) (input initial value, output new value)")
                ])
     ],
@@ -2006,7 +2006,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to clear")
                ]),
 
@@ -2022,9 +2022,9 @@ gx_methods = {
                     This does not compare LDT information in the :class:`IPJ`, use :func:`iCompareDatums_IPJ` for a full comparison.
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -2040,9 +2040,9 @@ gx_methods = {
                     This does not compare LDT information in the :class:`IPJ`, use :func:`iCompareDatums_IPJ` for a full comparison.
                """,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj1', type="IPJ",
                              doc=":class:`IPJ` 1"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj2', type="IPJ",
                              doc=":class:`IPJ` 2")
                ]),
 
@@ -2062,7 +2062,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="IPJ")
+                   Parameter('ipj', type="IPJ")
                ])
     ]
 }

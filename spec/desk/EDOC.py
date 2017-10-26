@@ -90,13 +90,13 @@ gx_methods = {
                return_type="EDOC",
                return_doc="Handle to the newly created edited model.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Document to load."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('nx', type=Type.INT32_T,
                              doc="X Size"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ny', type=Type.INT32_T,
                              doc="Y Size"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GMS3D_MODELTYPE`")
                ])
     ],
@@ -108,7 +108,7 @@ gx_methods = {
                return_type="EDOC",
                return_doc=":class:`EDOC` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -122,7 +122,7 @@ gx_methods = {
                return_type="EDOC",
                return_doc=":class:`EDOC` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -135,7 +135,7 @@ gx_methods = {
                the user is not prompted for a document, and 0 is returned.
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -145,7 +145,7 @@ gx_methods = {
                notes="This does not unload the document; it simply deletes the gx resource handle",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC",
+                   Parameter('val', type="EDOC",
                              doc=":class:`EDOC` to destroy")
                ]),
 
@@ -158,11 +158,11 @@ gx_methods = {
                The :class:`LST` is cleared first.
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to load"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('path', type=Type.INT32_T,
                              doc=":def:`EDOC_PATH`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -171,10 +171,10 @@ gx_methods = {
                doc="Get the name of the document object of this :class:`EDOC`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('edoc', type="EDOC"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the String")
                ]),
 
@@ -184,7 +184,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`EDOC_WINDOW_STATE`",
                parameters = [
-                   Parameter('p1', type="EDOC")
+                   Parameter('edoc', type="EDOC")
                ]),
 
         Method('iHaveCurrent_EDOC', module='None', version='5.0.0',
@@ -193,7 +193,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -203,9 +203,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if document is loaded, 0 otherwise.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="document name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -214,18 +214,18 @@ gx_methods = {
                doc="Get the map window's position and dock state",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('edoc', type="EDOC"),
+                   Parameter('left', type=Type.INT32_T, is_ref=True,
                              doc="Window left position"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('top', type=Type.INT32_T, is_ref=True,
                              doc="Window top position"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('right', type=Type.INT32_T, is_ref=True,
                              doc="Window right position"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('bottom', type=Type.INT32_T, is_ref=True,
                              doc="Window bottom position"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('state', type=Type.INT32_T, is_ref=True,
                              doc="Window state :def:`EDOC_WINDOW_STATE`"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('is_floating', type=Type.INT32_T, is_ref=True,
                              doc="Docked or floating :def:`EDOC_WINDOW_POSITION`")
                ]),
 
@@ -234,18 +234,18 @@ gx_methods = {
                doc="Get the map window's position and dock state",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edoc', type="EDOC"),
+                   Parameter('left', type=Type.INT32_T,
                              doc="Window left position"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('top', type=Type.INT32_T,
                              doc="Window top position"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc="Window right position"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bottom', type=Type.INT32_T,
                              doc="Window bottom position"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('state', type=Type.INT32_T,
                              doc="Window state :def:`EDOC_WINDOW_STATE`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('is_floating', type=Type.INT32_T,
                              doc="Docked or floating :def:`EDOC_WINDOW_POSITION`")
                ]),
 
@@ -255,7 +255,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="EDOC")
+                   Parameter('edoc', type="EDOC")
                ]),
 
         Method('Load_EDOC', module='None', version='5.0.0',
@@ -274,9 +274,9 @@ gx_methods = {
                document in the list.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="list of documents (';' or '|' delimited) to load."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -293,9 +293,9 @@ gx_methods = {
                document in the list.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="list of documents (';' or '|' delimited) to load."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -304,7 +304,7 @@ gx_methods = {
                doc="Makes this :class:`EDOC` object the current active object to the user.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC",
+                   Parameter('edoc', type="EDOC",
                              doc=":class:`EDOC` to make active")
                ]),
 
@@ -313,8 +313,8 @@ gx_methods = {
                doc="Changes the state of the document window",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edoc', type="EDOC"),
+                   Parameter('state', type=Type.INT32_T,
                              doc=":def:`EDOC_WINDOW_STATE`")
                ]),
 
@@ -323,9 +323,9 @@ gx_methods = {
                doc="Syncronize the Metadata of a document that is not currently open",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Document file name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -334,7 +334,7 @@ gx_methods = {
                doc="Syncronize the Metadata of a document",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC")
+                   Parameter('edoc', type="EDOC")
                ]),
 
         Method('UnLoad_EDOC', module='None', version='5.0.0',
@@ -346,9 +346,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of document to unload"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -357,7 +357,7 @@ gx_methods = {
                doc="Unloads all opened documents",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -367,9 +367,9 @@ gx_methods = {
                notes="If the document is not loaded, nothing happens.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of document to unload"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ]),
 
@@ -383,11 +383,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of document to unload"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('verify', type=Type.INT32_T,
                              doc=":def:`EDOC_UNLOAD`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
                ])
     ],
@@ -409,14 +409,14 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('edoc', type="EDOC"),
+                   Parameter('min_x', type=Type.INT32_T, is_ref=True,
                              doc="X Min returned"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('min_y', type=Type.INT32_T, is_ref=True,
                              doc="Y Min returned"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_x', type=Type.INT32_T, is_ref=True,
                              doc="X Max returned"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_y', type=Type.INT32_T, is_ref=True,
                              doc="Y Max returned")
                ]),
 
@@ -435,14 +435,14 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDOC"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edoc', type="EDOC"),
+                   Parameter('min_x', type=Type.INT32_T,
                              doc="X Min"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('min_y', type=Type.INT32_T,
                              doc="Y Min"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('max_x', type=Type.INT32_T,
                              doc="X Max"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('max_y', type=Type.INT32_T,
                              doc="Y Max")
                ])
     ]

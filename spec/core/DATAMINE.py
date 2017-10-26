@@ -30,15 +30,15 @@ gx_methods = {
                notes="Create a Geosoft Voxel file from a Datamine block model file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Datamine file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Field to use for data"),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to set"),
-                   Parameter('p4', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` to set"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('voxel', type=Type.STRING,
                              doc="Output voxel file name")
                ]),
 
@@ -52,9 +52,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Datamine file name"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to populate")
                ])
     ]

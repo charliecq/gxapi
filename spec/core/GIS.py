@@ -51,7 +51,7 @@ gx_methods = {
                return_type="GIS",
                return_doc=":class:`GIS` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Data source (file)"),
                    Parameter('p2', type=Type.STRING,
                              doc="Data qualifying information if required."),
@@ -68,15 +68,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map name"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('map_scale', type=Type.DOUBLE,
                              doc="Map scale (can be :def_val:`rDUMMY`)"),
-                   Parameter('p4', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection (no orientation)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('map2_d', type=Type.INT32_T,
                              doc=":def:`GIS_MAP2D`")
                ]),
 
@@ -85,7 +85,7 @@ gx_methods = {
                doc="Destroy :class:`GIS` instance",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object to destroy")
                ]),
 
@@ -129,7 +129,7 @@ gx_methods = {
                NULL if error
                """,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object")
                ]),
 
@@ -138,9 +138,9 @@ gx_methods = {
                doc="Get the :class:`GIS` :class:`META`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc="Meta object to store :class:`GIS` meta information")
                ]),
 
@@ -149,19 +149,19 @@ gx_methods = {
                doc="Get the range of data in the :class:`GIS`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_min', type=Type.DOUBLE, is_ref=True,
                              doc="X min"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_max', type=Type.DOUBLE, is_ref=True,
                              doc="X max"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_min', type=Type.DOUBLE, is_ref=True,
                              doc="Y min"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_max', type=Type.DOUBLE, is_ref=True,
                              doc="Y max"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z_min', type=Type.DOUBLE, is_ref=True,
                              doc="Z min"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z_max', type=Type.DOUBLE, is_ref=True,
                              doc="Z max")
                ]),
 
@@ -177,7 +177,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Datamine file types - bitwise AND of types.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of input datamine file")
                ]),
 
@@ -186,11 +186,11 @@ gx_methods = {
                doc="Get the file name",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` Handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned file name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of file name string")
                ]),
 
@@ -208,7 +208,7 @@ gx_methods = {
                1 if it is.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Name of input map file")
                ]),
 
@@ -221,7 +221,7 @@ gx_methods = {
                1 if it is.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('tab', type=Type.STRING,
                              doc="Name of input tab file")
                ]),
 
@@ -246,7 +246,7 @@ gx_methods = {
                1 if it is (see conditions below).
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('tab', type=Type.STRING,
                              doc="Name of input tab file")
                ]),
 
@@ -263,7 +263,7 @@ gx_methods = {
                1 if the :class:`SHP` file is of type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
                """,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object")
                ]),
 
@@ -277,7 +277,7 @@ gx_methods = {
                if the :class:`SHP` file is of type POINT or POINTZ
                """,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object")
                ]),
 
@@ -287,7 +287,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of attribute fields",
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object")
                ]),
 
@@ -297,7 +297,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of shape entities",
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object")
                ]),
 
@@ -307,13 +307,13 @@ gx_methods = {
                notes="This will create a GI file for the raster image.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('tab', type=Type.STRING,
                              doc="Name of input file"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file_len',
                              doc="Name of Raster file (an :class:`IMG` :class:`DAT`)"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('file_len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer length for Raster file name"),
-                   Parameter('p4', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection")
                ]),
 
@@ -328,9 +328,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` object")
                ]),
 
@@ -350,9 +350,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -362,9 +362,9 @@ gx_methods = {
                notes="The :class:`GIS` drawing will be drawin in the current group.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View in which to place :class:`GIS` drawing.")
                ]),
 
@@ -374,11 +374,11 @@ gx_methods = {
                notes="The :class:`GIS` drawing will be drawin in the current group.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view_name', type=Type.STRING,
                              doc="Name of existing data view")
                ]),
 
@@ -394,15 +394,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('gis', type="GIS"),
+                   Parameter('mview', type="MVIEW",
                              doc="View in which to place :class:`GIS` drawing."),
-                   Parameter('p3', type="META"),
-                   Parameter('p4', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Class"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('prefix', type=Type.STRING,
                              doc="Group Name prefix"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('name_field', type=Type.STRING,
                              doc="Name field (Empty to use ID of entity)")
                ]),
 
@@ -411,9 +411,9 @@ gx_methods = {
                doc="Load :class:`GIS` table drawing into a Multi-Polygon object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="PLY",
+                   Parameter('ply', type="PLY",
                              doc="Polygon object in which to place :class:`GIS` shapes.")
                ]),
 
@@ -435,9 +435,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -453,9 +453,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the wireframe point file")
                ]),
 
@@ -464,9 +464,9 @@ gx_methods = {
                doc="Save the :class:`IPJ` back to :class:`GIS` file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to save")
                ]),
 
@@ -480,9 +480,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to save to :class:`GIS` :class:`LST`.")
                ]),
 
@@ -491,9 +491,9 @@ gx_methods = {
                doc="Save the :class:`META` back to :class:`GIS`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to save to :class:`GIS` meta")
                ]),
 
@@ -502,9 +502,9 @@ gx_methods = {
                doc="Set the triangulation object index (Micromine)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('i_toi', type=Type.INT32_T,
                              doc="Triangulation object index")
                ])
     ],
@@ -516,9 +516,9 @@ gx_methods = {
                notes="Obsolete, use ScanMIRaseterFile_GIS",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Not used"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ny', type=Type.INT32_T,
                              doc="Not used")
                ])
     ]

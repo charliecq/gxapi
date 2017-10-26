@@ -18,7 +18,7 @@ gx_methods = {
                doc="Clears all the parameters in a :class:`BIGRID` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc=":class:`BIGRID` object")
                ]),
 
@@ -39,7 +39,7 @@ gx_methods = {
                doc="Destroy a :class:`BIGRID`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc=":class:`BIGRID` to destroy.")
                ]),
 
@@ -62,9 +62,9 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc=":class:`BIGRID` to load parameter settings into"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to get the parameter settings from")
                ]),
 
@@ -77,13 +77,13 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc=":class:`BIGRID` to load parameter settings"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="New grid title"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('cell', type=Type.STRING,
                              doc="New grid cell size as a string, blank for default"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('warp', type=Type.STRING,
                              doc="Warp projection file name")
                ]),
 
@@ -95,13 +95,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc="Handle to :class:`BIGRID` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('zchan', type=Type.STRING,
                              doc='Not used, pass as ""'),
-                   Parameter('p3', type="DAT",
+                   Parameter('in_dat', type="DAT",
                              doc="Handle to source :class:`DAT` object (from database)"),
-                   Parameter('p4', type="DAT",
+                   Parameter('out_dat', type="DAT",
                              doc="Handle to output grid file :class:`DAT`")
                ]),
 
@@ -113,15 +113,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc="Handle to :class:`BIGRID` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('zchan', type=Type.STRING,
                              doc='Not used, pass as ""'),
-                   Parameter('p3', type="DAT",
+                   Parameter('in_dat', type="DAT",
                              doc="Handle to source :class:`DAT` object (from database)"),
-                   Parameter('p4', type="DAT",
+                   Parameter('out_dat', type="DAT",
                              doc="Handle to output grid file :class:`DAT`"),
-                   Parameter('p5', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` handle of the projection system")
                ]),
 
@@ -137,9 +137,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BIGRID",
+                   Parameter('bigrid', type="BIGRID",
                              doc=":class:`BIGRID` object to get parameters from and put into the control file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of file to put the parameter settings into")
                ])
     ]

@@ -45,17 +45,17 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Always 0",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg1', type="PG",
                              doc="First Pager"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg2', type="PG",
                              doc="Second Pager"),
-                   Parameter('p3', type="PG",
+                   Parameter('pgr', type="PG",
                              doc="Result Pager"),
-                   Parameter('p4', type="void*",
+                   Parameter('void*', type="void*",
                              doc="Pointer to pass to your function"),
-                   Parameter('p5', type="void (_cdecl *param4)(void*,short,long,void*,void*,void*)",
+                   Parameter('p_info', type="void (_cdecl *param4)(void*,short,long,void*,void*,void*)",
                              doc="Math Functions (void (cdecl*)(void *pInfo, short sType, long lItems, void *pPG1, void *pPG2, void *pPGR)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('void', type=Type.INT32_T,
                              doc="GS_BOOL SMP Support")
                ]),
 
@@ -65,15 +65,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Always 0",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="First Pager"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="First Element"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('p5', type="void*",
+                   Parameter('void*', type="void*",
                              doc="Data buffer to read into")
                ]),
 
@@ -83,15 +83,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Always 0",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="First Pager"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="First Element"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('p5', type="const void*",
+                   Parameter('void*', type="const void*",
                              doc="Data buffer to read from")
                ]),
 
@@ -101,15 +101,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Always 0",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="First Pager"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="First Element"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('p5', type="void*",
+                   Parameter('void*', type="void*",
                              doc="Data buffer to read into")
                ]),
 
@@ -119,15 +119,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Always 0",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="First Pager"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="First Element"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('p5', type="const void*",
+                   Parameter('void*', type="const void*",
                              doc="Data buffer to read from")
                ])
     ],
@@ -138,9 +138,9 @@ gx_methods = {
                doc="Copy the data from one pager to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('p_gd', type="PG",
                              doc="Destination :class:`PG` object"),
-                   Parameter('p2', type="PG",
+                   Parameter('p_gs', type="PG",
                              doc="Source :class:`PG` object")
                ]),
 
@@ -150,21 +150,21 @@ gx_methods = {
                notes="2D Only",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('p_gd', type="PG",
                              doc="Destination :class:`PG` object"),
-                   Parameter('p2', type="PG",
+                   Parameter('p_gs', type="PG",
                              doc="Source :class:`PG` object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('rowd', type=Type.INT32_T,
                              doc="Y (row) Origin on destination"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="X (col) Origin on destination"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('void*', type=Type.INT32_T,
                              doc="Y (row) Origin on source"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('p_mem', type=Type.INT32_T,
                              doc="X (col) Origin on source"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('cdecl*', type=Type.INT32_T,
                              doc="Number of Y (rows) to copy"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('p_func', type=Type.INT32_T,
                              doc="Number of X (columns) to copy")
                ]),
 
@@ -174,7 +174,7 @@ gx_methods = {
                return_type="PG",
                return_doc=":class:`PG` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="# elements in y (# of row)"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="# elements in x (# of column)"),
@@ -189,7 +189,7 @@ gx_methods = {
                return_type="PG",
                return_doc=":class:`PG` Object",
                parameters = [
-                   Parameter('p1', type="BF")
+                   Parameter('bf', type="BF")
                ]),
 
         Method('Destroy_PG', module='geoengine.core', version='5.0.0',
@@ -197,7 +197,7 @@ gx_methods = {
                doc="This method destroys a table resource.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Pager Object to Destroy")
                ]),
 
@@ -206,7 +206,7 @@ gx_methods = {
                doc="Sets the Entire pager to dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` object")
                ]),
 
@@ -216,7 +216,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GS_TYPES`",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Source :class:`PG`")
                ]),
 
@@ -226,7 +226,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of columns.",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Source :class:`PG`")
                ]),
 
@@ -236,7 +236,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of rows.",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Source :class:`PG`")
                ]),
 
@@ -246,7 +246,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of rows.",
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Source :class:`PG`")
                ]),
 
@@ -255,11 +255,11 @@ gx_methods = {
                doc="Computes the range of the entire pager.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Pager to Range"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum Data (Dummy if no range)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum Data (Dummy if no range)")
                ]),
 
@@ -269,9 +269,9 @@ gx_methods = {
                notes="This is a low-performance method.",
                return_type=Type.DOUBLE,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)")
@@ -282,15 +282,15 @@ gx_methods = {
                doc="Read a set of elements in X (column) from pager into vv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBy - begining element # in y to read (0 is the first)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNy - # elements to read (0 for whole vector)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -299,15 +299,15 @@ gx_methods = {
                doc="Read a set of elements in Y (row) from pager into vv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBx - begining element # in x to read (0 is the first)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNx - # elements to read (0 for whole vector)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -316,9 +316,9 @@ gx_methods = {
                doc="Changes the size of Pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('n_row', type=Type.INT32_T,
                              doc="Number of Y (rows) to reallocate"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Number of X (columns) to reallocate")
@@ -330,8 +330,8 @@ gx_methods = {
                notes="For 3D pagers, use :func:`WriteBF_PG`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG"),
-                   Parameter('p2', type="BF")
+                   Parameter('pg', type="PG"),
+                   Parameter('bf', type="BF")
                ]),
 
         Method('Statistics_PG', module='geoengine.core', version='6.3.1',
@@ -339,9 +339,9 @@ gx_methods = {
                doc="Compute the statistics of a pager object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type="ST",
+                   Parameter('st', type="ST",
                              doc="hST - statistics object")
                ]),
 
@@ -350,15 +350,15 @@ gx_methods = {
                doc="Write a set of elements in X (column) from vv into pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBy - begining element # in y to write (0 is the first)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNy - # elements to write (0 for whole vector)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -367,15 +367,15 @@ gx_methods = {
                doc="Write a set of elements in Y (row) from vv into pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBx - begining element # in x to write (0 is the first)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNx - # elements to write (0 for whole vector)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ])
     ],
@@ -387,11 +387,11 @@ gx_methods = {
                notes="2D Only",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('p_gd', type="PG",
                              doc="Destination :class:`PG` object"),
-                   Parameter('p2', type="PG",
+                   Parameter('p_gs', type="PG",
                              doc="Source :class:`PG` object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('sliced', type=Type.INT32_T,
                              doc="Z (slice) Origin on destination"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Y (row) Origin on destination"),
@@ -417,7 +417,7 @@ gx_methods = {
                return_type="PG",
                return_doc=":class:`PG` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('slice', type=Type.INT32_T,
                              doc="# elements in z (# of slices)"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="# elements in y (# of row)"),
@@ -432,17 +432,17 @@ gx_methods = {
                doc="Read a set of elements in X (column) from pager into vv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('slice', type=Type.INT32_T,
                              doc="iBz - element # in z (slice #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBy - begining element # in y to read (0 is the first)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNy - # elements to read (0 for whole vector)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -451,17 +451,17 @@ gx_methods = {
                doc="Read a set of elements in Y (row) from pager into vv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('slice', type=Type.INT32_T,
                              doc="iBz - element # in z (slice #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBx - begining element # in x to read (0 is the first)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNx - # elements to read (0 for whole vector)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -470,17 +470,17 @@ gx_methods = {
                doc="Read a set of elements in Z (trace) from pager into vv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBy - begining element # in z to read (0 is the first)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNy - # elements to read (0 for whole vector)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -489,9 +489,9 @@ gx_methods = {
                doc="Changes the size of 3D Pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('n_slice', type=Type.INT32_T,
                              doc="Number of Z (slices) to reallocate"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Number of Y (rows) to reallocate"),
@@ -504,17 +504,17 @@ gx_methods = {
                doc="Write a set of elements in X (column) from vv into pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('slice', type=Type.INT32_T,
                              doc="iBz - element # in z (slice #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBy - begining element # in y to write (0 is the first)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNy - # elements to write (0 for whole vector)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -523,17 +523,17 @@ gx_methods = {
                doc="Write a set of elements in Y (row) from vv into pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('slice', type=Type.INT32_T,
                              doc="iBz - element # in z (slice #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBx - begining element # in x to write (0 is the first)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNx - # elements to write (0 for whole vector)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ]),
 
@@ -542,17 +542,17 @@ gx_methods = {
                doc="Write a set of elements in Z (trace) from pager into vv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc="hPG - :class:`PG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc="iBy - begining element # in z to read (0 is the first)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="iNy - # elements to read (0 for whole vector)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="hVV - :class:`VV` handle")
                ])
     ],
@@ -563,19 +563,19 @@ gx_methods = {
                doc="Read the contents of a 2D or 3D pager to from a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` handle"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to read from"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PG_3D_DIR`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('conv', type=Type.INT32_T,
                              doc=":def:`PG_BF_CONV`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('rev_x', type=Type.INT32_T,
                              doc="Reverse X"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('rev_y', type=Type.INT32_T,
                              doc="Reverse Y"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('rev_z', type=Type.INT32_T,
                              doc="Reverse Z")
                ]),
 
@@ -585,19 +585,19 @@ gx_methods = {
                notes="Each line must hold only 1 value",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` handle"),
-                   Parameter('p2', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` to read from"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PG_3D_DIR`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('rev_x', type=Type.INT32_T,
                              doc="Reverse X"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('rev_y', type=Type.INT32_T,
                              doc="Reverse Y"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('rev_z', type=Type.INT32_T,
                              doc="Reverse Z"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('dummy', type=Type.STRING,
                              doc="Dummy")
                ]),
 
@@ -606,19 +606,19 @@ gx_methods = {
                doc="Write the contents of a 2D or 3D pager to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` handle"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to write to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PG_3D_DIR`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('conv', type=Type.INT32_T,
                              doc=":def:`PG_BF_CONV`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('rev_x', type=Type.INT32_T,
                              doc="Reverse X"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('rev_y', type=Type.INT32_T,
                              doc="Reverse Y"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('rev_z', type=Type.INT32_T,
                              doc="Reverse Z")
                ]),
 
@@ -627,21 +627,21 @@ gx_methods = {
                doc="Write the contents of a 2D or 3D pager to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` handle"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to write to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PG_3D_DIR`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('conv', type=Type.INT32_T,
                              doc=":def:`PG_BF_CONV`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('rev_x', type=Type.INT32_T,
                              doc="Reverse X"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('rev_y', type=Type.INT32_T,
                              doc="Reverse Y"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('rev_z', type=Type.INT32_T,
                              doc="Reverse Z"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('p_dummy', type=Type.DOUBLE,
                              doc="Dummy value")
                ]),
 
@@ -651,19 +651,19 @@ gx_methods = {
                notes="Each line will hold only 1 value",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` to write to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PG_3D_DIR`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('rev_x', type=Type.INT32_T,
                              doc="Reverse X"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('rev_y', type=Type.INT32_T,
                              doc="Reverse Y"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('rev_z', type=Type.INT32_T,
                              doc="Reverse Z"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('dummy', type=Type.STRING,
                              doc="Dummy")
                ])
     ],

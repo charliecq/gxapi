@@ -20,13 +20,13 @@ gx_methods = {
                return_type="VOXD",
                return_doc=":class:`VOXD` handle, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type="VOX",
+                   Parameter('vox', type="VOX",
                              doc=":class:`VOX` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('table', type=Type.STRING,
                              doc='Color table name, "" for default'),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc=":def:`ITR_ZONE`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('contour', type=Type.DOUBLE,
                              doc="Color contour interval or :def_val:`rDUMMY`")
                ]),
 
@@ -40,9 +40,9 @@ gx_methods = {
                return_type="VOXD",
                return_doc=":class:`VOXD` handle, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type="VOX",
+                   Parameter('vox', type="VOX",
                              doc=":class:`VOX` Object"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` Object")
                ]),
 
@@ -64,7 +64,7 @@ gx_methods = {
                return_type="VOXD",
                return_doc=":class:`VOXD` handle, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type="VOX",
+                   Parameter('vox', type="VOX",
                              doc=":class:`VOX` Object")
                ]),
 
@@ -81,7 +81,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if :class:`VOX` is thematic",
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object")
                ]),
 
@@ -90,11 +90,11 @@ gx_methods = {
                doc="Get a copy of a thematic voxel's :class:`TPAT` object and a :class:`VV` containing the current display selections.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` object to get"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` (int) object to fill with current selections")
                ]),
 
@@ -103,9 +103,9 @@ gx_methods = {
                doc="Get a copy of a thematic voxel's :class:`TPAT` object and a :class:`VV` containing the current display selections.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` (int) object to set the current selections to")
                ]),
 
@@ -114,7 +114,7 @@ gx_methods = {
                doc="Destroy a :class:`VOXD`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` to destroy.")
                ]),
 
@@ -123,23 +123,23 @@ gx_methods = {
                doc="Get the draw controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('box', type=Type.INT32_T, is_ref=True,
                              doc="Draw Bounding Box"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('trans', type=Type.DOUBLE, is_ref=True,
                              doc="Transparency"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Min X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Min Y"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_z', type=Type.DOUBLE, is_ref=True,
                              doc="Min Z"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Max X"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Max Y"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_z', type=Type.DOUBLE, is_ref=True,
                              doc="Max Z")
                ]),
 
@@ -148,11 +148,11 @@ gx_methods = {
                doc="Gets the file name of the voxel.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="File name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name string size")
                ]),
 
@@ -161,9 +161,9 @@ gx_methods = {
                doc="Get the :class:`ITR` of the :class:`VOXD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -172,11 +172,11 @@ gx_methods = {
                doc="Get the shell controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Min Value (:def_val:`rDUMMY` for no limit)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Max Value (:def_val:`rDUMMY` for no limit)")
                ]),
 
@@ -185,23 +185,23 @@ gx_methods = {
                doc="Set the draw controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('box', type=Type.INT32_T,
                              doc="Draw Bounding Box"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('trans', type=Type.DOUBLE,
                              doc="Transparency"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('min_z', type=Type.DOUBLE,
                              doc="Min Z"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('max_z', type=Type.DOUBLE,
                              doc="Max Z")
                ]),
 
@@ -210,9 +210,9 @@ gx_methods = {
                doc="Set the :class:`ITR` of the :class:`VOXD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -221,11 +221,11 @@ gx_methods = {
                doc="Set the shell controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXD",
+                   Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Min Value (:def_val:`rDUMMY` for no limit)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Max Value (:def_val:`rDUMMY` for no limit)")
                ])
     ]

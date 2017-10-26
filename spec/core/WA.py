@@ -41,9 +41,9 @@ gx_methods = {
                doc="Writes a string to the file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="String to write")
                ]),
 
@@ -54,9 +54,9 @@ gx_methods = {
                return_type="WA",
                return_doc=":class:`WA` Handle",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the File"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('append', type=Type.INT32_T,
                              doc=":def:`WA_OPEN`")
                ]),
 
@@ -72,11 +72,11 @@ gx_methods = {
                return_type="WA",
                return_doc=":class:`WA` Handle",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the File"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('append', type=Type.INT32_T,
                              doc=":def:`WA_OPEN`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('encode', type=Type.INT32_T,
                              doc=":def:`WA_ENCODE`")
                ]),
 
@@ -87,11 +87,11 @@ gx_methods = {
                return_type="WA",
                return_doc=":class:`WA` Handle",
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc="Storage"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the File"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('append', type=Type.INT32_T,
                              doc=":def:`WA_OPEN`")
                ]),
 
@@ -108,13 +108,13 @@ gx_methods = {
                return_type="WA",
                return_doc=":class:`WA` Handle",
                parameters = [
-                   Parameter('p1', type="SBF",
+                   Parameter('sbf', type="SBF",
                              doc="Storage"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the File"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('append', type=Type.INT32_T,
                              doc=":def:`WA_OPEN`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('encode', type=Type.INT32_T,
                              doc=":def:`WA_ENCODE`")
                ]),
 
@@ -123,7 +123,7 @@ gx_methods = {
                doc="Destroys a :class:`WA` Object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Object")
                ]),
 
@@ -132,7 +132,7 @@ gx_methods = {
                doc="Forces a new line in the :class:`WA` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Object")
                ])
     ]

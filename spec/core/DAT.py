@@ -48,13 +48,13 @@ gx_methods = {
                return_type="DAT",
                return_doc=":class:`DAT` Object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Handle to database which :class:`DAT` is connected with"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('x_ch', type=Type.STRING,
                              doc="Name of X channel in database"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('y_ch', type=Type.STRING,
                              doc="Name of Y channel in database"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('z_ch', type=Type.STRING,
                              doc="Name of Z channel in database")
                ]),
 
@@ -64,9 +64,9 @@ gx_methods = {
                return_type="DAT",
                return_doc=":class:`DAT` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of grid file to associate :class:`DAT` with"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`DAT_XGD`")
                ]),
 
@@ -75,7 +75,7 @@ gx_methods = {
                doc="Destroy a :class:`DAT`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DAT",
+                   Parameter('dat', type="DAT",
                              doc=":class:`DAT` to destroy.")
                ]),
 
@@ -89,13 +89,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('interface', type=Type.STRING,
                              doc=':class:`DAT` interface name ("XGD" only support option currently)'),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc=":def:`DAT_FILE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`DAT_FILE_FORM`")
                ]),
 
@@ -105,9 +105,9 @@ gx_methods = {
                notes="Terminates if unable to open an RPT :class:`DAT` interface.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DAT",
+                   Parameter('dat', type="DAT",
                              doc=":class:`DAT` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum X (:def_val:`rMAX` if none)"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum Y (:def_val:`rMAX` if none)"),

@@ -23,7 +23,7 @@ gx_methods = {
                return_type="STK",
                return_doc=":class:`STK`, fail if error",
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc="hMSTK")
                ]),
 
@@ -36,19 +36,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` object"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p3', type="VV",
+                   Parameter('num_ch_vv', type="VV",
                              doc="List of names of numeric channels"),
-                   Parameter('p4', type="VV",
+                   Parameter('str_ch_vv', type="VV",
                              doc="List of name of string channels"),
-                   Parameter('p5', type="VV",
+                   Parameter('x_ch_vv', type="VV",
                              doc="List of channel names which can be used for X axis. Must be numeric channels but not :class:`VA` channels"),
-                   Parameter('p6', type="VV",
+                   Parameter('prof_ch_vv', type="VV",
                              doc="List of profiles with channel names in both :class:`MSTK` and :class:`DB`"),
-                   Parameter('p7', type="VV",
+                   Parameter('prof_ch__un_used_vv', type="VV",
                              doc="List of profiles with channels in :class:`MSTK` but not in database")
                ]),
 
@@ -63,7 +63,7 @@ gx_methods = {
                doc="Destroy a :class:`MSTK` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` Handle")
                ]),
 
@@ -72,13 +72,13 @@ gx_methods = {
                doc="Draw multiple profiles in map",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Database line"),
-                   Parameter('p4', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` handle")
                ]),
 
@@ -87,9 +87,9 @@ gx_methods = {
                doc="Set the Y-axis direction - normal or inverted",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('direction', type=Type.INT32_T,
                              doc="Y-axis direction: 0 - normal, 1 - inverted")
                ]),
 
@@ -106,13 +106,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc="hMSTK"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('in', type=Type.STRING,
                              doc="Input string (see notes above). Will be modified on return"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('index', type=Type.INT32_T, is_ref=True,
                              doc="Index to the :class:`STK` found, Must be greater than 0 if found, -1 if not found"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vrtd', type="VV",
                              doc="Returned :class:`VV` with names of Group, X channel and Y channel :class:`VV` type must be of STRING")
                ]),
 
@@ -125,9 +125,9 @@ gx_methods = {
                return_type="STK",
                return_doc="x     - :class:`STK` Object handle",
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc="Multi-Polygon Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('num', type=Type.INT32_T,
                              doc="Index to :class:`STK` to get")
                ]),
        
@@ -137,9 +137,9 @@ gx_methods = {
                notes="0 is the first one",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc="hMSTK"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('num', type=Type.INT32_T,
                              doc="Index to :class:`STK` to delete (0 is first one)")
                ]),
 
@@ -156,23 +156,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc="hMSTK"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('in', type=Type.STRING,
                              doc="Input string (see notes above). Will be modified on return"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('index', type=Type.INT32_T, is_ref=True,
                              doc="Index to the :class:`STK` found, Must be greater than 0 if found, -1 if not found"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('group', type=Type.STRING, is_ref=True, size_of_param='group_sz',
                              doc="Output group name string"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('group_sz', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Group string length"),
-                   Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('x_ch', type=Type.STRING, is_ref=True, size_of_param='x_ch_sz',
                              doc="Output X channel name string"),
-                   Parameter('p7', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('x_ch_sz', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="X string length"),
-                   Parameter('p8', type=Type.STRING, is_ref=True, size_of_param='p9',
+                   Parameter('y_ch', type=Type.STRING, is_ref=True, size_of_param='y_ch_sz',
                              doc="Output Y channel name string"),
-                   Parameter('p9', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('y_ch_sz', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Y string length")
                ]),
 
@@ -182,7 +182,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of :class:`STK` objects in a :class:`MSTK` object",
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` Object")
                ]),
 
@@ -191,9 +191,9 @@ gx_methods = {
                doc="Read multiple profiles parameters from an INI file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` handle"),
-                   Parameter('p2', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` handle to an INI file")
                ]),
 
@@ -202,9 +202,9 @@ gx_methods = {
                doc="Save multiple profile INI parameters in a :class:`WA` file of INI format",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MSTK",
+                   Parameter('mstk', type="MSTK",
                              doc=":class:`MSTK` handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` handle to an INI file")
                ])
     ]

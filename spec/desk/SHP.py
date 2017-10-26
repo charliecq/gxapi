@@ -41,7 +41,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ]),
 
@@ -70,9 +70,9 @@ gx_methods = {
                return_type="SHP",
                return_doc=":class:`SHP` object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`SHP_GEOM_TYPE`")
                ]),
 
@@ -81,7 +81,7 @@ gx_methods = {
                doc="Destroy :class:`SHP` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ]),
 
@@ -95,9 +95,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of the new field",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Field name")
                ]),
 
@@ -111,11 +111,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of the new field",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Field name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dec', type=Type.INT32_T,
                              doc="Number of decimal places")
                ]),
 
@@ -129,11 +129,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of the new field",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Field name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Maximum number of characters in the string")
                ]),
 
@@ -143,9 +143,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The index, -1 if not found.",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Field name")
                ]),
 
@@ -155,7 +155,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The max ID number.",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ]),
 
@@ -165,7 +165,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The field number.",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ]),
 
@@ -175,7 +175,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The record number.",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ]),
 
@@ -185,7 +185,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The :class:`SHP` object's geometry type (:def:`SHP_GEOM_TYPE`)",
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ]),
 
@@ -195,7 +195,7 @@ gx_methods = {
                return_type="SHP",
                return_doc=":class:`SHP` object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -205,11 +205,11 @@ gx_methods = {
                notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_ARC` files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations")
                ]),
 
@@ -219,13 +219,13 @@ gx_methods = {
                notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_ARCZ` files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations")
                ]),
 
@@ -235,11 +235,11 @@ gx_methods = {
                notes="The input value is converted to the field's data type.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('index', type=Type.INT32_T,
                              doc="Data field index"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('val', type=Type.INT32_T,
                              doc="Input int value")
                ]),
 
@@ -256,9 +256,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Input :class:`IPJ`")
                ]),
 
@@ -268,11 +268,11 @@ gx_methods = {
                notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POINT` files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location")
                ]),
 
@@ -282,13 +282,13 @@ gx_methods = {
                notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POINTZ` files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location")
                ]),
 
@@ -298,13 +298,13 @@ gx_methods = {
                notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POLYGON` files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('inclusive', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` :def_val:`GS_TRUE` for outer ring polygon (inclusive/island), :def_val:`GS_FALSE` for inner ring (exclusive/hole)")
                ]),
 
@@ -314,15 +314,15 @@ gx_methods = {
                notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POLYGONZ` files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('inclusive', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` :def_val:`GS_TRUE` for outer ring polygon (inclusive/island), :def_val:`GS_FALSE` for inner ring (exclusive/hole)")
                ]),
 
@@ -332,11 +332,11 @@ gx_methods = {
                notes="The input value is converted to the field's data type.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('index', type=Type.INT32_T,
                              doc="Data field index"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Input real value")
                ]),
 
@@ -346,11 +346,11 @@ gx_methods = {
                notes="The input string is converted to the field's data type.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('index', type=Type.INT32_T,
                              doc="Data field index"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="Input string value")
                ]),
 
@@ -364,7 +364,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SHP",
+                   Parameter('shp', type="SHP",
                              doc=":class:`SHP` object")
                ])
     ]

@@ -22,9 +22,9 @@ gx_methods = {
                doc="Copy :class:`TIN`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('dest', type="TIN",
                              doc="Destination :class:`TIN`"),
-                   Parameter('p2', type="TIN",
+                   Parameter('source', type="TIN",
                              doc="Source :class:`TIN`")
                ]),
 
@@ -39,11 +39,11 @@ gx_methods = {
                return_type="TIN",
                return_doc=":class:`TIN` Object",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X positions"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y positions"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z values (optional)")
                ]),
 
@@ -53,7 +53,7 @@ gx_methods = {
                return_type="TIN",
                return_doc=":class:`TIN` Object",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` from which to read :class:`TIN`")
                ]),
 
@@ -62,7 +62,7 @@ gx_methods = {
                doc="Destroys the :class:`TIN` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` Handle")
                ]),
 
@@ -71,11 +71,11 @@ gx_methods = {
                doc="Export a :class:`TIN` object as XML",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('tin', type=Type.STRING,
                              doc=":class:`TIN` file"),
-                   Parameter('p2', type="CRC", is_ref=True,
+                   Parameter('crc', type="CRC", is_ref=True,
                              doc="CRC returned (Currently this is not implemented)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Output XML file")
                ]),
 
@@ -88,9 +88,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="PLY",
+                   Parameter('ply', type="PLY",
                              doc=":class:`PLY` object")
                ]),
 
@@ -99,9 +99,9 @@ gx_methods = {
                doc="Get the projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` in which to place the :class:`TIN` projection")
                ]),
 
@@ -122,13 +122,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv_joins', type="VV",
                              doc="Joins :class:`VV` (adjacent nodes)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv_index', type="VV",
                              doc="Index :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv_num', type="VV",
                              doc="Number :class:`VV`")
                ]),
 
@@ -137,9 +137,9 @@ gx_methods = {
                doc="Get lines from a :class:`TIN` mesh.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` of type GS_D2LINE (returned)")
                ]),
 
@@ -152,13 +152,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc="Z :class:`VV`")
                ]),
 
@@ -167,13 +167,13 @@ gx_methods = {
                doc="Get the triangle nodes.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('tri_vv_pt1', type="VV",
                              doc="Node 1 :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('tri_vv_pt2', type="VV",
                              doc="Node 2 :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('tri_vv_pt3', type="VV",
                              doc="Node3 :class:`VV`")
                ]),
 
@@ -182,21 +182,21 @@ gx_methods = {
                doc="Get the locations of the vertices of a specific triangle",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('index', type=Type.INT32_T,
                              doc="Triangle index [0...N-1]"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x0', type=Type.DOUBLE, is_ref=True,
                              doc="X0"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y0', type=Type.DOUBLE, is_ref=True,
                              doc="Y0"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x1', type=Type.DOUBLE, is_ref=True,
                              doc="X1"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y1', type=Type.DOUBLE, is_ref=True,
                              doc="Y1"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x2', type=Type.DOUBLE, is_ref=True,
                              doc="X2"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y2', type=Type.DOUBLE, is_ref=True,
                              doc="Y2")
                ]),
 
@@ -205,9 +205,9 @@ gx_methods = {
                doc="Get line segments defining Voronoi cells.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` of GS_D2LINE type (create with type -32)")
                ]),
 
@@ -217,7 +217,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Returns :def_val:`GS_TRUE` if Z values are defined in the :class:`TIN`",
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object")
                ]),
 
@@ -246,13 +246,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The index of the triangle containing X, Y.",
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('t', type=Type.INT32_T,
                              doc="Seed triangle (can be iDummy or <0)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Target X location"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Target Y location")
                ]),
 
@@ -262,7 +262,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of nodes in the :class:`TIN`",
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object")
                ]),
 
@@ -284,13 +284,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc=":class:`VV` X locations to interpolate (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc=":class:`VV` Y locations to interpolate (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc=":class:`VV` Interpolated Z values (:def_val:`GS_DOUBLE`)")
                ]),
 
@@ -300,7 +300,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of triangles in the :class:`TIN`",
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object")
                ]),
 
@@ -319,13 +319,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc=":class:`VV` X locations to interpolate (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc=":class:`VV` Y locations to interpolate (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc=":class:`VV` Interpolated Z values (:def_val:`GS_DOUBLE`)")
                ]),
 
@@ -344,13 +344,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc=":class:`VV` X locations to interpolate (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc=":class:`VV` Y locations to interpolate (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc=":class:`VV` Interpolated Z values (:def_val:`GS_DOUBLE`)")
                ]),
 
@@ -365,15 +365,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_min', type=Type.DOUBLE, is_ref=True,
                              doc="Min X  (returned)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_min', type=Type.DOUBLE, is_ref=True,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_max', type=Type.DOUBLE, is_ref=True,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_max', type=Type.DOUBLE, is_ref=True,
                              doc="Max Y")
                ]),
 
@@ -382,8 +382,8 @@ gx_methods = {
                doc="Serialize :class:`TIN`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN"),
-                   Parameter('p2', type="BF",
+                   Parameter('tin', type="TIN"),
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` in which to write :class:`TIN`")
                ]),
 
@@ -392,9 +392,9 @@ gx_methods = {
                doc="Set the projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TIN",
+                   Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to place in the :class:`TIN`")
                ])
     ]

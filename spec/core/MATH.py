@@ -19,23 +19,23 @@ gx_methods = {
                doc="Cross product of two vectors.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X1 component"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y1 component"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('z1', type=Type.DOUBLE,
                              doc="Z1 component"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x2', type=Type.DOUBLE,
                              doc="X2 component"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y2', type=Type.DOUBLE,
                              doc="Y2 component"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('z2', type=Type.DOUBLE,
                              doc="Z2 component"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x3', type=Type.DOUBLE, is_ref=True,
                              doc="X3 component (output)"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y3', type=Type.DOUBLE, is_ref=True,
                              doc="Y3 component (output)"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z3', type=Type.DOUBLE, is_ref=True,
                              doc="Z3 component (output)")
                ]),
 
@@ -46,7 +46,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Integer",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Integer")
                ]),
 
@@ -61,9 +61,9 @@ gx_methods = {
                """,
                return_type=Type.INT32_T,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('pi_val1', type=Type.INT32_T,
                              doc="A"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('pi_val2', type=Type.INT32_T,
                              doc="B")
                ]),
 
@@ -74,9 +74,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Int",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('a', type=Type.INT32_T,
                              doc="A"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('b', type=Type.INT32_T,
                              doc="B (must not be zero)")
                ]),
 
@@ -91,9 +91,9 @@ gx_methods = {
                """,
                return_type=Type.INT32_T,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('pi_val1', type=Type.INT32_T,
                              doc="A"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('pi_val2', type=Type.INT32_T,
                              doc="B")
                ]),
 
@@ -108,7 +108,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Integer",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Round")
                ]),
 
@@ -123,9 +123,9 @@ gx_methods = {
                """,
                return_type=Type.INT32_T,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('pi_val1', type=Type.INT32_T,
                              doc="A"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('pi_val2', type=Type.INT32_T,
                              doc="B")
                ]),
 
@@ -148,11 +148,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Min value (changed)"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Max value (changed)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('fine', type=Type.INT32_T,
                              doc="Fine flag")
                ]),
 
@@ -161,13 +161,13 @@ gx_methods = {
                doc="Compute a nicer scale for a given min and max.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Min value (changed)"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Max value (changed)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('inc', type=Type.DOUBLE, is_ref=True,
                              doc="Inc value (returned)"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('pow', type=Type.INT32_T, is_ref=True,
                              doc="Power value (returned)")
                ]),
 
@@ -180,11 +180,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X component (altered)"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y component (altered)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z component (altered)")
                ]),
 
@@ -195,7 +195,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -206,7 +206,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -217,7 +217,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -228,7 +228,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -239,9 +239,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X")
                ]),
 
@@ -252,7 +252,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -263,7 +263,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Angle in radians")
                ]),
 
@@ -273,17 +273,17 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Dot product",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X1 component"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y1 component"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('z1', type=Type.DOUBLE,
                              doc="Z1 component"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x2', type=Type.DOUBLE,
                              doc="X2 component"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y2', type=Type.DOUBLE,
                              doc="Y2 component"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('z2', type=Type.DOUBLE,
                              doc="Z2 component")
                ]),
 
@@ -294,7 +294,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="X")
                ]),
 
@@ -305,7 +305,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -316,9 +316,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y")
                ]),
 
@@ -335,9 +335,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The lambda transformed value",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z Value"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('lda', type=Type.DOUBLE,
                              doc="Lambda value")
                ]),
 
@@ -349,9 +349,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The original non-lambda transformed value",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Lambda transformed Z Value"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('lda', type=Type.DOUBLE,
                              doc="Lambda value")
                ]),
 
@@ -362,7 +362,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -373,7 +373,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -405,11 +405,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The Log Value.",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z Value"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="Log Mode (0 - Log, 1 - LogLinearLog)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Log Minimum (must be greater than 0)")
                ]),
 
@@ -430,9 +430,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('a', type=Type.DOUBLE,
                              doc="A"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('b', type=Type.DOUBLE,
                              doc="B (must not be zero)")
                ]),
 
@@ -446,25 +446,25 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X1 component (vector to rotate)"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y1 component"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('z1', type=Type.DOUBLE,
                              doc="Z1 component"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle to rotate, CW in radians"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x2', type=Type.DOUBLE,
                              doc="X2 component (axis of rotation)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('y2', type=Type.DOUBLE,
                              doc="Y2 component"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('z2', type=Type.DOUBLE,
                              doc="Z2 component"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x3', type=Type.DOUBLE, is_ref=True,
                              doc="X3 component  (rotated vector, can"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y3', type=Type.DOUBLE, is_ref=True,
                              doc="Y3 component   be the same as input)"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z3', type=Type.DOUBLE, is_ref=True,
                              doc="Z3 component")
                ]),
 
@@ -475,9 +475,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y")
                ]),
 
@@ -503,9 +503,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Real"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of significant digits to round to")
                ]),
 
@@ -516,9 +516,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="|Z2| if Z1>0, -|Z2| if Z1<0, 0 if Z1 = 0, and Z2 if Z1 = Dummy",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z_sign', type=Type.DOUBLE,
                              doc="Z1"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('z_val', type=Type.DOUBLE,
                              doc="Z2")
                ]),
 
@@ -529,7 +529,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Angle in radians")
                ]),
 
@@ -540,7 +540,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -551,7 +551,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Angle in radians")
                ]),
 
@@ -563,11 +563,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The original value",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Log value"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="Log Mode (0 - Log, 1 - LogLinearLog)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Log Minimum (must be greater than 0)")
                ]),
 

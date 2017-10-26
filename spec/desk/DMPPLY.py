@@ -15,7 +15,7 @@ gx_methods = {
                doc="Clear/remove all polygons from the :class:`DMPPLY`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY")
+                   Parameter('dmpply', type="DMPPLY")
                ]),
 
         Method('Copy_DMPPLY', module='geogxx', version='6.0.0',
@@ -23,9 +23,9 @@ gx_methods = {
                doc="Copy",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dest', type="DMPPLY",
                              doc="Destination"),
-                   Parameter('p2', type="DMPPLY",
+                   Parameter('source', type="DMPPLY",
                              doc="Source")
                ]),
 
@@ -40,7 +40,7 @@ gx_methods = {
                doc="Destroys the :class:`DMPPLY` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` Object")
                ]),
 
@@ -54,11 +54,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('az', type=Type.DOUBLE, is_ref=True,
                              doc="Azimuth (degrees) (o)")
                ]),
 
@@ -67,19 +67,19 @@ gx_methods = {
                doc="Get the center, width and height of a given polygon.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="Center point X (o)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Center point Y (o)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Center point Z (o)"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('w', type=Type.DOUBLE, is_ref=True,
                              doc="Width of polygon (in its plane) (o)"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('h', type=Type.DOUBLE, is_ref=True,
                              doc="Height of polygon (Z extent) (o)")
                ]),
 
@@ -93,11 +93,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc="Datamine polygon Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to N)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv', type="VV",
                              doc="INT :class:`VV` of join indices (1 to NJoins).")
                ]),
 
@@ -113,27 +113,27 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x1', type=Type.DOUBLE, is_ref=True,
                              doc="X component (o) (Horizontal azimuth vector)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y1', type=Type.DOUBLE, is_ref=True,
                              doc="Y component (o)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z1', type=Type.DOUBLE, is_ref=True,
                              doc="Z component (o)"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x2', type=Type.DOUBLE, is_ref=True,
                              doc="X component (o) (Down-dip, in the vertical plane)"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y2', type=Type.DOUBLE, is_ref=True,
                              doc="Y component (o)"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z2', type=Type.DOUBLE, is_ref=True,
                              doc="Z component (o)"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x3', type=Type.DOUBLE, is_ref=True,
                              doc="X component (o) (Normal vector)"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y3', type=Type.DOUBLE, is_ref=True,
                              doc="Y component (o)"),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z3', type=Type.DOUBLE, is_ref=True,
                              doc="Z component (o)")
                ]),
 
@@ -143,15 +143,15 @@ gx_methods = {
                notes="Get the number of points from the :class:`VV` length.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP) (i)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X Locations (o)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y Locations (o)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z Locations (o)")
                ]),
 
@@ -165,11 +165,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('az', type=Type.DOUBLE, is_ref=True,
                              doc="Swing (degrees) (o)")
                ]),
 
@@ -178,17 +178,17 @@ gx_methods = {
                doc="Get a vertex location from a :class:`DMPPLY` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('v', type=Type.INT32_T,
                              doc="Vertex number (1 to NV)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X Location (o)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Location (o)"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z Location (o)")
                ]),
 
@@ -198,7 +198,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of joining lines",
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object")
                ]),
 
@@ -212,7 +212,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of polygons",
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object")
                ]),
 
@@ -226,9 +226,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of vertices in a polygon",
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)")
                ]),
 
@@ -237,9 +237,9 @@ gx_methods = {
                doc="Loads a Datamine polygon file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file to load")
                ]),
 
@@ -248,17 +248,17 @@ gx_methods = {
                doc="Moves a vertex and any associated lines.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('v', type=Type.INT32_T,
                              doc="Vertex number (1 to NV)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="New location X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="New location Y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="New location Z")
                ]),
 
@@ -275,25 +275,25 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('xp', type=Type.DOUBLE,
                              doc="X location of plane origin in 3D"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('yp', type=Type.DOUBLE,
                              doc="Y location of plane origin in 3D"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('zp', type=Type.DOUBLE,
                              doc="Z location of plane origin in 3D"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('az', type=Type.DOUBLE,
                              doc="Azimuth of the plane in degrees"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('swing', type=Type.DOUBLE,
                              doc="Swing of the plane in degrees"),
-                   Parameter('p8', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (horizontal along-section locations on vertical plane  (o)"),
-                   Parameter('p9', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y (vertical locations on vertical plane  (o)"),
-                   Parameter('p10', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (horizontal distances perpendicular to the plane  (o)")
                ]),
 
@@ -308,27 +308,27 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to lNP) (i)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('xp', type=Type.DOUBLE,
                              doc="X location of plane origin in 3D (i)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('yp', type=Type.DOUBLE,
                              doc="Y location of plane origin in 3D (i)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('zp', type=Type.DOUBLE,
                              doc="Z location of plane origin in 3D (i)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('az', type=Type.DOUBLE,
                              doc="Azimuth of the plane in degrees (i)"),
-                   Parameter('p7', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations on vertical plane  (i)"),
-                   Parameter('p8', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y (actually Z) locations on vertical plane  (i)"),
-                   Parameter('p9', type="VV",
+                   Parameter('v_vx3', type="VV",
                              doc="X Locations of polygon (o)"),
-                   Parameter('p10', type="VV",
+                   Parameter('v_vy3', type="VV",
                              doc="Y Locations of polygon (o)"),
-                   Parameter('p11', type="VV",
+                   Parameter('v_vz3', type="VV",
                              doc="Z Locations of polygon (o)")
                ]),
 
@@ -337,9 +337,9 @@ gx_methods = {
                doc="Save to a Datamine polygon file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file to save to")
                ]),
 
@@ -349,15 +349,15 @@ gx_methods = {
                notes="Get the number of points from the :class:`VV` length.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DMPPLY",
+                   Parameter('dmpply', type="DMPPLY",
                              doc=":class:`DMPPLY` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP) (i)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X Locations (i)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y Locations (i)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z Locations (i)")
                ])
     ]

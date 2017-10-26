@@ -24,7 +24,7 @@ gx_methods = {
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database input")
                ]),
 
@@ -37,7 +37,7 @@ gx_methods = {
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database input")
                ]),
 
@@ -50,7 +50,7 @@ gx_methods = {
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database input")
                ]),
 
@@ -59,7 +59,7 @@ gx_methods = {
                doc="Destroy :class:`DBWRITE` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle")
                ]),
 
@@ -69,9 +69,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel index. Use for getting the correct :class:`VV` or :class:`VA` object.",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle (does not need to be locked, but can be.)")
                ])
     ],
@@ -83,7 +83,7 @@ gx_methods = {
                return_type="DB",
                return_doc=":class:`DB` handle",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle")
                ]),
 
@@ -97,9 +97,9 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Index of channel to access.")
                ]),
 
@@ -114,9 +114,9 @@ gx_methods = {
                return_type="VA",
                return_doc=":class:`VA` handle",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Index of channel to access.")
                ]),
 
@@ -130,7 +130,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle")
                ]),
 
@@ -144,7 +144,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle")
                ]),
 
@@ -159,7 +159,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle")
                ]),
 
@@ -174,9 +174,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of columns (array size) for a channel",
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Index of channel to access.")
                ])
     ],
@@ -188,9 +188,9 @@ gx_methods = {
                notes="First, set up the data for each channel by copying values into the individual channel VVs and VAs.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line")
                ]),
 
@@ -200,7 +200,7 @@ gx_methods = {
                notes="",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle")
                ]),
 
@@ -210,9 +210,9 @@ gx_methods = {
                notes='Designed to import the "Massive.xyz" file, which has data in the format "X Y Z Data".',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DBWRITE",
+                   Parameter('dbwrite', type="DBWRITE",
                              doc=":class:`DBWRITE` handle"),
-                   Parameter('p2', type="RA",
+                   Parameter('ra', type="RA",
                              doc=":class:`RA` handle to text file to import.")
                ])
     ]

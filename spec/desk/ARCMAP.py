@@ -48,7 +48,7 @@ gx_methods = {
                doc="Changes the custom page size of the ArcGIS Map document.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X Size (mm)"),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Y Size (mm)")
@@ -59,7 +59,7 @@ gx_methods = {
                doc="Display a file in 3D view",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -68,13 +68,13 @@ gx_methods = {
                doc="Exports the shapes from a feature layer of the ArcMap document to a 3D File.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('mxd_file', type=Type.STRING,
                              doc=":class:`MXD` filename"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dataframe_name', type=Type.STRING,
                              doc="Dataframe name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('layer_name', type=Type.STRING,
                              doc="Layer name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('output_file', type=Type.STRING,
                              doc="Output file name")
                ]),
 
@@ -83,7 +83,7 @@ gx_methods = {
                doc="Exports the shapes from the currently selected feature layer (if any) in ArcMap to a 3D file (only on oriented frames i.e. sections).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('output_file', type=Type.STRING,
                              doc="Output file name")
                ]),
 
@@ -92,13 +92,13 @@ gx_methods = {
                doc="Get some info on the current :class:`MXD` in ArcMap and selected layer (if any)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('mxd', type=Type.STRING, is_ref=True, size_of_param='strings_length',
                              doc=":class:`MXD` filename"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('layer', type=Type.STRING, is_ref=True, size_of_param='strings_length',
                              doc="Selected Layer name (If a layer is selected)"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('map', type=Type.STRING, is_ref=True, size_of_param='strings_length',
                              doc="Dataframe name containing selected layer (If a layer is selected)"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('strings_length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of strings")
                ]),
 
@@ -107,13 +107,13 @@ gx_methods = {
                doc="Get the name info on the specified selected layer",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('layer_number', type=Type.INT32_T,
                              doc="Selected layer number"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('layer', type=Type.STRING, is_ref=True, size_of_param='strings_length',
                              doc="Selected Layer name"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('map', type=Type.STRING, is_ref=True, size_of_param='strings_length',
                              doc="Dataframe name containing selected layer"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('strings_length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of strings")
                ]),
 
@@ -146,13 +146,13 @@ gx_methods = {
                -1 - Canceled
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('extra_csv', type=Type.STRING,
                              doc="Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('layer_tag', type=Type.STRING,
                              doc="Optional frame/layer tag (suffix)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc="Combination of :def:`ARCMAP_LOAD_FLAGS`")
                ]),
 
@@ -176,15 +176,15 @@ gx_methods = {
                -1 - Canceled
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('extra_csv', type=Type.STRING,
                              doc="Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('layer_tag', type=Type.STRING,
                              doc="Optional frame/layer tag (suffix)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc="Combination of :def:`ARCMAP_LOAD_FLAGS`")
                ]),
 
@@ -194,9 +194,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0- OK, 1 - Error, -1 - Cancel",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('shp', type=Type.STRING,
                              doc="Shape file to load"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('delete_existing', type=Type.INT32_T,
                              doc="Delete existing layers?")
                ]),
 
@@ -206,9 +206,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0- OK, 1 - Error, -1 - Cancel",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('shp', type=Type.STRING,
                              doc="List of shape files to load"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('num_shp', type=Type.INT32_T,
                              doc="Number of shape files")
                ]),
 
@@ -217,7 +217,7 @@ gx_methods = {
                doc="Load a LYR file to the current data frame",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -236,17 +236,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('extra_csv', type=Type.STRING,
                              doc="Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('layer_tag', type=Type.STRING,
                              doc="Optional frame/layer tag (suffix)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('fit', type=Type.INT32_T,
                              doc="Fit to map size; one of :def:`GEO_BOOL`"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('activate', type=Type.INT32_T,
                              doc="Activate view (3D); one of :def:`GEO_BOOL`"),
                    Parameter('p7', type=Type.INT32_T,
                              doc="Layer name tag is prefix; one of :def:`GEO_BOOL`")
@@ -257,13 +257,13 @@ gx_methods = {
                doc="Load a Geosoft Map as a layer into the current data frame",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('layer', type=Type.STRING,
                              doc="Layer Name"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('all', type=Type.INT32_T,
                              doc="Pass TRUE to also render other views in map (Use second parameter view for location)")
                ]),
 
@@ -276,7 +276,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -290,11 +290,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('layer_prefix', type=Type.STRING,
                              doc="Layer Name Prefix: An underscore is added automatically"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('layer_suffix', type=Type.STRING,
                              doc="Layer Name Suffix  An underscore is added automatically")
                ]),
 
@@ -311,13 +311,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('shp', type=Type.STRING,
                              doc=":class:`SHP` File Name"),
-                   Parameter('p4', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to fill with shape files created")
                ]),
 
@@ -326,7 +326,7 @@ gx_methods = {
                doc="Query the page size in mm of the entire map page.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X Size (mm)"),
                    Parameter('p2', type=Type.DOUBLE, is_ref=True,
                              doc="Y Size (mm)")
@@ -337,11 +337,11 @@ gx_methods = {
                doc="Shows a layer in ArcMap in a 3D view in an :class:`MXD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('mxd_file', type=Type.STRING,
                              doc=":class:`MXD` filename"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dataframe_name', type=Type.STRING,
                              doc="Dataframe name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('layer_name', type=Type.STRING,
                              doc="Layer name")
                ]),
 
@@ -355,9 +355,9 @@ gx_methods = {
                doc="Fills an :class:`IPJ` with a predefined ESRI GCS",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to fill"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('esri_gcs_code', type=Type.INT32_T,
                              doc="Predefined ESRI GCS Code")
                ]),
 
@@ -366,9 +366,9 @@ gx_methods = {
                doc="Fills an :class:`IPJ` with a predefined ESRI PCS",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to fill"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('esri_pcs_code', type=Type.INT32_T,
                              doc="Predefined ESRI PCS Code")
                ])
     ]

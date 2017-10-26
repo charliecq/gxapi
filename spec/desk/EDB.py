@@ -177,9 +177,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('formula', type=Type.STRING,
                              doc='Formula ("<NameOfCurrentChannel>=<SomeExpression>;")')
                ]),
 
@@ -214,7 +214,7 @@ gx_methods = {
                notes="Deletes an empty line 0 from the database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('Destroy_EDB', module='None', version='5.0.0',
@@ -223,7 +223,7 @@ gx_methods = {
                notes="This does not unload the database; it simply deletes the gx resource handle",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('val', type="EDB",
                              doc=":class:`EDB` to destroy")
                ]),
 
@@ -239,9 +239,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('unload_flag', type=Type.INT32_T,
                              doc=":def:`EDB_REMOVE`")
                ]),
 
@@ -254,7 +254,7 @@ gx_methods = {
                :def_val:`NULLSYMB` if the mark is not in a channel.
                """,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('GetCurLineSymb_EDB', module='None', version='5.0.0',
@@ -266,7 +266,7 @@ gx_methods = {
                :def_val:`NULLSYMB` if no line displayed.
                """,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('GetDisplFidRange_EDB', module='None', version='5.0.0',
@@ -274,11 +274,11 @@ gx_methods = {
                doc="Return the displayed fiducial start index & number of cells",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('start', type=Type.INT32_T, is_ref=True,
                              doc="Fiducial start"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('num', type=Type.INT32_T, is_ref=True,
                              doc="Number of fiducials")
                ]),
 
@@ -287,13 +287,13 @@ gx_methods = {
                doc="Returns the coordinates of the currently selected point in the database (first value if range selected)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate (dummy if no selection or if no X channel defined)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y coordinate (dummy if no selection or if no Y channel defined)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z coordinate (dummy if no selection or if no Z channel defined)")
                ]),
 
@@ -302,13 +302,13 @@ gx_methods = {
                doc="Returns currently displayed fid range",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('start', type=Type.DOUBLE, is_ref=True,
                              doc="Fiducial start"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('incr', type=Type.DOUBLE, is_ref=True,
                              doc="Fiducial increment"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('num', type=Type.INT32_T, is_ref=True,
                              doc="Number of fiducials")
                ]),
 
@@ -321,7 +321,7 @@ gx_methods = {
                :def_val:`NULLSYMB` if no line displayed.
                """,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('GetPrevLineSymb_EDB', module='None', version='5.0.0',
@@ -333,7 +333,7 @@ gx_methods = {
                :def_val:`NULLSYMB` if no line displayed.
                """,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('GetProfileRangeX_EDB', module='None', version='5.0.0',
@@ -341,12 +341,12 @@ gx_methods = {
                doc="Get profile X range and X channel",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('edb', type="EDB"),
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum x"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum x"),
-                   Parameter('p4', type="DB_SYMB", is_ref=True,
+                   Parameter('ph_chan_x', type="DB_SYMB", is_ref=True,
                              doc="X axis channel, :def_val:`NULLSYMB` if none")
                ]),
 
@@ -355,16 +355,16 @@ gx_methods = {
                doc="Get profile Y range and display option",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`iWindowProfiles_EDB` which returns number of profiles in a window)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum y"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum y"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('scl', type=Type.INT32_T, is_ref=True,
                              doc=":def:`EDB_PROFILE_SCALE`")
                ]),
 
@@ -373,10 +373,10 @@ gx_methods = {
                doc="Get profile split for 3 windows.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('edb', type="EDB"),
+                   Parameter('d1', type=Type.DOUBLE, is_ref=True,
                              doc="Split d1 (profile window 0 height / entire profile window height)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('d2', type=Type.DOUBLE, is_ref=True,
                              doc="Split d2 (profile window 1 height / entire profile window height)")
                ]),
 
@@ -385,14 +385,14 @@ gx_methods = {
                doc="Get profile split for 5 windows.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('edb', type="EDB"),
+                   Parameter('d1', type=Type.DOUBLE, is_ref=True,
                              doc="Split d1 (profile window 0 height / entire profile window height)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('d2', type=Type.DOUBLE, is_ref=True,
                              doc="Split d2 (profile window 1 height / entire profile window height)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('d3', type=Type.DOUBLE, is_ref=True,
                              doc="Split d3 (profile window 2 height / entire profile window height)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('d4', type=Type.DOUBLE, is_ref=True,
                              doc="Split d4 (profile window 3 height / entire profile window height)")
                ]),
 
@@ -411,8 +411,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type="VV",
+                   Parameter('edb', type="EDB"),
+                   Parameter('vv', type="VV",
                              doc="Split :class:`VV` (REAL) (profile window heights / entire profile window height)")
                ]),
 
@@ -421,10 +421,10 @@ gx_methods = {
                doc="Get profile grid vertical line info.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('edb', type="EDB"),
+                   Parameter('grid', type=Type.INT32_T, is_ref=True,
                              doc="Vertical grid lines?"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('interval', type=Type.DOUBLE, is_ref=True,
                              doc="Vertical grid interval")
                ]),
 
@@ -433,12 +433,12 @@ gx_methods = {
                doc="Get profile window size",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('x', type=Type.INT32_T, is_ref=True,
                              doc="Window x size in pixels"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('y', type=Type.INT32_T, is_ref=True,
                              doc="Window y size in pixels")
                ]),
 
@@ -447,9 +447,9 @@ gx_methods = {
                doc="Move the channel marker to a specific column.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Channel column number, 0 is first -1 for first column without data")
                ]),
 
@@ -458,9 +458,9 @@ gx_methods = {
                doc="Goto an element in the current line.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('elem', type=Type.INT32_T,
                              doc="Element number")
                ]),
 
@@ -469,9 +469,9 @@ gx_methods = {
                doc="Goto to a line symbol in the editor.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('const', type="DB_SYMB",
                              doc="Line symbol to goto to")
                ]),
 
@@ -480,15 +480,15 @@ gx_methods = {
                doc="Create histogram stats.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` handle to update"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Histogram minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="Histogram increment"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('count', type=Type.INT32_T,
                              doc="Number of increments")
                ]),
 
@@ -508,9 +508,9 @@ gx_methods = {
                Terminates GX if there was an error.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('const', type="VV",
                              doc=":class:`VV` (INT) in which to place the list.")
                ]),
 
@@ -520,7 +520,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - number of displayed channels",
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('iDispChanList_EDB', module='None', version='5.0.0',
@@ -539,9 +539,9 @@ gx_methods = {
                Terminates GX if there was an error.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('const', type="VV",
                              doc=":class:`VV` (INT) in which to place the list.")
                ]),
 
@@ -562,9 +562,9 @@ gx_methods = {
                Terminates GX if there was an error.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('const', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -588,11 +588,11 @@ gx_methods = {
                Terminates GX if there was an error.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('const', type="LST",
                              doc=":class:`LST` object"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('db_symb*', type=Type.STRING,
                              doc='Class name ("" for all)')
                ]),
 
@@ -605,9 +605,9 @@ gx_methods = {
                :def_val:`iDUMMY` of channel not loaded
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel")
                ]),
 
@@ -623,13 +623,13 @@ gx_methods = {
                -1 - Not available
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('const', type=Type.DOUBLE, is_ref=True,
                              doc="X - Modified with true point"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('db_symb*', type=Type.DOUBLE, is_ref=True,
                              doc="Y - Modified with true point"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ph_symb', type=Type.DOUBLE, is_ref=True,
                              doc="Z - Modified with true point"),
                    Parameter('p5', type="IPJ",
                              doc="Projection of X,Y,Z")
@@ -641,11 +641,11 @@ gx_methods = {
                notes='Returns "" if mark not currently in a channel.',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Where to put the name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Length of the Buffer")
                ]),
 
@@ -657,11 +657,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String returned here"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size")
                ]),
 
@@ -670,11 +670,11 @@ gx_methods = {
                doc="Get current line name.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Where to put the name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Length of the Buffer")
                ]),
 
@@ -687,13 +687,13 @@ gx_methods = {
                1 - if data is not currently marked.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('start', type=Type.DOUBLE, is_ref=True,
                              doc="Start fiducial"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('end', type=Type.DOUBLE, is_ref=True,
                              doc="End fiducial"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('inc', type=Type.DOUBLE, is_ref=True,
                              doc="Fiducial increment")
                ]),
 
@@ -738,9 +738,9 @@ gx_methods = {
                The :class:`LST` is cleared first.
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to load"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('path', type=Type.INT32_T,
                              doc=":def:`EDB_PATH`")
                ]),
 
@@ -761,11 +761,11 @@ gx_methods = {
                1 if failed, or if entire database is marked.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place the data."),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel symbol to retrieve.")
                ]),
 
@@ -786,11 +786,11 @@ gx_methods = {
                1 if failed, or if entire database is marked.
                """,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="VA",
+                   Parameter('vv', type="VA",
                              doc=":class:`VA` in which to place the data."),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel symbol to retrieve.")
                ]),
 
@@ -799,10 +799,10 @@ gx_methods = {
                doc="Get the name of the database object of this :class:`EDB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('edb', type="EDB"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the String")
                ]),
 
@@ -812,12 +812,12 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Data Value (See notes)",
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`EDB_PROF`")
                ]),
 
@@ -827,7 +827,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`EDB_WINDOW_STATE`",
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('iHaveCurrent_EDB', module='None', version='5.0.0',
@@ -842,7 +842,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` object")
                ]),
 
@@ -852,7 +852,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if database is loaded, 0 otherwise.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Database name")
                ]),
 
@@ -869,8 +869,8 @@ gx_methods = {
                FALSE if window is closed
                """,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number: 0 is the top window 1 is the middle window 2 is the bottom window")
                ]),
 
@@ -880,7 +880,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('GetWindowPosition_EDB', module='None', version='9.0.0',
@@ -888,18 +888,18 @@ gx_methods = {
                doc="Get the map window's position and dock state",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('edb', type="EDB"),
+                   Parameter('left', type=Type.INT32_T, is_ref=True,
                              doc="Window left position"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('top', type=Type.INT32_T, is_ref=True,
                              doc="Window top position"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('right', type=Type.INT32_T, is_ref=True,
                              doc="Window right position"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('bottom', type=Type.INT32_T, is_ref=True,
                              doc="Window bottom position"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('state', type=Type.INT32_T, is_ref=True,
                              doc="Window state :def:`EDB_WINDOW_STATE`"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('is_floating', type=Type.INT32_T, is_ref=True,
                              doc="Docked or floating :def:`EDB_WINDOW_POSITION`")
                ]),
 
@@ -908,18 +908,18 @@ gx_methods = {
                doc="Get the map window's position and dock state",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('left', type=Type.INT32_T,
                              doc="Window left position"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('top', type=Type.INT32_T,
                              doc="Window top position"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc="Window right position"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bottom', type=Type.INT32_T,
                              doc="Window bottom position"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('state', type=Type.INT32_T,
                              doc="Window state :def:`EDB_WINDOW_STATE`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('is_floating', type=Type.INT32_T,
                              doc="Docked or floating :def:`EDB_WINDOW_POSITION`")
                ]),
 
@@ -930,8 +930,8 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Profile ID if loaded, -1 for error",
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('state', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('p3', type=Type.STRING,
                              doc="Name of the channel")
@@ -943,8 +943,8 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`EDB_YAXIS_DIRECTION`",
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)")
                ]),
 
@@ -954,8 +954,8 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of profiles in a window",
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)")
                ]),
 
@@ -965,9 +965,9 @@ gx_methods = {
                see_also=":func:`LaunchHistogram_CHIMERA` in chimera.gxh",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="First chan name")
                ]),
 
@@ -986,7 +986,7 @@ gx_methods = {
                see_also=":func:`LaunchScatter_CHIMERA` in chimera.gxh",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object")
                ]),
 
@@ -1008,7 +1008,7 @@ gx_methods = {
                database in the list.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="List of databases (';' or '|' delimited) to load.")
                ]),
 
@@ -1025,7 +1025,7 @@ gx_methods = {
                database in the list if multiple files were provided.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="List of documents (';' or '|' delimited) to load.")
                ]),
 
@@ -1034,7 +1034,7 @@ gx_methods = {
                doc="Load all channels into current database",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('LoadChan_EDB', module='None', version='5.0.0',
@@ -1046,9 +1046,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel name")
                ]),
 
@@ -1063,7 +1063,7 @@ gx_methods = {
                return_type="EDB",
                return_doc="Handle to the current edited database.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Database to load.")
                ]),
 
@@ -1079,11 +1079,11 @@ gx_methods = {
                return_type="EDB",
                return_doc="Handle to current edited database.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of database to load"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('login', type=Type.STRING,
                              doc="Login Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc="Password")
                ]),
 
@@ -1098,7 +1098,7 @@ gx_methods = {
                return_type="EDB",
                return_doc="New :class:`EDB` handle.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Source :class:`DB` name"),
                    Parameter('p2', type="EDB",
                              doc=":class:`EDB` to use as the source view")
@@ -1110,7 +1110,7 @@ gx_methods = {
                return_type="DB",
                return_doc="Handle to database associated with edited database.",
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('MakeCurrent_EDB', module='None', version='5.0.0',
@@ -1118,7 +1118,7 @@ gx_methods = {
                doc="Makes this :class:`EDB` object the current active object to the user.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` to make active")
                ]),
 
@@ -1127,10 +1127,10 @@ gx_methods = {
                doc="Remove a profile from the profile window",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)")
                ]),
 
@@ -1147,7 +1147,7 @@ gx_methods = {
                DUMMY - No Selected Fiducial
                """,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('rGetProfileParm_EDB', module='None', version='5.0.0', cpp_post="_double",
@@ -1156,12 +1156,12 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real profile parameter",
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`EDB_PROF`")
                ]),
 
@@ -1174,7 +1174,7 @@ gx_methods = {
                (spreadsheet window height + entire profile window height))
                """,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('RunChannelMaker_EDB', module='None', version='5.0.0',
@@ -1186,8 +1186,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('edb', type="EDB"),
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel name")
                ]),
 
@@ -1197,7 +1197,7 @@ gx_methods = {
                notes="Skips channels without makers.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('SetCurLine_EDB', module='None', version='5.0.0',
@@ -1205,9 +1205,9 @@ gx_methods = {
                doc="Set the current line name.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Line name")
                ]),
 
@@ -1216,9 +1216,9 @@ gx_methods = {
                doc="Set Line but do not send a message.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="Line name")
                ]),
 
@@ -1227,11 +1227,11 @@ gx_methods = {
                doc="Set the current mark.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start fiducial"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('end', type=Type.DOUBLE,
                              doc="End fiducial")
                ]),
 
@@ -1240,14 +1240,14 @@ gx_methods = {
                doc="Set integer profile parameter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`EDB_PROF`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Setting")
                ]),
 
@@ -1256,14 +1256,14 @@ gx_methods = {
                doc="Set real profile parameter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('parm', type=Type.INT32_T,
                              doc=":def:`EDB_PROF`"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Setting")
                ]),
 
@@ -1272,12 +1272,12 @@ gx_methods = {
                doc="Set profile X range and X channel",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('edb', type="EDB"),
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Minimum x, :def_val:`rDUMMY` for data minimum"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Maximum x, :def_val:`rDUMMY` for data maximum"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('const', type="DB_SYMB",
                              doc="X axis channel, :def_val:`NULLSYMB` to use fids")
                ]),
 
@@ -1290,16 +1290,16 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('min_x', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('max_x', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('const', type=Type.DOUBLE,
                              doc="Minimum y"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('db_symb*', type=Type.DOUBLE,
                              doc="Maximum y"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('ph_chan_x', type=Type.INT32_T,
                              doc=":def:`EDB_PROFILE_SCALE`")
                ]),
 
@@ -1308,10 +1308,10 @@ gx_methods = {
                doc="Set profile split for 3 windows.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('edb', type="EDB"),
+                   Parameter('d1', type=Type.DOUBLE,
                              doc="Split d1 (profile window 0 height / entire profile window height)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('d2', type=Type.DOUBLE,
                              doc="Split d2 (profile window 1 height / entire profile window height)")
                ]),
 
@@ -1320,14 +1320,14 @@ gx_methods = {
                doc="Set profile split for 5 windows.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('edb', type="EDB"),
+                   Parameter('d1', type=Type.DOUBLE,
                              doc="Split d1 (profile window 0 height / entire profile window height)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('d2', type=Type.DOUBLE,
                              doc="Split d2 (profile window 1 height / entire profile window height)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('d3', type=Type.DOUBLE,
                              doc="Split d3 (profile window 2 height / entire profile window height)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('d4', type=Type.DOUBLE,
                              doc="Split d4 (profile window 3 height / entire profile window height)")
                ]),
 
@@ -1344,8 +1344,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type="VV",
+                   Parameter('edb', type="EDB"),
+                   Parameter('vv', type="VV",
                              doc="Split :class:`VV` (REAL) (relative sizes of each profile window)")
                ]),
 
@@ -1358,8 +1358,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('edb', type="EDB"),
+                   Parameter('d', type=Type.DOUBLE,
                              doc="Split d (0.0 <= d <= 1.0).")
                ]),
 
@@ -1368,8 +1368,8 @@ gx_methods = {
                doc="Changes the state of the database window",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('state', type=Type.INT32_T,
                              doc=":def:`EDB_WINDOW_STATE`")
                ]),
 
@@ -1379,10 +1379,10 @@ gx_methods = {
                notes="If the symbol is not loaded, it will be loaded.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('const', type="DB_SYMB",
                              doc="Channel symbol")
                ]),
 
@@ -1392,9 +1392,9 @@ gx_methods = {
                notes="Use :func:`Histogram_EDB` to get median or histogram.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` handle to update")
                ]),
 
@@ -1407,7 +1407,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of database to unload")
                ]),
 
@@ -1421,7 +1421,7 @@ gx_methods = {
                doc="Unload all channels into current database",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ]),
 
         Method('UnLoadChan_EDB', module='None', version='5.0.0',
@@ -1433,9 +1433,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel name")
                ]),
 
@@ -1445,7 +1445,7 @@ gx_methods = {
                notes="If the database is not loaded, nothing happens.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of database to unload")
                ]),
 
@@ -1461,9 +1461,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of database to unload"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('prompt', type=Type.INT32_T,
                              doc=":def:`EDB_UNLOAD`")
                ]),
 
@@ -1472,7 +1472,7 @@ gx_methods = {
                doc="This method unlocks the Edited Database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB")
+                   Parameter('edb', type="EDB")
                ])
     ],
     'External Window': [
@@ -1482,9 +1482,9 @@ gx_methods = {
                doc="Version of :func:`Load_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('edb', type=Type.STRING,
                              doc="Database filename"),
-                   Parameter('p2', type="HWND", is_val=True,
+                   Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ]),
 
@@ -1493,9 +1493,9 @@ gx_methods = {
                doc="Version of :func:`LoadNew_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('edb', type=Type.STRING,
                              doc="Database filename"),
-                   Parameter('p2', type="HWND", is_val=True,
+                   Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ]),
 
@@ -1504,13 +1504,13 @@ gx_methods = {
                doc="Version of :func:`LoadPass_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('edb', type=Type.STRING,
                              doc="Database filename"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('window', type=Type.STRING,
                              doc="Login name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('const', type=Type.STRING,
                              doc="Password"),
-                   Parameter('p4', type="HWND", is_val=True,
+                   Parameter('db_symb*', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ]),
 
@@ -1519,11 +1519,11 @@ gx_methods = {
                doc="Version of :func:`LoadWithView_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('edb', type=Type.STRING,
                              doc="Database filename"),
-                   Parameter('p2', type="EDB",
+                   Parameter('window', type="EDB",
                              doc=":class:`EDB` handle to use as the source view"),
-                   Parameter('p3', type="HWND", is_val=True,
+                   Parameter('const', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ])
     ],
@@ -1601,7 +1601,7 @@ gx_methods = {
                return_type="EDB",
                return_doc="Handle to current edited database",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc='Single databases to "not" load')
                ]),
 
@@ -1620,11 +1620,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('window', type="DB_SYMB",
                              doc="Line or group symbol"),
-                   Parameter('p3', type="BF",
+                   Parameter('const', type="BF",
                              doc=":class:`BF` (returned)")
                ]),
 
@@ -1643,11 +1643,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('window', type="DB_SYMB",
                              doc="Line or group symbol"),
-                   Parameter('p3', type="BF",
+                   Parameter('const', type="BF",
                              doc=":class:`BF` (input)")
                ]),
 
@@ -1666,14 +1666,14 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('edb', type="EDB"),
+                   Parameter('window', type=Type.INT32_T,
                              doc="X Min"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('const', type=Type.INT32_T,
                              doc="Y Min"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('db_symb*', type=Type.INT32_T,
                              doc="X Max"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('ph_chan', type=Type.INT32_T,
                              doc="Y Max")
                ]),
 
@@ -1693,14 +1693,14 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EDB"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('edb', type="EDB"),
+                   Parameter('min_x', type=Type.INT32_T, is_ref=True,
                              doc="X Min returned"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('min_y', type=Type.INT32_T, is_ref=True,
                              doc="Y Min returned"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_x', type=Type.INT32_T, is_ref=True,
                              doc="X Max returned"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_y', type=Type.INT32_T, is_ref=True,
                              doc="Y Max returned")
                ])
     ]

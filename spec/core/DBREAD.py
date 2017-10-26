@@ -24,9 +24,9 @@ gx_methods = {
                return_type="DBREAD",
                return_doc=":class:`DBREAD` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database input"),
-                   Parameter('p2', type="LST",
+                   Parameter('line_lst', type="LST",
                              doc="List of lines to process NAME = line name, VALUE = line symbol")
                ]),
 
@@ -39,9 +39,9 @@ gx_methods = {
                return_type="DBREAD",
                return_doc=":class:`DBREAD` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database input"),
-                   Parameter('p2', type="LST",
+                   Parameter('line_lst', type="LST",
                              doc="List of lines to process NAME = line name, VALUE = line symbol")
                ]),
 
@@ -54,9 +54,9 @@ gx_methods = {
                return_type="DBREAD",
                return_doc=":class:`DBREAD` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database input"),
-                   Parameter('p2', type="LST",
+                   Parameter('line_lst', type="LST",
                              doc="List of lines to process NAME = line name, VALUE = line symbol")
                ]),
 
@@ -65,7 +65,7 @@ gx_methods = {
                doc="Destroy :class:`DBREAD` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle")
                ]),
 
@@ -75,9 +75,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel index. Use for getting the correct :class:`VV` or :class:`VA` object.",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle (does not need to be locked, but can be.)")
                ])
     ],
@@ -94,9 +94,9 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Index of channel to access.")
                ]),
 
@@ -111,9 +111,9 @@ gx_methods = {
                return_type="VA",
                return_doc=":class:`VA` handle",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Index of channel to access.")
                ]),
 
@@ -127,7 +127,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle")
                ]),
 
@@ -141,7 +141,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle")
                ]),
 
@@ -156,7 +156,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` handle",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle")
                ]),
 
@@ -171,9 +171,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of columns (array size) for a channel",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Index of channel to access.")
                ]),
 
@@ -188,7 +188,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of blocks to process in the selected lines.",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle")
                ])
     ],
@@ -204,13 +204,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Returns the current block index, or -1 if at end of file (no new data returned).",
                parameters = [
-                   Parameter('p1', type="DBREAD",
+                   Parameter('dbread', type="DBREAD",
                              doc=":class:`DBREAD` handle"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('line', type=Type.INT32_T, is_ref=True,
                              doc="(returned) The index into the input selected line list of the line whose data is contained in the current block"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('block', type=Type.INT32_T, is_ref=True,
                              doc="(returned) The block index (0 to NBlocks-1) for the current line of data."),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('n_blocks', type=Type.INT32_T, is_ref=True,
                              doc="(returned) The number of blocks that the current line is split into.")
                ])
     ]

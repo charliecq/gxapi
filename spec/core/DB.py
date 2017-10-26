@@ -275,9 +275,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` input"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create")
                ]),
 
@@ -290,11 +290,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` input"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('level', type=Type.INT32_T,
                              doc=":def:`DB_COMP`")
                ]),
 
@@ -308,11 +308,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="New Symbol Handle",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('dbi', type="DB",
                              doc="Database Input"),
-                   Parameter('p2', type="DB",
+                   Parameter('dbo', type="DB",
                              doc="Database output"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol Handle to duplicate")
                ]),
 
@@ -321,13 +321,13 @@ gx_methods = {
                doc="Adds a Maker to the database symbol based on current GX",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to create maker for"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Maker name, used in menu prompt"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('groups', type=Type.STRING,
                              doc='INI groups (terminate each with a ";")')
                ]),
 
@@ -340,17 +340,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ind', type=Type.INT32_T,
                              doc="Index"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="String"),
-                   Parameter('p6', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Length")
                ]),
 
@@ -388,13 +388,13 @@ gx_methods = {
                see_also=":class:`VV` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place the data")
                ]),
 
@@ -407,11 +407,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Symbol"),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to fill in")
                ]),
 
@@ -425,11 +425,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p3', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` to fill in")
                ]),
 
@@ -438,11 +438,11 @@ gx_methods = {
                doc="Get a :class:`REG` object from a symbol",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
-                   Parameter('p3', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` to copy data into")
                ]),
                 
@@ -470,15 +470,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned setting"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="String length")
                ]),
 
@@ -512,7 +512,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Maximum Number of Blobs in the Database",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object")
                ]),
 
@@ -522,7 +522,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Maximum Number of Channels in the Database",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object")
                ]),
 
@@ -535,15 +535,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value to format"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="String length")
                ]),
 
@@ -556,9 +556,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel type",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle")
                ]),
 
@@ -573,13 +573,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('class', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned class into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
+                   Parameter('len', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Size of string")
                ]),
 
@@ -593,9 +593,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of digits displayed to right of decimal",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle")
                ]),
 
@@ -612,9 +612,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel display format",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle")
                ]),
 
@@ -631,13 +631,13 @@ gx_methods = {
                For settings, terminates if error.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ind', type=Type.INT32_T,
                              doc="Index")
                ]),
 
@@ -652,13 +652,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned label into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of string")
                ]),
 
@@ -671,13 +671,13 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="String to place name into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
@@ -688,9 +688,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_CHAN_PROTECTION`",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle")
                ]),
 
@@ -709,9 +709,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel type",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle")
                ]),
 
@@ -725,13 +725,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('unit', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="String to place unit into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of string")
                ]),
 
@@ -745,9 +745,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel display width",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle")
                ]),
 
@@ -756,13 +756,13 @@ gx_methods = {
                doc="Gets a name from the database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('name', type=Type.INT32_T,
                              doc=":def:`DB_NAME`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('psz_name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name returned"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="String size")
                ]),
 
@@ -780,11 +780,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The setting, or :def_val:`iDUMMY` if not found or not convertable.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name")
                ]),
 
@@ -797,13 +797,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol handle"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="String to place name into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
@@ -819,9 +819,9 @@ gx_methods = {
                """,
                return_type=Type.INT32_T,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel")
                ]),
 
@@ -836,13 +836,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_COORDPAIR`",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel name"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('pair', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="String in which to place paired channel name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="String length")
                ]),
 
@@ -852,7 +852,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Maximum number of lines in the database",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object")
                ]),
 
@@ -862,7 +862,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Maximum number of Users",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object")
                ]),
 
@@ -871,15 +871,15 @@ gx_methods = {
                doc="Adds a Maker to the database symbol",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to create maker for"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('prog', type=Type.STRING,
                              doc="Name of program"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Maker name, used in menu prompt"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('groups', type=Type.STRING,
                              doc='INI groups (terminate each with a ";")')
                ]),
 
@@ -934,11 +934,11 @@ gx_methods = {
                doc="Read a blob from a database into a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Blob (:def_val:`DB_SYMB_BLOB`) to read into :class:`BF` from database"),
-                   Parameter('p3', type="BF",
+                   Parameter('bf', type="BF",
                              doc="File to read blob from")
                ]),
 
@@ -955,13 +955,13 @@ gx_methods = {
                For settings, terminates if error.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ind', type=Type.INT32_T,
                              doc="Index")
                ]),
 
@@ -979,11 +979,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The setting, or :def_val:`rDUMMY` if not found or not convertable.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name")
                ]),
 
@@ -998,9 +998,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('prot', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_PROTECTION`")
                ]),
 
@@ -1014,11 +1014,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class")
                ]),
 
@@ -1034,11 +1034,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dec', type=Type.INT32_T,
                              doc="Number of digits to display right of the decimal")
                ]),
 
@@ -1048,11 +1048,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('format', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_FORMAT`")
                ]),
 
@@ -1065,15 +1065,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ind', type=Type.INT32_T,
                              doc="Index"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('val', type=Type.INT32_T,
                              doc="Value")
                ]),
 
@@ -1087,11 +1087,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('label', type=Type.STRING,
                              doc="Label")
                ]),
 
@@ -1101,11 +1101,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="String to set channel name to")
                ]),
 
@@ -1122,11 +1122,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('prot', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_PROTECTION`")
                ]),
 
@@ -1139,15 +1139,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ind', type=Type.INT32_T,
                              doc="Index"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value")
                ]),
 
@@ -1160,15 +1160,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ind', type=Type.INT32_T,
                              doc="Index"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="String")
                ]),
 
@@ -1181,11 +1181,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('unit', type=Type.STRING,
                              doc="String to put channel unit")
                ]),
 
@@ -1198,11 +1198,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Display width")
                ]),
 
@@ -1211,13 +1211,13 @@ gx_methods = {
                doc="Set a :class:`REG` object into a symbol",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch1', type="DB_SYMB",
                              doc="X channel"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('ch2', type="DB_SYMB",
                              doc="Y channel"),
-                   Parameter('p4', type="IPJ")
+                   Parameter('ipj', type="IPJ")
                ]),
 
         Method('SetITR_DB', module='geoengine.core', version='5.0.0',
@@ -1229,11 +1229,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p3', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` to fill in")
                ]),
 
@@ -1242,11 +1242,11 @@ gx_methods = {
                doc="Set a :class:`REG` object into a symbol",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
-                   Parameter('p3', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` to set into Blob")
                ]),
 
@@ -1274,13 +1274,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('setting', type=Type.STRING,
                              doc="Setting")
                ]),
 
@@ -1289,11 +1289,11 @@ gx_methods = {
                doc="Write a blob from a file into a database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Blob (:def_val:`DB_SYMB_BLOB`) to write into database from file"),
-                   Parameter('p3', type="BF",
+                   Parameter('bf', type="BF",
                              doc="File to write blob into")
                ])
     ],
@@ -1304,7 +1304,7 @@ gx_methods = {
                doc="This method forces all changes to the database to be saved.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1316,7 +1316,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1328,21 +1328,21 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('lines', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('chans', type=Type.INT32_T,
                              doc="Max Channels in the Database (50)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('blobs', type=Type.INT32_T,
                              doc="Max Blobs in the Database    (Channels+Lines+20)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('users', type=Type.INT32_T,
                              doc="Max Users in the Database    (10)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('cache', type=Type.INT32_T,
                              doc="Number of Erase Caches       (100)"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('super', type=Type.STRING,
                              doc='Name of the Super User       "SUPER"'),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the Super User   ""')
                ]),
 
@@ -1355,25 +1355,25 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('lines', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('chans', type=Type.INT32_T,
                              doc="Max Channels in the Database (50)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('blobs', type=Type.INT32_T,
                              doc="Max Blobs in the Database    (Channels+Lines+20)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('users', type=Type.INT32_T,
                              doc="Max Users in the Database    (10)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('cache', type=Type.INT32_T,
                              doc="Number of Erase Caches       (100)"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('super', type=Type.STRING,
                              doc='Name of the Super User       "SUPER"'),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the Super User   ""'),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('page', type=Type.INT32_T,
                              doc="Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('level', type=Type.INT32_T,
                              doc=":def:`DB_COMP`")
                ]),
 
@@ -1386,23 +1386,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('lines', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('chans', type=Type.INT32_T,
                              doc="Max Channels in the Database (50)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('blobs', type=Type.INT32_T,
                              doc="Max Blobs in the Database    (Channels+Lines+20)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('users', type=Type.INT32_T,
                              doc="Max Users in the Database    (10)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('cache', type=Type.INT32_T,
                              doc="Number of Erase Caches       (100)"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('super', type=Type.STRING,
                              doc='Name of the Super User       "SUPER"'),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the Super User   ""'),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('page', type=Type.INT32_T,
                              doc="Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024")
                ]),
 
@@ -1419,7 +1419,7 @@ gx_methods = {
                see_also=":func:`DelLine0_EDB` - deletes an empty line 0 from the currently edited database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB")
+                   Parameter('db', type="DB")
                ]),
 
         Method('Destroy_DB', module='geoengine.core', version='5.0.0',
@@ -1439,7 +1439,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database to Destroy")
                ]),
 
@@ -1451,7 +1451,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1460,17 +1460,17 @@ gx_methods = {
                doc="Enlarges the database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('lines', type=Type.INT32_T,
                              doc="Max Lines in the Database    (200)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('chans', type=Type.INT32_T,
                              doc="Max Channels in the Database (50)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('blobs', type=Type.INT32_T,
                              doc="Max Blobs in the Database    (Channels+Lines+20)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('users', type=Type.INT32_T,
                              doc="Max Users in the Database    (10)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('cache', type=Type.INT32_T,
                              doc="Number of Erase Caches       (100)")
                ]),
 
@@ -1485,11 +1485,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Open"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1504,11 +1504,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Open"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1524,7 +1524,7 @@ gx_methods = {
                1 - Invalid Blocks in the Database
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1539,7 +1539,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if the database contains only empty lines.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1549,9 +1549,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if the database contains only empty lines.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Line symbol")
                ]),
 
@@ -1562,11 +1562,11 @@ gx_methods = {
                return_type="DB",
                return_doc=":class:`DB` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Open"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1581,11 +1581,11 @@ gx_methods = {
                return_type="DB",
                return_doc=":class:`DB` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Open"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pass', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1594,7 +1594,7 @@ gx_methods = {
                doc="Cleans the database by removing invalid blocks",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Create")
                ]),
 
@@ -1603,7 +1603,7 @@ gx_methods = {
                doc="Syncronize the Metadata from this database to the XML",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ])
     ],
@@ -1622,13 +1622,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('i_chan', type="DB_SYMB",
                              doc="Channel to Copy Data From"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('o_chan', type="DB_SYMB",
                              doc="Channel to Copy Data To")
                ]),
 
@@ -1642,9 +1642,9 @@ gx_methods = {
                0 if error
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel (read locked)")
                ]),
 
@@ -1658,11 +1658,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of elements",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line    (read or write locked)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel (read or write locked)")
                ]),
 
@@ -1675,11 +1675,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Fiducial Start.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line (read or write locked)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel (read locked)")
                ]),
 
@@ -1692,11 +1692,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Fiducial Start.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line (read or write locked)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel (read locked)")
                ]),
 
@@ -1708,15 +1708,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line (read or write locked)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel to set fiducial (write locked)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start Fiducial Value"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="Increment Fiducial Value")
                ]),
 
@@ -1731,17 +1731,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line symbol"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('i_ch', type="DB_SYMB",
                              doc="Original channel"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('o_ch', type="DB_SYMB",
                              doc="Output channel"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('col_s', type=Type.INT32_T,
                              doc="Start column number to copy, 0 is first column"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('col_e', type=Type.INT32_T,
                              doc="End column number to copy")
                ]),
 
@@ -1757,15 +1757,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line symbol"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('i_ch', type="DB_SYMB",
                              doc="Original channel"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('o_ch', type="DB_SYMB",
                              doc="Output channel"),
-                   Parameter('p5', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` containing 0/1 values for each channel.")
                ])
     ],
@@ -1776,11 +1776,11 @@ gx_methods = {
                doc="Set the selection status for a line.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Handle of line to select/deselect"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`DB_LINE_SELECT`")
                ]),
 
@@ -1790,9 +1790,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="One of :def:`DB_LINE_SELECT`",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle")
                ]),
 
@@ -1805,7 +1805,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="Line Handle (use iIsLineValid method to see if valid)",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1815,13 +1815,13 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('start', type=Type.DOUBLE, is_ref=True,
                              doc="Start Fid"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('end', type=Type.DOUBLE, is_ref=True,
                              doc="End Fid")
                ]),
 
@@ -1831,7 +1831,7 @@ gx_methods = {
                return_type="DB_SELECT",
                return_doc="Selections Object.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1844,7 +1844,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Number of selected lines in the database",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -1862,7 +1862,7 @@ gx_methods = {
                0 if it is not a valid channel name
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Name to test")
                ]),
 
@@ -1878,9 +1878,9 @@ gx_methods = {
                1 - Valid
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel handle to check")
                ]),
 
@@ -1893,7 +1893,7 @@ gx_methods = {
                0 if it is not a valid line name
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Name to test")
                ]),
 
@@ -1909,9 +1909,9 @@ gx_methods = {
                1 - Valid
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to check")
                ]),
 
@@ -1922,9 +1922,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_CATEGORY_LINE` or :def_val:`iDUMMY`.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -1935,9 +1935,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Line Flight Number.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -1959,15 +1959,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line symbol"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="String in which to place label"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="String length"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('format', type=Type.INT32_T,
                              doc=":def:`DB_LINE_LABEL_FORMAT`")
                ]),
 
@@ -1978,9 +1978,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Line Number.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -1990,13 +1990,13 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('line_number', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Line number"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Line number buffer size")
                ]),
 
@@ -2007,9 +2007,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_LINE_TYPE`",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -2020,9 +2020,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Line Number.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -2040,15 +2040,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('num', type=Type.INT32_T,
                              doc="Line number"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Line type"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ver', type=Type.INT32_T,
                              doc="Line version"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String to set line name to"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string")
                ]),
 
@@ -2064,15 +2064,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('al_num', type=Type.STRING,
                              doc="Line number (alphanumeric)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Line type"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ver', type=Type.INT32_T,
                              doc="Line version"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String to set line name to"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string")
                ]),
 
@@ -2081,9 +2081,9 @@ gx_methods = {
                doc="Load selections to from a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -2096,9 +2096,9 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="Line Handle (use iIsLineValid method to see if valid).",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('prev', type="DB_SYMB",
                              doc="Previous Line")
                ]),
 
@@ -2119,9 +2119,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Bearing value, :def_val:`rDUMMY` if not set.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -2132,9 +2132,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Date value.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at")
                ]),
 
@@ -2143,9 +2143,9 @@ gx_methods = {
                doc="Saves current selections to a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -2168,11 +2168,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('select', type=Type.STRING,
                              doc="Selection"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`DB_LINE_SELECT`")
                ]),
 
@@ -2190,11 +2190,11 @@ gx_methods = {
                see_also=":func:`rLineBearing_DB`, :func:`rDirection_DU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('bearing', type=Type.DOUBLE,
                              doc="Value to set bearing to")
                ]),
 
@@ -2204,11 +2204,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Value to set date to")
                ]),
 
@@ -2218,11 +2218,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('fl', type=Type.INT32_T,
                              doc="Value to set line flight to")
                ]),
 
@@ -2235,13 +2235,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start Fid"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('end', type=Type.DOUBLE,
                              doc="End Fid")
                ]),
 
@@ -2251,11 +2251,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('num', type=Type.INT32_T,
                              doc="Value to set line number to")
                ]),
 
@@ -2265,11 +2265,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DB_LINE_TYPE`")
                ]),
 
@@ -2279,11 +2279,11 @@ gx_methods = {
                notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ver', type=Type.INT32_T,
                              doc="Value to set line version to")
                ]),
 
@@ -2293,9 +2293,9 @@ gx_methods = {
                notes="This method also destroys the DB_SELECT object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SELECT",
+                   Parameter('sel', type="DB_SELECT",
                              doc="Selections")
                ])
     ],
@@ -2306,9 +2306,9 @@ gx_methods = {
                doc="Get the metadata of a database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc="Meta object to fill with database's meta")
                ]),
 
@@ -2317,9 +2317,9 @@ gx_methods = {
                doc="Set the metadata of a database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Source :class:`DB`"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc="Meta object to add to database's meta")
                ])
     ],
@@ -2330,9 +2330,9 @@ gx_methods = {
                doc="Load a :class:`LST` object with array (:class:`VA`) channel symbols.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate")
                ]),
 
@@ -2341,11 +2341,11 @@ gx_methods = {
                doc="Load a :class:`LST` object with array (:class:`VA`) channel symbols with a particular number of columns.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('columns', type=Type.INT32_T,
                              doc="Number of columns in array ( > 1 )"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate")
                ]),
 
@@ -2375,9 +2375,9 @@ gx_methods = {
                notes="Like :func:`ChanLST_DB`, but does not include array channels or virtual channels.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate")
                ]),
 
@@ -2394,11 +2394,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc='CLASS name for the channel ("" for all)')
                ]),
 
@@ -2415,11 +2415,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc='CLASS name for the group ("" for all)')
                ]),
 
@@ -2459,15 +2459,15 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="DB_SYMB Object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Symbol Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('symb', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('owner', type=Type.INT32_T,
                              doc=":def:`DB_OWN`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('category', type=Type.INT32_T,
                              doc=":def:`DB_CATEGORY_USER`, :def:`DB_CATEGORY_LINE`, :def:`DB_CATEGORY_CHAN`, :def:`DB_CATEGORY_BLOB`")
                ]),
 
@@ -2533,11 +2533,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('channels', type=Type.STRING,
                              doc="Comma-separated list of channels")
                ]),
 
@@ -2550,9 +2550,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to Delete (must be READWRITE locked)")
                ]),
 
@@ -2565,11 +2565,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="New Symbol Handle",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol Handle to duplicate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('new', type=Type.STRING,
                              doc="Name of the New Symbol")
                ]),
 
@@ -2584,11 +2584,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="New Symbol Handle",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol Handle to duplicate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('new', type=Type.STRING,
                              doc="Name of the New Symbol")
                ]),
 
@@ -2603,11 +2603,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="New Symbol Handle",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol Handle to duplicate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('new', type=Type.STRING,
                              doc="Name of the New Symbol")
                ]),
 
@@ -2679,9 +2679,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate")
                ]),
 
@@ -2698,9 +2698,9 @@ gx_methods = {
                If the channel is defined, but not present, returns :def_val:`NULLSYMB`.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`")
                ]),
 
@@ -2717,11 +2717,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of symbols.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to populate, must be type INT."),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc='Class name to match ("" for all)')
                ]),
 
@@ -2739,9 +2739,9 @@ gx_methods = {
                1 - Symbol Exists
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Name of Channel")
                ]),
 
@@ -2775,11 +2775,11 @@ gx_methods = {
                1 - Symbol Exists
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('symb', type=Type.STRING,
                              doc="Name of Symbol"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`")
                ]),
 
@@ -2792,11 +2792,11 @@ gx_methods = {
                1 - Symbol is valid
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to check"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`")
                ]),
 
@@ -2806,9 +2806,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_LOCK`",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to Lock")
                ]),
 
@@ -2821,13 +2821,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('chan', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Returned name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Buffer length")
                ]),
 
@@ -2837,11 +2837,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of symbols.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to populate, must be type INT."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('symb', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`")
                ]),
 
@@ -2857,9 +2857,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate")
                ]),
 
@@ -2868,13 +2868,13 @@ gx_methods = {
                doc="Locks a symbol for READONLY or READWRITE.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to Lock"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('lock', type=Type.INT32_T,
                              doc=":def:`DB_LOCK`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('wait', type=Type.INT32_T,
                              doc=":def:`DB_WAIT`")
                ]),
 
@@ -2895,9 +2895,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate")
                ]),
 
@@ -2915,9 +2915,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate")
                ]),
 
@@ -2930,9 +2930,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to modify")
                ]),
 
@@ -2949,11 +2949,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel name")
                ]),
 
@@ -2970,9 +2970,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Database Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate")
                ]),
 
@@ -2994,11 +2994,11 @@ gx_methods = {
                see_also=":func:`ChanLST_DB`, :func:`LineLST_DB`, :func:`SelectedLineLST_DB`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`")
                ]),
 
@@ -3007,7 +3007,7 @@ gx_methods = {
                doc="UnLocks all symbols.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -3016,9 +3016,9 @@ gx_methods = {
                doc="UnLocks a symbol.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol to Lock")
                ])
     ],
@@ -3038,11 +3038,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('group', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel")
                ]),
 
@@ -3059,13 +3059,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('comment', type=Type.STRING,
                              doc="Comment"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="String"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('indent', type=Type.INT32_T,
                              doc="Indent comment one tab? (TRUE or FALSE)")
                ]),
 
@@ -3084,13 +3084,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('comment', type=Type.STRING,
                              doc="Comment"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('val', type=Type.INT32_T,
                              doc="Value"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('indent', type=Type.INT32_T,
                              doc="Indent comment one tab? :def:`GEO_BOOL`")
                ]),
 
@@ -3109,13 +3109,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('comment', type=Type.STRING,
                              doc="Comment"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('indent', type=Type.INT32_T,
                              doc="Indent comment one tab? :def:`GEO_BOOL`")
                ]),
 
@@ -3134,11 +3134,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('comment', type=Type.STRING,
                              doc="Comment"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('indent', type=Type.INT32_T,
                              doc="Indent comment one tab? :def:`GEO_BOOL`")
                ]),
 
@@ -3161,11 +3161,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('group', type="DB_SYMB",
                              doc="Group line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel")
                ]),
 
@@ -3179,9 +3179,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('group', type="DB_SYMB",
                              doc="Group line")
                ]),
 
@@ -3194,11 +3194,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class name of groups to associate the channel with. (Must be defined).")
                ]),
 
@@ -3207,11 +3207,11 @@ gx_methods = {
                doc="Generate a valid channel name from a name candidate",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('str_in', type=Type.STRING,
                              doc="Input string"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_out', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Outout string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Max output string length")
                ]),
 
@@ -3225,11 +3225,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('str_in', type=Type.STRING,
                              doc="Input string"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('str_out', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Outout string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Max output string length")
                ]),
 
@@ -3239,13 +3239,13 @@ gx_methods = {
                see_also=":class:`VA` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` in which to place the data")
                ]),
 
@@ -3255,13 +3255,13 @@ gx_methods = {
                notes="See :func:`SetVAScaling_DB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('base', type=Type.DOUBLE, is_ref=True,
                              doc="Base value (rDummy for none)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('range', type=Type.DOUBLE, is_ref=True,
                              doc="Range value (rDummy for none)")
                ]),
 
@@ -3271,13 +3271,13 @@ gx_methods = {
                notes="See :func:`SetVAWindows_DB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('min_w', type=Type.INT32_T, is_ref=True,
                              doc="First window (0 to N-2, iDummy for default)"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_w', type=Type.INT32_T, is_ref=True,
                              doc="Last window (1 to N-1, iDummy for default)")
                ]),
 
@@ -3287,19 +3287,19 @@ gx_methods = {
                notes="See :func:`GetVABaseCoordinateInfo_DB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('domain', type=Type.INT32_T,
                              doc=":def:`DB_ARRAY_BASETYPE`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Optional offset or base frequency"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Values (one per array channel column) (REAL)"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('units', type=Type.STRING,
                              doc="Units"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('allow_changes', type=Type.INT32_T,
                              doc="Allow changes to existing values?:def:`GEO_BOOL`")
                ]),
 
@@ -3309,19 +3309,19 @@ gx_methods = {
                notes="See :func:`SetVABaseCoordinateInfo_DB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READONLY`)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('domain', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DB_ARRAY_BASETYPE`"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('base', type=Type.DOUBLE, is_ref=True,
                              doc="Optional offset or base frequency"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Values (one per array channel column) (REAL)"),
-                   Parameter('p6', type=Type.STRING, is_ref=True, size_of_param='p7',
+                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Units"),
-                   Parameter('p7', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of units string")
                ]),
 
@@ -3337,13 +3337,13 @@ gx_methods = {
                see_also=":func:`iLineCategory_DB` - to see if a line is a group line.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Group line - :def_val:`DB_LOCK_READWRITE` or :def_val:`DB_LOCK_READONLY`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('class', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Returned class name - max size = :def_val:`DB_GROUP_CLASS_SIZE` - 1"),
-                   Parameter('p4', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
+                   Parameter('buff', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Buffer size")
                ]),
 
@@ -3353,9 +3353,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Return Value",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc=":def:`DB_INFO`")
                ]),
 
@@ -3365,13 +3365,13 @@ gx_methods = {
                notes="See :func:`SetVAProfColorFile_DB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc='Zone file name, "" to clear.'),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for string")
                ]),
 
@@ -3380,13 +3380,13 @@ gx_methods = {
                doc="Get the display options of :class:`VA` channels",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('option', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc='Option  "Profile", "Section" or "Section and Profile"'),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Buffer size for string")
                ]),
 
@@ -3396,13 +3396,13 @@ gx_methods = {
                notes="Fails in the channel is not an array channel",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Zone file name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for string")
                ]),
 
@@ -3417,11 +3417,11 @@ gx_methods = {
                channels are automatically assumed to be associated with it.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('group', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel")
                ]),
 
@@ -3435,7 +3435,7 @@ gx_methods = {
                0 if it is not.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -3445,13 +3445,13 @@ gx_methods = {
                see_also=":class:`VA` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` from which to get the data")
                ]),
 
@@ -3475,11 +3475,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Group line - :def_val:`DB_LOCK_READWRITE`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc=":def_val:`DB_GROUP_CLASS_SIZE`")
                ]),
 
@@ -3527,11 +3527,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc='Zone file name, "" to clear.')
                ]),
 
@@ -3540,11 +3540,11 @@ gx_methods = {
                doc="Set the display options of :class:`VA` channels",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('option', type=Type.STRING,
                              doc='Option  "Profile", "Section" or "Section and Profile"')
                ]),
 
@@ -3559,13 +3559,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Base value (rDummy for none)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('range', type=Type.DOUBLE,
                              doc="Range value (rDummy for none)")
                ]),
 
@@ -3578,11 +3578,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Zone file name")
                ]),
 
@@ -3595,13 +3595,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="hDB"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('min_w', type=Type.INT32_T,
                              doc="First window (0 to N-1, iDummy for default)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('max_w', type=Type.INT32_T,
                              doc="Last window (0 to N-1, iDummy for default)")
                ])
     ],
@@ -3620,17 +3620,17 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="DB_SYMB handle.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Symbol Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('symb', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('owner', type=Type.INT32_T,
                              doc=":def:`DB_OWN`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('category', type=Type.INT32_T,
                              doc=":def:`DB_CATEGORY_USER`, :def:`DB_CATEGORY_LINE`, :def:`DB_CATEGORY_CHAN`, :def:`DB_CATEGORY_BLOB`"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('extra', type=Type.INT32_T,
                              doc="Extra info, which depends on DB_SYMB_ :def_val:`DB_SYMB_CHAN` - element width for a :class:`VA` channel ignores for all other DB_SYMB types")
                ]),
 
@@ -3664,7 +3664,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database to Destroy")
                ]),
 
@@ -3679,13 +3679,13 @@ gx_methods = {
                see_also=":class:`VV` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` from which to get the data")
                ]),
 
@@ -3700,7 +3700,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -3714,11 +3714,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of elements",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line    (read or write locked)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel (read or write locked)")
                ])
     ]

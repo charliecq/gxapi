@@ -46,7 +46,7 @@ gx_methods = {
                return_type="GER",
                return_doc=":class:`GER` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc=":class:`GER` file name.")
                ]),
 
@@ -55,7 +55,7 @@ gx_methods = {
                doc="Destroys a :class:`GER` Object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GER",
+                   Parameter('ger', type="GER",
                              doc=":class:`GER` object to destroy")
                ]),
 
@@ -68,13 +68,13 @@ gx_methods = {
                1 if no message, passed message remains unchanged
                """,
                parameters = [
-                   Parameter('p1', type="GER",
+                   Parameter('ger', type="GER",
                              doc=":class:`GER` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('num', type=Type.INT32_T,
                              doc="Message number"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('message', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Message string returned, replacements filtered"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum string length")
                ]),
 
@@ -83,11 +83,11 @@ gx_methods = {
                doc="Set a replacement string value to an int.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GER",
+                   Parameter('ger', type="GER",
                              doc=":class:`GER` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc='Replacement string (ie. "%1")'),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('set', type=Type.INT32_T,
                              doc="Setting")
                ]),
 
@@ -96,11 +96,11 @@ gx_methods = {
                doc="Set a replacement string value to a real.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GER",
+                   Parameter('ger', type="GER",
                              doc=":class:`GER` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc='Replacement string (ie. "%1")'),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('set', type=Type.DOUBLE,
                              doc="Setting")
                ]),
 
@@ -109,11 +109,11 @@ gx_methods = {
                doc="Set a replacement string value.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GER",
+                   Parameter('ger', type="GER",
                              doc=":class:`GER` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc='Replacement string (ie. "%1")'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('set', type=Type.STRING,
                              doc="Setting")
                ])
     ]

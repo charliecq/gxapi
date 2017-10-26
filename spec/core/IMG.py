@@ -122,9 +122,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('grid_in', type=Type.STRING,
                              doc="Name of source Grid"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('grid_out', type=Type.STRING,
                              doc="Name of output Grid")
                ]),
 
@@ -133,9 +133,9 @@ gx_methods = {
                doc="Copy IMGs.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('im_gi', type="IMG",
                              doc="Source :class:`IMG`"),
-                   Parameter('p2', type="IMG",
+                   Parameter('im_go', type="IMG",
                              doc="Target :class:`IMG`")
                ]),
 
@@ -146,7 +146,7 @@ gx_methods = {
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Data type :def:`GS_TYPES`"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
@@ -168,7 +168,7 @@ gx_methods = {
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT` to use native :class:`DAT` type."),
                    Parameter('p2', type=Type.STRING,
                              doc="Name of the Grid to link to"),
@@ -183,7 +183,7 @@ gx_methods = {
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES`"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
@@ -213,7 +213,7 @@ gx_methods = {
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` Cannot be :def_val:`GS_TYPE_DEFAULT`"),
                    Parameter('p2', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
@@ -237,7 +237,7 @@ gx_methods = {
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT`"),
                    Parameter('p2', type=Type.STRING,
                              doc="Name of the Grid to link to"),
@@ -254,9 +254,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Input image to project"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to apply")
                ]),
 
@@ -271,11 +271,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Input image to project"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to apply"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('cell_size', type=Type.DOUBLE,
                              doc="Cell size")
                ]),
 
@@ -299,13 +299,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Input image to project"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to apply"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('cell_size', type=Type.DOUBLE,
                              doc="Cell size"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('exp_pct', type=Type.DOUBLE,
                              doc="Expansion percent (>=0).")
                ]),
 
@@ -314,7 +314,7 @@ gx_methods = {
                doc="This method destroys a table resource.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Object to Destroy")
                ]),
 
@@ -325,7 +325,7 @@ gx_methods = {
                return_type="PG",
                return_doc=":class:`PG` Object",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object")
                ]),
 
@@ -334,17 +334,17 @@ gx_methods = {
                doc="Retrieves location information about this image.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('dx', type=Type.DOUBLE, is_ref=True,
                              doc="X element separation"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('dy', type=Type.DOUBLE, is_ref=True,
                              doc="Y element separation"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xo', type=Type.DOUBLE, is_ref=True,
                              doc="X location of first point"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('yo', type=Type.DOUBLE, is_ref=True,
                              doc="Y location of first point"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rot', type=Type.DOUBLE, is_ref=True,
                              doc="Grid X axis rotation deg. CCW from reference X")
                ]),
 
@@ -353,9 +353,9 @@ gx_methods = {
                doc="Get the projection of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection of the grid")
                ]),
 
@@ -364,9 +364,9 @@ gx_methods = {
                doc="Get the metadata of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc="Metadata of the grid")
                ]),
 
@@ -376,9 +376,9 @@ gx_methods = {
                see_also=":func:`GethPG_IMG` to get the actual pager of the grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg', type="PG",
                              doc=":class:`PG` object to hold pager of the grid")
                ]),
 
@@ -393,11 +393,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Input image to project"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to apply"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('cell', type=Type.DOUBLE, is_ref=True,
                              doc="Returned cell size")
                ]),
 
@@ -406,9 +406,9 @@ gx_methods = {
                doc="Get the trend information from a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type="TR",
+                   Parameter('tr', type="TR",
                              doc="Trend information from the grid")
                ]),
 
@@ -418,9 +418,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Element type",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('xg_dor_img', type=Type.INT32_T,
                              doc="0 for XGD, 1 for :class:`IMG`")
                ]),
 
@@ -431,7 +431,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Element type",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Object")
                ]),
 
@@ -444,9 +444,9 @@ gx_methods = {
                1 - No default possible/available
                """,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc="Transform")
                ]),
 
@@ -456,7 +456,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` to query on")
                ]),
 
@@ -466,7 +466,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File to check")
                ]),
 
@@ -476,11 +476,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File to check"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('err_msg', type=Type.STRING, is_ref=True, size_of_param='buff_size',
                              doc="Error message registered if unable to open"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('buff_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Error message Buffer Size")
                ]),
 
@@ -490,7 +490,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of elements in the optimal KX direction",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`")
                ]),
 
@@ -508,11 +508,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('cell', type=Type.DOUBLE,
                              doc="Optional cell size")
                ]),
 
@@ -521,9 +521,9 @@ gx_methods = {
                doc="Make a grids match in size and coordinate system",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('im_gi', type="IMG",
                              doc=":class:`IMG` to make match source :class:`IMG`"),
-                   Parameter('p2', type="IMG",
+                   Parameter('im_gs', type="IMG",
                              doc="Source :class:`IMG`")
                ]),
 
@@ -533,7 +533,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of vectors in the optimal KX direction",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`")
                ]),
 
@@ -543,7 +543,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of X elements.",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`")
                ]),
 
@@ -553,7 +553,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of Y elements.",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`")
                ]),
 
@@ -567,9 +567,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Information requested, dummy if unknown or invalid.",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('query', type=Type.INT32_T,
                              doc=":def:`IMG_QUERY`")
                ]),
 
@@ -579,7 +579,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="-1 by columns, 1 by rows, 0 rows and columns are equally efficient.",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Object")
                ]),
 
@@ -592,9 +592,9 @@ gx_methods = {
                1 - No default possible/available
                """,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc="Transform")
                ]),
 
@@ -613,9 +613,9 @@ gx_methods = {
                notes="The cell sizes and projections must be the same.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('im_gm', type="IMG",
                              doc="Master :class:`IMG`"),
-                   Parameter('p2', type="IMG",
+                   Parameter('im_gi', type="IMG",
                              doc=":class:`IMG` to load")
                ]),
 
@@ -627,7 +627,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object")
                ]),
 
@@ -643,9 +643,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('kx', type=Type.INT32_T,
                              doc="KX -1 by column 1 by row")
                ]),
 
@@ -654,11 +654,11 @@ gx_methods = {
                doc="Read a vector in the optimal KX direction.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('v', type=Type.INT32_T,
                              doc="Vector to Read"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('be', type=Type.INT32_T,
                              doc="Begining element # to read (0 is the first)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# elements to read (0 for whole vector)"),
@@ -671,9 +671,9 @@ gx_methods = {
                doc="Read a column (constant X)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('bx', type=Type.INT32_T,
                              doc="X column"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Start Y to read"),
@@ -687,9 +687,9 @@ gx_methods = {
                doc="Read a row (constant Y)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('by', type=Type.INT32_T,
                              doc="Y row"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Start X to read"),
@@ -703,7 +703,7 @@ gx_methods = {
                doc="Refresh the GI of a grid after it has moved or changed.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Grid name")
                ]),
 
@@ -712,17 +712,17 @@ gx_methods = {
                doc="Re-locate a grid image.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image to relocate"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area X minimum"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area Y minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area X maximum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area Y maximum"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('asp', type=Type.INT32_T,
                              doc=":def:`IMG_RELOCATE`")
                ]),
 
@@ -731,15 +731,15 @@ gx_methods = {
                doc="Writes grid info report to a file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Grid name"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Text file to write to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('force', type=Type.INT32_T,
                              doc="Recalc statistics (0 - no; 1 - yes)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('decimals', type=Type.INT32_T,
                              doc="Number of decimals to put in results"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title for report")
                ]),
 
@@ -752,15 +752,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Grid name"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Text file to write to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('force', type=Type.INT32_T,
                              doc="Recalc statistics (0 - no; 1 - yes)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('decimals', type=Type.INT32_T,
                              doc="Number of decimals to put in results"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('header', type=Type.INT32_T,
                              doc="Write header line (0 - no; 1 - yes)?")
                ]),
 
@@ -770,11 +770,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Grid value",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location in the grid projection"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location in the grid projection")
                ]),
 
@@ -788,9 +788,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Information requested, dummy if unknown or invalid.",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('query', type=Type.INT32_T,
                              doc=":def:`IMG_QUERY`")
                ]),
 
@@ -799,7 +799,7 @@ gx_methods = {
                doc="Mark the grid as unchanged so it will not output lineage",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG")
+                   Parameter('img', type="IMG")
                ]),
 
         Method('SetInfo_IMG', module='geoengine.core', version='5.0.0',
@@ -811,17 +811,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('dx', type=Type.DOUBLE,
                              doc="X element separation"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dy', type=Type.DOUBLE,
                              doc="Y element separation"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('xo', type=Type.DOUBLE,
                              doc="X location of first point"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('yo', type=Type.DOUBLE,
                              doc="Y location of first point"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('rot', type=Type.DOUBLE,
                              doc="Grid X axis rotation deg. CCW from reference X")
                ]),
 
@@ -834,9 +834,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection")
                ]),
 
@@ -845,9 +845,9 @@ gx_methods = {
                doc="Set the metadata of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Source :class:`IMG`"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc="Metadata to add to the grid")
                ]),
 
@@ -856,9 +856,9 @@ gx_methods = {
                doc="Copy a pager into the pager of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Pager object to copy into the pager of the grid")
                ]),
 
@@ -867,9 +867,9 @@ gx_methods = {
                doc="Set the trend information to a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` object"),
-                   Parameter('p2', type="TR",
+                   Parameter('tr', type="TR",
                              doc="Trend information to set for the grid")
                ]),
 
@@ -878,7 +878,7 @@ gx_methods = {
                doc="Syncronize the Metadata for this Grid",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Grid name")
                ]),
 
@@ -887,11 +887,11 @@ gx_methods = {
                doc="Write a vector in the optimal KX direction.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('v', type=Type.INT32_T,
                              doc="Vector to write"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('be', type=Type.INT32_T,
                              doc="Begining element to write (0 is the first)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="# elements to write (0 for whole vector)"),
@@ -904,9 +904,9 @@ gx_methods = {
                doc="Write a column (constant X)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('bx', type=Type.INT32_T,
                              doc="X column"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Start Y to write"),
@@ -920,9 +920,9 @@ gx_methods = {
                doc="Write a row (constant Y)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('by', type=Type.INT32_T,
                              doc="Y row"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Start X to write"),
@@ -936,11 +936,11 @@ gx_methods = {
                doc="Store a real parameter in an :class:`IMG` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Parameter name (case insensitive)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Parameter value to store")
                ]),
 
@@ -950,9 +950,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Parameter value, :def_val:`rDUMMY` if not found.",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Parameter name (case insensitive)")
                ])
     ],
@@ -964,11 +964,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Number of pixels different",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('img1', type=Type.STRING,
                              doc="Bitmap 1"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('img2', type=Type.STRING,
                              doc="Bitmap 2"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('img_o', type=Type.STRING,
                              doc="Output Image")
                ])
     ]

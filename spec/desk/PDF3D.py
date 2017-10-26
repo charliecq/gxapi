@@ -15,13 +15,13 @@ gx_methods = {
                doc="Render a voxel, voxsurf and/or gensurf to pdf",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc="Filename"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('resolution', type=Type.INT32_T,
                              doc="Resolution"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('no_clipping', type=Type.INT32_T,
                              doc="Noclipping")
                ]),
 
@@ -30,15 +30,15 @@ gx_methods = {
                doc="Render a voxel, voxsurf and/or gensurf to a specified page on a pdf",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc="Filename"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('page_number', type=Type.INT32_T,
                              doc="Page number"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('resolution', type=Type.INT32_T,
                              doc="Resolution"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('no_clip', type=Type.INT32_T,
                              doc="Noclipping")
                ]),
 
@@ -47,15 +47,15 @@ gx_methods = {
                doc="Export a 2D map to a PDF file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('input_map', type=Type.STRING,
                              doc="Input map file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('output_file', type=Type.STRING,
                              doc="Output PDF file"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('create_layersin_pdf', type=Type.INT32_T,
                              doc="Create layers in PDF"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('geospatial_pdf', type=Type.INT32_T,
                              doc="Geospatial PDF"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('open_pdf', type=Type.INT32_T,
                              doc="Open PDF after export")
                ])
     ]

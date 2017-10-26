@@ -78,7 +78,7 @@ gx_methods = {
                return_type="void*",
                return_doc="Pointer",
                parameters = [
-                   Parameter('p1', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` object")
                ]),
 
@@ -111,7 +111,7 @@ gx_methods = {
                return_type="void*",
                return_doc="Pointer to the base of the :class:`VV` memory image.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object")
                ]),
 
@@ -121,7 +121,7 @@ gx_methods = {
                return_type="void*",
                return_doc="Pointer.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('gxx_handle', type=Type.INT32_T,
                              doc="Handle of GXX resource")
                ]),
 

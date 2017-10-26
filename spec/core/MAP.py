@@ -137,23 +137,23 @@ gx_methods = {
                doc="Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pix_size', type=Type.DOUBLE,
                              doc="Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dpi', type=Type.DOUBLE,
                              doc="Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_BITS`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_METHOD`"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc=":def:`MAP_EXPORT_FORMAT`"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -162,25 +162,25 @@ gx_methods = {
                doc="Export the entire map to map to a non-geo raster format.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('size_x', type=Type.INT32_T,
                              doc="Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('size_y', type=Type.INT32_T,
                              doc="Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('dpi', type=Type.DOUBLE,
                              doc="Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_BITS`"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_METHOD`"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc=":def:`MAP_EXPORT_RASTER_FORMAT`"),
-                   Parameter('p10', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -189,31 +189,31 @@ gx_methods = {
                doc="Export an area of a map in view units to an external format",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pix_size', type=Type.DOUBLE,
                              doc="Resolution in view units of one pixel (or dummy, will be used if DPI is dummy)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dpi', type=Type.DOUBLE,
                              doc="Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_BITS`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_METHOD`"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area To Export Min X location in view units"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area To Export Min Y location in view units"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area To Export Max X location in view units"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area To Export Max Y location in view units"),
-                   Parameter('p12', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc=":def:`MAP_EXPORT_FORMAT`"),
-                   Parameter('p13', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -222,33 +222,33 @@ gx_methods = {
                doc="Export an area of a map to a non-geo raster format.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area To Export Min X location in view units"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area To Export Min Y location in view units"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area To Export Max X location in view units"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area To Export Max Y location in view units"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('size_x', type=Type.INT32_T,
                              doc="Number of Pixels in X (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('size_y', type=Type.INT32_T,
                              doc="Number of Pixels in Y (X or Y should be specified the other should be 0 and computed by export, or both can be 0 and DPI defined)"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('dpi', type=Type.DOUBLE,
                              doc="Resolution in DPI (will override X and Y if not dummy, map page size will be used to determine pixel size of output)"),
-                   Parameter('p11', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_BITS`"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc=":def:`MAP_EXPORT_METHOD`"),
-                   Parameter('p13', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc=":def:`MAP_EXPORT_RASTER_FORMAT`"),
-                   Parameter('p14', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -257,19 +257,19 @@ gx_methods = {
                doc="Render a map to a bitmap.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View we exporting units in"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="MinX"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="MinY"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="MaxX"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="MaxY"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File to generate (BMP or PNG, otherwise extension forced to BMP)"),
                    Parameter('p8', type=Type.INT32_T,
                              doc="Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)")
@@ -282,19 +282,19 @@ gx_methods = {
                doc="Create a 3D View in this map that is linked to a :class:`MVIEW` in a 3D View file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Object"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`3DV`'s 3D :class:`MVIEW`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mview', type=Type.STRING,
                              doc="New view name"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum in mm"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimun in mm"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum in mm"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum in mm")
                ])
     ],
@@ -310,11 +310,11 @@ gx_methods = {
                see_also=":class:`LST` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold the views (allow up to 96 characters)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('optn', type=Type.INT32_T,
                              doc="0 - view/agg only 1 - view/agg/layer")
                ]),
 
@@ -328,13 +328,13 @@ gx_methods = {
                see_also=":class:`LST` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold the views (allow up to 96 characters)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('optn', type=Type.INT32_T,
                              doc="0 - view/agg only 1 - view/agg/layer"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MAP_LIST_MODE`")
                ]),
 
@@ -343,7 +343,7 @@ gx_methods = {
                doc="Clean up empty groups in all views in map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle")
                ]),
 
@@ -352,7 +352,7 @@ gx_methods = {
                doc="Commit any changes to a map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map")
                ]),
 
@@ -361,11 +361,11 @@ gx_methods = {
                doc="Copy entire map into one view in output map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Source :class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dest_map', type=Type.STRING,
                              doc="Destination :class:`MAP` name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('dest_view', type=Type.STRING,
                              doc="Name of View")
                ]),
 
@@ -374,11 +374,11 @@ gx_methods = {
                doc="Generate an XML CRC of a :class:`MAP`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('crc', type=Type.INT32_T, is_ref=True,
                              doc="CRC returned"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of xml to generate (.zip added)")
                ]),
 
@@ -388,9 +388,9 @@ gx_methods = {
                return_type="MAP",
                return_doc=":class:`MAP` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`MAP` file name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MAP_OPEN`")
                ]),
 
@@ -410,9 +410,9 @@ gx_methods = {
                notes="If the view does not exist, nothing happens.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="View Name to delete")
                ]),
 
@@ -422,7 +422,7 @@ gx_methods = {
                notes="All changes to the map will be committed.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle")
                ]),
 
@@ -431,7 +431,7 @@ gx_methods = {
                doc="Discard all changes made to the map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map")
                ]),
 
@@ -450,11 +450,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('ma_ps', type="MAP",
                              doc="Source :class:`MAP` object"),
-                   Parameter('p2', type="MAP",
+                   Parameter('ma_pd', type="MAP",
                              doc="Destination :class:`MAP` object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('content', type=Type.INT32_T,
                              doc=":def:`DUPMAP`")
                ]),
 
@@ -464,7 +464,7 @@ gx_methods = {
                return_type="LPT",
                return_doc=":class:`LPT` Object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle")
                ]),
 
@@ -473,15 +473,15 @@ gx_methods = {
                doc="Get the size of the Map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xmin', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum in mm"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ymin', type=Type.DOUBLE, is_ref=True,
                              doc="Y minimun in mm"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xmax', type=Type.DOUBLE, is_ref=True,
                              doc="X maximum in mm"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ymax', type=Type.DOUBLE, is_ref=True,
                              doc="Y maximum in mm")
                ]),
 
@@ -492,7 +492,7 @@ gx_methods = {
                return_type="META",
                return_doc=":class:`META` Object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -503,7 +503,7 @@ gx_methods = {
                return_type="REG",
                return_doc=":class:`REG` Object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -521,9 +521,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold the view/groups.  Names may be up to 2080 characters in length.")
                ]),
 
@@ -533,11 +533,11 @@ gx_methods = {
                see_also=":class:`LST` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold the views.  View names may be up to 2080 characters in length."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MAP_LIST_MODE`")
                ]),
 
@@ -546,15 +546,15 @@ gx_methods = {
                doc="Duplicate an entire view",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="Name of view to duplicate"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('n_view', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Name of new view created (pass in "" and the new name is returned)'),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VIEW',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="Length of view name buffer"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('copy', type=Type.INT32_T,
                              doc="Copy all groups :def:`GEO_BOOL`")
                ]),
 
@@ -567,9 +567,9 @@ gx_methods = {
                1 view exists.
                """,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="View name")
                ]),
 
@@ -591,13 +591,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Maximum name length")
                ]),
 
@@ -606,11 +606,11 @@ gx_methods = {
                doc="Get the name of the map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned map file name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of map name string")
                ]),
 
@@ -619,11 +619,11 @@ gx_methods = {
                doc="Get the Map Name of the Map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned map name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of map name string")
                ]),
 
@@ -633,7 +633,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of packed files in map.",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -648,13 +648,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('force', type=Type.INT32_T,
                              doc="(0 - Produce errors, 1 - Force overwrites)"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('errors', type=Type.STRING, is_ref=True, size_of_param='error_size',
                              doc="List of files that are problematic returned"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_MULTI_FILE',
+                   Parameter('error_size', type=Type.INT32_T, default_length='STR_MULTI_FILE',
                              doc="Length of Error name buffer")
                ]),
 
@@ -663,15 +663,15 @@ gx_methods = {
                doc="UnPack all files from map to workspace.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('force', type=Type.INT32_T,
                              doc="(0 - Produce errors, 1 - Force overwrites)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Directory to place unpacked files in."),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('errors', type=Type.STRING, is_ref=True, size_of_param='error_size',
                              doc="List of files that are problematic returned"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_MULTI_FILE',
+                   Parameter('error_size', type=Type.INT32_T, default_length='STR_MULTI_FILE',
                              doc="Length of Error name buffer")
                ]),
 
@@ -680,7 +680,7 @@ gx_methods = {
                doc="Pack all files in the map so that it can be mailed.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -689,9 +689,9 @@ gx_methods = {
                doc="Render a map to file/device.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Plot file/device")
                ]),
 
@@ -704,7 +704,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle")
                ]),
 
@@ -717,9 +717,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ext', type=Type.INT32_T,
                              doc=":def:`MVIEW_EXTENT`")
                ]),
 
@@ -739,7 +739,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The current map scale",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle")
                ]),
 
@@ -748,9 +748,9 @@ gx_methods = {
                doc="Save as ArcGIS :class:`MXD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mxd', type=Type.STRING,
                              doc="Geosoft map file name")
                ]),
 
@@ -772,11 +772,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name")
                ]),
 
@@ -785,7 +785,7 @@ gx_methods = {
                doc="Sets the current map to this map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -794,9 +794,9 @@ gx_methods = {
                doc="Set the Map Name of the Map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Map Name")
                ]),
 
@@ -809,9 +809,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="New map scale (must be > 0).")
                ]),
 
@@ -827,15 +827,15 @@ gx_methods = {
                see_also="SetSizeViews_MAP",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('xmin', type=Type.DOUBLE,
                              doc="X minimum in mm"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('ymin', type=Type.DOUBLE,
                              doc="Y minimun in mm"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('xmax', type=Type.DOUBLE,
                              doc="X maximum in mm"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('ymax', type=Type.DOUBLE,
                              doc="Y maximum in mm")
                ]),
 
@@ -844,9 +844,9 @@ gx_methods = {
                doc="Write a :class:`META` to a map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` to write to map")
                ]),
 
@@ -855,9 +855,9 @@ gx_methods = {
                doc="Write a :class:`REG` to a map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` to write to map")
                ]),
 
@@ -866,7 +866,7 @@ gx_methods = {
                doc="Syncronize the Metadata",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Geosoft map file name")
                ]),
 
@@ -875,7 +875,7 @@ gx_methods = {
                doc="UnPack all files from map to workspace.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` object")
                ]),
 
@@ -885,9 +885,9 @@ gx_methods = {
                see_also=":class:`LST` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold the views.  View names may be up to 2080 characters in length.")
                ]),
 
@@ -896,11 +896,11 @@ gx_methods = {
                doc="Get a list of views of certain types in this map",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold the views.  View names may be up to 2080 characters in length."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MAP_LIST_MODE`")
                ]),
 
@@ -910,7 +910,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Project type as an integer",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle")
                ])
     ]

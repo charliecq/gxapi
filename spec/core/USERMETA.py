@@ -29,7 +29,7 @@ gx_methods = {
                return_type="USERMETA",
                return_doc=":class:`USERMETA` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('format', type=Type.INT32_T,
                              doc=":def:`USERMETA_FORMAT` Type of Meta to create")
                ]),
 
@@ -39,7 +39,7 @@ gx_methods = {
                return_type="USERMETA",
                return_doc=":class:`USERMETA` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -48,7 +48,7 @@ gx_methods = {
                doc="Destroyes the :class:`USERMETA` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA",
+                   Parameter('usermeta', type="USERMETA",
                              doc="Projection to Destroy")
                ]),
 
@@ -57,8 +57,8 @@ gx_methods = {
                doc="Get the Data Creation Date",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('date', type=Type.DOUBLE, is_ref=True,
                              doc="Date")
                ]),
 
@@ -67,14 +67,14 @@ gx_methods = {
                doc="Get the 2d Extents",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="MinX"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="MinY"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="MaxX"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="MaxY")
                ]),
 
@@ -83,18 +83,18 @@ gx_methods = {
                doc="Get the 3d Extents",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="MinX"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="MinY"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_z', type=Type.DOUBLE, is_ref=True,
                              doc="MinZ"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="MaxX"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="MaxY"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_z', type=Type.DOUBLE, is_ref=True,
                              doc="MaxZ")
                ]),
 
@@ -103,8 +103,8 @@ gx_methods = {
                doc="Get the :class:`IPJ`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('ipj', type="IPJ",
                              doc="Date")
                ]),
 
@@ -113,8 +113,8 @@ gx_methods = {
                doc="Get the Meta Creation Date",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('date', type=Type.DOUBLE, is_ref=True,
                              doc="Date")
                ]),
 
@@ -123,8 +123,8 @@ gx_methods = {
                doc="Get the XML Format",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('format', type=Type.INT32_T, is_ref=True,
                              doc=":def:`USERMETA_FORMAT`")
                ]),
 
@@ -137,9 +137,9 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type="USERMETA",
+                   Parameter('usermeta1', type="USERMETA",
                              doc="First :class:`USERMETA`"),
-                   Parameter('p2', type="USERMETA",
+                   Parameter('usermeta2', type="USERMETA",
                              doc="Second UERMETA")
                ]),
 
@@ -148,10 +148,10 @@ gx_methods = {
                doc="Get the Data Creator",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('data_creator', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="DataCreator returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -160,10 +160,10 @@ gx_methods = {
                doc="Get the File Format",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('format', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Title returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -172,10 +172,10 @@ gx_methods = {
                doc="Get the Meta Creator",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('meta_creator', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="MetaCreator returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -184,10 +184,10 @@ gx_methods = {
                doc="Get the File Project",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('project', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Title returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -196,10 +196,10 @@ gx_methods = {
                doc="Get the Title",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('title', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Title returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -208,10 +208,10 @@ gx_methods = {
                doc="Serialize :class:`USERMETA` to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('save_geo', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` Output Geosoft Metadata?"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name to save to")
                ]),
 
@@ -220,8 +220,8 @@ gx_methods = {
                doc="Set the Data Creation Date",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Date")
                ]),
 
@@ -230,8 +230,8 @@ gx_methods = {
                doc="Set the Data Creator",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('data_creator', type=Type.STRING,
                              doc="DataCreator")
                ]),
 
@@ -240,14 +240,14 @@ gx_methods = {
                doc="Set the 2d Extents",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="MinX"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="MinY"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="MaxX"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="MaxY")
                ]),
 
@@ -256,18 +256,18 @@ gx_methods = {
                doc="Set the 3d Extents",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="MinX"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="MinY"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_z', type=Type.DOUBLE,
                              doc="MinZ"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="MaxX"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="MaxY"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_z', type=Type.DOUBLE,
                              doc="MaxZ")
                ]),
 
@@ -276,8 +276,8 @@ gx_methods = {
                doc="Set the File Format",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('format', type=Type.STRING,
                              doc="Format")
                ]),
 
@@ -286,8 +286,8 @@ gx_methods = {
                doc="Set the :class:`IPJ`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('ipj', type="IPJ",
                              doc="Date")
                ]),
 
@@ -296,8 +296,8 @@ gx_methods = {
                doc="Set the Meta Creation Date",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Date")
                ]),
 
@@ -306,8 +306,8 @@ gx_methods = {
                doc="Set the Meta Creator",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('meta_creator', type=Type.STRING,
                              doc="MetaCreator")
                ]),
 
@@ -316,8 +316,8 @@ gx_methods = {
                doc="Set the File Project",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('project', type=Type.STRING,
                              doc="Project")
                ]),
 
@@ -326,8 +326,8 @@ gx_methods = {
                doc="Set the Title",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="USERMETA"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('usermeta', type="USERMETA"),
+                   Parameter('title', type=Type.STRING,
                              doc="Title")
                ]),
 
@@ -339,17 +339,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('filename', type=Type.STRING,
                              doc="Filename of existing metadata to update"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="New projection"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="New MinX value"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="New MinY value"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="New MaxX value"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="New MaxY value")
                ]),
 
@@ -361,9 +361,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc="Filename of existing metadata to update"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('new_file_type', type=Type.STRING,
                              doc="New file type")
                ]),
 
@@ -372,9 +372,9 @@ gx_methods = {
                doc="Add lineage to XML",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc="Filename of existing metadata to update"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('save_geo', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` Output Geosoft Metadata?")
                ])
     ]

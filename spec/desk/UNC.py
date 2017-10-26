@@ -31,7 +31,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('char', type=Type.INT32_T,
                              doc="UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)")
                ]),
 
@@ -41,11 +41,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('face', type=Type.STRING,
                              doc="Face name (undecorated)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('geofont', type=Type.INT32_T,
                              doc="Geosoft font? :def:`GEO_BOOL`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('number', type=Type.INT32_T,
                              doc="Symbol number")
                ]),
 
@@ -55,7 +55,7 @@ gx_methods = {
                notes="An empty string will be returned for invalid symbols",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('char', type=Type.INT32_T,
                              doc="UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Converted string"),
@@ -72,11 +72,11 @@ gx_methods = {
                notes="Invalid symbols in the :class:`VV` will be set to -1 by this call. :class:`VV` has to be of type :def_val:`GS_LONG`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` of symbols"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('face', type=Type.STRING,
                              doc="Face name (undecorated)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('geofont', type=Type.INT32_T,
                              doc="Geosoft font? :def:`GEO_BOOL`")
                ])
     ],

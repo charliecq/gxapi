@@ -20,7 +20,7 @@ gx_methods = {
                return_type="TR",
                return_doc=":class:`TR` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="Trend order (must >=0 and <=3)")
                ]),
 
@@ -29,7 +29,7 @@ gx_methods = {
                doc="This method destroys a table resource.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TR",
+                   Parameter('tr', type="TR",
                              doc="Trend Object to Destroy")
                ]),
 
@@ -38,9 +38,9 @@ gx_methods = {
                doc="This method copies a table resource to another trend table resource.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TR",
+                   Parameter('t_rd', type="TR",
                              doc="Destination Trend Object"),
-                   Parameter('p2', type="TR",
+                   Parameter('t_rs', type="TR",
                              doc="Source Trend Object to Copy")
                ])
     ]

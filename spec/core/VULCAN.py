@@ -27,7 +27,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('triangulation_file', type=Type.STRING,
                              doc="Triangulation file")
                ]),
 
@@ -40,7 +40,7 @@ gx_methods = {
                1 - Yes
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('block_model_file', type=Type.STRING,
                              doc="Block model file")
                ]),
 
@@ -49,13 +49,13 @@ gx_methods = {
                doc="Draw triangle edges in a Vulcan triangulation file to a 3D view in a map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('triangulation_file', type=Type.STRING,
                              doc="Triangulation file"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Triangulation projection"),
-                   Parameter('p3', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="Destination :class:`MVIEW`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('new_group_name', type=Type.STRING,
                              doc="New group name")
                ]),
 
@@ -64,11 +64,11 @@ gx_methods = {
                doc="Query a block model for the variable names and descriptions.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('block_model_file', type=Type.STRING,
                              doc="Block model file"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('query', type=Type.INT32_T,
                              doc=":def:`BLOCK_MODEL_VARIABLE_TYPE` Which variables to return."),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List used to return variable names/descriptions.")
                ]),
 
@@ -77,11 +77,11 @@ gx_methods = {
                doc="Query a block model for the values a string variable can assume.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('block_model_file', type=Type.STRING,
                              doc="Block model file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('variable_name', type=Type.STRING,
                              doc="Variable name"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List used to return variable names")
                ]),
 
@@ -90,17 +90,17 @@ gx_methods = {
                doc="Create a Geosoft voxel file from a Vulcan block model file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('block_model_file', type=Type.STRING,
                              doc="Block model file"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Block model projection"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('variable_to_export', type=Type.STRING,
                              doc="Variable to import"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('output_voxel_filename', type=Type.STRING,
                              doc="Ouput voxel filename"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('remove_default_values', type=Type.INT32_T,
                              doc="Remove default values from input? :def:`GEO_BOOL`"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('rock_code_filename', type=Type.STRING,
                              doc="Rock code file for string variable imports. Optional, unused for numeric variable imports.")
                ])
     ]

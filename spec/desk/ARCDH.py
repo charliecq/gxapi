@@ -23,9 +23,9 @@ gx_methods = {
                doc="Sets the current :class:`DH` project in the Target extension",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('path', type=Type.STRING,
                              doc="Path String"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('project', type=Type.STRING,
                              doc="Project Name")
                ]),
 
@@ -34,7 +34,7 @@ gx_methods = {
                doc="Sets the current Geostring File Geodatabase in the Target extension",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('string_file_gdb', type=Type.STRING,
                              doc="File Geodatabase")
                ]),
 
@@ -58,9 +58,9 @@ gx_methods = {
                doc="Gets the current Geostring File Geodatabase.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name returned"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="String size")
                ]),
 
@@ -69,7 +69,7 @@ gx_methods = {
                doc="Is this a valid FGDB filename?",
                return_type=Type.INT32_T,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('fgdb', type=Type.STRING,
                              doc="FGDB filename")
                ]),
 
@@ -78,7 +78,7 @@ gx_methods = {
                doc="Is this a valid featureclass name?",
                return_type=Type.INT32_T,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('feature_class_name', type=Type.STRING,
                              doc="Featureclass name")
                ]),
 
@@ -87,11 +87,11 @@ gx_methods = {
                doc="Prompt the user to select an ESRI symbol and return it as an XML string. The output string will be empty if the user cancels the dialog.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HWND", is_val=True,
+                   Parameter('hwnd', type="HWND", is_val=True,
                              doc="Window handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('h_wnd', type=Type.STRING,
                              doc='Initial symbol that you want displayed when the dialog is launched (use "" if none)'),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('input_xml_string', type=Type.INT32_T,
                              doc="(This parameter is ignored if an initial symbol was specified) Initial symbol type that you want displayed when the dialog is launched (0 for Fill, 1 for Line)"),
                    Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
                              doc="Returned XML string representing the symbol that was chosen by the user"),

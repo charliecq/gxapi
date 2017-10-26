@@ -42,11 +42,11 @@ gx_methods = {
                doc="Add a polygon to the polygon file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`.")
                ]),
 
@@ -55,13 +55,13 @@ gx_methods = {
                doc="Add a polygon to the polygon file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('exclude', type=Type.INT32_T,
                              doc="bExclude")
                ]),
 
@@ -71,9 +71,9 @@ gx_methods = {
                notes="The :class:`PLY` is re-projected to the new projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to place in the :class:`PLY`")
                ]),
 
@@ -82,7 +82,7 @@ gx_methods = {
                doc="Clear/remove all polygons from the :class:`PLY`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object")
                ]),
 
@@ -91,9 +91,9 @@ gx_methods = {
                doc="Destroys a :class:`PLY` Object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('dest', type="PLY",
                              doc="Destination"),
-                   Parameter('p2', type="PLY",
+                   Parameter('srce', type="PLY",
                              doc="Source")
                ]),
 
@@ -109,7 +109,7 @@ gx_methods = {
                return_type="PLY",
                return_doc=":class:`PLY` Handle",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize from")
                ]),
 
@@ -118,7 +118,7 @@ gx_methods = {
                doc="Destroys a :class:`PLY` Object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object")
                ]),
 
@@ -128,14 +128,14 @@ gx_methods = {
                notes="If there are no polygons in the :class:`PLY` object, returns dummies.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('pply', type="PLY"),
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Max Y")
                ]),
 
@@ -144,9 +144,9 @@ gx_methods = {
                doc="Get the projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` in which to place the :class:`PLY` projection")
                ]),
 
@@ -155,13 +155,13 @@ gx_methods = {
                doc="Get a polygon from the :class:`PLY`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('poly', type=Type.INT32_T,
                              doc="Polygon number")
                ]),
 
@@ -170,15 +170,15 @@ gx_methods = {
                doc="Get a polygon from the :class:`PLY`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('poly', type=Type.INT32_T,
                              doc="Polygon number"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('exclude', type=Type.INT32_T, is_ref=True,
                              doc="TRUE if exclusion polygon")
                ]),
 
@@ -188,15 +188,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`PLY_CLIP`",
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Polygon to clip"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max y")
                ]),
 
@@ -216,19 +216,19 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0, Terminates on error (you can ignore this value)",
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Polygon to clip"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X of line to clip"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y of line to clip"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X of line to clip"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max y of line to clip"),
-                   Parameter('p6', type="VV",
+                   Parameter('vv', type="VV",
                              doc="DOUBLE :class:`VV` holding intersection fids"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Data element increment (precision)"),
                    Parameter('p8', type=Type.INT32_T, is_ref=True,
                              doc="First point value (:def:`PLY_LINE_CLIP` value)")
@@ -245,11 +245,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`PLY_CLIP`",
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('ppl_ya', type="PLY",
                              doc="Polygon A"),
-                   Parameter('p2', type="PLY",
+                   Parameter('ppl_yb', type="PLY",
                              doc="Polygon B"),
-                   Parameter('p3', type="PLY",
+                   Parameter('ppl_yc', type="PLY",
                              doc="Resulting clipped region")
                ]),
 
@@ -258,11 +258,11 @@ gx_methods = {
                doc="Get the :class:`PLY` description string",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('desc', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Polygon description"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="String size")
                ]),
 
@@ -272,7 +272,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of polygons in the :class:`PLY`.",
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object")
                ]),
 
@@ -281,9 +281,9 @@ gx_methods = {
                doc="Loads Polygons from a Polygon file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('table', type=Type.STRING,
                              doc="Name of the polygon file File contains coordinates of one or more polygons")
                ]),
 
@@ -294,7 +294,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Area of a polygon",
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object")
                ]),
 
@@ -303,14 +303,14 @@ gx_methods = {
                doc="Creates a polygon from a rectangular area.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('pply', type="PLY"),
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y")
                ]),
 
@@ -319,12 +319,12 @@ gx_methods = {
                doc="Rotate a polygon about a point.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('pply', type="PLY"),
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Rotation point, X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Rotation point, Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('rot', type=Type.DOUBLE,
                              doc="Rotation angle, CCW in degrees")
                ]),
 
@@ -333,9 +333,9 @@ gx_methods = {
                doc="Save Polygons to a Polygon file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('table', type=Type.STRING,
                              doc="Name of the polygon file")
                ]),
 
@@ -344,9 +344,9 @@ gx_methods = {
                doc="Serialize an :class:`PLY` to a :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('ply', type="PLY",
                              doc=":class:`PLY` object to serialize"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize to")
                ]),
 
@@ -355,9 +355,9 @@ gx_methods = {
                doc="Set the :class:`PLY` description string",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('desc', type=Type.STRING,
                              doc="Polygon description")
                ]),
 
@@ -367,9 +367,9 @@ gx_methods = {
                notes="This changes the projection information only.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to place in the :class:`PLY`")
                ]),
 
@@ -383,9 +383,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` Object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('thin', type=Type.DOUBLE,
                              doc="Thining resolution")
                ])
     ]

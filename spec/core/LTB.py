@@ -78,11 +78,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc="Key name"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('rec', type=Type.INT32_T, is_ref=True,
                              doc="Returned record number")
                ]),
 
@@ -105,9 +105,9 @@ gx_methods = {
                NULL - Error of some kind
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('lt_bm', type="LTB",
                              doc="Master :class:`LTB`"),
-                   Parameter('p2', type="LTB",
+                   Parameter('lt_bc', type="LTB",
                              doc="Contract :class:`LTB`")
                ]),
 
@@ -121,13 +121,13 @@ gx_methods = {
                NULL - Error of some kind
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name, .csv assumed, searched locally then in GEOSOFT."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('delim', type=Type.INT32_T,
                              doc=":def:`LTB_DELIM`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc='Key to find if only one record required, "" to read entire table.')
                ]),
 
@@ -141,17 +141,17 @@ gx_methods = {
                NULL - Error of some kind
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name, .csv assumed, searched locally then in GEOSOFT."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('delim', type=Type.INT32_T,
                              doc=":def:`LTB_DELIM`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('case', type=Type.INT32_T,
                              doc=":def:`LTB_CASE`"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc='Key to find if only one record required, "" to read entire table.'),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('crypt', type=Type.STRING,
                              doc="Decryption Key :def:`SYS_CRYPT_KEY`")
                ]),
 
@@ -165,15 +165,15 @@ gx_methods = {
                NULL - Error of some kind
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name, .csv assumed, searched locally then in GEOSOFT."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LTB_TYPE`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('delim', type=Type.INT32_T,
                              doc=":def:`LTB_DELIM`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('case', type=Type.INT32_T,
                              doc=":def:`LTB_CASE`"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc='Key to find if only one record required, "" to read entire table.')
                ]),
 
@@ -186,9 +186,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rec', type=Type.INT32_T,
                              doc="Record number to delete")
                ]),
 
@@ -197,7 +197,7 @@ gx_methods = {
                doc="Destroy",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object to destroy")
                ]),
 
@@ -211,15 +211,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('fld', type=Type.INT32_T,
                              doc="Field"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('match', type=Type.STRING,
                              doc="String to match to field, must be lower-case"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('match', type=Type.INT32_T,
                              doc=":def:`LTB_CONLST`"),
-                   Parameter('p5', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to populate")
                ]),
 
@@ -233,11 +233,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('fld', type=Type.INT32_T,
                              doc="Field to get, 0 for key field"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to populate")
                ]),
 
@@ -251,13 +251,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('fld_n', type=Type.INT32_T,
                              doc="Field for names, 0 for key field"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('fld_v', type=Type.INT32_T,
                              doc="Field for values, 0 for key field"),
-                   Parameter('p4', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to populate")
                ]),
 
@@ -267,7 +267,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of fields in the :class:`LTB`.",
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object")
                ]),
 
@@ -280,9 +280,9 @@ gx_methods = {
                field number if field does exist.
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Field name")
                ]),
 
@@ -295,9 +295,9 @@ gx_methods = {
                record number if key does exist.
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc="Key name")
                ]),
 
@@ -307,13 +307,13 @@ gx_methods = {
                notes="If the record or field are out of range, an empty string is returned.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('field', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned field name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum field name string length")
                ]),
 
@@ -326,11 +326,11 @@ gx_methods = {
                an empty string or dummy value is returned.
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number")
                ]),
 
@@ -343,15 +343,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('token', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned field token"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum field token string length")
                ]),
 
@@ -364,15 +364,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('token', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned field token"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum field token string length")
                ]),
 
@@ -382,7 +382,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of records in the :class:`LTB`.",
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object")
                ]),
 
@@ -395,13 +395,13 @@ gx_methods = {
                record number if search succeeds
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rec', type=Type.INT32_T,
                              doc="Search start record"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('fld', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Search string (case sensitive)")
                ]),
 
@@ -431,9 +431,9 @@ gx_methods = {
                NULL - Error of some kind
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('lt_bm', type="LTB",
                              doc="Master :class:`LTB`"),
-                   Parameter('p2', type="LTB",
+                   Parameter('lt_bc', type="LTB",
                              doc="Child :class:`LTB`")
                ]),
 
@@ -446,11 +446,11 @@ gx_methods = {
                an empty string or dummy value is returned.
                """,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number")
                ]),
 
@@ -459,8 +459,8 @@ gx_methods = {
                doc="Save :class:`LTB` changes to existing or new file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ltb', type="LTB"),
+                   Parameter('file', type=Type.STRING,
                              doc='File name, .csv assumed.  If "", save to original file.')
                ]),
 
@@ -469,10 +469,10 @@ gx_methods = {
                doc="Save :class:`LTB` to a new file using encryption",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ltb', type="LTB"),
+                   Parameter('file', type=Type.STRING,
                              doc='File name, .csv assumed.  If "", save to original file.'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('crypt', type=Type.STRING,
                              doc="Encryption key  :def:`SYS_CRYPT_KEY`")
                ]),
 
@@ -481,13 +481,13 @@ gx_methods = {
                doc="Set a long entry",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('data', type=Type.INT32_T,
                              doc="Entry")
                ]),
 
@@ -496,13 +496,13 @@ gx_methods = {
                doc="Set a double entry",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('data', type=Type.DOUBLE,
                              doc="Entry")
                ]),
 
@@ -511,13 +511,13 @@ gx_methods = {
                doc="Set an entry",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('record', type=Type.INT32_T,
                              doc="Record number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('token', type=Type.STRING,
                              doc="Entry")
                ])
     ]

@@ -15,13 +15,13 @@ gx_methods = {
                doc="Sends a move cursor message",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z location"),
-                   Parameter('p4', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` (if (:class:`IPJ`)0, default coordinate system)")
                ]),
 
@@ -30,15 +30,15 @@ gx_methods = {
                doc="Sends a view area message",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x0', type=Type.DOUBLE,
                              doc="X0 location"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y0', type=Type.DOUBLE,
                              doc="Y0 location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X1 location"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y1 location"),
-                   Parameter('p5', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` (if (:class:`IPJ`)0, default coordinate system)")
                ])
     ]

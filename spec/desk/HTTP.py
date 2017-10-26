@@ -50,13 +50,13 @@ gx_methods = {
                return_type="HTTP",
                return_doc=":class:`HTTP` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('url', type=Type.STRING,
                              doc="URL of the server"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user_name', type=Type.STRING,
                              doc='User name, "" for none'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password,  "" for none'),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('purpose', type=Type.STRING,
                              doc="Purpose of communication (for user verification)")
                ]),
 
@@ -65,7 +65,7 @@ gx_methods = {
                doc="Destroy :class:`HTTP`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HTTP",
+                   Parameter('http', type="HTTP",
                              doc=":class:`HTTP` to Destroy")
                ]),
 
@@ -78,13 +78,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HTTP",
+                   Parameter('http', type="HTTP",
                              doc="Http object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name on the :class:`HTTP` site"),
-                   Parameter('p3', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` in which to place the file"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('dynamic', type=Type.INT32_T,
                              doc="Dynamic content (0 - no, 1 - yes)")
                ]),
 
@@ -97,13 +97,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HTTP",
+                   Parameter('http', type="HTTP",
                              doc="Http object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name on the :class:`HTTP` site"),
-                   Parameter('p3', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` in which to place the file"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('dynamic', type=Type.INT32_T,
                              doc="Dynamic content (0 - no, 1 - yes)")
                ]),
 
@@ -119,15 +119,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HTTP",
+                   Parameter('http', type="HTTP",
                              doc="Http object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Http path (file or an ISAPI DLL), no spaces"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('method', type=Type.STRING,
                              doc="Http search string, no spaces"),
-                   Parameter('p4', type="BF",
+                   Parameter('bf', type="BF",
                              doc="Data to send"),
-                   Parameter('p5', type="BF",
+                   Parameter('ret_bf', type="BF",
                              doc="Data returned")
                ]),
 
@@ -142,13 +142,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HTTP",
+                   Parameter('http', type="HTTP",
                              doc="Http object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Http path (file or an ISAPI DLL)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('method', type=Type.STRING,
                              doc="Http search string, no spaces"),
-                   Parameter('p4', type="BF",
+                   Parameter('bf', type="BF",
                              doc="Data to post")
                ]),
 
@@ -160,11 +160,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HTTP",
+                   Parameter('http', type="HTTP",
                              doc="Http object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('username', type=Type.STRING,
                              doc="Username"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc="Password")
                ])
     ]

@@ -74,8 +74,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('d_y', type=Type.DOUBLE,
                              doc="Y location in plot units (mm)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Left  X (rescaling unit)"),
@@ -100,8 +100,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('d_x', type=Type.DOUBLE,
                              doc="X location in plot units (mm)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Bottom Y (rescaling unit)"),
@@ -122,11 +122,11 @@ gx_methods = {
                return_type="MVG",
                return_doc=":class:`MVG` handle (NULL if error)",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="H_MAP handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="View Name"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('xmin_m', type=Type.DOUBLE,
                              doc="Minimum X in map unit (mm)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Minimum Y in map unit (mm)"),
@@ -150,7 +150,7 @@ gx_methods = {
                notes="Obsolete",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG",
+                   Parameter('mvg', type="MVG",
                              doc=":class:`MVG` Handle")
                ]),
 
@@ -161,7 +161,7 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW` Handle",
                parameters = [
-                   Parameter('p1', type="MVG",
+                   Parameter('mvg', type="MVG",
                              doc=":class:`MVG` object")
                ]),
 
@@ -179,12 +179,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('d1st_x', type=Type.DOUBLE,
                              doc="X position of 1st vertical grid line to draw (in rescaling unit)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('d1st_y', type=Type.DOUBLE,
                              doc="Y position of 1st horizontal grid line to draw (in rescaling unit)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('d_x', type=Type.DOUBLE,
                              doc="X grid increment of rescaled map unit (see above Rescaling functions)"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Y grid increment of rescaled map unit (see above Rescaling functions)"),
@@ -210,8 +210,8 @@ gx_methods = {
                see_also="sAxisX_MVG",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location in plot units (mm)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Left  X (rescaling unit)"),
@@ -241,10 +241,10 @@ gx_methods = {
                see_also="sAxisY_MVG",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location in plot units (mm)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('by', type=Type.DOUBLE,
                              doc="Bottom  Y (rescaling unit)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Top Y (rescaling unit)"),
@@ -273,16 +273,16 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('draw', type=Type.INT32_T,
                              doc=":def:`MVG_DRAW`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('wrap', type=Type.INT32_T,
                              doc=":def:`MVG_WRAP`"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p5', type="VA",
+                   Parameter('va', type="VA",
                              doc="Y VAs"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_varray', type="VV",
                              doc=":class:`VV` containing list of :class:`VA` ranges, such as 1,2 40 ... Entire :class:`VA` is drawn if this :class:`VV` is empty.")
                ]),
 
@@ -301,14 +301,14 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mvg', type="MVG"),
+                   Parameter('draw', type=Type.INT32_T,
                              doc=":def:`MVG_DRAW`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('wrap', type=Type.INT32_T,
                              doc=":def:`MVG_WRAP`"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`")
                ]),
 
@@ -323,15 +323,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG",
+                   Parameter('mvg', type="MVG",
                              doc=":class:`MVG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('scale', type=Type.INT32_T,
                              doc=":def:`MVG_SCALE`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Scale information: new minimum X"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Scale information: new maximum X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('log_min', type=Type.DOUBLE,
                              doc="Scale information: minimum X to apply log10, it is defined only for LOGLINEAR scale")
                ]),
 
@@ -346,15 +346,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVG",
+                   Parameter('mvg', type="MVG",
                              doc=":class:`MVG` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('scale', type=Type.INT32_T,
                              doc=":def:`MVG_SCALE`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Scale information: new minimum Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Scale information: new maximum Y"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('log_min', type=Type.DOUBLE,
                              doc="Scale information: minimum Y to apply log10, it is defined only for LOGLINEAR scale")
                ])
     ]

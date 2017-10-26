@@ -32,11 +32,11 @@ gx_methods = {
                doc="Appparent density filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('thick', type=Type.DOUBLE,
                              doc="Thickness (meters) of the earth model"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dens', type=Type.DOUBLE,
                              doc="Background density (g/cm3) (default = 0)")
                ]),
 
@@ -49,9 +49,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('strength', type=Type.DOUBLE,
                              doc="Total magnetic field strength")
                ]),
 
@@ -60,13 +60,13 @@ gx_methods = {
                doc="Bandpass filter (using low and high wavelength cutoffs)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('llen', type=Type.DOUBLE,
                              doc="Low Cutoff wavelength (meters)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('hlen', type=Type.DOUBLE,
                              doc="High Cutoff wavelength (meter)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('define', type=Type.INT32_T,
                              doc="1= Pass the defined band (default); 0= Reject the band")
                ]),
 
@@ -75,11 +75,11 @@ gx_methods = {
                doc="Butterworth filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('clen', type=Type.DOUBLE,
                              doc="Central cutoff wavelength (meter)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('degree', type=Type.DOUBLE,
                              doc="Degree of the filter function (default = 8.0)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter")
@@ -90,11 +90,11 @@ gx_methods = {
                doc="RC filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('clen', type=Type.DOUBLE,
                              doc="Central cutoff wavelength (meter)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('pass', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter")
                ]),
 
@@ -103,9 +103,9 @@ gx_methods = {
                doc="Upward/Downward continuation filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('dist', type=Type.DOUBLE,
                              doc="Distance to continue; positive = downwards negative = upwards")
                ]),
 
@@ -114,13 +114,13 @@ gx_methods = {
                doc="Cosine roll-off filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('llen', type=Type.DOUBLE,
                              doc="Low wavelength start point (meters)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('hlen', type=Type.DOUBLE,
                              doc="High wavelength end point (meters)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('degree', type=Type.DOUBLE,
                              doc="Degree of the filter function (default = 2.0)"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter")
@@ -136,7 +136,7 @@ gx_methods = {
                return_type="FFT",
                return_doc=":class:`FFT` Object",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` to transform."),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Element space interval"),
@@ -155,7 +155,7 @@ gx_methods = {
                return_type="FFT",
                return_doc=":class:`FFT` Object",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` to transform."),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Element space interval"),
@@ -178,7 +178,7 @@ gx_methods = {
                return_type="FFT",
                return_doc=":class:`FFT` Object",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` contains channel data to perform :class:`FFT` operations upon."),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Element space interval, should be the same as in Create(Ex)_FFT() call"),
@@ -199,7 +199,7 @@ gx_methods = {
                return_type="FFT",
                return_doc=":class:`FFT` Object",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` contains channel data to perform :class:`FFT` operations upon."),
                    Parameter('p2', type=Type.DOUBLE,
                              doc="Element space interval, should be the same as in Create(Ex)_FFT() call"),
@@ -216,7 +216,7 @@ gx_methods = {
                doc="Destroy an :class:`FFT`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to destroy.")
                ]),
 
@@ -225,11 +225,11 @@ gx_methods = {
                doc="Gaussian filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('dev', type=Type.DOUBLE,
                              doc="Standard deviation cutoff of function (meters)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (residual) filter (default) 0= High-pass (regional) filter")
                ]),
 
@@ -238,10 +238,10 @@ gx_methods = {
                doc="Copies real and imaginary :class:`VV`'s to user :class:`VV`'s.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT"),
-                   Parameter('p2', type="VV",
+                   Parameter('fft', type="FFT"),
+                   Parameter('gv_vr', type="VV",
                              doc="Real component"),
-                   Parameter('p3', type="VV",
+                   Parameter('gv_vi', type="VV",
                              doc="Imaginary component")
                ]),
 
@@ -250,9 +250,9 @@ gx_methods = {
                doc="Horizontal derivative",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('order', type=Type.DOUBLE,
                              doc="Order of differentiation (default = 1)")
                ]),
 
@@ -261,11 +261,11 @@ gx_methods = {
                doc="High bandpass filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('wlen', type=Type.DOUBLE,
                              doc="Cutoff wavelength (meter)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('fid_int', type=Type.DOUBLE,
                              doc="Fiducial increment of the :class:`FFT`'s channel data")
                ]),
 
@@ -274,7 +274,7 @@ gx_methods = {
                doc="Horizontal integration",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to integrate")
                ]),
 
@@ -283,11 +283,11 @@ gx_methods = {
                doc="Inverse the :class:`FFT` from wave number domain to space domain",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to invert"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc="Output :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('gv_vm', type="VV",
                              doc="Original :class:`VV` which was used to create :class:`FFT` (will be used as mask for output :class:`VV`; no masking if this parameter is NULL)")
                ]),
 
@@ -296,9 +296,9 @@ gx_methods = {
                doc="Low bandpass filter",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('wlen', type=Type.DOUBLE,
                              doc="Cutoff wavelength (meters)")
                ]),
 
@@ -307,9 +307,9 @@ gx_methods = {
                doc="Reduction to magnetic pole",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Geomagnetic inclination (degrees)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Geomagnetic declination (degrees)"),
@@ -325,7 +325,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Nyquist frequency (wavenumbers/sample unit).",
                parameters = [
-                   Parameter('p1', type="FFT")
+                   Parameter('fft', type="FFT")
                ]),
 
         Method('rSampIncr_FFT', module='geogxx', version='5.0.0',
@@ -334,7 +334,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Original sample increment.",
                parameters = [
-                   Parameter('p1', type="FFT")
+                   Parameter('fft', type="FFT")
                ]),
 
         Method('rWaveIncr_FFT', module='geogxx', version='5.0.0',
@@ -343,7 +343,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Wave number increment",
                parameters = [
-                   Parameter('p1', type="FFT")
+                   Parameter('fft', type="FFT")
                ]),
 
         Method('SetVV_FFT', module='geogxx', version='5.0.0',
@@ -355,10 +355,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT"),
-                   Parameter('p2', type="VV",
+                   Parameter('fft', type="FFT"),
+                   Parameter('gv_vr', type="VV",
                              doc="Real component"),
-                   Parameter('p3', type="VV",
+                   Parameter('gv_vi', type="VV",
                              doc="Imaginary component")
                ]),
 
@@ -367,9 +367,9 @@ gx_methods = {
                doc="Calculates a power spectrum",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to calculate power spectrum for"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc="Output power spectrum :class:`VV`")
                ]),
 
@@ -378,9 +378,9 @@ gx_methods = {
                doc="Vertical derivative",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to filter"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('order', type=Type.DOUBLE,
                              doc="Order of differentiation (default = 1)")
                ]),
 
@@ -389,7 +389,7 @@ gx_methods = {
                doc="Vertical integration",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` to integrate")
                ]),
 
@@ -398,11 +398,11 @@ gx_methods = {
                doc="Writes a power spectrum to a file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FFT",
+                   Parameter('fft', type="FFT",
                              doc=":class:`FFT` used to calculate power spectrum :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc="Output power spectrum :class:`VV`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('out_file', type=Type.STRING,
                              doc="File name for output spectrum")
                ])
     ]

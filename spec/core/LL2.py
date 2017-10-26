@@ -21,21 +21,21 @@ gx_methods = {
                return_type="LL2",
                return_doc=":class:`LL2` Object",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('lon0', type=Type.DOUBLE,
                              doc="Longitude origin"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('lat0', type=Type.DOUBLE,
                              doc="Latitude origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('lon', type=Type.DOUBLE,
                              doc="Longitude increment"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('lat', type=Type.DOUBLE,
                              doc="Latitude increment"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('lon', type=Type.INT32_T,
                              doc="# longitudes"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('lat', type=Type.INT32_T,
                              doc="# latitudes"),
-                   Parameter('p7', type="IPJ",
+                   Parameter('in_ipj', type="IPJ",
                              doc="Input projection"),
-                   Parameter('p8', type="IPJ",
+                   Parameter('out_ipj', type="IPJ",
                              doc="Output projection")
                ]),
 
@@ -44,7 +44,7 @@ gx_methods = {
                doc="Destroy",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LL2",
+                   Parameter('ll2_ll', type="LL2",
                              doc="Projection to Destroy")
                ]),
 
@@ -58,9 +58,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LL2",
+                   Parameter('ll2_ll', type="LL2",
                              doc=":class:`LL2` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Named resource")
                ]),
 
@@ -76,13 +76,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LL2",
+                   Parameter('ll2_ll', type="LL2",
                              doc=":class:`LL2` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="The row to set"),
-                   Parameter('p3', type="VV",
+                   Parameter('lon_vv', type="VV",
                              doc="Longitude corrections"),
-                   Parameter('p4', type="VV",
+                   Parameter('lat_vv', type="VV",
                              doc="Latitude corrections")
                ])
     ]

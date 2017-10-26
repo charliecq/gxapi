@@ -28,9 +28,9 @@ gx_methods = {
                doc="Set the symbol angle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Symbol angle")
                ]),
 
@@ -39,9 +39,9 @@ gx_methods = {
                doc="Set base value to subtract from Z values.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Symbol Base")
                ]),
 
@@ -58,9 +58,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('att', type=Type.INT32_T,
                              doc=":def:`CSYMB_COLOR`")
                ]),
 
@@ -69,9 +69,9 @@ gx_methods = {
                doc="Set symbol sizing to fixed (or proportionate)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('fixed', type=Type.INT32_T,
                              doc="TRUE  = Fixed symbol sizing FALSE = Proportionate sizing")
                ]),
 
@@ -88,9 +88,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('number', type=Type.INT32_T,
                              doc="Symbol number (0x1-0x1ffff)")
                ]),
 
@@ -99,9 +99,9 @@ gx_methods = {
                doc="Set the symbol scale.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Symbol scale (> 0.0)")
                ]),
 
@@ -110,13 +110,13 @@ gx_methods = {
                doc="Add x,y,z data to a color symbol object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` for X data"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` for Y data"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` for Z data")
                ]),
 
@@ -126,7 +126,7 @@ gx_methods = {
                return_type="CSYMB",
                return_doc=":class:`CSYMB` handle",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('itr', type=Type.STRING,
                              doc="ZON, :class:`AGG`, or :class:`ITR` file name")
                ]),
 
@@ -135,7 +135,7 @@ gx_methods = {
                doc="Destroy a :class:`CSYMB`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` to destroy")
                ]),
 
@@ -144,9 +144,9 @@ gx_methods = {
                doc="Get the :class:`ITR` of the :class:`CSYMB`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -155,11 +155,11 @@ gx_methods = {
                doc="Set the symbol font name.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('font', type=Type.STRING,
                              doc="Font name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('geo_font', type=Type.INT32_T,
                              doc="Geosoft font? (TRUE or FALSE)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc=":def:`MVIEW_FONT_WEIGHT`"),
@@ -177,11 +177,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Color value"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('att', type=Type.INT32_T,
                              doc=":def:`CSYMB_COLOR`")
                ])
     ]

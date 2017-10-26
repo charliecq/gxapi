@@ -50,11 +50,11 @@ gx_methods = {
                return_type="EXP",
                return_doc=":class:`EXP` Object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('formula', type=Type.STRING,
                              doc="Expression using channel names"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('max_len', type=Type.INT32_T,
                              doc="Maximum size of expression after expanding all local variables (those with $ prefix).")
                ]),
 
@@ -64,9 +64,9 @@ gx_methods = {
                return_type="EXP",
                return_doc=":class:`EXP` Object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -75,7 +75,7 @@ gx_methods = {
                doc="This method destroys a :class:`EXP` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EXP",
+                   Parameter('exp', type="EXP",
                              doc="Destroy a :class:`EXP` object")
                ])
     ]

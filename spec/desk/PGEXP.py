@@ -23,11 +23,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PGEXP",
+                   Parameter('pgexp', type="PGEXP",
                              doc=":class:`PGEXP` object"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg', type="PG",
                              doc="Pager to add"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('var', type=Type.STRING,
                              doc="Variable name")
                ]),
 
@@ -42,7 +42,7 @@ gx_methods = {
                doc="This method destroys a :class:`PGEXP` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PGEXP",
+                   Parameter('pgexp', type="PGEXP",
                              doc="Destroy a :class:`PGEXP` object")
                ]),
 
@@ -51,11 +51,11 @@ gx_methods = {
                doc="This method runs a formula on the pagers.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PGEXP",
+                   Parameter('pgexp', type="PGEXP",
                              doc=":class:`PGEXP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('formula', type=Type.STRING,
                              doc="Formula"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('max_len', type=Type.INT32_T,
                              doc="Max. Buff size")
                ])
     ]

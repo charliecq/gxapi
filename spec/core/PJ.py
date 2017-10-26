@@ -52,19 +52,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc=":class:`PJ` to use"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X (or Longitude...)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y (or Latitude...)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_dev', type=Type.DOUBLE,
                              doc="Max deviation in degrees"),
-                   Parameter('p7', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` to be filled")
                ]),
 
@@ -74,11 +74,11 @@ gx_methods = {
                notes="This function is equivalent to :func:`Project_VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="VVx"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="VVy")
                ]),
 
@@ -88,13 +88,13 @@ gx_methods = {
                notes="This function is equivalent to :func:`Project3D_VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="VVx"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="VVy"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="VVz")
                ]),
 
@@ -103,11 +103,11 @@ gx_methods = {
                doc="Convert X, Y from input projection to output projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X  (or Longitude)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y  (or Latitude)")
                ]),
 
@@ -125,13 +125,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X  (or Longitude)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y  (or Latitude)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z  (or Depth - unchanged)")
                ]),
 
@@ -140,13 +140,13 @@ gx_methods = {
                doc="Convert X,Y,Z from input projection to output projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X  (or Longitude)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y  (or Latitude)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z  (or Depth)")
                ]),
 
@@ -156,9 +156,9 @@ gx_methods = {
                return_type="PJ",
                return_doc=":class:`PJ` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('input', type=Type.STRING,
                              doc='Input PRJ file name, "" for geodetic'),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('output', type=Type.STRING,
                              doc='Ouput PRJ file name, "" for geodetic')
                ]),
 
@@ -173,9 +173,9 @@ gx_methods = {
                return_type="PJ",
                return_doc=":class:`PJ` Object",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ip_jin', type="IPJ",
                              doc="Input Projection, (:class:`IPJ`)0 for long/lat"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ip_jout', type="IPJ",
                              doc="Output Projection, (:class:`IPJ`)0 for long/lat")
                ]),
 
@@ -193,18 +193,18 @@ gx_methods = {
                return_type="PJ",
                return_doc=":class:`PJ` Object",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('lon', type=Type.DOUBLE,
                              doc="Longitude  at (X,Y) origin"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('lat', type=Type.DOUBLE,
                              doc="Latitude   at (X,Y) origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="(X,Y) origin"),
-                   Parameter('p4', type=Type.DOUBLE),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE),
+                   Parameter('rot', type=Type.DOUBLE,
                              doc="Coordinate Y relative to geographic N (deg azm)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('scl', type=Type.DOUBLE,
                              doc="Scale to convert X,Y to m."),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PJ_RECT`")
                ]),
 
@@ -213,7 +213,7 @@ gx_methods = {
                doc="This method destroys a projection object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection to Destroy")
                ]),
 
@@ -249,7 +249,7 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection")
                ]),
 
@@ -262,7 +262,7 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection")
                ]),
 
@@ -279,15 +279,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc=":class:`PJ` to use"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max Y")
                ]),
 
@@ -301,17 +301,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc=":class:`PJ` to use"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max Y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('err', type=Type.DOUBLE,
                              doc="Maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension")
                ]),
 
@@ -326,17 +326,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc=":class:`PJ` to use"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max Y"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('res', type=Type.DOUBLE, is_ref=True,
                              doc="Resolution")
                ]),
 
@@ -350,19 +350,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc=":class:`PJ` to use"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min Y"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max X"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Max Y"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('res', type=Type.DOUBLE, is_ref=True,
                              doc="Resolution"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('err', type=Type.DOUBLE,
                              doc="Maximum allowable projection error if <= 0.0, will use 0.005% of smallest dimension")
                ]),
 
@@ -378,23 +378,23 @@ gx_methods = {
                see_also=":func:`ProjectBoundingRectangle_PJ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc=":class:`PJ` to use"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_xl', type=Type.DOUBLE,
                              doc="Output limited bounding region Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_yl', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_xl', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_yl', type=Type.DOUBLE,
                              doc="Max Y"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Bounding Region Min X"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Min Y"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Max X"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Max Y")
                ]),
 
@@ -415,7 +415,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection")
                ])
     ]

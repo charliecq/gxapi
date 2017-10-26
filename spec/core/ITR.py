@@ -92,9 +92,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('brt', type=Type.DOUBLE,
                              doc="-1.0 - black; 0.0 no change; 1.0 white")
                ]),
 
@@ -107,10 +107,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type="VV",
+                   Parameter('itr', type="ITR"),
+                   Parameter('v_vd', type="VV",
                              doc="Input :class:`VV` of values (none-string)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vc', type="VV",
                              doc="Output :class:`VV` of colors (type INT)")
                ]),
 
@@ -119,9 +119,9 @@ gx_methods = {
                doc="Copies ITRs",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('it_rd', type="ITR",
                              doc=":class:`ITR` Destination"),
-                   Parameter('p2', type="ITR",
+                   Parameter('it_rs', type="ITR",
                              doc=":class:`ITR` Source")
                ]),
 
@@ -137,7 +137,7 @@ gx_methods = {
                return_type="ITR",
                return_doc=":class:`ITR` object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name, type determined from extension")
                ]),
 
@@ -156,12 +156,12 @@ gx_methods = {
                return_type="ITR",
                return_doc=":class:`ITR` object",
                parameters = [
-                   Parameter('p1', type="IMG"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('img', type="IMG"),
+                   Parameter('tbl', type=Type.STRING,
                              doc="Color table name, NULL for default"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc=":def:`ITR_ZONE`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('contour', type=Type.DOUBLE,
                              doc="Color contour interval or :def_val:`rDUMMY`")
                ]),
 
@@ -171,9 +171,9 @@ gx_methods = {
                return_type="ITR",
                return_doc=":class:`ITR` object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`AGG` Group name")
                ]),
 
@@ -183,7 +183,7 @@ gx_methods = {
                return_type="ITR",
                return_doc=":class:`ITR` object",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize from")
                ]),
 
@@ -192,7 +192,7 @@ gx_methods = {
                doc="Destroy the :class:`ITR` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` Handle")
                ]),
 
@@ -201,11 +201,11 @@ gx_methods = {
                doc="Calculate an equal area transform.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type="ST",
+                   Parameter('st', type="ST",
                              doc="Stat object with a histogram"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('contour', type=Type.DOUBLE,
                              doc="Color contour interval or dummy for none")
                ]),
 
@@ -222,10 +222,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('itr', type="ITR"),
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Data minimum value (or :def_val:`rDUMMY` if not set)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Data maximum value (or :def_val:`rDUMMY` if not set)")
                ]),
 
@@ -235,7 +235,7 @@ gx_methods = {
                return_type="REG",
                return_doc=":class:`REG` object",
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -245,11 +245,11 @@ gx_methods = {
                notes="Valid indices are 0 to N-1, where N is the size of the :class:`ITR`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc="Number of the zone to set."),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('color', type=Type.INT32_T, is_ref=True,
                              doc=":def:`MVIEW_COLOR`")
                ]),
 
@@ -259,8 +259,8 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`MVIEW_COLOR`",
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('itr', type="ITR"),
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Data value")
                ]),
 
@@ -270,7 +270,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of zones.",
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc="The :class:`ITR` object")
                ]),
 
@@ -284,7 +284,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`ITR_ZONE_MODEL`",
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -293,13 +293,13 @@ gx_methods = {
                doc="Calculate a linear transform.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('contour', type=Type.DOUBLE,
                              doc="Color contour interval or dummy for none")
                ]),
 
@@ -308,8 +308,8 @@ gx_methods = {
                doc="Load to an ASCII file, ZON, TBL or ER-Mapper LUT",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('itr', type="ITR"),
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -319,13 +319,13 @@ gx_methods = {
                notes="The function name is a misnomer. This is a pure log transform.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum ( > 0)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum ( > minimum)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('contour', type=Type.DOUBLE,
                              doc="Color contour interval or dummy for none")
                ]),
 
@@ -334,15 +334,15 @@ gx_methods = {
                doc="Calculate a normal distribution transform.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('std_dev', type=Type.DOUBLE,
                              doc="Standard deviation"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('mean', type=Type.DOUBLE,
                              doc="Mean"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('exp', type=Type.DOUBLE,
                              doc="Expansion, normally 1.0"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('contour', type=Type.DOUBLE,
                              doc="Color contour interval or dummy for none")
                ]),
 
@@ -351,9 +351,9 @@ gx_methods = {
                doc="Modified :class:`ITR` zone values to 10 (or e) raized to the power of the values",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('pow', type=Type.INT32_T,
                              doc=":def:`ITR_POWER`")
                ]),
 
@@ -369,7 +369,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The brightness setting of the :class:`ITR`",
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object")
                ]),
 
@@ -380,9 +380,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The value of the specified zone.",
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc="Number of the zone to set.")
                ]),
 
@@ -391,8 +391,8 @@ gx_methods = {
                doc="Save to an ASCII file, ZON, TBL or ER-Mapper LUT",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('itr', type="ITR"),
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -401,8 +401,8 @@ gx_methods = {
                doc="Save to any type (based on the extension of the input file name).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('itr', type="ITR"),
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -411,9 +411,9 @@ gx_methods = {
                doc="Serialize an :class:`ITR` to a :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object to serialize"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize to")
                ]),
 
@@ -423,11 +423,11 @@ gx_methods = {
                notes="See the :func:`CreateMap_ITR` function",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`AGG` group name"),
-                   Parameter('p3', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object to set")
                ]),
 
@@ -446,11 +446,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('brt', type=Type.DOUBLE,
                              doc="0.0 - black; 0.5 normal; 1.0 white"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('con', type=Type.DOUBLE,
                              doc="0.0 - flat; 1.0 normal")
                ]),
 
@@ -459,9 +459,9 @@ gx_methods = {
                doc="Set the color model of an :class:`ITR`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('model', type=Type.INT32_T,
                              doc=":def:`ITR_COLOR_MODEL`")
                ]),
 
@@ -470,10 +470,10 @@ gx_methods = {
                doc="Set :class:`ITR` max/min data limits.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('itr', type="ITR"),
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Data minimum value"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Data maximum value")
                ]),
 
@@ -482,9 +482,9 @@ gx_methods = {
                doc="Set the number of zones in an :class:`ITR`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('zones', type=Type.INT32_T,
                              doc="Number of zones to set :class:`ITR` to.")
                ]),
 
@@ -494,11 +494,11 @@ gx_methods = {
                notes="Valid indices are 0 to N-1, where N is the size of the :class:`ITR`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc="Number of the zone to set."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc=":def:`MVIEW_COLOR`")
                ]),
 
@@ -508,11 +508,11 @@ gx_methods = {
                notes="Valid indices are 0 to N-2, where N is the size of the :class:`ITR`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc=":class:`ITR` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('zone', type=Type.INT32_T,
                              doc="Number of the zone to set."),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="The value to set")
                ])
     ]

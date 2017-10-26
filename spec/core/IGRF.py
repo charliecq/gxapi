@@ -25,19 +25,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IGRF",
+                   Parameter('igrf', type="IGRF",
                              doc=":class:`IGRF` model"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('el', type=Type.DOUBLE,
                              doc="Elevation (metres)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('lon', type=Type.DOUBLE,
                              doc="Longitude (-180 to 180)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('lat', type=Type.DOUBLE,
                              doc="Latitude  (-90 to 90) Returns"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('str_val', type=Type.DOUBLE, is_ref=True,
                              doc="Field strength"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('inc', type=Type.DOUBLE, is_ref=True,
                              doc="Field inclination"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('dec', type=Type.DOUBLE, is_ref=True,
                              doc="Field declination")
                ]),
 
@@ -59,19 +59,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IGRF",
+                   Parameter('igrf', type="IGRF",
                              doc=":class:`IGRF` model"),
-                   Parameter('p2', type="VV",
+                   Parameter('gv_vel', type="VV",
                              doc="Input elevation data (metres)"),
-                   Parameter('p3', type="VV",
+                   Parameter('gv_vlon', type="VV",
                              doc="Input longitude data (-180 to 180)"),
-                   Parameter('p4', type="VV",
+                   Parameter('gv_vlat', type="VV",
                              doc="Input latitude data  (-90 to 90)"),
-                   Parameter('p5', type="VV",
+                   Parameter('gv_vfs', type="VV",
                              doc="Output total field"),
-                   Parameter('p6', type="VV",
+                   Parameter('gv_vinc', type="VV",
                              doc="Output inclination"),
-                   Parameter('p7', type="VV",
+                   Parameter('gv_vdec', type="VV",
                              doc="Output declination")
                ]),
 
@@ -86,11 +86,11 @@ gx_methods = {
                return_type="IGRF",
                return_doc=":class:`IGRF` Object",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Date required"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('year', type=Type.INT32_T,
                              doc="Year of the :class:`IGRF` model to use"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('filename', type=Type.STRING,
                              doc="Name of the :class:`IGRF` reference data file")
                ]),
 
@@ -104,11 +104,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc="Model data file name"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum year  (:def_val:`rMAX` if none found)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum year  (:def_val:`rMIN` if none found)")
                ]),
 
@@ -117,7 +117,7 @@ gx_methods = {
                doc="Destroy an :class:`IGRF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IGRF",
+                   Parameter('igrf', type="IGRF",
                              doc=":class:`IGRF` to destroy.")
                ])
     ]

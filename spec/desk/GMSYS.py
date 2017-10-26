@@ -15,7 +15,7 @@ gx_methods = {
                doc="Launch :class:`GMSYS` with extension",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('model', type=Type.STRING,
                              doc="Model name")
                ])
     ]

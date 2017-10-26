@@ -238,23 +238,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes to check"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('chan_code', type=Type.STRING,
                              doc="Channel code"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('geology', type=Type.STRING,
                              doc="Geology item"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('surface', type=Type.INT32_T,
                              doc=":def:`DH_SURFACE` Surface selection (top or bottom)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('gap', type=Type.DOUBLE,
                              doc="Max gap to skip when compositing (:def_val:`GS_R8DM` for none)"),
-                   Parameter('p7', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations of the contact"),
-                   Parameter('p8', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations of the contact"),
-                   Parameter('p9', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations of the contact")
                ]),
 
@@ -271,19 +271,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List of holes to process (e.g. from :func:`HoleLST_DH`)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('alpha', type=Type.STRING,
                              doc="Channel code for input alpha data"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('beta', type=Type.STRING,
                              doc="Channel code for input beta data"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('top_ref', type=Type.INT32_T,
                              doc="1: Top of core reference 0: Bottom of core reference"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('dip', type=Type.STRING,
                              doc="Channel name for output dip data"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('dip_dir', type=Type.STRING,
                              doc="Channel name for output dip direction")
                ]),
 
@@ -293,13 +293,13 @@ gx_methods = {
                notes="Finds and sorts all the unique non-dummy items for the selected channel.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan_code', type=Type.STRING,
                              doc="Channel code"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('selected_holes', type=Type.INT32_T,
                              doc="Selected holes (1), All holes (0)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` filled with items (converted to this :class:`VV` type)")
                ]),
 
@@ -309,13 +309,13 @@ gx_methods = {
                notes="Finds and sorts all the unique non-dummy items for the selected channel.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan_name', type=Type.STRING,
                              doc="Channel"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('selected_holes', type=Type.INT32_T,
                              doc="Selected holes (1), All holes (0)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` filled with items (converted to this :class:`VV` type)")
                ]),
 
@@ -326,9 +326,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Channel data type",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan_code', type=Type.STRING,
                              doc="Channel code")
                ]),
 
@@ -347,17 +347,17 @@ gx_methods = {
                0 if no intersection found
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index"),
-                   Parameter('p3', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="DEM Grid"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="Returned X location"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Returned Y location"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Returned Z location")
                ]),
 
@@ -389,25 +389,25 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if an intersection is found, 0 if not.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('xi', type=Type.DOUBLE,
                              doc="Input location on hole X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('yi', type=Type.DOUBLE,
                              doc="Input location on hole Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('zi', type=Type.DOUBLE,
                              doc="Input location on hole Z"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dip', type=Type.DOUBLE,
                              doc="Dip (positive up) in degrees"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('az', type=Type.DOUBLE,
                              doc="Azimuth in degrees"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="DEM grid"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xo', type=Type.DOUBLE, is_ref=True,
                              doc="Returned intersection point X"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('yo', type=Type.DOUBLE, is_ref=True,
                              doc="Returned intersection point Y"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('zo', type=Type.DOUBLE, is_ref=True,
                              doc="Returned intersection point Z")
                ]),
 
@@ -426,25 +426,25 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan_code', type=Type.STRING,
                              doc="Lithology channel code"),
-                   Parameter('p3', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc="Codes, colors etc."),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('vox', type=Type.STRING,
                              doc="Name of :class:`VOX` Persistent Storage file"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('cell_size', type=Type.DOUBLE,
                              doc="Cell Size (:def_val:`GS_R8DM` for automatic calculation)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('gap', type=Type.DOUBLE,
                              doc="Max gap to skip when compositing (:def_val:`GS_R8DM` for none)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('non_contact_radius', type=Type.DOUBLE,
                              doc="Non-contact radius."),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('gridding_type', type=Type.INT32_T,
                              doc="Gridding type (0: Rangrid, 1: TinGrid)"),
-                   Parameter('p9', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Rangrid control :class:`REG` (see :class:`RGRD` class for parameters)"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('retain_grid_files', type=Type.INT32_T,
                              doc="Retain top/bottom grids?")
                ]),
 
@@ -497,17 +497,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="DEM grid"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations of the contacts"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations of the contacts"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations of the contacts"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('blank_dist', type=Type.DOUBLE,
                              doc="Blanking distance")
                ]),
 
@@ -559,9 +559,9 @@ gx_methods = {
                :def_val:`DB_NULL` if no assay data (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('assay', type=Type.INT32_T,
                              doc="Assay dataset number")
                ]),
 
@@ -575,11 +575,11 @@ gx_methods = {
                :def_val:`NULLSYMB` if no survey data for this hole (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('assay', type=Type.INT32_T,
                              doc="Assay dataset number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index number")
                ]),
 
@@ -593,7 +593,7 @@ gx_methods = {
                :def_val:`DB_NULL` if no collar table (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object")
                ]),
 
@@ -607,7 +607,7 @@ gx_methods = {
                :def_val:`NULLSYMB` if no collar table (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object")
                ]),
 
@@ -621,7 +621,7 @@ gx_methods = {
                :def_val:`DB_NULL` if no dip-azimuth survey data (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object")
                ]),
 
@@ -635,9 +635,9 @@ gx_methods = {
                :def_val:`NULLSYMB` if no Dip-Azimuth survey data for this hole (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index number")
                ]),
 
@@ -651,7 +651,7 @@ gx_methods = {
                :def_val:`DB_NULL` if no East-North survey data (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object")
                ]),
 
@@ -665,9 +665,9 @@ gx_methods = {
                :def_val:`NULLSYMB` if no EN survey data for this hole (no error registered)
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index number")
                ]),
 
@@ -680,9 +680,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index")
                ]),
 
@@ -691,11 +691,11 @@ gx_methods = {
                doc="Populate an :class:`LST` with holes in an assay database",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('assay_db', type=Type.INT32_T,
                              doc="Index of the assay database"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` handle")
                ]),
 
@@ -709,9 +709,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to be populated")
                ]),
 
@@ -720,7 +720,7 @@ gx_methods = {
                doc="Use automatic hole selection based on slice.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('flag', type=Type.INT32_T,
                              doc="Turn on (TRUE) or off (FALSE)")
                ]),
 
@@ -735,7 +735,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle")
                ]),
 
@@ -744,33 +744,33 @@ gx_methods = {
                doc="Make a composite database",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type="DB",
+                   Parameter('mast_db', type="DB",
                              doc="Input assay :class:`DB` object"),
-                   Parameter('p3', type="DB",
+                   Parameter('comp_db', type="DB",
                              doc="Output composite :class:`DB` object"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('hol_sel', type=Type.INT32_T,
                              doc=":def:`DH_COMPSTDB_HOLSEL`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('int_sel', type=Type.INT32_T,
                              doc=":def:`DH_COMPSTDB_INTSEL`"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('fix_int', type=Type.DOUBLE,
                              doc="Fixed interval length"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('lith_ch', type=Type.STRING,
                              doc="Name of lithology cannel"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('int_file', type=Type.STRING,
                              doc="Name of interval file"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('wt_ch', type=Type.STRING,
                              doc="Name of Weight channel"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('rej1_val', type=Type.DOUBLE,
                              doc="dRej1Val for intervals short than, (:def_val:`GS_R8DM` for no action)"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('rej2_val', type=Type.DOUBLE,
                              doc="dRej2Val for intervals gap greater than, (:def_val:`GS_R8DM` for no action)"),
-                   Parameter('p12', type=Type.DOUBLE,
+                   Parameter('rej3_val', type=Type.DOUBLE,
                              doc="dRej3Val for Rej3Ch with Rej3Op, (:def_val:`GS_R8DM` for no action)"),
-                   Parameter('p13', type=Type.INT32_T,
+                   Parameter('rej3_op', type=Type.INT32_T,
                              doc="dRej3Op: 0: >, 1: >=, 2: <, 3: <="),
-                   Parameter('p14', type=Type.STRING,
+                   Parameter('rej3_ch', type=Type.STRING,
                              doc="Name of Rej3Ch channel")
                ]),
 
@@ -779,9 +779,9 @@ gx_methods = {
                doc="Computes XYZ for survey and assay data for a single hole.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index")
                ]),
 
@@ -790,19 +790,19 @@ gx_methods = {
                doc="Computes the extents for selected holes.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('e_min', type=Type.DOUBLE, is_ref=True,
                              doc="East Min"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('e_max', type=Type.DOUBLE, is_ref=True,
                              doc="East Max"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('n_min', type=Type.DOUBLE, is_ref=True,
                              doc="North Min"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('n_max', type=Type.DOUBLE, is_ref=True,
                              doc="North Max"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z_min', type=Type.DOUBLE, is_ref=True,
                              doc="Elev Min"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z_max', type=Type.DOUBLE, is_ref=True,
                              doc="Elev Max")
                ]),
 
@@ -811,7 +811,7 @@ gx_methods = {
                doc="Computes XYZ for survey and assay data.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle")
                ]),
 
@@ -832,9 +832,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Names to convert (call :func:`SymbLST_DB`).")
                ]),
 
@@ -844,7 +844,7 @@ gx_methods = {
                return_type="DH",
                return_doc=":class:`DH` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc="Name of current database")
                ]),
 
@@ -853,11 +853,11 @@ gx_methods = {
                doc="Create a default job from scratch.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="File name of the INI file to create (forces correct suffix)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
 
@@ -873,7 +873,7 @@ gx_methods = {
                return_type="DH",
                return_doc=":class:`DH` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc="Name of example project database")
                ]),
 
@@ -900,9 +900,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Datamine database file to import (``*.dm``)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('proj', type=Type.STRING,
                              doc="Drillhole project name")
                ]),
 
@@ -916,9 +916,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes to delete")
                ]),
 
@@ -927,7 +927,7 @@ gx_methods = {
                doc="Destroy a :class:`DH` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle")
                ]),
 
@@ -936,11 +936,11 @@ gx_methods = {
                doc="Exports a Drill Hole database to an external file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_EXP`")
                ]),
 
@@ -953,15 +953,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Hole Names in the Name and Value parts of the :class:`LST`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name (.pdb folder for File Geodatabase or .sde connector for SDE)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('pre', type=Type.STRING,
                              doc="String to prefix dataset names with"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='p6',
                              doc="Feature class name to export (pass empty for all or name of table, will contain the name of the output dataset for if a rename occurs)"),
                    Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Feature class name string size"),
@@ -974,15 +974,15 @@ gx_methods = {
                doc="Exports a Drill Hole database to a LAS v2 file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('assay_db', type=Type.INT32_T,
                              doc="Assay database index"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('interval', type=Type.DOUBLE,
                              doc="Interval for output"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -992,13 +992,13 @@ gx_methods = {
                notes="Use functions like :func:`SelectedLineLST_DB` to construct the :class:`LST`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Hole Names in the Name and Value parts of the :class:`LST`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_EXP`")
                ]),
 
@@ -1007,7 +1007,7 @@ gx_methods = {
                doc="Flush all selections to database selection engine.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database")
                ]),
 
@@ -1016,9 +1016,9 @@ gx_methods = {
                doc="Get the names of the project databases in a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of type -:def_val:`STR_FILE`")
                ]),
 
@@ -1027,9 +1027,9 @@ gx_methods = {
                doc="Get the names of the project databases in a :class:`VV`, same as :func:`GetDatabasesVV_DH` but the list is sorted alphabetically.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of type -:def_val:`STR_FILE`")
                ]),
 
@@ -1039,11 +1039,11 @@ gx_methods = {
                notes="Returns :def_val:`DH_DATA_UNKNOWN` if it can't determine the type.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('type', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_DATA`")
                ]),
 
@@ -1052,9 +1052,9 @@ gx_methods = {
                doc="Computes default section azimuths, extents for selected holes.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('az', type=Type.DOUBLE, is_ref=True,
                              doc="Azimuth of section (returned)"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Corner X (Easting) of section (returned)"),
@@ -1072,11 +1072,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="Hole Symbol",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('assay', type=Type.STRING,
                              doc="Table Name")
                ]),
 
@@ -1085,17 +1085,17 @@ gx_methods = {
                doc="Get the Survey information of a Hole.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Depth")
                ]),
 
@@ -1108,9 +1108,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` Handle")
                ]),
 
@@ -1125,9 +1125,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Returned map names (string type :class:`VV`)")
                ]),
 
@@ -1137,9 +1137,9 @@ gx_methods = {
                return_type="MAP",
                return_doc=":class:`MAP` Object",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('index', type=Type.INT32_T,
                              doc="Map Index")
                ]),
 
@@ -1149,7 +1149,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of plotting maps",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle")
                ]),
 
@@ -1159,7 +1159,7 @@ gx_methods = {
                return_type="REG",
                return_doc=":class:`REG` Object",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle")
                ]),
 
@@ -1168,9 +1168,9 @@ gx_methods = {
                doc="Populate a :class:`VV` with the indices of all selected holes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Returned hole indices (must be type INT)")
                ]),
 
@@ -1183,9 +1183,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_DATA`")
                ]),
 
@@ -1194,9 +1194,9 @@ gx_methods = {
                doc="Populate an :class:`LST` with the list of the selected holes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` handle")
                ]),
 
@@ -1205,9 +1205,9 @@ gx_methods = {
                doc="Populate an :class:`LST` with the list of all the holes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` handle")
                ]),
 
@@ -1217,9 +1217,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x  - Hole index",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Name of hole")
                ]),
 
@@ -1232,7 +1232,7 @@ gx_methods = {
                    one of the :class:`DH` project databases.
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle")
                ]),
 
@@ -1243,15 +1243,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DH_COMP_CHOICE`",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Current strip log map"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location on map of selected strip"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y End of hole interval in view coords"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y2', type=Type.DOUBLE,
                              doc="Y Other end of hole interval in view coords")
                ]),
 
@@ -1265,13 +1265,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('project', type=Type.STRING,
                              doc="Project name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Number of channels"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db',
                              doc="Collar table name (returned)"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('db', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for collar table name")
                ]),
 
@@ -1285,15 +1285,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('project', type=Type.STRING,
                              doc="Project name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Directory to create project in"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('chan', type=Type.INT32_T,
                              doc="Number of channels"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db',
                              doc="Collar table name (returned)"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('db', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for collar table name")
                ]),
 
@@ -1306,9 +1306,9 @@ gx_methods = {
                one of the :class:`DH` project databases.
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes to delete")
                ]),
 
@@ -1321,9 +1321,9 @@ gx_methods = {
                -1 - Not found
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Name of hole")
                ]),
 
@@ -1332,11 +1332,11 @@ gx_methods = {
                doc="Get the name of the database containing the collar table.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Returned file name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for the file name")
                ]),
 
@@ -1350,15 +1350,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of information"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place information"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of buffer")
                ]),
 
@@ -1367,11 +1367,11 @@ gx_methods = {
                doc="Get the Wholeplot project name.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('project', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Returned string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for the project name")
                ]),
 
@@ -1380,15 +1380,15 @@ gx_methods = {
                doc="Create a section ID based on its location",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('azimuth', type=Type.DOUBLE,
                              doc="Section Azimuth"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('east', type=Type.DOUBLE,
                              doc="Section Easting"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('north', type=Type.DOUBLE,
                              doc="Section Northing"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('id', type=Type.STRING, is_ref=True, size_of_param='id_size',
                              doc="Section ID"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('id_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Section ID size")
                ]),
 
@@ -1410,11 +1410,11 @@ gx_methods = {
                1: Template retrieved and written to a file.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Name of template file to extract to."),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('imp_type', type=Type.INT32_T, is_ref=True,
                              doc="The stored import template type :def:`DH_DATA`")
                ]),
 
@@ -1443,17 +1443,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template name"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('data_type', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_DATA`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file',
                              doc="File name (blank for ODBC, or undefined)."),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('file', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name buffer size"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table',
                              doc="Table name (blank for :def_val:`DH_DATA_UNKNOWN`, or undefined)."),
-                   Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('table', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Table name buffer size")
                ]),
 
@@ -1484,19 +1484,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template name"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('data_type', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_DATA`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file',
                              doc="File name (blank for ODBC, or undefined)."),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('file', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name buffer size"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table',
                              doc="Table name (blank for :def_val:`DH_DATA_UNKNOWN`, or undefined)."),
-                   Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('table', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Table name buffer size"),
-                   Parameter('p7', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Channel list (returned)")
                ]),
 
@@ -1505,9 +1505,9 @@ gx_methods = {
                doc="Get the positional units and conversion factor to m.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc='Units (i.e. "m")'),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of Units string"),
@@ -1527,9 +1527,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db',
                              doc="Collar table name (returned)"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('db', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for collar table name")
                ]),
 
@@ -1539,7 +1539,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x  - Number of holes",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle")
                ]),
 
@@ -1552,9 +1552,9 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="All holes"),
-                   Parameter('p2', type="LST",
+                   Parameter('sel_lst', type="LST",
                              doc="Selected holes")
                ]),
 
@@ -1567,7 +1567,7 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle")
                ]),
 
@@ -1580,11 +1580,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name   (``*.in3``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
 
@@ -1597,20 +1597,20 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('class_file', type=Type.STRING, is_ref=True, size_of_param='class_file_size',
                              doc="CSV filename (in/out can be blank)"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('class_file_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="CSV filename string size"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('fill_patterns', type=Type.INT32_T,
                              doc="""
                              0 - Collar Symbols
                              -1 - Rock Patterns
                              """),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('colors_only', type=Type.INT32_T,
                              doc="""
                              0 - Symbols/patterns (2D)
                              -1 - Colors only (3D)
@@ -1627,11 +1627,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.ins``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Tab page ID.")
                ]),
 
@@ -1646,11 +1646,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.ins``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
 
@@ -1663,11 +1663,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
 
@@ -1680,11 +1680,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
 
@@ -1698,13 +1698,13 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('plot_type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT` One of :def_val:`DH_PLOT_PLAN` or :def_val:`DH_PLOT_SECTION`"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
 
@@ -1717,11 +1717,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.inp``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
 
@@ -1735,11 +1735,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.ins``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Tab Page ID")
                ]),
 
@@ -1752,7 +1752,7 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1771,9 +1771,9 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1796,11 +1796,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.ins``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
 
@@ -1817,11 +1817,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.ins``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Tab page ID.")
                ]),
 
@@ -1844,11 +1844,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (``*.ins``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
 
@@ -1861,11 +1861,11 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name   (``*.inl``)"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_SECT_PAGE`")
                ]),
 
@@ -1878,7 +1878,7 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1897,9 +1897,9 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1908,19 +1908,19 @@ gx_methods = {
                doc="Imports data into a Drill Hole Database (obsolete).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('project', type=Type.STRING,
                              doc="Drill project name"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('hole', type="DB_SYMB",
                              doc="Hole channel"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('table', type=Type.STRING,
                              doc="Table"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_DATA`"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('log', type=Type.STRING,
                              doc="Log file name")
                ]),
 
@@ -1934,13 +1934,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('assay', type=Type.STRING,
                              doc="Assay database to use"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="LAS file name"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('interval', type=Type.DOUBLE,
                              doc="Averaging/desampling interval (cm)"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Interpolation method"),
@@ -1955,7 +1955,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of assay datasets.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="hDH object")
                ]),
 
@@ -1965,7 +1965,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of selected holes",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database")
                ]),
 
@@ -1976,13 +1976,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of holes found and checked.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes (name, index)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('tolerance', type=Type.DOUBLE,
                              doc="Dip/Azimuth curvature tolerance (degree per meter)"),
-                   Parameter('p4', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle to write to")
                ]),
 
@@ -1996,11 +1996,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of holes found and checked.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes (Name, Index)"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle to write to")
                ]),
 
@@ -2011,13 +2011,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of holes found and checked.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes (name, index)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('tolerance', type=Type.DOUBLE,
                              doc="Dip/Azimuth curvature tolerance (degree per meter)"),
-                   Parameter('p4', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle")
                ]),
 
@@ -2031,11 +2031,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of holes found and checked.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes (Name, Index)"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle to write to")
                ]),
 
@@ -2048,31 +2048,31 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('aoix1', type=Type.DOUBLE,
                              doc="1st Corner of AOI - X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('aoiy1', type=Type.DOUBLE,
                              doc="1st Corner of AOI - Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('aoix2', type=Type.DOUBLE,
                              doc="2nd Corner of AOI - X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('aoiy2', type=Type.DOUBLE,
                              doc="2nd Corner of AOI - Y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('aoix3', type=Type.DOUBLE,
                              doc="3rd Corner of AOI - X"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('aoiy3', type=Type.DOUBLE,
                              doc="3rd Corner of AOI - Y"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('aoix4', type=Type.DOUBLE,
                              doc="4th Corner of AOI - X"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('aoiy4', type=Type.DOUBLE,
                              doc="4th Corner of AOI - Y"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x1', type=Type.DOUBLE, is_ref=True,
                              doc="Returned slice 1st point - X"),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y1', type=Type.DOUBLE, is_ref=True,
                              doc="Returned slice 1st point - Y"),
-                   Parameter('p12', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x2', type=Type.DOUBLE, is_ref=True,
                              doc="Returned slice 2nd point - X"),
-                   Parameter('p13', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y2', type=Type.DOUBLE, is_ref=True,
                              doc="Returned slice 2nd point - Y")
                ]),
 
@@ -2091,9 +2091,9 @@ gx_methods = {
                2 - Survey table unchanged; there was more than one row in the table, and values were different
                """,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index")
                ]),
 
@@ -2107,11 +2107,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Source database"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Directory to store INI files")
                ]),
 
@@ -2120,11 +2120,11 @@ gx_methods = {
                doc="Load parameters from a Job into the Drill object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="The job file file to read"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
 
@@ -2133,9 +2133,9 @@ gx_methods = {
                doc="Load selections to from a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -2151,19 +2151,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Masking polygon"),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection from data to polygon coordinates"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('tol', type=Type.DOUBLE,
                              doc="Slice thickness - :def_val:`rDUMMY` for no limiting thickness"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('mask', type=Type.STRING,
                              doc="Name of mask channel"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('select', type=Type.INT32_T,
                              doc=":def:`DH_HOLES`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('append', type=Type.INT32_T,
                              doc=":def:`DH_MASK`")
                ]),
 
@@ -2173,7 +2173,7 @@ gx_methods = {
                return_type="DH",
                return_doc=":class:`DH` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc="Name of collar database")
                ]),
 
@@ -2182,11 +2182,11 @@ gx_methods = {
                doc="Open a :class:`DH` plotting job",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Job file name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
 
@@ -2200,11 +2200,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Parameter file (INI) name")
                ]),
 
@@ -2218,11 +2218,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="Existing 3D map view"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Parameter file (INI) name (normally *.in3)")
                ]),
 
@@ -2231,11 +2231,11 @@ gx_methods = {
                doc="Plot 3D symbols to an existing 3D map view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="Existing 3D map view"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Parameter file (INI) name (normally *.in3)")
                ]),
 
@@ -2244,9 +2244,9 @@ gx_methods = {
                doc="Do QA/QC on Hole Collar data.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle")
                ]),
 
@@ -2255,11 +2255,11 @@ gx_methods = {
                doc="Do QA/QC on Hole Collar data - :class:`LST` of holes.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` of holes (Name, Index)"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle")
                ]),
 
@@ -2269,11 +2269,11 @@ gx_methods = {
                notes="Checks all holes with Dip-Azimuth survey data",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('tolerance', type=Type.DOUBLE,
                              doc="Dip/Azimuth curvature tolerance (degree per meter)")
                ]),
 
@@ -2283,13 +2283,13 @@ gx_methods = {
                notes="Checks single hole with Dip-Azimuth survey data",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('tolerance', type=Type.DOUBLE,
                              doc="Dip/Azimuth curvature tolerance (degree per meter)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole name")
                ]),
 
@@ -2302,15 +2302,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Current hole Name")
                ]),
 
@@ -2320,11 +2320,11 @@ gx_methods = {
                notes="Checks all holes with East-North survey data",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('tolerance', type=Type.DOUBLE,
                              doc="Dip/Azimuth curvature tolerance (degree per meter)")
                ]),
 
@@ -2334,13 +2334,13 @@ gx_methods = {
                notes="Checks single holes with East-North survey data",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('tolerance', type=Type.DOUBLE,
                              doc="Dip/Azimuth curvature tolerance (degree per meter)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole name")
                ]),
 
@@ -2353,15 +2353,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Current hole Name")
                ]),
 
@@ -2370,15 +2370,15 @@ gx_methods = {
                doc="Do QA/QC on From/To data.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Current hole Name")
                ]),
 
@@ -2387,15 +2387,15 @@ gx_methods = {
                doc="Do QA/QC on Point data.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Current hole Name")
                ]),
 
@@ -2408,11 +2408,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle (not the collar table)"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` Handle")
                ]),
 
@@ -2430,11 +2430,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Parameter (INI) name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('plot_type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
 
@@ -2444,13 +2444,13 @@ gx_methods = {
                notes="Plot the currently selected holes to a section view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Parameter (INI) name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('plot_type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT` Section plot type (:def_val:`DH_PLOT_SECTION` or :def_val:`DH_PLOT_SECTION_CROOKED`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View name")
                ]),
 
@@ -2463,27 +2463,27 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole ID (for error messages)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="Input East"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Input North"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Input RL"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Returned depths down the hole"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('east', type=Type.DOUBLE,
                              doc="Input collar East"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('north', type=Type.DOUBLE,
                              doc="Input collar North"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('elev', type=Type.DOUBLE,
                              doc="Input collar RL"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Input top of hole depth"),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('bot', type=Type.DOUBLE, is_ref=True,
                              doc="Returned bottom depth")
                ]),
 
@@ -2502,39 +2502,39 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole ID (used for error messages)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vdip', type="VV",
                              doc="Dip"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vaz', type="VV",
                              doc="Azimuth"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vdepth', type="VV",
                              doc="Depth"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('east', type=Type.DOUBLE,
                              doc="Collar X (easting) (depth = 0)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('north', type=Type.DOUBLE,
                              doc="Collar Y (northing)(depth = 0)"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('elev', type=Type.DOUBLE,
                              doc="Collar Z (elevation) (depth = 0)"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Minimum hole depth to start output values"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('bot', type=Type.DOUBLE,
                              doc="Maximum hole depth for output values"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Increment for output values"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('dip_conv', type=Type.INT32_T,
                              doc=":def:`DIP_CONVENTION`"),
-                   Parameter('p13', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="Polynomial order"),
-                   Parameter('p14', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (Easting) - Output"),
-                   Parameter('p15', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y (Northin) - Output"),
-                   Parameter('p16', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (Elevation) - Output"),
-                   Parameter('p17', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Depths - Output")
                ]),
 
@@ -2550,37 +2550,37 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole ID (used for error messages)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vdip', type="VV",
                              doc="Dip"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vaz', type="VV",
                              doc="Azimuth"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vdepth', type="VV",
                              doc="Depth"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('east', type=Type.DOUBLE,
                              doc="Collar X (easting) (depth = 0)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('north', type=Type.DOUBLE,
                              doc="Collar Y (northing)(depth = 0)"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('elev', type=Type.DOUBLE,
                              doc="Collar Z (elevation) (depth = 0)"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Minimum hole depth to start output values"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('bot', type=Type.DOUBLE,
                              doc="Maximum hole depth for output values"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Increment for output values"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('dip_conv', type=Type.INT32_T,
                              doc=":def:`DIP_CONVENTION`"),
-                   Parameter('p13', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (Easting) - Output"),
-                   Parameter('p14', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y (Northin) - Output"),
-                   Parameter('p15', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (Elevation) - Output"),
-                   Parameter('p16', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Depths - Output")
                ]),
 
@@ -2596,35 +2596,35 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole ID (used for error messages)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dip', type=Type.DOUBLE,
                              doc="Collar Dip"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('az', type=Type.DOUBLE,
                              doc="Collar Azimuth"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('east', type=Type.DOUBLE,
                              doc="Collar X (easting) (depth = 0)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('north', type=Type.DOUBLE,
                              doc="Collar Y (northing)(depth = 0)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('elev', type=Type.DOUBLE,
                              doc="Collar Z (elevation) (depth = 0)"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Minimum hole depth to start output values"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('bot', type=Type.DOUBLE,
                              doc="Maximum hole depth for output values"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Increment for output values"),
-                   Parameter('p11', type=Type.INT32_T,
+                   Parameter('dip_conv', type=Type.INT32_T,
                              doc=":def:`DIP_CONVENTION`"),
-                   Parameter('p12', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (Easting) - Output"),
-                   Parameter('p13', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y (Northin) - Output"),
-                   Parameter('p14', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (Elevation) - Output"),
-                   Parameter('p15', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Depths - Output")
                ]),
 
@@ -2641,37 +2641,37 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('hole', type=Type.STRING,
                              doc="Hole ID (used for error messages)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vdip', type="VV",
                              doc="Dip"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vaz', type="VV",
                              doc="Azimuth"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vdepth', type="VV",
                              doc="Depth"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('east', type=Type.DOUBLE,
                              doc="Collar X (easting) (depth = 0)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('north', type=Type.DOUBLE,
                              doc="Collar Y (northing)(depth = 0)"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('elev', type=Type.DOUBLE,
                              doc="Collar Z (elevation) (depth = 0)"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Minimum hole depth to start output values"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('bot', type=Type.DOUBLE,
                              doc="Maximum hole depth for output values"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('inc', type=Type.DOUBLE,
                              doc="Increment for output values"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('dip_conv', type=Type.INT32_T,
                              doc=":def:`DIP_CONVENTION`"),
-                   Parameter('p13', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (Easting) - Output"),
-                   Parameter('p14', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y (Northin) - Output"),
-                   Parameter('p15', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (Elevation) - Output"),
-                   Parameter('p16', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Depths - Output")
                ]),
 
@@ -2687,7 +2687,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object   (ignored)."),
                    Parameter('p2', type="DB",
                              doc="Source database"),
@@ -2700,11 +2700,11 @@ gx_methods = {
                doc="Save a :class:`DH` plotting job",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Job file name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
 
@@ -2713,9 +2713,9 @@ gx_methods = {
                doc="Saves current selections to a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -2729,11 +2729,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xmm', type=Type.DOUBLE, is_ref=True,
                              doc="X size in mm."),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ymm', type=Type.DOUBLE, is_ref=True,
                              doc="Y size in mm.")
                ]),
 
@@ -2742,7 +2742,7 @@ gx_methods = {
                doc="Select all the holes in a Drill hole project.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database")
                ]),
 
@@ -2755,11 +2755,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc="INT :class:`VV` with hole indices."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('sel', type=Type.INT32_T,
                              doc="0 - deselect, 1 - select")
                ]),
 
@@ -2772,13 +2772,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask', type=Type.STRING,
                              doc="Mask"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('sel', type=Type.INT32_T,
                              doc="0 - deselect, 1 - select"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="0 - overwrite, 1 - append")
                ]),
 
@@ -2792,9 +2792,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database"),
-                   Parameter('p2', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Polygon object")
                ]),
 
@@ -2824,15 +2824,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database"),
-                   Parameter('p2', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Polygon object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('select', type=Type.INT32_T,
                              doc="Select (0) or Deselect (1)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('inside', type=Type.INT32_T,
                              doc="Region (0: inside, 1: outside)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('new', type=Type.INT32_T,
                              doc="Mode (0: Append, 1: New)")
                ]),
 
@@ -2842,9 +2842,9 @@ gx_methods = {
                notes="This might be extracted from an existing crooked section view, or created from a database line.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Crooked Section :class:`IPJ`")
                ]),
 
@@ -2854,9 +2854,9 @@ gx_methods = {
                notes="Can be used to specify the name of the view to plot into.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('cur_view', type=Type.STRING,
                              doc="View name")
                ]),
 
@@ -2870,13 +2870,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of information"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="Information")
                ]),
 
@@ -2894,9 +2894,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` Handle")
                ]),
 
@@ -2910,9 +2910,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`IPJ` Handle")
                ]),
 
@@ -2925,9 +2925,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc="Project database name")
                ]),
 
@@ -2936,11 +2936,11 @@ gx_methods = {
                doc="Set hole selection using hole indices.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Input hole indices (must be type INT)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('append', type=Type.INT32_T,
                              doc="0 - overwrite, 1 - append")
                ]),
 
@@ -2956,11 +2956,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Import template name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('imp_type', type=Type.INT32_T,
                              doc=":def:`DH_DATA`")
                ]),
 
@@ -2969,29 +2969,29 @@ gx_methods = {
                doc="Make a report of Significant Intersections",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Object"),
-                   Parameter('p2', type="DB",
+                   Parameter('mast_db', type="DB",
                              doc="Input assay :class:`DB` object"),
-                   Parameter('p3', type="DB",
+                   Parameter('comp_db', type="DB",
                              doc="Output composite :class:`DB` object"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('hol_sel', type=Type.INT32_T,
                              doc=":def:`DH_COMPSTDB_HOLSEL`"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('assay_ch', type=Type.STRING,
                              doc="The primary assay channel."),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('cut_off_grade', type=Type.DOUBLE,
                              doc="Minimum Cut off grade for Primary Assay"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('clip_grade', type=Type.DOUBLE,
                              doc="Maximum Cut off grade for Primary Assay"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('min_composite_thickness', type=Type.DOUBLE,
                              doc="Minimum Composite Length"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('min_composite_grade', type=Type.DOUBLE,
                              doc="Minimum Composite thickness"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('max_internal_dilution_length', type=Type.DOUBLE,
                              doc="Maximum Internal Dilution"),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('min_internal_dilution_grade', type=Type.DOUBLE,
                              doc="Minimum diluted grade"),
-                   Parameter('p12', type=Type.DOUBLE,
+                   Parameter('grade_for_missing_assays', type=Type.DOUBLE,
                              doc="Grade for Missing Assays")
                ]),
 
@@ -3008,13 +3008,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('assay', type=Type.STRING,
                              doc="Assay table name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="LAS file name"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('interval', type=Type.DOUBLE,
                              doc="Averaging/desampling interval"),
                    Parameter('p5', type="WA",
                              doc="Log file handle"),
@@ -3027,7 +3027,7 @@ gx_methods = {
                doc="Unselect all the holes in a Drill hole project.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc="Database")
                ]),
 
@@ -3036,9 +3036,9 @@ gx_methods = {
                doc="Populate an :class:`LST` with the list of the unselected holes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` handle")
                ]),
 
@@ -3047,7 +3047,7 @@ gx_methods = {
                doc="Update all collar table information.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle")
                ]),
 
@@ -3056,9 +3056,9 @@ gx_methods = {
                doc="Update extents for one hole.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('hole', type=Type.INT32_T,
                              doc="Hole index")
                ]),
 
@@ -3073,11 +3073,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('job', type=Type.STRING,
                              doc="Parameter (INI) name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('plot_type', type=Type.INT32_T,
                              doc=":def:`DH_PLOT`")
                ]),
 
@@ -3086,13 +3086,13 @@ gx_methods = {
                doc="Determine intersections of drillholes with a surface.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('output_db', type="DB",
                              doc="Output :class:`DB` Handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('input_geosurface_or_grid', type=Type.STRING,
                              doc="Input surface file"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('hole_selection', type=Type.INT32_T,
                              doc="Selected holes (1), All holes (0)")
                ])
     ],
@@ -3104,11 +3104,11 @@ gx_methods = {
                notes="Obsolete",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vn', type="VV",
                              doc="Returned :class:`SHP` names (string type :class:`VV`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Corresponding data frame for each :class:`SHP`")
                ]),
 
@@ -3123,7 +3123,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if it is a new-style Wholeplot database.",
                parameters = [
-                   Parameter('p1', type="DH",
+                   Parameter('dh', type="DH",
                              doc=":class:`DH` object")
                ])
     ]

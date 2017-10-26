@@ -71,19 +71,19 @@ gx_methods = {
                return_type="COM",
                return_doc=":class:`COM` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('port', type=Type.STRING,
                              doc='Port name to open ("COM1" is example)'),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('baud', type=Type.INT32_T,
                              doc=":def:`COM_BAUD`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('data_size', type=Type.INT32_T,
                              doc=":def:`COM_DATASIZE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('parity', type=Type.INT32_T,
                              doc=":def:`COM_PARITY`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('stop_bits', type=Type.INT32_T,
                              doc=":def:`COM_STOPBITS`"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('flow_control', type=Type.INT32_T,
                              doc=":def:`COM_FLOWCONTROL`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('time_out', type=Type.INT32_T,
                              doc="Timeout in Ms (500)")
                ]),
 
@@ -93,19 +93,19 @@ gx_methods = {
                return_type="COM",
                return_doc=":class:`COM` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('port', type=Type.STRING,
                              doc='Port name to open ("COM1" is example)'),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('baud', type=Type.INT32_T,
                              doc=":def:`COM_BAUD`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('data_size', type=Type.INT32_T,
                              doc=":def:`COM_DATASIZE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('parity', type=Type.INT32_T,
                              doc=":def:`COM_PARITY`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('stop_bits', type=Type.INT32_T,
                              doc=":def:`COM_STOPBITS`"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('flow_control', type=Type.INT32_T,
                              doc=":def:`COM_FLOWCONTROL`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('time_out', type=Type.INT32_T,
                              doc="Timeout in Ms (500)")
                ]),
 
@@ -114,7 +114,7 @@ gx_methods = {
                doc="Destroy :class:`COM` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle")
                ]),
 
@@ -127,11 +127,11 @@ gx_methods = {
                1 - if an error was encountered
                """,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String for line"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of Line to read, CT-LF is not stipped, NULL will be added so the Line length must be at least int+1.")
                ]),
 
@@ -144,11 +144,11 @@ gx_methods = {
                1 - if time out or error
                """,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String for characters"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Number of characters to read (string size must be +1) to silence all message reporting enter the negative value of the number of chars to read")
                ]),
 
@@ -157,11 +157,11 @@ gx_methods = {
                doc="Reads a Line from the :class:`COM`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String for line"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of Line to read, NULL will be added so the Line length must be at least int+1.")
                ]),
 
@@ -174,9 +174,9 @@ gx_methods = {
                1 - if time out or error was encountered
                """,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Line to write")
                ]),
 
@@ -185,7 +185,7 @@ gx_methods = {
                doc="Purges the input and output buffers.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc="Port")
                ]),
 
@@ -194,11 +194,11 @@ gx_methods = {
                doc="Reads characters from the :class:`COM`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String for characters"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Number of characters to read (string size must be +1)")
                ]),
 
@@ -207,11 +207,11 @@ gx_methods = {
                doc="Reads Lines from the :class:`COM` to a :class:`WA`: Geonics EM61 only",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('lines', type=Type.INT32_T,
                              doc="Number of lines"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Where to put lines")
                ]),
 
@@ -220,9 +220,9 @@ gx_methods = {
                doc="Reads entire dataset from the :class:`COM` to a :class:`WA`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Where to put lines")
                ]),
 
@@ -231,11 +231,11 @@ gx_methods = {
                doc="Reads Lines from the :class:`COM` to a :class:`WA`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('lines', type=Type.INT32_T,
                              doc="Number of lines"),
-                   Parameter('p3', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Where to put lines")
                ]),
 
@@ -244,9 +244,9 @@ gx_methods = {
                doc="Set the timeout value.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('time_out', type=Type.INT32_T,
                              doc="Timeout in Ms (500)")
                ]),
 
@@ -255,9 +255,9 @@ gx_methods = {
                doc="Writes characters to the :class:`COM`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Line to write")
                ]),
 
@@ -266,9 +266,9 @@ gx_methods = {
                doc="Writes a Line to the :class:`COM`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="COM",
+                   Parameter('com', type="COM",
                              doc=":class:`COM` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Line to write")
                ])
     ]

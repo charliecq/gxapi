@@ -151,9 +151,9 @@ gx_methods = {
                doc="Drop Map clipboard data on this :class:`EMAP`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('global', type=Type.INT32_T,
                              doc="Handle to Global Clipboard data")
                ]),
 
@@ -163,7 +163,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -172,9 +172,9 @@ gx_methods = {
                doc="Set whether drag-and-drop is enabled for the map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('enable', type=Type.INT32_T,
                              doc="Enables/disables drag-and-drop :def:`GEO_BOOL`")
                ])
     ],
@@ -195,7 +195,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -211,15 +211,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X1"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y1"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X2"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y2")
                ]),
 
@@ -235,15 +235,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X1"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y1"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X2"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y2")
                ]),
 
@@ -259,15 +259,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X - True X location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y - True Y location"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z - True Z location"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('pix', type=Type.INT32_T,
                              doc='Size in pixels ("radius")')
                ]),
 
@@ -280,15 +280,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X Min returned"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Min returned"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X Max returned"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Max returned")
                ]),
 
@@ -301,15 +301,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X Min returned"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Min returned"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X Max returned"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Max returned")
                ]),
 
@@ -322,23 +322,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('snap', type=Type.INT32_T, is_ref=True,
                              doc=":def:`GEO_BOOL` Snap to grid"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('snap', type=Type.DOUBLE, is_ref=True,
                              doc="Snapping distance (always in mm)"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('view_grid', type=Type.INT32_T, is_ref=True,
                              doc="View Grid"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('view_rulers', type=Type.INT32_T, is_ref=True,
                              doc="View Rulers"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('view_units', type=Type.INT32_T, is_ref=True,
                              doc=":def:`LAYOUT_VIEW_UNITS` View Units"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('grid_red', type=Type.INT32_T, is_ref=True,
                              doc="Grid Red Component (0-255)"),
-                   Parameter('p8', type=Type.INT32_T, is_ref=True,
+                   Parameter('grid_green', type=Type.INT32_T, is_ref=True,
                              doc="Grid Green Component (0-255)"),
-                   Parameter('p9', type=Type.INT32_T, is_ref=True,
+                   Parameter('grid_blue', type=Type.INT32_T, is_ref=True,
                              doc="Grid Blue Component (0-255)")
                ]),
 
@@ -347,9 +347,9 @@ gx_methods = {
                doc="Get current snapping distance in MM",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('snap', type=Type.DOUBLE, is_ref=True,
                              doc="Snap value in MM (returned)")
                ]),
 
@@ -359,7 +359,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`EMAP_WINDOW_STATE`",
                parameters = [
-                   Parameter('p1', type="EMAP")
+                   Parameter('emap', type="EMAP")
                ]),
 
         Method('SetDisplayArea_EMAP', module='None', version='5.0.0',
@@ -371,15 +371,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X Min"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y Min"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X Max"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y Max")
                ]),
 
@@ -392,23 +392,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('snap', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` Snap to grid"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('snap', type=Type.DOUBLE,
                              doc="Snapping distance (always in mm)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('view_grid', type=Type.INT32_T,
                              doc="View Grid"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('view_rulers', type=Type.INT32_T,
                              doc="View Rulers"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('view_units', type=Type.INT32_T,
                              doc=":def:`LAYOUT_VIEW_UNITS` View Units"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('grid_red', type=Type.INT32_T,
                              doc="Grid Red Component (0-255)"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('grid_green', type=Type.INT32_T,
                              doc="Grid Green Component (0-255)"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('grid_blue', type=Type.INT32_T,
                              doc="Grid Blue Component (0-255)")
                ]),
 
@@ -417,9 +417,9 @@ gx_methods = {
                doc="Set current snapping distance in MM",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('snap', type=Type.DOUBLE,
                              doc="Snap value in MM")
                ]),
 
@@ -428,8 +428,8 @@ gx_methods = {
                doc="Changes the state of the map window",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('emap', type="EMAP"),
+                   Parameter('state', type=Type.INT32_T,
                              doc=":def:`EMAP_WINDOW_STATE`")
                ])
     ],
@@ -441,7 +441,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of packed files in map.",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -457,9 +457,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view_group', type=Type.STRING,
                              doc='"View/Group"')
                ]),
 
@@ -468,9 +468,9 @@ gx_methods = {
                doc="Activates a view and associated tools.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc='"View"')
                ]),
 
@@ -505,7 +505,7 @@ gx_methods = {
                notes="This does not unload the map, it simply deletes the gx resource handle",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('val', type="EMAP",
                              doc=":class:`EMAP` to destroy")
                ]),
 
@@ -521,9 +521,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('unload_flag', type=Type.INT32_T,
                              doc=":def:`EMAP_REMOVE`")
                ]),
 
@@ -537,11 +537,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List Object"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('which', type=Type.INT32_T,
                              doc=":def:`EMAP_FONT`")
                ]),
 
@@ -556,9 +556,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 if view set, 1 if view does not exist.",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View name")
                ]),
 
@@ -575,9 +575,9 @@ gx_methods = {
                1 if not
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to fill")
                ]),
 
@@ -586,10 +586,10 @@ gx_methods = {
                doc="Get the name of a 3D view if the current view is 3D.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('emap', type="EMAP"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of the String")
                ]),
 
@@ -599,11 +599,11 @@ gx_methods = {
                notes="This function operates on the current map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('group', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned group name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VIEW_GROUP',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VIEW_GROUP',
                              doc="Length of the name string passed in")
                ]),
 
@@ -613,11 +613,11 @@ gx_methods = {
                notes="This function operates on the current map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('view', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned view name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VIEW',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="Length of the name string passed in")
                ]),
 
@@ -630,9 +630,9 @@ gx_methods = {
                The :class:`LST` is cleared first.
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to load"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('path', type=Type.INT32_T,
                              doc=":def:`EMAP_PATH`")
                ]),
 
@@ -641,10 +641,10 @@ gx_methods = {
                doc="Get the name of the map object of this :class:`EMAP`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('emap', type="EMAP"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the String")
                ]),
 
@@ -666,13 +666,13 @@ gx_methods = {
                1 - No Map Found
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc=":class:`REG` field name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc=":class:`REG` field value to find"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer for map name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size")
                ]),
 
@@ -682,7 +682,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 - Yes, 0 - No",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -692,7 +692,7 @@ gx_methods = {
                notes="Use this method to reload (if loaded) a grid document if the file on disk changed.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Source file name")
                ]),
 
@@ -702,7 +702,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 - Yes, 0 - No",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -712,7 +712,7 @@ gx_methods = {
                return_type="E3DV",
                return_doc=":class:`E3DV` object",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -722,7 +722,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -732,7 +732,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if map is loaded, 0 otherwise.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Map name")
                ]),
 
@@ -742,7 +742,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="EMAP")
+                   Parameter('emap', type="EMAP")
                ]),
 
         Method('GetWindowPosition_EMAP', module='None', version='9.0.0',
@@ -750,18 +750,18 @@ gx_methods = {
                doc="Get the map window's position and dock state",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('emap', type="EMAP"),
+                   Parameter('left', type=Type.INT32_T, is_ref=True,
                              doc="Window left position"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('top', type=Type.INT32_T, is_ref=True,
                              doc="Window top position"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('right', type=Type.INT32_T, is_ref=True,
                              doc="Window right position"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('bottom', type=Type.INT32_T, is_ref=True,
                              doc="Window bottom position"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('state', type=Type.INT32_T, is_ref=True,
                              doc="Window state :def:`EMAP_WINDOW_STATE`"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('is_floating', type=Type.INT32_T, is_ref=True,
                              doc="Docked or floating :def:`EMAP_WINDOW_POSITION`")
                ]),
 
@@ -770,18 +770,18 @@ gx_methods = {
                doc="Get the map window's position and dock state",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('emap', type="EMAP"),
+                   Parameter('left', type=Type.INT32_T,
                              doc="Window left position"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('top', type=Type.INT32_T,
                              doc="Window top position"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc="Window right position"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bottom', type=Type.INT32_T,
                              doc="Window bottom position"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('state', type=Type.INT32_T,
                              doc="Window state :def:`EMAP_WINDOW_STATE`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('is_floating', type=Type.INT32_T,
                              doc="Docked or floating :def:`EMAP_WINDOW_POSITION`")
                ]),
 
@@ -802,9 +802,9 @@ gx_methods = {
                1 if error
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('state', type="LST",
                              doc=":class:`LST` object used for comparison")
                ]),
 
@@ -820,9 +820,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 if view set, 1 if view does not exist.",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View name")
                ]),
 
@@ -836,11 +836,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View name"),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` in which to place the view :class:`IPJ`")
                ]),
 
@@ -859,7 +859,7 @@ gx_methods = {
                return_type="EMAP",
                return_doc=":class:`EMAP` Object to edited map.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="List of maps (';' or '|' delimited) to load.")
                ]),
 
@@ -876,7 +876,7 @@ gx_methods = {
                database in the list if multiple files were provided.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="List of documents (';' or '|' delimited) to load.")
                ]),
 
@@ -891,7 +891,7 @@ gx_methods = {
                return_type="EMAP",
                return_doc="New :class:`EMAP` handle.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Source Map name"),
                    Parameter('p2', type="EMAP",
                              doc=":class:`EMAP` to use as the source view")
@@ -904,7 +904,7 @@ gx_methods = {
                return_type="MAP",
                return_doc=":class:`EMAP` Object to map associated with edited map.",
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -913,7 +913,7 @@ gx_methods = {
                doc="Makes this :class:`EMAP` object the current active object to the user.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` to make active")
                ]),
 
@@ -922,33 +922,33 @@ gx_methods = {
                doc="Print the current map to current printer.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('entire_map', type=Type.INT32_T,
                              doc="lEntireMap  (0 or 1)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('scale_to_fit', type=Type.INT32_T,
                              doc="lScaleToFit 0 - use scale factor 1 - fit to media 2 - fit to roll media"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('print_to_file', type=Type.INT32_T,
                              doc="lPrintToFile(0 or 1)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('all_pages', type=Type.INT32_T,
                              doc="lAllPages   (0 or 1)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('centre', type=Type.INT32_T,
                              doc="lCentre     (0 or 1)"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('copies', type=Type.INT32_T,
                              doc="lCopies"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('first_page', type=Type.INT32_T,
                              doc="lFirstPage"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('last_page', type=Type.INT32_T,
                              doc="lLastPage"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('scale_factor', type=Type.DOUBLE,
                              doc="dScaleFactor (2.0 doubles plot size)"),
-                   Parameter('p11', type=Type.INT32_T,
+                   Parameter('overlap_size', type=Type.INT32_T,
                              doc="lOverlapSize (mm)"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('offset_x', type=Type.INT32_T,
                              doc="lOffsetX     (mm)"),
-                   Parameter('p13', type=Type.INT32_T,
+                   Parameter('offset_y', type=Type.INT32_T,
                              doc="lOffsetY     (mm)"),
-                   Parameter('p14', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="szFile       (if lPrintToFile==1)")
                ]),
 
@@ -958,7 +958,7 @@ gx_methods = {
                notes="Redraws the map immediately. Map must not be locked.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ]),
 
@@ -967,9 +967,9 @@ gx_methods = {
                doc="Select a group.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view_group', type=Type.STRING,
                              doc='"View/Group"')
                ]),
 
@@ -993,9 +993,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('redraw', type=Type.INT32_T,
                              doc=":def:`EMAP_REDRAW`")
                ]),
 
@@ -1008,7 +1008,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the map to unload")
                ]),
 
@@ -1026,9 +1026,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of map to unload"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('prompt', type=Type.INT32_T,
                              doc="Prompt? :def:`GEO_BOOL`")
                ]),
 
@@ -1037,7 +1037,7 @@ gx_methods = {
                doc="This method unlocks the Edited map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
                ])
     ],
@@ -1048,11 +1048,11 @@ gx_methods = {
                doc="Returns the coordinates of the currently selected point in view coordinates",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in current user units."),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1061,11 +1061,11 @@ gx_methods = {
                doc="Returns the coordinates of the currently selected point in mm on map",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in map mm"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1074,11 +1074,11 @@ gx_methods = {
                doc="Returns the coordinates of the last known cursor location",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in current view user units"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1087,11 +1087,11 @@ gx_methods = {
                doc="Returns the coordinates of the last known cursor location in mm on map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in map mm"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1116,21 +1116,21 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type="WA",
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` in which to write digitized points"),
-                   Parameter('p3', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('digits', type=Type.INT32_T,
                              doc="Number of significant digits to use, 0 for all."),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('prefix', type=Type.STRING,
                              doc="New line prefix string"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('delim', type=Type.STRING,
                              doc="Delimiter"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('newline', type=Type.INT32_T,
                              doc="0 for no newline 1 for automatic newline at each point")
                ]),
 
@@ -1155,19 +1155,19 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc="Real X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc="Real Y :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc="Real Z :class:`VV`"),
-                   Parameter('p5', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('newline', type=Type.INT32_T,
                              doc="0 for no newline 1 for automatic newline at each point")
                ]),
 
@@ -1188,19 +1188,19 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc="Real X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc="Real Y :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc="Real Z :class:`VV`"),
-                   Parameter('p5', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('newline', type=Type.INT32_T,
                              doc="0 for no newline 1 for automatic newline at each point")
                ]),
 
@@ -1220,21 +1220,21 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvx', type="VV",
                              doc="Real X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvy', type="VV",
                              doc="Real Y :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvz', type="VV",
                              doc="Real Z :class:`VV`"),
-                   Parameter('p5', type="IMG",
+                   Parameter('img', type="IMG",
                              doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('newline', type=Type.INT32_T,
                              doc="0 for no newline 1 for automatic newline at each point"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('pixel_radius', type=Type.INT32_T,
                              doc="Close the polygon if the selected location is within this radius in screen pixels.")
                ]),
 
@@ -1247,17 +1247,17 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum in current view user units."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X maximum"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1277,25 +1277,25 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x1', type=Type.DOUBLE, is_ref=True,
                              doc="X1 bottom left corner"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y1', type=Type.DOUBLE, is_ref=True,
                              doc="Y1"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x2', type=Type.DOUBLE, is_ref=True,
                              doc="X2 bottom right corner"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y2', type=Type.DOUBLE, is_ref=True,
                              doc="Y2"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x3', type=Type.DOUBLE, is_ref=True,
                              doc="X3 top right corner"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y3', type=Type.DOUBLE, is_ref=True,
                              doc="Y3"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x4', type=Type.DOUBLE, is_ref=True,
                              doc="X4 top left corner"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y4', type=Type.DOUBLE, is_ref=True,
                              doc="Y4")
                ]),
 
@@ -1320,23 +1320,23 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('nx', type=Type.INT32_T,
                              doc="Number of elements along primary axis to draw."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ny', type=Type.INT32_T,
                              doc="Number of elements along secondary axis to draw."),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('angle', type=Type.DOUBLE, is_ref=True,
                              doc="Angle of primary axis in degrees"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x1', type=Type.DOUBLE, is_ref=True,
                              doc="Grid origin X"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y1', type=Type.DOUBLE, is_ref=True,
                              doc="Grid origin Y"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_len', type=Type.DOUBLE, is_ref=True,
                              doc="Primary axis length"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_len', type=Type.DOUBLE, is_ref=True,
                              doc="Secondary axis length")
                ]),
 
@@ -1353,17 +1353,17 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X1 in view user units"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y1"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X2"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y2")
                ]),
 
@@ -1381,17 +1381,17 @@ gx_methods = {
                2 - Escape/Cancel
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X1 in view user units"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y1"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X2"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y2")
                ]),
 
@@ -1411,21 +1411,21 @@ gx_methods = {
                2 - Escape/Cancel
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X1 in view user units"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y1"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_z', type=Type.DOUBLE, is_ref=True,
                              doc="Z1"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X2"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y2"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_z', type=Type.DOUBLE, is_ref=True,
                              doc="Z2")
                ]),
 
@@ -1440,13 +1440,13 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in current view user units."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1463,13 +1463,13 @@ gx_methods = {
                3 if capture is lost.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in current view user units."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1486,15 +1486,15 @@ gx_methods = {
                3 if capture is lost.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in current view user units."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z")
                ]),
 
@@ -1511,13 +1511,13 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y")
                ]),
 
@@ -1536,15 +1536,15 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z")
                ]),
 
@@ -1575,17 +1575,17 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum in current view user units.   (defines corner)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X maximum"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ]),
 
@@ -1598,13 +1598,13 @@ gx_methods = {
                1 if user cancelled.
                """,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc=":def:`EMAP_TRACK`"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X coordinate in current view user units."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y")
                ])
     ],
@@ -1616,15 +1616,15 @@ gx_methods = {
                notes="Coordinates are based on the current view units.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X Min returned"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Min returned"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X Max returned"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Max returned")
                ]),
 
@@ -1637,15 +1637,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X Min"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y Min"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X Max"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y Max")
                ]),
 
@@ -1659,9 +1659,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`EMAP_VIEWPORT`")
                ])
     ],
@@ -1673,11 +1673,11 @@ gx_methods = {
                notes="Works only in Vertex Edit Mode",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV` Handle"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV` Handle")
                ])
     ],
@@ -1689,7 +1689,7 @@ gx_methods = {
                return_type="EMAP",
                return_doc=":class:`EMAP` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of map to create a virtual :class:`EMAP` from")
                ])
     ],
@@ -1727,17 +1727,17 @@ gx_methods = {
                notes="Uses 24 bit color",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pix_size', type=Type.DOUBLE,
                              doc="Resolution in view units of one pixel"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc="EMAP_EXPORT_FORMAT"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -1746,21 +1746,21 @@ gx_methods = {
                doc="Same as above with color depth set.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pix_size', type=Type.DOUBLE,
                              doc="Resolution in view units of one pixel"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc="EMAP_EXPORT_BITS"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc="EMAP_EXPORT_METHOD"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc="EMAP_EXPORT_FORMAT"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -1769,21 +1769,21 @@ gx_methods = {
                doc="Export the entire Map to an external format without units.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('size_x', type=Type.DOUBLE,
                              doc="Number of Pixels in X (X or Y should be specified the other )"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('size_y', type=Type.DOUBLE,
                              doc="Number of Pixels in Y (should be 0 and computed by export)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc="EMAP_EXPORT_BITS"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc="EMAP_EXPORT_METHOD"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc="EMAP_EXPORT_RASTER_FORMAT"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -1793,25 +1793,25 @@ gx_methods = {
                notes="Uses 24 bit color",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pix_size', type=Type.DOUBLE,
                              doc="Resolution in view units of one pixel"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area To Export Min X location in view units"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area To Export Min Y location in view units"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area To Export Max X location in view units"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area To Export Max Y location in view units"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc="EMAP_EXPORT_FORMAT"),
-                   Parameter('p10', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -1820,29 +1820,29 @@ gx_methods = {
                doc="Same as above with color depth set.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to export coordinates in"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pix_size', type=Type.DOUBLE,
                              doc="Resolution in view units of one pixel"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc="EMAP_EXPORT_BITS"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc="EMAP_EXPORT_METHOD"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area To Export Min X location in view units"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area To Export Min Y location in view units"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area To Export Max X location in view units"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area To Export Max Y location in view units"),
-                   Parameter('p11', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc="EMAP_EXPORT_FORMAT"),
-                   Parameter('p12', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -1851,29 +1851,29 @@ gx_methods = {
                doc="Export an area of a Map to an external plot format.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name To Export"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area To Export Min X location in mm"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area To Export Min Y location in mm"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area To Export Max X location in mm"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area To Export Max Y location in mm"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('size_x', type=Type.DOUBLE,
                              doc="Number of Pixels in X (X or Y should be specified the other )"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('size_y', type=Type.DOUBLE,
                              doc="Number of Pixels in Y (should be 0 and computed by export)"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('bits', type=Type.INT32_T,
                              doc="EMAP_EXPORT_BITS"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('dither', type=Type.INT32_T,
                              doc="EMAP_EXPORT_METHOD"),
-                   Parameter('p11', type=Type.STRING,
+                   Parameter('format', type=Type.STRING,
                              doc="EMAP_EXPORT_RASTER_FORMAT"),
-                   Parameter('p12', type=Type.STRING,
+                   Parameter('options', type=Type.STRING,
                              doc="Extended Options String (format specific)")
                ]),
 
@@ -1891,15 +1891,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('min_x', type=Type.INT32_T, is_ref=True,
                              doc="X Min returned"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('min_y', type=Type.INT32_T, is_ref=True,
                              doc="Y Min returned"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_x', type=Type.INT32_T, is_ref=True,
                              doc="X Max returned"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('max_y', type=Type.INT32_T, is_ref=True,
                              doc="Y Max returned")
                ]),
 
@@ -1916,15 +1916,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('min_x', type=Type.INT32_T,
                              doc="X Min"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('min_y', type=Type.INT32_T,
                              doc="Y Min"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('max_x', type=Type.INT32_T,
                              doc="X Max"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('max_y', type=Type.INT32_T,
                              doc="Y Max")
                ])
     ]

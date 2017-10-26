@@ -73,17 +73,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('filter', type=Type.STRING,
                              doc="Filter name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel name"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('mineral', type=Type.STRING,
                              doc='Mineral to use ("All" or "" for all)'),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="Mask mode (0: Append, 1: New)")
                ]),
 
@@ -99,9 +99,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Input line to convert")
                ]),
 
@@ -110,9 +110,9 @@ gx_methods = {
                doc="Group data by anomaly or string channel - Interactive.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel")
                ]),
 
@@ -121,7 +121,7 @@ gx_methods = {
                doc="Group data by selected anomalies.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle")
                ]),
 
@@ -136,15 +136,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc='Mask channel (can be "")'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc='Mineral channel (can be "" for raw data)'),
-                   Parameter('p4', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map handle"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="Map View")
                ]),
 
@@ -161,9 +161,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template name")
                ]),
 
@@ -180,9 +180,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template name")
                ]),
 
@@ -195,29 +195,29 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('overlay', type=Type.STRING,
                              doc="Overlay file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Associated map"),
-                   Parameter('p3', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View with group"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('plot_type', type=Type.INT32_T,
                              doc=":def:`SEMPLOT_PLOT`"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('x_stage', type=Type.STRING,
                              doc="XStage"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('x_oxide', type=Type.STRING,
                              doc="XOxide"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('y_stage', type=Type.STRING,
                              doc="YStage"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('y_oxide', type=Type.STRING,
                              doc="YOxide"),
-                   Parameter('p10', type=Type.STRING,
+                   Parameter('z_stage', type=Type.STRING,
                              doc="ZStage"),
-                   Parameter('p11', type=Type.STRING,
+                   Parameter('z_oxide', type=Type.STRING,
                              doc="ZOxide"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('extension', type=Type.INT32_T,
                              doc=":def:`SEMPLOT_EXT`")
                ]),
 
@@ -226,9 +226,9 @@ gx_methods = {
                doc='Create a "View" database',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Original raw data database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List of lines (anomlies) to export"),
                    Parameter('p3', type="DB",
                              doc="Destination database"),
@@ -247,9 +247,9 @@ gx_methods = {
                doc='Create a "View" database, with channel selection',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Original raw data database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List of lines (anomlies) to export"),
                    Parameter('p3', type="DB",
                              doc="Destination database"),
@@ -278,7 +278,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to fill.")
                ]),
 
@@ -293,15 +293,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('mineral', type=Type.STRING,
                              doc='Mineral (string) - "C", "I" etc.'),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('pos', type=Type.INT32_T,
                              doc="Grain position")
                ]),
 
@@ -310,11 +310,11 @@ gx_methods = {
                doc="Get the associated channels for this group in a :class:`LST`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('group', type="DB_SYMB",
                              doc="Data Group handle"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to copy channels into")
                ]),
 
@@ -327,11 +327,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel name"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -340,9 +340,9 @@ gx_methods = {
                doc="Retrieve :class:`LST` of positions in selected lines.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -351,7 +351,7 @@ gx_methods = {
                doc="Retrieve :class:`LST` of all minerals in Semplot_Minerals.csv",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -360,7 +360,7 @@ gx_methods = {
                doc="Retrieve :class:`LST` of all possible mineral positions.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -376,9 +376,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to hold items")
                ]),
 
@@ -391,9 +391,9 @@ gx_methods = {
                0 if it fails.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Data file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Template to make")
                ]),
 
@@ -406,9 +406,9 @@ gx_methods = {
                0 if it fails.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Data file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Template to make")
                ]),
 
@@ -439,15 +439,15 @@ gx_methods = {
                 new filter by that name will be created.
                """,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('filter', type=Type.STRING,
                              doc="Name of filter"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel name"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('mineral', type=Type.STRING,
                              doc="Mineral to restrict filter to.")
                ]),
 
@@ -462,11 +462,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('mineral_ch', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Mineral channel name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size of the Buffer")
                ]),
 
@@ -479,13 +479,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Data file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Template to make"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('anomaly', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Anomaly name (can be "")'),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Buffer size")
                ]),
 
@@ -494,13 +494,13 @@ gx_methods = {
                doc="Generate a template file for importing ODBC databases.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('connection', type=Type.STRING, is_ref=True, size_of_param='connection',
                              doc="Connection string (input and returned)"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('connection', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Connection string buffer size"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('temp', type=Type.STRING, is_ref=True, size_of_param='temp',
                              doc="Template file (returned)"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('temp', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Templage file buffer size")
                ]),
 
@@ -525,17 +525,17 @@ gx_methods = {
                see_also=":func:`LabTemplate_DU` in du.gxh",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="Import data file name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Import template name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Optional Line name (see note 3.)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('flight', type=Type.INT32_T,
                              doc="Optional Flight number"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Optional date")
                ]),
 
@@ -544,9 +544,9 @@ gx_methods = {
                doc="Generate a template file for importing semplot databases.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Data file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Template to make")
                ]),
 
@@ -560,7 +560,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle")
                ]),
 
@@ -574,7 +574,7 @@ gx_methods = {
                Terminates if error.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template name")
                ]),
 
@@ -592,9 +592,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`SEMPLOT_PLOT`",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Input map object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="Input view name")
                ]),
 
@@ -612,13 +612,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('resid', type=Type.DOUBLE,
                              doc="Maximum residual value (in % of the total oxide)"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('min_ch', type="DB_SYMB",
                              doc="Mineral channel (Locked RW)"),
-                   Parameter('p4', type="DB_SYMB",
+                   Parameter('res_ch', type="DB_SYMB",
                              doc="Residual channel (Locked RW)")
                ]),
 
@@ -628,9 +628,9 @@ gx_methods = {
                notes="Creates a new, empty filter file in the user\\etc directory",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('filter', type=Type.STRING,
                              doc="New filter name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('model', type=Type.STRING,
                              doc='Filter to use as a model (can be "")')
                ]),
 
@@ -651,11 +651,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="New template name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Unknown"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('model', type=Type.STRING,
                              doc='Template to use as a model (can be "")')
                ]),
 
@@ -668,11 +668,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Input :class:`LST`."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('extension', type=Type.INT32_T,
                              doc=":def:`SEMPLOT_EXT`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`SEMPLOT_PLOT`")
                ]),
 
@@ -693,19 +693,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template file name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc='Mask channel (can be "")'),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc='Mineral channel (can be "" for raw data)'),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Map name"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('map_mode', type=Type.INT32_T,
                              doc="Map open mode; one of MAP_WRITEXXX (see map.gxh)"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('plot_symb', type=Type.INT32_T,
                              doc="Plot symbols (O: No, 1:Yes) ?")
                ]),
 
@@ -722,17 +722,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View to plot into"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x_min', type=Type.DOUBLE,
                              doc="X Minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('y_min', type=Type.DOUBLE,
                              doc="Y Minimum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y_max', type=Type.DOUBLE,
                              doc="Y Maximum"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('symb_size', type=Type.DOUBLE,
                              doc="Symbol size")
                ]),
 
@@ -742,35 +742,35 @@ gx_methods = {
                notes="Replots map using proportional symbols",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map to plot to"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="View to replot"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel name"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc='Mask channel (can be "")'),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel ("),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('log', type=Type.INT32_T,
                              doc="Linear (0) or logarithmic (1) scaling"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('area', type=Type.INT32_T,
                              doc="Scale by diameter (0) or area (1)"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Scale base (log) data units"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Scale factor (log) data units/mm"),
-                   Parameter('p11', type=Type.INT32_T,
+                   Parameter('symb', type=Type.INT32_T,
                              doc="Symbol number"),
-                   Parameter('p12', type=Type.INT32_T,
+                   Parameter('wt', type=Type.INT32_T,
                              doc="Symbol weight"),
-                   Parameter('p13', type=Type.INT32_T,
+                   Parameter('line_col', type=Type.INT32_T,
                              doc="Symbol line color"),
-                   Parameter('p14', type=Type.INT32_T,
+                   Parameter('fill_col', type=Type.INT32_T,
                              doc="Symbol fill color"),
-                   Parameter('p15', type=Type.INT32_T,
+                   Parameter('legend', type=Type.INT32_T,
                              doc="Plot legend?")
                ]),
 
@@ -789,15 +789,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc='Mask channel (can be "")'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc='Mineral channel (can be "" for raw data)'),
-                   Parameter('p4', type="MAP",
+                   Parameter('map', type="MAP",
                              doc="Map handle"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('view', type=Type.STRING,
                              doc="Map View containing the plot")
                ]),
 
@@ -811,9 +811,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View to plot into")
                ]),
 
@@ -822,9 +822,9 @@ gx_methods = {
                doc="Re-group data using current settings.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel")
                ]),
 
@@ -842,7 +842,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle")
                ]),
 
@@ -851,17 +851,17 @@ gx_methods = {
                doc="Select data from a polygonal area on a map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View Handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel to update"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel"),
-                   Parameter('p5', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Polygon to select from, in the view coordinates."),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="Mask mode (0: Append, 1: New)")
                ]),
 
@@ -888,9 +888,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Channel names, handles")
                ]),
 
@@ -905,7 +905,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle")
                ]),
 
@@ -914,11 +914,11 @@ gx_methods = {
                doc="Put :class:`ITR` into a channel.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('ch', type="DB_SYMB",
                              doc="Data channel handle"),
-                   Parameter('p3', type="ITR")
+                   Parameter('itr', type="ITR")
                ]),
 
         Method('SetMask_SEMPLOT', module='geoguilib', version='6.2.0',
@@ -926,11 +926,11 @@ gx_methods = {
                doc="Set the mask channel ON or OFF.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask_ch', type=Type.STRING,
                              doc="Mask channel"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel"),
                    Parameter('p4', type=Type.STRING,
                              doc='Mineral to use ("All" or "" for all)'),
@@ -945,11 +945,11 @@ gx_methods = {
                doc="Sort data by Sample No, Grain and Position",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('group', type="DB_SYMB",
                              doc="Data Group handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('anomaly', type=Type.INT32_T,
                              doc="Use Anomaly channel as primary sort?")
                ]),
 
@@ -964,9 +964,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Input :class:`LST`."),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`SEMPLOT_PLOT`")
                ]),
 
@@ -986,9 +986,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mineral_ch', type=Type.STRING,
                              doc="Mineral channel")
                ])
     ],
@@ -1004,9 +1004,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Data file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Template to make")
                ])
     ]

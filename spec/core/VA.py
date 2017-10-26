@@ -95,11 +95,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` handle (modified)"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Elevations to add"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('negative_depths', type=Type.INT32_T,
                              doc="Use negative :class:`VA` depths (0:No, 1:Yes)?")
                ]),
 
@@ -112,8 +112,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA"),
-                   Parameter('p2', type="VA",
+                   Parameter('va', type="VA"),
+                   Parameter('v_aa', type="VA",
                              doc=":class:`VA` to append")
                ]),
 
@@ -129,11 +129,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to window"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place average results"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('rc', type=Type.INT32_T,
                              doc=":def:`VA_AVERAGE`")
                ]),
 
@@ -142,9 +142,9 @@ gx_methods = {
                doc="Copy one :class:`VA` to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('v_ad', type="VA",
                              doc="destination"),
-                   Parameter('p2', type="VA",
+                   Parameter('v_as', type="VA",
                              doc="source")
                ]),
 
@@ -160,21 +160,21 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('v_ad', type="VA",
                              doc="Destination :class:`VA`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('d_row', type=Type.INT32_T,
                              doc="Destination start row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('d_col', type=Type.INT32_T,
                              doc="Destination start column"),
-                   Parameter('p4', type="VA",
+                   Parameter('v_as', type="VA",
                              doc="Source :class:`VA` (can be the same as Destination)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('s_row', type=Type.INT32_T,
                              doc="Source start row"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('s_col', type=Type.INT32_T,
                              doc="Source start column"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('rows', type=Type.INT32_T,
                              doc="Number of rows"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('cols', type=Type.INT32_T,
                              doc="Number of columns")
                ]),
 
@@ -184,11 +184,11 @@ gx_methods = {
                return_type="VA",
                return_doc=":class:`VA` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GEO_VAR`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rows', type=Type.INT32_T,
                              doc="Maximum number of rows in the :class:`VA`, >= 0"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('cols', type=Type.INT32_T,
                              doc="Number of columns in the :class:`VA`, > 0")
                ]),
 
@@ -199,11 +199,11 @@ gx_methods = {
                return_type="VA",
                return_doc=":class:`VA`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rows', type=Type.INT32_T,
                              doc="Maximum number of rows in the :class:`VA`, >= 0"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('cols', type=Type.INT32_T,
                              doc="Number of columns in the :class:`VA`, > 0")
                ]),
 
@@ -214,11 +214,11 @@ gx_methods = {
                return_type="VA",
                return_doc=":class:`VA`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` with the data"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rows', type=Type.INT32_T,
                              doc="# of rows"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('columns', type=Type.INT32_T,
                              doc="# of columns")
                ]),
 
@@ -227,7 +227,7 @@ gx_methods = {
                doc="Destroy a :class:`VA`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to destroy.")
                ]),
 
@@ -243,7 +243,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` Object",
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` object")
                ]),
 
@@ -252,9 +252,9 @@ gx_methods = {
                doc="Get a row or column of data as a :class:`VV` from an array.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('no', type=Type.INT32_T,
                              doc="Row or Column # (0 is first)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`VA_OBJECT`"),
@@ -269,7 +269,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Columns in :class:`VA`",
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` object")
                ]),
 
@@ -286,11 +286,11 @@ gx_methods = {
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA`, element want"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column")
                ]),
 
@@ -306,15 +306,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA`, element wanted"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='strsize',
                              doc="String in which to place element"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string")
                ]),
 
@@ -325,7 +325,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Length of :class:`VA`",
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` object")
                ]),
 
@@ -338,9 +338,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('p2', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to order")
                ]),
 
@@ -354,11 +354,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('vad', type="VA",
                              doc="Original Data :class:`VA` (numeric)"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvi', type="VV",
                              doc="Index :class:`VV` of REAL"),
-                   Parameter('p3', type="VA",
+                   Parameter('var', type="VA",
                              doc=":class:`VA` to output results (same type as Data :class:`VA`)")
                ]),
 
@@ -370,11 +370,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum value - returned"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum value - returned")
                ]),
 
@@ -383,13 +383,13 @@ gx_methods = {
                doc="Re-sample a :class:`VA` to a new fid start/icrement",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VV` to resample"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="New fid start"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="New fid increment"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="New length")
                ]),
 
@@ -398,7 +398,7 @@ gx_methods = {
                doc="Reverses the order of the rows in a :class:`VA`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to reverse")
                ]),
 
@@ -408,7 +408,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Fiducial increment of the :class:`VA`.",
                parameters = [
-                   Parameter('p1', type="VA")
+                   Parameter('va', type="VA")
                ]),
 
         Method('rGetFidStart_VA', module='geoengine.core', version='5.0.0',
@@ -417,7 +417,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Fiducial start of the :class:`VA`.",
                parameters = [
-                   Parameter('p1', type="VA")
+                   Parameter('va', type="VA")
                ]),
 
         Method('rGetReal_VA', module='geoengine.core', version='5.0.0',
@@ -433,11 +433,11 @@ gx_methods = {
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA`, element want"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column")
                ]),
 
@@ -446,9 +446,9 @@ gx_methods = {
                doc="Sets the Fiducial increment of a :class:`VA`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to set fiducial increment of"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="New increment")
                ]),
 
@@ -457,9 +457,9 @@ gx_methods = {
                doc="Sets the Fiducial start of a :class:`VA`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to set fiducial start of"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="New start")
                ]),
 
@@ -473,13 +473,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA`, element want"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -492,8 +492,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('va', type="VA"),
+                   Parameter('rows', type=Type.INT32_T,
                              doc="Length")
                ]),
 
@@ -507,13 +507,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA`, element want"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Value to set")
                ]),
 
@@ -527,13 +527,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA`, element wanted"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="String to set")
                ]),
 
@@ -542,9 +542,9 @@ gx_methods = {
                doc="Set a row or column of data in an array from a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('no', type=Type.INT32_T,
                              doc="Row or Column # (0 is first)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`VA_OBJECT`"),
@@ -558,11 +558,11 @@ gx_methods = {
                notes="Supports all :class:`VA` types using an internal double :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Base value"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('mult', type=Type.DOUBLE,
                              doc="Mult value")
                ]),
 
@@ -577,13 +577,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to window"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="First element in the window"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('count', type=Type.INT32_T,
                              doc="Number of elements in the window"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place results")
                ]),
 
@@ -598,9 +598,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to window"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start point (from 0.0)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="End point (< :class:`VA` elements - 1.0)"),
@@ -621,15 +621,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if rows repeat, 0 if not.",
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to check"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vt', type="VV",
                              doc="Items to test for repeats (length equal to the number of columns in the :class:`VA`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('subtract_vv', type=Type.INT32_T,
                              doc="If set to 1, subtract single values in the following :class:`VV` from every array row item before testing (e.g. an elevation value)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vsub', type="VV",
                              doc="Values to subtract from each row before doing the comparison test (length equal to the length of the :class:`VA`). Can be VV_NULL (-1) if above subtraction parameter is zero"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('tol', type=Type.DOUBLE,
                              doc="Comparison tolerance - set to zero or dummy for exact match")
                ]),
 
@@ -647,19 +647,19 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if rows repeat, 0 if not.",
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('va', type="VA",
                              doc=":class:`VA` to check"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vt', type="VV",
                              doc="Items to test for repeats (length equal to the number of columns in the :class:`VA`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('subtract_vv', type=Type.INT32_T,
                              doc="If set to 1, subtract single values in the following :class:`VV` from every array row item before testing (e.g. an elevation value)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vsub', type="VV",
                              doc="Values to subtract from each row before doing the comparison test (length equal to the length of the :class:`VA`). Can be VV_NULL (-1) if above subtraction parameter is zero"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('tol', type=Type.DOUBLE,
                              doc="Comparison tolerance - set to zero or dummy for exact match"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('bad_row', type=Type.INT32_T, is_ref=True,
                              doc="Row index of first mismatch"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('bad_col', type=Type.INT32_T, is_ref=True,
                              doc="Column index of first mismatch")
                ])
     ]

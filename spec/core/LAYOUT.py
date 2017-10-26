@@ -61,15 +61,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Parent Rectangle Min X after calculation"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Parent Rectangle Min Y after calculation"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Parent Rectangle Max X after calculation"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Parent Rectangle Max Y after calculation")
                ]),
 
@@ -78,7 +78,7 @@ gx_methods = {
                doc="Remove all children and constraints from layout",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object")
                ]),
 
@@ -87,7 +87,7 @@ gx_methods = {
                doc="Remove all constraints from layout",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object")
                ]),
 
@@ -97,7 +97,7 @@ gx_methods = {
                return_type="LAYOUT",
                return_doc=":class:`LAYOUT` object.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('num', type=Type.INT32_T,
                              doc="Initial number of objects (may be 0)"),
                    Parameter('p2', type=Type.STRING,
                              doc="Optional name of parent layout (may be empty)")
@@ -108,7 +108,7 @@ gx_methods = {
                doc="Destroys the layout calculation object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` object")
                ]),
 
@@ -117,9 +117,9 @@ gx_methods = {
                doc="Gets the current bounds for a rectangle or the parent layout",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to get info for (-1 for parent)"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Rectangle Min X"),
@@ -136,9 +136,9 @@ gx_methods = {
                doc="Gets an optional name the current info for a rectangle or the parent layout",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to get info for (-1 for parent)"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Buffer for name of the rectangle"),
@@ -188,9 +188,9 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rect_from', type=Type.INT32_T,
                              doc="From rectangle (Or -1 for parent)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`LAYOUT_CONSTR` From constraint flag"),
@@ -210,15 +210,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Rectangle number, -1 on error",
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Rectangle Min X   (All 0's for undefined allowed)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Rectangle Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Rectangle Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Rectangle Max Y")
                ]),
 
@@ -228,7 +228,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of rectangles not counting the parent",
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object")
                ]),
 
@@ -237,9 +237,9 @@ gx_methods = {
                doc="Sets the current bounds for a rectangle previously added to the layout",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to set info for (-1 for parent)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Rectangle Min X"),
@@ -256,9 +256,9 @@ gx_methods = {
                doc="Sets an optional name the current info for a rectangle or the parent layout",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LAYOUT",
+                   Parameter('layout', type="LAYOUT",
                              doc=":class:`LAYOUT` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to set info for (-1 for parent)"),
                    Parameter('p3', type=Type.STRING,
                              doc="Name")

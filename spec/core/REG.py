@@ -30,7 +30,7 @@ gx_methods = {
                doc="Clears all the parameters in a :class:`REG` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` object")
                ]),
 
@@ -39,9 +39,9 @@ gx_methods = {
                doc="Copy",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('dest', type="REG",
                              doc="Destination"),
-                   Parameter('p2', type="REG",
+                   Parameter('srce', type="REG",
                              doc="Source")
                ]),
 
@@ -51,7 +51,7 @@ gx_methods = {
                return_type="REG",
                return_doc=":class:`REG` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('l_parm_length', type=Type.INT32_T,
                              doc='Maximum size of "parameter=setting" string.')
                ]),
 
@@ -61,7 +61,7 @@ gx_methods = {
                return_type="REG",
                return_doc=":class:`REG` Object",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` handle for file containing serialized :class:`REG`")
                ]),
 
@@ -70,7 +70,7 @@ gx_methods = {
                doc="Destroy a :class:`REG`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` to destroy.")
                ]),
 
@@ -79,9 +79,9 @@ gx_methods = {
                doc="Gets a string for a specified parameter in the :class:`REG` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="String to get"),
@@ -95,9 +95,9 @@ gx_methods = {
                notes="If parameter is not present in :class:`REG`, :def_val:`iDUMMY` is returned.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.INT32_T, is_ref=True,
                              doc="Int to get")
@@ -108,17 +108,17 @@ gx_methods = {
                doc="Gets n-th entry of the :class:`REG` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('loc', type=Type.INT32_T,
                              doc="Sequential number of :class:`REG` entry"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('parm', type=Type.STRING, is_ref=True, size_of_param='plen',
                              doc="String to put parameter name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('plen', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of parameter String"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='dlen',
                              doc="String to put data into."),
-                   Parameter('p6', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('dlen', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of Data String")
                ]),
 
@@ -128,9 +128,9 @@ gx_methods = {
                notes="If parameter is not present in :class:`REG`, :def_val:`rDUMMY` is returned.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Real to get")
@@ -142,7 +142,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of parms in a :class:`REG` object.",
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` object")
                ]),
 
@@ -152,8 +152,8 @@ gx_methods = {
                notes='Items are loaded into the :class:`REG` in the format "GROUP.ITEM".',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('reg', type="REG"),
+                   Parameter('ini', type=Type.STRING,
                              doc="INI file name")
                ]),
 
@@ -162,13 +162,13 @@ gx_methods = {
                doc="Replace a string with reg settings.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="String to Replace"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Output Buffer"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Output Buffer")
                ]),
 
@@ -177,11 +177,11 @@ gx_methods = {
                doc="Merge",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('dest', type="REG",
                              doc="Destination"),
-                   Parameter('p2', type="REG",
+                   Parameter('srce', type="REG",
                              doc="Source"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`REG_MERGE`")
                ]),
 
@@ -206,9 +206,9 @@ gx_methods = {
                doc="Serialize a :class:`REG` object into a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` object"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize :class:`REG` into")
                ]),
 
@@ -225,9 +225,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.STRING,
                              doc="String to set it to An empty string sets the setting to an empty string, but does NOT remove the parameter from the :class:`REG`.")
@@ -238,9 +238,9 @@ gx_methods = {
                doc="Sets an int for a specified parameter in the :class:`REG` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Int to set, :def_val:`iDUMMY` to remove the parameter")
@@ -251,9 +251,9 @@ gx_methods = {
                doc="Sets an real for a specified parameter in the :class:`REG` object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc="Handle to :class:`REG` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Real to set, :def_val:`rDUMMY` to remove the parameter")

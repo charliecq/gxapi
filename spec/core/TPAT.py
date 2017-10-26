@@ -58,15 +58,15 @@ gx_methods = {
                notes="The new code must be unique; not in the existing list.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('code', type=Type.STRING,
                              doc="Code (required - CASE SENSITIVE)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('label', type=Type.STRING,
                              doc='Label (optional, can be "")'),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('descr', type=Type.STRING,
                              doc='Description (optional, can be "")'),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color (use :func:`iColor_MVIEW` to convert to int).")
                ]),
 
@@ -81,7 +81,7 @@ gx_methods = {
                doc="Destroys a pattern object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` Handle")
                ]),
 
@@ -91,9 +91,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The code index, -1 if not found",
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('code', type=Type.STRING,
                              doc="Pattern code (case sensitive)")
                ]),
 
@@ -106,23 +106,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('index', type=Type.INT32_T,
                              doc="Index"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('code', type=Type.STRING, is_ref=True, size_of_param='code',
                              doc="Returned Code"),
-                   Parameter('p4', type=Type.INT32_T, default_length='TPAT_CODE_SIZE',
+                   Parameter('code', type=Type.INT32_T, default_length='TPAT_CODE_SIZE',
                              doc="Length of supplied code string variable"),
-                   Parameter('p5', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='label',
                              doc="Returned Label"),
-                   Parameter('p6', type=Type.INT32_T, default_length='TPAT_LABEL_SIZE',
+                   Parameter('label', type=Type.INT32_T, default_length='TPAT_LABEL_SIZE',
                              doc="Length of supplied code string variable"),
-                   Parameter('p7', type=Type.STRING, is_ref=True, size_of_param='p8',
+                   Parameter('descr', type=Type.STRING, is_ref=True, size_of_param='descr',
                              doc="Returned Description"),
-                   Parameter('p8', type=Type.INT32_T, default_length='TPAT_DESC_SIZE',
+                   Parameter('descr', type=Type.INT32_T, default_length='TPAT_DESC_SIZE',
                              doc="Length of supplied code string variable"),
-                   Parameter('p9', type=Type.INT32_T, is_ref=True,
+                   Parameter('color', type=Type.INT32_T, is_ref=True,
                              doc="Color.")
                ]),
 
@@ -132,7 +132,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of :class:`TPAT` items.",
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` Handle")
                ]),
 
@@ -168,9 +168,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Thematic Pattern file name")
                ]),
 

@@ -22,9 +22,9 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW`, aborts on failure",
                parameters = [
-                   Parameter('p1', type="3DV",
+                   Parameter('o3dv', type="3DV",
                              doc=":class:`3DV` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`GEO3DV_OPEN`")
                ]),
 
@@ -37,29 +37,29 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DV",
+                   Parameter('o3dv', type="3DV",
                              doc=":class:`3DV` Object"),
-                   Parameter('p2', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Object"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('mview', type=Type.STRING,
                              doc="Desired new view name"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum in mm"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimun in mm"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum in mm"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum in mm"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('force_overwrite', type=Type.INT32_T,
                              doc="(0 - Produce errors for conflicting unpacked files, 1 - Force overwrites of conflicting unpacked files)"),
-                   Parameter('p9', type=Type.STRING, is_ref=True, size_of_param='p10',
+                   Parameter('new_view', type=Type.STRING, is_ref=True, size_of_param='new_view',
                              doc="New view name created"),
-                   Parameter('p10', type=Type.INT32_T, default_length='MVIEW_NAME_LENGTH',
+                   Parameter('new_view', type=Type.INT32_T, default_length='MVIEW_NAME_LENGTH',
                              doc="Length of new view name"),
-                   Parameter('p11', type=Type.STRING, is_ref=True, size_of_param='p12',
+                   Parameter('problem_files', type=Type.STRING, is_ref=True, size_of_param='problem_files_size',
                              doc="List of files that are problematic returned"),
-                   Parameter('p12', type=Type.INT32_T, default_length='STR_MULTI_FILE',
+                   Parameter('problem_files_size', type=Type.INT32_T, default_length='STR_MULTI_FILE',
                              doc="Length of problematic files buffer")
                ]),
 
@@ -69,9 +69,9 @@ gx_methods = {
                return_type="3DV",
                return_doc=":class:`3DV` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc=":class:`3DV` file name"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="3D :class:`MVIEW` to create new :class:`3DV` from")
                ]),
 
@@ -81,7 +81,7 @@ gx_methods = {
                return_type="3DV",
                return_doc=":class:`3DV` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file_name', type=Type.STRING,
                              doc=":class:`3DV` file name")
                ]),
 
@@ -91,7 +91,7 @@ gx_methods = {
                return_type="3DV",
                return_doc=":class:`3DV` Object",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Object")
                ]),
 
@@ -100,11 +100,11 @@ gx_methods = {
                doc="Generate an XML CRC of a :class:`3DV`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="3DV",
+                   Parameter('o3dv', type="3DV",
                              doc=":class:`3DV` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('crc', type=Type.INT32_T, is_ref=True,
                              doc="CRC returned"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of xml to generate (.zip added)")
                ])
     ]

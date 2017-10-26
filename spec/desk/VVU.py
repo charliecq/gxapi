@@ -178,9 +178,9 @@ gx_methods = {
                see_also=":func:`RemoveDummy_VVU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('ref_vv', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('dat_vv', type="VV",
                              doc="Data :class:`VV` to average")
                ]),
 
@@ -198,11 +198,11 @@ gx_methods = {
                see_also=":func:`RemoveDummy_VVU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('ref_vv', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('dat_vv', type="VV",
                              doc="Data :class:`VV` to average"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VVU_MODE`")
                ]),
 
@@ -222,11 +222,11 @@ gx_methods = {
                see_also="RemoveDummy_VV",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('ref_vv1', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('ref_vv2', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('dat_vv', type="VV",
                              doc="Data :class:`VV` to average")
                ]),
 
@@ -245,13 +245,13 @@ gx_methods = {
                see_also="RemoveDummy_VV",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('ref_vv1', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('ref_vv2', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('dat_vv', type="VV",
                              doc="Data :class:`VV` to average"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VVU_MODE`")
                ]),
 
@@ -264,12 +264,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('vv', type="VV"),
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value to search for."),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('l_min', type=Type.INT32_T, is_ref=True,
                              doc="Minmum Location"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('l_max', type=Type.INT32_T, is_ref=True,
                              doc="Maximum Location")
                ]),
 
@@ -278,9 +278,9 @@ gx_methods = {
                doc="Run Box-Cox (lambda) Transformation on :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="[i/o] :class:`VV`"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('lm', type=Type.DOUBLE,
                              doc="[i] Lambda Value")
                ]),
 
@@ -295,15 +295,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Filtered :class:`VV`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('pr_sw', type=Type.DOUBLE,
                              doc="Short wavelength cutoff, 0 for highpass"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pr_lw', type=Type.DOUBLE,
                              doc="Long wavelength cutoff, 0 for lowpass"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('flen', type=Type.INT32_T,
                              doc="Filter Length, 0 for default length")
                ]),
 
@@ -312,13 +312,13 @@ gx_methods = {
                doc="Clip a :class:`VV` to a range.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to clip"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum value, :def_val:`rDUMMY` for no minimum clip"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum value, :def_val:`rDUMMY` for no maximum clip"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('clip', type=Type.INT32_T,
                              doc=":def:`VVU_CLIP`")
                ]),
 
@@ -339,11 +339,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Input data vv (altered)."),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('det_limit', type=Type.DOUBLE,
                              doc="Detection limit"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('conv', type=Type.INT32_T,
                              doc="Auto-convert negatives?")
                ]),
 
@@ -352,7 +352,7 @@ gx_methods = {
                doc="Calculate TEM apparent conductivity and depth",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('resp_vv', type="VV",
                              doc="Response channel (microvolts)"),
                    Parameter('p2', type="VV",
                              doc="Time channel (milliseconds)"),
@@ -389,8 +389,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('decimate', type=Type.INT32_T,
                              doc="Decimation factor (must be > 0)")
                ]),
 
@@ -399,21 +399,21 @@ gx_methods = {
                doc="Calculate distance of point locations to a straight line",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Output deviation :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X of 1st point to define straight line"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y of 1st point to define straight line"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('x2', type=Type.DOUBLE,
                              doc="X of 2nd point or line azimuth in degrees (North is 0 degree)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('y2', type=Type.DOUBLE,
                              doc="Y of 2nd point or :def_val:`GS_R8DM` if line azimuth is defined"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('line', type=Type.INT32_T,
                              doc=":def:`VVU_LINE`")
                ]),
 
@@ -422,19 +422,19 @@ gx_methods = {
                doc="Create a cumulative distance :class:`VV`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Output distance :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x_fid_start', type=Type.DOUBLE,
                              doc="X :class:`VV` fid start"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x_fid_incr', type=Type.DOUBLE,
                              doc="X :class:`VV` fid incr"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('y_fid_start', type=Type.DOUBLE,
                              doc="Y :class:`VV` fid start"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('y_fid_incr', type=Type.DOUBLE,
                              doc="Y :class:`VV` fid incr")
                ]),
 
@@ -448,19 +448,19 @@ gx_methods = {
                notes="The fist distace element is :def_val:`rDUMMY`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Output distance :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x_fid_start', type=Type.DOUBLE,
                              doc="X :class:`VV` fid start"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x_fid_incr', type=Type.DOUBLE,
                              doc="X :class:`VV` fid incr"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('y_fid_start', type=Type.DOUBLE,
                              doc="Y :class:`VV` fid start"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('y_fid_incr', type=Type.DOUBLE,
                              doc="Y :class:`VV` fid incr")
                ]),
 
@@ -477,15 +477,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('start_distance', type=Type.DOUBLE,
                              doc="Distance at first location"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Output distance :class:`VV`,REAL :class:`VV`")
                ]),
 
@@ -500,15 +500,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z :class:`VV`,REAL :class:`VV`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('gap', type=Type.DOUBLE,
                              doc="Gap size (must be greater than zero)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vg', type="VV",
                              doc="Returned indices of start of sections after gaps (INT :class:`VV`)")
                ]),
 
@@ -525,15 +525,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum range value"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum range value"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('inside', type=Type.INT32_T,
                              doc="If TRUE, dummy inside the range"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('include', type=Type.INT32_T,
                              doc="If TRUE, include Min, Max in the range.")
                ]),
 
@@ -550,17 +550,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum range value"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum range value"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('inside', type=Type.INT32_T,
                              doc="If TRUE, dummy inside the range"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('include_min', type=Type.INT32_T,
                              doc="If TRUE, include Min in the range."),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('include_max', type=Type.INT32_T,
                              doc="If TRUE, include Max in the range.")
                ]),
 
@@ -573,8 +573,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VVU_DUMMYREPEAT`")
                ]),
 
@@ -593,13 +593,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('data_vv', type="VV",
                              doc="Duplicate data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('sample_vv', type="VV",
                              doc="Sample Type :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('mean_vv', type="VV",
                              doc="Mean values :class:`VV` (returned)"),
-                   Parameter('p4', type="VV",
+                   Parameter('diff_vv', type="VV",
                              doc="Diff values :class:`VV` (returned)")
                ]),
 
@@ -613,13 +613,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('seed', type=Type.INT32_T,
                              doc="Random number generator seed"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('mean', type=Type.DOUBLE,
                              doc="Mean value of distribution (> 0.0)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="Number of values (-1 for all)")
                ]),
 
@@ -628,11 +628,11 @@ gx_methods = {
                doc="Apply a convolution filter to a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Filtered :class:`VV`"),
-                   Parameter('p3', type="FILTER",
+                   Parameter('flt', type="FILTER",
                              doc="Filter handle (see :class:`FLT`)")
                ]),
 
@@ -655,17 +655,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv_source', type="VV",
                              doc="String :class:`VV` in which to locate items"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv_search', type="VV",
                              doc="String :class:`VV` Items to search for"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('pis_source_sorted', type=Type.INT32_T,
                              doc="Is the first :class:`VV` already sorted?"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('pis_search_sorted', type=Type.INT32_T,
                              doc="Is the second :class:`VV` already sorted"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('pis_case_tolerant', type=Type.INT32_T,
                              doc="Case tolerance for string comparisons"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc=":def_val:`GS_LONG` :class:`VV` of returned indices into the first :class:`LST`.")
                ]),
 
@@ -674,13 +674,13 @@ gx_methods = {
                doc="Fractal filter a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="[i] :class:`VV`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="[i] filter order"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('number', type=Type.INT32_T,
                              doc="[i] filter number"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="[o] filtered :class:`VV`")
                ]),
 
@@ -695,13 +695,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of closest point, -1 if no valid locations, or data is masked.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Input X"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Input Y")
                ]),
 
@@ -719,15 +719,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of closest point, -1 if no valid locations, or data is masked.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc="Mask values"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Input X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Input Y")
                ]),
 
@@ -742,17 +742,17 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of closest point, -1 if no valid locations, or data is masked.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Input X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Input Y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Input Z")
                ]),
 
@@ -770,19 +770,19 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of closest point, -1 if no valid locations, or data is masked.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc="Mask values"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Input X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Input Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Input Z")
                ]),
 
@@ -796,7 +796,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of items dummied in order to render the :class:`VV` montonically increasing.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle")
                ]),
 
@@ -814,15 +814,15 @@ gx_methods = {
                -1 if not found or if length of :class:`VV` is 0
                """,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc="0 increasing order 1 decreasing order"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="0 to find the first dummy 1 find first non-dummy"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="Start search range at element"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('end', type=Type.INT32_T,
                              doc="End search range at element (-1 for last)")
                ]),
 
@@ -854,11 +854,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('in', type=Type.INT32_T,
                              doc=":def:`VVU_INTERP`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('out', type=Type.INT32_T,
                              doc=":def:`VVU_INTERP_EDGE`")
                ]),
 
@@ -869,15 +869,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if error, 0 if successful",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vvx', type="VV",
                              doc="Input/output X :class:`VV` on which to operate Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvy', type="VV",
                              doc="Input/output Y :class:`VV` on which to operate In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvf', type="VV",
                              doc="Input Flag :class:`VV` Required in :def_val:`GS_BYTE`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vvd', type="VV",
                              doc="Input Gap :class:`VV` to use for locating the fill inline segments In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dist', type=Type.DOUBLE,
                              doc="Min segment length  (required)")
                ]),
 
@@ -898,15 +898,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of first matching text, -1 if not found.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to search"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('text', type=Type.STRING,
                              doc="Text to match"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('case', type=Type.INT32_T,
                              doc=":def:`VVU_CASE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('match', type=Type.INT32_T,
                              doc=":def:`VVU_MATCH`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="Index to begin search (-1 for full :class:`VV`)"),
                    Parameter('p6', type=Type.INT32_T,
                              doc="1: forward search, -1: backward search")
@@ -922,9 +922,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc=":class:`VV` to be masked"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc="Mask reference :class:`VV`")
                ]),
 
@@ -934,11 +934,11 @@ gx_methods = {
                notes="If both values are non-dummies, then result is 1, else dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_va', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vb', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vc', type="VV",
                              doc=":class:`VV` C (returned)")
                ]),
 
@@ -948,11 +948,11 @@ gx_methods = {
                notes="If either values is non-dummy, then result is 1, else dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_va', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vb', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vc', type="VV",
                              doc=":class:`VV` C (returned)")
                ]),
 
@@ -961,13 +961,13 @@ gx_methods = {
                doc="Applies a non-linear filter.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Filtered :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('fwid', type=Type.INT32_T,
                              doc="Filter Width"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pr_ftol', type=Type.DOUBLE,
                              doc="Filter Tolerance, 0 for 1% of Std. Dev.")
                ]),
 
@@ -984,11 +984,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vf', type="VV",
                              doc="Output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('all_tol', type=Type.DOUBLE,
                              doc="Allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Number of data points. Must be > 0")
@@ -1013,13 +1013,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vf', type="VV",
                              doc="Output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Output maximum deviation :class:`VV`."),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('all_tol', type=Type.DOUBLE,
                              doc="Allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
                    Parameter('p5', type=Type.INT32_T,
                              doc="Number of data points in the line segment. Must be > 0")
@@ -1035,15 +1035,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('seed', type=Type.INT32_T,
                              doc="Random number generator seed"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('mean', type=Type.DOUBLE,
                              doc="Mean value of distribution"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('var', type=Type.DOUBLE,
                              doc="Variance of the distribution"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="Number of values (-1 for all)")
                ]),
 
@@ -1068,17 +1068,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X locations"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y locations"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('offset', type=Type.DOUBLE,
                              doc="Minimum offset distance"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('radius', type=Type.DOUBLE,
                              doc="Symbol radius"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vxo', type="VV",
                              doc="Output (offset) X locations"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vyo', type="VV",
                              doc="Output (offset) Y locations")
                ]),
 
@@ -1115,13 +1115,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dist', type=Type.DOUBLE,
                              doc="Offset distance"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('heading', type=Type.INT32_T,
                              doc=":def:`VVU_OFFSET`"),
                    Parameter('p5', type="VV",
                              doc="Output X"),
@@ -1134,17 +1134,17 @@ gx_methods = {
                doc="Same as :func:`OffsetCorrect_VVU`, but for an arbitrary offset angle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dist', type=Type.DOUBLE,
                              doc="Offset distance"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('azimuth', type=Type.DOUBLE,
                              doc="Offset azimuth (degrees counter-clockwise from straight ahead)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vxo', type="VV",
                              doc="Output X"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vyo', type="VV",
                              doc="Output Y")
                ]),
 
@@ -1154,19 +1154,19 @@ gx_methods = {
                notes="See the algorithm note #2 above for the default smoothing interval.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dist', type=Type.DOUBLE,
                              doc="Offset distance"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('azimuth', type=Type.DOUBLE,
                              doc="Offset azimuth (degrees counter-clockwise from straight ahead)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('interval', type=Type.DOUBLE,
                              doc="Averaging interval - :def_val:`rDUMMY` for default"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vxo', type="VV",
                              doc="Output X"),
-                   Parameter('p7', type="VV",
+                   Parameter('v_vyo', type="VV",
                              doc="Output Y")
                ]),
 
@@ -1203,13 +1203,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vzi', type="VV",
                              doc="Input Z"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x_off', type=Type.DOUBLE,
                              doc="Offset along-track (+ve forward)"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Offset across-track (+ve to the right)"),
@@ -1248,19 +1248,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X locations"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y locations"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('offset', type=Type.DOUBLE,
                              doc="Minimum offset distance"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('size_x', type=Type.DOUBLE,
                              doc="Symbol X size (width)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('size_y', type=Type.DOUBLE,
                              doc="Symbol Y size (height)"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vxo', type="VV",
                              doc="Output (offset) X locations"),
-                   Parameter('p7', type="VV",
+                   Parameter('v_vyo', type="VV",
                              doc="Output (offset) Y locations")
                ]),
 
@@ -1281,11 +1281,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Returned peak :class:`VV`, all dummies except peak points."),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('pr_tol', type=Type.DOUBLE,
                              doc="Minimum value to accept (0.0 to find all)"),
                    Parameter('p4', type=Type.INT32_T,
                              doc="Minimum width to accept (1 to find all)")
@@ -1305,11 +1305,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Returned peak :class:`VV`, all dummies except peak points."),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('pr_base_lvl', type=Type.DOUBLE,
                              doc="Base level to accept (0.0 to find all)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Minimum amplitude to accept")
@@ -1331,13 +1331,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="[i] data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="[i] X :class:`VV` used to calculate distance"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="[i] Y :class:`VV` used to calculate distance"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('pr_base_lvl', type=Type.DOUBLE,
                              doc="[i] minimum value to accept (0.0 to find all)"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="[i] amplitude"),
@@ -1362,11 +1362,11 @@ gx_methods = {
                see_also=":func:`Trend_VVU`, :func:`Trend2_VVU`, :func:`PolyFill2_VVU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc=":class:`VV` with output data. (Preset length)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="Order of the polynomial 0-9"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vc', type="VV",
                              doc=":class:`VV` with polynomial coefficients (input)")
                ]),
 
@@ -1380,13 +1380,13 @@ gx_methods = {
                see_also=":func:`Trend_VVU`, :func:`Trend2_VVU`, :func:`PolyFill_VVU`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` with x spacing (input)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc=":class:`VV` with output data. (Preset length)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="Order of the polynomial 0-9"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vc', type="VV",
                              doc=":class:`VV` with polynomial coefficients (order+1 values)")
                ]),
 
@@ -1396,11 +1396,11 @@ gx_methods = {
                notes="The VVs have to be the same length",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc=":class:`VV` to be masked"),
                    Parameter('p4', type="PLY",
                              doc=":class:`PLY` object"),
@@ -1418,11 +1418,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vp', type="VV",
                              doc=":class:`VV` to prune"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vr', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc=":def:`VVU_PRUNE`")
                ]),
 
@@ -1459,9 +1459,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Distance :class:`VV` (NULL if criterion #2 does not apply). In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
                    Parameter('p3', type="VV",
                              doc="Output flag :class:`VV` with result 0,1,2,3,-1,-2,-3. Required in :def_val:`GS_BYTE`"),
@@ -1486,13 +1486,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv1', type="VV",
                              doc="First :class:`VV` (X)"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv2', type="VV",
                              doc="First :class:`VV` (Y)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Min value (returned)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Max value (returned)")
                ]),
 
@@ -1501,13 +1501,13 @@ gx_methods = {
                doc="Calculate linear regression through data",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X data"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y data"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('slp', type=Type.DOUBLE, is_ref=True,
                              doc="Returns slope"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('int', type=Type.DOUBLE, is_ref=True,
                              doc="Returns intercept")
                ]),
 
@@ -1528,13 +1528,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('data_vv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('sample_vv', type="VV",
                              doc="Sample Type :class:`VV`"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rel_var', type=Type.DOUBLE, is_ref=True,
                              doc="Returned relative variance"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('num_dup', type=Type.INT32_T, is_ref=True,
                              doc="Returned number of duplicates used.")
                ]),
 
@@ -1543,7 +1543,7 @@ gx_methods = {
                doc="Remove dummy values from a :class:`VV`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('RemoveDummy2_VVU', module='geogxx', version='5.0.8',
@@ -1555,9 +1555,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv1', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv2', type="VV",
                              doc=":class:`VV` object")
                ]),
 
@@ -1570,11 +1570,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv1', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv2', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv3', type="VV",
                              doc=":class:`VV` object")
                ]),
 
@@ -1587,13 +1587,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv1', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv2', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv3', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv4', type="VV",
                              doc=":class:`VV` object")
                ]),
 
@@ -1611,11 +1611,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('data_vv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('sample_vv', type="VV",
                              doc="Sample Type :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('output', type=Type.INT32_T,
                              doc=":def:`VV_DUP`")
                ]),
 
@@ -1632,13 +1632,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('xvv', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('yvv', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('zvv', type="VV",
                              doc="(optional) Z :class:`VV`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('xy_dup', type=Type.INT32_T,
                              doc=":def:`VV_XYDUP`")
                ]),
 
@@ -1704,15 +1704,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Output :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('stat', type=Type.INT32_T,
                              doc=":def:`ST_INFO`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('window', type=Type.INT32_T,
                              doc="Window size (>0, increased to nearest odd value)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('shrink', type=Type.INT32_T,
                              doc="Shrink window at ends (1:Yes, 0:No)")
                ]),
 
@@ -1726,10 +1726,10 @@ gx_methods = {
                see_also="SearchReplaceText_VV",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('vv', type="VV"),
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value to replace"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('rpl', type=Type.DOUBLE,
                              doc="Replacement")
                ]),
 
@@ -1743,16 +1743,16 @@ gx_methods = {
                see_also="SearchReplace_VV",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('format', type=Type.INT32_T,
                              doc="String format for numeric :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('decimal', type=Type.INT32_T,
                              doc="Decimals for formating numeric :class:`VV`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="Formatted string to replace"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('rpl', type=Type.STRING,
                              doc="Replacement"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VVU_SRCHREPL_CASE`")
                ]),
 
@@ -1766,18 +1766,18 @@ gx_methods = {
                see_also="SearchReplaceText_VV",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('format', type=Type.INT32_T,
                              doc="String format for numeric :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('decimal', type=Type.INT32_T,
                              doc="Decimals for formating numeric :class:`VV`"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="Formatted string to replace"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('rpl', type=Type.STRING,
                              doc="Replacement"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VVU_SRCHREPL_CASE`"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('items', type=Type.INT32_T, is_ref=True,
                              doc="Number of items replaced (returned)")
                ]),
 
@@ -1786,23 +1786,23 @@ gx_methods = {
                doc="Spline a Y :class:`VV` onto an X :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (no dummies)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y to be splined (no dummies)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Y output"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="Output Length"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Starting Location"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="Separation Distance"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('gap', type=Type.DOUBLE,
                              doc="Maximum gap to interpolate across"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('ext', type=Type.INT32_T,
                              doc="Number of elements to extend"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`VVU_SPL`")
                ]),
 
@@ -1811,15 +1811,15 @@ gx_methods = {
                doc="Spline a Y :class:`VV` onto an X :class:`VV`. Uses specified values of X in X2",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X (no dummies)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y to be splined (no dummies)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx2', type="VV",
                              doc="X2 (no dummies)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Y output"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`VVU_SPL`")
                ]),
 
@@ -1830,9 +1830,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of tokens (length of :class:`VV`)",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to place values in"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="Str - String to parse")
                ]),
 
@@ -1842,10 +1842,10 @@ gx_methods = {
                notes="(new :class:`VV`) = ((old :class:`VV`) + base) * scale",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('vv', type="VV"),
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Base"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('mult', type=Type.DOUBLE,
                              doc="Scale")
                ]),
 
@@ -1909,15 +1909,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('seed', type=Type.INT32_T,
                              doc="Random number generator seed"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Minimum of range"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Maximum of range"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="Number of values (-1 for all)")
                ])
     ],
@@ -1929,31 +1929,31 @@ gx_methods = {
                notes="Add roll, pitch, yaw correction.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vxi', type="VV",
                              doc="Input X"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vyi', type="VV",
                              doc="Input Y"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vzi', type="VV",
                              doc="Input Z"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('zoffset', type=Type.DOUBLE,
                              doc="ZOffset distance"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dist', type=Type.DOUBLE,
                              doc="XYOffset distance"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('azimuth', type=Type.DOUBLE,
                              doc="XYOffset azimuth (degrees clockwise from straight ahead)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('interval', type=Type.DOUBLE,
                              doc="Averaging interval - :def_val:`rDUMMY` for default"),
-                   Parameter('p8', type="VV",
+                   Parameter('v_vroll', type="VV",
                              doc="Roll"),
-                   Parameter('p9', type="VV",
+                   Parameter('v_vpitch', type="VV",
                              doc="Pitch"),
-                   Parameter('p10', type="VV",
+                   Parameter('v_vyaw', type="VV",
                              doc="Yaw"),
-                   Parameter('p11', type="VV",
+                   Parameter('v_vxo', type="VV",
                              doc="Output X"),
-                   Parameter('p12', type="VV",
+                   Parameter('v_vyo', type="VV",
                              doc="Output Y"),
-                   Parameter('p13', type="VV",
+                   Parameter('v_vzo', type="VV",
                              doc="Output Z")
                ])
     ]

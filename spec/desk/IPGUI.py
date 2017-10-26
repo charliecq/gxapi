@@ -22,15 +22,15 @@ gx_methods = {
                -1 - User Cancelled
                """,
                parameters = [
-                   Parameter('p1', type="IP",
+                   Parameter('ip', type="IP",
                              doc=":class:`DH` Handle"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc="Job Name (*.inp)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('plot_type', type=Type.INT32_T,
                              doc="Job type :def:`IP_PLOT`"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
 
@@ -40,11 +40,11 @@ gx_methods = {
                notes="The database should be a currently open database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc="Database name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Current Line (can be blank)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel to open with (can be blank)")
                ]),
 
@@ -54,11 +54,11 @@ gx_methods = {
                notes="The database should be a currently open database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc="Database name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Current Line (can be blank)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Channel to open with (can be blank)")
                ]),
 

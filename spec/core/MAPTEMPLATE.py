@@ -31,10 +31,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('maptemplate', type="MAPTEMPLATE"),
+                   Parameter('tmp', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned temporary map template file name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of file name string")
                ]),
 
@@ -49,8 +49,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('maptemplate', type="MAPTEMPLATE"),
+                   Parameter('tmp', type=Type.STRING,
                              doc="Temporary map template file name")
                ])
     ],
@@ -61,7 +61,7 @@ gx_methods = {
                doc="Commit any changes to the map template to disk",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE")
+                   Parameter('maptemplate', type="MAPTEMPLATE")
                ]),
 
         Method('Create_MAPTEMPLATE', module='geoengine.map', version='6.3.0',
@@ -75,11 +75,11 @@ gx_methods = {
                return_type="MAPTEMPLATE",
                return_doc=":class:`MAPTEMPLATE` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Map Template file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('base', type=Type.STRING,
                              doc="Map Template base template to create from"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MAPTEMPLATE_OPEN`")
                ]),
 
@@ -89,7 +89,7 @@ gx_methods = {
                notes="All changes to the :class:`MAPTEMPLATE` will be committed if it is not read-only.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE",
+                   Parameter('maptemplate', type="MAPTEMPLATE",
                              doc=":class:`MAPTEMPLATE` Handle")
                ]),
 
@@ -98,7 +98,7 @@ gx_methods = {
                doc="Discard all changes made to the map template and reload from disk.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE")
+                   Parameter('maptemplate', type="MAPTEMPLATE")
                ]),
 
         Method('GetFileName_MAPTEMPLATE', module='geoengine.map', version='6.3.0',
@@ -106,10 +106,10 @@ gx_methods = {
                doc="Get the file name of the map template.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('maptemplate', type="MAPTEMPLATE"),
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned map template file name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of file name string")
                ])
     ],
@@ -120,11 +120,11 @@ gx_methods = {
                doc="Create a map from the map template",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE",
+                   Parameter('maptemplate', type="MAPTEMPLATE",
                              doc=":class:`MAPTEMPLATE` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="New map file name (if it exists it will be overwritten)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name to use for settings")
                ])
     ],
@@ -135,7 +135,7 @@ gx_methods = {
                doc="Refresh the map template with any newly saved items",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPTEMPLATE",
+                   Parameter('maptemplate', type="MAPTEMPLATE",
                              doc=":class:`MAPTEMPLATE` Handle")
                ]),
 

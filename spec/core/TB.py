@@ -33,9 +33,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`TB_SEARCH`")
                ]),
 
@@ -50,7 +50,7 @@ gx_methods = {
                return_type="TB",
                return_doc=":class:`TB` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the table file to load")
                ]),
 
@@ -67,7 +67,7 @@ gx_methods = {
                return_type="TB",
                return_doc=":class:`TB` Object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database")
                ]),
 
@@ -77,7 +77,7 @@ gx_methods = {
                return_type="TB",
                return_doc=":class:`TB` Object",
                parameters = [
-                   Parameter('p1', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object")
                ]),
 
@@ -86,7 +86,7 @@ gx_methods = {
                doc="This method destroys a table resource.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table Object to Destroy")
                ]),
 
@@ -96,9 +96,9 @@ gx_methods = {
                return_type="TB_FIELD",
                return_doc="The handle to the field (must be present)",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Field name")
                ]),
 
@@ -107,15 +107,15 @@ gx_methods = {
                doc="Gets a string value from a table element.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row of element to Get"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to Get"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned string"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum string size")
                ]),
 
@@ -125,9 +125,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_CATEGORY_CHAN`",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to Get")
                ]),
 
@@ -136,13 +136,13 @@ gx_methods = {
                doc="Finds a column's name by its index.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('idx', type=Type.INT32_T,
                              doc="Index of column to find"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer for column name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of buffer")
                ]),
 
@@ -155,9 +155,9 @@ gx_methods = {
                -1 if not found.
                """,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of column to find")
                ]),
 
@@ -167,9 +167,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`DB_CHAN_FORMAT`",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to Get")
                ]),
 
@@ -179,11 +179,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Value",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row of element to Get"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to Get")
                ]),
 
@@ -193,7 +193,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of columns",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle")
                ]),
 
@@ -203,7 +203,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of rows",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle")
                ]),
 
@@ -213,11 +213,11 @@ gx_methods = {
                notes="The line is appended to the data already in the table.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line")
                ]),
 
@@ -227,11 +227,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Value",
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row of element to Get"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to Get")
                ]),
 
@@ -243,9 +243,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of File to save table into")
                ]),
 
@@ -258,11 +258,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line")
                ]),
 
@@ -274,9 +274,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of File to save table into")
                ]),
 
@@ -300,13 +300,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row of element to set"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to set"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('val', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -330,13 +330,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row of element to set"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to set"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value to set")
                ]),
 
@@ -357,13 +357,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc="Table handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row of element to set"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Column of element to set"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="Value to set")
                ]),
 
@@ -382,9 +382,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TB",
+                   Parameter('tb', type="TB",
                              doc=":class:`TB` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Index of data Column to sort table by")
                ])
     ]

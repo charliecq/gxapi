@@ -544,13 +544,13 @@ gx_methods = {
                doc="Breaks a decimal date value into year, month and day.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Date value to break"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('year', type=Type.INT32_T, is_ref=True,
                              doc="Year"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('month', type=Type.INT32_T, is_ref=True,
                              doc="Month (0-11)"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('day', type=Type.INT32_T, is_ref=True,
                              doc="Day   (0-30)")
                ]),
 
@@ -564,7 +564,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Days",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Date")
                ]),
 
@@ -574,7 +574,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Seconds (integer)",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('time', type=Type.DOUBLE,
                              doc="Time")
                ]),
 
@@ -598,7 +598,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="x - Date",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('days', type=Type.INT32_T,
                              doc="Day")
                ]),
 
@@ -608,7 +608,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="x - Time",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('sec', type=Type.INT32_T,
                              doc="Seconds")
                ]),
 
@@ -618,11 +618,11 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Date in decimal years.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('year', type=Type.INT32_T,
                              doc="Year"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('month', type=Type.INT32_T,
                              doc="Month (0-11)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('day', type=Type.INT32_T,
                              doc="Day   (0-30)")
                ]),
 
@@ -632,7 +632,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="x - Time",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('sec', type=Type.DOUBLE,
                              doc="Seconds")
                ]),
 
@@ -652,7 +652,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="x - Number of seconds with fractions",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('time', type=Type.DOUBLE,
                              doc="Time")
                ]),
 
@@ -687,7 +687,7 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Setting")
                ]),
 
@@ -696,11 +696,11 @@ gx_methods = {
                doc="Get an environment setting.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Setting"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('set', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Value string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Sizeof string")
                ]),
 
@@ -709,9 +709,9 @@ gx_methods = {
                doc="Set an environment setting.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Setting"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('set', type=Type.STRING,
                              doc="Value")
                ])
     ],
@@ -740,11 +740,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('err', type=Type.INT32_T,
                              doc="The error index (0 to N-1, where N=number of registered errors)"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('err', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Buffer to return message in"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of buffer")
                ]),
 
@@ -769,7 +769,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('flag', type=Type.INT32_T,
                              doc="1 - Display messages, 0 - messages reported as errors")
                ])
     ],
@@ -794,11 +794,11 @@ gx_methods = {
                Exit status of the task
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('command', type=Type.STRING,
                              doc="Command name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('args', type=Type.STRING,
                              doc="Command line arguments"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('process', type=Type.INT32_T,
                              doc="Flags :def:`SYS_RUN_TYPE` :def:`SYS_RUN_DISPLAY` :def:`SYS_RUN_HOLD` :def:`SYS_RUN_WIN`")
                ]),
 
@@ -814,7 +814,7 @@ gx_methods = {
                1 ended with an error.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('gs', type=Type.STRING,
                              doc="Name of GS to run.")
                ]),
 
@@ -835,7 +835,7 @@ gx_methods = {
                1 ended with an error.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('gx', type=Type.STRING,
                              doc="Name of GX to run.")
                ]),
 
@@ -851,9 +851,9 @@ gx_methods = {
                1 ended with an error.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('gx', type=Type.STRING,
                              doc="Name of GX to run."),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('ret', type=Type.INT32_T, is_ref=True,
                              doc="Return value set in the child GX (0 by default)")
                ]),
 
@@ -868,9 +868,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Exit status of the task, 0 usually means success.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('mnu', type=Type.STRING,
                              doc='Group name, can be "".'),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('pdf', type=Type.STRING,
                              doc="PDF name    (.pdf assumed)")
                ]),
 
@@ -892,15 +892,15 @@ gx_methods = {
                See                ShellExecute description in MSDN
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('verb', type=Type.STRING,
                              doc="Verb"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('parameters', type=Type.STRING,
                              doc="Parameters"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('directory', type=Type.STRING,
                              doc="Directory"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('show', type=Type.INT32_T,
                              doc=":def:`SHELL_EXECUTE`")
                ]),
 
@@ -910,7 +910,7 @@ gx_methods = {
                notes="This value is returned in the :func:`iRunGXEx_SYS` call only.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('ret', type=Type.INT32_T,
                              doc="Return Value")
                ])
     ],
@@ -960,11 +960,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('error_file', type=Type.STRING,
                              doc='Your error file name, "" if none.'),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('module', type=Type.STRING,
                              doc="Module name in which error occured."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('error', type=Type.INT32_T,
                              doc="Error number")
                ]),
 
@@ -980,9 +980,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('tag', type=Type.STRING,
                              doc='Tag string, ie "%1".'),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('set', type=Type.STRING,
                              doc="String to replace the tag.")
                ]),
 
@@ -1011,11 +1011,11 @@ gx_methods = {
                1 assertion failed
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('exp', type=Type.INT32_T,
                              doc="Boolean expression (ie. (dB != 0.0) )"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mod', type=Type.STRING,
                              doc="Module name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Argument name")
                ]),
 
@@ -1025,11 +1025,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Return from automation engine.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('object', type=Type.STRING,
                              doc="Object Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('info', type=Type.STRING,
                              doc="Info String"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc="Info Int")
                ]),
 
@@ -1038,7 +1038,7 @@ gx_methods = {
                doc="Saves the main log file to another file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Output file name")
                ]),
 
@@ -1083,7 +1083,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Module name")
                ])
     ],
@@ -1095,7 +1095,7 @@ gx_methods = {
                return_type="CRC",
                return_doc="CRC Value",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -1105,9 +1105,9 @@ gx_methods = {
                return_type="CRC",
                return_doc="CRC Value",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('offset', type=Type.INT32_T,
                              doc="Offset in the file (0 for start)")
                ]),
 
@@ -1116,9 +1116,9 @@ gx_methods = {
                doc="Rename a file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('old_file', type=Type.STRING,
                              doc="Old file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('new_file', type=Type.STRING,
                              doc="New file name")
                ]),
 
@@ -1131,9 +1131,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mask', type=Type.STRING,
                              doc="File mask to match")
                ]),
 
@@ -1146,11 +1146,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('abbr', type=Type.STRING,
                              doc="Input file name to resolve"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output name, can be the same as input"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of output name")
                ]),
 
@@ -1163,9 +1163,9 @@ gx_methods = {
                1 if unable to copy file or source file not found.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('src_file', type=Type.STRING,
                              doc="Source file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dest_file', type=Type.STRING,
                              doc="Destination file")
                ]),
 
@@ -1178,7 +1178,7 @@ gx_methods = {
                1 if unable to find file or delete file.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to delete")
                ]),
 
@@ -1194,7 +1194,7 @@ gx_methods = {
                remove the qualifiers, add the ".gi" and delete the file.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of grid file to delete")
                ]),
 
@@ -1212,7 +1212,7 @@ gx_methods = {
                1 if grid file not found or if one or more files is found but could not be deleted.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of grid file to delete")
                ]),
 
@@ -1225,7 +1225,7 @@ gx_methods = {
                1 - Directory exists
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Name of directory to check")
                ]),
 
@@ -1243,7 +1243,7 @@ gx_methods = {
                1 - File exists
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to check")
                ]),
 
@@ -1256,7 +1256,7 @@ gx_methods = {
                x Size
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file")
                ]),
 
@@ -1269,7 +1269,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File path name to check")
                ]),
 
@@ -1295,9 +1295,9 @@ gx_methods = {
                1 if file not found.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File to get path name for"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`SYS_SEARCH_PATH`"),
                    Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
                              doc="Buffer to place path name into"),
@@ -1327,9 +1327,9 @@ gx_methods = {
                1 if file not found.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File to get path name for"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`SYS_SEARCH_PATH`"),
                    Parameter('p3', type=Type.INT32_T,
                              doc=":def:`GEO_DIRECTORY`"),
@@ -1345,11 +1345,11 @@ gx_methods = {
                notes="The path will always end with the file separator character",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc=":def:`SYS_DIR`"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('dir', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned directory path string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the string")
                ]),
 
@@ -1359,7 +1359,7 @@ gx_methods = {
                notes="The path name will have a directory separator at the end.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`SYS_PATH`"),
                    Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="String in which to place path"),
@@ -1372,9 +1372,9 @@ gx_methods = {
                doc="Get the Windows directory path",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('dir', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buff for directory path string"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of the buff")
                ]),
 
@@ -1387,7 +1387,7 @@ gx_methods = {
                1 - Directory cannot be made
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Name of directory")
                ]),
 
@@ -1400,7 +1400,7 @@ gx_methods = {
                1 if attribute change fails.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file")
                ]),
 
@@ -1413,7 +1413,7 @@ gx_methods = {
                1 if attribute change fails.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file")
                ]),
 
@@ -1426,11 +1426,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('abbr', type=Type.STRING,
                              doc="Input file name to resolve"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output name, can be the same as input"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of output name")
                ]),
 
@@ -1439,11 +1439,11 @@ gx_methods = {
                doc="Obtains the short path form of a specified input path.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('in_name', type=Type.STRING,
                              doc="Input file name to resolve"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output name, can be the same as input"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of output name")
                ]),
 
@@ -1453,11 +1453,11 @@ gx_methods = {
                notes="This is useful for created a unique tempory name for a file in the Geosoft temporary directory.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('ext', type=Type.STRING,
                              doc="Input extension (without .)"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('out', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of output name")
                ]),
 
@@ -1473,11 +1473,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('in', type=Type.STRING,
                              doc="Input file name to resolve (path is removed)"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('out', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output name, can be the same as input"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of output name")
                ]),
 
@@ -1490,11 +1490,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('path_file', type=Type.STRING,
                              doc="Input file path/name"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output file name with path transfered"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum length of output string")
                ]),
 
@@ -1512,7 +1512,7 @@ gx_methods = {
                1 - File name is valid
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to check")
                ]),
 
@@ -1525,7 +1525,7 @@ gx_methods = {
                1 - Directory allows writes
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Name of directory to check")
                ]),
 
@@ -1539,7 +1539,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Date in decimal years, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1553,7 +1553,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Date in decimal hours, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1567,7 +1567,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Date in decimal years, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ]),
 
@@ -1581,7 +1581,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Date in decimal hours, :def_val:`rDUMMY` if the file does not exist.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name")
                ])
     ],
@@ -1592,7 +1592,7 @@ gx_methods = {
                doc="Get the settings metadata object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to store the settings metadata in")
                ]),
 
@@ -1601,7 +1601,7 @@ gx_methods = {
                doc="Reset the global parameters.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc='New INI file name, if "", use default.')
                ]),
 
@@ -1610,9 +1610,9 @@ gx_methods = {
                doc="Set a global parameter setting.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the Parameter"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('set', type=Type.STRING,
                              doc="Setting")
                ]),
 
@@ -1625,7 +1625,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('ini', type=Type.STRING,
                              doc='Global INI file, if "" use default.')
                ]),
 
@@ -1678,7 +1678,7 @@ gx_methods = {
                doc="Set the settings metadata object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object")
                ])
     ],
@@ -1699,9 +1699,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`ARC_LICENSE`",
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('version', type=Type.STRING, is_ref=True, size_of_param='version_size',
                              doc="Version String"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                   Parameter('version_size', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
                              doc="Size of Version String")
                ]),
 
@@ -1714,9 +1714,9 @@ gx_methods = {
                0 - Not licenced
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('class', type=Type.INT32_T,
                              doc="Intrinsic Class Number"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Intrinsic Name (must be exact)")
                ]),
 
@@ -1739,9 +1739,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('class', type=Type.STRING, is_ref=True, size_of_param='class_size',
                              doc="Class String"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('class_size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of Class String")
                ]),
 
@@ -1750,13 +1750,13 @@ gx_methods = {
                doc="Get the licensed user name and Company",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('user', type=Type.STRING, is_ref=True, size_of_param='user_size',
                              doc="User Name"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('user_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of user name"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('company', type=Type.STRING, is_ref=True, size_of_param='company_size',
                              doc="Company Name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('company_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of Company name")
                ])
     ],
@@ -1767,9 +1767,9 @@ gx_methods = {
                doc="Add a parameter to the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Paramter Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="Parameter Value")
                ]),
 
@@ -1778,9 +1778,9 @@ gx_methods = {
                doc="Add a source to the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('source_type', type=Type.INT32_T,
                              doc=":def:`SYS_LINEAGE_SOURCE`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('source_name', type=Type.STRING,
                              doc="Source Name")
                ]),
 
@@ -1804,9 +1804,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Target directory")
                ]),
 
@@ -1820,11 +1820,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="File Name"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('target', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place the target name into"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Buffer")
                ]),
 
@@ -1833,7 +1833,7 @@ gx_methods = {
                doc="Remove an output from the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('output_name', type=Type.STRING,
                              doc="Source Name")
                ]),
 
@@ -1842,7 +1842,7 @@ gx_methods = {
                doc="Remove a parameter in the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Paramter Name")
                ]),
 
@@ -1851,7 +1851,7 @@ gx_methods = {
                doc="Remove a source from the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('source_name', type=Type.STRING,
                              doc="Source Name")
                ]),
 
@@ -1865,9 +1865,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('target', type=Type.STRING,
                              doc="Backup File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('original', type=Type.STRING,
                              doc="Original file name")
                ]),
 
@@ -1876,7 +1876,7 @@ gx_methods = {
                doc="Set the description for the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('description', type=Type.STRING,
                              doc="Description")
                ]),
 
@@ -1885,7 +1885,7 @@ gx_methods = {
                doc="Set the display name for the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('display_name', type=Type.STRING,
                              doc="DisplayName")
                ]),
 
@@ -1894,7 +1894,7 @@ gx_methods = {
                doc="Set the name for the current lineage object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name")
                ])
     ],
@@ -1905,7 +1905,7 @@ gx_methods = {
                doc="Clear all menus",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('def', type=Type.INT32_T,
                              doc=":def:`SYS_MENU_CLEAR`")
                ]),
 
@@ -1918,11 +1918,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst_default', type="LST",
                              doc="Default menus (typically a single entry based on product)"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst_loaded', type="LST",
                              doc="Loaded menus"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst_user', type="LST",
                              doc="Loaded user menus")
                ]),
 
@@ -1935,11 +1935,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst_default', type="LST",
                              doc="Default menus (typically a single entry based on product, do not change the name returned by :func:`GetLoadedMenus_SYS`)"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst_loaded', type="LST",
                              doc="Loaded menus"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst_user', type="LST",
                              doc="Loaded user menus")
                ]),
 
@@ -1948,7 +1948,7 @@ gx_methods = {
                doc="Get the Entitlement Rights",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst_rights', type="LST",
                              doc="Rights")
                ])
     ],
@@ -1959,9 +1959,9 @@ gx_methods = {
                doc="Genrates a GUID string (e.g. {4FEDE8BF-CDAB-430A-8026-1CCC0EC0A2EB})",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('guid', type=Type.STRING, is_ref=True, size_of_param='guid_size',
                              doc="GUID"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                   Parameter('guid_size', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
                              doc="Size of GUID buffer.")
                ]),
 
@@ -1970,7 +1970,7 @@ gx_methods = {
                doc="Copy text from the clipboard to a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File name to place it into")
                ]),
 
@@ -2005,7 +2005,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HANDLE",
+                   Parameter('obj', type="HANDLE",
                              doc="Handle to object to delete")
                ]),
 
@@ -2014,11 +2014,11 @@ gx_methods = {
                doc="Get the size of an EMF object",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="EMF File holding data"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('size_x', type=Type.DOUBLE, is_ref=True,
                              doc="Size X"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('size_y', type=Type.DOUBLE, is_ref=True,
                              doc="Size Y")
                ]),
 
@@ -2027,7 +2027,7 @@ gx_methods = {
                doc="Copy a text file onto the clipboard as text.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File place into clipboard")
                ]),
 
@@ -2041,9 +2041,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('which', type=Type.INT32_T,
                              doc=":def:`SYS_FONT`")
                ]),
 
@@ -2064,11 +2064,11 @@ gx_methods = {
                1  error.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('gx', type=Type.STRING,
                              doc="Name of .NET GX assembly"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('entry_buffer', type=Type.STRING, is_ref=True, size_of_param='entry_size',
                              doc="Buffer to place list of entries in"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('entry_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Sizeof buffer")
                ]),
 
@@ -2077,9 +2077,9 @@ gx_methods = {
                doc="Send a general information message to all listners",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Message Class"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('info', type=Type.STRING,
                              doc="Message Info")
                ]),
 
@@ -2091,7 +2091,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('log', type=Type.STRING,
                              doc="String to Write out")
                ]),
 
@@ -2100,7 +2100,7 @@ gx_methods = {
                doc="This method logs that a script was run",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('location', type=Type.STRING,
                              doc="Location that launched the script")
                ])
     ],
@@ -2123,17 +2123,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('script', type=Type.STRING,
                              doc="Script to run"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('users', type=Type.INT32_T,
                              doc="Number of users to run"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('iterations', type=Type.INT32_T,
                              doc="Number of iterations to run (for each user)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('wait_min_time', type=Type.INT32_T,
                              doc="Minimum wait time between iterations (0 for none)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('wait_max_time', type=Type.INT32_T,
                              doc="Maximum wait time between iterations (0 for none)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('ramp_up_time', type=Type.INT32_T,
                              doc="Ramp up time for users (0 for all users start immediatly)")
                ])
     ],
@@ -2144,7 +2144,7 @@ gx_methods = {
                doc="Clear current contents of a group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group to clear")
                ]),
 
@@ -2153,7 +2153,7 @@ gx_methods = {
                doc="Clears all paramters in a specified group.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="String")
                ]),
 
@@ -2171,11 +2171,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('val', type=Type.INT32_T,
                              doc="Int Value to Set")
                ]),
 
@@ -2188,11 +2188,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real Value to Set")
                ]),
 
@@ -2205,11 +2205,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="String to Set it To")
                ]),
 
@@ -2233,13 +2233,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Input group name"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('pat', type=Type.INT32_T, is_ref=True,
                              doc="Pattern"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('size', type=Type.DOUBLE, is_ref=True,
                              doc="Size,"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('thick', type=Type.INT32_T, is_ref=True,
                              doc="Thick (0-100)"),
                    Parameter('p5', type=Type.DOUBLE, is_ref=True,
                              doc="Density,"),
@@ -2254,9 +2254,9 @@ gx_methods = {
                doc="Get :class:`REG` parameters.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` to add parameters to"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name wanted")
                ]),
 
@@ -2269,13 +2269,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('buff', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place the string into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Buffer")
                ]),
 
@@ -2288,9 +2288,9 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -2303,9 +2303,9 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -2318,9 +2318,9 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -2330,9 +2330,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Int Value, :def_val:`iDUMMY` if the parameter is not set.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -2345,9 +2345,9 @@ gx_methods = {
                0 - Otherwise
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -2361,13 +2361,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="String to filter replace"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('output', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Output string length"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Default group name")
                ]),
 
@@ -2376,9 +2376,9 @@ gx_methods = {
                doc="Reads parameters from a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the File to read from"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('groups', type=Type.STRING,
                              doc='Group Name to write read ("" for all groups)')
                ]),
 
@@ -2388,9 +2388,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real Value, :def_val:`rDUMMY` if parameter not set.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -2399,11 +2399,11 @@ gx_methods = {
                doc="Writes out one group (or all groups) to a file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the File"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="0 - New file, 1 - Append"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('groups', type=Type.STRING,
                              doc='Group Name to write out ("" for all groups)')
                ]),
 
@@ -2413,9 +2413,9 @@ gx_methods = {
                notes="This is useful to prevent certain utility GX parameters from being recorded during GS script runs where the parameters does not influence the actual script execution.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('add', type=Type.INT32_T,
                              doc="0 - Clear filter, 1 - Add filter")
                ]),
 
@@ -2424,11 +2424,11 @@ gx_methods = {
                doc="This method sets an int in the parameter block.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('val', type=Type.INT32_T,
                              doc="Int Value to Set")
                ]),
 
@@ -2453,13 +2453,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('pat', type=Type.INT32_T,
                              doc="Pattern"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('size', type=Type.DOUBLE,
                              doc="Size. Input :def_val:`GS_R8DM` to use default"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('thick', type=Type.INT32_T,
                              doc="Thickness (0-100).  Input :def_val:`GS_S4DM` to use default"),
                    Parameter('p5', type=Type.DOUBLE,
                              doc="Density. Input :def_val:`GS_R8DM` to use default"),
@@ -2474,11 +2474,11 @@ gx_methods = {
                doc="This method Sets a real in the parameter block.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -2487,7 +2487,7 @@ gx_methods = {
                doc="Copy contents of a :class:`REG` to current parameters.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` object")
                ]),
 
@@ -2496,11 +2496,11 @@ gx_methods = {
                doc="This method sets a string in the parameter block.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="String to Set it To")
                ])
     ],
@@ -2545,9 +2545,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="New Process Name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('reset', type=Type.INT32_T,
                              doc="0 - Change the Name but do not change the percentage 1 - Change the Name and Reset Percent to 0 2 - Change the Name but no Percent Bar")
                ]),
 
@@ -2560,7 +2560,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('on', type=Type.INT32_T,
                              doc="0 - Turn Progress Bar OFF 1 - Turn Progress Bar ON")
                ]),
 
@@ -2573,7 +2573,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('perc', type=Type.INT32_T,
                              doc="Percentage Completed (0-100).")
                ]),
 
@@ -2582,9 +2582,9 @@ gx_methods = {
                doc="Updates progress bar based on count and maxcount.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('v1', type=Type.INT32_T,
                              doc="Count"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('v2', type=Type.INT32_T,
                              doc="Max count >= count")
                ])
     ],
@@ -2595,11 +2595,11 @@ gx_methods = {
                doc="Get system information",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc=":def:`SYS_INFO`"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('info', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned setting"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of string")
                ]),
 
@@ -2612,15 +2612,15 @@ gx_methods = {
                1 if value does not exist
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('domain', type=Type.INT32_T,
                              doc=":def:`REG_DOMAIN`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc="Key to set"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('sub_key', type=Type.STRING,
                              doc="Value name within key"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('value', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String for value data"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of String")
                ]),
 
@@ -2634,9 +2634,9 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('domain', type=Type.INT32_T,
                              doc=":def:`REG_DOMAIN`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc="Key to delete")
                ]),
 
@@ -2649,11 +2649,11 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('domain', type=Type.INT32_T,
                              doc=":def:`REG_DOMAIN`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc="Key"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('value_name', type=Type.STRING,
                              doc="Name of value to delete")
                ]),
 
@@ -2666,13 +2666,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('domain', type=Type.INT32_T,
                              doc=":def:`REG_DOMAIN`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('key', type=Type.STRING,
                              doc="Key to set"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('sub_key', type=Type.STRING,
                              doc="Name of Subkey within key"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="Value for Subkey")
                ])
     ],
@@ -2683,7 +2683,7 @@ gx_methods = {
                doc="Destroy PTMP.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PTMP",
+                   Parameter('ptmp', type="PTMP",
                              doc="PTMP object to destroy")
                ]),
 
@@ -2693,7 +2693,7 @@ gx_methods = {
                see_also=":func:`SavePTMP_SYS`, :func:`DestroyPTMP_SYS`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PTMP",
+                   Parameter('ptmp', type="PTMP",
                              doc="Saved with Save_PTMP_SYS")
                ]),
 
@@ -2705,7 +2705,7 @@ gx_methods = {
                return_type="PTMP",
                return_doc="PTMP handle.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('groups', type=Type.STRING,
                              doc='Group Name to save, "" for everything.')
                ])
     ],
@@ -2720,7 +2720,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message to display")
                ]),
 
@@ -2729,7 +2729,7 @@ gx_methods = {
                doc="Abort with GX line number if not true.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('exp', type=Type.INT32_T,
                              doc="Expression to evaluate (0 aborts)")
                ]),
 
@@ -2758,7 +2758,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Success if the delay has elapsed.",
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('secs', type=Type.DOUBLE,
                              doc="Decimal Seconds to delay")
                ]),
 
@@ -2773,11 +2773,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Success if the delay has elapsed.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('flag', type=Type.INT32_T,
                              doc="1 - set start time, 0 - return elapsed time"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('start_time', type=Type.DOUBLE, is_ref=True,
                              doc="Start time in seconds"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('elapsed_time', type=Type.DOUBLE, is_ref=True,
                              doc="Elapsed time in seconds")
                ])
     ],
@@ -2788,9 +2788,9 @@ gx_methods = {
                doc="Display the help dialog with the specified topic highlighted",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group string to lookup in gxhelp.ini"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('topic', type=Type.STRING,
                              doc="Index string to lookup in gxhelp.ini")
                ]),
 
@@ -2799,7 +2799,7 @@ gx_methods = {
                doc="Display the help dialog without topic lookup in INI files",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Help File (blank for default)"),
                    Parameter('p2', type=Type.STRING,
                              doc="Help Topic")
@@ -2810,9 +2810,9 @@ gx_methods = {
                doc="Display an integer.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the Window"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('int', type=Type.INT32_T,
                              doc="Number")
                ]),
 
@@ -2821,9 +2821,9 @@ gx_methods = {
                doc="Display a user message.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the Window"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message String")
                ]),
 
@@ -2832,9 +2832,9 @@ gx_methods = {
                doc="Display a real number.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the Window"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('real', type=Type.DOUBLE,
                              doc="Number")
                ]),
 
@@ -2850,9 +2850,9 @@ gx_methods = {
                1 - user selected YES
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the window"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message String")
                ]),
 
@@ -2869,9 +2869,9 @@ gx_methods = {
                2 - user selected CANCEL
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the window"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message String")
                ]),
 
@@ -2881,31 +2881,31 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Button ID. One of :def:`TD_ID` or the int value from :class:`LST` of custom buttons.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('main_instruction', type=Type.STRING,
                              doc="Main instruction (empty string for none)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('content', type=Type.STRING,
                              doc="Content (empty string for none)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('common_buttons', type=Type.INT32_T,
                              doc="Common Buttons, one of :def:`TD_BUTTON`"),
-                   Parameter('p5', type="LST",
+                   Parameter('custom_button_lst', type="LST",
                              doc="Optional :class:`LST` of custom buttons. Name in :class:`LST` will be used for button text, while value should be an int to return. Pass (:class:`LST`)0 to only use standard button flags."),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('icon', type=Type.INT32_T,
                              doc="Icon :def:`TD_ICON`"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('footer', type=Type.STRING,
                              doc="Footer (empty string for none)"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('footer_icon', type=Type.INT32_T,
                              doc="Footer Icon :def:`TD_ICON`"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('verification_check_text', type=Type.STRING,
                              doc="Verification checkbox text (empty string for none)"),
-                   Parameter('p10', type=Type.INT32_T, is_ref=True,
+                   Parameter('verification_checked', type=Type.INT32_T, is_ref=True,
                              doc="Verification checkbox checked (in/out)"),
-                   Parameter('p11', type=Type.STRING,
+                   Parameter('expanded_information', type=Type.STRING,
                              doc="Expanded information (empty string for none)"),
-                   Parameter('p12', type=Type.STRING,
+                   Parameter('collapsed_control_text', type=Type.STRING,
                              doc="Collapsed control text for expanded information (empty string for default; 'More')"),
-                   Parameter('p13', type=Type.STRING,
+                   Parameter('expanded_control_text', type=Type.STRING,
                              doc="Expanded control text for expanded information (empty string for default; 'Less')")
                ]),
 
@@ -2931,11 +2931,11 @@ gx_methods = {
                1 - user hit CANCEL
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the window"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('result', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place the user's string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the buffer")
                ]),
 
@@ -2976,7 +2976,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('cursor', type=Type.STRING,
                              doc="Cursor Names")
                ]),
 
@@ -2988,7 +2988,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message String")
                ]),
 
@@ -3002,7 +3002,7 @@ gx_methods = {
                see_also=":func:`iInteractive_SYS`, :func:`iRunGX_SYS` and :func:`iRunGS_SYS`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="0 - interactive off 1 - interative on")
                ])
     ],
@@ -3023,7 +3023,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` object")
                ]),
 
@@ -3042,7 +3042,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG",
+                   Parameter('reg', type="REG",
                              doc=":class:`REG` object")
                ])
     ],
@@ -3057,13 +3057,13 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('input', type=Type.STRING,
                              doc="Input string for encryption."),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('output', type=Type.STRING, is_ref=True, size_of_param='output_size',
                              doc="Output buffer for encrypted result."),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('output_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of output buffer."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('key', type=Type.INT32_T,
                              doc=":def:`SYS_ENCRYPTION_KEY`")
                ]),
 
@@ -3073,13 +3073,13 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('input', type=Type.STRING,
                              doc="Input string for decryption."),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('output', type=Type.STRING, is_ref=True, size_of_param='output_size',
                              doc="Output buffer for decrypted result."),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('output_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of output buffer."),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('key', type=Type.INT32_T,
                              doc=":def:`SYS_ENCRYPTION_KEY`")
                ]),
 
@@ -3089,7 +3089,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 (false) or non-zero (true)",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('input', type=Type.STRING,
                              doc="Input string to inspect.")
                ])
     ],
@@ -3104,7 +3104,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of loaded menus",
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Menu list")
                ]),
 
@@ -3113,7 +3113,7 @@ gx_methods = {
                doc="Load a list of menus",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Menu list to load")
                ]),
 
@@ -3122,7 +3122,7 @@ gx_methods = {
                doc="Load menus with semicolon between them.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('menu', type=Type.STRING,
                              doc="Menu to load")
                ]),
 
@@ -3131,7 +3131,7 @@ gx_methods = {
                doc="Load a custom toolbar into the project",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('bar_file', type=Type.STRING,
                              doc="Full path to .geobar file")
                ]),
 
@@ -3154,9 +3154,9 @@ gx_methods = {
                1 - user selected YES
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the window"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message String")
                ]),
 
@@ -3174,9 +3174,9 @@ gx_methods = {
                2 - user selected CANCEL
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the window"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('message', type=Type.STRING,
                              doc="Message String")
                ]),
 
@@ -3190,7 +3190,7 @@ gx_methods = {
                0 - Not licenced
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('lic', type=Type.INT32_T,
                              doc="Product Number  (one of LIC_? defined in license.gxh)")
                ]),
 
@@ -3203,9 +3203,9 @@ gx_methods = {
                0 - No
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Parameter Name")
                ]),
 
@@ -3215,11 +3215,11 @@ gx_methods = {
                notes="Obsolete",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('info', type=Type.INT32_T,
                              doc="SYS_LIC"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('info', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place string into"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of Buffer")
                ]),
 
@@ -3236,9 +3236,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of documents listed in the :class:`VV`.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of type -:def_val:`STR_FILE`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="DOCUMENT_TYPES")
                ]),
 
@@ -3252,11 +3252,11 @@ gx_methods = {
                1 - user hit CANCEL
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('title', type=Type.STRING,
                              doc="Title of the window"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('result', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place the user's string"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the buffer")
                ]),
 
@@ -3278,7 +3278,7 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="Value to append to existing Path")
                ]),
 
@@ -3287,7 +3287,7 @@ gx_methods = {
                doc="Set the parent window for all dialogs",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('wnd', type=Type.INT32_T,
                              doc="New Parent Window")
                ])
     ],
@@ -3314,9 +3314,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('src_dir', type=Type.STRING,
                              doc="Path that will be scanned recursively for GXC source files"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('first_gx', type=Type.STRING,
                              doc="Name of gx where first breakpoint should be set")
                ])
     ]

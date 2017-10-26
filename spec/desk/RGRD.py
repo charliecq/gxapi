@@ -20,7 +20,7 @@ gx_methods = {
                notes="DLL name :func:`_Clear_RGRD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="RGRD",
+                   Parameter('rgrd', type="RGRD",
                              doc=":class:`RGRD` object to clear")
                ]),
 
@@ -47,17 +47,17 @@ gx_methods = {
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X data (any numeric :class:`VV` type)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y data (any numeric :class:`VV` type)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (grid value) data (any numeric :class:`VV` type)"),
-                   Parameter('p4', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to apply to the output :class:`IMG`"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('ctl', type=Type.STRING,
                              doc="RANGRID control file."),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Output grid name (optional)")
                ]),
 
@@ -66,7 +66,7 @@ gx_methods = {
                doc="Destroy a :class:`RGRD`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="RGRD",
+                   Parameter('rgrd', type="RGRD",
                              doc=":class:`RGRD` to destroy.")
                ]),
 
@@ -76,11 +76,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 OK, 1 Error.",
                parameters = [
-                   Parameter('p1', type="RGRD",
+                   Parameter('rgrd', type="RGRD",
                              doc="Handle to :class:`RGRD` object (stores control parameters)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('zchan', type=Type.STRING,
                              doc="Name of Z Channel to perfrom gridding on"),
-                   Parameter('p3', type="DAT",
+                   Parameter('in_dat', type="DAT",
                              doc="Handle to source :class:`DAT` object (from database)")
                ]),
 
@@ -100,9 +100,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 OK, 1 Error.",
                parameters = [
-                   Parameter('p1', type="RGRD",
+                   Parameter('rgrd', type="RGRD",
                              doc=":class:`RGRD` to load parameter settings into"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to get the parameter settings from")
                ]),
 
@@ -115,11 +115,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 OK, 1 Error.",
                parameters = [
-                   Parameter('p1', type="RGRD",
+                   Parameter('rgrd', type="RGRD",
                              doc="Handle to :class:`RGRD` object (stores control parameters)"),
-                   Parameter('p2', type="DAT",
+                   Parameter('in_dat', type="DAT",
                              doc="Handle to source :class:`DAT` object (from database)"),
-                   Parameter('p3', type="DAT",
+                   Parameter('out_dat', type="DAT",
                              doc="Handle to output grid file :class:`DAT`")
                ]),
 
@@ -129,17 +129,17 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0, always.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Handle to a database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('x', type=Type.STRING,
                              doc="Y Channel"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('y', type=Type.STRING,
                              doc="X Channel"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('z', type=Type.STRING,
                              doc="Data channel"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('ctl', type=Type.STRING,
                              doc="RANGRID control file."),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('grd', type=Type.STRING,
                              doc="Output grid name")
                ]),
 
@@ -156,9 +156,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0 OK, 1 Error.",
                parameters = [
-                   Parameter('p1', type="RGRD",
+                   Parameter('rgrd', type="RGRD",
                              doc=":class:`RGRD` object to get parameters from and put into the control file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of file to put the parameter settings into")
                ]),
 
@@ -167,17 +167,17 @@ gx_methods = {
                doc="Executes the Rangrid program directly on input data VVs.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X data"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y data"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z (grid value) data"),
-                   Parameter('p4', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to put into grid"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('ctl', type=Type.STRING,
                              doc="RANGRID control file."),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('grd', type=Type.STRING,
                              doc="Output grid name")
                ])
     ]

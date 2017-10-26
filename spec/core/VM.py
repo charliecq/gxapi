@@ -37,9 +37,9 @@ gx_methods = {
                return_type="VM",
                return_doc=":class:`VM` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GEO_VAR`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('elements', type=Type.INT32_T,
                              doc=":class:`VM` length (less than 16777215)")
                ]),
 
@@ -50,9 +50,9 @@ gx_methods = {
                return_type="VM",
                return_doc=":class:`VM` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('elements', type=Type.INT32_T,
                              doc=":class:`VM` length (less than 16777215)")
                ]),
 
@@ -61,7 +61,7 @@ gx_methods = {
                doc="Destroy a :class:`VM`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` to destroy.")
                ]),
 
@@ -74,8 +74,8 @@ gx_methods = {
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
-                   Parameter('p1', type="VM"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vm', type="VM"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element wanted")
                ]),
 
@@ -91,12 +91,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vm', type="VM"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element wanted"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='strsize',
                              doc="String in which to place element"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string")
                ]),
 
@@ -106,7 +106,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of elements in the :class:`VM`.",
                parameters = [
-                   Parameter('p1', type="VM")
+                   Parameter('vm', type="VM")
                ]),
 
         Method('ReSize_VM', module='geoengine.core', version='5.0.0',
@@ -115,9 +115,9 @@ gx_methods = {
                notes="If increasing the :class:`VM` size, new elements are set to dummies.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` to resize"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('newsize', type=Type.INT32_T,
                              doc="New size (number of elements)")
                ]),
 
@@ -130,8 +130,8 @@ gx_methods = {
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
-                   Parameter('p1', type="VM"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vm', type="VM"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element wanted")
                ]),
 
@@ -147,10 +147,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vm', type="VM"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element to set"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -166,10 +166,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vm', type="VM"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element to set"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Value to set")
                ]),
 
@@ -185,10 +185,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vm', type="VM"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element to set"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="String to set")
                ])
     ]

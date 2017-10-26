@@ -399,18 +399,18 @@ gx_methods = {
                notes="The Fill color is used to color the box.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_z', type=Type.DOUBLE,
                              doc="Min Z"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_z', type=Type.DOUBLE,
                              doc="Max Z")
                ]),
 
@@ -419,11 +419,11 @@ gx_methods = {
                doc="Generate an XML CRC of a View",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('crc', type=Type.INT32_T, is_ref=True,
                              doc="CRC returned"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of xml to generate (.zip added)")
                ]),
 
@@ -432,13 +432,13 @@ gx_methods = {
                doc="Generate an XML CRC of a Group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MAP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Name of Group"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('crc', type=Type.INT32_T, is_ref=True,
                              doc="CRC returned"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of xml to generate (.zip added)")
                ]),
 
@@ -453,24 +453,24 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('start_x', type=Type.DOUBLE,
                              doc="Start X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('start_y', type=Type.DOUBLE,
                              doc="Start Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('start_z', type=Type.DOUBLE,
                              doc="Start Z"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('end_x', type=Type.DOUBLE,
                              doc="End X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('end_y', type=Type.DOUBLE,
                              doc="End Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('end_z', type=Type.DOUBLE,
                              doc="End Z"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('start_radius', type=Type.DOUBLE,
                              doc="Start Radius (can be zero)"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('end_radius', type=Type.DOUBLE,
                              doc="End Radius (can be zero)"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc=":def:`MVIEW_CYLINDER3D`")
                ]),
 
@@ -479,32 +479,32 @@ gx_methods = {
                doc="Draw a 3D object optimized for rendering",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`MVIEW_DRAWOBJ3D_ENTITY`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_DRAWOBJ3D_MODE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('objects', type=Type.INT32_T,
                              doc="Number of Objects"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('default_count', type=Type.INT32_T,
                              doc="Default Count (if variable and not specified)"),
-                   Parameter('p6', type="VV",
+                   Parameter('vert_v_vx', type="VV",
                              doc="Verticies X"),
-                   Parameter('p7', type="VV",
+                   Parameter('vert_v_vy', type="VV",
                              doc="Verticies Y"),
-                   Parameter('p8', type="VV",
+                   Parameter('vert_v_vz', type="VV",
                              doc="Verticies Z"),
-                   Parameter('p9', type="VV",
+                   Parameter('norm_v_vx', type="VV",
                              doc="Normals X (can be NULL)"),
-                   Parameter('p10', type="VV",
+                   Parameter('norm_v_vy', type="VV",
                              doc="Normals Y (can be NULL)"),
-                   Parameter('p11', type="VV",
+                   Parameter('norm_v_vz', type="VV",
                              doc="Normals Z (can be NULL)"),
-                   Parameter('p12', type="VV",
+                   Parameter('color_vv', type="VV",
                              doc="Colors :class:`VV` (can be NULL)"),
-                   Parameter('p13', type="VV",
+                   Parameter('index_vv', type="VV",
                              doc="Index  :class:`VV` (can be NULL)"),
-                   Parameter('p14', type="VV",
+                   Parameter('count_vv', type="VV",
                              doc="Count  :class:`VV` (can be NULL)")
                ]),
 
@@ -517,32 +517,32 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type="VV",
+                   Parameter('vert_v_vx', type="VV",
                              doc="Vertices X (:def_val:`GS_REAL`)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vert_v_vy', type="VV",
                              doc="Vertices Y (:def_val:`GS_REAL`)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vert_v_vz', type="VV",
                              doc="Vertices Z (:def_val:`GS_REAL`)"),
-                   Parameter('p6', type="VV",
+                   Parameter('norm_v_vx', type="VV",
                              doc="Normals X (:def_val:`GS_REAL`)"),
-                   Parameter('p7', type="VV",
+                   Parameter('norm_v_vy', type="VV",
                              doc="Normals Y (:def_val:`GS_REAL`)"),
-                   Parameter('p8', type="VV",
+                   Parameter('norm_v_vz', type="VV",
                              doc="Normals Z (:def_val:`GS_REAL`)"),
-                   Parameter('p9', type="VV",
+                   Parameter('color_vv', type="VV",
                              doc="Colors :class:`VV` (:def_val:`GS_INT`) [can be NULL]"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fillcolor]"),
-                   Parameter('p11', type="VV",
+                   Parameter('tri_vv_pt1', type="VV",
                              doc="Triangles Point 1 (:def_val:`GS_INT`)"),
-                   Parameter('p12', type="VV",
+                   Parameter('tri_vv_pt2', type="VV",
                              doc="Triangles Point 2 (:def_val:`GS_INT`)"),
-                   Parameter('p13', type="VV",
+                   Parameter('tri_vv_pt3', type="VV",
                              doc="Triangles Point 3 (:def_val:`GS_INT`)"),
-                   Parameter('p14', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Native :class:`IPJ` of 3D object")
                ]),
 
@@ -552,10 +552,10 @@ gx_methods = {
                notes="",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Surface file")
                ]),
 
@@ -564,7 +564,7 @@ gx_methods = {
                doc="Fill a :class:`LST` with the different font weights.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -577,11 +577,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Returned string :class:`VV` of type -:def_val:`STR_FILE`")
                ]),
 
@@ -591,13 +591,13 @@ gx_methods = {
                return_type="META",
                return_doc=":class:`META` Object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('meta', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Meta name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Length of Meta name variable")
                ]),
 
@@ -611,17 +611,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('text', type=Type.STRING,
                              doc="Text string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_min', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_min', type=Type.DOUBLE, is_ref=True,
                              doc="Y minimum"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_max', type=Type.DOUBLE, is_ref=True,
                              doc="X maximum"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_max', type=Type.DOUBLE, is_ref=True,
                              doc="Y maximum")
                ]),
 
@@ -631,12 +631,12 @@ gx_methods = {
                notes="The Line color and line thickness will affect rendering.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z")
                ]),
 
@@ -649,12 +649,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="VV",
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('v_vx', type="VV",
                              doc="X coordinates."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y coordinates."),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z coordinates.")
                ]),
 
@@ -663,19 +663,19 @@ gx_methods = {
                doc="Re-locate a group in a view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area X minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area Y minimum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area X maximum"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Area Y maximum"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('asp', type=Type.INT32_T,
                              doc=":def:`MVIEW_RELOCATE`")
                ]),
 
@@ -684,13 +684,13 @@ gx_methods = {
                doc="Update the :class:`META` in this group with the new meta object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p3', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Meta name of Object")
                ]),
 
@@ -700,14 +700,14 @@ gx_methods = {
                notes="The Fill color is used to color the sphere.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Center X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Center Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Center Z"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('radius', type=Type.DOUBLE,
                              doc="Radius")
                ]),
 
@@ -716,11 +716,11 @@ gx_methods = {
                doc="Fill the :class:`META` with group dataset information",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p3', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to fill")
                ])
     ],
@@ -737,11 +737,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane number to delete"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('del_grp', type=Type.INT32_T,
                              doc="TRUE to delete all groups on the plane")
                ]),
 
@@ -751,11 +751,11 @@ gx_methods = {
                notes="By default it is the View's Clip Region",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Clip Region")
                ]),
 
@@ -764,11 +764,11 @@ gx_methods = {
                doc="Get the equation of a plane",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('pitch', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation about X (Y toward Z +ve, between -360 and 360)"),
                    Parameter('p4', type=Type.DOUBLE, is_ref=True,
                              doc="Rotation about Y (Z toward X +ve, between -360 and 360)"),
@@ -793,9 +793,9 @@ gx_methods = {
                doc="Get the View's Plane Equation",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('pitch', type=Type.DOUBLE, is_ref=True,
                              doc="Angle in X"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Angle in Y"),
@@ -821,9 +821,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Index of plane",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('plane', type=Type.STRING,
                              doc="Name of Plane")
                ]),
 
@@ -833,9 +833,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Plane number, -1 if not found",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('plane', type=Type.STRING,
                              doc="Name of the plane")
                ]),
 
@@ -850,11 +850,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum name length")
                ]),
 
@@ -864,7 +864,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="TRUE if view is 3D",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object")
                ]),
 
@@ -884,7 +884,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="TRUE if view is a section view.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object")
                ]),
 
@@ -899,11 +899,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane number"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List of plane names and numbers")
                ]),
 
@@ -918,9 +918,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List of plane names and numbers")
                ]),
 
@@ -929,9 +929,9 @@ gx_methods = {
                doc="Set all groups to be within one plane",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane Index to set all groups to")
                ]),
 
@@ -940,9 +940,9 @@ gx_methods = {
                doc="Set all groups that are not in any plane to this plane",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane Index to set all groups to")
                ]),
 
@@ -957,9 +957,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name")
                ]),
 
@@ -968,11 +968,11 @@ gx_methods = {
                doc="Set a group to a plane",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane Index to set all groups to"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Name of group to set")
                ]),
 
@@ -982,9 +982,9 @@ gx_methods = {
                notes="To make the view a 2D view, set a :class:`3DN` of NULL.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="3DN",
+                   Parameter('o3dn', type="3DN",
                              doc=":class:`3DN` to set (NULL for 2D view)")
                ]),
 
@@ -993,19 +993,19 @@ gx_methods = {
                doc="Get 3D point of view (values are will be :def_val:`rDUMMY` if view for 2D views)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X center"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y center"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z center"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('distance', type=Type.DOUBLE, is_ref=True,
                              doc="Distance from center"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('declination', type=Type.DOUBLE, is_ref=True,
                              doc="Declination, 0 to 360 CW from Y"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('inclination', type=Type.DOUBLE, is_ref=True,
                              doc="Inclination, -90 to +90")
                ]),
 
@@ -1014,19 +1014,19 @@ gx_methods = {
                doc="Set 3D point of view (no effect on 2D views)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X center"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y center"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z center"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('distance', type=Type.DOUBLE,
                              doc="Distance from center"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('declination', type=Type.DOUBLE,
                              doc="Declination, 0 to 360 CW from Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('inclination', type=Type.DOUBLE,
                              doc="Inclination, -90 to +90")
                ]),
 
@@ -1036,11 +1036,11 @@ gx_methods = {
                notes="By default it is the View's Clip Region",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Clip Region")
                ]),
 
@@ -1054,11 +1054,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('pitch', type=Type.DOUBLE,
                              doc="Rotation about X (Z toward Y +ve, between -360 and 360)"),
                    Parameter('p4', type=Type.DOUBLE,
                              doc="Rotation about Y (Z toward X +ve, between -360 and 360)"),
@@ -1083,11 +1083,11 @@ gx_methods = {
                doc="Set the surface image of a plane",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('surface', type=Type.STRING,
                              doc="Optional surface image/grid name, can be NULL")
                ]),
 
@@ -1096,19 +1096,19 @@ gx_methods = {
                doc="Set the surface information",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('sample', type=Type.INT32_T,
                              doc="Sample rate (>=1)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Base"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Scale"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Min"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Max")
                ])
     ],
@@ -1123,24 +1123,24 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('center_x', type=Type.DOUBLE,
                              doc="Center point X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('center_y', type=Type.DOUBLE,
                              doc="Center point Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('center_z', type=Type.DOUBLE,
                              doc="Center point Z"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('x_vector_x', type=Type.DOUBLE,
                              doc="X Vector X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('x_vector_y', type=Type.DOUBLE,
                              doc="X Vector Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('x_vector_z', type=Type.DOUBLE,
                              doc="X Vector Z"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('y_vector_x', type=Type.DOUBLE,
                              doc="Y Vector X"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('y_vector_y', type=Type.DOUBLE,
                              doc="Y Vector Y"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('y_vector_z', type=Type.DOUBLE,
                              doc="Y Vector Z")
                ]),
 
@@ -1152,18 +1152,18 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('center_x', type=Type.DOUBLE,
                              doc="Center point X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('center_y', type=Type.DOUBLE,
                              doc="Center point Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('center_z', type=Type.DOUBLE,
                              doc="Center point Z"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dir_point_x', type=Type.DOUBLE,
                              doc="Directional Point X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('dir_point_y', type=Type.DOUBLE,
                              doc="Directional Point Y"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('dir_point_z', type=Type.DOUBLE,
                              doc="Directional Point Z")
                ]),
 
@@ -1176,12 +1176,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('center_x', type=Type.DOUBLE,
                              doc="Center point X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('center_y', type=Type.DOUBLE,
                              doc="Center point Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('center_z', type=Type.DOUBLE,
                              doc="Center point Z")
                ])
     ],
@@ -1196,15 +1196,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('exclude', type=Type.INT32_T,
                              doc="Exclude")
                ]),
 
@@ -1214,19 +1214,19 @@ gx_methods = {
                notes="The rectangle will be added to the current clip region.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('exclude', type=Type.INT32_T,
                              doc="Exclude")
                ]),
 
@@ -1235,7 +1235,7 @@ gx_methods = {
                doc="Remove/clear the view clip region.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle")
                ]),
 
@@ -1244,9 +1244,9 @@ gx_methods = {
                doc="Set the Clipping mode on/off for all groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_CLIP`")
                ]),
 
@@ -1255,9 +1255,9 @@ gx_methods = {
                doc="Set the Clipping mode on/off for marked groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_CLIP`")
                ]),
 
@@ -1270,13 +1270,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`")
                ]),
 
@@ -1286,17 +1286,17 @@ gx_methods = {
                notes="The rectangle will be added to the current clip region.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`")
                ]),
 
@@ -1305,9 +1305,9 @@ gx_methods = {
                doc="Deletes an extended clip :class:`PLY` object used by this view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ext_ply', type=Type.INT32_T,
                              doc="Extended ClipPLY number")
                ]),
 
@@ -1316,9 +1316,9 @@ gx_methods = {
                doc="Get the names of existing extended clip :class:`PLY` objects in this view as list.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="LST")
+                   Parameter('lst', type="LST")
                ]),
 
         Method('GetClipPLY_MVIEW', module='geoengine.map', version='5.0.0',
@@ -1332,9 +1332,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type="PLY",
+                   Parameter('poly', type="PLY",
                              doc="Poly")
                ]),
 
@@ -1343,11 +1343,11 @@ gx_methods = {
                doc="Get an extended clip :class:`PLY` object used by this view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ext_ply', type=Type.INT32_T,
                              doc="Extended ClipPLY number"),
-                   Parameter('p3', type="PLY",
+                   Parameter('ply', type="PLY",
                              doc=":class:`PLY` object to get")
                ]),
 
@@ -1356,11 +1356,11 @@ gx_methods = {
                doc="Gets extended clip information for group in view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('ext_ply', type=Type.INT32_T, is_ref=True,
                              doc="Extended :class:`PLY` number (returned, -1 if not set)")
                ]),
 
@@ -1373,9 +1373,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type="PLY",
+                   Parameter('poly', type="PLY",
                              doc="Poly")
                ]),
 
@@ -1385,9 +1385,9 @@ gx_methods = {
                notes="All new groups will be clipped.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_CLIP`")
                ]),
 
@@ -1396,13 +1396,13 @@ gx_methods = {
                doc="Get the name of the extended clip :class:`PLY` object in this view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ext_ply', type=Type.INT32_T,
                              doc="Extended ClipPLY number"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Length of Name variable")
                ]),
 
@@ -1412,7 +1412,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of PLYs",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object")
                ]),
 
@@ -1422,13 +1422,13 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of new or changed :class:`PLY`, -1 on error",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ext_ply', type=Type.INT32_T,
                              doc="Extended ClipPLY number, If  >= :func:`iNumExtClipPLY_MVIEW`(View) it will be added to the end of the current list"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name (Has to be unique, otherwise error will be returned)"),
-                   Parameter('p4', type="PLY",
+                   Parameter('ply', type="PLY",
                              doc=":class:`PLY` object to set, use (:class:`PLY`)0 to rename an existing object")
                ]),
 
@@ -1437,9 +1437,9 @@ gx_methods = {
                doc="Set clipping region to a :class:`PLY`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type="PLY",
+                   Parameter('poly', type="PLY",
                              doc="Poly")
                ]),
 
@@ -1448,11 +1448,11 @@ gx_methods = {
                doc="Sets extended clip information for group in view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ext_ply', type=Type.INT32_T,
                              doc="Extended :class:`PLY` number (-1 to clear)")
                ])
     ],
@@ -1465,13 +1465,13 @@ gx_methods = {
                see_also=":func:`iColor_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color value"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('r', type=Type.INT32_T, is_ref=True,
                              doc="Red"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('g', type=Type.INT32_T, is_ref=True,
                              doc="Green"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('b', type=Type.INT32_T, is_ref=True,
                              doc="Blue")
                ]),
 
@@ -1481,11 +1481,11 @@ gx_methods = {
                notes="See :func:`iColor_MVIEW`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="COL_ANY variable"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('color', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Color descriptor returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of the string")
                ]),
 
@@ -1510,7 +1510,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Color int",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('color', type=Type.STRING,
                              doc="Color name string")
                ]),
 
@@ -1522,11 +1522,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Color int based on color model.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('c', type=Type.INT32_T,
                              doc="Cyan"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('m', type=Type.INT32_T,
                              doc="Magenta"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('y', type=Type.INT32_T,
                              doc="Yellow")
                ]),
 
@@ -1538,11 +1538,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Color int based on color model.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('h', type=Type.INT32_T,
                              doc="Hue"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('s', type=Type.INT32_T,
                              doc="Saturation"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('v', type=Type.INT32_T,
                              doc="Color")
                ]),
 
@@ -1554,11 +1554,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Color int based on color model.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('r', type=Type.INT32_T,
                              doc="Red"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('g', type=Type.INT32_T,
                              doc="Green"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('b', type=Type.INT32_T,
                              doc="Blue")
                ])
     ],
@@ -1584,9 +1584,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_CLIP`")
                ]),
 
@@ -1595,9 +1595,9 @@ gx_methods = {
                doc="Set the fill color.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color")
                ]),
 
@@ -1606,9 +1606,9 @@ gx_methods = {
                doc="Set the line color.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color")
                ]),
 
@@ -1617,8 +1617,8 @@ gx_methods = {
                doc="Set the line edge smoothing.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('smooth', type=Type.INT32_T,
                              doc=":def:`MVIEW_SMOOTH`")
                ]),
 
@@ -1638,10 +1638,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('style', type=Type.INT32_T,
                              doc="Line Style #, see default.lpt"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('pitch', type=Type.DOUBLE,
                              doc="Pitch in view units")
                ]),
 
@@ -1650,9 +1650,9 @@ gx_methods = {
                doc="Set the line thickness.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('thick', type=Type.DOUBLE,
                              doc="Line thickness in view space units")
                ]),
 
@@ -1679,8 +1679,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle")
                ]),
 
@@ -1699,8 +1699,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('density', type=Type.DOUBLE,
                              doc="Relative density (default = 1).")
                ]),
 
@@ -1728,8 +1728,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('number', type=Type.INT32_T,
                              doc="Pattern number")
                ]),
 
@@ -1739,8 +1739,8 @@ gx_methods = {
                notes="See the IMPORTANT note for sPatNumber_MVIEW().",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('size', type=Type.DOUBLE,
                              doc="Pattern size in view units")
                ]),
 
@@ -1766,8 +1766,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('style', type=Type.INT32_T,
                              doc=":def:`MVIEW_TILE`")
                ]),
 
@@ -1777,8 +1777,8 @@ gx_methods = {
                notes="See the IMPORTANT note for sPatNumber_MVIEW().",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('thick', type=Type.DOUBLE,
                              doc="Line thickness as fraction of pattern size (ie. 0.05)")
                ]),
 
@@ -1787,9 +1787,9 @@ gx_methods = {
                doc="Set the Symb angle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle in degrees CCW from +X")
                ]),
 
@@ -1798,9 +1798,9 @@ gx_methods = {
                doc="Set the Symbol color.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color")
                ]),
 
@@ -1809,9 +1809,9 @@ gx_methods = {
                doc="Set the Symbol color fill.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color")
                ]),
 
@@ -1852,9 +1852,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('number', type=Type.INT32_T,
                              doc="Symbol number")
                ]),
 
@@ -1863,9 +1863,9 @@ gx_methods = {
                doc="Set the Symb size.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('size', type=Type.DOUBLE,
                              doc="Size in view units")
                ]),
 
@@ -1874,9 +1874,9 @@ gx_methods = {
                doc="Set the text angle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle in degrees CCW from +X")
                ]),
 
@@ -1885,9 +1885,9 @@ gx_methods = {
                doc="Set the Text color.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color")
                ]),
 
@@ -1947,9 +1947,9 @@ gx_methods = {
                doc="Set the text plot reference point.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('ref', type=Type.INT32_T,
                              doc=":def:`TEXT_REF`")
                ]),
 
@@ -1974,9 +1974,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('size', type=Type.DOUBLE,
                              doc="Size in view units")
                ]),
 
@@ -1990,8 +1990,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('trans', type=Type.DOUBLE,
                              doc="Transparency (1.0 - Opaque, 0.0 - Transparent)")
                ]),
 
@@ -2004,8 +2004,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Z-Value")
                ])
     ],
@@ -2016,21 +2016,21 @@ gx_methods = {
                doc="Draw an arc.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Center x"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Center y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('radius', type=Type.DOUBLE,
                              doc="Radius"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('ratio', type=Type.DOUBLE,
                              doc="Ratio x/y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start angle"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('end', type=Type.DOUBLE,
                              doc="End angle")
                ]),
 
@@ -2039,21 +2039,21 @@ gx_methods = {
                doc="Draw a filled arc.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Center x"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Center y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('radius', type=Type.DOUBLE,
                              doc="Radius"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('ratio', type=Type.DOUBLE,
                              doc="Ratio x/y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start angle"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('end', type=Type.DOUBLE,
                              doc="End angle")
                ]),
 
@@ -2070,23 +2070,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('scal_mm', type=Type.DOUBLE,
                              doc="Scale factor to convert mm to view units"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('zmin', type=Type.DOUBLE,
                              doc="Classified minimum Z to plot"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('zval', type=Type.STRING,
                              doc="Comma delimited list of Z maximums"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('size', type=Type.STRING,
                              doc="Comma delimited list of sizes in mm"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('fcol', type=Type.STRING,
                              doc="Comma delimited list of color strings")
                ]),
 
@@ -2096,12 +2096,12 @@ gx_methods = {
                notes="You pass a :class:`VV` with polygon sizes and 2 point vvs.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="VV",
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('v_vi', type="VV",
                              doc=":class:`VV` of type int holding the number of points for each polygon"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X coordinates."),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2110,17 +2110,17 @@ gx_methods = {
                doc="Draw an ellipse",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Center x"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Center y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('radius', type=Type.DOUBLE,
                              doc="Radius"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('ratio', type=Type.DOUBLE,
                              doc="Ratio x/y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle")
                ]),
 
@@ -2129,15 +2129,15 @@ gx_methods = {
                doc="Draw a line.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x0', type=Type.DOUBLE,
                              doc="X0"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y0', type=Type.DOUBLE,
                              doc="Y0"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X1"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y1")
                ]),
 
@@ -2146,9 +2146,9 @@ gx_methods = {
                doc="Draw line segments stored in a GS_D2LINE :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` for GS_D2LINE")
                ]),
 
@@ -2157,10 +2157,10 @@ gx_methods = {
                doc="Like PolyLineDm, but draw polygons.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="VV",
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('v_vx', type="VV",
                              doc="X coordinates."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2169,8 +2169,8 @@ gx_methods = {
                doc="Draw a complex polygon from :class:`PLY`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="PLY")
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('ply', type="PLY")
                ]),
 
         Method('PolyLine_MVIEW', module='geoengine.map', version='5.0.0',
@@ -2183,12 +2183,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`MVIEW_DRAW`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X coordinates."),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2197,10 +2197,10 @@ gx_methods = {
                doc="Draw a polyline with gaps defined by dummies in X/Y VVs",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="VV",
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('v_vx', type="VV",
                              doc="X coordinates."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2215,10 +2215,10 @@ gx_methods = {
                see_also=":func:`PolyLine_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="VV",
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('v_vx', type="VV",
                              doc="X coordinates."),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2227,15 +2227,15 @@ gx_methods = {
                doc="Draw a rectangle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x0', type=Type.DOUBLE,
                              doc="X0"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y0', type=Type.DOUBLE,
                              doc="Y0"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('x1', type=Type.DOUBLE,
                              doc="X1"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('y1', type=Type.DOUBLE,
                              doc="Y1")
                ]),
 
@@ -2244,21 +2244,21 @@ gx_methods = {
                doc="Draw a filled segment of an ellipse.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Center x"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Center y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('radius', type=Type.DOUBLE,
                              doc="Radius"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('ratio', type=Type.DOUBLE,
                              doc="Ratio x/y"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('angle', type=Type.DOUBLE,
                              doc="Angle"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="Start angle"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('end', type=Type.DOUBLE,
                              doc="End angle")
                ]),
 
@@ -2267,13 +2267,13 @@ gx_methods = {
                doc="Plot sized symbols",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Symbol sizes (in view units)")
                ]),
 
@@ -2282,11 +2282,11 @@ gx_methods = {
                doc="Plot a symbol",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y")
                ]),
 
@@ -2295,11 +2295,11 @@ gx_methods = {
                doc="Plot symbols",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y")
                ]),
 
@@ -2308,15 +2308,15 @@ gx_methods = {
                doc="Plot symbols using an :class:`ITR`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('itr', type=Type.STRING,
                              doc=":class:`ITR` file name (ZON or :class:`ITR`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z")
                ]),
 
@@ -2325,13 +2325,13 @@ gx_methods = {
                doc="Draw text.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('text', type=Type.STRING,
                              doc="Text to plot"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X location of text"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y location of text")
                ])
     ],
@@ -2342,11 +2342,11 @@ gx_methods = {
                doc="Add an aggregate to a view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="AGG",
+                   Parameter('agg', type="AGG",
                              doc="Aggregate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Aggregate name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
                ]),
 
@@ -2357,9 +2357,9 @@ gx_methods = {
                return_type="AGG",
                return_doc=":class:`AGG` object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2373,9 +2373,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Change to this line")
                ]),
 
@@ -2384,10 +2384,10 @@ gx_methods = {
                doc="Add a colored symbol object to a view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the color symbol group"),
-                   Parameter('p3', type="CSYMB",
+                   Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object")
                ]),
 
@@ -2398,9 +2398,9 @@ gx_methods = {
                return_type="CSYMB",
                return_doc=":class:`CSYMB` object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2409,10 +2409,10 @@ gx_methods = {
                doc="Add a Data Link Display (:class:`DATALINKD`) object to the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="DATALINKD"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('datalinkd', type="DATALINKD"),
+                   Parameter('name', type=Type.STRING,
                              doc="Name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
                ]),
 
@@ -2423,9 +2423,9 @@ gx_methods = {
                return_type="DATALINKD",
                return_doc=":class:`DATALINKD` object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2434,11 +2434,11 @@ gx_methods = {
                doc="Used for GX makers which use both maps and databases.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Maker name, used in menu prompt"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('groups', type=Type.STRING,
                              doc='INI groups (terminate each with a ";")')
                ]),
 
@@ -2447,17 +2447,17 @@ gx_methods = {
                doc="Add an EMF file data object to the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="EMF File holding data")
                ]),
 
@@ -2466,21 +2466,21 @@ gx_methods = {
                doc="Add an external string data object to the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of external object"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class of external object"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="String data of external object")
                ]),
 
@@ -2489,11 +2489,11 @@ gx_methods = {
                doc="Make a link to a database.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Link name")
                ]),
 
@@ -2502,9 +2502,9 @@ gx_methods = {
                doc="Generates a Maker for the database and/or map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('db', type=Type.INT32_T,
                              doc="Database required? (0 = No, 1 = Yes)"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Map required?      (0 = No, 1 = Yes)"),
@@ -2523,11 +2523,11 @@ gx_methods = {
                doc="Store Metadata in a group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Menu name of Object")
                ]),
 
@@ -2536,10 +2536,10 @@ gx_methods = {
                doc="Add a Voxel Display (:class:`VOXD`) object to the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="VOXD"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('voxd', type="VOXD"),
+                   Parameter('name', type=Type.STRING,
                              doc="Name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
                ]),
 
@@ -2550,9 +2550,9 @@ gx_methods = {
                return_type="VOXD",
                return_doc=":class:`VOXD` object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2563,22 +2563,22 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Each data value in a vector voxel contains X, Y and Z components of a vector. The amplitudes do NOT necessarily correspond to the spatial size of the voxel.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="VOX"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('vox', type="VOX"),
+                   Parameter('group', type=Type.STRING,
                              doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
-                   Parameter('p4', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc="Image transform - must contain zones"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('scale_factor', type=Type.DOUBLE,
                              doc="Vector length scale factor - w.r.t. the voxel minimum horizontal cell size (default 1)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('height_base_ratio', type=Type.DOUBLE,
                              doc="Ratio of the vector cone height to its base (default 4)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('max_base_size_ratio', type=Type.DOUBLE,
                              doc="Ratio of maximum base size to minimum horizontal cell size (default 0.25)"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('cutoff_value', type=Type.DOUBLE,
                              doc="Cutoff value - do not plot vectors with amplitudes less than this value (:def_val:`rDUMMY` or 0 to plot all)"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('max_vectors', type=Type.INT32_T,
                              doc="Maximum number of vectors - decimate as required to reduce (:def_val:`iDUMMY` to plot all)")
                ]),
 
@@ -2589,9 +2589,9 @@ gx_methods = {
                return_type="VECTOR3D",
                return_doc=":class:`VECTOR3D` object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2601,32 +2601,32 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Plot vectors as cones scaled in area to the maximum amplitude",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X locations"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y locations"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z locations"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vvx', type="VV",
                              doc="Vector X component"),
-                   Parameter('p7', type="VV",
+                   Parameter('v_vvy', type="VV",
                              doc="Vector Y component"),
-                   Parameter('p8', type="VV",
+                   Parameter('v_vvz', type="VV",
                              doc="Vector Z component"),
-                   Parameter('p9', type="ITR",
+                   Parameter('itr', type="ITR",
                              doc="Image transform - must contain zones"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('scale_for_max_vector', type=Type.DOUBLE,
                              doc="""
                              Scale factor for the longest vector in map units / vector units. Vector lengths for the rest of the vectors scale by the square root of the vector amplitudes.
                              This results in the apparent (viewed) area of the vector being proportional to the amplitude.
                              """),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('height_base_ratio', type=Type.DOUBLE,
                              doc="Ratio of the vector cone height to its base (default 4)"),
-                   Parameter('p12', type=Type.DOUBLE,
+                   Parameter('max_base_size_ratio', type=Type.DOUBLE,
                              doc="Maximum base size in view units. Leave blank (dummy) for no limit. If applied this can make larger vectors skinnier, but does not reduce the length, so they don't obscure other vectors as much.")
                ])
     ],
@@ -2642,11 +2642,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type="ITR")
+                   Parameter('itr', type="ITR")
                ]),
 
         Method('GetGroupITR_MVIEW', module='geoengine.map', version='9.3.0',
@@ -2659,9 +2659,9 @@ gx_methods = {
                """,
                return_type="ITR",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2676,9 +2676,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 - :class:`ITR` exists, 0 - :class:`ITR` does not exist",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2692,9 +2692,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2708,11 +2708,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type="TPAT")
+                   Parameter('tpat', type="TPAT")
                ]),
 
         Method('GetGroupTPAT_MVIEW', module='geoengine.map', version='9.3.0',
@@ -2725,9 +2725,9 @@ gx_methods = {
                """,
                return_type="TPAT",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2742,9 +2742,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 - :class:`TPAT` exists, 0 - :class:`TPAT` does not exist",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2758,9 +2758,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -2771,11 +2771,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 - storage exists, 0 - storage does not exist",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('storage_name', type=Type.STRING,
                              doc="Storage name")
                ]),
 
@@ -2786,11 +2786,11 @@ gx_methods = {
                return_type="BF",
                return_doc=":class:`BF` Object",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('storage_name', type=Type.STRING,
                              doc="Storage name")
                ]),
 
@@ -2800,11 +2800,11 @@ gx_methods = {
                notes='External API users should not use storage names starting with "Geosoft"',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('storage_name', type=Type.STRING,
                              doc="Storage name")
                ]),
 
@@ -2814,13 +2814,13 @@ gx_methods = {
                notes='External API users should not use storage names starting with "Geosoft"',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('storage_name', type=Type.STRING,
                              doc="Storage name"),
-                   Parameter('p4', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to read from")
                ]),
 
@@ -2834,9 +2834,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mvie_ws', type="MVIEW",
                              doc="Source :class:`MVIEW`"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mvie_wd', type="MVIEW",
                              doc="Destination :class:`MVIEW`")
                ]),
 
@@ -2846,9 +2846,9 @@ gx_methods = {
                notes="The projections, and clipping is completly ignored.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mvie_ws', type="MVIEW",
                              doc="Source :class:`MVIEW`"),
-                   Parameter('p2', type="MVIEW",
+                   Parameter('mvie_wd', type="MVIEW",
                              doc="Destination :class:`MVIEW`")
                ]),
 
@@ -2857,11 +2857,11 @@ gx_methods = {
                doc="Compute CRC for a group.",
                return_type="CRC",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type="CRC",
+                   Parameter('crc', type="CRC",
                              doc="CRC to start (use :def_val:`CRC_INIT_VALUE`)")
                ]),
 
@@ -2871,9 +2871,9 @@ gx_methods = {
                notes="Does nothing if the group does not already exist.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -2882,7 +2882,7 @@ gx_methods = {
                doc="Delete marked groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle")
                ]),
 
@@ -2891,19 +2891,19 @@ gx_methods = {
                doc="Get extent of a group in a view",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xmin', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum X, returned"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ymin', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum Y, returned"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('xmax', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum X, returned"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('ymax', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum Y, returned"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`")
                ]),
 
@@ -2912,10 +2912,10 @@ gx_methods = {
                doc="Gets the transparency value of group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('trans', type=Type.DOUBLE, is_ref=True,
                              doc="Transparency (1.0 - Opaque, 0.0 - Transparent)")
                ]),
 
@@ -2930,11 +2930,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` to add to")
                ]),
 
@@ -2943,9 +2943,9 @@ gx_methods = {
                doc="Hide/Show marked groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_HIDE`")
                ]),
 
@@ -2954,9 +2954,9 @@ gx_methods = {
                doc="Hide/Show 2d shadow interpretations.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_HIDE`")
                ]),
 
@@ -2969,9 +2969,9 @@ gx_methods = {
                1  - group exists.
                """,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -2984,13 +2984,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Base Name of group"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('new_name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="New Name of group"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_GROUP',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_GROUP',
                              doc="Size of buffer.")
                ]),
 
@@ -3000,11 +3000,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="TRUE or FALSE (1 or 0)",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('what', type=Type.INT32_T,
                              doc=":def:`MVIEW_IS`")
                ]),
 
@@ -3014,9 +3014,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="TRUE or FALSE (1 or 0)",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -3031,7 +3031,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="MVIEW")
+                   Parameter('mview', type="MVIEW")
                ]),
 
         Method('iIsVisible_MVIEW', module='geoengine.map', version='6.3.0',
@@ -3040,7 +3040,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="MVIEW")
+                   Parameter('mview', type="MVIEW")
                ]),
 
         Method('iListGroups_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3049,11 +3049,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of groups in the list",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('flag', type=Type.INT32_T,
                              doc=":def:`MVIEW_GROUP_LIST`")
                ]),
 
@@ -3064,7 +3064,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Render order",
                parameters = [
-                   Parameter('p1', type="MVIEW")
+                   Parameter('mview', type="MVIEW")
                ]),
 
         Method('MarkAllGroups_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3072,9 +3072,9 @@ gx_methods = {
                doc="Mark or unmark all groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mark', type=Type.INT32_T,
                              doc="0 - unmark, 1 - mark")
                ]),
 
@@ -3083,9 +3083,9 @@ gx_methods = {
                doc="Mark/unmark all empty groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mark', type=Type.INT32_T,
                              doc="0 - unmark, 1 - mark")
                ]),
 
@@ -3094,11 +3094,11 @@ gx_methods = {
                doc="Mark or unmark a specific group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mark', type=Type.INT32_T,
                              doc="0 - unmark, 1 - mark")
                ]),
 
@@ -3107,9 +3107,9 @@ gx_methods = {
                doc="Move the group backward one position (render sooner).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -3118,9 +3118,9 @@ gx_methods = {
                doc="Move the group forward one position (render later).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -3129,9 +3129,9 @@ gx_methods = {
                doc="Move the group to the back (render first).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -3140,9 +3140,9 @@ gx_methods = {
                doc="Move the group to the front (render last).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -3152,11 +3152,11 @@ gx_methods = {
                notes="Does nothing if the group does not already exist.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('old', type=Type.STRING,
                              doc="Old group name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('new', type=Type.STRING,
                              doc="New group name")
                ]),
 
@@ -3165,11 +3165,11 @@ gx_methods = {
                doc="Set the movable attribute of a group.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('move', type=Type.INT32_T,
                              doc="0 - not movable, 1 - movable")
                ]),
 
@@ -3178,10 +3178,10 @@ gx_methods = {
                doc="Sets the transparency value of group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('trans', type=Type.DOUBLE,
                              doc="Transparency  (1.0 - Opaque, 0.0 - Transparent)")
                ]),
 
@@ -3190,9 +3190,9 @@ gx_methods = {
                doc="Set the movable attribute of marked groups.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('move', type=Type.INT32_T,
                              doc="0 - not movable, 1 - movable")
                ]),
 
@@ -3206,8 +3206,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('flag', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL`")
                ]),
 
@@ -3217,8 +3217,8 @@ gx_methods = {
                notes="Views with lower numbers should render first, :def_val:`iDUMMY` is undefined",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('order', type=Type.INT32_T,
                              doc="Render order")
                ]),
 
@@ -3227,8 +3227,8 @@ gx_methods = {
                doc="Set the view visibility",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('flag', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL`")
                ]),
 
@@ -3247,11 +3247,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Group name, can be NULL, Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_GROUP`")
                ]),
 
@@ -3261,13 +3261,13 @@ gx_methods = {
                notes="If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('guid', type=Type.STRING, is_ref=True, size_of_param='guid_size',
                              doc="GUID"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                   Parameter('guid_size', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
                              doc="Size of GUID buffer.")
                ]),
 
@@ -3277,9 +3277,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Group Number.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('guid', type=Type.STRING,
                              doc="GUID")
                ])
     ],
@@ -3297,9 +3297,9 @@ gx_methods = {
                see_also=":func:`ModePJ_MVIEW` to control use of the working projection.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="The input projection")
                ]),
 
@@ -3308,7 +3308,7 @@ gx_methods = {
                doc="Clear ESRI local datum transformations currently in use.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View")
                ]),
 
@@ -3323,7 +3323,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="1 if the view projection and view user projection are both empty.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object")
                ]),
 
@@ -3332,9 +3332,9 @@ gx_methods = {
                doc="Get the projection of the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` in which to place the view :class:`IPJ`")
                ]),
 
@@ -3343,9 +3343,9 @@ gx_methods = {
                doc="Get the user projection of the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` in which to place the view :class:`IPJ`")
                ]),
 
@@ -3360,9 +3360,9 @@ gx_methods = {
                see_also="SetWorkingIPJ",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_PJ`")
                ]),
 
@@ -3376,7 +3376,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="North direction id deg. azimuth relative to view Y.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object")
                ]),
 
@@ -3398,9 +3398,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to place in the view")
                ]),
 
@@ -3409,9 +3409,9 @@ gx_methods = {
                doc="Set the user projection of the view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to place in the view")
                ])
     ],
@@ -3423,9 +3423,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Combination of :def:`MVIEW_3D_RENDER` flags or 0",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group_num', type=Type.INT32_T,
                              doc="Group number")
                ]),
 
@@ -3434,11 +3434,11 @@ gx_methods = {
                doc="Set a 3D geometry group's 3D rendering flags.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group_num', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('flags', type=Type.INT32_T,
                              doc="Combination of :def:`MVIEW_3D_RENDER` flags or 0")
                ]),
 
@@ -3447,11 +3447,11 @@ gx_methods = {
                doc="Get a scale freezing value for the group (:def_val:`rDUMMY` for disabled).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group_num', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('scale', type=Type.DOUBLE, is_ref=True,
                              doc="Variable to fill with freeze scale")
                ]),
 
@@ -3461,9 +3461,9 @@ gx_methods = {
                notes="Objects written after this will override any scale freezing set for the group",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Freeze Scale value")
                ]),
 
@@ -3472,11 +3472,11 @@ gx_methods = {
                doc="Set a scale freezing value for the group (:def_val:`rDUMMY` for disabled).",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group_num', type=Type.INT32_T,
                              doc="Group number"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Variable to fill with freeze scale")
                ]),
 
@@ -3486,9 +3486,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Group Number.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name")
                ]),
 
@@ -3497,13 +3497,13 @@ gx_methods = {
                doc="Get a group name",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('group_num', type=Type.INT32_T,
                              doc="Group number, error if not valid"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('group_name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Group Name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Maximum name length")
                ]),
 
@@ -3512,25 +3512,25 @@ gx_methods = {
                doc="Render a specified area of view onto a Windows DC handle",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle"),
-                   Parameter('p2', type="HDC", is_val=True,
+                   Parameter('hdc', type="HDC", is_val=True,
                              doc="DC Handle"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('h_dc', type=Type.INT32_T,
                              doc="Left value of the render rect in Windows coordinates (bottom>top)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('left', type=Type.INT32_T,
                              doc="Bottom value"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('bottom', type=Type.INT32_T,
                              doc="Right value"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc="Top value"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Area X minimum"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Area Y minimum"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Area X maximum"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Area Y maximum")
                ])
     ],
@@ -3541,9 +3541,9 @@ gx_methods = {
                doc="Set the unit conversion of a view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View to set UFac to"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="New UFac value")
                ]),
 
@@ -3554,19 +3554,19 @@ gx_methods = {
                see_also="rOptimumTick_MVIEW",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="Y location in view units"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('h_dc', type=Type.DOUBLE,
                              doc="Left  X"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="Right X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="Major tick interval"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('right', type=Type.DOUBLE,
                              doc="Minor tick interval (half size of major)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Tick size in view units (negative for down ticks)")
                ]),
 
@@ -3577,19 +3577,19 @@ gx_methods = {
                see_also="rOptimumTick_MVIEW",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="X location in view units"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('h_dc', type=Type.DOUBLE,
                              doc="Bottom Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="Top    Y"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="Major tick interval"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('right', type=Type.DOUBLE,
                              doc="Minor tick interval (half size of major)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Tick size in view units (negative for left ticks)")
                ]),
 
@@ -3603,17 +3603,17 @@ gx_methods = {
                see_also=":func:`AxisX_MVIEW`, :func:`AxisY_MVIEW`, :func:`OptimumTick_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="X grid increment"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('h_dc', type=Type.DOUBLE,
                              doc="Y grid increment"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="dX dot increment/cross X size"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="dY dot increment/cross Y size"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc=":def:`MVIEW_GRID`")
                ]),
 
@@ -3630,19 +3630,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="VV",
+                   Parameter('hdc', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('h_dc', type=Type.DOUBLE,
                              doc="Fiducial start"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="Fiducial increment"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="Fiducial label interval, default 100.0"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('right', type=Type.DOUBLE,
                              doc="Y location in view unit"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Y scale")
                ]),
 
@@ -3657,21 +3657,21 @@ gx_methods = {
                see_also=":func:`AxisX_MVIEW`, :func:`AxisY_MVIEW`, :func:`OptimumTick_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="Y location in view units"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('h_dc', type=Type.DOUBLE,
                              doc="Left  X"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="Right X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="Label interval"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_JUST`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('top', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_BOUND`"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('min_x', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_ORIENT`")
                ]),
 
@@ -3686,21 +3686,21 @@ gx_methods = {
                see_also=":func:`AxisX_MVIEW`, :func:`AxisY_MVIEW`, :func:`OptimumTick_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="X location in view units"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('h_dc', type=Type.DOUBLE,
                              doc="Bottom Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="Top    Y"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="Label interval"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('right', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_JUST`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('top', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_BOUND`"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('min_x', type=Type.INT32_T,
                              doc=":def:`MVIEW_LABEL_ORIENT`")
                ]),
 
@@ -3709,11 +3709,11 @@ gx_methods = {
                doc="Return a default optimum tick interval",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('mview', type=Type.DOUBLE,
                              doc="Minimum of range"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('hdc', type=Type.DOUBLE,
                              doc="Maximum"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('h_dc', type=Type.DOUBLE, is_ref=True,
                              doc="Optimum interval")
                ])
     ],
@@ -3729,11 +3729,11 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="View name (maximum :def_val:`MVIEW_NAME_LENGTH`)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_OPEN`")
                ]),
 
@@ -3755,27 +3755,27 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Geographic projection of input X, Y locations below (without orientation)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('h_dc', type=Type.STRING,
                              doc="View Name"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('left', type=Type.DOUBLE,
                              doc="Base view bottom left corner X (mm)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('bottom', type=Type.DOUBLE,
                              doc="Base view bottom left corner Y (mm)"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('right', type=Type.DOUBLE,
                              doc="Base view size in X (mm)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('top', type=Type.DOUBLE,
                              doc="Base view size in Y (mm)"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Map horizontal scale (X-axis)"),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Vertical exaggeration (1.0 is normal, must be >0.0)"),
-                   Parameter('p10', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Starting distance at the left side of the view."),
-                   Parameter('p11', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Elevation at TOP of the view"),
                    Parameter('p12', type="VV",
                              doc="Cumulative distances along the secton"),
@@ -3798,9 +3798,9 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type="MAP",
+                   Parameter('map', type="MAP",
                              doc=":class:`MAP` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Geographic projection of input X, Y locations below (without orientation)"),
                    Parameter('p3', type=Type.STRING,
                              doc="View Name"),
@@ -3835,7 +3835,7 @@ gx_methods = {
                doc="Destroy the :class:`MVIEW` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle")
                ]),
 
@@ -3857,19 +3857,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('what', type=Type.INT32_T,
                              doc=":def:`MVIEW_EXTENT`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_EXTENT_UNIT`"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y minimum"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X maximum"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y maximum")
                ]),
 
@@ -3879,7 +3879,7 @@ gx_methods = {
                return_type="MAP",
                return_doc="The :class:`MAP` of the View.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View handle")
                ]),
 
@@ -3889,7 +3889,7 @@ gx_methods = {
                return_type="REG",
                return_doc="The :class:`REG` of the View.",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View handle")
                ]),
 
@@ -3898,11 +3898,11 @@ gx_methods = {
                doc="Gets the name of a view.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View handle"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="View name returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VIEW',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="View name string size")
                ]),
 
@@ -3912,11 +3912,11 @@ gx_methods = {
                notes="If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Object"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('guid', type=Type.STRING, is_ref=True, size_of_param='guid_size',
                              doc="GUID"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                   Parameter('guid_size', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
                              doc="Size of GUID buffer.")
                ])
     ],
@@ -3927,11 +3927,11 @@ gx_methods = {
                doc="Convert a plot coordinate in mm to a VIEW coordinate.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X in plot mm, returned in View coordinates"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y in plot mm, returned in View coordinates")
                ]),
 
@@ -3956,9 +3956,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('thin', type=Type.DOUBLE,
                              doc="Thinning resolution in mm, -1.0 to turn off.")
                ]),
 
@@ -3967,11 +3967,11 @@ gx_methods = {
                doc="Convert a VIEW coordinate to a plot coordinate in mm.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X in View, returned in mm from plot origin"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y in View, returned in mm from plot origin")
                ]),
 
@@ -3988,25 +3988,25 @@ gx_methods = {
                see_also=":func:`FitWindow_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('m_min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum (mm) of the area in map relative to map origin"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('m_min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y minimum  .."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('m_max_x', type=Type.DOUBLE, is_ref=True,
                              doc="X maximum  .."),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('m_max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Y maximum  .."),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v_min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Min X in ground coordinate to fit to the area defined above"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v_min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Min Y in ground coordinate .."),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v_max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Max X in ground coordinate .."),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('v_max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Max Y in ground coordinate .."),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('fit_view', type=Type.INT32_T,
                              doc=":def:`MVIEW_FIT`")
                ]),
 
@@ -4028,23 +4028,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View (3D)"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('m_min_x', type=Type.DOUBLE,
                              doc="X minimum (mm) of the area in map relative to map origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('m_min_y', type=Type.DOUBLE,
                              doc="Y minimum  .."),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('m_max_x', type=Type.DOUBLE,
                              doc="X maximum  .."),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('m_max_y', type=Type.DOUBLE,
                              doc="Y maximum  .."),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('v_min_x', type=Type.DOUBLE,
                              doc="Min X in ground coordinate to fit to the area defined above"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('v_min_y', type=Type.DOUBLE,
                              doc="Min Y in ground coordinate .."),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('v_max_x', type=Type.DOUBLE,
                              doc="Max X in ground coordinate .."),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('v_max_y', type=Type.DOUBLE,
                              doc="Max Y in ground coordinate ..")
                ]),
 
@@ -4058,23 +4058,23 @@ gx_methods = {
                see_also=":func:`SetWindow_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('m_min_x', type=Type.DOUBLE,
                              doc="X minimum (mm) of the area in map relative to map origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('m_min_y', type=Type.DOUBLE,
                              doc="Y minimum  .."),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('m_max_x', type=Type.DOUBLE,
                              doc="X maximum  .."),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('m_max_y', type=Type.DOUBLE,
                              doc="Y maximum  .."),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('v_min_x', type=Type.DOUBLE,
                              doc="Min X in ground coordinate to fit to the area defined above"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('v_min_y', type=Type.DOUBLE,
                              doc="Min Y in ground coordinate .."),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('v_max_x', type=Type.DOUBLE,
                              doc="Max X in ground coordinate .."),
-                   Parameter('p9', type=Type.DOUBLE,
+                   Parameter('v_max_y', type=Type.DOUBLE,
                              doc="Max Y in ground coordinate ..")
                ]),
 
@@ -4088,13 +4088,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Maximum name length")
                ]),
 
@@ -4103,9 +4103,9 @@ gx_methods = {
                doc="Get the map origin from a view",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_origin', type=Type.DOUBLE, is_ref=True,
                              doc="Returned map origin - X"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Returned map origin - Y")
@@ -4121,9 +4121,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('scale', type=Type.DOUBLE,
                              doc="Scale factor (> 0.0)")
                ]),
 
@@ -4133,7 +4133,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The current map scale to 6 significant digits",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle")
                ]),
 
@@ -4149,7 +4149,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Returns horizontal scale in view X units/mm",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle")
                ]),
 
@@ -4166,7 +4166,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Returns horizontal scale in projected user units/mm",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle")
                ]),
 
@@ -4182,7 +4182,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Returns vertical scale in view Y units/mm",
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` Handle")
                ]),
 
@@ -4199,11 +4199,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('xs', type=Type.DOUBLE,
                              doc="X scale"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('ys', type=Type.DOUBLE,
                              doc="Y scale")
                ]),
 
@@ -4218,21 +4218,21 @@ gx_methods = {
                see_also=":func:`SetWindow_MVIEW`, :func:`ScaleWindow_MVIEW`, :func:`TranScale_MVIEW`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum in view coordinates"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('bot_x', type=Type.DOUBLE,
                              doc="X minimum in plot coordinates"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('bot_y', type=Type.DOUBLE,
                              doc="Y minimum"),
-                   Parameter('p8', type=Type.DOUBLE,
+                   Parameter('x_scal', type=Type.DOUBLE,
                              doc="Horizontal scale (view unit/plot unit in mm)"),
                    Parameter('p9', type=Type.DOUBLE,
                              doc="Vertical scale")
@@ -4248,11 +4248,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('class', type=Type.STRING,
                              doc="Class"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name")
                ]),
 
@@ -4266,17 +4266,17 @@ gx_methods = {
                see_also=":func:`FitWindow_MVIEW`, :func:`ScaleWindow_MVIEW`, :func:`Extent_MVIEW`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Y minimum"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="X maximum"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Y maximum"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`")
                ]),
 
@@ -4292,9 +4292,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X origin (user X to be placed at map 0)"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Y origin (user Y to be placed at map 0)"),
@@ -4313,11 +4313,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X in USER, returned in View coordinates"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y in USER, returned in View coordinates")
                ]),
 
@@ -4330,11 +4330,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X in View, returned in user coordinates"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y in View, returned in user coordinates")
                ])
     ],
@@ -4359,22 +4359,22 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type="VV",
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('vert_v_vx', type="VV",
                              doc="Verticies X"),
-                   Parameter('p3', type="VV",
+                   Parameter('vert_v_vy', type="VV",
                              doc="Verticies Y"),
-                   Parameter('p4', type="VV",
+                   Parameter('vert_v_vz', type="VV",
                              doc="Verticies Z"),
-                   Parameter('p5', type="VV",
+                   Parameter('norm_v_vx', type="VV",
                              doc="Normals X"),
-                   Parameter('p6', type="VV",
+                   Parameter('norm_v_vy', type="VV",
                              doc="Normals Y"),
-                   Parameter('p7', type="VV",
+                   Parameter('norm_v_vz', type="VV",
                              doc="Normals Z"),
-                   Parameter('p8', type="VV",
+                   Parameter('color_vv', type="VV",
                              doc="Colors :class:`VV` or COL_ANY (can be NULL)"),
-                   Parameter('p9', type="VV",
+                   Parameter('index_vv', type="VV",
                              doc="Long :class:`VV` of triangle indexes,3 per triangle")
                ]),
 
@@ -4383,11 +4383,11 @@ gx_methods = {
                doc="Get the Plane Projection",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection object returning Plane Projection")
                ]),
 
@@ -4397,11 +4397,11 @@ gx_methods = {
                notes="See above :func:`SetStatusXYZ_MVIEW`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('flag', type=Type.INT32_T, is_ref=True,
                              doc="Enable XYZ in for status bar display"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z value in viewed section coordinates (dummy if not defined).")
                ]),
 
@@ -4411,11 +4411,11 @@ gx_methods = {
                notes="This creates an animation on the map.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="PAGG",
+                   Parameter('pagg', type="PAGG",
                              doc="PolyAggregate"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="PolyAggregate name (Maximum length is :def_val:`MVIEW_NAME_LENGTH`)")
                ]),
 
@@ -4425,11 +4425,11 @@ gx_methods = {
                notes="By default it is the View's Clip Projection",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('plane', type=Type.INT32_T,
                              doc="Plane index"),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection")
                ]),
 
@@ -4450,11 +4450,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('flag', type=Type.INT32_T,
                              doc="Enable XYZ in for status bar display"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z value in viewed section coordinates")
                ]),
 
@@ -4464,19 +4464,19 @@ gx_methods = {
                notes="Obsolete",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('p2', type="SUR",
+                   Parameter('sur', type="SUR",
                              doc="Surface"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X of locatin on map"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y of locatin on map"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X of locatin on map"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y of locatin on map"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Surface name (Maximum length is :def_val:`MVIEW_NAME_LENGTH`)")
                ]),
 
@@ -4489,30 +4489,30 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mview', type="MVIEW"),
+                   Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
-                   Parameter('p3', type="VV",
+                   Parameter('vert_v_vx', type="VV",
                              doc="Vertices X (:def_val:`GS_REAL`)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vert_v_vy', type="VV",
                              doc="Vertices Y (:def_val:`GS_REAL`)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vert_v_vz', type="VV",
                              doc="Vertices Z (:def_val:`GS_REAL`)"),
-                   Parameter('p6', type="VV",
+                   Parameter('norm_v_vx', type="VV",
                              doc="Normals X (:def_val:`GS_REAL`)"),
-                   Parameter('p7', type="VV",
+                   Parameter('norm_v_vy', type="VV",
                              doc="Normals Y (:def_val:`GS_REAL`)"),
-                   Parameter('p8', type="VV",
+                   Parameter('norm_v_vz', type="VV",
                              doc="Normals Z (:def_val:`GS_REAL`)"),
-                   Parameter('p9', type="VV",
+                   Parameter('color_vv', type="VV",
                              doc="Colors :class:`VV` (:def_val:`GS_INT`) [can be NULL]"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('color', type=Type.INT32_T,
                              doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fillcolor]"),
-                   Parameter('p11', type="VV",
+                   Parameter('tri_vv_pt1', type="VV",
                              doc="Triangles Point 1 (:def_val:`GS_INT`)"),
-                   Parameter('p12', type="VV",
+                   Parameter('tri_vv_pt2', type="VV",
                              doc="Triangles Point 2 (:def_val:`GS_INT`)"),
-                   Parameter('p13', type="VV",
+                   Parameter('tri_vv_pt3', type="VV",
                              doc="Triangles Point 3 (:def_val:`GS_INT`)")
                ])
     ]

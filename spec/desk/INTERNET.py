@@ -28,11 +28,11 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('url', type=Type.STRING,
                              doc=":class:`HTTP` URL"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="File Name to save to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('size', type=Type.INT32_T,
                              doc="No longer used, just pass 0")
                ]),
 
@@ -45,7 +45,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('recipient', type=Type.STRING,
                              doc='Recipient Name        ("" for none)'),
                    Parameter('p2', type=Type.STRING,
                              doc='Recipient Address     ("" for none)'),

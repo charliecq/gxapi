@@ -18,7 +18,7 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW` object",
                parameters = [
-                   Parameter('p1', type="E3DV",
+                   Parameter('e_3dv', type="E3DV",
                              doc=":class:`E3DV` object")
                ]),
 
@@ -28,7 +28,7 @@ gx_methods = {
                return_type="MVIEW",
                return_doc=":class:`MVIEW` object",
                parameters = [
-                   Parameter('p1', type="E3DV",
+                   Parameter('e_3dv', type="E3DV",
                              doc=":class:`E3DV` object")
                ])
     ]

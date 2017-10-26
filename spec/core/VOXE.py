@@ -29,7 +29,7 @@ gx_methods = {
                return_type="VOXE",
                return_doc=":class:`VOXE` handle, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type="VOX",
+                   Parameter('vox', type="VOX",
                              doc=":class:`VOX` Object")
                ]),
 
@@ -38,7 +38,7 @@ gx_methods = {
                doc="Destroy a :class:`VOXE`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXE",
+                   Parameter('voxe', type="VOXE",
                              doc=":class:`VOXE` to destroy.")
                ]),
 
@@ -47,17 +47,17 @@ gx_methods = {
                doc="Extract a profile of data along points provided.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXE",
+                   Parameter('voxe', type="VOXE",
                              doc=":class:`VOXE` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X :class:`VV` (must be double)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y :class:`VV` (must be double)"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z :class:`VV` (must be double)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="D :class:`VV` (must be double)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('interp', type=Type.INT32_T,
                              doc=":def:`VOXE_EVAL`")
                ]),
 
@@ -67,15 +67,15 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Value at the point or DUMMY if not valid",
                parameters = [
-                   Parameter('p1', type="VOXE",
+                   Parameter('voxe', type="VOXE",
                              doc=":class:`VOXE` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="X Location"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y Location"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('z', type=Type.DOUBLE,
                              doc="Z Location"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('interp', type=Type.INT32_T,
                              doc=":def:`VOXE_EVAL`")
                ]),
 
@@ -84,23 +84,23 @@ gx_methods = {
                doc="Extract a profile of data along a vector",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VOXE",
+                   Parameter('voxe', type="VOXE",
                              doc=":class:`VOXE` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('ox', type=Type.DOUBLE,
                              doc="X Origin"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('oy', type=Type.DOUBLE,
                              doc="Y Origin"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('oz', type=Type.DOUBLE,
                              doc="Z Origin"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('vx', type=Type.DOUBLE,
                              doc="X Delta"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('vy', type=Type.DOUBLE,
                              doc="Y Delta"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('vz', type=Type.DOUBLE,
                              doc="Z Delta"),
-                   Parameter('p8', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV` (must be double)"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('interp', type=Type.INT32_T,
                              doc=":def:`VOXE_EVAL`")
                ])
     ]

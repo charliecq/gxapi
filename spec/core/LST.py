@@ -28,11 +28,11 @@ gx_methods = {
                doc="Adds an item to the end of the list.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the Item"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="Value of the Item")
                ]),
 
@@ -48,11 +48,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the channel, line or blob symbol"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Symbol handle")
                ]),
 
@@ -62,11 +62,11 @@ gx_methods = {
                notes="Existing items that match the name are first removed.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the Item"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="Value of the Item")
                ]),
 
@@ -81,9 +81,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to modify"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst2', type="LST",
                              doc="List to append to the above :class:`LST`.")
                ]),
 
@@ -120,7 +120,7 @@ gx_methods = {
                doc="Clear a list object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle")
                ]),
 
@@ -135,9 +135,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to add items to"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('buff', type=Type.STRING,
                              doc="Comma separated items")
                ]),
 
@@ -146,9 +146,9 @@ gx_methods = {
                doc="Copy one :class:`LST` object to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('dest', type="LST",
                              doc="Destination List to copy to"),
-                   Parameter('p2', type="LST",
+                   Parameter('source', type="LST",
                              doc="Source List to Copy from")
                ]),
 
@@ -161,7 +161,7 @@ gx_methods = {
                return_type="LST",
                return_doc="Handle to the List Object.",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Width of the list to make. This number should be large enough for both the item name and the item value.  Must be > 2 and <= 4096.")
                ]),
 
@@ -171,7 +171,7 @@ gx_methods = {
                return_type="LST",
                return_doc=":class:`LST` object",
                parameters = [
-                   Parameter('p1', type="BF")
+                   Parameter('bf', type="BF")
                ]),
 
         Method('DelItem_LST', module='geoengine.core', version='5.0.0',
@@ -182,9 +182,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item Number to Delete")
                ]),
 
@@ -193,7 +193,7 @@ gx_methods = {
                doc="Destroys a list object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle")
                ]),
 
@@ -211,13 +211,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` in which to search"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to do the search on"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst2', type="LST",
                              doc="Items to search for"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":def_val:`GS_LONG` :class:`VV` of returned indices into the first :class:`LST`.")
                ]),
 
@@ -227,9 +227,9 @@ gx_methods = {
                notes='If item number is not in the list, the buffer will be "".',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to retrieve"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Item Number to Get"),
@@ -251,15 +251,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item number to get"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Buffer to Place Symbol name into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size of the buffer"),
-                   Parameter('p5', type="DB_SYMB", is_ref=True,
+                   Parameter('symb', type="DB_SYMB", is_ref=True,
                              doc="Symbol handle")
                ]),
 
@@ -272,11 +272,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to get items from"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('buff', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Buffer to add items to"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of buffer")
                ]),
 
@@ -290,11 +290,11 @@ gx_methods = {
                -1 - Not Found
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to do the search on"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="String to Search For")
                ]),
 
@@ -322,11 +322,11 @@ gx_methods = {
                -1 - Not Found
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to search"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="String to try :class:`LST` mask items on Search For")
                ]),
 
@@ -336,9 +336,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Integer, :def_val:`iDUMMY` if conversion fails or string is empty.",
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to retrieve"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Item Number to Get")
@@ -353,13 +353,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item index"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the Item"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('val', type=Type.STRING,
                              doc="Value of the Item")
                ]),
 
@@ -369,7 +369,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Number of items in the list.",
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle")
                ]),
 
@@ -384,13 +384,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('csv', type=Type.STRING,
                              doc="The CSV file"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name_field', type=Type.STRING,
                              doc="Column label for the item name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('value_field', type=Type.STRING,
                              doc="Column label for the item value")
                ]),
 
@@ -415,9 +415,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file")
                ]),
 
@@ -430,9 +430,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('res', type=Type.STRING,
                              doc="Name of the Resource")
                ]),
 
@@ -442,9 +442,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Real, :def_val:`rDUMMY` if conversion fails or string is empty.",
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to retrieve"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Item Number to Get")
@@ -470,9 +470,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file")
                ]),
 
@@ -492,11 +492,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('ls_ti', type="LST",
                              doc=":class:`LST` with items to select from"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('buff', type=Type.STRING,
                              doc="Comma separated item names"),
-                   Parameter('p3', type="LST",
+                   Parameter('ls_to', type="LST",
                              doc=":class:`LST` to add selected items to")
                ]),
 
@@ -505,8 +505,8 @@ gx_methods = {
                doc="Serialize :class:`LST` to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST"),
-                   Parameter('p2', type="BF")
+                   Parameter('lst', type="LST"),
+                   Parameter('bf', type="BF")
                ]),
 
         Method('SetItem_LST', module='geoengine.core', version='5.1.5',
@@ -515,9 +515,9 @@ gx_methods = {
                notes="The existing item at the given index will be replaced.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to insert"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="Item Number to Set"),
@@ -530,9 +530,9 @@ gx_methods = {
                doc="Sorts a list.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to sort on"),
                    Parameter('p3', type=Type.INT32_T,
                              doc="0 - Ascending, 1 - Decending")
@@ -554,9 +554,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Always returns 0",
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the file")
                ]),
 
@@ -576,9 +576,9 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the projection datum file (``*.DTM`` file)")
                ]),
 
@@ -598,9 +598,9 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the projection datum file (``*.DTM`` file)")
                ]),
 
@@ -610,11 +610,11 @@ gx_methods = {
                notes="Was not correctly implemented or used",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Group name in the reg"),
-                   Parameter('p3', type="REG")
+                   Parameter('reg', type="REG")
                ])
     ]
 }

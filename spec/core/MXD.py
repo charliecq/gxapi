@@ -18,7 +18,7 @@ gx_methods = {
                doc="Commit any changes to a :class:`MXD`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MXD",
+                   Parameter('mxd', type="MXD",
                              doc=":class:`MXD` Handle")
                ]),
 
@@ -28,7 +28,7 @@ gx_methods = {
                return_type="MXD",
                return_doc=":class:`MXD` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`MXD` file name")
                ]),
 
@@ -37,7 +37,7 @@ gx_methods = {
                doc="Create metadata for this brand new :class:`MXD` (we are the creator)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('mxd', type=Type.STRING,
                              doc=":class:`MXD` file name")
                ]),
 
@@ -46,7 +46,7 @@ gx_methods = {
                doc="Destroy the :class:`MXD` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MXD",
+                   Parameter('mxd', type="MXD",
                              doc=":class:`MXD` Handle")
                ]),
 
@@ -55,7 +55,7 @@ gx_methods = {
                doc="Discard all changes made to the :class:`MXD`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MXD",
+                   Parameter('mxd', type="MXD",
                              doc=":class:`MXD` Handle")
                ]),
 
@@ -64,11 +64,11 @@ gx_methods = {
                doc="Save :class:`MXD` as Geosoft map",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MXD",
+                   Parameter('mxd', type="MXD",
                              doc=":class:`MXD` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Geosoft map file name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('focus_map_only', type=Type.INT32_T,
                              doc="Export focus map only? :def:`GEO_BOOL`")
                ]),
 
@@ -77,9 +77,9 @@ gx_methods = {
                doc="Create Geosoft map from ArcGIS :class:`MXD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('mxd', type=Type.STRING,
                              doc="ArcGIS :class:`MXD` file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('map', type=Type.STRING,
                              doc="Geosoft map file name")
                ]),
 
@@ -88,9 +88,9 @@ gx_methods = {
                doc="Save :class:`MXD` as a :class:`MXD` in different location",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MXD",
+                   Parameter('mxd', type="MXD",
                              doc=":class:`MXD` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('mxd', type=Type.STRING,
                              doc=":class:`MXD` file name")
                ]),
 
@@ -99,7 +99,7 @@ gx_methods = {
                doc="Syncronize any Metadata for this :class:`MXD`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('mxd', type=Type.STRING,
                              doc=":class:`MXD` file name")
                ])
     ]

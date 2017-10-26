@@ -21,11 +21,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VVEXP",
+                   Parameter('vvexp', type="VVEXP",
                              doc=":class:`VVEXP` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to add"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('var', type=Type.STRING,
                              doc="Variable name")
                ]),
 
@@ -40,7 +40,7 @@ gx_methods = {
                doc="This method destroys a :class:`VVEXP` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VVEXP",
+                   Parameter('vvexp', type="VVEXP",
                              doc="Destroy a :class:`VVEXP` object")
                ]),
 
@@ -49,11 +49,11 @@ gx_methods = {
                doc="This method runs a formula on the grids.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VVEXP",
+                   Parameter('vvexp', type="VVEXP",
                              doc=":class:`VVEXP` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('formula', type=Type.STRING,
                              doc="Formula"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('max_len', type=Type.INT32_T,
                              doc="Max. Buff size")
                ])
     ]

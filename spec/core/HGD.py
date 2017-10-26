@@ -22,7 +22,7 @@ gx_methods = {
                return_type="HGD",
                return_doc=":class:`HGD` handle, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -31,7 +31,7 @@ gx_methods = {
                doc="Destroy a :class:`HGD`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HGD",
+                   Parameter('hgd', type="HGD",
                              doc=":class:`HGD` to destroy.")
                ]),
 
@@ -40,9 +40,9 @@ gx_methods = {
                doc="Export all layers of this :class:`HGD` into grid files.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HGD",
+                   Parameter('hgd', type="HGD",
                              doc=":class:`HGD` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of grids (each layers adds _Number to the name)")
                ]),
 
@@ -51,9 +51,9 @@ gx_methods = {
                doc="Get the metadata of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HGD",
+                   Parameter('hgd', type="HGD",
                              doc=":class:`HGD` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to save :class:`HGD`'s meta to")
                ]),
 
@@ -63,9 +63,9 @@ gx_methods = {
                return_type="HGD",
                return_doc=":class:`HGD` Object",
                parameters = [
-                   Parameter('p1', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Image Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of :class:`HGD` object")
                ]),
 
@@ -74,9 +74,9 @@ gx_methods = {
                doc="Set the metadata of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HGD",
+                   Parameter('hgd', type="HGD",
                              doc="Source :class:`HGD`"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to add to :class:`HGD`'s meta")
                ])
     ]

@@ -27,9 +27,9 @@ gx_methods = {
                return_type="GD",
                return_doc="Handle to the :class:`GD` object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of the Grid File"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GD_STATUS`")
                ]),
 
@@ -38,7 +38,7 @@ gx_methods = {
                doc="This method destroys a :class:`GD` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GD",
+                   Parameter('gd', type="GD",
                              doc="Destroy a grid object")
                ])
     ]

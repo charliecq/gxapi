@@ -45,7 +45,7 @@ gx_methods = {
                doc="Drop Map clipboard data in the current project (workspace background)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('global', type=Type.INT32_T,
                              doc="Handle to Global Clipboard data")
                ])
     ],
@@ -76,11 +76,11 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Document name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('type', type=Type.STRING,
                              doc="Type of document to add"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('display', type=Type.INT32_T,
                              doc=":def:`PROJ_DISPLAY`")
                ]),
 
@@ -109,9 +109,9 @@ gx_methods = {
                1 - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Document name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('type', type=Type.STRING,
                              doc="Type of document to add")
                ]),
 
@@ -146,9 +146,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of documents listed in the :class:`VV`.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of type -:def_val:`STR_FILE`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('type', type=Type.STRING,
                              doc="Type of document to obtain")
                ]),
 
@@ -171,9 +171,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of loaded documents listed in the :class:`VV`.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of type -:def_val:`STR_FILE`>"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('type', type=Type.STRING,
                              doc="Type of document to obtain")
                ]),
 
@@ -183,13 +183,13 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size_name',
                              doc="Name (empty if none currently loaded)"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size_name', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum name length"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('type', type=Type.STRING, is_ref=True, size_of_param='size_type',
                              doc="Type"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
+                   Parameter('size_type', type=Type.INT32_T, default_length='STR_DEFAULT_SHORT',
                              doc="Maximum type length")
                ]),
 
@@ -199,11 +199,11 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size_name',
                              doc="Name (empty if none currently loaded)"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size_name', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum name length"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('type', type=Type.STRING,
                              doc="Type")
                ]),
 
@@ -223,9 +223,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The number of tools found.",
                parameters = [
-                   Parameter('p1', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object to hold list"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`TOOL_TYPE`")
                ]),
 
@@ -243,7 +243,7 @@ gx_methods = {
                1 - Document not found in project
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Document name")
                ]),
 
@@ -257,7 +257,7 @@ gx_methods = {
                1 - Tool not found in project
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Tool name")
                ]),
 
@@ -288,7 +288,7 @@ gx_methods = {
                1  - Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('type', type=Type.STRING,
                              doc="Type of document to save / close")
                ]),
 
@@ -299,9 +299,9 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="name"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('buff', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="maximum name length")
                ])
     ]

@@ -34,11 +34,11 @@ gx_methods = {
                doc="Add all the values in VVx and VVy to :class:`ST2` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST2",
+                   Parameter('st2', type="ST2",
                              doc=":class:`ST2` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="VVx handle"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="VVy handle")
                ]),
 
@@ -47,7 +47,7 @@ gx_methods = {
                doc="Destroys the statistics object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST2",
+                   Parameter('st2', type="ST2",
                              doc=":class:`ST2` Handle")
                ]),
 
@@ -57,7 +57,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of items in :class:`ST2`",
                parameters = [
-                   Parameter('p1', type="ST2",
+                   Parameter('st2', type="ST2",
                              doc=":class:`ST2` Handle")
                ]),
 
@@ -66,7 +66,7 @@ gx_methods = {
                doc="Resets the Statistics.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST2",
+                   Parameter('st2', type="ST2",
                              doc=":class:`ST2` Handle")
                ]),
 
@@ -79,9 +79,9 @@ gx_methods = {
                :def_val:`GS_R8DM` for none
                """,
                parameters = [
-                   Parameter('p1', type="ST2",
+                   Parameter('st2', type="ST2",
                              doc=":class:`ST2` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('id', type=Type.INT32_T,
                              doc=":def:`ST2_CORRELATION`")
                ])
     ]

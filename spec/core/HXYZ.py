@@ -21,7 +21,7 @@ gx_methods = {
                return_type="HXYZ",
                return_doc=":class:`HXYZ` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="File Name")
                ]),
 
@@ -30,7 +30,7 @@ gx_methods = {
                doc="Destroy a :class:`HXYZ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HXYZ",
+                   Parameter('hxyz', type="HXYZ",
                              doc=":class:`HXYZ` to destroy.")
                ]),
 
@@ -39,9 +39,9 @@ gx_methods = {
                doc="Get the metadata of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HXYZ",
+                   Parameter('hxyz', type="HXYZ",
                              doc=":class:`HXYZ` object"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to save :class:`HXYZ`'s meta to")
                ]),
 
@@ -51,11 +51,11 @@ gx_methods = {
                return_type="HXYZ",
                return_doc=":class:`HXYZ` object",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc=":class:`DB` handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('gvv', type="VV",
                              doc=":class:`VV` of channels to export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of :class:`HXYZ` object")
                ]),
 
@@ -65,17 +65,17 @@ gx_methods = {
                return_type="HXYZ",
                return_doc=":class:`HXYZ` object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Template File Name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('x', type=Type.STRING,
                              doc="X field name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('y', type=Type.STRING,
                              doc="Y field name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('z', type=Type.STRING,
                              doc="Z field name"),
-                   Parameter('p5', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection of data values"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Name of :class:`HXYZ` object")
                ]),
 
@@ -84,9 +84,9 @@ gx_methods = {
                doc="Set the metadata of a grid.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="HXYZ",
+                   Parameter('hxyz', type="HXYZ",
                              doc="Source :class:`HXYZ`"),
-                   Parameter('p2', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to add to :class:`HXYZ`'s meta")
                ])
     ]

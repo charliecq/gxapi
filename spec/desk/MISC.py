@@ -18,11 +18,11 @@ gx_methods = {
                doc="Convert a CG3 dump to RAW format.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('cg3', type=Type.STRING,
                              doc="Name of the CG3 file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('raw', type=Type.STRING,
                              doc="Name of the RAW file"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('tide_corr_opt', type=Type.INT32_T,
                              doc="TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5")
                ]),
 
@@ -31,11 +31,11 @@ gx_methods = {
                doc="Convert a CG5 dump to RAW format.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('cg5', type=Type.STRING,
                              doc="Name of the CG5 file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('raw', type=Type.STRING,
                              doc="Name of the RAW file"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('tide_corr_opt', type=Type.INT32_T,
                              doc="TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5")
                ]),
 
@@ -55,11 +55,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('ukoa', type=Type.STRING,
                              doc="Name of the UKOA file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('alias', type=Type.STRING,
                              doc="Line name alias table"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('tbl', type=Type.STRING,
                              doc="Name of the output table")
                ])
     ],
@@ -74,9 +74,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('cg3', type=Type.STRING,
                              doc="Name of the CG3 file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('raw', type=Type.STRING,
                              doc="Name of the RAW file")
                ]),
 
@@ -89,9 +89,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('cg5', type=Type.STRING,
                              doc="Name of the CG5 file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('raw', type=Type.STRING,
                              doc="Name of the RAW file")
                ])
     ]

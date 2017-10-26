@@ -24,7 +24,7 @@ gx_methods = {
                doc="Calculate TEM apparent conductivity and depth",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('resp_va', type="VA",
                              doc="Response channel (microvolts)"),
                    Parameter('p2', type="VA",
                              doc="Time channel (milliseconds)"),
@@ -62,11 +62,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('v_ap', type="VA",
                              doc=":class:`VA` to prune"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vr', type="VV",
                              doc="Reference :class:`VV`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('o', type=Type.INT32_T,
                              doc=":def:`VAU_PRUNE`")
                ]),
 
@@ -75,11 +75,11 @@ gx_methods = {
                doc="Derive TEM apparent conductivity section at given depth",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('cond_va', type="VA",
                              doc="Conductivity :class:`VA`,:def_val:`GS_DOUBLE`"),
-                   Parameter('p2', type="VA",
+                   Parameter('depth_va', type="VA",
                              doc="Depth :class:`VA`,:def_val:`GS_DOUBLE`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('section', type=Type.DOUBLE,
                              doc="Depth derive TEM section (same unit as Depth :class:`VA`)"),
                    Parameter('p4', type="VV",
                              doc="Returned conductivity at given depth,:def_val:`GS_DOUBLE`")
@@ -90,13 +90,13 @@ gx_methods = {
                doc="Calculate total vector for X,Y and Z components",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VA",
+                   Parameter('xva', type="VA",
                              doc="X Component object"),
-                   Parameter('p2', type="VA",
+                   Parameter('yva', type="VA",
                              doc="Y Component object"),
-                   Parameter('p3', type="VA",
+                   Parameter('zva', type="VA",
                              doc="Z Component object"),
-                   Parameter('p4', type="VA",
+                   Parameter('tva', type="VA",
                              doc="Returned total vector :class:`VA` object")
                ])
     ]

@@ -133,13 +133,13 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="x - Attribute Token",
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Attribute Name"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Parent class or :def:`META_CORE_CLASS`"),
-                   Parameter('p4', type="META_TOKEN",
+                   Parameter('ph_type', type="META_TOKEN",
                              doc="Type of Attribute or :def:`META_CORE_TYPE`")
                ]),
 
@@ -148,9 +148,9 @@ gx_methods = {
                doc="Delete Attrib from :class:`META`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_attribute', type="META_TOKEN",
                              doc="Attrib to delete")
                ])
     ],
@@ -161,11 +161,11 @@ gx_methods = {
                doc="Allow/disallow an attribute to be editable in the browser",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` Object"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_attribute', type="META_TOKEN",
                              doc="Attribute or :def:`META_CORE_ATTRIB`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('editable', type=Type.INT32_T,
                              doc="Editable Flag")
                ]),
 
@@ -174,11 +174,11 @@ gx_methods = {
                doc="Allow/disallow an attribute to be visible in the browser",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` Object"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_attribute', type="META_TOKEN",
                              doc="Attribute or :def:`META_CORE_ATTRIB`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('visible', type=Type.INT32_T,
                              doc="Editable Flag")
                ])
     ],
@@ -190,11 +190,11 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="x - Class Token",
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Class Name"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Parent class or :def_val:`META_CORE_CLASS_Base`")
                ]),
 
@@ -203,9 +203,9 @@ gx_methods = {
                doc="Delete Class from :class:`META`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class to delete")
                ])
     ],
@@ -216,9 +216,9 @@ gx_methods = {
                doc="Copy a :class:`META` to another",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` object."),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` object.")
                ]),
 
@@ -234,7 +234,7 @@ gx_methods = {
                return_type="META",
                return_doc=":class:`META` Object",
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize from")
                ]),
 
@@ -243,7 +243,7 @@ gx_methods = {
                doc="Destroy",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` to destroy.")
                ]),
 
@@ -252,9 +252,9 @@ gx_methods = {
                doc="Serialize an :class:`META` to a :class:`BF`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object to serialize"),
-                   Parameter('p2', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` to serialize to")
                ])
     ],
@@ -269,10 +269,10 @@ gx_methods = {
                :def_val:`H_META_INVALID_TOKEN` - No
                """,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute")
                ]),
 
@@ -281,12 +281,12 @@ gx_methods = {
                doc="Get a boolean value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('value', type=Type.INT32_T, is_ref=True,
                              doc="Value to set")
                ]),
 
@@ -295,12 +295,12 @@ gx_methods = {
                doc="Get an enum value to an attribute (as an integer)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('value', type=Type.INT32_T, is_ref=True,
                              doc="Value to set")
                ]),
 
@@ -309,12 +309,12 @@ gx_methods = {
                doc="Get an integer value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.INT32_T, is_ref=True,
+                   Parameter('value', type=Type.INT32_T, is_ref=True,
                              doc="Value to set")
                ]),
 
@@ -323,12 +323,12 @@ gx_methods = {
                doc="Get an integer value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('value', type=Type.DOUBLE, is_ref=True,
                              doc="Value to set")
                ]),
 
@@ -337,14 +337,14 @@ gx_methods = {
                doc="Get a string value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('value', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String value to get"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of string")
                ]),
 
@@ -354,10 +354,10 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute")
                ])
     ],
@@ -368,10 +368,10 @@ gx_methods = {
                doc="Export all items in a class as a CSV",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class of items to export"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of CSV file to produce")
                ]),
 
@@ -386,10 +386,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class to import into"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of CSV file to load")
                ]),
 
@@ -398,8 +398,8 @@ gx_methods = {
                doc="Write the entire meta as a text file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="WA",
+                   Parameter('meta', type="META"),
+                   Parameter('wa', type="WA",
                              doc=":class:`WA` to write to")
                ])
     ],
@@ -410,9 +410,9 @@ gx_methods = {
                doc="Delete all items in this class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` Object"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class of items to delete")
                ]),
 
@@ -421,9 +421,9 @@ gx_methods = {
                doc="Delete item from :class:`META`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_item', type="META_TOKEN",
                              doc="Item to delete")
                ]),
 
@@ -436,9 +436,9 @@ gx_methods = {
                :def_val:`H_META_INVALID_TOKEN` - Error
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` Object."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Unique item Name"),
                    Parameter('p3', type="META_TOKEN",
                              doc="Class (can be root)")
@@ -453,11 +453,11 @@ gx_methods = {
                :def_val:`H_META_INVALID_TOKEN` - No more items
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` Object"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_token', type="META_TOKEN",
                              doc="Starting Item (must :def_val:`H_META_INVALID_TOKEN` for first item)")
                ])
     ],
@@ -468,12 +468,12 @@ gx_methods = {
                doc="Get an object from an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type="HANDLE",
+                   Parameter('obj', type="HANDLE",
                              doc="Object to get info into")
                ]),
 
@@ -482,12 +482,12 @@ gx_methods = {
                doc="Set an object to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type="HANDLE",
+                   Parameter('obj', type="HANDLE",
                              doc="Object to set")
                ])
     ],
@@ -498,12 +498,12 @@ gx_methods = {
                doc="Set a boolean value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -512,12 +512,12 @@ gx_methods = {
                doc="Set an enum value to an attribute (as an integer)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -526,12 +526,12 @@ gx_methods = {
                doc="Set an integer value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -540,12 +540,12 @@ gx_methods = {
                doc="Set an integer value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Value to set")
                ]),
 
@@ -554,12 +554,12 @@ gx_methods = {
                doc="Set a string value to an attribute",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="String value to set")
                ]),
 
@@ -568,11 +568,11 @@ gx_methods = {
                doc="Set an empty attribute data holder",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` Object"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="MetaObject to set"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attrib', type="META_TOKEN",
                              doc="Attribute MetaObject to set")
                ])
     ],
@@ -587,11 +587,11 @@ gx_methods = {
                META_INVALID_TOKEN - No visible data
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` object."),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` object."),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_attribute', type="META_TOKEN",
                              doc="Attribute to copy")
                ]),
 
@@ -605,11 +605,11 @@ gx_methods = {
                META_INVALID_TOKEN - No visible data anywhere
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` object."),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` object."),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class to copy")
                ]),
 
@@ -622,11 +622,11 @@ gx_methods = {
                META_INVALID_TOKEN - No visible data
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` object."),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` object."),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_data', type="META_TOKEN",
                              doc="Data value to copy")
                ]),
 
@@ -639,11 +639,11 @@ gx_methods = {
                META_INVALID_TOKEN - No visible data
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` object."),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` object."),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_item', type="META_TOKEN",
                              doc="Item to copy")
                ]),
 
@@ -657,11 +657,11 @@ gx_methods = {
                META_INVALID_TOKEN - No visible data anywhere
                """,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` object."),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` object."),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_type', type="META_TOKEN",
                              doc="Type to copy")
                ]),
 
@@ -670,13 +670,13 @@ gx_methods = {
                doc="Moves data items from one :class:`META` to another",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('dest_meta', type="META",
                              doc="Destination :class:`META` Object"),
-                   Parameter('p2', type="META",
+                   Parameter('source_meta', type="META",
                              doc="Source :class:`META` Object"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_i_obj', type="META_TOKEN",
                              doc="Object to copy data from"),
-                   Parameter('p4', type="META_TOKEN",
+                   Parameter('ph_o_obj', type="META_TOKEN",
                              doc="Object to copy data to")
                ])
     ],
@@ -688,13 +688,13 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="x - Type Token",
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Attribute Name"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Parent Class or :def:`META_CORE_CLASS`"),
-                   Parameter('p4', type="META_TOKEN",
+                   Parameter('ph_type', type="META_TOKEN",
                              doc="Parent Type or :def:`META_CORE_TYPE`")
                ]),
 
@@ -703,9 +703,9 @@ gx_methods = {
                doc="Delete Data from :class:`META`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_data', type="META_TOKEN",
                              doc="Data to delete")
                ]),
 
@@ -714,9 +714,9 @@ gx_methods = {
                doc="Delete Type from :class:`META`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META",
+                   Parameter('meta', type="META",
                              doc=":class:`META` object."),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('ph_type', type="META_TOKEN",
                              doc="Type to delete")
                ])
     ],
@@ -727,12 +727,12 @@ gx_methods = {
                doc="Get the name of this item.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type="META_TOKEN",
+                   Parameter('meta', type="META"),
+                   Parameter('ph_object', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Name of object"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of name buffer")
                ]),
 
@@ -745,8 +745,8 @@ gx_methods = {
                :def_val:`H_META_INVALID_TOKEN` - Not found
                """,
                parameters = [
-                   Parameter('p1', type="META"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('meta', type="META"),
+                   Parameter('umn', type=Type.STRING,
                              doc="Unique Meta Name (UMN)")
                ])
     ],

@@ -25,7 +25,7 @@ gx_methods = {
                doc="Destroys a line pattern object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LPT",
+                   Parameter('lpt', type="LPT",
                              doc=":class:`LPT` Handle")
                ]),
 
@@ -34,9 +34,9 @@ gx_methods = {
                doc="Copies all pattern names into a :class:`LST` object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LPT",
+                   Parameter('lpt', type="LPT",
                              doc=":class:`LPT` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle")
                ]),
 
@@ -46,9 +46,9 @@ gx_methods = {
                notes='The six standard line types are "solid", "long dash", "dotted", "short dash", "long, short dash" and "dash dot".',
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LPT",
+                   Parameter('lpt', type="LPT",
                              doc=":class:`LPT` Handle"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` Handle")
                ])
     ],
@@ -60,9 +60,9 @@ gx_methods = {
                notes="Was not used.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="LPT",
+                   Parameter('dest', type="LPT",
                              doc="Destination :class:`LPT` to copy to"),
-                   Parameter('p2', type="LPT",
+                   Parameter('source', type="LPT",
                              doc="Source :class:`LPT` to Copy from")
                ]),
 
@@ -73,7 +73,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="x - Number of patterns in the :class:`LPT`.",
                parameters = [
-                   Parameter('p1', type="LPT",
+                   Parameter('lpt', type="LPT",
                              doc=":class:`LPT` Handle")
                ])
     ]

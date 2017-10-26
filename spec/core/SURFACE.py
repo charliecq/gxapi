@@ -26,9 +26,9 @@ gx_methods = {
                return_type="SURFACE",
                return_doc=":class:`SURFACE` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file name"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` containing coordinate system of the Geosurface")
                ]),
 
@@ -38,9 +38,9 @@ gx_methods = {
                return_type="SURFACE",
                return_doc=":class:`SURFACE` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file name"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`SURFACE_OPEN`")
                ]),
 
@@ -49,7 +49,7 @@ gx_methods = {
                doc="Destroy the :class:`SURFACE` Object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` Object")
                ]),
 
@@ -58,9 +58,9 @@ gx_methods = {
                doc="Get the coordinate system of the :class:`SURFACE`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` in which to place the Geosurface coordinate system")
                ]),
 
@@ -69,9 +69,9 @@ gx_methods = {
                doc="Change the coordinate system of the :class:`SURFACE`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` Object"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` containing the new coordinate system of the Geosurface")
                ]),
 
@@ -80,9 +80,9 @@ gx_methods = {
                doc="Get the surfaces items in a Geosurface file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` Object"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to fill")
                ]),
 
@@ -92,9 +92,9 @@ gx_methods = {
                return_type="SURFACEITEM",
                return_doc=":class:`SURFACEITEM` Object",
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` Object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('guid', type=Type.STRING,
                              doc="Item GUID")
                ]),
 
@@ -103,9 +103,9 @@ gx_methods = {
                doc="Add a new surface item to the :class:`SURFACE`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` Object"),
-                   Parameter('p2', type="SURFACEITEM",
+                   Parameter('surfaceitem', type="SURFACEITEM",
                              doc=":class:`SURFACEITEM` to add")
                ]),
 
@@ -114,9 +114,9 @@ gx_methods = {
                doc="Get the surface item names in a Geosurface file",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to fill")
                ]),
 
@@ -125,9 +125,9 @@ gx_methods = {
                doc="Get the names of closed surface items in a Geosurface file (may return an empty list)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` to fill (may return an empty :class:`LST` if none of the surfaces are closed)")
                ]),
 
@@ -136,19 +136,19 @@ gx_methods = {
                doc="Get the spatial range of all surface items.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="SURFACE",
+                   Parameter('surface', type="SURFACE",
                              doc=":class:`SURFACE` object"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum valid data in X."),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum valid data in Y."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_z', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum valid data in Z."),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum valid data in X."),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum valid data in Y."),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_z', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum valid data in Z.")
                ]),
 
@@ -158,11 +158,11 @@ gx_methods = {
                return_type="CRC",
                return_doc="CRC Value (always 0)",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('output', type=Type.STRING,
                              doc="Output file"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('crc', type=Type.INT32_T, is_ref=True,
                              doc="CRC (unused, always set to 0)")
                ]),
 
@@ -171,7 +171,7 @@ gx_methods = {
                doc="Syncronize the Metadata for this Geosurface",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Geosurface file")
                ]),
 
@@ -180,10 +180,10 @@ gx_methods = {
                doc="Create Geosurface file from DXF file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ipj', type="IPJ"),
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('dxf_file', type=Type.STRING,
                              doc="DXF file")
                ]),
 
@@ -192,10 +192,10 @@ gx_methods = {
                doc="Create Geosurface file from a Maptek Vulcan triangulation file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('triangulation_file', type=Type.STRING,
                              doc="00t file"),
-                   Parameter('p2', type="IPJ"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('ipj', type="IPJ"),
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file")
                ]),
 
@@ -204,10 +204,10 @@ gx_methods = {
                doc="Create new surface from a Maptek Vulcan triangulation file and add to an existing geosurface.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('triangulation_file', type=Type.STRING,
                              doc="00t file"),
-                   Parameter('p2', type="IPJ"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('ipj', type="IPJ"),
+                   Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file")
                ])
     ]

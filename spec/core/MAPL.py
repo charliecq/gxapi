@@ -27,11 +27,11 @@ gx_methods = {
                return_type="MAPL",
                return_doc=":class:`MAPL`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`MAPL` file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ref_name', type=Type.STRING,
                              doc="Map base reference name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('line', type=Type.INT32_T,
                              doc="Start line number in file (0 is first)")
                ]),
 
@@ -46,13 +46,13 @@ gx_methods = {
                return_type="MAPL",
                return_doc=":class:`MAPL`, aborts if creation fails",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc=":class:`MAPL` file name"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('ref_name', type=Type.STRING,
                              doc="Map base reference name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('line', type=Type.INT32_T,
                              doc="Start line number in file (0 is first)"),
-                   Parameter('p4', type="REG")
+                   Parameter('reg', type="REG")
                ]),
 
         Method('Destroy_MAPL', module='geoengine.map', version='5.0.0',
@@ -60,7 +60,7 @@ gx_methods = {
                doc="Destroy the :class:`MAPL` handle.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPL",
+                   Parameter('mapl', type="MAPL",
                              doc=":class:`MAPL` Handle")
                ]),
 
@@ -69,9 +69,9 @@ gx_methods = {
                doc="Process a :class:`MAPL`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPL",
+                   Parameter('mapl', type="MAPL",
                              doc=":class:`MAPL` Handle"),
-                   Parameter('p2', type="MAP")
+                   Parameter('map', type="MAP")
                ]),
 
         Method('ReplaceString_MAPL', module='geoengine.map', version='5.0.0',
@@ -79,11 +79,11 @@ gx_methods = {
                doc="Adds a replacement string to a mapplot control file.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MAPL",
+                   Parameter('mapl', type="MAPL",
                              doc=":class:`MAPL` Handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('var', type=Type.STRING,
                              doc="Variable"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('repl', type=Type.STRING,
                              doc="Replacement")
                ])
     ]

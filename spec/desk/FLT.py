@@ -23,7 +23,7 @@ gx_methods = {
                return_type="FILTER",
                return_doc=":class:`FLT` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('input', type=Type.STRING,
                              doc="Filter string")
                ]),
 
@@ -32,7 +32,7 @@ gx_methods = {
                doc="This method destroys a filter handle",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="FILTER",
+                   Parameter('flt', type="FILTER",
                              doc=":class:`FILTER` object to destroy")
                ]),
 
@@ -59,7 +59,7 @@ gx_methods = {
                return_type="FILTER",
                return_doc=":class:`FLT` Object",
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of the filter File")
                ])
     ]

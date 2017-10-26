@@ -91,9 +91,9 @@ gx_methods = {
                doc="Add this value to the statistics object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value to Add")
                ]),
 
@@ -102,9 +102,9 @@ gx_methods = {
                doc="Add all the values in this :class:`VV` to the statistics object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` object"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object")
                ]),
 
@@ -113,7 +113,7 @@ gx_methods = {
                doc="Destroys the statistics object.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle")
                ]),
 
@@ -127,9 +127,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` for numbers of items")
                ]),
 
@@ -144,9 +144,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('div', type=Type.INT32_T, is_ref=True,
                              doc="# of bins"),
                    Parameter('p3', type=Type.DOUBLE, is_ref=True,
                              doc="Min (value at start of 2nd bin)"),
@@ -174,9 +174,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('div', type=Type.INT32_T,
                              doc="# of bins")
                ]),
 
@@ -192,9 +192,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('div', type=Type.INT32_T,
                              doc="# of bins"),
                    Parameter('p3', type=Type.DOUBLE,
                              doc="Min"),
@@ -212,8 +212,8 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The percentile at the given value (0 - 100)",
                parameters = [
-                   Parameter('p1', type="ST"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('st', type="ST"),
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Input value")
                ]),
 
@@ -227,8 +227,8 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The value at the given percentile.",
                parameters = [
-                   Parameter('p1', type="ST"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('st', type="ST"),
+                   Parameter('percent', type=Type.DOUBLE,
                              doc="Input percentile (0 - 100)")
                ]),
 
@@ -237,7 +237,7 @@ gx_methods = {
                doc="Resets the Statistics.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle")
                ]),
 
@@ -260,9 +260,9 @@ gx_methods = {
                :def_val:`GS_R8DM` for none
                """,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('id', type=Type.INT32_T,
                              doc=":def:`ST_INFO`")
                ]),
 
@@ -278,7 +278,7 @@ gx_methods = {
                mit to about 5 standard deviations
                """,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('x', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -294,7 +294,7 @@ gx_methods = {
                mit to about 5 standard deviations
                """,
                parameters = [
-                   Parameter('p1', type=Type.DOUBLE,
+                   Parameter('percent', type=Type.DOUBLE,
                              doc="Real")
                ]),
 
@@ -318,7 +318,7 @@ gx_methods = {
                Terminates if no histogram in the :class:`ST` object.
                """,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle")
                ])
     ]

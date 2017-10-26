@@ -33,13 +33,13 @@ gx_methods = {
                return_type="DAT",
                return_doc=":class:`DAT`, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Handle to table"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('x_field', type=Type.STRING,
                              doc="Name of X field in table"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('y_field', type=Type.STRING,
                              doc="Name of Y field in table"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('d_field', type=Type.STRING,
                              doc="Name of Data field in table")
                ]),
 
@@ -49,15 +49,15 @@ gx_methods = {
                return_type="DAT",
                return_doc=":class:`DAT`, terminates if creation fails",
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Handle to table"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('x_field', type=Type.STRING,
                              doc="Name of X field in table"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('y_field', type=Type.STRING,
                              doc="Name of Y field in table"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('z_field', type=Type.STRING,
                              doc="Name of Z field in table"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('d_field', type=Type.STRING,
                              doc="Name of Data field in table")
                ]),
 
@@ -78,13 +78,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Handle to table"),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Import template name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('line', type=Type.STRING,
                              doc="Oasis montaj line name to create (overrides template value)")
                ]),
 
@@ -97,9 +97,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Table"),
-                   Parameter('p2', type="LST")
+                   Parameter('lst', type="LST")
                ]),
 
         Method('FromIUnknown_ARCDB', module='geoarcgis', version='8.0.0',
@@ -111,7 +111,7 @@ gx_methods = {
                """,
                return_type="ARCDB",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('unknown', type=Type.INT32_T,
                              doc="IUnknown pointer")
                ]),
 
@@ -124,9 +124,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Table"),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to fill in")
                ]),
 
@@ -142,9 +142,9 @@ gx_methods = {
                1 - Field Exists
                """,
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Table"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('field', type=Type.STRING,
                              doc="Name of Field")
                ]),
 
@@ -154,7 +154,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="IUnknown pointer",
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Table")
                ]),
 
@@ -164,11 +164,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="0-OK 1-Cancel",
                parameters = [
-                   Parameter('p1', type="ARCDB",
+                   Parameter('arcdb', type="ARCDB",
                              doc="Handle to table"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('temp', type=Type.STRING,
                              doc="Template to make"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`IMPCH_TYPE`")
                ]),
 
@@ -178,7 +178,7 @@ gx_methods = {
                return_type="ARCDB",
                return_doc="Handle to the table (Terminate on Error)",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T, is_ref=True,
+                   Parameter('table_type', type=Type.INT32_T, is_ref=True,
                              doc=":def:`ARC_SELTBL_TYPE`")
                ]),
 

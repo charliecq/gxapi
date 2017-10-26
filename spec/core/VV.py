@@ -161,9 +161,9 @@ gx_methods = {
                doc="Copy one :class:`VV` to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Destination"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vs', type="VV",
                              doc="Source")
                ]),
 
@@ -179,15 +179,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Destination :class:`VV`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('dest', type=Type.INT32_T,
                              doc="Destination start element"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vs', type="VV",
                              doc="Source :class:`VV` (can be the same as Destination)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('source', type=Type.INT32_T,
                              doc="Source start element"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of points")
                ]),
 
@@ -200,13 +200,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('log_base', type=Type.INT32_T,
                              doc=":def:`VV_LOG_BASE`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('log_neg', type=Type.INT32_T,
                              doc=":def:`VV_LOG_NEGATIVE`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('log_min', type=Type.DOUBLE,
                              doc="Minimum value for :def:`VV_LOG_NEGATIVE`")
                ]),
 
@@ -228,9 +228,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('log_min', type=Type.DOUBLE,
                              doc="Minimum value")
                ]),
 
@@ -247,9 +247,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV` to be masked"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc="Mask :class:`VV`")
                ]),
 
@@ -258,7 +258,7 @@ gx_methods = {
                doc="Reverses the order of the data in a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV`")
                ]),
 
@@ -267,8 +267,8 @@ gx_methods = {
                doc="Serialize",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type="BF")
+                   Parameter('gvv', type="VV"),
+                   Parameter('bf', type="BF")
                ]),
 
         Method('_Trans_VV', module='geoengine.core', version='5.0.0',
@@ -277,11 +277,11 @@ gx_methods = {
                notes="All :class:`VV` types now supported.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('base', type=Type.DOUBLE,
                              doc="Base value"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('mult', type=Type.DOUBLE,
                              doc="Mult value")
                ]),
 
@@ -290,7 +290,7 @@ gx_methods = {
                doc="Take the absolute value of values in a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('Add_VV', module='geoengine.core', version='5.0.8',
@@ -298,11 +298,11 @@ gx_methods = {
                doc="Add two VVs: VV_A + VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned), C = A + B")
                ]),
 
@@ -312,15 +312,15 @@ gx_methods = {
                notes="The multipliers must be defined and within the :def_val:`GS_R8MN` :def_val:`GS_R8MX` range.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('f1', type=Type.DOUBLE,
                              doc="Multiplier f1 for A"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('f2', type=Type.DOUBLE,
                              doc="Multiplier f2 for B"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned), C = A*f1 + B*f2")
                ]),
 
@@ -329,8 +329,8 @@ gx_methods = {
                doc="Appends :class:`VV`'s",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV"),
+                   Parameter('v_va', type="VV",
                              doc=":class:`VV` to append")
                ]),
 
@@ -340,9 +340,9 @@ gx_methods = {
                notes="The :class:`VV` will be resized to the length of the :class:`VM`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Destination :class:`VV`, will be resized to length of the :class:`VM`"),
-                   Parameter('p2', type="VM",
+                   Parameter('vm', type="VM",
                              doc="Source :class:`VM`")
                ]),
 
@@ -355,9 +355,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VM",
+                   Parameter('vm', type="VM",
                              doc="Destination :class:`VM`, will be resized to length of the :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Source :class:`VV`")
                ]),
 
@@ -367,8 +367,8 @@ gx_methods = {
                return_type="CRC",
                return_doc="CRC Value",
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type="CRC",
+                   Parameter('vv', type="VV"),
+                   Parameter('pul_crc', type="CRC",
                              doc="Previous CRC :def_val:`CRC_INIT_VALUE`")
                ]),
 
@@ -386,12 +386,12 @@ gx_methods = {
                return_type="CRC",
                return_doc="CRC Value",
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type="CRC",
+                   Parameter('vv', type="VV"),
+                   Parameter('pul_crc', type="CRC",
                              doc="Previous CRC :def_val:`CRC_INIT_VALUE`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('float_bits', type=Type.INT32_T,
                              doc=":def:`VV_FLOAT_CRC_BITS`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('double_bits', type=Type.INT32_T,
                              doc=":def:`VV_DOUBLE_CRC_BITS`")
                ]),
 
@@ -415,9 +415,9 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GEO_VAR`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('elements', type=Type.INT32_T,
                              doc="Maximum number of elements in the :class:`VV`, >= 0")
                ]),
 
@@ -434,9 +434,9 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` Object",
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('elements', type=Type.INT32_T,
                              doc="Maximum number of elements in the :class:`VV`, >= 0")
                ]),
 
@@ -446,7 +446,7 @@ gx_methods = {
                return_type="VV",
                return_doc=":class:`VV` Object",
                parameters = [
-                   Parameter('p1', type="BF")
+                   Parameter('bf', type="BF")
                ]),
 
         Method('Destroy_VV', module='geoengine.core', version='5.0.0',
@@ -454,7 +454,7 @@ gx_methods = {
                doc="Destroy a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to destroy.")
                ]),
 
@@ -469,9 +469,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to be processed"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Number of differences")
                ]),
 
@@ -480,11 +480,11 @@ gx_methods = {
                doc="Divide one :class:`VV` by another: VV_A / VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned), C = A / B")
                ]),
 
@@ -498,9 +498,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv1', type="VV",
                              doc=":class:`VV` to resample"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv2', type="VV",
                              doc=":class:`VV` to resample")
                ]),
 
@@ -509,9 +509,9 @@ gx_methods = {
                doc="Fill a :class:`VV` with an int value.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('int', type=Type.INT32_T,
                              doc="Value to fill with")
                ]),
 
@@ -520,9 +520,9 @@ gx_methods = {
                doc="Fill a :class:`VV` with a real value.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('val', type=Type.DOUBLE,
                              doc="Value to fill with")
                ]),
 
@@ -531,9 +531,9 @@ gx_methods = {
                doc="Fill a :class:`VV` with a string value.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="String")
                ]),
 
@@ -551,11 +551,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` from which to read data"),
-                   Parameter('p2', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` in which to place the data"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('loc', type=Type.INT32_T,
                              doc="Start :class:`VV` location of data to get, 0 is first.")
                ]),
 
@@ -565,11 +565,11 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="The count",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to search"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="Starting point in :class:`VV` (0 for all)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('elem', type=Type.INT32_T,
                              doc="Number of elements to process (-1 for all)")
                ]),
 
@@ -587,15 +587,15 @@ gx_methods = {
                -1 if not found, 0 if the length of the :class:`VV` is 0.
                """,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to search"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="Lowest element in :class:`VV` element to search"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('end', type=Type.INT32_T,
                              doc="Highest element in :class:`VV` to search"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('yn', type=Type.INT32_T,
                              doc="0 = find first dummy / 1 = find first non-dummy"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="0 = use increasing order / 1 = use decreasing order")
                ]),
 
@@ -605,7 +605,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of expanions for this :class:`VV` (see :func:`ReFidVV_VV`)",
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('iGetInt_VV', module='geoengine.core', version='5.0.0',
@@ -617,8 +617,8 @@ gx_methods = {
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element wanted")
                ]),
 
@@ -634,12 +634,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element wanted"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='strsize',
                              doc="String in which to place element"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string")
                ]),
 
@@ -653,9 +653,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Index of the maximum value, :def_val:`iDUMMY` if no valid data.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Points :class:`VV` (must be one of the 4 supported types)"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum value (:def_val:`rDUMMY` if all dummies or no data)")
                ]),
 
@@ -665,7 +665,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="# of elements in the :class:`VV`.",
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('IndexInsert_VV', module='geoengine.core', version='6.2.0',
@@ -691,11 +691,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vo', type="VV",
                              doc="Output Data :class:`VV` (modified with inserted data)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc="Data items to insert (must be same type as output data :class:`VV`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Index :class:`VV` (must be type INT)")
                ]),
 
@@ -708,9 +708,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vi', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc=":class:`VV` to order")
                ]),
 
@@ -724,9 +724,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Index :class:`VV` to initialize (type INT)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Final length of :class:`VV` (-1 to use current length).")
                ]),
 
@@ -747,13 +747,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('log_base', type=Type.INT32_T,
                              doc=":def:`VV_LOG_BASE`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('log_neg', type=Type.INT32_T,
                              doc=":def:`VV_LOG_NEGATIVE`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('log_min', type=Type.DOUBLE,
                              doc="Minimum value for :def:`VV_LOG_NEGATIVE`")
                ]),
 
@@ -763,9 +763,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`VV_ORDER`",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to check order"),
-                   Parameter('p2', type=Type.INT32_T, is_ref=True,
+                   Parameter('rep', type=Type.INT32_T, is_ref=True,
                              doc="Returned: Do any values repeat (0: No, 1: Yes)?")
                ]),
 
@@ -782,11 +782,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Input :class:`VV` of GS_D2LINE type (create with type -32)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="Output :class:`VV` with X locations (:def_val:`GS_DOUBLE`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Output :class:`VV` with Y locations (:def_val:`GS_DOUBLE`)")
                ]),
 
@@ -805,11 +805,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vvd', type="VV",
                              doc="Input Data :class:`VV` (numeric)"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvi', type="VV",
                              doc="Index :class:`VV` of REAL"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvr', type="VV",
                              doc="Result :class:`VV` (same type as Data :class:`VV`)")
                ]),
 
@@ -836,7 +836,7 @@ gx_methods = {
                see_also=":func:`GetPtrVV_GEO` in gx_extern.h",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('MaskAND_VV', module='geoengine.core', version='5.1.2',
@@ -845,11 +845,11 @@ gx_methods = {
                notes="If both values are non-dummies, then result is 1, else dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned)")
                ]),
 
@@ -859,11 +859,11 @@ gx_methods = {
                notes="If either values is non-dummy, then result is 1, else dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned)")
                ]),
 
@@ -880,11 +880,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vd', type="VV",
                              doc=":class:`VV` to be masked"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc="Mask :class:`VV`"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="String to compare")
                ]),
 
@@ -893,11 +893,11 @@ gx_methods = {
                doc="Multiply two VVs: VV_A * VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned), C = A * B")
                ]),
 
@@ -906,7 +906,7 @@ gx_methods = {
                doc="Calculate the 3D length for XYZ component VVs",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_va', type="VV",
                              doc="Amplitude :class:`VV` (returned)"),
                    Parameter('p2', type="VV",
                              doc="X component :class:`VV`"),
@@ -922,15 +922,15 @@ gx_methods = {
                notes="The VVs has to be the same length",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('xvv', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('yvv', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('rvv', type="VV",
                              doc=":class:`VV` to be masked"),
-                   Parameter('p4', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc="Polygon Object"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('dummy', type=Type.INT32_T,
                              doc=":def:`VV_MASK`")
                ]),
 
@@ -940,10 +940,10 @@ gx_methods = {
                notes="This function is equivalent to :func:`ConvertVV_PJ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ"),
-                   Parameter('p2', type="VV",
+                   Parameter('pj', type="PJ"),
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y")
                ]),
 
@@ -953,12 +953,12 @@ gx_methods = {
                notes="This function is equivalent to :func:`ConvertVV3_PJ`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PJ"),
-                   Parameter('p2', type="VV",
+                   Parameter('pj', type="PJ"),
+                   Parameter('v_vx', type="VV",
                              doc="X"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z")
                ]),
 
@@ -968,10 +968,10 @@ gx_methods = {
                notes="Minimum and maximum become :def_val:`GS_R8DM` if entire :class:`VV` is dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('vv', type="VV"),
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum value - returned"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum value - returned")
                ]),
 
@@ -980,13 +980,13 @@ gx_methods = {
                doc="Re-sample a :class:`VV` to a new fid start/icrement",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to resample"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="New fid start"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="New fid increment"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="New length")
                ]),
 
@@ -999,9 +999,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to resample"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vm', type="VV",
                              doc=":class:`VV` model (fid increment and start)")
                ]),
 
@@ -1010,19 +1010,19 @@ gx_methods = {
                doc="Resamples a :class:`VV` from one fid/incr to another fid/incr.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to resample"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('c_start', type=Type.DOUBLE,
                              doc="Current start fid"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('c_incr', type=Type.DOUBLE,
                              doc="Current increment"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('n_start', type=Type.DOUBLE,
                              doc="New fid start"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('n_incr', type=Type.DOUBLE,
                              doc="New fid increment"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('len', type=Type.INT32_T,
                              doc="New length"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('extr', type=Type.INT32_T,
                              doc="Extrapolate Endpoints (0 - No, 1 - Yes)")
                ]),
 
@@ -1032,7 +1032,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Fiducial increment of the :class:`VV`.",
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('rGetFidStart_VV', module='geoengine.core', version='5.0.0',
@@ -1041,7 +1041,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="Fiducial start of the :class:`VV`.",
                parameters = [
-                   Parameter('p1', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('rGetReal_VV', module='geoengine.core', version='5.0.0',
@@ -1057,8 +1057,8 @@ gx_methods = {
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element wanted")
                ]),
 
@@ -1069,7 +1069,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The sum of the elements.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to be processed")
                ]),
 
@@ -1080,9 +1080,9 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="The weighted average of the values.",
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv_elements', type="VV",
                              doc=":class:`VV` to be processed"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv_weights', type="VV",
                              doc=":class:`VV` of weights")
                ]),
 
@@ -1091,8 +1091,8 @@ gx_methods = {
                doc="Sets the Fiducial expansion from a :class:`VV`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('expand', type=Type.INT32_T,
                              doc="Expansion setting (1 or greater)")
                ]),
 
@@ -1101,9 +1101,9 @@ gx_methods = {
                doc="Sets the Fiducial increment of a :class:`VV`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to set fiducial increment of"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('incr', type=Type.DOUBLE,
                              doc="New increment")
                ]),
 
@@ -1112,9 +1112,9 @@ gx_methods = {
                doc="Sets the Fiducial start of a :class:`VV`",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to set fiducial start of"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('start', type=Type.DOUBLE,
                              doc="New start")
                ]),
 
@@ -1134,10 +1134,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element to set"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -1151,12 +1151,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('start', type=Type.INT32_T,
                              doc="Start element (>= 0)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="# elements to set (-1 sets all elements to end)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="Value to set")
                ]),
 
@@ -1175,9 +1175,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to set length of"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('size', type=Type.INT32_T,
                              doc="New length (number of elements)")
                ]),
 
@@ -1197,10 +1197,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element to set"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Value to set")
                ]),
 
@@ -1214,12 +1214,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('start', type=Type.INT32_T,
                              doc="Start element (>= 0)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="# elements to set (-1 sets all elements to end)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('value', type=Type.DOUBLE,
                              doc="Value to set")
                ]),
 
@@ -1239,10 +1239,10 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('element', type=Type.INT32_T,
                              doc="Element to set"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="String to set")
                ]),
 
@@ -1256,12 +1256,12 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('vv', type="VV"),
+                   Parameter('start', type=Type.INT32_T,
                              doc="Start element (>= 0)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="# elements to set (-1 sets all elements to end)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('value', type=Type.STRING,
                              doc="String to set")
                ]),
 
@@ -1298,15 +1298,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vvd', type="VV",
                              doc="Original Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('vvq', type="VV",
                              doc="Query :class:`VV` (same type as Data :class:`VV`)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vvi', type="VV",
                              doc=":class:`VV` index :class:`VV` of type REAL"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VV_LOOKUP`"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('space', type=Type.DOUBLE,
                              doc="Spacing for some modes")
                ]),
 
@@ -1324,11 +1324,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place data"),
-                   Parameter('p2', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` from which to read the data"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('loc', type=Type.INT32_T,
                              doc="Start :class:`VV` location of data to set, 0 is first.")
                ]),
 
@@ -1337,9 +1337,9 @@ gx_methods = {
                doc="Sort a :class:`VV`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('dvv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc=":def:`VV_SORT`")
                ]),
 
@@ -1353,9 +1353,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('dvv', type="VV",
                              doc="Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('ivv', type="VV",
                              doc="Index :class:`VV` of type INT")
                ]),
 
@@ -1373,11 +1373,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('dvv', type="VV",
                              doc="Primary Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('ivv', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ord1', type=Type.INT32_T,
                              doc=":def:`VV_SORT`")
                ]),
 
@@ -1395,15 +1395,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('d1_vv', type="VV",
                              doc="Primary Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('d2_vv', type="VV",
                              doc="Secondary Data :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('ivv', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ord1', type=Type.INT32_T,
                              doc="Primary Sort order :def:`VV_SORT`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('ord2', type=Type.INT32_T,
                              doc="Secondary Sort order :def:`VV_SORT`")
                ]),
 
@@ -1421,19 +1421,19 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('d1_vv', type="VV",
                              doc="Primary Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('d2_vv', type="VV",
                              doc="Secondary Data :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('d3_vv', type="VV",
                              doc="Ternary Data :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('ivv', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('ord1', type=Type.INT32_T,
                              doc="Primary Sort order :def:`VV_SORT`"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('ord2', type=Type.INT32_T,
                              doc="Secondary sort order :def:`VV_SORT`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('ord3', type=Type.INT32_T,
                              doc="Third Sort order :def:`VV_SORT`")
                ]),
 
@@ -1451,23 +1451,23 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('d1_vv', type="VV",
                              doc="Primary Data :class:`VV`"),
-                   Parameter('p2', type="VV",
+                   Parameter('d2_vv', type="VV",
                              doc="Secondary Data :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('d3_vv', type="VV",
                              doc="Ternary Data :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('d4_vv', type="VV",
                              doc="Quaternary Data :class:`VV`"),
-                   Parameter('p5', type="VV",
+                   Parameter('ivv', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('ord1', type=Type.INT32_T,
                              doc="Primary Ssort order :def:`VV_SORT`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('ord2', type=Type.INT32_T,
                              doc="Secondary Sort order :def:`VV_SORT`"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('ord3', type=Type.INT32_T,
                              doc="Third Sort order :def:`VV_SORT`"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('ord4', type=Type.INT32_T,
                              doc="Fourth Sort order :def:`VV_SORT`")
                ]),
 
@@ -1476,9 +1476,9 @@ gx_methods = {
                doc="Add a :class:`VV` to a :class:`ST`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="ST",
+                   Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to add to :class:`ST`")
                ]),
 
@@ -1487,11 +1487,11 @@ gx_methods = {
                doc="Subtract one :class:`VV` from another: VV_A - VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc=":class:`VV` C (returned), C = A - B")
                ]),
 
@@ -1505,7 +1505,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` object")
                ]),
 
@@ -1514,13 +1514,13 @@ gx_methods = {
                doc="Limit the elements of a vv to a range.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data :class:`VV` (numeric)"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Min Val"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Max Val"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc=":def:`VV_WINDOW`")
                ]),
 
@@ -1529,13 +1529,13 @@ gx_methods = {
                doc="Write the :class:`VV` data as an XML object with bytes and formating.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` to save"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="XML file to create"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('format', type=Type.INT32_T,
                              doc="Format"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('decimal', type=Type.INT32_T,
                              doc="Significant digits/decimals")
                ])
     ]

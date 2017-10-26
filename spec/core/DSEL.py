@@ -42,9 +42,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('sf', type=Type.DOUBLE,
                              doc="Significant figures (positive, can be fractional)")
                ]),
 
@@ -53,7 +53,7 @@ gx_methods = {
                doc="Destroy a :class:`DSEL`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` to destroy.")
                ]),
 
@@ -62,9 +62,9 @@ gx_methods = {
                doc="Specify a metadata query string.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('query', type=Type.STRING,
                              doc="Meta query string")
                ]),
 
@@ -74,9 +74,9 @@ gx_methods = {
                notes="Affected Data Types: PICTURE",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('quality', type=Type.INT32_T,
                              doc="Quality")
                ]),
 
@@ -85,9 +85,9 @@ gx_methods = {
                doc="Request that all meta-data info be sent",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('request', type=Type.INT32_T,
                              doc="TRUE to for all data, FALSE - for normal data")
                ]),
 
@@ -100,9 +100,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` to destroy."),
-                   Parameter('p2', type="PLY",
+                   Parameter('pply', type="PLY",
                              doc=":class:`PLY` containing complex area (must contain a projection)")
                ]),
 
@@ -111,15 +111,15 @@ gx_methods = {
                doc="Select a rectangular area.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` to destroy."),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Min X"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Min Y"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Max X"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y")
                ]),
 
@@ -139,11 +139,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('res', type=Type.DOUBLE,
                              doc="Minimum Resolution"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('force', type=Type.INT32_T,
                              doc="TRUE to force this resolution, if possible")
                ]),
 
@@ -152,11 +152,11 @@ gx_methods = {
                doc="Specify the image size desired",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Image width in pixels"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('height', type=Type.INT32_T,
                              doc="Image height in pixels")
                ]),
 
@@ -165,9 +165,9 @@ gx_methods = {
                doc="Specify that we want to extract this file as a document",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('value', type=Type.INT32_T,
                              doc="TRUE (1) if we want as a document")
                ]),
 
@@ -185,11 +185,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` to destroy."),
-                   Parameter('p2', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` to set"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('force', type=Type.INT32_T,
                              doc="TRUE to force reprojection, if possible")
                ]),
 
@@ -206,9 +206,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DSEL",
+                   Parameter('dsel', type="DSEL",
                              doc=":class:`DSEL` object"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('acc', type=Type.DOUBLE,
                              doc="Spatial accuracy desired")
                ])
     ]

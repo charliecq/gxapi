@@ -23,9 +23,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('path', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Path String"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of path string")
                ]),
 
@@ -35,9 +35,9 @@ gx_methods = {
                notes="If the current document is not yet saved, this will return an empty string.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('path', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Path String"),
-                   Parameter('p2', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of path string")
                ]),
 
@@ -50,7 +50,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('path', type=Type.STRING,
                              doc="Path String")
                ])
     ]

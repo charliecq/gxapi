@@ -36,17 +36,17 @@ gx_methods = {
                Terminates on Error
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('server', type=Type.STRING,
                              doc="SQL server to use"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc="User name (if blank assume NT Integrated Security)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pwd', type=Type.STRING,
                              doc="Password"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc=":class:`DB` name"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('mdf_file_name', type=Type.STRING,
                              doc="MDF name"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('ldf_file_name', type=Type.STRING,
                              doc="LDF name (if blank, tries single db attach)")
                ]),
 
@@ -59,13 +59,13 @@ gx_methods = {
                1 - :class:`DB` Operation Canceled
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('server', type=Type.STRING,
                              doc="SQL server to use"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc="User name (if blank assume NT Integrated Security)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('pwd', type=Type.STRING,
                              doc="Password"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('db', type=Type.STRING,
                              doc=":class:`DB` name")
                ]),
 
@@ -75,14 +75,14 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of languages",
                parameters = [
-                   Parameter('p1', type="LST"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('lst', type="LST"),
+                   Parameter('server', type=Type.STRING,
                              doc="SQL server to use"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc="User name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('pwd', type=Type.STRING,
                              doc="Password"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('win_auth', type=Type.INT32_T,
                              doc="0 - SQL authentication, 1 - NT integrated securty")
                ]),
 
@@ -92,14 +92,14 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of database",
                parameters = [
-                   Parameter('p1', type="LST"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('lst', type="LST"),
+                   Parameter('server', type=Type.STRING,
                              doc="SQL server to use"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc="User name"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('pwd', type=Type.STRING,
                              doc="Password"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('win_auth', type=Type.INT32_T,
                              doc="0 - SQL authentication, 1 - NT integrated securty")
                ]),
 
@@ -108,9 +108,9 @@ gx_methods = {
                doc="Get/Test login information to SQL Server",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('server', type=Type.STRING,
                              doc="SQL server to use"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('user', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="User name (default & returned)"),
                    Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of User name"),
@@ -130,7 +130,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of servers",
                parameters = [
-                   Parameter('p1', type="LST")
+                   Parameter('lst', type="LST")
                ])
     ]
 }
