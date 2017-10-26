@@ -154,9 +154,9 @@ gx_methods = {
                              doc="Extension"),
                    Parameter('qual', type=Type.STRING,
                              doc="Qualifiers"),
-                   Parameter('file_name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('file_name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Destination string, can be same as input"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="String length")
                ]),
 
@@ -184,9 +184,9 @@ gx_methods = {
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File name"),
-                   Parameter('part', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('file_part', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Destination string, can be same as input"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="String length"),
                    Parameter('part', type=Type.INT32_T,
                              doc=":def:`STR_FILE_PART`")
@@ -372,9 +372,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String to modify"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="String size"),
                    Parameter('opt', type=Type.INT32_T,
                              doc=":def:`STR_ESCAPE`")
@@ -418,13 +418,13 @@ gx_methods = {
                parameters = [
                    Parameter('in_str', type=Type.STRING,
                              doc="String to justify"),
-                   Parameter('out_str', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('out_str', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Result string, can be same as input"),
                    Parameter('width', type=Type.INT32_T,
                              doc="Justification width"),
                    Parameter('just', type=Type.INT32_T,
                              doc=":def:`STR_JUSTIFY`"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum size of result")
                ]),
 
@@ -500,13 +500,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('in', type=Type.STRING, is_ref=True,
+                   Parameter('origstr', type=Type.STRING, is_ref=True,
                              doc="Original string"),
-                   Parameter('char', type=Type.STRING,
+                   Parameter('ch', type=Type.STRING,
                              doc="Split character (first character of string)"),
-                   Parameter('split', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('split', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Split string past split character."),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of split string.")
                ]),
 
@@ -709,7 +709,7 @@ gx_methods = {
                              doc="Origin string"),
                    Parameter('start', type=Type.INT32_T,
                              doc="Start location"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="Number of characters")
                ]),
 
@@ -949,7 +949,7 @@ gx_methods = {
                parameters = [
                    Parameter('str_val', type=Type.STRING,
                              doc="String to tokenize"),
-                   Parameter('del', type=Type.STRING,
+                   Parameter('delims', type=Type.STRING,
                              doc="Delimiter characters")
                ]),
 
@@ -1046,7 +1046,7 @@ gx_methods = {
                parameters = [
                    Parameter('str_val', type=Type.STRING, is_ref=True,
                              doc="String to tokenize"),
-                   Parameter('del', type=Type.STRING,
+                   Parameter('delims', type=Type.STRING,
                              doc="Delimiter characters")
                ]),
 
@@ -1115,13 +1115,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('dest', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('dest', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Destination string"),
                    Parameter('orig', type=Type.STRING,
                              doc="Origin string"),
                    Parameter('start', type=Type.INT32_T,
                              doc="Start location"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Number of characters")
                ])
     ]

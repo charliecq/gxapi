@@ -348,9 +348,9 @@ gx_methods = {
                              doc="Channel"),
                    Parameter('ind', type=Type.INT32_T,
                              doc="Index"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Length")
                ]),
 
@@ -476,9 +476,9 @@ gx_methods = {
                              doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name"),
-                   Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned setting"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="String length")
                ]),
 
@@ -577,9 +577,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned class into"),
-                   Parameter('len', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
+                   Parameter('length', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Size of string")
                ]),
 
@@ -656,9 +656,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned label into"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of string")
                ]),
 
@@ -675,9 +675,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String to place name into"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
@@ -729,9 +729,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('unit', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('unit', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String to place unit into"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of string")
                ]),
 
@@ -760,9 +760,9 @@ gx_methods = {
                              doc="Database Object"),
                    Parameter('name', type=Type.INT32_T,
                              doc=":def:`DB_NAME`"),
-                   Parameter('psz_name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('psz_name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="String size")
                ]),
 
@@ -801,9 +801,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('symb', type="DB_SYMB",
                              doc="Symbol handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String to place name into"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
@@ -840,9 +840,9 @@ gx_methods = {
                              doc="hDB - Shared Database"),
                    Parameter('chan', type=Type.STRING,
                              doc="Channel name"),
-                   Parameter('pair', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('pair', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String in which to place paired channel name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="String length")
                ]),
 
@@ -1342,7 +1342,7 @@ gx_methods = {
                              doc="Number of Erase Caches       (100)"),
                    Parameter('super', type=Type.STRING,
                              doc='Name of the Super User       "SUPER"'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the Super User   ""')
                ]),
 
@@ -1369,7 +1369,7 @@ gx_methods = {
                              doc="Number of Erase Caches       (100)"),
                    Parameter('super', type=Type.STRING,
                              doc='Name of the Super User       "SUPER"'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the Super User   ""'),
                    Parameter('page', type=Type.INT32_T,
                              doc="Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024"),
@@ -1400,7 +1400,7 @@ gx_methods = {
                              doc="Number of Erase Caches       (100)"),
                    Parameter('super', type=Type.STRING,
                              doc='Name of the Super User       "SUPER"'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the Super User   ""'),
                    Parameter('page', type=Type.INT32_T,
                              doc="Page Size Must be (64,128,256,512,1024,2048,4096) normally 1024")
@@ -1489,7 +1489,7 @@ gx_methods = {
                              doc="Name of the Database File to Open"),
                    Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1508,7 +1508,7 @@ gx_methods = {
                              doc="Name of the Database File to Open"),
                    Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1566,7 +1566,7 @@ gx_methods = {
                              doc="Name of the Database File to Open"),
                    Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1585,7 +1585,7 @@ gx_methods = {
                              doc="Name of the Database File to Open"),
                    Parameter('user', type=Type.STRING,
                              doc='Name of the user ("SUPER" normally)'),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc='Password of the user ("" normally)')
                ]),
 
@@ -1963,9 +1963,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('line', type="DB_SYMB",
                              doc="Line symbol"),
-                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('label', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String in which to place label"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="String length"),
                    Parameter('format', type=Type.INT32_T,
                              doc=":def:`DB_LINE_LABEL_FORMAT`")
@@ -1994,9 +1994,9 @@ gx_methods = {
                              doc="Database"),
                    Parameter('line', type="DB_SYMB",
                              doc="Line handle to look at"),
-                   Parameter('line_number', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('line_number', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Line number"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Line number buffer size")
                ]),
 
@@ -2823,11 +2823,11 @@ gx_methods = {
                parameters = [
                    Parameter('db', type="DB",
                              doc="hDB - Database object"),
-                   Parameter('chan', type=Type.INT32_T,
+                   Parameter('chan_symb', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`"),
-                   Parameter('chan', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('chan', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned name"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Buffer length")
                ]),
 
@@ -2951,7 +2951,7 @@ gx_methods = {
                parameters = [
                    Parameter('db', type="DB",
                              doc="hDB - Database object"),
-                   Parameter('chan', type=Type.INT32_T,
+                   Parameter('chan_symb', type=Type.INT32_T,
                              doc=":def:`DB_CHAN_SYMBOL`"),
                    Parameter('chan', type=Type.STRING,
                              doc="Channel name")
@@ -3209,9 +3209,9 @@ gx_methods = {
                parameters = [
                    Parameter('str_in', type=Type.STRING,
                              doc="Input string"),
-                   Parameter('str_out', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_out', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Outout string"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Max output string length")
                ]),
 
@@ -3227,9 +3227,9 @@ gx_methods = {
                parameters = [
                    Parameter('str_in', type=Type.STRING,
                              doc="Input string"),
-                   Parameter('str_out', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_out', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Outout string"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Max output string length")
                ]),
 
@@ -3319,9 +3319,9 @@ gx_methods = {
                              doc="Optional offset or base frequency"),
                    Parameter('vv', type="VV",
                              doc="Values (one per array channel column) (REAL)"),
-                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Units"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of units string")
                ]),
 
@@ -3341,9 +3341,9 @@ gx_methods = {
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
                              doc="Group line - :def_val:`DB_LOCK_READWRITE` or :def_val:`DB_LOCK_READONLY`"),
-                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned class name - max size = :def_val:`DB_GROUP_CLASS_SIZE` - 1"),
-                   Parameter('buff', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
+                   Parameter('size', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Buffer size")
                ]),
 
@@ -3369,9 +3369,9 @@ gx_methods = {
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Zone file name, "" to clear.'),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for string")
                ]),
 
@@ -3384,9 +3384,9 @@ gx_methods = {
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('option', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('option', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Option  "Profile", "Section" or "Section and Profile"'),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Buffer size for string")
                ]),
 
@@ -3400,9 +3400,9 @@ gx_methods = {
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
                              doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Zone file name"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for string")
                ]),
 

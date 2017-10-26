@@ -217,7 +217,7 @@ gx_methods = {
                              doc="Field"),
                    Parameter('match', type=Type.STRING,
                              doc="String to match to field, must be lower-case"),
-                   Parameter('match', type=Type.INT32_T,
+                   Parameter('match_type', type=Type.INT32_T,
                              doc=":def:`LTB_CONLST`"),
                    Parameter('lst', type="LST",
                              doc="List to populate")
@@ -309,11 +309,11 @@ gx_methods = {
                parameters = [
                    Parameter('ltb', type="LTB",
                              doc=":class:`LTB` object"),
-                   Parameter('field', type=Type.INT32_T,
+                   Parameter('field_num', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('field', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('field', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned field name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum field name string length")
                ]),
 
@@ -349,9 +349,9 @@ gx_methods = {
                              doc="Record number"),
                    Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('token', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('token', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned field token"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum field token string length")
                ]),
 
@@ -370,9 +370,9 @@ gx_methods = {
                              doc="Record number"),
                    Parameter('field', type=Type.INT32_T,
                              doc="Field number"),
-                   Parameter('token', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('token', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned field token"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum field token string length")
                ]),
 

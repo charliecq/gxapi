@@ -215,7 +215,7 @@ gx_methods = {
                average and subsequent data :class:`VV` values will be dummied out.
                Data is processed only to the minimum length of the
                input :class:`VV` lengths.
-               Both the reference :class:`VV` values must repeat for the averageing
+               Both the reference :class:`VV` values must repeat for the averaging
                to occur. This version is useful for averaging on repeated
                (X,Y) locations.
                """,
@@ -238,7 +238,7 @@ gx_methods = {
                in the data :class:`VV`.  The first value in the data :class:`VV` will be reset and subsequent data :class:`VV` values will be dummied out.
                Data is processed only to the minimum length of the
                input :class:`VV` lengths.
-               Both the reference :class:`VV` values must repeat for the averageing
+               Both the reference :class:`VV` values must repeat for the averaging
                to occur. This version is useful for averaging on repeated
                (X,Y) locations.
                """,
@@ -268,7 +268,7 @@ gx_methods = {
                    Parameter('val', type=Type.DOUBLE,
                              doc="Value to search for."),
                    Parameter('l_min', type=Type.INT32_T, is_ref=True,
-                             doc="Minmum Location"),
+                             doc="Minimum Location"),
                    Parameter('l_max', type=Type.INT32_T, is_ref=True,
                              doc="Maximum Location")
                ]),
@@ -533,7 +533,7 @@ gx_methods = {
                              doc="Maximum range value"),
                    Parameter('inside', type=Type.INT32_T,
                              doc="If TRUE, dummy inside the range"),
-                   Parameter('include', type=Type.INT32_T,
+                   Parameter('incl', type=Type.INT32_T,
                              doc="If TRUE, include Min, Max in the range.")
                ]),
 
@@ -619,7 +619,7 @@ gx_methods = {
                              doc="Random number generator seed"),
                    Parameter('mean', type=Type.DOUBLE,
                              doc="Mean value of distribution (> 0.0)"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="Number of values (-1 for all)")
                ]),
 
@@ -856,9 +856,9 @@ gx_methods = {
                parameters = [
                    Parameter('vv', type="VV",
                              doc="Input :class:`VV`"),
-                   Parameter('in', type=Type.INT32_T,
+                   Parameter('input', type=Type.INT32_T,
                              doc=":def:`VVU_INTERP`"),
-                   Parameter('out', type=Type.INT32_T,
+                   Parameter('output', type=Type.INT32_T,
                              doc=":def:`VVU_INTERP_EDGE`")
                ]),
 
@@ -1043,7 +1043,7 @@ gx_methods = {
                              doc="Mean value of distribution"),
                    Parameter('var', type=Type.DOUBLE,
                              doc="Variance of the distribution"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="Number of values (-1 for all)")
                ]),
 
@@ -1792,7 +1792,7 @@ gx_methods = {
                              doc="Y to be splined (no dummies)"),
                    Parameter('v_vo', type="VV",
                              doc="Y output"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="Output Length"),
                    Parameter('start', type=Type.DOUBLE,
                              doc="Starting Location"),
@@ -1917,7 +1917,7 @@ gx_methods = {
                              doc="Minimum of range"),
                    Parameter('max', type=Type.DOUBLE,
                              doc="Maximum of range"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="Number of values (-1 for all)")
                ])
     ],

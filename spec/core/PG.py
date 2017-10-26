@@ -51,11 +51,11 @@ gx_methods = {
                              doc="Second Pager"),
                    Parameter('pgr', type="PG",
                              doc="Result Pager"),
-                   Parameter('void*', type="void*",
+                   Parameter('pinfo', type="void*",
                              doc="Pointer to pass to your function"),
-                   Parameter('p_info', type="void (_cdecl *param4)(void*,short,long,void*,void*,void*)",
+                   Parameter('func', type="void (_cdecl *func)(void*,short,long,void*,void*,void*)",
                              doc="Math Functions (void (cdecl*)(void *pInfo, short sType, long lItems, void *pPG1, void *pPG2, void *pPGR)"),
-                   Parameter('void', type=Type.INT32_T,
+                   Parameter('smp', type=Type.INT32_T,
                              doc="GS_BOOL SMP Support")
                ]),
 
@@ -69,11 +69,11 @@ gx_methods = {
                              doc="First Pager"),
                    Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('o', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="First Element"),
                    Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('void*', type="void*",
+                   Parameter('buff', type="void*",
                              doc="Data buffer to read into")
                ]),
 
@@ -87,11 +87,11 @@ gx_methods = {
                              doc="First Pager"),
                    Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('o', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="First Element"),
                    Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('void*', type="const void*",
+                   Parameter('buff', type="const void*",
                              doc="Data buffer to read from")
                ]),
 
@@ -103,13 +103,13 @@ gx_methods = {
                parameters = [
                    Parameter('pg', type="PG",
                              doc="First Pager"),
-                   Parameter('col', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('o', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="First Element"),
                    Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('void*', type="void*",
+                   Parameter('buff', type="void*",
                              doc="Data buffer to read into")
                ]),
 
@@ -121,13 +121,13 @@ gx_methods = {
                parameters = [
                    Parameter('pg', type="PG",
                              doc="First Pager"),
-                   Parameter('col', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="Row"),
-                   Parameter('o', type=Type.INT32_T,
+                   Parameter('start', type=Type.INT32_T,
                              doc="First Element"),
                    Parameter('n', type=Type.INT32_T,
                              doc="Number of Elements"),
-                   Parameter('void*', type="const void*",
+                   Parameter('buff', type="const void*",
                              doc="Data buffer to read from")
                ])
     ],
@@ -138,9 +138,9 @@ gx_methods = {
                doc="Copy the data from one pager to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gd', type="PG",
+                   Parameter('pgd', type="PG",
                              doc="Destination :class:`PG` object"),
-                   Parameter('p_gs', type="PG",
+                   Parameter('pgs', type="PG",
                              doc="Source :class:`PG` object")
                ]),
 
@@ -150,21 +150,21 @@ gx_methods = {
                notes="2D Only",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gd', type="PG",
+                   Parameter('pgd', type="PG",
                              doc="Destination :class:`PG` object"),
-                   Parameter('p_gs', type="PG",
+                   Parameter('pgs', type="PG",
                              doc="Source :class:`PG` object"),
-                   Parameter('rowd', type=Type.INT32_T,
+                   Parameter('y_row_d', type=Type.INT32_T,
                              doc="Y (row) Origin on destination"),
-                   Parameter('n', type=Type.INT32_T,
+                   Parameter('x_col_d', type=Type.INT32_T,
                              doc="X (col) Origin on destination"),
-                   Parameter('void*', type=Type.INT32_T,
+                   Parameter('y_row_s', type=Type.INT32_T,
                              doc="Y (row) Origin on source"),
-                   Parameter('p_mem', type=Type.INT32_T,
+                   Parameter('x_col_s', type=Type.INT32_T,
                              doc="X (col) Origin on source"),
-                   Parameter('cdecl*', type=Type.INT32_T,
+                   Parameter('ny', type=Type.INT32_T,
                              doc="Number of Y (rows) to copy"),
-                   Parameter('p_func', type=Type.INT32_T,
+                   Parameter('nx', type=Type.INT32_T,
                              doc="Number of X (columns) to copy")
                ]),
 
@@ -387,9 +387,9 @@ gx_methods = {
                notes="2D Only",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gd', type="PG",
+                   Parameter('pgd', type="PG",
                              doc="Destination :class:`PG` object"),
-                   Parameter('p_gs', type="PG",
+                   Parameter('pgs', type="PG",
                              doc="Source :class:`PG` object"),
                    Parameter('sliced', type=Type.INT32_T,
                              doc="Z (slice) Origin on destination"),

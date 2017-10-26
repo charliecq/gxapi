@@ -698,9 +698,9 @@ gx_methods = {
                parameters = [
                    Parameter('parm', type=Type.STRING,
                              doc="Setting"),
-                   Parameter('set', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('set', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Value string"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Sizeof string")
                ]),
 
@@ -742,9 +742,9 @@ gx_methods = {
                parameters = [
                    Parameter('err', type=Type.INT32_T,
                              doc="The error index (0 to N-1, where N=number of registered errors)"),
-                   Parameter('err', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('err_str', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to return message in"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of buffer")
                ]),
 
@@ -1027,9 +1027,9 @@ gx_methods = {
                parameters = [
                    Parameter('object', type=Type.STRING,
                              doc="Object Name"),
-                   Parameter('info', type=Type.STRING,
+                   Parameter('info_str', type=Type.STRING,
                              doc="Info String"),
-                   Parameter('info', type=Type.INT32_T,
+                   Parameter('info_val', type=Type.INT32_T,
                              doc="Info Int")
                ]),
 
@@ -1345,7 +1345,7 @@ gx_methods = {
                notes="The path will always end with the file separator character",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('dir', type=Type.INT32_T,
+                   Parameter('sys_dir', type=Type.INT32_T,
                              doc=":def:`SYS_DIR`"),
                    Parameter('dir', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned directory path string"),
@@ -1473,9 +1473,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('in', type=Type.STRING,
+                   Parameter('path_file', type=Type.STRING,
                              doc="Input file name to resolve (path is removed)"),
-                   Parameter('out', type=Type.STRING, is_ref=True, size_of_param='size',
+                   Parameter('out_filename', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output name, can be the same as input"),
                    Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of output name")
@@ -1905,7 +1905,7 @@ gx_methods = {
                doc="Clear all menus",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('def', type=Type.INT32_T,
+                   Parameter('flag', type=Type.INT32_T,
                              doc=":def:`SYS_MENU_CLEAR`")
                ]),
 
@@ -2595,7 +2595,7 @@ gx_methods = {
                doc="Get system information",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('info', type=Type.INT32_T,
+                   Parameter('sys_info', type=Type.INT32_T,
                              doc=":def:`SYS_INFO`"),
                    Parameter('info', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned setting"),
@@ -3215,7 +3215,7 @@ gx_methods = {
                notes="Obsolete",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('info', type=Type.INT32_T,
+                   Parameter('sys_lic', type=Type.INT32_T,
                              doc="SYS_LIC"),
                    Parameter('info', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place string into"),

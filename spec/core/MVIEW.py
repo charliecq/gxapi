@@ -595,9 +595,9 @@ gx_methods = {
                              doc=":class:`MVIEW` object"),
                    Parameter('group', type=Type.STRING,
                              doc="Group Name"),
-                   Parameter('meta', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('meta', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Meta name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Length of Meta name variable")
                ]),
 
@@ -852,9 +852,9 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum name length")
                ]),
 
@@ -1400,9 +1400,9 @@ gx_methods = {
                              doc=":class:`MVIEW` object"),
                    Parameter('ext_ply', type=Type.INT32_T,
                              doc="Extended ClipPLY number"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Length of Name variable")
                ]),
 
@@ -1483,9 +1483,9 @@ gx_methods = {
                parameters = [
                    Parameter('color', type=Type.INT32_T,
                              doc="COL_ANY variable"),
-                   Parameter('color', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('color_descr', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Color descriptor returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of the string")
                ]),
 
@@ -2988,9 +2988,9 @@ gx_methods = {
                              doc=":class:`MVIEW` object"),
                    Parameter('group', type=Type.STRING,
                              doc="Base Name of group"),
-                   Parameter('new_name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('new_name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="New Name of group"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_GROUP',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_GROUP',
                              doc="Size of buffer.")
                ]),
 
@@ -3501,9 +3501,9 @@ gx_methods = {
                              doc=":class:`MVIEW` object"),
                    Parameter('group_num', type=Type.INT32_T,
                              doc="Group number, error if not valid"),
-                   Parameter('group_name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('group_name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Group Name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Maximum name length")
                ]),
 
@@ -3900,9 +3900,9 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc="View handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="View name returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VIEW',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="View name string size")
                ]),
 
@@ -4092,9 +4092,9 @@ gx_methods = {
                              doc=":class:`MVIEW` handle"),
                    Parameter('cl', type=Type.STRING,
                              doc="Class"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Maximum name length")
                ]),
 

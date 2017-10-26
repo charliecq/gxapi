@@ -286,7 +286,7 @@ gx_methods = {
                              doc=":class:`MAP` Object"),
                    Parameter('mview', type="MVIEW",
                              doc=":class:`3DV`'s 3D :class:`MVIEW`"),
-                   Parameter('mview', type=Type.STRING,
+                   Parameter('view_name', type=Type.STRING,
                              doc="New view name"),
                    Parameter('min_x', type=Type.DOUBLE,
                              doc="X minimum in mm"),
@@ -595,9 +595,9 @@ gx_methods = {
                              doc=":class:`MAP` handle"),
                    Parameter('cl', type=Type.STRING,
                              doc="Class"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Maximum name length")
                ]),
 
@@ -608,9 +608,9 @@ gx_methods = {
                parameters = [
                    Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned map file name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of map name string")
                ]),
 
@@ -621,9 +621,9 @@ gx_methods = {
                parameters = [
                    Parameter('map', type="MAP",
                              doc=":class:`MAP` Handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned map name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of map name string")
                ]),
 

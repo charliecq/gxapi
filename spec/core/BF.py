@@ -65,11 +65,11 @@ gx_methods = {
                doc="Read data from a :class:`BF` stream into memory",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` object"),
-                   Parameter('p2', type="void*",
+                   Parameter('buff', type="void*",
                              doc="Data buffer to read data into"),
-                   Parameter('p3', type=Type.INT32_T, is_val=True,
+                   Parameter('nbytes', type=Type.INT32_T, is_val=True,
                              doc="Number of bytes to read")
                ]),
 
@@ -78,11 +78,11 @@ gx_methods = {
                doc="Write data from memory into a :class:`BF` stream",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` object"),
-                   Parameter('p2', type="const void*",
+                   Parameter('buff', type="const void*",
                              doc="Data buffer to write data from"),
-                   Parameter('p3', type=Type.INT32_T, is_val=True,
+                   Parameter('nbytes', type=Type.INT32_T, is_val=True,
                              doc="Number of bytes to write")
                ]),
 

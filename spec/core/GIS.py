@@ -188,9 +188,9 @@ gx_methods = {
                parameters = [
                    Parameter('gis', type="GIS",
                              doc=":class:`GIS` Handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned file name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of file name string")
                ]),
 

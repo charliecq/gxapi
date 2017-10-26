@@ -45,7 +45,7 @@ gx_methods = {
                doc="Drop Map clipboard data in the current project (workspace background)",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('global', type=Type.INT32_T,
+                   Parameter('hglobal', type=Type.INT32_T,
                              doc="Handle to Global Clipboard data")
                ])
     ],
@@ -299,9 +299,9 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="name"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="maximum name length")
                ])
     ]

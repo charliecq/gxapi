@@ -811,9 +811,9 @@ gx_methods = {
                parameters = [
                    Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -828,9 +828,9 @@ gx_methods = {
                parameters = [
                    Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('esri', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('esri', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="ESRI projection string returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="String length, should be at least 1024")
                ]),
 
@@ -846,17 +846,17 @@ gx_methods = {
                parameters = [
                    Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('str1', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str1', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Projection name"),
-                   Parameter('str2', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str2', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Datum name, major axis, elipticity"),
-                   Parameter('str3', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str3', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Method name, parameters"),
-                   Parameter('str4', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str4', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Unit name, factor"),
-                   Parameter('str5', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str5', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Local transform name,dX,dY,dZ,rX,rY,rZ,Scale"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_GXF',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_GXF',
                              doc="Maximum length of all strings")
                ]),
 
@@ -886,9 +886,9 @@ gx_methods = {
                              doc=":class:`IPJ` object"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`IPJ_NAME`"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -944,9 +944,9 @@ gx_methods = {
                parameters = [
                    Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Maximum name size")
                ]),
 
@@ -958,9 +958,9 @@ gx_methods = {
                    Parameter('ipj', type="IPJ"),
                    Parameter('scale', type=Type.DOUBLE, is_ref=True,
                              doc="Factor to meters"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Abbreviation"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of string")
                ]),
 
@@ -1178,9 +1178,9 @@ gx_methods = {
                              doc="Factor to meters"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`IPJ_UNIT`"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc='Name returned, "" if cannot find unit'),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of string")
                ]),
 
@@ -1731,7 +1731,7 @@ gx_methods = {
                              doc=":class:`IPJ` object"),
                    Parameter('parm', type=Type.INT32_T,
                              doc=":def:`IPJ_CSP`"),
-                   Parameter('parm', type=Type.DOUBLE,
+                   Parameter('parm_value', type=Type.DOUBLE,
                              doc="Parameter value")
                ]),
 

@@ -94,7 +94,7 @@ gx_methods = {
                              doc=":class:`FFT` to filter"),
                    Parameter('clen', type=Type.DOUBLE,
                              doc="Central cutoff wavelength (meter)"),
-                   Parameter('pass', type=Type.INT32_T,
+                   Parameter('filter_type', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter")
                ]),
 

@@ -389,7 +389,7 @@ gx_methods = {
                              doc="New fid start"),
                    Parameter('incr', type=Type.DOUBLE,
                              doc="New fid increment"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="New length")
                ]),
 

@@ -58,9 +58,9 @@ gx_methods = {
                doc="Gets the current Geostring File Geodatabase.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Name returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="String size")
                ]),
 

@@ -108,7 +108,7 @@ gx_methods = {
                parameters = [
                    Parameter('mstk', type="MSTK",
                              doc="hMSTK"),
-                   Parameter('in', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="Input string (see notes above). Will be modified on return"),
                    Parameter('index', type=Type.INT32_T, is_ref=True,
                              doc="Index to the :class:`STK` found, Must be greater than 0 if found, -1 if not found"),
@@ -158,7 +158,7 @@ gx_methods = {
                parameters = [
                    Parameter('mstk', type="MSTK",
                              doc="hMSTK"),
-                   Parameter('in', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="Input string (see notes above). Will be modified on return"),
                    Parameter('index', type=Type.INT32_T, is_ref=True,
                              doc="Index to the :class:`STK` found, Must be greater than 0 if found, -1 if not found"),

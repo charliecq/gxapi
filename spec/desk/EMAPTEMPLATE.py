@@ -555,9 +555,9 @@ gx_methods = {
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object"),
-                   Parameter('snap', type=Type.INT32_T, is_ref=True,
+                   Parameter('snap_to_grid', type=Type.INT32_T, is_ref=True,
                              doc=":def:`GEO_BOOL` Snap to grid"),
-                   Parameter('snap', type=Type.DOUBLE, is_ref=True,
+                   Parameter('snap_dist', type=Type.DOUBLE, is_ref=True,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T, is_ref=True,
                              doc="View Grid"),
@@ -614,9 +614,9 @@ gx_methods = {
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object"),
-                   Parameter('snap', type=Type.INT32_T,
+                   Parameter('snap_to_grid', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` Snap to grid"),
-                   Parameter('snap', type=Type.DOUBLE,
+                   Parameter('snap_dist', type=Type.DOUBLE,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T,
                              doc="View Grid"),

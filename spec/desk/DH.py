@@ -961,11 +961,11 @@ gx_methods = {
                              doc="File name (.pdb folder for File Geodatabase or .sde connector for SDE)"),
                    Parameter('pre', type=Type.STRING,
                              doc="String to prefix dataset names with"),
-                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='p6',
+                   Parameter('feat_class', type=Type.STRING, is_ref=True, size_of_param='feat_class_size',
                              doc="Feature class name to export (pass empty for all or name of table, will contain the name of the output dataset for if a rename occurs)"),
-                   Parameter('p6', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('feat_class_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Feature class name string size"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('overwrite', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` Overwrite existing feature classes? Pass :def_val:`GS_FALSE` to create copies.")
                ]),
 
@@ -1269,9 +1269,9 @@ gx_methods = {
                              doc="Project name"),
                    Parameter('chan', type=Type.INT32_T,
                              doc="Number of channels"),
-                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db_size',
                              doc="Collar table name (returned)"),
-                   Parameter('db', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('db_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for collar table name")
                ]),
 
@@ -1291,9 +1291,9 @@ gx_methods = {
                              doc="Directory to create project in"),
                    Parameter('chan', type=Type.INT32_T,
                              doc="Number of channels"),
-                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db_size',
                              doc="Collar table name (returned)"),
-                   Parameter('db', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('db_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for collar table name")
                ]),
 
@@ -1334,9 +1334,9 @@ gx_methods = {
                parameters = [
                    Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned file name"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for the file name")
                ]),
 
@@ -1369,9 +1369,9 @@ gx_methods = {
                parameters = [
                    Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
-                   Parameter('project', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('project', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Returned string"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for the project name")
                ]),
 
@@ -1447,13 +1447,13 @@ gx_methods = {
                              doc="Template name"),
                    Parameter('data_type', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_DATA`"),
-                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file_size',
                              doc="File name (blank for ODBC, or undefined)."),
-                   Parameter('file', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('file_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name buffer size"),
-                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table',
+                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table_size',
                              doc="Table name (blank for :def_val:`DH_DATA_UNKNOWN`, or undefined)."),
-                   Parameter('table', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('table_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Table name buffer size")
                ]),
 
@@ -1488,13 +1488,13 @@ gx_methods = {
                              doc="Template name"),
                    Parameter('data_type', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DH_DATA`"),
-                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file',
+                   Parameter('file', type=Type.STRING, is_ref=True, size_of_param='file_size',
                              doc="File name (blank for ODBC, or undefined)."),
-                   Parameter('file', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('file_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name buffer size"),
-                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table',
+                   Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table_size',
                              doc="Table name (blank for :def_val:`DH_DATA_UNKNOWN`, or undefined)."),
-                   Parameter('table', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('table_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Table name buffer size"),
                    Parameter('lst', type="LST",
                              doc="Channel list (returned)")
@@ -1527,9 +1527,9 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`GEO_BOOL`",
                parameters = [
-                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db',
+                   Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db_size',
                              doc="Collar table name (returned)"),
-                   Parameter('db', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('db_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for collar table name")
                ]),
 

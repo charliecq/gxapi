@@ -464,9 +464,9 @@ gx_methods = {
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database handle"),
-                   Parameter('mineral_ch', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('mineral_ch', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Mineral channel name"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size of the Buffer")
                ]),
 
@@ -494,13 +494,13 @@ gx_methods = {
                doc="Generate a template file for importing ODBC databases.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('connection', type=Type.STRING, is_ref=True, size_of_param='connection',
+                   Parameter('connection', type=Type.STRING, is_ref=True, size_of_param='connection_size',
                              doc="Connection string (input and returned)"),
-                   Parameter('connection', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('connection_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Connection string buffer size"),
-                   Parameter('temp', type=Type.STRING, is_ref=True, size_of_param='temp',
+                   Parameter('temp', type=Type.STRING, is_ref=True, size_of_param='temp_size',
                              doc="Template file (returned)"),
-                   Parameter('temp', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('temp_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Templage file buffer size")
                ]),
 

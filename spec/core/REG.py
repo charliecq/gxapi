@@ -166,9 +166,9 @@ gx_methods = {
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('parm', type=Type.STRING,
                              doc="String to Replace"),
-                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Output Buffer"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Output Buffer")
                ]),
 

@@ -153,7 +153,7 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('global', type=Type.INT32_T,
+                   Parameter('hglobal', type=Type.INT32_T,
                              doc="Handle to Global Clipboard data")
                ]),
 
@@ -324,9 +324,9 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('snap', type=Type.INT32_T, is_ref=True,
+                   Parameter('snap_to_grid', type=Type.INT32_T, is_ref=True,
                              doc=":def:`GEO_BOOL` Snap to grid"),
-                   Parameter('snap', type=Type.DOUBLE, is_ref=True,
+                   Parameter('snap_dist', type=Type.DOUBLE, is_ref=True,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T, is_ref=True,
                              doc="View Grid"),
@@ -394,9 +394,9 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('snap', type=Type.INT32_T,
+                   Parameter('snap_to_grid', type=Type.INT32_T,
                              doc=":def:`GEO_BOOL` Snap to grid"),
-                   Parameter('snap', type=Type.DOUBLE,
+                   Parameter('snap_dist', type=Type.DOUBLE,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T,
                              doc="View Grid"),
@@ -601,9 +601,9 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('group', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('group', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned group name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VIEW_GROUP',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VIEW_GROUP',
                              doc="Length of the name string passed in")
                ]),
 
@@ -615,9 +615,9 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('view', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('view', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned view name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VIEW',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="Length of the name string passed in")
                ]),
 
@@ -1700,9 +1700,9 @@ gx_methods = {
                doc="Version of :func:`Load_EMAP` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map_file', type=Type.STRING,
                              doc="Map filename"),
-                   Parameter('p2', type="HWND", is_val=True,
+                   Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ]),
 
@@ -1711,11 +1711,11 @@ gx_methods = {
                doc="Version of :func:`LoadWithView_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('map_file', type=Type.STRING,
                              doc="Map filename"),
-                   Parameter('p2', type="EMAP",
+                   Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` handle to use as the source view"),
-                   Parameter('p3', type="HWND", is_val=True,
+                   Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ])
     ],

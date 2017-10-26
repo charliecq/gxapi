@@ -471,7 +471,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('const', type="DB_SYMB",
+                   Parameter('line_symb', type="DB_SYMB",
                              doc="Line symbol to goto to")
                ]),
 
@@ -510,7 +510,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('const', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` (INT) in which to place the list.")
                ]),
 
@@ -541,7 +541,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('const', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` (INT) in which to place the list.")
                ]),
 
@@ -564,7 +564,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('const', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object")
                ]),
 
@@ -590,9 +590,9 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('const', type="LST",
+                   Parameter('lst', type="LST",
                              doc=":class:`LST` object"),
-                   Parameter('db_symb*', type=Type.STRING,
+                   Parameter('class_name', type=Type.STRING,
                              doc='Class name ("" for all)')
                ]),
 
@@ -625,13 +625,13 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` Object"),
-                   Parameter('const', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X - Modified with true point"),
-                   Parameter('db_symb*', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y - Modified with true point"),
-                   Parameter('ph_symb', type=Type.DOUBLE, is_ref=True,
+                   Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Z - Modified with true point"),
-                   Parameter('p5', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection of X,Y,Z")
                ]),
 
@@ -1083,7 +1083,7 @@ gx_methods = {
                              doc="Name of database to load"),
                    Parameter('login', type=Type.STRING,
                              doc="Login Name"),
-                   Parameter('pass', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc="Password")
                ]),
 
@@ -1277,7 +1277,7 @@ gx_methods = {
                              doc="Minimum x, :def_val:`rDUMMY` for data minimum"),
                    Parameter('max_x', type=Type.DOUBLE,
                              doc="Maximum x, :def_val:`rDUMMY` for data maximum"),
-                   Parameter('const', type="DB_SYMB",
+                   Parameter('x_ch', type="DB_SYMB",
                              doc="X axis channel, :def_val:`NULLSYMB` to use fids")
                ]),
 
@@ -1295,11 +1295,11 @@ gx_methods = {
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('max_x', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
-                   Parameter('const', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Minimum y"),
-                   Parameter('db_symb*', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Maximum y"),
-                   Parameter('ph_chan_x', type=Type.INT32_T,
+                   Parameter('scl', type=Type.INT32_T,
                              doc=":def:`EDB_PROFILE_SCALE`")
                ]),
 
@@ -1382,7 +1382,7 @@ gx_methods = {
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
                              doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
-                   Parameter('const', type="DB_SYMB",
+                   Parameter('symb', type="DB_SYMB",
                              doc="Channel symbol")
                ]),
 
@@ -1482,7 +1482,7 @@ gx_methods = {
                doc="Version of :func:`Load_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('edb', type=Type.STRING,
+                   Parameter('db_file', type=Type.STRING,
                              doc="Database filename"),
                    Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
@@ -1493,7 +1493,7 @@ gx_methods = {
                doc="Version of :func:`LoadNew_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('edb', type=Type.STRING,
+                   Parameter('db_file', type=Type.STRING,
                              doc="Database filename"),
                    Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
@@ -1504,13 +1504,13 @@ gx_methods = {
                doc="Version of :func:`LoadPass_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('edb', type=Type.STRING,
+                   Parameter('db_file', type=Type.STRING,
                              doc="Database filename"),
-                   Parameter('window', type=Type.STRING,
+                   Parameter('user', type=Type.STRING,
                              doc="Login name"),
-                   Parameter('const', type=Type.STRING,
+                   Parameter('password', type=Type.STRING,
                              doc="Password"),
-                   Parameter('db_symb*', type="HWND", is_val=True,
+                   Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ]),
 
@@ -1519,11 +1519,11 @@ gx_methods = {
                doc="Version of :func:`LoadWithView_EDB` that can be used to load a database via subclassing into a Windows control.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('edb', type=Type.STRING,
+                   Parameter('db_file', type=Type.STRING,
                              doc="Database filename"),
-                   Parameter('window', type="EDB",
+                   Parameter('edb', type="EDB",
                              doc=":class:`EDB` handle to use as the source view"),
-                   Parameter('const', type="HWND", is_val=True,
+                   Parameter('window', type="HWND", is_val=True,
                              doc="Window handle to receive document")
                ])
     ],
@@ -1622,9 +1622,9 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('window', type="DB_SYMB",
+                   Parameter('line_group', type="DB_SYMB",
                              doc="Line or group symbol"),
-                   Parameter('const', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` (returned)")
                ]),
 
@@ -1645,9 +1645,9 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` object"),
-                   Parameter('window', type="DB_SYMB",
+                   Parameter('line_group', type="DB_SYMB",
                              doc="Line or group symbol"),
-                   Parameter('const', type="BF",
+                   Parameter('bf', type="BF",
                              doc=":class:`BF` (input)")
                ]),
 
@@ -1667,13 +1667,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('edb', type="EDB"),
-                   Parameter('window', type=Type.INT32_T,
+                   Parameter('x_min', type=Type.INT32_T,
                              doc="X Min"),
-                   Parameter('const', type=Type.INT32_T,
+                   Parameter('y_min', type=Type.INT32_T,
                              doc="Y Min"),
-                   Parameter('db_symb*', type=Type.INT32_T,
+                   Parameter('x_max', type=Type.INT32_T,
                              doc="X Max"),
-                   Parameter('ph_chan', type=Type.INT32_T,
+                   Parameter('y_max', type=Type.INT32_T,
                              doc="Y Max")
                ]),
 

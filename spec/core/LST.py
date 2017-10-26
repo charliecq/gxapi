@@ -255,9 +255,9 @@ gx_methods = {
                              doc=":class:`LST` Handle"),
                    Parameter('item', type=Type.INT32_T,
                              doc="Item number to get"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to Place Symbol name into"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Size of the buffer"),
                    Parameter('symb', type="DB_SYMB", is_ref=True,
                              doc="Symbol handle")
@@ -274,9 +274,9 @@ gx_methods = {
                parameters = [
                    Parameter('lst', type="LST",
                              doc=":class:`LST` to get items from"),
-                   Parameter('buff', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('buff', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to add items to"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of buffer")
                ]),
 

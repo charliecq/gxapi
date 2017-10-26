@@ -32,9 +32,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('maptemplate', type="MAPTEMPLATE"),
-                   Parameter('tmp', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('tmp', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned temporary map template file name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of file name string")
                ]),
 
@@ -107,9 +107,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('maptemplate', type="MAPTEMPLATE"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Returned map template file name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of file name string")
                ])
     ],

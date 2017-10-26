@@ -986,7 +986,7 @@ gx_methods = {
                              doc="New fid start"),
                    Parameter('incr', type=Type.DOUBLE,
                              doc="New fid increment"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="New length")
                ]),
 
@@ -1020,7 +1020,7 @@ gx_methods = {
                              doc="New fid start"),
                    Parameter('n_incr', type=Type.DOUBLE,
                              doc="New fid increment"),
-                   Parameter('len', type=Type.INT32_T,
+                   Parameter('length', type=Type.INT32_T,
                              doc="New length"),
                    Parameter('extr', type=Type.INT32_T,
                              doc="Extrapolate Endpoints (0 - No, 1 - Yes)")

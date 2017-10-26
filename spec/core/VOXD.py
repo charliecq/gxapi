@@ -150,9 +150,9 @@ gx_methods = {
                parameters = [
                    Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` handle"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="File name returned"),
-                   Parameter('buff', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name string size")
                ]),
 

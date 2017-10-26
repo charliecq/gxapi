@@ -72,9 +72,9 @@ gx_methods = {
                              doc=":class:`GER` Object"),
                    Parameter('num', type=Type.INT32_T,
                              doc="Message number"),
-                   Parameter('message', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('message', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Message string returned, replacements filtered"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum string length")
                ]),
 

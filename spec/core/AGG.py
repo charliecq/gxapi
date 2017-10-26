@@ -169,9 +169,9 @@ gx_methods = {
                parameters = [
                    Parameter('agg', type="AGG"),
                    Parameter('pic', type="PIC"),
-                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="Temp File name"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('length', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Max Temp File name length")
                ]),
 
