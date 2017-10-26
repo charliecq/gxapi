@@ -22,7 +22,6 @@ def convert_camel_case(name):
 
 funclookup = defaultdict(list)
 
-
 gxx_files = glob.glob('e:/ggit/t/core/**/gxx_*.c', recursive=True)
 gxx_files.extend(glob.glob('e:/ggit/t/core/**/gxx_*.cpp', recursive=True))
 gxx_files.extend(glob.glob('e:/ggit/t/desk/**/gxx_*.c', recursive=True))
@@ -33,13 +32,22 @@ for gxx_file in gxx_files:
          gxx_source = f.read()
 
     funcs = [' '.join(rec.sub('', match[0]).split())
-                .replace('const double* ','')
-                .replace('const char* ','')
-                .replace('const long* ','')
-                .replace('long* ','')
-                .replace('double* ','')
-                .replace('char* ','')
-                .replace('H_GXX* hGXX, ','')
+                .replace('const double*','')
+                .replace('const char*','')
+                .replace('const long*','')
+                .replace('const double *','')
+                .replace('const char *','')
+                .replace('const long *','')
+                .replace('long*','')
+                .replace('double*','')
+                .replace('char*','')
+                .replace('long *','')
+                .replace('double *','')
+                .replace('char *','')
+                .replace('H_GXX* hGXX','')
+                .replace('H_GXX *hGXX','')
+                .replace('H_GXX *','')
+                .replace('H_GXX*','')
                 .replace('GS_EXPDLL ','')
                 .replace('(',' ')
                 .replace(')','')
@@ -53,6 +61,8 @@ for gxx_file in gxx_files:
         params = ['val' if (p == 'pl' or p == 'pd') and 'val' not in params else p for p in params]
         params = ['str_val' if (p == 'pc' or p == 'sz' or p == 'str' or p == 'string') and 'str_val' not in params else p for p in params]
         params = ['_{}'.format(p) if p[0] >= '0' and p[0] <= '9' else p for p in params]
+        params = ['lda' if p == 'lambda' and 'lda' not in params else p for p in params]
+        
         funclookup[f[0]] = params
 
 
@@ -69,7 +79,7 @@ for file in spec_files:
 for func, params in funclookup.items():
     cl = func[func.rfind('_')+1:]
     if len(params) > 0 and cl in sources.keys():
-        method_re = "(\(\'{}\'[^\[]*\[.*\s)(.*Parameter\(\')(p{})((?:.*\n)*?(?:.*\),?\n))".format(func, 1)
+        method_re = "(\(\'{}\'[^\[]*?\[.*\s)(.*Parameter\(\')(p{})((?:.*\n)*?(?:.*\),?\n))".format(func, 1)
         replace_str = r'\1\2{}\4'.format(params[0])
         group_pos = 5
         for i in range(1, len(params)):
