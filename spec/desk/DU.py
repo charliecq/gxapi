@@ -694,7 +694,7 @@ gx_methods = {
                              doc="Line to be broken up [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel containing line numbers [:def_val:`DB_LOCK_READONLY`]"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc='Class name for new group lines (can be "")')
                ]),
 
@@ -710,7 +710,7 @@ gx_methods = {
                              doc="Line to be broken up [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel containing line numbers [:def_val:`DB_LOCK_READONLY`]"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc='Class name for new group lines (can be "")'),
                    Parameter('reset_fi_ds', type=Type.INT32_T,
                              doc="Reset starting fiducials to zero (0: No, 1: Yes)")

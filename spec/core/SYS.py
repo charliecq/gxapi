@@ -1714,7 +1714,7 @@ gx_methods = {
                0 - Not licenced
                """,
                parameters = [
-                   Parameter('class', type=Type.INT32_T,
+                   Parameter('cl', type=Type.INT32_T,
                              doc="Intrinsic Class Number"),
                    Parameter('name', type=Type.STRING,
                              doc="Intrinsic Name (must be exact)")
@@ -1739,7 +1739,7 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('class', type=Type.STRING, is_ref=True, size_of_param='class_size',
+                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='class_size',
                              doc="Class String"),
                    Parameter('class_size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Size of Class String")
@@ -2077,7 +2077,7 @@ gx_methods = {
                doc="Send a general information message to all listners",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc="Message Class"),
                    Parameter('info', type=Type.STRING,
                              doc="Message Info")

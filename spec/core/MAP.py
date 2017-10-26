@@ -593,7 +593,7 @@ gx_methods = {
                parameters = [
                    Parameter('map', type="MAP",
                              doc=":class:`MAP` handle"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc="Class"),
                    Parameter('name', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Name"),
@@ -774,7 +774,7 @@ gx_methods = {
                parameters = [
                    Parameter('map', type="MAP",
                              doc=":class:`MAP` handle"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc="Class"),
                    Parameter('name', type=Type.STRING,
                              doc="Name")

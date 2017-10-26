@@ -577,7 +577,7 @@ gx_methods = {
                              doc="Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('class', type=Type.STRING, is_ref=True, size_of_param='len',
+                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='len',
                              doc="Returned class into"),
                    Parameter('len', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Size of string")
@@ -1018,7 +1018,7 @@ gx_methods = {
                              doc="Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel handle"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc="Class")
                ]),
 
@@ -2398,7 +2398,7 @@ gx_methods = {
                              doc="hDB - Database Object"),
                    Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc='CLASS name for the channel ("" for all)')
                ]),
 
@@ -2419,7 +2419,7 @@ gx_methods = {
                              doc="hDB - Database Object"),
                    Parameter('lst', type="LST",
                              doc=":class:`LST` object to populate"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc='CLASS name for the group ("" for all)')
                ]),
 
@@ -2721,7 +2721,7 @@ gx_methods = {
                              doc="Database"),
                    Parameter('vv', type="VV",
                              doc=":class:`VV` to populate, must be type INT."),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc='Class name to match ("" for all)')
                ]),
 
@@ -3198,7 +3198,7 @@ gx_methods = {
                              doc="hDB - Shared Database"),
                    Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc="Class name of groups to associate the channel with. (Must be defined).")
                ]),
 
@@ -3341,7 +3341,7 @@ gx_methods = {
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
                              doc="Group line - :def_val:`DB_LOCK_READWRITE` or :def_val:`DB_LOCK_READONLY`"),
-                   Parameter('class', type=Type.STRING, is_ref=True, size_of_param='buff',
+                   Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='buff',
                              doc="Returned class name - max size = :def_val:`DB_GROUP_CLASS_SIZE` - 1"),
                    Parameter('buff', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Buffer size")
@@ -3479,7 +3479,7 @@ gx_methods = {
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
                              doc="Group line - :def_val:`DB_LOCK_READWRITE`"),
-                   Parameter('class', type=Type.STRING,
+                   Parameter('cl', type=Type.STRING,
                              doc=":def_val:`DB_GROUP_CLASS_SIZE`")
                ]),
 
