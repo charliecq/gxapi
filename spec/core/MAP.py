@@ -271,7 +271,7 @@ gx_methods = {
                              doc="MaxY"),
                    Parameter('file', type=Type.STRING,
                              doc="File to generate (BMP or PNG, otherwise extension forced to BMP)"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('max_res', type=Type.INT32_T,
                              doc="Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)")
                ])
     ],

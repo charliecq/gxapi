@@ -94,9 +94,9 @@ gx_methods = {
                    Parameter('vm', type="VM"),
                    Parameter('element', type=Type.INT32_T,
                              doc="Element wanted"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='strsize',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='str_size',
                              doc="String in which to place element"),
-                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('str_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string")
                ]),
 

@@ -53,9 +53,9 @@ gx_methods = {
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="Data source (file)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('info', type=Type.STRING,
                              doc="Data qualifying information if required."),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GIS_TYPE`")
                ]),
 

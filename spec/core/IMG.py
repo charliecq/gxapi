@@ -148,11 +148,11 @@ gx_methods = {
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc="Data type :def:`GS_TYPES`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('kx', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Grid width"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('height', type=Type.INT32_T,
                              doc="Grid height")
                ]),
 
@@ -170,9 +170,9 @@ gx_methods = {
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT` to use native :class:`DAT` type."),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Name of the Grid to link to"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('mode', type=Type.INT32_T,
                              doc="Grid file open mode :def:`IMG_FILE`")
                ]),
 
@@ -185,11 +185,11 @@ gx_methods = {
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('kx', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Grid width"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('height', type=Type.INT32_T,
                              doc="Grid height")
                ]),
 
@@ -215,13 +215,13 @@ gx_methods = {
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` Cannot be :def_val:`GS_TYPE_DEFAULT`"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('kx', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('width', type=Type.INT32_T,
                              doc="Grid width"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('height', type=Type.INT32_T,
                              doc="Grid height"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Name of the Grid to link to")
                ]),
 
@@ -239,9 +239,9 @@ gx_methods = {
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT`"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('grid', type=Type.STRING,
                              doc="Name of the Grid to link to"),
-                   Parameter('p3', type="IMG",
+                   Parameter('img', type="IMG",
                              doc="Input Image for new image creation")
                ]),
 
@@ -660,9 +660,9 @@ gx_methods = {
                              doc="Vector to Read"),
                    Parameter('be', type=Type.INT32_T,
                              doc="Begining element # to read (0 is the first)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ne', type=Type.INT32_T,
                              doc="# elements to read (0 for whole vector)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle")
                ]),
 
@@ -675,11 +675,11 @@ gx_methods = {
                              doc=":class:`IMG` handle"),
                    Parameter('bx', type=Type.INT32_T,
                              doc="X column"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('by', type=Type.INT32_T,
                              doc="Start Y to read"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ny', type=Type.INT32_T,
                              doc="# Y to read (0 for whole vector)"),
-                   Parameter('p5', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('ReadY_IMG', module='geoengine.core', version='5.0.0',
@@ -691,11 +691,11 @@ gx_methods = {
                              doc=":class:`IMG` handle"),
                    Parameter('by', type=Type.INT32_T,
                              doc="Y row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('bx', type=Type.INT32_T,
                              doc="Start X to read"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('nx', type=Type.INT32_T,
                              doc="# X to read (0 for whole vector)"),
-                   Parameter('p5', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('RefreshGI_IMG', module='geoengine.core', version='7.0.0',
@@ -893,9 +893,9 @@ gx_methods = {
                              doc="Vector to write"),
                    Parameter('be', type=Type.INT32_T,
                              doc="Begining element to write (0 is the first)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ne', type=Type.INT32_T,
                              doc="# elements to write (0 for whole vector)"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` handle")
                ]),
 
@@ -908,11 +908,11 @@ gx_methods = {
                              doc=":class:`IMG` handle"),
                    Parameter('bx', type=Type.INT32_T,
                              doc="X column"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('by', type=Type.INT32_T,
                              doc="Start Y to write"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('ny', type=Type.INT32_T,
                              doc="# Y to write (0 for whole vector)"),
-                   Parameter('p5', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('WriteY_IMG', module='geoengine.core', version='5.0.0',
@@ -924,11 +924,11 @@ gx_methods = {
                              doc=":class:`IMG` handle"),
                    Parameter('by', type=Type.INT32_T,
                              doc="Y row"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('bx', type=Type.INT32_T,
                              doc="Start X to write"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('nx', type=Type.INT32_T,
                              doc="# X write (0 for whole vector)"),
-                   Parameter('p5', type="VV")
+                   Parameter('vv', type="VV")
                ]),
 
         Method('SetRealParameter_IMG', module='geoengine.core', version='8.2.0',

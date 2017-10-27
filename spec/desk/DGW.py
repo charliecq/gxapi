@@ -113,7 +113,7 @@ gx_methods = {
                    Parameter('meta', type="META"),
                    Parameter('meta_obj', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('meta_attrib*', type="META_TOKEN",
+                   Parameter('meta_attrib', type="META_TOKEN",
                              doc="Attribute")
                ]),
 
@@ -214,7 +214,7 @@ gx_methods = {
                    Parameter('meta', type="META"),
                    Parameter('meta_obj', type="META_TOKEN",
                              doc="Object"),
-                   Parameter('meta_attrib*', type="META_TOKEN",
+                   Parameter('meta_attrib', type="META_TOKEN",
                              doc="Attribute")
                ]),
 

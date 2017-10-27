@@ -440,7 +440,7 @@ gx_methods = {
                              doc=":class:`META` Object."),
                    Parameter('name', type=Type.STRING,
                              doc="Unique item Name"),
-                   Parameter('p3', type="META_TOKEN",
+                   Parameter('ph_class', type="META_TOKEN",
                              doc="Class (can be root)")
                ]),
 

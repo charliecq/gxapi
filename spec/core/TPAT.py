@@ -185,13 +185,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="TPAT",
+                   Parameter('tpat', type="TPAT",
                              doc=":class:`TPAT` Handle"),
-                   Parameter('p2', type="LTB",
+                   Parameter('ltb', type="LTB",
                              doc="Table containing :class:`TPAT` codes as the key"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('field', type=Type.INT32_T,
                              doc="Field in :class:`LTB` with the output values (numeric or string)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv_values', type="VV",
                              doc="Returned values for each :class:`TPAT` index")
                ])
     ]

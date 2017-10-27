@@ -99,7 +99,7 @@ gx_methods = {
                parameters = [
                    Parameter('num', type=Type.INT32_T,
                              doc="Initial number of objects (may be 0)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Optional name of parent layout (may be empty)")
                ]),
 
@@ -121,13 +121,13 @@ gx_methods = {
                              doc=":class:`LAYOUT` Object"),
                    Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to get info for (-1 for parent)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Rectangle Min X"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Rectangle Min Y"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Rectangle Max X"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Rectangle Max Y")
                ]),
 
@@ -140,9 +140,9 @@ gx_methods = {
                              doc=":class:`LAYOUT` Object"),
                    Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to get info for (-1 for parent)"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer for name of the rectangle"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Buffer")
                ]),
 
@@ -192,15 +192,15 @@ gx_methods = {
                              doc=":class:`LAYOUT` Object"),
                    Parameter('rect_from', type=Type.INT32_T,
                              doc="From rectangle (Or -1 for parent)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('constr_from', type=Type.INT32_T,
                              doc=":def:`LAYOUT_CONSTR` From constraint flag"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('rect_to', type=Type.INT32_T,
                              doc="To rectangle (Or -1 for parent Or -2 for absolute positioning)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('constr_to', type=Type.INT32_T,
                              doc=":def:`LAYOUT_CONSTR` To constraint flag"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('o_mod', type=Type.DOUBLE,
                              doc="Offset modifier"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('m_mod', type=Type.DOUBLE,
                              doc="Multiplicative modifier")
                ]),
 
@@ -241,13 +241,13 @@ gx_methods = {
                              doc=":class:`LAYOUT` Object"),
                    Parameter('rect', type=Type.INT32_T,
                              doc="Rectangle to set info for (-1 for parent)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min_x', type=Type.DOUBLE,
                              doc="Rectangle Min X"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_y', type=Type.DOUBLE,
                              doc="Rectangle Min Y"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('max_x', type=Type.DOUBLE,
                              doc="Rectangle Max X"),
-                   Parameter('p6', type=Type.DOUBLE,
+                   Parameter('max_y', type=Type.DOUBLE,
                              doc="Rectangle Max Y")
                ]),
 

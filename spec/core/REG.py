@@ -83,9 +83,9 @@ gx_methods = {
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String to get"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of destination string")
                ]),
 
@@ -99,7 +99,7 @@ gx_methods = {
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('data', type=Type.INT32_T, is_ref=True,
                              doc="Int to get")
                ]),
 
@@ -132,7 +132,7 @@ gx_methods = {
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('data', type=Type.DOUBLE, is_ref=True,
                              doc="Real to get")
                ]),
 
@@ -229,7 +229,7 @@ gx_methods = {
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="String to set it to An empty string sets the setting to an empty string, but does NOT remove the parameter from the :class:`REG`.")
                ]),
 
@@ -242,7 +242,7 @@ gx_methods = {
                              doc="Handle to :class:`REG` object (stores control parameters)"),
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('data', type=Type.INT32_T,
                              doc="Int to set, :def_val:`iDUMMY` to remove the parameter")
                ]),
 

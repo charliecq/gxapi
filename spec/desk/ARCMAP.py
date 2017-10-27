@@ -50,7 +50,7 @@ gx_methods = {
                parameters = [
                    Parameter('x', type=Type.DOUBLE,
                              doc="X Size (mm)"),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('y', type=Type.DOUBLE,
                              doc="Y Size (mm)")
                ]),
 
@@ -248,7 +248,7 @@ gx_methods = {
                              doc="Fit to map size; one of :def:`GEO_BOOL`"),
                    Parameter('activate', type=Type.INT32_T,
                              doc="Activate view (3D); one of :def:`GEO_BOOL`"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('prefix', type=Type.INT32_T,
                              doc="Layer name tag is prefix; one of :def:`GEO_BOOL`")
                ]),
 
@@ -328,7 +328,7 @@ gx_methods = {
                parameters = [
                    Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="X Size (mm)"),
-                   Parameter('p2', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y', type=Type.DOUBLE, is_ref=True,
                              doc="Y Size (mm)")
                ]),
 

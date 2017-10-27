@@ -476,9 +476,9 @@ gx_methods = {
                              doc="Minimum percentage to expand the grid by"),
                    Parameter('shape', type=Type.INT32_T,
                              doc=":def:`IMU_EXPAND_SHAPE`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('x', type=Type.INT32_T,
                              doc="X Dimension the output grid is expanded to"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('y', type=Type.INT32_T,
                              doc="Y Dimension the output grid is expanded to")
                ]),
 
@@ -638,11 +638,11 @@ gx_methods = {
                              doc="Grid file name"),
                    Parameter('nlmt', type=Type.INT32_T,
                              doc="Peak test directions (1 to 4)"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X of found peaks"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y of found peaks"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z values of found peaks")
                ]),
 
@@ -847,7 +847,7 @@ gx_methods = {
                    Parameter('base', type=Type.DOUBLE, is_ref=True,
                              doc="Base removed"),
                    Parameter('mult', type=Type.DOUBLE, is_ref=True,
-                             doc="Grid multiplier")
+                             doc="Grid multiplier"),
                    Parameter('comp', type=Type.DOUBLE, is_ref=True,
                              doc="Compression Ratio")
                ]),
@@ -882,7 +882,7 @@ gx_methods = {
 
         Method('GridStatTrend_IMU', module='geoengine.core', version='5.0.0',
                availability=Availability.LICENSED, 
-               doc="Reports Trend Info of a grid (for first order coef only).",
+               doc="Reports Trend Info of a grid (for first order coefficients only).",
                notes="Trend Info are returned in the parameter set",
                return_type=Type.VOID,
                parameters = [
@@ -891,16 +891,16 @@ gx_methods = {
                    Parameter('trend_valid', type=Type.INT32_T, is_ref=True,
                              doc="Trend Valid Flag"),
                    Parameter('co', type=Type.DOUBLE, is_ref=True,
-                             doc="Trend Coeff rCo"),
+                             doc="Trend coefficient rCo"),
                    Parameter('cx', type=Type.DOUBLE, is_ref=True,
-                             doc="Trend Coeff rCx"),
+                             doc="Trend coefficient rCx"),
                    Parameter('cy', type=Type.DOUBLE, is_ref=True,
-                             doc="Trend Coeff rCy")
+                             doc="Trend coefficient rCy")
                ]),
 
         Method('GridStatTrendExt_IMU', module='geoengine.core', version='5.0.0',
                availability=Availability.LICENSED, 
-               doc="Reports Extended Trend Info of a grid (for upto third order coef).",
+               doc="Reports Extended Trend Info of a grid (for up to third order coefficients).",
                notes="Trend Info are returned in the parameter set",
                return_type=Type.VOID,
                parameters = [
@@ -922,7 +922,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Return the standard deviation of the slopes.",
                notes="""
-               This method calculates the standard dev. of the horizontal
+               This method calculates the standard deviation of the horizontal
                differences in the X and Y directions for the supplied
                image.  This is useful for shading routines.  A good
                default scaling factor is 2.5 / standard deviation.
@@ -932,7 +932,7 @@ gx_methods = {
                The cell sizes are used to determine the slopes.
                """,
                return_type=Type.DOUBLE,
-               return_doc="Standard devation of grid slopes",
+               return_doc="Standard deviation of grid slopes",
                parameters = [
                    Parameter('img', type="IMG",
                              doc="Grid object")
@@ -1046,11 +1046,11 @@ gx_methods = {
                              doc="0-calculate, 1-given, 2-replace"),
                    Parameter('edge', type=Type.INT32_T,
                              doc=":def:`IMU_TREND`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('order', type=Type.INT32_T,
                              doc="Trend order"),
-                   Parameter('p6', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` holds coefficients"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('num_coefs', type=Type.INT32_T,
                              doc="Number of coefficients")
                ]),
 
@@ -1257,11 +1257,11 @@ gx_methods = {
                parameters = [
                    Parameter('grids', type=Type.STRING,
                              doc="Image names ('|' separated)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc='Output image name ("" for a memory only image)'),
-                   Parameter('p3', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc="Projection to use (0 to use the first grid's projection)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('cell', type=Type.DOUBLE,
                              doc="Cell size to use (rDummy to use first grid)")
                ]),
 
@@ -1291,9 +1291,9 @@ gx_methods = {
                              doc="Peaks' Y"),
                    Parameter('max', type=Type.INT32_T,
                              doc="Maximum target diameter (window) in # of cells"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('prec', type=Type.DOUBLE,
                              doc="Precision factor (see note above)"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Returned peak (anomaly) sizes in data units")
                ]),
 
@@ -1324,7 +1324,7 @@ gx_methods = {
                              doc="Peaks' Y"),
                    Parameter('max', type=Type.INT32_T,
                              doc="Maximum target diameter (window) in # of cells"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Returned peak (anomaly) sizes in data units")
                ]),
 

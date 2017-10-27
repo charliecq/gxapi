@@ -35,13 +35,13 @@ gx_methods = {
                              doc="Data Channel"),
                    Parameter('vv_xm', type="VV",
                              doc="X MaxMin (returned)"),
-                   Parameter('p5', type="VV",
+                   Parameter('v_vym', type="VV",
                              doc="Y MaxMin (returned)"),
-                   Parameter('p6', type="VV",
+                   Parameter('v_vzm', type="VV",
                              doc="Data MaxMin (returned)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('window', type=Type.DOUBLE,
                              doc="MaxMin Window"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('trnd', type=Type.INT32_T,
                              doc=":def:`TRND_NODE`")
                ]),
 

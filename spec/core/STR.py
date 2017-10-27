@@ -438,13 +438,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('istr', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('istr', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Destination String"),
                    Parameter('old', type=Type.STRING,
                              doc="Match string to replace"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('new', type=Type.STRING,
                              doc="Replacement string"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Destination String")
                ]),
 
@@ -458,13 +458,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('istr', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('istr', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Destination String"),
                    Parameter('old', type=Type.STRING,
                              doc="Match string to replace"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('new', type=Type.STRING,
                              doc="Replacement string"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Destination String")
                ]),
 
@@ -473,11 +473,11 @@ gx_methods = {
                doc="Set the n'th character of a string using an ASCII value",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='max',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String"),
                    Parameter('c', type=Type.INT32_T,
                              doc="Character to set"),
-                   Parameter('max', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum string length"),
                    Parameter('ascii', type=Type.INT32_T,
                              doc="ASCII value")
@@ -921,13 +921,13 @@ gx_methods = {
                parameters = [
                    Parameter('istr1', type=Type.STRING,
                              doc="Input type string (static part)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('istr2', type=Type.STRING,
                              doc="Input db string"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('istr3', type=Type.STRING,
                              doc="Input ch string (could be 0 length)"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('ostr', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Output group name string"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_GROUP',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_GROUP',
                              doc="Output buffer lengths (maximum 32)")
                ])
     ],
@@ -1017,15 +1017,15 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="Number of tokens",
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True,
+                   Parameter('str_val', type=Type.STRING, is_ref=True,
                              doc=":class:`STR` - String containing token(s)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('soft', type=Type.STRING,
                              doc="szSoft - Soft delimiters (spaces/tabs)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('hard', type=Type.STRING,
                              doc="szHard - Hard delimiters (commas)"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('esc', type=Type.STRING,
                              doc="szEsc  - Escape delimiters (back-slash)"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('quote', type=Type.STRING,
                              doc="szQuote- Quote delimiters  (quote characters)")
                ]),
 

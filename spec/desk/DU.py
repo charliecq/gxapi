@@ -734,7 +734,7 @@ gx_methods = {
                              doc="Data error (Std Dev > 0.0)"),
                    Parameter('rou', type=Type.DOUBLE,
                              doc="Roughness (Rou > 0.0)"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('tau', type=Type.DOUBLE,
                              doc="Tension (0.<= Tension <=1.)")
                ]),
 
@@ -940,9 +940,9 @@ gx_methods = {
                              doc="Y channel [:def_val:`DB_LOCK_READONLY`]"),
                    Parameter('z_ch', type="DB_SYMB",
                              doc="Z channel [:def_val:`DB_LOCK_READONLY`] (can be :def_val:`NULLSYMB`)"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DU_DISTANCE_CHANNEL_TYPE`"),
-                   Parameter('p7', type="DB_SYMB",
+                   Parameter('o_ch', type="DB_SYMB",
                              doc="Output Distance channel [:def_val:`DB_LOCK_READWRITE`]")
                ]),
 
@@ -1090,21 +1090,21 @@ gx_methods = {
                              doc="AMIRA data file handle"),
                    Parameter('one_cols_ch', type=Type.STRING,
                              doc="Single column channel names, supporting comma (,) separated names of multiple channels, maximum 32 channels"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('array_ch', type=Type.STRING,
                              doc=":class:`VA` channel name, required"),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('time_ch', type=Type.STRING,
                              doc="Optional Time   channel name (must be :class:`VA` channel and same array size as above :class:`VA` channel)"),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('errors_ch', type=Type.STRING,
                              doc="Optional Errors channel name (must be :class:`VA` channel and same array size as above :class:`VA` channel)"),
-                   Parameter('p7', type=Type.STRING,
+                   Parameter('datatype', type=Type.STRING,
                              doc="Mandatory fields: DATATYPE"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('units', type=Type.STRING,
                              doc="UNITS"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('config', type=Type.STRING,
                              doc="CONFIG"),
-                   Parameter('p10', type=Type.STRING,
+                   Parameter('instrument', type=Type.STRING,
                              doc="INSTRUMENT"),
-                   Parameter('p11', type=Type.STRING,
+                   Parameter('frequency', type=Type.STRING,
                              doc="FREQUENCY")
                ]),
 
@@ -1674,7 +1674,7 @@ gx_methods = {
                              doc="Y decimation factor"),
                    Parameter('trim_dum', type=Type.INT32_T,
                              doc="0 trim leading/trailing dummies (default), 1 trim all dummies, 2 leave all dummies"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('index_ch', type=Type.INT32_T,
                              doc="Flag for creating index channel: 0 no (default), 1 yes.")
                ]),
 
@@ -1721,21 +1721,21 @@ gx_methods = {
                              doc="Import data file name"),
                    Parameter('template', type=Type.STRING,
                              doc="Import template name"),
-                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='line_size',
                              doc="Optional Line name (on return, the actual line)"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('line_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Buffer size for line name"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('flight', type=Type.INT32_T,
                              doc="Optional Flight number"),
-                   Parameter('p7', type=Type.DOUBLE,
+                   Parameter('date', type=Type.DOUBLE,
                              doc="Optional date"),
-                   Parameter('p8', type="WA")
+                   Parameter('wa', type="WA")
                ]),
 
         Method('ImpCBPly_DU', module='geogxx', version='5.0.0',
                availability=Availability.LICENSED, 
                doc="Import concession boundary polygon file into a database",
-               notes="The polygon file is provided by Ana Christina in Brasil.",
+               notes="The polygon file is provided by Ana Christina in Brazil.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -2017,11 +2017,11 @@ gx_methods = {
                              doc="Database object"),
                    Parameter('line', type="DB_SYMB",
                              doc="Output line (:def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to import"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('channel', type=Type.INT32_T,
                              doc="Channel to import, 1-8"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GU_DAARC500_DATATYPE`")
                ]),
 
@@ -2043,9 +2043,9 @@ gx_methods = {
                              doc="Database object"),
                    Parameter('line', type="DB_SYMB",
                              doc="Output line (:def_val:`DB_LOCK_READWRITE`)"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="Name of file to import"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('channel', type=Type.INT32_T,
                              doc="Channel to import, 1-8")
                ]),
 
@@ -2157,9 +2157,9 @@ gx_methods = {
                              doc="Mesh file"),
                    Parameter('mods', type=Type.STRING,
                              doc='1-5 Mod files, delimited with "|"'),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('dir', type=Type.INT32_T,
                              doc="Import slice direction (0-2 for X,Y and Z)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dummy', type=Type.DOUBLE,
                              doc="Value to interpret as dummy")
                ]),
 

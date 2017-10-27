@@ -85,7 +85,7 @@ gx_methods = {
                parameters = [
                    Parameter('im_gi', type="IMG",
                              doc="Input image (Transform grid)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('spc_fil', type=Type.STRING,
                              doc="Output Power Spectrum file name string")
                ]),
 
@@ -96,7 +96,7 @@ gx_methods = {
                parameters = [
                    Parameter('im_gi', type="IMG",
                              doc="Input image (Transform grid)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('spc_fil', type=Type.STRING,
                              doc="Output Radial Spectrum file name string")
                ]),
 
@@ -107,7 +107,7 @@ gx_methods = {
                parameters = [
                    Parameter('img', type="IMG",
                              doc="Input image (Transform grid)"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Output Radial Spectrum :class:`VV`")
                ]),
 
@@ -118,13 +118,13 @@ gx_methods = {
                parameters = [
                    Parameter('img1', type="IMG",
                              doc="Input image1 (Transform grid1 - G)"),
-                   Parameter('p2', type="IMG",
+                   Parameter('img2', type="IMG",
                              doc="Input image2 (Transform grid2 - H)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Output Radial Spectrum :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vst', type="VV",
                              doc="Output Radial Spectrum Standard deviation VVst	(Null: no calc)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('opt', type=Type.INT32_T,
                              doc="lOpt - 1: <Re(GH*/HH*)> :class:`VV`;  0: <Re(GH*)> :class:`VV`")
                ]),
 

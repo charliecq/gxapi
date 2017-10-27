@@ -231,11 +231,11 @@ gx_methods = {
                              doc="List object"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to retrieve"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item Number to Get"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('buff', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to Place Item Into"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the Buffer")
                ]),
 
@@ -340,7 +340,7 @@ gx_methods = {
                              doc="List object"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to retrieve"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item Number to Get")
                ]),
 
@@ -446,7 +446,7 @@ gx_methods = {
                              doc="List object"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to retrieve"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item Number to Get")
                ]),
 
@@ -519,9 +519,9 @@ gx_methods = {
                              doc="List object"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to insert"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('item', type=Type.INT32_T,
                              doc="Item Number to Set"),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('buff', type=Type.STRING,
                              doc="Item to Set")
                ]),
 
@@ -534,7 +534,7 @@ gx_methods = {
                              doc=":class:`LST` Handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`LST_ITEM` data to sort on"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('ord', type=Type.INT32_T,
                              doc="0 - Ascending, 1 - Decending")
                ])
     ],

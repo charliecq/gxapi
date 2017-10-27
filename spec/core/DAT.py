@@ -109,17 +109,17 @@ gx_methods = {
                              doc=":class:`DAT` object"),
                    Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum X (:def_val:`rMAX` if none)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum Y (:def_val:`rMAX` if none)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_z', type=Type.DOUBLE, is_ref=True,
                              doc="Minimum Z (:def_val:`rMAX` if none)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum X (:def_val:`rMIN` if none)"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum Y (:def_val:`rMIN` if none)"),
-                   Parameter('p7', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max_z', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum Z (:def_val:`rMIN` if none)"),
-                   Parameter('p8', type=Type.INT32_T, is_ref=True,
+                   Parameter('num_non_dummy', type=Type.INT32_T, is_ref=True,
                              doc="Number of non-dummy XYZ.")
                ])
     ]

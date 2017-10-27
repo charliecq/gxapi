@@ -161,9 +161,9 @@ gx_methods = {
                              doc="Font name"),
                    Parameter('geo_font', type=Type.INT32_T,
                              doc="Geosoft font? (TRUE or FALSE)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('weight', type=Type.INT32_T,
                              doc=":def:`MVIEW_FONT_WEIGHT`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('italic', type=Type.INT32_T,
                              doc="Italics? (TRUE or FALSE)")
                ]),
 

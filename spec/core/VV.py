@@ -637,9 +637,9 @@ gx_methods = {
                    Parameter('vv', type="VV"),
                    Parameter('element', type=Type.INT32_T,
                              doc="Element wanted"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='strsize',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='str_size',
                              doc="String in which to place element"),
-                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('str_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string")
                ]),
 
@@ -908,11 +908,11 @@ gx_methods = {
                parameters = [
                    Parameter('vv_a', type="VV",
                              doc="Amplitude :class:`VV` (returned)"),
-                   Parameter('p2', type="VV",
+                   Parameter('v_vx', type="VV",
                              doc="X component :class:`VV`"),
-                   Parameter('p3', type="VV",
+                   Parameter('v_vy', type="VV",
                              doc="Y component :class:`VV`"),
-                   Parameter('p4', type="VV",
+                   Parameter('v_vz', type="VV",
                              doc="Z component :class:`VV`")
                ]),
 

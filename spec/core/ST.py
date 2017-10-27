@@ -148,9 +148,9 @@ gx_methods = {
                              doc=":class:`ST` Handle"),
                    Parameter('div', type=Type.INT32_T, is_ref=True,
                              doc="# of bins"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min', type=Type.DOUBLE, is_ref=True,
                              doc="Min (value at start of 2nd bin)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('max', type=Type.DOUBLE, is_ref=True,
                              doc="Max (value at end of 2nd last bin)")
                ]),
 
@@ -196,9 +196,9 @@ gx_methods = {
                              doc=":class:`ST` Handle"),
                    Parameter('div', type=Type.INT32_T,
                              doc="# of bins"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('min', type=Type.DOUBLE,
                              doc="Min"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('max', type=Type.DOUBLE,
                              doc="Max")
                ]),
 

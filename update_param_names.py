@@ -31,10 +31,13 @@ gxx_files.extend(glob.glob('e:/ggit/t/core/**/gxx_*.cpp', recursive=True))
 gxx_files.extend(glob.glob('e:/ggit/t/desk/**/gxx_*.c', recursive=True))
 gxx_files.extend(glob.glob('e:/ggit/t/desk/**/gxx_*.cpp', recursive=True))
 
+#gxx_files = [ r'E:\ggit\t\desk\src\class\dh\gxx_dh.c' ]
 
 for gxx_file in gxx_files:
     with open(gxx_file, 'r') as f:
          gxx_source = f.read()
+
+    gxx_source = rec.sub('', gxx_source)
 
     funcs = [' '.join(rec.sub('', match[0]).split())
                 .replace('const double*','')
@@ -77,6 +80,7 @@ for gxx_file in gxx_files:
             params = ['str_val' if (p == 'pc' or p == 'sz' or p == 'str' or p == 'string') and 'str_val' not in params else p for p in params]
             params = ['v{}'.format(p) if p[0] >= '0' and p[0] <= '9' else p for p in params]
             params = ['lda' if p == 'lambda' and 'lda' not in params else p for p in params]
+            params = ['password' if p == 'pass' else p for p in params]
         
             funclookup[f[0]] = params
 
@@ -99,10 +103,10 @@ for func, params in funclookup.items():
             repl_def = func_def
             should_replace = False
             for i in range(0, len(params)):
-                param_name = "Parameter('p{}'".format(i + 1)
+                param_name = "'p{}'".format(i + 1)
                 if repl_def.find(param_name) > 0:
                     should_replace = True
-                    repl_def = repl_def.replace(param_name, "Parameter('{}'".format(params[i]))
+                    repl_def = repl_def.replace(param_name, "'{}'".format(params[i]))
             if should_replace:
                 sources[cl][1] = sources[cl][1].replace(func_def, repl_def)
             break

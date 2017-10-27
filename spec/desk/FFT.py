@@ -66,7 +66,7 @@ gx_methods = {
                              doc="Low Cutoff wavelength (meters)"),
                    Parameter('hlen', type=Type.DOUBLE,
                              doc="High Cutoff wavelength (meter)"),
-                   Parameter('define', type=Type.INT32_T,
+                   Parameter('pass_defined', type=Type.INT32_T,
                              doc="1= Pass the defined band (default); 0= Reject the band")
                ]),
 
@@ -81,7 +81,7 @@ gx_methods = {
                              doc="Central cutoff wavelength (meter)"),
                    Parameter('degree', type=Type.DOUBLE,
                              doc="Degree of the filter function (default = 8.0)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('filter_type', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter")
                ]),
 
@@ -122,7 +122,7 @@ gx_methods = {
                              doc="High wavelength end point (meters)"),
                    Parameter('degree', type=Type.DOUBLE,
                              doc="Degree of the filter function (default = 2.0)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc="Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter")
                ]),
 
@@ -138,9 +138,9 @@ gx_methods = {
                parameters = [
                    Parameter('gvv', type="VV",
                              doc=":class:`VV` to transform."),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('interv', type=Type.DOUBLE,
                              doc="Element space interval"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('trend', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`")
                ]),
 
@@ -157,11 +157,11 @@ gx_methods = {
                parameters = [
                    Parameter('gvv', type="VV",
                              doc=":class:`VV` to transform."),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('interv', type=Type.DOUBLE,
                              doc="Element space interval"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('trend', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('expansion', type=Type.DOUBLE,
                              doc="Minimum expansion %")
                ]),
 
@@ -180,9 +180,9 @@ gx_methods = {
                parameters = [
                    Parameter('gvv', type="VV",
                              doc=":class:`VV` contains channel data to perform :class:`FFT` operations upon."),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('interv', type=Type.DOUBLE,
                              doc="Element space interval, should be the same as in Create(Ex)_FFT() call"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('trend', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`")
                ]),
 
@@ -201,13 +201,13 @@ gx_methods = {
                parameters = [
                    Parameter('gvv', type="VV",
                              doc=":class:`VV` contains channel data to perform :class:`FFT` operations upon."),
-                   Parameter('p2', type=Type.DOUBLE,
+                   Parameter('interv', type=Type.DOUBLE,
                              doc="Element space interval, should be the same as in Create(Ex)_FFT() call"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('trend', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('expansion', type=Type.DOUBLE,
                              doc="Minimum expansion %, should be the same as in :func:`CreateEx_FFT`() call"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('d_cmult', type=Type.DOUBLE,
                              doc="DC level multiple")
                ]),
 
@@ -311,11 +311,11 @@ gx_methods = {
                              doc=":class:`FFT` to filter"),
                    Parameter('inc', type=Type.DOUBLE,
                              doc="Geomagnetic inclination (degrees)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('dec', type=Type.DOUBLE,
                              doc="Geomagnetic declination (degrees)"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('incp', type=Type.DOUBLE,
                              doc="Inclination (degrees) for amplitude correction (default = 20.0)"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dir', type=Type.DOUBLE,
                              doc="Direction (degrees) of Line from North")
                ]),
 

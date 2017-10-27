@@ -1380,7 +1380,7 @@ gx_methods = {
                              doc="Elevation channel handle (can be :def_val:`NULLSYMB`)"),
                    Parameter('mode', type=Type.INT32_T,
                              doc="Interpolation mode: 0 - linear, 1 - nearest"),
-                   Parameter('p10', type=Type.STRING,
+                   Parameter('out_ch', type=Type.STRING,
                              doc="Output channel name")
                ]),
 
@@ -1406,9 +1406,9 @@ gx_methods = {
                              doc="Z values to sample at each X, Y"),
                    Parameter('mode', type=Type.INT32_T,
                              doc="Interpolation mode: 0 - linear, 1 - nearest"),
-                   Parameter('p8', type=Type.STRING,
+                   Parameter('out_ch', type=Type.STRING,
                              doc="Output data array channel name"),
-                   Parameter('p9', type=Type.STRING,
+                   Parameter('topo_ch', type=Type.STRING,
                              doc="Output topography channel name")
                ]),
 

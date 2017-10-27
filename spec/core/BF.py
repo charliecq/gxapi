@@ -284,7 +284,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type=Type.INT32_T, is_ref=True,
+                   Parameter('data', type=Type.INT32_T, is_ref=True,
                              doc="Data")
                ]),
 
@@ -309,7 +309,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('data', type=Type.DOUBLE, is_ref=True,
                              doc="Data")
                ]),
 
@@ -334,7 +334,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type="VM",
+                   Parameter('vm', type="VM",
                              doc=":class:`VM` data to read, :class:`VM` length is read")
                ]),
 
@@ -359,7 +359,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` data to read, :class:`VV` length is read")
                ]),
 
@@ -412,7 +412,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('data', type=Type.INT32_T,
                              doc="Data")
                ]),
 
@@ -432,7 +432,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('data', type=Type.DOUBLE,
                              doc="Data")
                ]),
 
@@ -452,7 +452,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type="VM",
+                   Parameter('vm', type="VM",
                              doc="Data")
                ]),
 
@@ -472,7 +472,7 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv', type="VV",
                              doc="Data")
                ])
     ],
@@ -510,9 +510,9 @@ gx_methods = {
                              doc=":class:`BF` handle"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES` and :def:`BF_BYTEORDER`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('data', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Data"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('size', type=Type.INT32_T,
                              doc="Length of string to read, NULL will be added so the string length must be at least int+1.")
                ]),
 

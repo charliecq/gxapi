@@ -230,7 +230,7 @@ gx_methods = {
                              doc="DOUBLE :class:`VV` holding intersection fids"),
                    Parameter('inc', type=Type.DOUBLE,
                              doc="Data element increment (precision)"),
-                   Parameter('p8', type=Type.INT32_T, is_ref=True,
+                   Parameter('first', type=Type.INT32_T, is_ref=True,
                              doc="First point value (:def:`PLY_LINE_CLIP` value)")
                ]),
 

@@ -373,7 +373,7 @@ gx_methods = {
                              doc='Input channel code "[Assay] channel"'),
                    Parameter('assay_db_index', type=Type.INT32_T, is_ref=True,
                              doc="Returned assay database index"),
-                   Parameter('chan', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('chan', type=Type.STRING, is_ref=True, size_of_param='size_chan',
                              doc="Channel name"),
                    Parameter('size_chan', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Buffer size for channel name")
@@ -1056,13 +1056,13 @@ gx_methods = {
                              doc=":class:`DH` Object"),
                    Parameter('az', type=Type.DOUBLE, is_ref=True,
                              doc="Azimuth of section (returned)"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x1', type=Type.DOUBLE, is_ref=True,
                              doc="Corner X (Easting) of section (returned)"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x2', type=Type.DOUBLE, is_ref=True,
                              doc="Corner Y (Northing) of section (returned)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('l', type=Type.DOUBLE, is_ref=True,
                              doc="Section length (returned)"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
+                   Parameter('w', type=Type.DOUBLE, is_ref=True,
                              doc="Section width (returned)")
                ]),
 
@@ -1507,11 +1507,11 @@ gx_methods = {
                parameters = [
                    Parameter('dh', type="DH",
                              doc=":class:`DH` Handle"),
-                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('units', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Units (i.e. "m")'),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_DEFAULT',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
                              doc="Length of Units string"),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
+                   Parameter('conv_factor', type=Type.DOUBLE, is_ref=True,
                              doc="Conversion (units/m)")
                ]),
 
@@ -1942,9 +1942,9 @@ gx_methods = {
                              doc="LAS file name"),
                    Parameter('interval', type=Type.DOUBLE,
                              doc="Averaging/desampling interval (cm)"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('interp', type=Type.INT32_T,
                              doc="Interpolation method"),
-                   Parameter('p6', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Log file handle")
                ]),
 
@@ -2689,9 +2689,9 @@ gx_methods = {
                parameters = [
                    Parameter('dh', type="DH",
                              doc=":class:`DH` Object   (ignored)."),
-                   Parameter('p2', type="DB",
+                   Parameter('db', type="DB",
                              doc="Source database"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('dir', type=Type.STRING,
                              doc="Directory to store INI files")
                ]),
 
@@ -3016,9 +3016,9 @@ gx_methods = {
                              doc="LAS file name"),
                    Parameter('interval', type=Type.DOUBLE,
                              doc="Averaging/desampling interval"),
-                   Parameter('p5', type="WA",
+                   Parameter('wa', type="WA",
                              doc="Log file handle"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('warn', type=Type.INT32_T, is_ref=True,
                              doc="1 returned if problems found")
                ]),
 

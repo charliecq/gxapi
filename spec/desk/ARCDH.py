@@ -93,13 +93,13 @@ gx_methods = {
                              doc='Initial symbol that you want displayed when the dialog is launched (use "" if none)'),
                    Parameter('input_xml_string', type=Type.INT32_T,
                              doc="(This parameter is ignored if an initial symbol was specified) Initial symbol type that you want displayed when the dialog is launched (0 for Fill, 1 for Line)"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('xml', type=Type.STRING, is_ref=True, size_of_param='xml_size',
                              doc="Returned XML string representing the symbol that was chosen by the user"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('xml_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Length of output XML string"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('fill_color', type=Type.INT32_T, is_ref=True,
                              doc="RGBA representation of fill color to be set"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('edge_color', type=Type.INT32_T, is_ref=True,
                              doc="RGBA representation of edge color to be set")
                ])
     ]

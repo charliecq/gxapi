@@ -1299,9 +1299,9 @@ gx_methods = {
                              doc="File to get path name for"),
                    Parameter('mode', type=Type.INT32_T,
                              doc=":def:`SYS_SEARCH_PATH`"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('fullname', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place path name into"),
-                   Parameter('p4', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of Buffer")
                ]),
 
@@ -1331,11 +1331,11 @@ gx_methods = {
                              doc="File to get path name for"),
                    Parameter('mode', type=Type.INT32_T,
                              doc=":def:`SYS_SEARCH_PATH`"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('dir_mode', type=Type.INT32_T,
                              doc=":def:`GEO_DIRECTORY`"),
-                   Parameter('p4', type=Type.STRING, is_ref=True, size_of_param='p5',
+                   Parameter('fullname', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Buffer to place path name into"),
-                   Parameter('p5', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Size of Buffer")
                ]),
 
@@ -1361,9 +1361,9 @@ gx_methods = {
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`SYS_PATH`"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('path', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String in which to place path"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_FILE',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Maximum string size")
                ]),
 
@@ -1659,9 +1659,9 @@ gx_methods = {
                parameters = [
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the Parameter"),
-                   Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Setting returned"),
-                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the buffer")
                ]),
 
@@ -2241,11 +2241,11 @@ gx_methods = {
                              doc="Size,"),
                    Parameter('thick', type=Type.INT32_T, is_ref=True,
                              doc="Thick (0-100)"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
+                   Parameter('dense', type=Type.DOUBLE, is_ref=True,
                              doc="Density,"),
-                   Parameter('p6', type=Type.INT32_T, is_ref=True,
+                   Parameter('col', type=Type.INT32_T, is_ref=True,
                              doc="Pattern Color"),
-                   Parameter('p7', type=Type.INT32_T, is_ref=True,
+                   Parameter('back_col', type=Type.INT32_T, is_ref=True,
                              doc="Background Color")
                ]),
 
@@ -2461,11 +2461,11 @@ gx_methods = {
                              doc="Size. Input :def_val:`GS_R8DM` to use default"),
                    Parameter('thick', type=Type.INT32_T,
                              doc="Thickness (0-100).  Input :def_val:`GS_S4DM` to use default"),
-                   Parameter('p5', type=Type.DOUBLE,
+                   Parameter('dense', type=Type.DOUBLE,
                              doc="Density. Input :def_val:`GS_R8DM` to use default"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="Pattern Color"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('back_col', type=Type.INT32_T,
                              doc="Background Color. Can be :def_val:`C_TRANSPARENT`")
                ]),
 
@@ -2801,7 +2801,7 @@ gx_methods = {
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="Help File (blank for default)"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('topic', type=Type.STRING,
                              doc="Help Topic")
                ]),
 

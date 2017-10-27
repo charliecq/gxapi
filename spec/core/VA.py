@@ -256,9 +256,9 @@ gx_methods = {
                              doc=":class:`VA` handle"),
                    Parameter('no', type=Type.INT32_T,
                              doc="Row or Column # (0 is first)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row_col', type=Type.INT32_T,
                              doc=":def:`VA_OBJECT`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place data")
                ]),
 
@@ -312,9 +312,9 @@ gx_methods = {
                              doc="Row"),
                    Parameter('col', type=Type.INT32_T,
                              doc="Column"),
-                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='strsize',
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='str_size',
                              doc="String in which to place element"),
-                   Parameter('strsize', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('str_size', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Maximum length of the string")
                ]),
 
@@ -546,9 +546,9 @@ gx_methods = {
                              doc=":class:`VA` handle"),
                    Parameter('no', type=Type.INT32_T,
                              doc="Row or Column # (0 is first)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row_col', type=Type.INT32_T,
                              doc=":def:`VA_OBJECT`"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` from which to get data")
                ]),
 
@@ -602,9 +602,9 @@ gx_methods = {
                              doc=":class:`VA` to window"),
                    Parameter('start', type=Type.DOUBLE,
                              doc="Start point (from 0.0)"),
-                   Parameter('p3', type=Type.DOUBLE,
+                   Parameter('end', type=Type.DOUBLE,
                              doc="End point (< :class:`VA` elements - 1.0)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place results")
                ]),
 

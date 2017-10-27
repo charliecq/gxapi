@@ -176,9 +176,9 @@ gx_methods = {
                parameters = [
                    Parameter('row', type=Type.INT32_T,
                              doc="# elements in y (# of row)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="# elements in x (# of column)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES`")
                ]),
 
@@ -273,7 +273,7 @@ gx_methods = {
                              doc="hPG - :class:`PG` handle"),
                    Parameter('col', type=Type.INT32_T,
                              doc="iBx - element # in x (column #)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="iBy - element # in y (row #)")
                ]),
 
@@ -320,7 +320,7 @@ gx_methods = {
                              doc=":class:`PG` object"),
                    Parameter('n_row', type=Type.INT32_T,
                              doc="Number of Y (rows) to reallocate"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('n_col', type=Type.INT32_T,
                              doc="Number of X (columns) to reallocate")
                ]),
 
@@ -393,21 +393,21 @@ gx_methods = {
                              doc="Source :class:`PG` object"),
                    Parameter('sliced', type=Type.INT32_T,
                              doc="Z (slice) Origin on destination"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n', type=Type.INT32_T,
                              doc="Y (row) Origin on destination"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('vv', type=Type.INT32_T,
                              doc="X (col) Origin on destination"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('slices', type=Type.INT32_T,
                              doc="Z (slice) Origin on source"),
-                   Parameter('p7', type=Type.INT32_T,
+                   Parameter('rows', type=Type.INT32_T,
                              doc="Y (row) Origin on source"),
-                   Parameter('p8', type=Type.INT32_T,
+                   Parameter('cols', type=Type.INT32_T,
                              doc="X (col) Origin on source"),
-                   Parameter('p9', type=Type.INT32_T,
+                   Parameter('n_slice', type=Type.INT32_T,
                              doc="Number of Z (slice) to copy"),
-                   Parameter('p10', type=Type.INT32_T,
+                   Parameter('n_row', type=Type.INT32_T,
                              doc="Number of Y (rows) to copy"),
-                   Parameter('p11', type=Type.INT32_T,
+                   Parameter('n_col', type=Type.INT32_T,
                              doc="Number of X (columns) to copy")
                ]),
 
@@ -419,11 +419,11 @@ gx_methods = {
                parameters = [
                    Parameter('slice', type=Type.INT32_T,
                              doc="# elements in z (# of slices)"),
-                   Parameter('p2', type=Type.INT32_T,
+                   Parameter('row', type=Type.INT32_T,
                              doc="# elements in y (# of row)"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('col', type=Type.INT32_T,
                              doc="# elements in x (# of column)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`GS_TYPES`")
                ]),
 
@@ -493,9 +493,9 @@ gx_methods = {
                              doc=":class:`PG` object"),
                    Parameter('n_slice', type=Type.INT32_T,
                              doc="Number of Z (slices) to reallocate"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('n_row', type=Type.INT32_T,
                              doc="Number of Y (rows) to reallocate"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('n_col', type=Type.INT32_T,
                              doc="Number of X (columns) to reallocate")
                ]),
 
