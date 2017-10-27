@@ -436,7 +436,7 @@ cdef class WrapPGeo:
     def _create(self, application, version, wind_id, flags):
         app = (<unicode>application).encode()
         ver = (<unicode>version).encode()
-        cdef uintptr_t wind_handle = wind_id
+        cdef size_t wind_handle = wind_id
         cdef void* hParentWnd = <void *>wind_handle
         cdef char* err = <char*>malloc(4096)
         try:
