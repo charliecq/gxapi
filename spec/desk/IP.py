@@ -219,9 +219,9 @@ gx_methods = {
                              doc="Output grid file name"),
                    Parameter('pg', type="PG",
                              doc="Model data"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Model cells sizes (input)"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Model cells sizes (input)"),
                    Parameter('x', type=Type.DOUBLE,
                              doc="Top-left corner X"),
@@ -519,9 +519,9 @@ gx_methods = {
                              doc="Returned origin X (top left corner)"),
                    Parameter('z', type=Type.DOUBLE, is_ref=True,
                              doc="Returned origin Z (top left corner)"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Cell widths  (left to right) (real)"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Cell heights (top down) (real)")
                ]),
 
@@ -538,9 +538,9 @@ gx_methods = {
                              doc="UBC Topo file to import"),
                    Parameter('elev0', type=Type.DOUBLE, is_ref=True,
                              doc="Returned top of mesh elevation"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Topography X values"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Topography Z values (elevations)")
                ]),
 
@@ -590,9 +590,9 @@ gx_methods = {
                              doc="Cells to remove on right"),
                    Parameter('trim_z', type=Type.INT32_T,
                              doc="Cells to remove on the bottom"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Column widths (modified)"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Row heights (modified)"),
                    Parameter('x', type=Type.DOUBLE, is_ref=True,
                              doc="Top left corner X (modified)")

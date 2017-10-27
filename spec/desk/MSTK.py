@@ -112,7 +112,7 @@ gx_methods = {
                              doc="Input string (see notes above). Will be modified on return"),
                    Parameter('index', type=Type.INT32_T, is_ref=True,
                              doc="Index to the :class:`STK` found, Must be greater than 0 if found, -1 if not found"),
-                   Parameter('v_vrtd', type="VV",
+                   Parameter('vv_rtd', type="VV",
                              doc="Returned :class:`VV` with names of Group, X channel and Y channel :class:`VV` type must be of STRING")
                ]),
 

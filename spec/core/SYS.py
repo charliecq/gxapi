@@ -941,7 +941,7 @@ gx_methods = {
                see_also="ShellExecute_SYS",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('command', type=Type.STRING,
                              doc="Command")
                ]),
 
@@ -1657,11 +1657,11 @@ gx_methods = {
                1 if parameter not found or not set.
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING,
+                   Parameter('parm', type=Type.STRING,
                              doc="Name of the Parameter"),
-                   Parameter('p2', type=Type.STRING, is_ref=True, size_of_param='p3',
+                   Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='p3',
                              doc="Setting returned"),
-                   Parameter('p3', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                   Parameter('len', type=Type.INT32_T, default_length='STR_VERY_LONG',
                              doc="Size of the buffer")
                ]),
 

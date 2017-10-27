@@ -278,11 +278,11 @@ gx_methods = {
                              doc=":def:`MVG_DRAW`"),
                    Parameter('wrap', type=Type.INT32_T,
                              doc=":def:`MVG_WRAP`"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
                    Parameter('va', type="VA",
                              doc="Y VAs"),
-                   Parameter('v_varray', type="VV",
+                   Parameter('vv_array', type="VV",
                              doc=":class:`VV` containing list of :class:`VA` ranges, such as 1,2 40 ... Entire :class:`VA` is drawn if this :class:`VV` is empty.")
                ]),
 
@@ -306,9 +306,9 @@ gx_methods = {
                              doc=":def:`MVG_DRAW`"),
                    Parameter('wrap', type=Type.INT32_T,
                              doc=":def:`MVG_WRAP`"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV`")
                ]),
 

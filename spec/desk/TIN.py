@@ -39,11 +39,11 @@ gx_methods = {
                return_type="TIN",
                return_doc=":class:`TIN` Object",
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X positions"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y positions"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z values (optional)")
                ]),
 

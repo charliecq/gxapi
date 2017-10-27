@@ -36,9 +36,9 @@ gx_methods = {
                parameters = [
                    Parameter('st2', type="ST2",
                              doc=":class:`ST2` Handle"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="VVx handle"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="VVy handle")
                ]),
 

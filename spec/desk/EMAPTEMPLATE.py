@@ -386,14 +386,14 @@ gx_methods = {
                              doc=":class:`EMAPTEMPLATE` object"),
                    Parameter('state', type=Type.STRING,
                              doc="user prompt string"),
-                   Parameter('p3', type=Type.DOUBLE, is_ref=True,
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
                              doc="X minimum in current view user units."),
-                   Parameter('p4', type=Type.DOUBLE, is_ref=True,
-                             doc="Y"),
-                   Parameter('p5', type=Type.DOUBLE, is_ref=True,
-                             doc="X maximum"),
-                   Parameter('p6', type=Type.DOUBLE, is_ref=True,
-                             doc="Y")
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
+                             doc="Y minimum in current view user units."),
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
+                             doc="X maximum in current view user units."),
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
+                             doc="Y maximum in current view user units.")
                ]),
 
         Method('iGetLine_EMAPTEMPLATE', module='None', version='5.0.0',

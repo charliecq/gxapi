@@ -254,9 +254,9 @@ gx_methods = {
                notes="3D pagers are expanded in X,Y direction the number of slices(Z) is unchanged .",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Original pager obj"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Expanded pager obj"),
                    Parameter('ex_pcnt', type=Type.DOUBLE,
                              doc="% expansion"),
@@ -359,11 +359,11 @@ gx_methods = {
                              doc="Grid file name"),
                    Parameter('nlmt', type=Type.INT32_T,
                              doc=":def:`BLAKEY_TEST`"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X of found peaks"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y of found peaks"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z values of found peaks")
                ]),
 
@@ -485,11 +485,11 @@ gx_methods = {
                parameters = [
                    Parameter('pg', type="PG",
                              doc="Input grid"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X locations"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y locations"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Data values to grid"),
                    Parameter('reg', type="REG",
                              doc="Parameters (see above)")
@@ -518,11 +518,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Input numeric :class:`PG`"),
                    Parameter('vv', type="VV",
                              doc="Translation :class:`VV` (see notes above)"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Output thematic :class:`PG`")
                ]),
 
@@ -535,11 +535,11 @@ gx_methods = {
                              doc="Grid file name"),
                    Parameter('pkness', type=Type.INT32_T,
                              doc="Cutoff limit for finding peaks"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X of found peaks"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y of found peaks"),
-                   Parameter('p5', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z values of found peaks")
                ]),
 
@@ -550,13 +550,13 @@ gx_methods = {
                This function creates a peakedneess grid from input grid.
                Radius, is the maximum radius at which the value of the parent pixel is compared to
                the value of surrounding pixels.
-               PercentLesser, is used to indicate the percentage of pixels at each radii smaller than
+               ``percent_lesser``, is used to indicate the percentage of pixels at each radii smaller than
                or equal to Radius that must have value lower than the parent pixel in order to call
                that radius true or equal to 1.
                Description:  For each pixel in the grid a series of radii are evaluated from 1 to Radius.
-               If the percentage of pixels for a given radius is less than PercentLesser the parent pixel
+               If the percentage of pixels for a given radius is less than ``percent_lesser`` the parent pixel
                receives an additional 1.
-               For examples if the Radius is set to 5 and the PercentLesser is set to 70%.
+               For examples if the Radius is set to 5 and the ``percent_lesser`` is set to 70%.
                And radius 1 = 90%, radius 2 = 85%, radius 3 = 75%, radius 4 = 70% and radius 5 = 65%
                then the parent pixel would receive 1+1+1+1+0 = 4.
                Use:  This function is useful in isolating the anomaly peaks in data that has a large
@@ -569,10 +569,10 @@ gx_methods = {
                              doc="Input grid file name"),
                    Parameter('grdo', type=Type.STRING,
                              doc="Output grid (peakedness) file name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('radius', type=Type.INT32_T,
                              doc="Radius"),
-                   Parameter('p4', type=Type.DOUBLE,
-                             doc="PercentLess")
+                   Parameter('percent_lesser', type=Type.DOUBLE,
+                             doc="Percent Lesser value (see notes)")
                ]),
 
         Method('RefFile_PGU', module='geogxx', version='5.0.0',
@@ -640,11 +640,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Input Index :class:`PG`"),
                    Parameter('vv', type="VV",
                              doc="Translation :class:`VV`"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Output Data :class:`PG`")
                ]),
 
@@ -653,9 +653,9 @@ gx_methods = {
                doc="Trend remove or replace back in pager",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Original pager obj"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Trended pager obj"),
                    Parameter('tr', type="TR",
                              doc="Trend obj"),
@@ -712,9 +712,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gu', type="PG",
+                   Parameter('pg_u', type="PG",
                              doc="Input matrix"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Returned correlation matrix")
                ]),
 
@@ -723,11 +723,11 @@ gx_methods = {
                doc="Same as :func:`CorrelationMatrix_PGU`, but select correlation type.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gu', type="PG",
+                   Parameter('pg_u', type="PG",
                              doc="Input matrix"),
                    Parameter('corr', type=Type.INT32_T,
                              doc=":def:`PGU_CORR`"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Returned correlation matrix")
                ]),
 
@@ -742,9 +742,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Input matrix"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Output inverted matrix (can be same as input).")
                ]),
 
@@ -757,11 +757,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Input Pager"),
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc="Eigenvalues (returned)"),
-                   Parameter('p3', type="PG",
+                   Parameter('pg_eigen', type="PG",
                              doc="Eigenvectors (returned)")
                ]),
 
@@ -778,13 +778,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_ga', type="PG",
+                   Parameter('pg_a', type="PG",
                              doc="LU decomposition of A"),
-                   Parameter('v_vi', type="VV",
+                   Parameter('vv_i', type="VV",
                              doc="Permutation vector (type INT)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv_b', type="VV",
                              doc="Right hand side vector B (input)"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv_sol', type="VV",
                              doc="Solution vector (output)")
                ]),
 
@@ -805,11 +805,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Input"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="LU decomposition (may be same pager as input)"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv_perm', type="VV",
                              doc="Permutation vector (type INT)")
                ]),
 
@@ -826,15 +826,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gu', type="PG",
+                   Parameter('pg_u', type="PG",
                              doc="Matrix U"),
                    Parameter('transpose_u', type=Type.INT32_T,
                              doc="TRUE (1) if U should be transposed before multiplication"),
-                   Parameter('p_gv', type="PG",
+                   Parameter('pg_v', type="PG",
                              doc="Matrix V"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('transpose', type=Type.INT32_T,
                              doc="TRUE (1) if V should be transposed before multiplication"),
-                   Parameter('p5', type="PG",
+                   Parameter('pg_uv', type="PG",
                              doc="Returned matrix U*V")
                ]),
 
@@ -855,11 +855,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gu', type="PG",
+                   Parameter('pg_u', type="PG",
                              doc="Matrix U"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Vector x"),
-                   Parameter('v_vo', type="VV",
+                   Parameter('vv_o', type="VV",
                              doc="Returned vector U*x")
                ]),
 
@@ -885,13 +885,13 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg_a', type="PG",
                              doc="Input A matrix, M data (rows), N variables (columns)"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg_u', type="PG",
                              doc="The returned U Matrix"),
-                   Parameter('p3', type="VV",
+                   Parameter('vv_w', type="VV",
                              doc="Returned weights (W)"),
-                   Parameter('p4', type="PG",
+                   Parameter('pg_v', type="PG",
                              doc="Returned V matrix")
                ]),
 
@@ -917,15 +917,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="PG",
+                   Parameter('pg_u', type="PG",
                              doc="U matrix"),
-                   Parameter('p2', type="VV",
+                   Parameter('vv_w', type="VV",
                              doc="Weights (W)"),
-                   Parameter('p3', type="PG",
+                   Parameter('pg_v', type="PG",
                              doc="V matrix"),
-                   Parameter('p4', type=Type.DOUBLE,
+                   Parameter('min_w', type=Type.DOUBLE,
                              doc="Minimum weight to use (Dummy for all)"),
-                   Parameter('p5', type="PG",
+                   Parameter('pg_a', type="PG",
                              doc="A matrix (returned)")
                ])
     ],
@@ -941,9 +941,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Input pager of the principal components"),
-                   Parameter('v_vc', type="VV",
+                   Parameter('vv_c', type="VV",
                              doc="Returned communality values")
                ]),
 
@@ -964,9 +964,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gx', type="PG",
+                   Parameter('pg_x', type="PG",
                              doc="Standardized data matrix (M by N)"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg_loadings', type="PG",
                              doc="Principal component loadings (N by N)")
                ]),
 
@@ -976,9 +976,9 @@ gx_methods = {
                notes="See :func:`PCLoadings_PGU`.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gc', type="PG",
+                   Parameter('pg_c', type="PG",
                              doc="Correllation matrix (N by N)"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg_loadings', type="PG",
                              doc="Principal component loadings (N by N)")
                ]),
 
@@ -996,11 +996,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gx', type="PG",
+                   Parameter('pg_x', type="PG",
                              doc="Standardized data matrix  (M by N)"),
-                   Parameter('p2', type="PG",
+                   Parameter('pg_loadings', type="PG",
                              doc="Principal component loadings (input) (N by L, L<=N)"),
-                   Parameter('p3', type="PG",
+                   Parameter('pg_scores', type="PG",
                              doc="Principal component scores (returned) (M by L, L<=N)")
                ]),
 
@@ -1012,9 +1012,9 @@ gx_methods = {
                parameters = [
                    Parameter('pg', type="PG",
                              doc="Matrix to standardize"),
-                   Parameter('v_vm', type="VV",
+                   Parameter('vv_m', type="VV",
                              doc="Means"),
-                   Parameter('v_vs', type="VV",
+                   Parameter('vv_s', type="VV",
                              doc="Standard deviations"),
                    Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PGU_DIRECTION`")
@@ -1034,11 +1034,11 @@ gx_methods = {
                parameters = [
                    Parameter('pg', type="PG",
                              doc="Matrix to standardize"),
-                   Parameter('v_vmask', type="VV",
+                   Parameter('vv_mask', type="VV",
                              doc="Mask :class:`VV` for data selection (forward only)"),
-                   Parameter('v_vm', type="VV",
+                   Parameter('vv_m', type="VV",
                              doc="Means"),
-                   Parameter('v_vs', type="VV",
+                   Parameter('vv_s', type="VV",
                              doc="Standard deviations"),
                    Parameter('dir', type=Type.INT32_T,
                              doc="Forward or reverse")
@@ -1062,11 +1062,11 @@ gx_methods = {
                parameters = [
                    Parameter('pg', type="PG",
                              doc="Matrix to transform"),
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc="Detection limits for the columns"),
-                   Parameter('v_vf', type="VV",
+                   Parameter('vv_f', type="VV",
                              doc="Maximum values for the columns"),
-                   Parameter('v_vt', type="VV",
+                   Parameter('vv_t', type="VV",
                              doc=":def:`PGU_TRANS`"),
                    Parameter('dir', type=Type.INT32_T,
                              doc=":def:`PGU_DIRECTION`")
@@ -1084,9 +1084,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p_gi', type="PG",
+                   Parameter('pg_i', type="PG",
                              doc="Principal component loadings (input) (N by M, M<=N)"),
-                   Parameter('p_go', type="PG",
+                   Parameter('pg_o', type="PG",
                              doc="Rotated principal component loadings (returned) (N by L, L<=M)")
                ])
     ],

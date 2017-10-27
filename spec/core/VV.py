@@ -161,9 +161,9 @@ gx_methods = {
                doc="Copy one :class:`VV` to another.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc="Destination"),
-                   Parameter('v_vs', type="VV",
+                   Parameter('vv_s', type="VV",
                              doc="Source")
                ]),
 
@@ -179,11 +179,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc="Destination :class:`VV`"),
                    Parameter('dest', type=Type.INT32_T,
                              doc="Destination start element"),
-                   Parameter('v_vs', type="VV",
+                   Parameter('vv_s', type="VV",
                              doc="Source :class:`VV` (can be the same as Destination)"),
                    Parameter('source', type=Type.INT32_T,
                              doc="Source start element"),
@@ -249,7 +249,7 @@ gx_methods = {
                parameters = [
                    Parameter('vv', type="VV",
                              doc="Data :class:`VV` to be masked"),
-                   Parameter('v_vm', type="VV",
+                   Parameter('vv_m', type="VV",
                              doc="Mask :class:`VV`")
                ]),
 
@@ -298,11 +298,11 @@ gx_methods = {
                doc="Add two VVs: VV_A + VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned), C = A + B")
                ]),
 
@@ -312,15 +312,15 @@ gx_methods = {
                notes="The multipliers must be defined and within the :def_val:`GS_R8MN` :def_val:`GS_R8MX` range.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
                    Parameter('f1', type=Type.DOUBLE,
                              doc="Multiplier f1 for A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
                    Parameter('f2', type=Type.DOUBLE,
                              doc="Multiplier f2 for B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned), C = A*f1 + B*f2")
                ]),
 
@@ -330,7 +330,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv', type="VV"),
-                   Parameter('v_va', type="VV",
+                   Parameter('vv_a', type="VV",
                              doc=":class:`VV` to append")
                ]),
 
@@ -480,11 +480,11 @@ gx_methods = {
                doc="Divide one :class:`VV` by another: VV_A / VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned), C = A / B")
                ]),
 
@@ -691,11 +691,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vo', type="VV",
+                   Parameter('vv_o', type="VV",
                              doc="Output Data :class:`VV` (modified with inserted data)"),
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc="Data items to insert (must be same type as output data :class:`VV`)"),
-                   Parameter('v_vi', type="VV",
+                   Parameter('vv_i', type="VV",
                              doc="Index :class:`VV` (must be type INT)")
                ]),
 
@@ -708,9 +708,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vi', type="VV",
+                   Parameter('vv_i', type="VV",
                              doc="Index :class:`VV` of type INT"),
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc=":class:`VV` to order")
                ]),
 
@@ -784,9 +784,9 @@ gx_methods = {
                parameters = [
                    Parameter('vv', type="VV",
                              doc="Input :class:`VV` of GS_D2LINE type (create with type -32)"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Output :class:`VV` with X locations (:def_val:`GS_DOUBLE`)"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Output :class:`VV` with Y locations (:def_val:`GS_DOUBLE`)")
                ]),
 
@@ -845,11 +845,11 @@ gx_methods = {
                notes="If both values are non-dummies, then result is 1, else dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned)")
                ]),
 
@@ -859,11 +859,11 @@ gx_methods = {
                notes="If either values is non-dummy, then result is 1, else dummy.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned)")
                ]),
 
@@ -880,9 +880,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc=":class:`VV` to be masked"),
-                   Parameter('v_vm', type="VV",
+                   Parameter('vv_m', type="VV",
                              doc="Mask :class:`VV`"),
                    Parameter('str_val', type=Type.STRING,
                              doc="String to compare")
@@ -893,11 +893,11 @@ gx_methods = {
                doc="Multiply two VVs: VV_A * VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned), C = A * B")
                ]),
 
@@ -906,7 +906,7 @@ gx_methods = {
                doc="Calculate the 3D length for XYZ component VVs",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_va', type="VV",
+                   Parameter('vv_a', type="VV",
                              doc="Amplitude :class:`VV` (returned)"),
                    Parameter('p2', type="VV",
                              doc="X component :class:`VV`"),
@@ -941,9 +941,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('pj', type="PJ"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y")
                ]),
 
@@ -954,11 +954,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('pj', type="PJ"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z")
                ]),
 
@@ -1001,7 +1001,7 @@ gx_methods = {
                parameters = [
                    Parameter('vv', type="VV",
                              doc=":class:`VV` to resample"),
-                   Parameter('v_vm', type="VV",
+                   Parameter('vv_m', type="VV",
                              doc=":class:`VV` model (fid increment and start)")
                ]),
 
@@ -1487,11 +1487,11 @@ gx_methods = {
                doc="Subtract one :class:`VV` from another: VV_A - VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` C (returned), C = A - B")
                ]),
 

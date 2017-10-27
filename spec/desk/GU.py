@@ -346,11 +346,11 @@ gx_methods = {
                doc="Gravity Curvature (Bullard B) Correction to Bouguer anomaly",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_velev', type="VV",
+                   Parameter('vv_elev', type="VV",
                              doc="Input Elevation :class:`VV`"),
-                   Parameter('v_vlat', type="VV",
+                   Parameter('vv_lat', type="VV",
                              doc="Input Latitude :class:`VV`"),
-                   Parameter('v_vboug', type="VV",
+                   Parameter('vv_boug', type="VV",
                              doc="Bouguer :class:`VV` for Curvature Correction")
                ]),
 
@@ -359,11 +359,11 @@ gx_methods = {
                doc="Gravity Curvature (Bullard B) Correction to Bouguer anomaly, with user input cap density.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('v_velev', type="VV",
+                   Parameter('vv_elev', type="VV",
                              doc="Input Elevation :class:`VV`"),
-                   Parameter('v_vlat', type="VV",
+                   Parameter('vv_lat', type="VV",
                              doc="Input Latitude :class:`VV`"),
-                   Parameter('v_vboug', type="VV",
+                   Parameter('vv_boug', type="VV",
                              doc="Bouguer :class:`VV` for Curvature Correction"),
                    Parameter('rho', type=Type.DOUBLE,
                              doc="Cap Density (g/cm^3")
@@ -376,11 +376,11 @@ gx_methods = {
                parameters = [
                    Parameter('im_gdem', type="IMG",
                              doc="DEM grid"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Input X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Input Y :class:`VV`"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Output DEM :class:`VV` for Bouguer Correction")
                ]),
 
@@ -395,17 +395,17 @@ gx_methods = {
                              doc="dYm  - model dimension y"),
                    Parameter('zm', type=Type.DOUBLE,
                              doc="dZm  - model depth"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="VVx  - stations x"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="VVy  - stations y"),
-                   Parameter('v_vg3', type="VV",
+                   Parameter('vv_g3', type="VV",
                              doc="VVg3 - 2 triangular prism gravity results"),
-                   Parameter('v_vg4', type="VV",
+                   Parameter('vv_g4', type="VV",
                              doc="VVg4 - regtangular prism gravity results"),
-                   Parameter('v_vg1', type="VV",
+                   Parameter('vv_g1', type="VV",
                              doc="VVg1 - lower triangular prism gravity results"),
-                   Parameter('v_vg2', type="VV",
+                   Parameter('vv_g2', type="VV",
                              doc="VVg2 - upper triangular prism gravity results")
                ]),
 
@@ -692,9 +692,9 @@ gx_methods = {
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File to import"),
-                   Parameter('v_vtype', type="VV",
+                   Parameter('vv_type', type="VV",
                              doc="8 Recognized types - :def_val:`GS_LONG`"),
-                   Parameter('v_vitems', type="VV",
+                   Parameter('vv_items', type="VV",
                              doc="8 Numbers of items - :def_val:`GS_LONG`")
                ]),
 

@@ -147,11 +147,11 @@ gx_methods = {
                              doc=":class:`DMPPLY` object"),
                    Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP) (i)"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X Locations (o)"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y Locations (o)"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z Locations (o)")
                ]),
 
@@ -289,11 +289,11 @@ gx_methods = {
                              doc="Azimuth of the plane in degrees"),
                    Parameter('swing', type=Type.DOUBLE,
                              doc="Swing of the plane in degrees"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X (horizontal along-section locations on vertical plane  (o)"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y (vertical locations on vertical plane  (o)"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z (horizontal distances perpendicular to the plane  (o)")
                ]),
 
@@ -320,15 +320,15 @@ gx_methods = {
                              doc="Z location of plane origin in 3D (i)"),
                    Parameter('az', type=Type.DOUBLE,
                              doc="Azimuth of the plane in degrees (i)"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X locations on vertical plane  (i)"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y (actually Z) locations on vertical plane  (i)"),
-                   Parameter('v_vx3', type="VV",
+                   Parameter('vv_x3', type="VV",
                              doc="X Locations of polygon (o)"),
-                   Parameter('v_vy3', type="VV",
+                   Parameter('vv_y3', type="VV",
                              doc="Y Locations of polygon (o)"),
-                   Parameter('v_vz3', type="VV",
+                   Parameter('vv_z3', type="VV",
                              doc="Z Locations of polygon (o)")
                ]),
 
@@ -353,11 +353,11 @@ gx_methods = {
                              doc=":class:`DMPPLY` object"),
                    Parameter('p', type=Type.INT32_T,
                              doc="Polygon number (1 to NP) (i)"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X Locations (i)"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y Locations (i)"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z Locations (i)")
                ])
     ]

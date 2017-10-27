@@ -76,9 +76,9 @@ gx_methods = {
                parameters = [
                    Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="VVx"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="VVy")
                ]),
 
@@ -90,11 +90,11 @@ gx_methods = {
                parameters = [
                    Parameter('pj', type="PJ",
                              doc="Projection"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="VVx"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="VVy"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="VVz")
                ]),
 
@@ -236,7 +236,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc=":def:`PJ_ELEVATION`",
                parameters = [
-                   Parameter('p1', type="PJ",
+                   Parameter('pj', type="PJ",
                              doc="Projection")
                ]),
 

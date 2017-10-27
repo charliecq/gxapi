@@ -196,8 +196,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="REG"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('reg', type="REG"),
+                   Parameter('ini', type=Type.STRING,
                              doc="INI file name")
                ]),
 

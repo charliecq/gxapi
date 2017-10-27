@@ -112,11 +112,11 @@ gx_methods = {
                parameters = [
                    Parameter('csymb', type="CSYMB",
                              doc=":class:`CSYMB` object"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc=":class:`VV` for X data"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc=":class:`VV` for Y data"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` for Z data")
                ]),
 

@@ -328,11 +328,11 @@ gx_methods = {
                parameters = [
                    Parameter('img', type="IMG",
                              doc="Input grid"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z :class:`VV` filled with values (set to be same size as X, Y)")
                ]),
 
@@ -350,11 +350,11 @@ gx_methods = {
                parameters = [
                    Parameter('img', type="IMG",
                              doc="Input grid"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z :class:`VV` filled with values (set to be same size as X, Y)")
                ]),
 
@@ -433,9 +433,9 @@ gx_methods = {
                parameters = [
                    Parameter('grid', type=Type.STRING,
                              doc="Grid file name"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates of edge points"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates of edge points")
                ]),
 
@@ -806,15 +806,15 @@ gx_methods = {
                              doc="Y element separation"),
                    Parameter('kx', type=Type.INT32_T, is_ref=True,
                              doc="KX (storage orientation)"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_orig', type=Type.DOUBLE, is_ref=True,
                              doc="X origin"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_orig', type=Type.DOUBLE, is_ref=True,
                              doc="Y origin"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rot', type=Type.DOUBLE, is_ref=True,
                              doc="Grid Rotation"),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('base', type=Type.DOUBLE, is_ref=True,
                              doc="Base removed"),
-                   Parameter('p12', type=Type.DOUBLE, is_ref=True,
+                   Parameter('mult', type=Type.DOUBLE, is_ref=True,
                              doc="Grid multiplier")
                ]),
 
@@ -838,17 +838,17 @@ gx_methods = {
                              doc="Y element separation"),
                    Parameter('kx', type=Type.INT32_T, is_ref=True,
                              doc="KX (storage orientation)"),
-                   Parameter('p8', type=Type.DOUBLE, is_ref=True,
+                   Parameter('x_orig', type=Type.DOUBLE, is_ref=True,
                              doc="X origin"),
-                   Parameter('p9', type=Type.DOUBLE, is_ref=True,
+                   Parameter('y_orig', type=Type.DOUBLE, is_ref=True,
                              doc="Y origin"),
-                   Parameter('p10', type=Type.DOUBLE, is_ref=True,
+                   Parameter('rot', type=Type.DOUBLE, is_ref=True,
                              doc="Grid Rotation"),
-                   Parameter('p11', type=Type.DOUBLE, is_ref=True,
+                   Parameter('base', type=Type.DOUBLE, is_ref=True,
                              doc="Base removed"),
-                   Parameter('p12', type=Type.DOUBLE, is_ref=True,
-                             doc="Grid multiplier"),
-                   Parameter('p13', type=Type.DOUBLE, is_ref=True,
+                   Parameter('mult', type=Type.DOUBLE, is_ref=True,
+                             doc="Grid multiplier")
+                   Parameter('comp', type=Type.DOUBLE, is_ref=True,
                              doc="Compression Ratio")
                ]),
 
@@ -1285,9 +1285,9 @@ gx_methods = {
                parameters = [
                    Parameter('grid', type=Type.STRING,
                              doc="Grid file name"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Peaks' X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Peaks' Y"),
                    Parameter('max', type=Type.INT32_T,
                              doc="Maximum target diameter (window) in # of cells"),
@@ -1318,9 +1318,9 @@ gx_methods = {
                parameters = [
                    Parameter('grid', type=Type.STRING,
                              doc="Grid file name"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="Peaks' X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Peaks' Y"),
                    Parameter('max', type=Type.INT32_T,
                              doc="Maximum target diameter (window) in # of cells"),
@@ -1348,9 +1348,9 @@ gx_methods = {
                parameters = [
                    Parameter('img', type="IMG",
                              doc="Input grid"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X locations"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y locations"),
                    Parameter('put', type=Type.INT32_T, is_ref=True,
                              doc="Number of points located in the grid.")
@@ -1377,7 +1377,7 @@ gx_methods = {
                              doc="Y2"),
                    Parameter('samsep', type=Type.DOUBLE,
                              doc="Sample separation, if 0.0, use grid cell size"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` in which to place result")
                ]),
 
@@ -1389,11 +1389,11 @@ gx_methods = {
                parameters = [
                    Parameter('img', type="IMG",
                              doc="Input image"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV` coordinates"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV` coordinates"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc=":class:`VV` in which to place result")
                ]),
 

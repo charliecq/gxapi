@@ -650,11 +650,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates."),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates."),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z coordinates.")
                ]),
 
@@ -1198,9 +1198,9 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV`"),
                    Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`"),
@@ -1272,9 +1272,9 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV`"),
                    Parameter('unit', type=Type.INT32_T,
                              doc=":def:`MVIEW_UNIT`")
@@ -1827,15 +1827,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('face', type=Type.STRING,
                              doc="Face name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('geofont', type=Type.INT32_T,
                              doc="Geosoft font? :def:`GEO_BOOL`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('weight', type=Type.INT32_T,
                              doc=":def:`MVIEW_FONT_WEIGHT`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('italic', type=Type.INT32_T,
                              doc="Italic font? :def:`GEO_BOOL`")
                ]),
 
@@ -1930,15 +1930,15 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="MVIEW",
+                   Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('face', type=Type.STRING,
                              doc="Font face name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('geo_font', type=Type.INT32_T,
                              doc="Geosoft font? (TRUE or FALSE)"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('weight', type=Type.INT32_T,
                              doc=":def:`MVIEW_FONT_WEIGHT`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('italic', type=Type.INT32_T,
                              doc="Italic font? (TRUE or FALSE)")
                ]),
 
@@ -2072,11 +2072,11 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV`"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV`"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Data :class:`VV`"),
                    Parameter('scal_mm', type=Type.DOUBLE,
                              doc="Scale factor to convert mm to view units"),
@@ -2097,11 +2097,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('v_vi', type="VV",
+                   Parameter('vv_i', type="VV",
                              doc=":class:`VV` of type int holding the number of points for each polygon"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates."),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2158,9 +2158,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates."),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2186,9 +2186,9 @@ gx_methods = {
                    Parameter('mview', type="MVIEW"),
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`MVIEW_DRAW`"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates."),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2198,9 +2198,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates."),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2216,9 +2216,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X coordinates."),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y coordinates.")
                ]),
 
@@ -2269,11 +2269,11 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Symbol sizes (in view units)")
                ]),
 
@@ -2297,9 +2297,9 @@ gx_methods = {
                parameters = [
                    Parameter('mview', type="MVIEW",
                              doc="View"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y")
                ]),
 
@@ -2312,11 +2312,11 @@ gx_methods = {
                              doc="View"),
                    Parameter('itr', type=Type.STRING,
                              doc=":class:`ITR` file name (ZON or :class:`ITR`)"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z")
                ]),
 
@@ -2605,17 +2605,17 @@ gx_methods = {
                              doc="View"),
                    Parameter('group', type=Type.STRING,
                              doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X locations"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y locations"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z locations"),
-                   Parameter('v_vvx', type="VV",
+                   Parameter('vv_vx', type="VV",
                              doc="Vector X component"),
-                   Parameter('v_vvy', type="VV",
+                   Parameter('vv_vy', type="VV",
                              doc="Vector Y component"),
-                   Parameter('v_vvz', type="VV",
+                   Parameter('vv_vz', type="VV",
                              doc="Vector Z component"),
                    Parameter('itr', type="ITR",
                              doc="Image transform - must contain zones"),

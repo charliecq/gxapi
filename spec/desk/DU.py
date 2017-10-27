@@ -1385,11 +1385,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('data', type=Type.STRING,
                              doc="Export data file name"),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('template', type=Type.STRING,
                              doc="Export template name")
                ]),
 
@@ -1647,7 +1647,7 @@ gx_methods = {
                              doc="Y decimation factor"),
                    Parameter('trim_dum', type=Type.INT32_T,
                              doc="0 trim leading/trailing dummies (default), 1 trim all dummies, 2 leave all dummies"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('create_index', type=Type.INT32_T,
                              doc="Flag for creating index channel: 0 no (default), 1 yes.")
                ]),
 

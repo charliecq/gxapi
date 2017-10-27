@@ -1515,9 +1515,9 @@ gx_methods = {
                              doc=":class:`EMAP` object"),
                    Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y")
                ]),
 
@@ -1540,11 +1540,11 @@ gx_methods = {
                              doc=":class:`EMAP` object"),
                    Parameter('str_val', type=Type.STRING,
                              doc="User prompt string"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y"),
-                   Parameter('v_vz', type="VV",
+                   Parameter('vv_z', type="VV",
                              doc="Z")
                ]),
 
@@ -1675,9 +1675,9 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` Handle"),
-                   Parameter('v_vx', type="VV",
+                   Parameter('vv_x', type="VV",
                              doc="X :class:`VV` Handle"),
-                   Parameter('v_vy', type="VV",
+                   Parameter('vv_y', type="VV",
                              doc="Y :class:`VV` Handle")
                ])
     ],

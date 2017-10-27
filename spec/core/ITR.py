@@ -108,9 +108,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('itr', type="ITR"),
-                   Parameter('v_vd', type="VV",
+                   Parameter('vv_d', type="VV",
                              doc="Input :class:`VV` of values (none-string)"),
-                   Parameter('v_vc', type="VV",
+                   Parameter('vv_c', type="VV",
                              doc="Output :class:`VV` of colors (type INT)")
                ]),
 
