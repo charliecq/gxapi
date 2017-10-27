@@ -9,6 +9,9 @@ gx_class = Class('ST',
                  statistics for a grid.
                  """,
                  notes="""
+
+                 .. _histogram_ranges:
+
                  *** Histogram ranges and color zone ranges ***
                  
                  Histogram bins are defined with inclusive minima and exclusive maxima;
@@ -163,20 +166,20 @@ gx_methods = {
                
                IMPORTANT: This function gets the histogram minimum and
                maximum from the current min and max values stored in the :class:`ST`,
-               so this is equivalent to calling
+               so this is equivalent to calling :func:`Histogram2_ST` with
                
-               :func:`Histogram2_ST`( #bins, Min, (Max-Min)/(# bins -2));
+               ``#bins, Min, (Max-Min)/(# bins -2))``
                
                You should already have the data loaded in order to call this
                function.
                
-               See the note above "Histogram ranges and color zone ranges"
+               See histogram_ranges_
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('div', type=Type.INT32_T,
+                   Parameter('bins', type=Type.INT32_T,
                              doc="# of bins")
                ]),
 
@@ -188,13 +191,13 @@ gx_methods = {
                and the one after the maximum, so it must be a value >2.
                The width of the individual bins will be (Min-Max)/(# - 2)
                
-               See the note above "Histogram ranges and color zone ranges"
+               See histogram_ranges_
                """,
                return_type=Type.VOID,
                parameters = [
                    Parameter('st', type="ST",
                              doc=":class:`ST` Handle"),
-                   Parameter('div', type=Type.INT32_T,
+                   Parameter('bins', type=Type.INT32_T,
                              doc="# of bins"),
                    Parameter('min', type=Type.DOUBLE,
                              doc="Min"),

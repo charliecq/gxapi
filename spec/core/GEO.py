@@ -19,14 +19,14 @@ gx_methods = {
                For Geosoft functions that do not return an error
                condition (all of them except those specifically designed
                for DLL use) you must call this function to test if an
-               error has occured in the Geosoft function.  If an error
-               has occured, just clean-up and return.  Error messages
+               error has occurred in the Geosoft function.  If an error
+               has occurred, just clean-up and return.  Error messages
                will have been registered by the Geosoft function.
                """,
                return_type=Type.INT32_T,
                return_doc="""
                0 if no errors.
-               1 if an error has occured.
+               1 if an error has occurred.
                """),
 
         Method('iCheckTerminate_SYS', module='geoengine.core', version='9.1.0',

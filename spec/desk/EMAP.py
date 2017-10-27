@@ -982,14 +982,10 @@ gx_methods = {
                call, in cases where it is known that no changes are being
                made to the map.
                
-               Typical usage:
-               
-               ap = :func:`Lock_EMAP`(EMap);
-               etRedrawFlag_EMAP(EMap,:def_val:`EMAP_REDRAW_NO`);
-               
-               Stuff....
-               
-               :func:`UnLock_EMAP`(Map);
+               Typical usage would be to call :func:`Lock_EMAP` followed by
+               :func:`SetRedrawFlag_EMAP` (with def_val:`EMAP_REDRAW_NO`) prior
+               to querying information from the map. And then end with a call to
+               :func:`UnLock_EMAP`.
                """,
                return_type=Type.VOID,
                parameters = [

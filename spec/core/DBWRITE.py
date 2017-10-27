@@ -19,7 +19,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBWRITE` object
-               Add channels using the :func:`iAddChannel_DBWRITE`() method.channel.
+               Add channels using the :func:`iAddChannel_DBWRITE` method.channel.
                """,
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",
@@ -32,7 +32,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBWRITE` object for a XY-located data. Add channels using the
-               :func:`iAddChannel_DBWRITE`() method.
+               :func:`iAddChannel_DBWRITE` method.
                """,
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",
@@ -45,7 +45,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBWRITE` object for a XYZ-located data.
-               Add channels using the :func:`iAddChannel_DBWRITE`() method.channel
+               Add channels using the :func:`iAddChannel_DBWRITE` method.channel
                """,
                return_type="DBWRITE",
                return_doc=":class:`DBWRITE` object",

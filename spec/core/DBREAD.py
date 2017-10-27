@@ -19,7 +19,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBREAD` object
-               Add channels using the :func:`iAddChannel_DBREAD`() method.channel.
+               Add channels using the :func:`iAddChannel_DBREAD` method.channel.
                """,
                return_type="DBREAD",
                return_doc=":class:`DBREAD` object",
@@ -34,7 +34,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBREAD` object for a XY-located data. Add channels using the
-               		               :func:`iAddChannel_DBREAD`() method.
+               :func:`iAddChannel_DBREAD` method.
                """,
                return_type="DBREAD",
                return_doc=":class:`DBREAD` object",
@@ -49,7 +49,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="""
                Create a :class:`DBREAD` object for a XYZ-located data.
-               Add channels using the :func:`iAddChannel_DBREAD`() method.channel
+               Add channels using the :func:`iAddChannel_DBREAD`method.channel
                """,
                return_type="DBREAD",
                return_doc=":class:`DBREAD` object",

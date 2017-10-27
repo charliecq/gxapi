@@ -546,7 +546,7 @@ gx_methods = {
                notes="""
                This function was made obsolete and replaced
                with the :func:`LoadFile_LST` function, because it
-               in fact always returned 0. If an error occured
+               in fact always returned 0. If an error occurred
                the function terminates, it does NOT return a 1.
                
                Obsolete

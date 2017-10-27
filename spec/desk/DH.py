@@ -2421,7 +2421,7 @@ gx_methods = {
                doc="Replot holes on an existing drill map.",
                notes="""
                The parameter file must correspond to the plot Type.
-               The hDH->hMAP value must be set first, using :func:`SetMAP_DH`().
+               The hDH->hMAP value must be set first, using :func:`SetMAP_DH`.
                Overwrites existing hole and hole data groups.
                Replots the legend if the legend is enabled.
                This should only be used on a slightly modified version of the
@@ -2786,9 +2786,8 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Select all holes in :class:`PLY` (Polygon) object.",
                notes="""
-               This function operates the same as the call:
-               
-               :func:`SelectPLY2_DH`(Drill, 1, 0, 0);
+               This function operates the same as the :func:`SelectPLY2_DH` method 
+               with parameters ``(1, 0, 0)``
                """,
                return_type=Type.VOID,
                parameters = [

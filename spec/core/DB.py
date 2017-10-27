@@ -1429,13 +1429,8 @@ gx_methods = {
                This method has been largely superseded by the use of the :class:`EDB` object,
                which when locked returns a :class:`DB` object that must NOT be destroyed.
                
-               EData = :func:`Current_EDB`();       // get current edited database
-               Data = :func:`Lock_EDB`(EData);      // lock the database
-               ... (Process using the :class:`DB` object Data)
-               :func:`UnLock_EDB`(EData);           // unlock the database
-               
                It may still be reasonably used to destroy a :class:`DB` handle returned when
-               a database is opened using a call to :func:`Open_DB`().
+               a database is opened using a call to :func:`Open_DB`.
                """,
                return_type=Type.VOID,
                parameters = [

@@ -1270,31 +1270,28 @@ gx_methods = {
                doc="Setup an index :class:`VV` from VV1 to VV2.",
                notes="""
                The input reference :class:`VV` must be in ascending numerical order.
-               If your reference data is NOT ordered, then use the the
-               :func:`SortIndex1_VV` function to create an order index, then sort
-               both the reference and data VVs using this index :class:`VV` before
-               you call :func:`SetupIndex_VV`.
+               If your reference data is NOT ordered, then use the :func:`SortIndex1_VV` 
+               function to create an order index, then sort both the reference and data VVs 
+               using this index :class:`VV` before you call :func:`SetupIndex_VV`.
                
-               Example: You have a reference data set taken at specific times, hVVt, hVVy
-               and you want to calculate/estimate/interpolate the values hVVy2 at a second set
-               of times hVVt2
+               Example: You have a reference data set taken at specific times, ``hVVt``, ``hVVy``
+               and you want to calculate/estimate/interpolate the values ``hVVy2`` at a second set
+               of times ``hVVt2``
                
-               Step 1: Create an index, hVVi, type :def_val:`GS_DOUBLE`, and call :func:`SetupIndex_VV`.
+               Step 1: Create an index, ``hVVi``, type :def_val:`GS_DOUBLE`, and call :func:`SetupIndex_VV`.
                
-               e.g. : :func:`SetupIndex_VV`(hVVt, hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing);
-               
-               Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
-               values in hVVt, then, depending on the lookup method chosen, assigns
-               fractional index values to the input values in hVVt2.
-               
-               Step 2: To determine what the lookup values hVVy2 should be at times hVVt2,
-               call the sLookupIndex_VV function:
-               
-               e.g. : :func:`LookupIndex_VV`(hVVy, hVVi, hVVy2);
+               with: ``hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing``
                
                Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
-               values in hVVy, and uses linear interpolation to calculate the values of
-               hVVy2 at the input indices contained in hVVi.
+               values in ``hVVt``, then, depending on the lookup method chosen, assigns
+               fractional index values to the input values in ``hVVt2``.
+               
+               Step 2: To determine what the lookup values ``hVVy2`` should be at times ``hVVt2``,
+               call the :func:`LookupIndex_VV` function for hVVy with ``hVVi, hVVy2``
+               
+               Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
+               values in ``hVVy``, and uses linear interpolation to calculate the values of
+               ``hVVy2`` at the input indices contained in ``hVVi``.
                """,
                return_type=Type.VOID,
                parameters = [

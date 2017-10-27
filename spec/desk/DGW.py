@@ -243,12 +243,12 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="Changes the title of the dialog.",
                notes="""
-               A "Special", additional title can be added to a dialog by using
-               the following syntax:
+               A "Special", additional title can be added to a dialog by passing a title
+               to :func:`SetTitle_DGW` with the following syntax:
                
-               :func:`SetTitle_DGW`(Diag, "Window Title\\nAdditional Title");
+               ``"Window Title\\nAdditional Title"``
                
-               In the title argument, a line break character '\\n' is used to
+               In the title argument, a line break character ``'\\n'`` is used to
                separate the parts.
                
                The window title free_appears as the title in the upper bar of the dialog.

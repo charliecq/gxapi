@@ -1407,7 +1407,7 @@ gx_methods = {
                requests the file type.
                This function DOES NOT import the table itself, but
                creates an import template which may be used to import
-               the table (see :func:`ImportDAO_DU`()).
+               the table (see :func:`ImportDAO_DU`).
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -1434,7 +1434,7 @@ gx_methods = {
                
                2. This function DOES NOT import the table itself, but
                   creates an import template which may be used to import
-                  the table (see :func:`ImportADO_DU`()).
+                  the table (see :func:`ImportADO_DU`).
                
                3. If connection string is of type "FILENAME=..." the connection will attempt to resolve
                   it as a file database. (see also ODBCFileConnect_GUI)
@@ -1487,7 +1487,7 @@ gx_methods = {
                
                4. This function DOES NOT import the table itself, but
                   creates an import template which may be used to import
-                  the data (see :func:`ImportDAO_DU`()).
+                  the data (see :func:`ImportDAO_DU`).
                
                5. If connection string is of type "FILENAME=..." the connection will attempt to resolve
                   it as a file database. (see also ODBCFileConnect_GUI)
@@ -1542,7 +1542,7 @@ gx_methods = {
                
                This function DOES NOT import the table itself, but
                creates an import template which may be used to import
-               the data (see :func:`ImportDAO_DU`()).
+               the data (see :func:`ImportDAO_DU`).
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -1567,7 +1567,7 @@ gx_methods = {
                doc="Generate a template file for importing drill holes.",
                notes="""
                This is an improved version of ImportDrillDatabase_GUI using the
-               new ADO technology, as opposed to DAO. Use in conjuction with
+               new ADO technology, as opposed to DAO. Use in conjunction with
                :func:`ImportADO_DU`. See also ImportDatabaseADO_GUI.
                """,
                return_type=Type.INT32_T,
@@ -1594,13 +1594,13 @@ gx_methods = {
                availability=Availability.LICENSED, is_app=True, is_gui=True, 
                doc="Create template to import an external database table; provide query.",
                notes="""
-               This is similar to ImportDatabaseSQL_GUI, but dispenses with
+               This is similar to :func:`iImportDatabaseSQL_GUI`, but dispenses with
                the dialog offering a selection of queries. Instead, the
                user supplies the query as a string.
                
                This function DOES NOT import the table itself, but
                creates an import template which may be used to import
-               the data (see :func:`ImportDAO_DU`()).
+               the data (see :func:`ImportDAO_DU`).
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -1623,13 +1623,13 @@ gx_methods = {
                availability=Availability.LICENSED, is_app=True, is_gui=True, 
                doc="Create template to import an external database table; provide query.",
                notes="""
-               This is similar to ImportDatabaseSQL_GUI, but dispenses with
+               This is similar to :func:`iImportDatabaseSQL_GUI`, but dispenses with
                the dialog offering a selection of queries. Instead, the
                user supplies the query as a string.
                
                This function DOES NOT import the table itself, but
                creates an import template which may be used to import
-               the data (see :func:`ImportADO_DU`()).
+               the data (see :func:`ImportADO_DU`).
                """,
                return_type=Type.INT32_T,
                return_doc="""

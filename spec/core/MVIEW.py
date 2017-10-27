@@ -535,7 +535,7 @@ gx_methods = {
                    Parameter('color_vv', type="VV",
                              doc="Colors :class:`VV` (:def_val:`GS_INT`) [can be NULL]"),
                    Parameter('color', type=Type.INT32_T,
-                             doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fillcolor]"),
+                             doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fill color]"),
                    Parameter('tri_vv_pt1', type="VV",
                              doc="Triangles Point 1 (:def_val:`GS_INT`)"),
                    Parameter('tri_vv_pt2', type="VV",
@@ -573,7 +573,7 @@ gx_methods = {
                doc="Get the names of grid files stored in an :class:`AGG`.",
                notes="""
                The group must be an :class:`AGG` group. Check this using
-               :func:`iIsGroup_MVIEW`(View, sGroup, :def_val:`MVIEW_IS_AGG`).
+               :func:`iIsGroup_MVIEW` and :def_val:`MVIEW_IS_AGG`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -605,7 +605,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Compute the bounding rectangle in view units of the text using the current attributes.",
                notes="""
-               Area will be 0 if error occured (does not fail).
+               Area will be 0 if error occurred (does not fail).
                This will return the bounding rectangle as if the text was placed at 0,0 and adjusted according to
                the current text alignment and angle set for the view. Also see notes for :func:`TextSize_MVIEW`.
                """,
@@ -3384,17 +3384,10 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Set the projection of the view.",
                notes="""
-               As of v5.1.8, this function also sets the User :class:`IPJ`,
-               and automatically clears the WARP before doing so, so
-               that instead of the following construction:
-               
-               :func:`SetIPJ_MVIEW`(View,hIPJ);
-               ClearWarp_IPJ(hIPJ);
-               :func:`SetUserIPJ_MVIEW`(View,hIPJ);
-               
-               you can simply use:
-               
-               :func:`SetIPJ_MVIEW`(View,hIPJ);
+               This function also sets the User :class:`IPJ`,
+               and automatically clears the WARP before doing so.
+               This would be equivalent to calling :func:`_ClearWarp_IPJ'
+               followed by :func:`SetUserIPJ_MVIEW` on the view.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -4469,13 +4462,13 @@ gx_methods = {
                    Parameter('sur', type="SUR",
                              doc="Surface"),
                    Parameter('min_x', type=Type.DOUBLE,
-                             doc="Min X of locatin on map"),
+                             doc="Min X of location on map"),
                    Parameter('min_y', type=Type.DOUBLE,
-                             doc="Min Y of locatin on map"),
+                             doc="Min Y of location on map"),
                    Parameter('max_x', type=Type.DOUBLE,
-                             doc="Max X of locatin on map"),
+                             doc="Max X of location on map"),
                    Parameter('max_y', type=Type.DOUBLE,
-                             doc="Max Y of locatin on map"),
+                             doc="Max Y of location on map"),
                    Parameter('name', type=Type.STRING,
                              doc="Surface name (Maximum length is :def_val:`MVIEW_NAME_LENGTH`)")
                ]),
@@ -4507,7 +4500,7 @@ gx_methods = {
                    Parameter('color_vv', type="VV",
                              doc="Colors :class:`VV` (:def_val:`GS_INT`) [can be NULL]"),
                    Parameter('color', type=Type.INT32_T,
-                             doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fillcolor]"),
+                             doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fill color]"),
                    Parameter('tri_vv_pt1', type="VV",
                              doc="Triangles Point 1 (:def_val:`GS_INT`)"),
                    Parameter('tri_vv_pt2', type="VV",

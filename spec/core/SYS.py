@@ -16,27 +16,37 @@ gx_class = Class('SYS',
                  For example, a parameter could be named as "PARM[1]".
                  The index can be a positive number, or it can be a '*'.
                  
-                 If the index is a '*' in ":func:`SetString_SYS`", then the value string
+                 If the index is a '*' in :func:`SetString_SYS`, then the value string
                  will be parsed into multiple values. Commas are assumed to be delimiters.
                  
                  E.g.
                  
-                 :func:`SetString_SYS`("group1",
-                 "multiparm[*]",
-                 "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\"");
+                 ::
+
+                    "group1",
+                    "multiparm[*]",
+                    "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\""
                  
-                 This call will set   multiparm[0] ="value1"
-                 multiparm[1] ="value,2"
-                 multiparm[2] ="value 3"
-                 multiparm[3] ="value4"
-                 multiparm[4] ="value 5"
+
+                Will set:
+
+                ::
+                
+                    multiparm[0] ="value1"
+                    multiparm[1] ="value,2"
+                    multiparm[2] ="value 3"
+                    multiparm[3] ="value4"
+                    multiparm[4] ="value 5"
                  
-                 To read a parameter, name the parameter with the index.  Thre is no
-                 looped-reading ability.  For example:
+                 To read a parameter, name the parameter with the index.  There is no
+                 looped-reading ability. For example using the following with :func:`GtString_SYS`:
                  
-                 GetString_SYS("group1","multiparm[3]",sSetting);
+                 ``"group1","multiparm[3]",setting``
                  
-                 returns sSetting = "value4"
+                 will return:
+                
+                 ``setting = "value4"``
+
                  """,
                  verbatim_gxh_defines="""
 #define Prompt_SYS(A,B)						IiPrompt_SYS(A,B,sizeof(B))
@@ -824,7 +834,7 @@ gx_methods = {
                notes="""
                If the called GX returns an error, they will not be
                displayed until the "top" calling GX terminates, unless you
-               call :func:`ShowError_SYS`().
+               call :func:`ShowError_SYS`.
                """,
                see_also=":func:`iRunGXEx_SYS`, :func:`SetInteractive_SYS` and :func:`iRunGS_SYS`",
                return_type=Type.INT32_T,
@@ -876,21 +886,12 @@ gx_methods = {
 
         Method('iShellExecute_SYS', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="MS ShellExecute function",
-               notes="""
-               Examples
-               
-               :func:`iShellExecute_SYS`(open;http://www.geosoft.com);
-               :func:`iShellExecute_SYS`(open;"mailto:geonet@lists.geosoft.com");
-               :func:`iShellExecute_SYS`(open;"mailto:majordomo@lists.geosoft.com?body=UNSUBSCRIBE%20gxnet");
+               doc="""
+               Call Microsoft ShellExecute function (See `MSDN <https://msdn.microsoft.com/en-us/library/windows/desktop/bb762153(v=vs.85).aspx>`_)
                """,
                see_also=":func:`DoCommand_SYS`",
                return_type=Type.INT32_T,
-               return_doc="""
-               return value of ShellExecute command
-               
-               See                ShellExecute description in MSDN
-               """,
+               return_doc="""return value of ShellExecute as documented on MSDN""",
                parameters = [
                    Parameter('verb', type=Type.STRING,
                              doc="Verb"),
@@ -938,7 +939,7 @@ gx_methods = {
                
                :func:`DoCommand_SYS`("[ID] ID_EDIT_SELECT");  // bring up the line edit tool
                """,
-               see_also="ShellExecute_SYS",
+               see_also=":func:`iShellExecute_SYS`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('command', type=Type.STRING,
@@ -963,7 +964,7 @@ gx_methods = {
                    Parameter('error_file', type=Type.STRING,
                              doc='Your error file name, "" if none.'),
                    Parameter('module', type=Type.STRING,
-                             doc="Module name in which error occured."),
+                             doc="Module name in which error occurred."),
                    Parameter('error', type=Type.INT32_T,
                              doc="Error number")
                ]),
@@ -1043,7 +1044,7 @@ gx_methods = {
                ]),
 
         Method('ShowError_SYS', module='None', version='5.0.0',
-               availability=Availability.PUBLIC, is_app=True, 
+               availability=Availability.PUBLIC, is_app=True, no_cpp=True,
                doc="Display any errors to the user.",
                notes="""
                If you call a GX from another GX using :func:`iRunGX_SYS`, and
@@ -1071,8 +1072,8 @@ gx_methods = {
                doc="DLL error termination",
                notes="""
                Call this function immediately before returning to
-               the caller after an error has occured inside the
-               DLL.  If an error has occured, you should clean-up
+               the caller after an error has occurred inside the
+               DLL.  If an error has occurred, you should clean-up
                (free memory, close files), call :func:`Error_SYS` to register
                your own error messages, call :func:`ErrorTag_SYS` to set any
                error message tags, call :func:`Terminate_SYS` and return.
@@ -3069,7 +3070,7 @@ gx_methods = {
 
         Method('DecryptString_SYS', module='geoengine.core', version='9.0.0',
                availability=Availability.PUBLIC, 
-               doc="Decrypts a string that has been previously encrypted by :func:`EncryptString_SYS`().",
+               doc="Decrypts a string that has been previously encrypted by :func:`EncryptString_SYS`.",
                return_type=Type.VOID,
                return_doc="Nothing.",
                parameters = [
@@ -3085,7 +3086,7 @@ gx_methods = {
 
         Method('IsEncryptedString_SYS', module='geoengine.core', version='9.0.0',
                availability=Availability.PUBLIC, 
-               doc="Checks whether the specified string was encrypted by :func:`EncryptString_SYS`().",
+               doc="Checks whether the specified string was encrypted by :func:`EncryptString_SYS`.",
                return_type=Type.INT32_T,
                return_doc="0 (false) or non-zero (true)",
                parameters = [

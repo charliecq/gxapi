@@ -5,7 +5,7 @@ gx_class = Class('MAP',
                  MAPs are containers for :class:`MVIEW` objects. A view is a 3-D translation
                  and a clip window on a map. Graphic entities can be drawn in an :class:`MVIEW`.
                  It is recommended that the :class:`MAP` class be instantiated by first creating
-                 an :class:`EMAP` object and calling the :func:`Lock_EMAP`() function.
+                 an :class:`EMAP` object and calling the :func:`Lock_EMAP` function.
                  (See the explanation on the distinction between the :class:`MAP` and :class:`EMAP` classes).
                  """)
 
