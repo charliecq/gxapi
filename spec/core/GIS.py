@@ -107,11 +107,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="GIS",
+                   Parameter('gis', type="GIS",
                              doc=":class:`GIS` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('file', type=Type.STRING,
                              doc="BPR or BPR2 file"),
-                   Parameter('p3', type="LST",
+                   Parameter('lst', type="LST",
                              doc="Returned :class:`LST` of block models")
                ]),
 

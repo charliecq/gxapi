@@ -364,13 +364,13 @@ gx_methods = {
                see_also=":class:`VV` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place the data")
                ]),
 
@@ -492,17 +492,17 @@ gx_methods = {
                see_also=":class:`VV` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` in which to place the data"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('offset', type=Type.INT32_T,
                              doc="Offset"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('items', type=Type.INT32_T,
                              doc="Number to Write")
                ]),
 
@@ -895,13 +895,13 @@ gx_methods = {
                see_also=":class:`VV` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` from which to get the data")
                ]),
 
@@ -915,17 +915,17 @@ gx_methods = {
                see_also=":class:`VV` class.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="DB_SYMB",
+                   Parameter('line', type="DB_SYMB",
                              doc="Line"),
-                   Parameter('p3', type="DB_SYMB",
+                   Parameter('chan', type="DB_SYMB",
                              doc="Channel"),
-                   Parameter('p4', type="VV",
+                   Parameter('vv', type="VV",
                              doc=":class:`VV` from which to get the data"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('offset', type=Type.INT32_T,
                              doc="Offset"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('items', type=Type.INT32_T,
                              doc="Number to Write")
                ]),
 
@@ -2363,9 +2363,9 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type="LST",
+                   Parameter('lst', type="LST",
                              doc="List to Populate")
                ]),
 
@@ -2506,17 +2506,17 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="DB_SYMB handle.",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('name', type=Type.STRING,
                              doc="Symbol Name"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('symb', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`"),
-                   Parameter('p4', type=Type.INT32_T,
+                   Parameter('owner', type=Type.INT32_T,
                              doc=":def:`DB_OWN`"),
-                   Parameter('p5', type=Type.INT32_T,
+                   Parameter('category', type=Type.INT32_T,
                              doc=":def:`DB_CATEGORY_USER`, :def:`DB_CATEGORY_LINE`, :def:`DB_CATEGORY_CHAN`, :def:`DB_CATEGORY_BLOB`"),
-                   Parameter('p6', type=Type.INT32_T,
+                   Parameter('extra', type=Type.INT32_T,
                              doc="Extra info, which depends on :def:`DB_SYMB_TYPE` :def_val:`DB_SYMB_CHAN` - element width for a :class:`VA` channel ignores for all other :def:`DB_SYMB_TYPE` types")
                ]),
 
@@ -2627,9 +2627,9 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="Channel Handle, :def_val:`NULLSYMB` if not defined",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('chan', type=Type.STRING,
                              doc="Name of channel")
                ]),
 
@@ -2661,11 +2661,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="Symbol Handle, :def_val:`NULLSYMB` if not defined",
                parameters = [
-                   Parameter('p1', type="DB",
+                   Parameter('db', type="DB",
                              doc="Database"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('symb', type=Type.STRING,
                              doc="Name of symbol"),
-                   Parameter('p3', type=Type.INT32_T,
+                   Parameter('type', type=Type.INT32_T,
                              doc=":def:`DB_SYMB_TYPE`")
                ]),
 

@@ -42,7 +42,7 @@ gx_methods = {
                1 terminate
                """,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T, is_ref=True,
+                   Parameter('reason', type=Type.INT32_T, is_ref=True,
                              doc="Termination reason (0 = normal, -1 = cancel, 1 = error)")
                ]),
 
@@ -60,15 +60,15 @@ gx_methods = {
                1 - error found
                """,
                parameters = [
-                   Parameter('p1', type=Type.STRING, is_ref=True, size_of_param='p2',
+                   Parameter('mod', type=Type.STRING, is_ref=True, size_of_param='mod_size',
                              doc="Module name buffer (should be at least 64 bytes)"),
-                   Parameter('p2', type=Type.INT32_T, is_val=True, default_length='STR_DEFAULT',
+                   Parameter('mod_size', type=Type.INT32_T, is_val=True, default_length='STR_DEFAULT',
                              doc="Size of module name buffer"),
-                   Parameter('p3', type=Type.STRING, is_ref=True, size_of_param='p4',
+                   Parameter('err', type=Type.STRING, is_ref=True, size_of_param='err_size',
                              doc="Error buffer (should be at least 2048 bytes)"),
-                   Parameter('p4', type=Type.INT32_T, is_val=True, default_length='STR_ERROR',
+                   Parameter('err_size', type=Type.INT32_T, is_val=True, default_length='STR_ERROR',
                              doc="Size of error buffer"),
-                   Parameter('p5', type=Type.INT32_T, is_ref=True,
+                   Parameter('error', type=Type.INT32_T, is_ref=True,
                              doc="Error number")
                ]),
 
@@ -144,11 +144,11 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('resource', type=Type.INT32_T,
                              doc="Handle of resource to track"),
-                   Parameter('p2', type="void*",
+                   Parameter('pinfo', type="void*",
                              doc="pInfo handle to pass to destructor"),
-                   Parameter('p3', type="void (_stdcall *param3)(void*)",
+                   Parameter('destr', type="void (_stdcall *destr)(void*)",
                              doc="Destructor function")
                ]),
 
@@ -158,11 +158,11 @@ gx_methods = {
                notes="This removes the tracking controls",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type=Type.INT32_T,
+                   Parameter('handle', type=Type.INT32_T,
                              doc="Handle of resource to track"),
-                   Parameter('p2', type="void*",
-                             doc="pInfo handle to pass to destructor"),
-                   Parameter('p3', type="void (_stdcall *param3)(void*)",
+                   Parameter('pinfo', type="void*",
+                             doc="Info handle to pass to destructor"),
+                   Parameter('destr', type="void (_stdcall *param3)(void*)",
                              doc="Destructor function")
                ])
     ]

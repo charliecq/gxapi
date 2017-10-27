@@ -917,9 +917,9 @@ gx_methods = {
                return_type=Type.VOID,
                return_doc="Nothing",
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str_val', type=Type.STRING,
                              doc="New name (See Valid inputs above).")
                ]),
 
@@ -1707,17 +1707,17 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('p1', type="IPJ",
+                   Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
-                   Parameter('p2', type=Type.STRING,
+                   Parameter('str1', type=Type.STRING,
                              doc='"projection name" or PCS_NAME from ipj_pcs.csv (datum / projection) or EPSG coordinate system code number or "<file.prj>" projection file name or "<file.wrp>" warp file name'),
-                   Parameter('p3', type=Type.STRING,
+                   Parameter('str2', type=Type.STRING,
                              doc='"datum name"[, major axis, elipticity, prime meridian] or DATUM from datum.csv or EPSG datum code number'),
-                   Parameter('p4', type=Type.STRING,
+                   Parameter('str3', type=Type.STRING,
                              doc='"method name", parameters (P1 through P8) or "projection name"[,"method name","Units",P1,P2...] or TRANSFORM from transform.csv or EPSG transform method code number'),
-                   Parameter('p5', type=Type.STRING,
+                   Parameter('str4', type=Type.STRING,
                              doc='"unit name", convertion to metres or UNIT_LENGTH from units.csv'),
-                   Parameter('p6', type=Type.STRING,
+                   Parameter('str5', type=Type.STRING,
                              doc='"local transform name"[,dX,dY,dZ,rX,rY,rZ,Scale] or DATUM_TRF from datumtrf.csv or AREA_OF_USE from ldatum.csv or EPSG local datum transform code number')
                ]),
 

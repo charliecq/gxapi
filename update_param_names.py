@@ -41,14 +41,22 @@ for gxx_file in gxx_files:
                 .replace('const char*','')
                 .replace('const long*','')
                 .replace('const double *','')
+                .replace('const void*','')
                 .replace('const char *','')
                 .replace('const long *','')
+                .replace('const void *','')
+                .replace('HWND','')
+                .replace('HDC','')
                 .replace('long*','')
                 .replace('double*','')
                 .replace('char*','')
+                .replace('void*','')
                 .replace('long *','')
                 .replace('double *','')
                 .replace('char *','')
+                .replace('void *','')
+                .replace('long ','')
+                .replace('void ','')
                 .replace('H_GXX* hGXX','')
                 .replace('H_GXX *hGXX','')
                 .replace('H_GXX *','')
@@ -57,6 +65,7 @@ for gxx_file in gxx_files:
                 .replace('(',' ')
                 .replace(')','')
                 .replace(',','')
+                .replace('*','')
                 .split()
                 for match in rew.finditer(gxx_source)]
 
@@ -82,20 +91,21 @@ for file in spec_files:
     with open(file, 'r') as f:
          sources[gx_cl] = [file, f.read()]
 
-def replace_params(match, params):
-    for i in range(0, len(params)):
-        match = match.replace("'p{}'".format(i + 1), "'{}'".format(params[i]))
-    return match
-
 for func, params in funclookup.items():
     cl = func[func.rfind('_')+1:]
     if cl in sources.keys():
-        method_re = "(\(\'{}\'[^\[]*?\[.*\s)(.*Parameter\(\')(p{})((?:.*\n)*?(?:.*\),?\n))".format(func, 1)
-        for i in range(1, len(params)):
-            method_re += "(.*Parameter\(\')(p{})((?:.*\n)*?(?:.*\),?\n))".format(i + 1)
-
-        reg_func = re.compile(method_re, re.MULTILINE)
-        sources[cl][1] = reg_func.sub(lambda m: replace_params(m[0], params), sources[cl][1])
+        for match in re.finditer(r"Method\(\'{}\'([^\n]*\n)+?.*Parameter\(\'[^\]]*?\]\),".format(func, 1), sources[cl][1], re.MULTILINE):
+            func_def = match[0]
+            repl_def = func_def
+            should_replace = False
+            for i in range(0, len(params)):
+                param_name = "Parameter('p{}'".format(i + 1)
+                if repl_def.find(param_name) > 0:
+                    should_replace = True
+                    repl_def = repl_def.replace(param_name, "Parameter('{}'".format(params[i]))
+            if should_replace:
+                sources[cl][1] = sources[cl][1].replace(func_def, repl_def)
+            break
 
 for cl, pair in sources.items():
     with open(pair[0], 'w') as f:
