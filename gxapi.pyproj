@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>update_param_names.py</StartupFile>
+    <StartupFile>gen_python.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

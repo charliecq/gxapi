@@ -28,27 +28,27 @@ gx_class = Class('SYS',
                     "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\""
                  
 
-                Will set:
+                 Will set:
 
-                ::
-                
-                    multiparm[0] ="value1"
-                    multiparm[1] ="value,2"
-                    multiparm[2] ="value 3"
-                    multiparm[3] ="value4"
-                    multiparm[4] ="value 5"
+                 ::
                  
+                     multiparm[0] ="value1"
+                     multiparm[1] ="value,2"
+                     multiparm[2] ="value 3"
+                     multiparm[3] ="value4"
+                     multiparm[4] ="value 5"
+                  
                  To read a parameter, name the parameter with the index.  There is no
                  looped-reading ability. For example using the following with :func:`GtString_SYS`:
                  
                  ``"group1","multiparm[3]",setting``
                  
                  will return:
-                
+                 
                  ``setting = "value4"``
 
                  """,
-                 verbatim_gxh_defines="""
+                verbatim_gxh_defines="""
 #define Prompt_SYS(A,B)						IiPrompt_SYS(A,B,sizeof(B))
 #define Destroy_SYS(A)						Destr_SYS((HANDLE)(A))
 #define iFindPathNameEx_SYS(A,B,C,D)	iFindPathEx_SYS(A,B,C,D,sizeof(D))
@@ -923,21 +923,30 @@ gx_methods = {
                notes="""
                Commands syntax:  "[type] command"
                
+               =======  ============================================================================================
                type     command
-               ----     -------
-               ID       Internal Menu Command
-               See "Internal Menu Commands" in GX Developer documentation.
+               =======  ============================================================================================
+               ID       Internal Menu Command (as found in omn and geobar files e.g. ``*ID_EDIT_SELECT``)
+               -------  --------------------------------------------------------------------------------------------
                GX       gx file name
+               -------  --------------------------------------------------------------------------------------------
                GS       gs file name
-               DOTNET   dll file name
-               Use qualifiers to specify class and method e.g. [DOTNET] geogxnet.dll(Geosoft.GX.NewGDB.NewGDB;Run)
-               PDF      pdf file name
+               -------  --------------------------------------------------------------------------------------------
+               DOTNET   dll file name 
+                        Use qualifiers to specify class and method e.g.:
+                        ``"[DOTNET] geogxnet.dll(Geosoft.GX.NewGDB.NewGDB;Run)"``
+               -------  --------------------------------------------------------------------------------------------
+               PDF      Geosoft pdf file name (Not Adobe PDF document, a legacy Geosoft Sushi script)
+               -------  --------------------------------------------------------------------------------------------
                DOS      DOS style command
+               -------  --------------------------------------------------------------------------------------------
                HLP      help file name
-               
+               =======  ============================================================================================
+
                The must be ONE space between the "]" and the command.  For example:
                
-               :func:`DoCommand_SYS`("[ID] ID_EDIT_SELECT");  // bring up the line edit tool
+               ``"[ID] ID_EDIT_SELECT"``  // bring up the line edit tool
+
                """,
                see_also=":func:`iShellExecute_SYS`",
                return_type=Type.VOID,

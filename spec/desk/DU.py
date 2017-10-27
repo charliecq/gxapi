@@ -3392,7 +3392,7 @@ gx_methods = {
                doc="Add a data channel to a statistics object.",
                notes="""
                If the input channel is a :class:`VA` (array) channel, then the columns set using
-               :func:`SetVAWindows_DB`() are used in the statistics; all columns are used by default.
+               :func:`SetVAWindows_DB` are used in the statistics; all columns are used by default.
                """,
                see_also=":class:`ST`",
                return_type=Type.VOID,
