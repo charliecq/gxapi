@@ -317,6 +317,7 @@ class PythonCodeGenerator(CodeGeneratorBase):
     def __init__(self):
         cur_dir = os.path.dirname(os.path.join(os.getcwd(), inspect.getfile(self.__class__)))
         self.gxapi_outdir = os.path.join(cur_dir, '..', 'gxpy', 'geosoft', 'gxapi')
+        self.gxapi_docs_outdir = os.path.join(cur_dir, '..', 'gxpy', 'docs')
         template_dirs = [ os.path.join(cur_dir, 'templates') ]
         super().__init__(constant_type=PythonConstant, define_type=PythonDefine, parameter_type=PythonParameter,
                          method_type=PythonMethod, class_type=PythonClass, template_dirs=template_dirs)
@@ -388,8 +389,11 @@ class PythonCodeGenerator(CodeGeneratorBase):
     def regen_classes(self):
         for key, cl in self.classes.items():
             if not cl.no_cpp and not key == 'GEO':
-                output_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(key))
-                self._regen_py('class', output_file, cl=cl)
+                py_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(key))
+                self._regen_py('class', py_file, cl=cl)
+                rst_file = os.path.join(self.gxapi_docs_outdir, 'GX{}.rst'.format(key))
+                rst_template = self.get_template("class_generated.rst")
+                self.refresh_file_contents(rst_file, rst_template.render(cl=cl))
 
     def generate(self):
         gen.regen_init()

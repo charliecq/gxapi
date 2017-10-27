@@ -5,16 +5,20 @@
 # NOTICE: Do not edit anything here, it is generated code
 ### for cl in classes
 
-# BEGIN GX{{ cl }} Constants
-# NOTICE: Do not edit anything here, it is generated code
+#
+# GX{{ cl }} Constants
+# 
 
 {% for name, define in classes[cl].defines.items() %}{% if not name == "GEO_BOOL" and not define.is_null_handle %}
-{% for constant in define.constants %}
-{{ constant.name }} = {{ constant.python_value }}
-{% endfor %}
-{% endif %}{% endfor %}	
-
-# BEGIN GX{{ cl }} Constants
+{% if define.doc %}
+#
+# {{ define.name }} constants
+#
+# {{ define.doc | doc_sanitize(cl) | comment(prefix="# ") }}{% endif %}
+{% for constant in define.constants %}{% if constant.doc %}
+#: {{ constant.doc | doc_sanitize(cl) | comment(prefix="#: ") }}
+{% else %}
+{% endif %}{{ constant.name }} = {{ constant.python_value }}{% endfor %}{% endif %}{% endfor %}	
 
 ### endfor
 {{ "### endblock Constants" }}

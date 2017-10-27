@@ -178,6 +178,7 @@
     <Content Include="compile.bat" />
     <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
+    <Content Include="templates\class_generated.rst" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
