@@ -3,7 +3,6 @@
 ### block ClassImports
 {{ "### block ClassImports" }}
 # NOTICE: Do not edit anything here, it is generated code
-from typing import NewType
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 {% for i in cl.gxapi_imports %}from .{{ i }} import {{ i }}
@@ -66,7 +65,15 @@ class {{ class_name }}:
 {% if method.is_static %}    @classmethod{% endif %}
     def {{ method.ext_method_name }}({{ method.py_first_parm }}{% for param in method.py_parameters %}, {{ param.name }}{% endfor %}):
         """
-        {{ method.doc | doc_sanitize(cl.name) | indent(8) }}{% if method.notes %}
+        {{ method.doc | doc_sanitize(cl.name) | indent(8) }}
+        {% for param in method.py_parameters %}{% if param.doc %}
+        :param {{ param.name }}: {{ method.param_indent_start(param) }} {{ param.doc | doc_sanitize(cl.name) | indent(method.param_indent) }}{% endif %}{% endfor %}{% for param in method.py_parameters %}
+        :type  {{ param.name }}: {{ method.param_indent_start(param) }} {{ param.py_type }}{% endfor %}{% if not method.returns_void %}{% if method.return_doc %}
+
+        :returns:   {{ method.return_indent_start }} {{ method.return_doc | doc_sanitize(cl.name) | indent(method.param_indent) }}{% endif %}
+        :rtype:     {{ method.return_indent_start }} {{ method.py_return_type }}{% endif %}
+
+        .. versionadded:: {{ method.version }}{% if method.notes %}
 
         **Note:**
 

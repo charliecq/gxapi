@@ -27,7 +27,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc=":class:`DB` Handle"),
                    Parameter('ini', type=Type.STRING,
-                             doc="Job Name (*.inp)"),
+                             doc="Job Name (``*.inp``)"),
                    Parameter('plot_type', type=Type.INT32_T,
                              doc="Job type :def:`IP_PLOT`"),
                    Parameter('page', type=Type.INT32_T, is_ref=True,

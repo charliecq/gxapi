@@ -126,7 +126,22 @@ class PythonMethod(Method):
     _ref_string_params = None
     def __init__(self, other):
         super().construct_copy(other)
-        
+        max_param_name_len = max(len(p.name) for p in self.py_parameters) if len(self.py_parameters) else 0
+        self._param_indent = max_param_name_len + 18
+        self._return_indent_start = ' ' * max(0, self._param_indent - 21)
+    
+    def param_indent_start(self, param):
+        return ' ' * max(0, self._param_indent - 18 - len(param.name))
+
+    @property
+    def return_indent_start(self):
+        return self._return_indent_start
+
+    @property
+    def param_indent(self):
+        return self._param_indent
+
+    return_indent_start
 
     @property
     def call_wrapper(self):
@@ -310,7 +325,7 @@ class PythonCodeGenerator(CodeGeneratorBase):
 
     def doc_sanitize(self, s, ref_class):
         s = self.re_class.sub(r'`GX\1 <geosoft.gxapi.GX\1>`', s)
-        s = self.re_def.sub(r'`\1_`', s)
+        s = self.re_def.sub(r'`\1`', s)
         s = self.re_func.sub(lambda m: self.methods[m.group(1)].py_doc_ref(ref_class), s)
         s = self.re_def_val.sub(r'`\1 <geosoft.gxapi.\1>`', s)
         s = textwrap.dedent(s).strip()

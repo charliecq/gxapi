@@ -1425,11 +1425,11 @@ gx_methods = {
                    Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` object"),
                    Parameter('ext_ply', type=Type.INT32_T,
-                             doc="Extended ClipPLY number, If  >= :func:`iNumExtClipPLY_MVIEW`(View) it will be added to the end of the current list"),
+                             doc="Extended ClipPLY number, If greater or equal to the return value of :func:`iNumExtClipPLY_MVIEW` it will be added to the end of the current list"),
                    Parameter('name', type=Type.STRING,
                              doc="Name (Has to be unique, otherwise error will be returned)"),
                    Parameter('ply', type="PLY",
-                             doc=":class:`PLY` object to set, use (:class:`PLY`)0 to rename an existing object")
+                             doc=":class:`PLY` object to set, use a null :class:`PLY` to rename an existing object")
                ]),
 
         Method('SetClipPLY_MVIEW', module='geoengine.map', version='5.0.0',

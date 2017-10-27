@@ -1923,7 +1923,7 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="Get the loaded menus.",
                notes="""
-               The names of the LSTs contain the menus and the values contain any exclusions. Exlusions 
+               The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
                are semicolon separated top level menu names and/or toolbar.geobar file names.
                """,
                return_type=Type.VOID,
@@ -1940,7 +1940,7 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="Load a list of menus",
                notes="""
-               The names of the LSTs contain the menus and the values contain any exclusions. Exlusions 
+               The names of the LSTs contain the menus and the values contain any exclusions. Exclusions 
                are semicolon separated top level menu names and/or toolbar.geobar file names.
                """,
                return_type=Type.VOID,

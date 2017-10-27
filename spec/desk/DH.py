@@ -2223,7 +2223,7 @@ gx_methods = {
                    Parameter('mview', type="MVIEW",
                              doc="Existing 3D map view"),
                    Parameter('job', type=Type.STRING,
-                             doc="Parameter file (INI) name (normally *.in3)")
+                             doc="Parameter file (INI) name (normally ``*.in3``)")
                ]),
 
         Method('PlotSymbols3D_DH', module='geodh', version='9.1.0',
@@ -2236,7 +2236,7 @@ gx_methods = {
                    Parameter('mview', type="MVIEW",
                              doc="Existing 3D map view"),
                    Parameter('job', type=Type.STRING,
-                             doc="Parameter file (INI) name (normally *.in3)")
+                             doc="Parameter file (INI) name (normally ``*.in3``)")
                ]),
 
         Method('QACollar_DH', module='geodh', version='5.1.3',

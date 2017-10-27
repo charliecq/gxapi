@@ -514,7 +514,7 @@ gx_methods = {
                doc="Determine return value based on value of Z1",
                notes="Dummy values return dummy",
                return_type=Type.DOUBLE,
-               return_doc="|Z2| if Z1>0, -|Z2| if Z1<0, 0 if Z1 = 0, and Z2 if Z1 = Dummy",
+               return_doc="``|Z2| if Z1 > 0, -|Z2| if Z1 < 0, 0 if Z1 = 0, and Z2 if Z1 = Dummy``",
                parameters = [
                    Parameter('z_sign', type=Type.DOUBLE,
                              doc="Z1"),

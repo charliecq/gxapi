@@ -181,7 +181,7 @@ gx_methods = {
                    Parameter('gvv', type="VV",
                              doc=":class:`VV` contains channel data to perform :class:`FFT` operations upon."),
                    Parameter('interv', type=Type.DOUBLE,
-                             doc="Element space interval, should be the same as in Create(Ex)_FFT() call"),
+                             doc="Element space interval, should be the same as in :func:`CreateEx_FFT` call"),
                    Parameter('trend', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`")
                ]),
@@ -202,11 +202,11 @@ gx_methods = {
                    Parameter('gvv', type="VV",
                              doc=":class:`VV` contains channel data to perform :class:`FFT` operations upon."),
                    Parameter('interv', type=Type.DOUBLE,
-                             doc="Element space interval, should be the same as in Create(Ex)_FFT() call"),
+                             doc="Element space interval, should be the same as in :func:`CreateEx_FFT` call"),
                    Parameter('trend', type=Type.INT32_T,
                              doc=":def:`FFT_DETREND`"),
                    Parameter('expansion', type=Type.DOUBLE,
-                             doc="Minimum expansion %, should be the same as in :func:`CreateEx_FFT`() call"),
+                             doc="Minimum expansion %, should be the same as in :func:`CreateEx_FFT` call"),
                    Parameter('d_cmult', type=Type.DOUBLE,
                              doc="DC level multiple")
                ]),

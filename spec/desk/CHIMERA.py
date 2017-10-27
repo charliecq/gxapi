@@ -423,11 +423,17 @@ gx_methods = {
                notes="""
                The scatter tool uses the following INI parameters
                
+               ================  ===============================================
                SCATTER.STM       name of the scatter template, "none" for none
+               ----------------  -----------------------------------------------
                SCATTER.STM_NAME  name of last template section, "" for none.
+               ----------------  -----------------------------------------------
                SCATTER.X         name of channel to display in X
+               ----------------  -----------------------------------------------
                SCATTER.Y         name of channel to display in Y
+               ----------------  -----------------------------------------------
                SCATTER.MASK      name of channel to use for mask
+               ================  ===============================================
                
                The database should be a currently open database.
                This function supercedes :func:`LaunchScatter_EDB`, (which now
@@ -445,12 +451,19 @@ gx_methods = {
                notes="""
                The Triplot tool uses the following INI parameters
                
-                        TRIPLOT.TTM       name of the triplot template, "none" for none
-                        TRIPLOT.TTM_NAME  name of last template section, "" for none.
-                        TRIPLOT.X         name of channel to display in X
-                        TRIPLOT.Y         name of channel to display in Y
-                        TRIPLOT.Z         name of channel to display in Z
-                        TRIPLOT.MASK      name of channel to use for mask
+               ================  ===============================================
+               TRIPLOT.TTM       name of the triplot template, "none" for none
+               ----------------  -----------------------------------------------
+               TRIPLOT.TTM_NAME  name of last template section, "" for none.
+               ----------------  -----------------------------------------------
+               TRIPLOT.X         name of channel to display in X
+               ----------------  -----------------------------------------------
+               TRIPLOT.Y         name of channel to display in Y
+               ----------------  -----------------------------------------------
+               TRIPLOT.Z         name of channel to display in Z
+               ----------------  -----------------------------------------------
+               TRIPLOT.MASK      name of channel to use for mask
+               ================  ===============================================
                
                The database should be a currently open database.
                """,
@@ -787,7 +800,7 @@ gx_methods = {
                    Parameter('m_vv', type="VV",
                              doc="Mask channel data (can be NULL)"),
                    Parameter('mask_col', type=Type.INT32_T,
-                             doc='Mask Color; overrides symbol Color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask Color; overrides symbol Color where mask data is not dummy. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('symbol_font', type=Type.STRING,
                              doc='Decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('symbol_number', type=Type.INT32_T,
@@ -861,7 +874,7 @@ gx_methods = {
                    Parameter('m_vv', type="VV",
                              doc="Mask channel data (can be NULL)"),
                    Parameter('mask_col', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('zone_data_vv', type="VV",
                              doc="Zone channel data"),
                    Parameter('zone_file', type=Type.STRING,
@@ -941,7 +954,7 @@ gx_methods = {
                    Parameter('m_vv', type="VV",
                              doc="Mask channel data"),
                    Parameter('mask_col', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('class_vv', type="VV",
                              doc="Class channel data"),
                    Parameter('class_file', type=Type.STRING,
@@ -1241,7 +1254,7 @@ gx_methods = {
                    Parameter('m_vv', type="VV",
                              doc="Mask channel data"),
                    Parameter('mask_col', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('symbol_font', type=Type.STRING,
                              doc='Decorated font name, "" for default symbol font (normally symbols.gfn)'),
                    Parameter('symbol_number', type=Type.INT32_T,
@@ -1305,7 +1318,7 @@ gx_methods = {
                    Parameter('m_vv', type="VV",
                              doc="Mask channel data"),
                    Parameter('mask_col', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color where mask data is not dummy. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color where mask data is not dummy. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('zone_data_vv', type="VV",
                              doc="Zone channel data"),
                    Parameter('zone_file', type=Type.STRING,
@@ -1375,7 +1388,7 @@ gx_methods = {
                    Parameter('m_vv', type="VV",
                              doc="Mask channel data"),
                    Parameter('mask_col', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('class_vv', type="VV",
                              doc="Class channel data"),
                    Parameter('class_file', type=Type.STRING,
@@ -1590,7 +1603,7 @@ gx_methods = {
                    Parameter('p13', type="VV",
                              doc="Colors if symbol number or color == 0, do not plot"),
                    Parameter('p14', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('p15', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p16', type="VV",
@@ -1724,7 +1737,7 @@ gx_methods = {
                    Parameter('p13', type="VV",
                              doc="Symbol colors  if symbol number or color == 0, do not plot"),
                    Parameter('p14', type=Type.INT32_T,
-                             doc='Mask color; overrides symbol color. Set to :func:`iColor_MVIEW`("") to not plot.'),
+                             doc='Mask color; overrides symbol color. Pass an empty string to :func:`iColor_MVIEW` for no plot.'),
                    Parameter('p15', type="DB",
                              doc="Database (source of data)"),
                    Parameter('p16', type="VV",
