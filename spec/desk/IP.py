@@ -60,36 +60,57 @@ gx_defines = [
            constants=[
                Constant('IP_FILTER_PANTLEG', value='1', type=Type.INT32_T,
                         doc="""
-                        Regular pant-leg filter:    _!_  maxn:
-                        /*_*\\   n1
-                        /*/ \\*\\  n2
-                        /*/   \\*\\ n3
-                        :  :
+                        ::
+
+                            Regular pant-leg filter:
+
+                        
+                               _!_    
+                              /*_*\   n1
+                             /*/ \*\  n2`
+                            /*/   \*\ n3
+                               :  :
+                        
+
                         """),
                Constant('IP_FILTER_PANTLEGP', value='2', type=Type.INT32_T,
                         doc="""
-                        Regular pant-leg filter with top at first point:
-                        !  nscp:
-                        /*\\   n1
-                        /*_*\\  n2
-                        /*/ \\*\\ n3
-                        :  :
+                        ::
+
+                            Regular pant-leg filter with top at first point:
+
+                               !  nscp:
+                              /*\   n1
+                             /*_*\  n2
+                            /*/ \*\ n3
+                              :  :
+
                         """),
                Constant('IP_FILTER_PYRIAMID', value='3', type=Type.INT32_T,
                         doc="""
-                        Regular pyramid filter:     _!_  maxn:
-                        /* *\\   n1
-                        /* * *\\  n2
-                        /* * * *\\ n3
-                        :  :
+                        ::
+
+                            Regular pyramid filter:
+
+                               _!_  maxn:
+                              /* *\   n1
+                             /* * *\  n2
+                            /* * * *\ n3
+                               :  :
+
                         """),
                Constant('IP_FILTER_PYRIAMIDP', value='4', type=Type.INT32_T,
                         doc="""
-                        Regular pyramid filter      !  maxn:
-                        with peak on a point:      /*\\   n1
-                        /* *\\  n2
-                        /* * *\\ n3
-                        :  :
+                        ::
+
+                            Regular pyramid filter with peak on a point:
+
+                               !  maxn:
+                              /*\   n1
+                             /* *\  n2
+                            /* * *\ n3
+                              :  :
+
                         """)
            ]),
 

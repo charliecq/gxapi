@@ -128,23 +128,29 @@ gx_defines = [
                         doc="No label"),
                Constant('MVU_FLIGHT_LOCATE_END', value='1', type=Type.INT32_T,
                         doc="""
-                        L100.2 -------------------------- L100.2
+                        ::
+
+                            L100.2 -------------------------- L100.2
                         
                         dOffA controls distance from label to line.
                         dOffB controls vertical offset from center.
                         """),
                Constant('MVU_FLIGHT_LOCATE_ABOVE', value='2', type=Type.INT32_T,
                         doc="""
-                        L100.2                            L100.2
-                        ----------------------------------------
+                        ::
+
+                            L100.2                            L100.2
+                            ----------------------------------------
                         
                         dOffA controls label distance above the line.
                         dOffB controls offset in from line end.
                         """),
                Constant('MVU_FLIGHT_LOCATE_BELOW', value='3', type=Type.INT32_T,
                         doc="""
-                        ----------------------------------------
-                        L100.2                            L100.2
+                        ::
+
+                            ----------------------------------------
+                            L100.2                            L100.2
                         
                         dOffA controls label distance below the line.
                         dOffB controls offset in from line end.
