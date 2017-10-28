@@ -18,6 +18,7 @@
 {% for constant in define.constants %}{% if constant.doc %}
 #: {{ constant.doc | doc_sanitize(cl) | comment(prefix="#: ") }}
 {% else %}
+#: {{ constant.doc_name }}
 {% endif %}{{ constant.name }} = {{ constant.python_value }}{% endfor %}{% endif %}{% endfor %}	
 
 ### endfor

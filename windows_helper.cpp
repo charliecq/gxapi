@@ -52,10 +52,10 @@ extern "C"
    }
 
 
-   void stdout_stream_helper_write(char *stuff)
+   void stdout_stream_helper_write(const char *data)
    {
       DWORD RetVal;
-      WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), stuff, (DWORD)strlen(stuff), &RetVal, NULL);
+      WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), data, (DWORD)strlen(data), &RetVal, NULL);
    }
 
    void stdout_stream_helper_flush()
@@ -83,10 +83,10 @@ extern "C"
    }
 
 
-   void stderr_stream_helper_write(char *stuff)
+   void stderr_stream_helper_write(const char *data)
    {
       DWORD RetVal;
-      WriteFile(GetStdHandle(STD_ERROR_HANDLE), stuff, (DWORD)strlen(stuff), &RetVal, NULL);
+      WriteFile(GetStdHandle(STD_ERROR_HANDLE), data, (DWORD)strlen(data), &RetVal, NULL);
    }
 
    void stderr_stream_helper_flush()
