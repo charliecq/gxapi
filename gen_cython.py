@@ -403,10 +403,10 @@ cdef extern bint has_ui_console();
 cdef extern bint is_ui_console_visible();
 cdef extern void show_ui_console(bint show);
 cdef extern void clear_ui_console();
-cdef extern void stdout_stream_helper_write(char *stuff)
+cdef extern void stdout_stream_helper_write(const char* data)
 cdef extern void stdout_stream_helper_flush();
 cdef extern const wchar_t* stdin_stream_helper_readline();
-cdef extern void stderr_stream_helper_write(char *stuff);
+cdef extern void stderr_stream_helper_write(const char* data);
 cdef extern void stderr_stream_helper_flush();
 
 cdef extern from "Python.h":
@@ -446,10 +446,10 @@ cdef _raise_on_gx_errors(void* p_geo):
                     free(err)
 
 cdef class _stdout_stream_helper:
-    def write(self, buff):
-        pass
+    cpdef write(self, str data):
+        stdout_stream_helper_write(data.encode())
     def flush(self):
-        pass
+        stdout_stream_helper_flush()
 
 cdef class _stdin_stream_helper:
     # Only readline supported for now (Python input call works)
@@ -458,10 +458,10 @@ cdef class _stdin_stream_helper:
         return <object>line
 
 cdef class _stderr_stream_helper:
-    def write(self, buff):
-        pass
+    cpdef write(self, str data):
+        stderr_stream_helper_write(data.encode())
     def flush(self):
-        pass
+        stderr_stream_helper_flush()
 
 cdef class WrapPGeo:
     cdef void* p_geo

@@ -41,6 +41,14 @@ class PythonConstant(Constant):
                 return val[:-1]
             else:
                 return val
+    @property
+    def doc_name(self):
+        name = self.name
+        if name.startswith(self.parent.name):
+            name = name.replace(self.parent.name + "_", "")
+        parts = [w.lower() for w in name.split('_')]
+        parts[0] = parts[0][0].upper() + parts[0][1:]
+        return ' '.join(parts)
 
 class PythonDefine(Define):
     def __init__(self, other):
