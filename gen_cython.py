@@ -374,9 +374,13 @@ class CythonCodeGenerator(CodeGeneratorBase):
         return self.parse_template('''
 #cython: language_level=3, c_string_type=unicode, c_string_encoding=utf8
 
+import sys
+
 from libc.stdint cimport uintptr_t, int32_t, int16_t
 from libc.stdlib cimport malloc, free
 from libc.string cimport strcpy, strcat, strncat, memset, memchr, memcmp, memcpy, memmove
+from libc.stddef cimport wchar_t
+from cpython.ref cimport PyObject 
 
 from geosoft.gxapi import GXCancel, GXExit, GXAPIError, GXError
 
@@ -393,6 +397,21 @@ cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t
 cdef extern HWND hGetMainWnd_GEO();
 cdef extern HWND hGetActiveMainWnd_GEO();
 cdef extern EnableApplicationWindows_GEO(bool);
+
+cdef extern void init_console();
+cdef extern bint has_ui_console();
+cdef extern bint is_ui_console_visible();
+cdef extern void show_ui_console(bint show);
+cdef extern void clear_ui_console();
+cdef extern void stdout_stream_helper_write(char *stuff)
+cdef extern void stdout_stream_helper_flush();
+cdef extern const wchar_t* stdin_stream_helper_readline();
+cdef extern void stderr_stream_helper_write(char *stuff);
+cdef extern void stderr_stream_helper_flush();
+
+cdef extern from "Python.h":
+    PyObject* PyUnicode_FromWideChar(wchar_t *w, Py_ssize_t size)
+
 
 {% for key, cl in classes.items() %}
 {{ cl.cdef_declarations }}
@@ -425,6 +444,24 @@ cdef _raise_on_gx_errors(void* p_geo):
                     free(module)
                 if err != NULL:
                     free(err)
+
+cdef class _stdout_stream_helper:
+    def write(self, buff):
+        pass
+    def flush(self):
+        pass
+
+cdef class _stdin_stream_helper:
+    # Only readline supported for now (Python input call works)
+    def readline(self):
+        cdef PyObject * line = PyUnicode_FromWideChar(stdin_stream_helper_readline(), -1)
+        return <object>line
+
+cdef class _stderr_stream_helper:
+    def write(self, buff):
+        pass
+    def flush(self):
+        pass
 
 cdef class WrapPGeo:
     cdef void* p_geo
@@ -471,6 +508,25 @@ cdef class WrapPGeo:
     cdef void* get_p_geo(self):
         return self.p_geo
 
+    def has_ui_console(self):
+        return has_ui_console()
+
+    def is_ui_console_visible(self):
+        return is_ui_console_visible()        
+
+    def show_ui_console(self, show):
+        show_ui_console(show)
+
+    def clear_ui_console(self):
+        clear_ui_console()
+    
+    @classmethod
+    def gx_redirect_std_streams(cls):
+        init_console()
+        if has_ui_console():
+            sys.stdout = _stdout_stream_helper()
+            sys.stdin = _stdin_stream_helper()
+            sys.stderr = _stderr_stream_helper()
     
 {% for key, cl in classes.items() %}
 {{ cl.class_wrapper }}

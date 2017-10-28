@@ -5,13 +5,14 @@ import Cython.Compiler.Options
 
 compile_args = ["/GF", "/Gy"]
 link_args = ["/OPT:ICF", "/OPT:REF"]
-
+#compile_args=["-Zi", "/Od"]
+#link_args=["-debug"]
 setup(
     ext_modules=cythonize(
         [Extension(
             "gxapi_cy", 
-            ['gxapi_cy.pyx'], 
-            libraries=['geogx_utf8', 'geodist'],
+            ['gxapi_cy.pyx', "windows_helper.cpp"], 
+            libraries=['geogx_utf8', 'geodist', 'User32'],
             library_dirs=['../gxdeveloper/lib'],
             include_dirs = ['../gxdeveloper/include'],
             extra_compile_args=compile_args,
