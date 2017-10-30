@@ -18,5 +18,7 @@
 
 {% for constant in define.constants %}.. autodata:: geosoft.gxapi.{{ constant.name }}
     :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.{{ constant.name }}
 {% endfor %}
 {% endif %}{% endfor %}	
