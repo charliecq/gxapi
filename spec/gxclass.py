@@ -5,9 +5,18 @@ from collections import namedtuple, OrderedDict, Hashable
 from .gxdefs import SpecBase
 
 def convert_camel_case(name):
-	s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
-	s2 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
-	return s2.replace("3_d", "_3d")
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    s2 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+    if s2.endswith("3_d"):
+        s2 = s2[:-3] + "_3d"
+    if s2.endswith("2_d"):
+        s2 = s2[:-3] + "_2d"
+    s2 = s2.replace("3_d_", "_3d_").replace("2_d_", "_2d_")
+    if s2.endswith("3_dv"):
+        s2 = s2[:-4] + "_3dv"
+    s2 = s2.replace("_h3_dn", "_3dn")
+    s2 = s2.replace("3_dgui", "_3d_gui")    
+    return s2
 
 
 class memoized(object):
@@ -19,7 +28,7 @@ class memoized(object):
 	   self.func = func
 	   self.cache = {}
 	def __call__(self, *args):
-		if not isinstance(args, Hashable):
+		if not isinstance(args, Hashable): 
 			# uncacheable.  a list, for instance.
 			# better to not cache than blow up.
 			return self.func(*args)
