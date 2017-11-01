@@ -90,9 +90,8 @@ gx_methods = {
 
         Method('iDragDropEnabled_EMAPTEMPLATE', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Is drag-and-drop enabled for the map?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               doc="Checks if drag-and-drop is enabled for the map",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object")
@@ -105,8 +104,8 @@ gx_methods = {
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object"),
-                   Parameter('enable', type=Type.INT32_T,
-                             doc="Enables/disables drag-and-drop :def:`GEO_BOOL`")
+                   Parameter('enable', type=Type.BOOL,
+                             doc="Enables/disables drag-and-drop")
                ])
     ],
     'General': [
@@ -204,8 +203,7 @@ gx_methods = {
         Method('iIsLocked_EMAPTEMPLATE', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Is this MapTemplate locked",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object")
@@ -264,8 +262,7 @@ gx_methods = {
         Method('iReadOnly_EMAPTEMPLATE', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Checks if a map is currently opened in a read-only mode.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE")
                ]),
@@ -354,8 +351,8 @@ gx_methods = {
                parameters = [
                    Parameter('name', type=Type.STRING,
                              doc="Name of map to unload"),
-                   Parameter('prompt', type=Type.INT32_T,
-                             doc="prompt :def:`GEO_BOOL`")
+                   Parameter('prompt', type=Type.BOOL,
+                             doc="prompt")
                ]),
 
         Method('UnLock_EMAPTEMPLATE', module='None', version='5.0.0',
@@ -497,9 +494,9 @@ gx_methods = {
         Method('iGetItemSelection_EMAPTEMPLATE', module='None', version='5.0.0',
                availability=Availability.LICENSED, is_app=True, 
                doc="Gets info about the current selected item",
-               notes="If nothing is selected the string will be empty and the function will return :def_val:`GS_FALSE`;",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL` Is item a view?",
+               notes="If nothing is selected the string will be empty and the function will return ``False``",
+               return_type=Type.BOOL,
+               return_doc="Returns ``True`` if the item is a view",
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object"),
@@ -555,8 +552,8 @@ gx_methods = {
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object"),
-                   Parameter('snap_to_grid', type=Type.INT32_T, is_ref=True,
-                             doc=":def:`GEO_BOOL` Snap to grid"),
+                   Parameter('snap_to_grid', type=Type.BOOL, is_ref=True,
+                             doc="Snap to grid"),
                    Parameter('snap_dist', type=Type.DOUBLE, is_ref=True,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T, is_ref=True,
@@ -614,8 +611,8 @@ gx_methods = {
                parameters = [
                    Parameter('emaptemplate', type="EMAPTEMPLATE",
                              doc=":class:`EMAPTEMPLATE` object"),
-                   Parameter('snap_to_grid', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Snap to grid"),
+                   Parameter('snap_to_grid', type=Type.BOOL,
+                             doc="Snap to grid"),
                    Parameter('snap_dist', type=Type.DOUBLE,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T,

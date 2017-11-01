@@ -832,15 +832,13 @@ gx_methods = {
 
         Method('iHaveCurrent_EDB', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Returns true if a database is loaded",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`"),
+               doc="Checks if any database is currently loaded",
+               return_type=Type.BOOL),
 
         Method('iIsLocked_EDB', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Is this Database locked",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               doc="Checks if the database locked",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('edb', type="EDB",
                              doc=":class:`EDB` object")
@@ -848,9 +846,8 @@ gx_methods = {
 
         Method('iLoaded_EDB', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Returns 1 if a database is loaded .",
-               return_type=Type.INT32_T,
-               return_doc="1 if database is loaded, 0 otherwise.",
+               doc="Checks if a specific database is loaded.",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('name', type=Type.STRING,
                              doc="Database name")
@@ -877,8 +874,7 @@ gx_methods = {
         Method('iReadOnly_EDB', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Checks if a database is currently opened in a read-only mode.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('edb', type="EDB")
                ]),

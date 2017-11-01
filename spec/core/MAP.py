@@ -554,8 +554,8 @@ gx_methods = {
                              doc='Name of new view created (pass in "" and the new name is returned)'),
                    Parameter('size', type=Type.INT32_T, default_length='STR_VIEW',
                              doc="Length of view name buffer"),
-                   Parameter('copy', type=Type.INT32_T,
-                             doc="Copy all groups :def:`GEO_BOOL`")
+                   Parameter('copy', type=Type.BOOL,
+                             doc="Copy all groups")
                ]),
 
         Method('iExistView_MAP', module='geoengine.map', version='5.0.0',

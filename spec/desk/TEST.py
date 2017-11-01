@@ -15,8 +15,8 @@ gx_methods = {
                doc="Forcefully disable ArEngine license availability for testing purposes",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('enable', type=Type.INT32_T,
-                             doc="Enable/disable? :def:`GEO_BOOL`")
+                   Parameter('enable', type=Type.BOOL,
+                             doc="Enable/disable?")
                ]),
 
         Method('iArcEngineLicense_TEST', module='geogxx', version='6.4.0',
@@ -28,8 +28,7 @@ gx_methods = {
         Method('iTestMode_TEST', module='geogxx', version='6.4.2',
                availability=Availability.PUBLIC, 
                doc="Checks to see if we are running inside testing system",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`"),
+               return_type=Type.BOOL),
 
         Method('WrapperTest_TEST', module='geogxx', version='6.1.0',
                availability=Availability.PUBLIC, 

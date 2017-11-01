@@ -2660,8 +2660,8 @@ gx_methods = {
                              doc="Database handle"),
                    Parameter('ch', type="DB_SYMB",
                              doc="Base Channel for normalization.  [:def_val:`DB_LOCK_READONLY`]"),
-                   Parameter('ignore', type=Type.INT32_T,
-                             doc="Ignore write protection on channels? :def:`GEO_BOOL`")
+                   Parameter('ignore', type=Type.BOOL,
+                             doc="Ignore write protection on channels?")
                ]),
 
         Method('PolyFill_DU', module='geogxx', version='5.0.0',
@@ -3340,7 +3340,7 @@ gx_methods = {
                    Parameter('break_on_separation_distance', type=Type.DOUBLE,
                              doc="Break on data XY separation greater than (can be :def_val:`rDUMMY`)"),
                    Parameter('save_discards', type=Type.INT32_T,
-                             doc="GEO_BOOLGS_TRUE to save too-short segments as special lines, :def_val:`GS_FALSE` to discard"),
+                             doc="Whether to save too-short segments as special lines or to discard them"),
                    Parameter('method', type=Type.INT32_T,
                              doc=":def:`DU_SPLITLINE` ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS"),
                    Parameter('first_line', type=Type.INT32_T, is_ref=True,
@@ -3374,7 +3374,7 @@ gx_methods = {
                    Parameter('break_on_separation_distance', type=Type.DOUBLE,
                              doc="Break on data XY separation greater than (can be :def_val:`rDUMMY`)"),
                    Parameter('save_discards', type=Type.INT32_T,
-                             doc="GEO_BOOLGS_TRUE to save too-short segments as special lines, :def_val:`GS_FALSE` to discard"),
+                             doc="Whether to save too-short segments as special lines or to discard them"),
                    Parameter('method', type=Type.INT32_T,
                              doc=":def:`DU_SPLITLINE` ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS"),
                    Parameter('first_line', type=Type.INT32_T, is_ref=True,
@@ -3932,8 +3932,8 @@ gx_methods = {
                              doc="Voxel cell size Y"),
                    Parameter('cell_size_z', type=Type.DOUBLE,
                              doc="Voxel cell size Z"),
-                   Parameter('pb_replace_zeroes_with_dummy', type=Type.INT32_T,
-                             doc="Replace zero values in output with DUMMY? :def:`GEO_BOOL`")
+                   Parameter('pb_replace_zeroes_with_dummy', type=Type.BOOL,
+                             doc="Replace zero values in output with DUMMY?")
                ])
     ]
 }

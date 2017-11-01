@@ -28,8 +28,7 @@ gx_methods = {
         Method('iIsValidUTF16Char_UNC', module='geogxx', version='6.2.0',
                availability=Availability.PUBLIC, 
                doc="Check if the UTF-16 value is a valid Unicode character code point.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('ch', type=Type.INT32_T,
                              doc="UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)")
@@ -38,13 +37,12 @@ gx_methods = {
         Method('iValidSymbol_UNC', module='geogxx', version='6.2.0',
                availability=Availability.PUBLIC, 
                doc="See if a Symbol number is valid in a particular font.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('face', type=Type.STRING,
                              doc="Face name (undecorated)"),
-                   Parameter('geofont', type=Type.INT32_T,
-                             doc="Geosoft font? :def:`GEO_BOOL`"),
+                   Parameter('geofont', type=Type.BOOL,
+                             doc="Geosoft font?"),
                    Parameter('number', type=Type.INT32_T,
                              doc="Symbol number")
                ]),
@@ -76,8 +74,8 @@ gx_methods = {
                              doc=":class:`VV` of symbols"),
                    Parameter('face', type=Type.STRING,
                              doc="Face name (undecorated)"),
-                   Parameter('geofont', type=Type.INT32_T,
-                             doc="Geosoft font? :def:`GEO_BOOL`")
+                   Parameter('geofont', type=Type.BOOL,
+                             doc="Geosoft font?")
                ])
     ],
     'Miscellaneous': [

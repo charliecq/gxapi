@@ -453,8 +453,7 @@ gx_methods = {
         Method('iIsColour_IMG', module='geoengine.core', version='6.0.1',
                availability=Availability.PUBLIC, 
                doc="Is this a Geosoft color grid?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('img', type="IMG",
                              doc=":class:`IMG` to query on")
@@ -463,8 +462,7 @@ gx_methods = {
         Method('iIsValidIMGFile_IMG', module='geoengine.core', version='8.0.0',
                availability=Availability.PUBLIC, 
                doc="Is this a valid :class:`IMG` file?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File to check")
@@ -473,8 +471,7 @@ gx_methods = {
         Method('iIsValidIMGFileEx_IMG', module='geoengine.core', version='8.0.1',
                availability=Availability.PUBLIC, 
                doc="Is this a valid :class:`IMG` file? Returns error message if it cannot be opened for any reason.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File to check"),

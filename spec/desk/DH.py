@@ -966,7 +966,7 @@ gx_methods = {
                    Parameter('feat_class_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Feature class name string size"),
                    Parameter('overwrite', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Overwrite existing feature classes? Pass :def_val:`GS_FALSE` to create copies.")
+                             doc="Overwrite existing feature classes? ``False`` will create copies.")
                ]),
 
         Method('ExportLAS_DH', module='geodh', version='5.1.8',
@@ -1517,15 +1517,13 @@ gx_methods = {
 
         Method('iHaveCurrent_DH', module='geodh', version='6.1.0',
                availability=Availability.EXTENSION, 
-               doc="Returns true if a drill project is loaded",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`"),
+               doc="Returns ``True`` if a drill project is loaded",
+               return_type=Type.BOOL),
 
         Method('IiHaveCurrent2_DH', module='geodh', version='6.1.0',
                availability=Availability.EXTENSION, 
-               doc="Returns true if a drill project is loaded, and the collar database if it is loaded.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               doc="Returns ``True`` if a drill project is loaded, and the collar database if it is loaded.",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('db', type=Type.STRING, is_ref=True, size_of_param='db_size',
                              doc="Collar table name (returned)"),

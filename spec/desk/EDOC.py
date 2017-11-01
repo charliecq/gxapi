@@ -190,8 +190,7 @@ gx_methods = {
         Method('iHaveCurrent_EDOC', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Returns true if a document is loaded",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('type', type=Type.INT32_T,
                              doc=":def:`EDOC_TYPE`")
@@ -252,8 +251,7 @@ gx_methods = {
         Method('iReadOnly_EDOC', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Checks if a document is currently opened in a read-only mode.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('edoc', type="EDOC")
                ]),

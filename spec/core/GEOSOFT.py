@@ -9,9 +9,8 @@ gx_class = Class('GEOSOFT',
                  """,
                  notes="""
                  The following defines are not used by any methods but
-                 are usefull in general:
+                 are useful in general:
                  
-                 :def:`GEO_BOOL`
                  :def:`GEO_VAR`
                  :def:`GEO_DUMMY`
                  :def:`GEO_LIMITS`
@@ -175,6 +174,9 @@ typedef KENGRAV;        // Kennecot gravity terrain correction
 #define FALSE    0
 #define TRUE     1
 
+#define GS_FALSE    0
+#define GS_TRUE     1
+
 #define INT     0
 #define REAL    1
 
@@ -203,13 +205,6 @@ gx_defines = [
                         doc="Date (DD/MM/YYYY or DD/MM/YY century 20 if YY>50, DISC compliant)"),
                Constant('DATE_FORMAT_MMDDYYYY', value='3', type=Type.INT32_T,
                         doc="Date (MM/DD/YYYY or MM/DD/YY century 19)")
-           ]),
-
-    Define('GEO_BOOL',
-           doc="Boolean",
-           constants=[
-               Constant('GS_FALSE', value='0', type=Type.INT32_T),
-               Constant('GS_TRUE', value='1', type=Type.INT32_T)
            ]),
 
     Define('GEO_DUMMY',

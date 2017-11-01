@@ -1187,8 +1187,7 @@ gx_methods = {
         Method('iWarped_IPJ', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Does :class:`IPJ` contain a warp?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object")

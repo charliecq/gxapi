@@ -98,8 +98,8 @@ gx_methods = {
                              doc="Variable to import"),
                    Parameter('output_voxel_filename', type=Type.STRING,
                              doc="Ouput voxel filename"),
-                   Parameter('remove_default_values', type=Type.INT32_T,
-                             doc="Remove default values from input? :def:`GEO_BOOL`"),
+                   Parameter('remove_default_values', type=Type.BOOL,
+                             doc="Remove default values from input?"),
                    Parameter('rock_code_filename', type=Type.STRING,
                              doc="Rock code file for string variable imports. Optional, unused for numeric variable imports.")
                ])

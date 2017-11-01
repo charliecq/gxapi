@@ -354,8 +354,7 @@ gx_methods = {
                extracts the channel name, and units from an acQuire-formatted
                channel name.
                """,
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('input_chan', type=Type.STRING,
                              doc="String to test"),
@@ -369,8 +368,8 @@ gx_methods = {
                              doc="Buffer size for units"),
                    Parameter('factor', type=Type.DOUBLE, is_ref=True,
                              doc="Buffer factor (e.g. ppm = 1.e-6)"),
-                   Parameter('oxide', type=Type.INT32_T, is_ref=True,
-                             doc=":def:`GEO_BOOL` is this an oxide?")
+                   Parameter('oxide', type=Type.BOOL, is_ref=True,
+                             doc="is this an oxide?")
                ]),
 
         Method('iIsElement_CHIMERA', module='geochimera', version='5.0.7',
@@ -380,8 +379,7 @@ gx_methods = {
                Suggested use - testing to see if a channel name is an
                element so that the "ASSAY" class can be set.
                """,
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('chan', type=Type.STRING,
                              doc="String to test"),

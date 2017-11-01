@@ -1831,12 +1831,12 @@ gx_methods = {
                              doc=":class:`MVIEW` handle"),
                    Parameter('face', type=Type.STRING,
                              doc="Face name"),
-                   Parameter('geofont', type=Type.INT32_T,
-                             doc="Geosoft font? :def:`GEO_BOOL`"),
+                   Parameter('geofont', type=Type.BOOL,
+                             doc="Geosoft font?"),
                    Parameter('weight', type=Type.INT32_T,
                              doc=":def:`MVIEW_FONT_WEIGHT`"),
-                   Parameter('italic', type=Type.INT32_T,
-                             doc="Italic font? :def:`GEO_BOOL`")
+                   Parameter('italic', type=Type.BOOL,
+                             doc="Italic font?")
                ]),
 
         Method('SymbNumber_MVIEW', module='geoengine.map', version='5.0.0',
@@ -3028,8 +3028,7 @@ gx_methods = {
                flag is for preventing accidental moving in the :class:`GUI`.
                By default views are not movable.
                """,
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('mview', type="MVIEW")
                ]),
@@ -3037,8 +3036,7 @@ gx_methods = {
         Method('iIsVisible_MVIEW', module='geoengine.map', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Is this view visible?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('mview', type="MVIEW")
                ]),
@@ -3207,8 +3205,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('flag', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL`")
+                   Parameter('movable', type=Type.BOOL)
                ]),
 
         Method('SetRenderOrder_MVIEW', module='geoengine.map', version='6.3.0',
@@ -3218,8 +3215,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('order', type=Type.INT32_T,
-                             doc="Render order")
+                   Parameter('order', type=Type.INT32_T, doc="Render order")
                ]),
 
         Method('SetVisibility_MVIEW', module='geoengine.map', version='6.3.0',
@@ -3228,8 +3224,7 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
-                   Parameter('flag', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL`")
+                   Parameter('visible', type=Type.BOOL)
                ]),
 
         Method('StartGroup_MVIEW', module='geoengine.map', version='5.0.0',

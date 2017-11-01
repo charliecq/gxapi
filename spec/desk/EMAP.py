@@ -159,9 +159,8 @@ gx_methods = {
 
         Method('iDragDropEnabled_EMAP', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Is drag-and-drop enabled for the map?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               doc="Checks if drag-and-drop enabled for the map",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
@@ -174,8 +173,8 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('enable', type=Type.INT32_T,
-                             doc="Enables/disables drag-and-drop :def:`GEO_BOOL`")
+                   Parameter('enable', type=Type.BOOL,
+                             doc="Enables/disables drag-and-drop")
                ])
     ],
     'Drawing': [
@@ -324,8 +323,8 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('snap_to_grid', type=Type.INT32_T, is_ref=True,
-                             doc=":def:`GEO_BOOL` Snap to grid"),
+                   Parameter('snap_to_grid', type=Type.BOOL, is_ref=True,
+                             doc="Snap to grid"),
                    Parameter('snap_dist', type=Type.DOUBLE, is_ref=True,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T, is_ref=True,
@@ -394,8 +393,8 @@ gx_methods = {
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object"),
-                   Parameter('snap_to_grid', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Snap to grid"),
+                   Parameter('snap_to_grid', type=Type.BOOL,
+                             doc="Snap to grid"),
                    Parameter('snap_dist', type=Type.DOUBLE,
                              doc="Snapping distance (always in mm)"),
                    Parameter('view_grid', type=Type.INT32_T,
@@ -718,9 +717,8 @@ gx_methods = {
 
         Method('iIsLocked_EMAP', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
-               doc="Is this Map locked",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               doc="Checks if map is locked",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('emap', type="EMAP",
                              doc=":class:`EMAP` object")
@@ -739,8 +737,7 @@ gx_methods = {
         Method('iReadOnly_EMAP', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="Checks if a map is currently opened in a read-only mode.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('emap', type="EMAP")
                ]),
@@ -1024,8 +1021,8 @@ gx_methods = {
                parameters = [
                    Parameter('name', type=Type.STRING,
                              doc="Name of map to unload"),
-                   Parameter('prompt', type=Type.INT32_T,
-                             doc="Prompt? :def:`GEO_BOOL`")
+                   Parameter('prompt', type=Type.BOOL,
+                             doc="Prompt?")
                ]),
 
         Method('UnLock_EMAP', module='None', version='5.0.0',

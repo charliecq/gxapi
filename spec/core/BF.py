@@ -482,8 +482,7 @@ gx_methods = {
                availability=Availability.PUBLIC, is_obsolete=True, 
                doc="Check if this is UNICODE file.",
                notes="Was not implemented.",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc='File name to open ("" is a temporary file)')

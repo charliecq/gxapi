@@ -68,8 +68,8 @@ gx_methods = {
                              doc=":class:`MXD` Handle"),
                    Parameter('map', type=Type.STRING,
                              doc="Geosoft map file name"),
-                   Parameter('focus_map_only', type=Type.INT32_T,
-                             doc="Export focus map only? :def:`GEO_BOOL`")
+                   Parameter('focus_map_only', type=Type.BOOL,
+                             doc="Export focus map only?")
                ]),
 
         Method('ConvertToMap_MXD', module='geoengine.map', version='9.0.0',

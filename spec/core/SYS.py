@@ -1276,8 +1276,7 @@ gx_methods = {
                Check if a file can be created or opened in read-write mode
                at a specific location
                """,
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File path name to check")

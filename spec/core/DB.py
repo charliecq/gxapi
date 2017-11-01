@@ -1477,8 +1477,7 @@ gx_methods = {
                By using this method before an :func:`Open_DB` a GX may handle errors like this more gracefully.
                """,
                see_also=":func:`Open_DB`, :func:`OpenReadOnly_DB`, :func:`iCanOpenReadOnly_DB`",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Open"),
@@ -1496,8 +1495,7 @@ gx_methods = {
                By using this method before an :func:`OpenReadOnly_DB` a GX may handle errors like this more gracefully.
                """,
                see_also=":func:`Open_DB`, :func:`OpenReadOnly_DB`, :func:`iCanOpen_DB`",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="Name of the Database File to Open"),
@@ -3085,8 +3083,8 @@ gx_methods = {
                              doc="Comment"),
                    Parameter('val', type=Type.INT32_T,
                              doc="Value"),
-                   Parameter('indent', type=Type.INT32_T,
-                             doc="Indent comment one tab? :def:`GEO_BOOL`")
+                   Parameter('indent', type=Type.BOOL,
+                             doc="Indent comment one tab?")
                ]),
 
         Method('AddRealComment_DB', module='geoengine.core', version='5.0.8',
@@ -3110,8 +3108,8 @@ gx_methods = {
                              doc="Comment"),
                    Parameter('val', type=Type.DOUBLE,
                              doc="Value"),
-                   Parameter('indent', type=Type.INT32_T,
-                             doc="Indent comment one tab? :def:`GEO_BOOL`")
+                   Parameter('indent', type=Type.BOOL,
+                             doc="Indent comment one tab?")
                ]),
 
         Method('AddTimeComment_DB', module='geoengine.core', version='5.0.8',
@@ -3133,8 +3131,8 @@ gx_methods = {
                              doc="Database Object"),
                    Parameter('comment', type=Type.STRING,
                              doc="Comment"),
-                   Parameter('indent', type=Type.INT32_T,
-                             doc="Indent comment one tab? :def:`GEO_BOOL`")
+                   Parameter('indent', type=Type.BOOL,
+                             doc="Indent comment one tab?")
                ]),
 
         Method('Associate_DB', module='geoengine.core', version='5.0.0',
@@ -3294,8 +3292,8 @@ gx_methods = {
                              doc="Values (one per array channel column) (REAL)"),
                    Parameter('units', type=Type.STRING,
                              doc="Units"),
-                   Parameter('allow_changes', type=Type.INT32_T,
-                             doc="Allow changes to existing values?:def:`GEO_BOOL`")
+                   Parameter('allow_changes', type=Type.BOOL,
+                             doc="Allow changes to existing values?")
                ]),
 
         Method('GetVABaseCoordinateInfo_DB', module='geoengine.core', version='8.2',

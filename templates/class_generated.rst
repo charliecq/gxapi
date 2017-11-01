@@ -5,8 +5,10 @@
 {{ class_name }} class
 ==================================
 
-.. autoclass:: geosoft.gxapi.{{ class_name }}
-   :members:
+{% if cl.name == 'GEOSOFT' %}
+{{ cl.doc | doc_sanitize(cl.name) }}
+{% else %}.. autoclass:: geosoft.gxapi.{{ class_name }}
+   :members:{% endif %}
 
 {% for name, define in cl.defines.items() %}{% if not name == "GEO_BOOL" and not define.is_null_handle %}
 .. _{{ name }}:

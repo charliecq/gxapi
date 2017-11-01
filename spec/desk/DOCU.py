@@ -117,9 +117,8 @@ gx_methods = {
 
         Method('iHaveMETA_DOCU', module='geogxx', version='5.1.1',
                availability=Availability.PUBLIC, 
-               doc="Do you have metadata?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               doc="Checks if a document has metadata.",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('docu', type="DOCU")
                ]),

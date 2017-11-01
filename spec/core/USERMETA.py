@@ -209,8 +209,8 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('usermeta', type="USERMETA"),
-                   Parameter('save_geo', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Output Geosoft Metadata?"),
+                   Parameter('save_geo', type=Type.BOOL,
+                             doc="Output Geosoft Metadata?"),
                    Parameter('file', type=Type.STRING,
                              doc="File name to save to")
                ]),
@@ -374,8 +374,8 @@ gx_methods = {
                parameters = [
                    Parameter('file_name', type=Type.STRING,
                              doc="Filename of existing metadata to update"),
-                   Parameter('save_geo', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Output Geosoft Metadata?")
+                   Parameter('save_geo', type=Type.BOOL,
+                             doc="Output Geosoft Metadata?")
                ])
     ]
 }

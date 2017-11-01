@@ -351,8 +351,7 @@ gx_methods = {
         Method('iHasValue_META', module='geoengine.core', version='6.0.1',
                availability=Availability.PUBLIC, 
                doc="Does this meta/attribute have a value set?",
-               return_type=Type.INT32_T,
-               return_doc=":def:`GEO_BOOL`",
+               return_type=Type.BOOL,
                parameters = [
                    Parameter('meta', type="META"),
                    Parameter('ph_object', type="META_TOKEN",

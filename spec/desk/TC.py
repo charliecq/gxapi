@@ -19,7 +19,7 @@ gx_defines = [
                         doc="(slow)    no optimization"),
                Constant('TC_OPT_MAX', value='1', type=Type.INT32_T,
                         doc="""
-                        (faster)  desampling and using qspline (4x4 points) interp
+                        (faster)  desampling and using qspline (4x4 points) interpolation
                         on coarser averaged grid
                         """)
            ]),
@@ -75,7 +75,7 @@ gx_methods = {
                    Parameter('elev_w', type=Type.DOUBLE,
                              doc="Water reference elevation (in elevation unit)"),
                    Parameter('edge', type=Type.INT32_T,
-                             doc=":def_val:`GS_TRUE` to calculate an edge correction (compensation)"),
+                             doc="1 to calculate an edge correction (compensation), 0 otherwise"),
                    Parameter('edge_elev', type=Type.DOUBLE,
                              doc="Average elevation beyond max distance (in elevation unit)"),
                    Parameter('opt', type=Type.INT32_T,
@@ -103,7 +103,7 @@ gx_methods = {
                    Parameter('elev_w', type=Type.DOUBLE,
                              doc="Water reference elevation (in elevation unit)"),
                    Parameter('edge', type=Type.INT32_T,
-                             doc=":def_val:`GS_TRUE` to calculate an edge correction (compensation)"),
+                             doc="1 to calculate an edge correction (compensation), 0 otherwise"),
                    Parameter('edge_elev', type=Type.DOUBLE,
                              doc="Average elevation beyond max distance (in elevation unit)"),
                    Parameter('opt', type=Type.INT32_T,

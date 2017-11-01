@@ -570,7 +570,7 @@ gx_methods = {
                is set to white, if any other type is input the output is
                guaranteed to be of the same type.
                
-               If the third flag is :def_val:`GS_TRUE` is used, then on exit, if white is
+               If ``no_col`` is 1, then on exit, if white is
                selected, the user is prompted: 'Do you want white (Yes) or
                "None" (No) ?' and the color is converted as requested.
                If this is not the case, the :def_val:`C_TRANSPARENT` is converted
@@ -1265,8 +1265,8 @@ gx_methods = {
                              doc="Size of table name string"),
                    Parameter('type', type=Type.INT32_T, is_ref=True,
                              doc="Type of import returned :def:`DH_DATA`"),
-                   Parameter('geochem', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Geosoft Geochemistry Database?"),
+                   Parameter('geochem', type=Type.BOOL,
+                             doc="Geosoft Geochemistry Database?"),
                    Parameter('reg', type="REG",
                              doc="Drill Hole Object :class:`REG` handle")
                ]),
@@ -1717,8 +1717,8 @@ gx_methods = {
                              doc="Symbol font file name"),
                    Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Buffer size for symbol font face name"),
-                   Parameter('geo_font', type=Type.INT32_T, is_ref=True,
-                             doc="Geosoft font? :def:`GEO_BOOL`"),
+                   Parameter('geo_font', type=Type.BOOL, is_ref=True,
+                             doc="Geosoft font?"),
                    Parameter('weight', type=Type.INT32_T, is_ref=True,
                              doc="Weight :def:`MVIEW_FONT_WEIGHT`"),
                    Parameter('symb_num', type=Type.INT32_T, is_ref=True,
@@ -2189,8 +2189,8 @@ gx_methods = {
                """,
                return_type=Type.VOID,
                parameters = [
-                   Parameter('on', type=Type.INT32_T,
-                             doc=":def:`GEO_BOOL` Should progress bar remain visible")
+                   Parameter('on', type=Type.BOOL,
+                             doc="Should progress bar remain visible")
                ]),
 
         Method('SetWindowArea_GUI', module='None', version='5.0.0',

@@ -245,11 +245,11 @@ gx_methods = {
                    Parameter('layer_tag', type=Type.STRING,
                              doc="Optional frame/layer tag (suffix)"),
                    Parameter('fit', type=Type.INT32_T,
-                             doc="Fit to map size; one of :def:`GEO_BOOL`"),
-                   Parameter('activate', type=Type.INT32_T,
-                             doc="Activate view (3D); one of :def:`GEO_BOOL`"),
-                   Parameter('prefix', type=Type.INT32_T,
-                             doc="Layer name tag is prefix; one of :def:`GEO_BOOL`")
+                             doc="Fit to map size"),
+                   Parameter('activate', type=Type.BOOL,
+                             doc="Activate view (3D)"),
+                   Parameter('prefix', type=Type.BOOL,
+                             doc="Layer name tag is prefix")
                ]),
 
         Method('LoadMapView_ARCMAP', module='geoarcgis', version='8.0.0',

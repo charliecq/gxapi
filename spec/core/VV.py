@@ -380,7 +380,7 @@ gx_methods = {
                will be same even of this are changed.
                """,
                notes="""
-               Very usefull for testing where the last bits of accuracy
+               Very useful for testing where the last bits of accuracy
                are not as important.
                """,
                return_type="CRC",

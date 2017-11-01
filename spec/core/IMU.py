@@ -183,7 +183,7 @@ gx_methods = {
 
         Method('AggToGeoColor_IMU', module='geoengine.core', version='5.1.6',
                availability=Availability.LICENSED, 
-               doc="Create a geosoft color grid from an aggregate.",
+               doc="Create a Geosoft color grid from an aggregate.",
                notes="This consumes a very small amount of memory",
                return_type=Type.VOID,
                parameters = [
@@ -229,7 +229,7 @@ gx_methods = {
                will be same even of this are changed.
                """,
                notes="""
-               Very usefull for testing where the last bits of accuracy
+               Very useful for testing where the last bits of accuracy
                are not as important.
                """,
                return_type="CRC",
@@ -253,7 +253,7 @@ gx_methods = {
                will be same even of this are changed.
                """,
                notes="""
-               Very usefull for testing where the last bits of accuracy
+               Very useful for testing where the last bits of accuracy
                are not as important.
                """,
                return_type="CRC",
