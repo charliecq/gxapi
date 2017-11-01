@@ -7,8 +7,7 @@ gx_class = Class('REG',
                  information particular to the class.  The :class:`META` class supersedes
                  the :class:`REG` class and is gradually replacing the use of the
                  :class:`REG` class in newer applications.
-                 """,
-                 verbatim_gxh_defines="#define GetString_REG(A,B,C) Get_REG(A,B,C,sizeof(C))")
+                 """)
 
 
 gx_defines = [

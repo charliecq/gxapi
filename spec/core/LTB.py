@@ -24,8 +24,7 @@ gx_class = Class('LTB',
                  The header line is optional and can be used to find entries.
                  
                  Comment and empty lines are ignored.
-                 """,
-                 verbatim_gxh_defines='#define CreateCSV_LTB(A) Create_LTB(A,LTB_TYPE_HEADER,LTB_DELIM_COMMA,"")')
+                 """)
 
 
 gx_defines = [

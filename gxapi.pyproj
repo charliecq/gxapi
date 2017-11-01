@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>gen_python.py</StartupFile>
+    <StartupFile>gen_gxh.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -30,10 +30,14 @@
     <Compile Include="spec\core\E3DV.py" />
     <Compile Include="spec\core\VECTOR3D.py" />
     <Compile Include="spec\desk\MULTIVOXSET.py" />
-    <Compile Include="templates\class_cur.gen.py" />
-    <Compile Include="templates\class_empty.py" />
-    <Compile Include="templates\class_generated.gen.py" />
-    <Compile Include="templates\class_generated.py" />
+    <Compile Include="templates\gxpy\class_cur.gen.py" />
+    <Compile Include="templates\gxpy\class_empty.py" />
+    <Compile Include="templates\gxpy\class_generated.gen.py" />
+    <Compile Include="templates\gxpy\class_generated.py" />
+    <Compile Include="templates\gxpy\init_cur.gen.py" />
+    <Compile Include="templates\gxpy\init_empty.py" />
+    <Compile Include="templates\gxpy\init_generated.gen.py" />
+    <Compile Include="templates\gxpy\init_generated.py" />
     <Compile Include="spec\core\3DN.py" />
     <Compile Include="spec\core\3DV.py" />
     <Compile Include="spec\core\AGG.py" />
@@ -157,10 +161,6 @@
     <Compile Include="spec\gxdefs.py" />
     <Compile Include="spec\gxmethod.py" />
     <Compile Include="spec\__init__.py" />
-    <Compile Include="templates\init_cur.gen.py" />
-    <Compile Include="templates\init_empty.py" />
-    <Compile Include="templates\init_generated.gen.py" />
-    <Compile Include="templates\init_generated.py" />
     <Compile Include="test.py" />
     <Compile Include="update_param_names.py">
       <SubType>Code</SubType>
@@ -172,13 +172,22 @@
     <Folder Include="spec" />
     <Folder Include="spec\core" />
     <Folder Include="spec\desk" />
+    <Folder Include="templates\gxc\" />
+    <Folder Include="templates\gxpy\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="compile.bat" />
     <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
-    <Content Include="templates\class_generated.rst" />
+    <Content Include="templates\gxc\class_cur.gen.gxh" />
+    <Content Include="templates\gxc\class_empty.gxh" />
+    <Content Include="templates\gxc\class_generated.gen.gxh" />
+    <Content Include="templates\gxc\class_generated.gxh" />
+    <Content Include="templates\gxc\version.gxh" />
+    <Content Include="version.json" />
+    <Content Include="templates\gxc\all.gxh" />
+    <Content Include="templates\gxc\gxh_doc.md" />
     <Content Include="windows_helper.cpp" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

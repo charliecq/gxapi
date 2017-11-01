@@ -5,24 +5,7 @@ gx_class = Class('GUI',
                  These are graphical functions that typically create a
                  dialog-style window for a specific function. Examples include
                  file import wizards, and the Histogram and Scatter tools.
-                 """,
-                 verbatim_gxh_defines="""
-#define ImportChemDatabase_GUI(A,B,C,D) {if (iImportChemDatabase_GUI(A,B,C,sizeof(C),D) Cancel_SYS();}	  
-#define ImportChemDatabaseADO_GUI(A,B,C,D) {if (iImportChemDatabaseADO_GUI(A,B,C,sizeof(C),D)) Cancel_SYS();}
-#define ImportDrillDatabaseADO_GUI(A,B,C,D,E) {if (iImportDrillDatabaseADO_GUI(A,B,C,sizeof(C),D,E)) Cancel_SYS();}
-#define ImportDatabase_GUI(A,B,C) {if (iImportDatabase_GUI(A,B,C,sizeof(C))) Cancel_SYS();}
-#define ImportDatabaseADO_GUI(A,B,C) {if (iImportDatabaseADO_GUI(A,B,C,sizeof(C))) Cancel_SYS();}
-#define ImportDatabaseSQL_GUI(A,B,C,D) {if (iImportDatabaseSQL_GUI(A,B,C,D,sizeof(D))) Cancel_SYS();}
-#define ImportDatabaseSQLADO_GUI(A,B,C,D) {if (iImportDatabaseSQLADO_GUI(A,B,C,D,sizeof(D))) Cancel_SYS();}
-#define ImportTemplateSQL_GUI(A,B,C,D) {if (iImportTemplateSQL_GUI(A,B,C,D)) Cancel_SYS();}
-#define ImportTemplateSQLADO_GUI(A,B,C,D) {if (iImportTemplateSQLADO_GUI(A,B,C,D)) Cancel_SYS();}
-#define DatabaseType_GUI(A,B) {if (iDatabaseType_GUI(A,B,sizeof(B)) Cancel_SYS();}
-
-#define iFileOpen_GUI(A,B,C,D)          IiGenFileForm_GUI(A,(VV) 0,B,C,D,sizeof(D),FILE_FORM_OPEN,FALSE)
-#define iMultiFileOpen_GUI(A,B,C,D)     IiGenFileForm_GUI(A,(VV) 0,B,C,D,sizeof(D),FILE_FORM_OPEN,TRUE)
-#define iFileSave_GUI(A,B,C,D)          IiGenFileForm_GUI(A,(VV) 0,B,C,D,sizeof(D),FILE_FORM_SAVE,FALSE)
-#define iMultiFileSave_GUI(A,B,C,D)     IiGenFileForm_GUI(A,(VV) 0,B,C,D,sizeof(D),FILE_FORM_SAVE,TRUE)
-""")
+                 """)
 
 
 gx_defines = [

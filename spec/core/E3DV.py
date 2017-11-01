@@ -2,12 +2,7 @@ from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
 gx_class = Class('E3DV',
                  doc="Methods to manipulate an active 3D View",
-                 notes="",
-                 verbatim_gxh_defines="GetE3DV_EMAP")
-
-
-
-
+                 notes="")
 
 gx_methods = {
     'Miscellaneous': [

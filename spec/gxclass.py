@@ -47,7 +47,7 @@ class memoized(object):
 
 class Class(SpecBase):
     def __init__(self, name, handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
-                 doc=None, notes=None, verbatim_gxh_defines=None):
+                 doc=None, notes=None):
         super().__init__()
 
         self.name = name
@@ -57,7 +57,6 @@ class Class(SpecBase):
         self.no_cpp = no_cpp
         self.doc = doc
         self.notes = notes
-        self.verbatim_gxh_defines = verbatim_gxh_defines
         self.is_static = True
         self.default_destroy_method = "Destr_SYS"
         self.has_methods = False

@@ -7,11 +7,7 @@ gx_class = Class('STR',
                  GX Programming Language does not provide string literal
                  tokens, you must use these functions for any string operations
                  you want to perform.
-                 """,
-                 verbatim_gxh_defines="""
-#define iCharComp_STR(A,B) (iChar_STR(A)==iChar_STR(B))
-#define iCharN_STR(A,B) IiCharN_STR(A,(B),sizeof(A))
-""")
+                 """)
 
 
 gx_defines = [

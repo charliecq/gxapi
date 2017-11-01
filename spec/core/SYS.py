@@ -47,14 +47,7 @@ gx_class = Class('SYS',
                  
                  ``setting = "value4"``
 
-                 """,
-                verbatim_gxh_defines="""
-#define Prompt_SYS(A,B)						IiPrompt_SYS(A,B,sizeof(B))
-#define Destroy_SYS(A)						Destr_SYS((HANDLE)(A))
-#define iFindPathNameEx_SYS(A,B,C,D)	iFindPathEx_SYS(A,B,C,D,sizeof(D))
-#define GetDotNetGXEntries_SYS(a,b)  IiGetDotNetGXEntries_SYS(a,b,sizeof(b))
-#define iFindPathName_SYS(A,B,C)  iFindPath_SYS(A,B,C,sizeof(C))
-""")
+                 """)
 
 
 gx_defines = [

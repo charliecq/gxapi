@@ -4,7 +4,6 @@ from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
 import getopt
 import inspect
-from shutil import copyfile
 
 type_map = {
     'HDC': 'int',
@@ -318,7 +317,7 @@ class PythonCodeGenerator(CodeGeneratorBase):
         cur_dir = os.path.dirname(os.path.join(os.getcwd(), inspect.getfile(self.__class__)))
         self.gxapi_outdir = os.path.join(cur_dir, '..', 'gxpy', 'geosoft', 'gxapi')
         self.gxapi_docs_outdir = os.path.join(cur_dir, '..', 'gxpy', 'docs')
-        template_dirs = [ os.path.join(cur_dir, 'templates') ]
+        template_dirs = [ os.path.join(cur_dir, 'templates', 'gxpy') ]
         super().__init__(constant_type=PythonConstant, define_type=PythonDefine, parameter_type=PythonParameter,
                          method_type=PythonMethod, class_type=PythonClass, template_dirs=template_dirs)
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
@@ -382,30 +381,14 @@ class PythonCodeGenerator(CodeGeneratorBase):
         else:
             return py_type
 
-    def _regen_with_editable_blocks(self, template_prefix, output_file, **kwargs):
-        empty_template = 'templates/{}_empty.py'.format(template_prefix)
-        cur_gen_template = 'templates/{}_cur.gen.py'.format(template_prefix)
-        generated_template_name = '{}_generated.py'.format(template_prefix)
-        generated_gen_template = 'templates/{}_generated.gen.py'.format(template_prefix)
-        if not os.path.exists(output_file):
-            copyfile(empty_template, cur_gen_template)
-        else:
-            copyfile(output_file, cur_gen_template)
-
-        gen_template = self.get_template(generated_template_name)
-        self.refresh_file_contents(generated_gen_template, gen_template.render(**kwargs))
-
-        final_template = self.get_template(os.path.split(generated_gen_template)[1])
-        self.refresh_file_contents(output_file, final_template.render(**kwargs))
-
     def _regen_init(self):
         output_file = os.path.join(self.gxapi_outdir, '__init__.py')
-        self._regen_with_editable_blocks('init', output_file, classes=self.classes)
+        self.regen_with_editable_blocks('templates/gxpy', 'init', 'py', output_file, classes=self.classes)
 
     def _regen_python_code(self, cl):
         if not cl.no_cpp and not cl.name == 'GEO':
             py_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(cl.name))
-            self._regen_with_editable_blocks('class', py_file, cl=cl)
+            self.regen_with_editable_blocks('templates/gxpy', 'class', 'py', py_file, cl=cl)
 
     def _regen_rst(self, cl):
         if (not cl.no_cpp and not cl.name == 'GEO') or cl.name == 'GEOSOFT':

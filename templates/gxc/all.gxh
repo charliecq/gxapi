@@ -1,0 +1,8 @@
+#ifndef ALL_GXH
+#define ALL_GXH
+#define ALL32_GXH
+
+{% for cl in classes %}#include <{{ cl.lower() }}.gxh>
+{% endfor %}
+
+#endif

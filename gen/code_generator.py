@@ -1,11 +1,14 @@
 import importlib
 import glob
+import json
 import os
 import re
 import copy
 import itertools
 import inspect
+from shutil import copyfile
 from jinja2 import Environment, StrictUndefined, FileSystemLoader
+from distutils.version import StrictVersion
 
 from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
@@ -14,7 +17,15 @@ from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
 _core_files = [
     'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py',
-    'E:\\ggit\\t\\gxapi\\spec\\core\\IMG.py', 
+    'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\DB.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\LTB.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\REG.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\STR.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\SYS.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\VA.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\desk\\GUI.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\desk\\SEMPLOT.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
     #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
     ]
@@ -22,6 +33,10 @@ _desk_files = []
 
 _core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
 _desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
+
+
+with open(os.path.join(os.path.dirname(__file__), '../version.json')) as fp:
+    _version = json.load(fp)
 
 _classes = {}
 _class_method_groups = {}
@@ -62,14 +77,17 @@ class CodeGeneratorBase:
     # and allows resolution of any pertinent information where only the child object is
     # available.
     def __init__(self, *, constant_type=None, define_type=None, parameter_type=None,
-                 method_type=None, class_type=None, no_obsolete=True, template_dirs = []):
+                 method_type=None, class_type=None, no_obsolete=True, template_dirs = [],
+                 line_statement_prefix='###'):
+
+        self.current_version = StrictVersion("{}{}".format(_version['version'], _version['pre-release']))
         self.classes = {}
         self.methods = {}
         self.constants = {}
         self.definitions = {}
         
         loader = FileSystemLoader(template_dirs) if len(template_dirs) else None
-        self.j2env = Environment(loader=loader, line_statement_prefix='###')
+        self.j2env = Environment(loader=loader, line_statement_prefix=line_statement_prefix)
         self.j2env.filters['comment'] = do_comment
         self.j2env.undefined = StrictUndefined
 
@@ -159,6 +177,7 @@ class CodeGeneratorBase:
 
     def normalize_line_endings(self, contents):
         return contents.replace('\r\n', '~~---NL~~---').replace('\n', '~~---NL~~---').replace('~~---NL~~---', '\r\n')
+
     def refresh_file_contents(self, file_name, contents):
         contents = self.normalize_line_endings(contents)
         cur_contents = None
@@ -169,6 +188,29 @@ class CodeGeneratorBase:
             if not file_name.startswith('templates/'): print('Updating {}'.format(file_name))
             with open(file_name, 'wb') as f:
                 f.write(contents.encode('UTF-8'))
+
+    def regen_with_template(self, output_dir, file_name, **kwargs):
+        out_file = os.path.join(output_dir, file_name)
+        template = self.get_template(file_name)       
+        self.refresh_file_contents(out_file, template.render(**kwargs))
+
+    def regen_with_editable_blocks(self, template_gen_dir, template_prefix, extension, output_file, **kwargs):
+        empty_template = '{}/{}_empty.{}'.format(template_gen_dir, template_prefix, extension)
+        cur_gen_template = '{}/{}_cur.gen.{}'.format(template_gen_dir, template_prefix, extension)
+        generated_template_name = '{}_generated.{}'.format(template_prefix, extension)
+        generated_gen_template = '{}/{}_generated.gen.{}'.format(template_gen_dir, template_prefix, extension)
+        if not os.path.exists(output_file):
+            copyfile(empty_template, cur_gen_template)
+        else:
+            copyfile(output_file, cur_gen_template)
+
+        gen_template = self.get_template(generated_template_name)
+        self.refresh_file_contents(generated_gen_template, gen_template.render(**kwargs))
+
+        final_template = self.get_template(os.path.split(generated_gen_template)[1])
+        self.refresh_file_contents(output_file, final_template.render(**kwargs))
+
+
 
     
 

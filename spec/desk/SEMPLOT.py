@@ -1,8 +1,7 @@
 from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
 gx_class = Class('SEMPLOT',
-                 doc="Oasis montaj implementation of RTE :class:`SEMPLOT`",
-                 verbatim_gxh_defines="#define ImportAscWizard_SEMPLOT(A,B,C) IImportAsciiWizard_SEMPLOT(A, B, C, sizeof(C))")
+                 doc="Oasis montaj implementation of RTE :class:`SEMPLOT`")
 
 
 gx_defines = [

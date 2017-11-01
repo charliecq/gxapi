@@ -10,12 +10,7 @@ gx_class = Class('DB',
                  used by GX's:
                  
                  :def_val:`DB_ACTIVITY_BLOB`
-                 """,
-                 verbatim_gxh_defines="""
-#define LOCK_RW(A,B) LockSymb_DB(A,B,DB_LOCK_READWRITE,DB_WAIT_NONE)
-#define LOCK_R(A,B)  LockSymb_DB(A,B,DB_LOCK_READONLY,DB_WAIT_NONE)
-#define UNLOCK(A,B)  UnLockSymb_DB(A,B)
-""")
+                 """)
 
 
 gx_defines = [

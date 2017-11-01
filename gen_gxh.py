@@ -1,48 +1,32 @@
 import os
+import inspect
 from gen import CodeGeneratorBase
 from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
+from datetime import datetime 
 
 class GXHConstant(Constant):
     def __init__(self, other):
         super().construct_copy(other)
 
-    def render(self):
+    @property
+    def def_value(self):
         if self.type == Type.STRING:
-            return self.generator.parse_template('#define {{ constant.name }} "{{ constant.value }}"').render(constant=self)
+            return '"{}"'.format(self.value)
         else:
-            return self.generator.parse_template('#define {{ constant.name }} {{ constant.value }}').render(constant=self)
+            return self.value
 
 class GXHDefine(Define):
     def __init__(self, other):
         super().construct_copy(other)
 
-    def render(self):
-        return self.generator.parse_template("""
-//===========================================================================================================
-//
-// Define {{ define.name }}
-//
-// {% if define.doc %}{{ define.doc | doc_sanitize | comment }}{% endif %}
-//
-{%- for constant in define.constants %}
-// {{ constant.name }}
-// {% if constant.doc %}{{ constant.doc | doc_sanitize | comment }}{% endif %}
-//
-{%- endfor %}
-//===========================================================================================================
-{% for constant in define.constants %}
-{{ constant.render() }}
-{%- endfor %}
-
-""").render(define=self)
-
+    
 def get_gxh_type(type):
     if type == Type.VOID:
         return "void"
     elif type == Type.DOUBLE:
         return "real"
-    elif type == Type.INT32_T:
+    elif type == Type.INT32_T or type == Type.BOOL:
         return "int"
     elif type == Type.STRING:
         return "string"
@@ -54,6 +38,9 @@ def get_gxh_type(type):
 
 
 class GXHParameter(Parameter):
+    _parameter_template = None
+    _parameter_template_doc = None
+
     def __init__(self, other):
         super().construct_copy(other)
 
@@ -66,35 +53,24 @@ class GXHParameter(Parameter):
 
     def render_gxh_doc(self, indent_spaces):
         if self.doc:
-            return self.generator.parse_template(
-                '{% set type_len = param.gxh_type|length %}{{ param.doc | doc_sanitize | comment(comment_first_line=True) | indent(indent_spaces-type_len, True) | indent(indent_spaces+1) }}'
-            ).render(param=self, indent_spaces=indent_spaces)
+            if not GXHParameter._parameter_template_doc:
+                GXHParameter._parameter_template_doc = self.generator.parse_template(
+                    '{% set type_len = param.gxh_type|length %}{{ param.doc | doc_sanitize | comment(comment_first_line=True) | indent(indent_spaces-type_len, True) | indent(indent_spaces+1) }}'
+                    )
+            return GXHParameter._parameter_template_doc.render(param=self, indent_spaces=indent_spaces)
         else:
-            return self.generator.parse_template(
-                '{% set type_len = param.gxh_type|length %}{{ "//" | indent(indent_spaces-type_len, True) }}').render(param=self, indent_spaces=indent_spaces)
-
+            if not GXHParameter._parameter_template:
+                GXHParameter._parameter_template = self.generator.parse_template(
+                    '{% set type_len = param.gxh_type|length %}{{ "//" | indent(indent_spaces-type_len, True) }}'
+                    )
+            return GXHParameter._parameter_template.render(param=self, indent_spaces=indent_spaces)
 
 
 class GXHMethod(Method):
+    _parameters_template = None
+
     def __init__(self, other):
         super().construct_copy(other)
-
-    def render(self):
-        return self.generator.parse_template("""{% set name_len = method.exposed_name|length %} {% set ret_len = method.gxh_return_type|length %} {% set avail_len = method.availability_prefix|length %}
-//-----------------------------------------------------------------------------------------------------------
-// {{ method.exposed_name }} {%if method.doc %}{{ method.doc | doc_sanitize | comment(extra_spaces=name_len+1) }}{% endif %}
-{% if method.return_doc %}//
-// Returns {{ ' ' * (name_len - 7) }}{{ method.return_doc | doc_sanitize | comment(extra_spaces=name_len+1) }}
-{% endif %}{% if method.notes %}//
-// Notes {{ ' ' * (name_len - 5) }}{{ method.notes | doc_sanitize | comment(extra_spaces=name_len+1) }}
-{% endif %}{% if method.see_also %}//
-// See also {{ ' ' * (name_len - 8) }}{{ method.see_also | doc_sanitize | comment(extra_spaces=name_len+1) }}
-{% endif %}//
-// Available {{ ' ' * (name_len - 9) }}{{ method.version }}
-//-----------------------------------------------------------------------------------------------------------
-
-{{ method.availability_prefix }} {{ method.gxh_return_type }} {{ method.exposed_name }}{{ method.render_parameters() | indent(avail_len+name_len + ret_len + 2) }}
-{{ method.string_macro }}""").render(method=self)
 
     @property
     def string_macro(self):
@@ -128,11 +104,13 @@ class GXHMethod(Method):
             return ''
 
     def render_parameters(self):
+        if not GXHMethod._parameters_template:
+            GXHMethod._parameters_template = self.generator.parse_template("""{% for param in parameters %}{% if loop.first %}({% else %} {% endif %}{{ param.gxh_type }}{% if not loop.last %}, {{ param.render_gxh_doc(max_type_len + 2) }}
+{% else %});{{ param.render_gxh_doc(max_type_len + 2) }}{% endif %}{% else %}();{% endfor %}""")
         max_type_len = 0
         for param in self.parameters:
             max_type_len = max(max_type_len, len(param.gxh_type))
-        return self.generator.parse_template("""{% for param in parameters %}{% if loop.first %}({% else %} {% endif %}{{ param.gxh_type }}{% if not loop.last %}, {{ param.render_gxh_doc(max_type_len + 2) }}
-{% else %});{{ param.render_gxh_doc(max_type_len + 2) }}{% endif %}{% else %}();{% endfor %}""").render(parameters=self.parameters, max_type_len=max_type_len)
+        return GXHMethod._parameters_template.render(parameters=self.parameters, max_type_len=max_type_len)
 
     @property
     def gxh_return_type(self):
@@ -155,77 +133,6 @@ class GXHClass(Class):
     def __init__(self, other):
         super().construct_copy(other)
 
-    def render(self):
-        return self.generator.parse_template("""
-{{- cl.header -}}
-{{- cl.gxh_definitions -}}
-{{- cl.gxh_methods -}}
-{{- cl.footer -}}
-""").render(cl=self)
-
-    @property
-    def header(self):
-        return self.generator.parse_template("""
-//===========================================================================================================
-//
-// Class {{ cl.name }}
-//
-//-----------------------------------------------------------------------------------------------------------
-//
-// {{ cl.doc | doc_sanitize | comment }}
-//
-{% if cl.notes %}//-----------------------------------------------------------------------------------------------------------
-// Notes
-//
-// {{ cl.notes | doc_sanitize | comment }}
-//
-{% endif %}//-----------------------------------------------------------------------------------------------------------
-
-#ifndef H{{ cl.name }}_GXH_DEFINED
-#define H{{ cl.name }}_GXH_DEFINED
-
-{% if cl.verbatim_gxh_defines %}{{ cl.verbatim_gxh_defines }}{% endif %}
-
-""").render(cl=self)
-
-    @property
-    def footer(self):
-        return self.generator.parse_template('#endif').render(cl=self)
-
-    @property
-    def gxh_definitions(self):
-        return self.generator.parse_template("""
-{% for _, define in cl.defines.items() %}
-{{ define.render() }}
-{% endfor %}
-""").render(cl=self)
-
-    @property
-    def gxh_methods(self):
-        if len(self.method_groups) == 1:
-            method_group = next(iter(self.method_groups.values()))
-            return self.render_method_group(method_group)
-        else:
-            return self.generator.parse_template("""
-{% for key, method_group in cl.method_groups.items() %}
-//===========================================================================================================
-//
-// {{ key }}
-//
-//===========================================================================================================
-
-{{ cl.render_method_group(method_group) }}
-{% endfor %}
-""").render(cl=self)
-
-    def render_method_group(self, method_group):
-        return self.generator.parse_template("""
-{% for method in methods %}
-{{ method.render() }}
-{% endfor %}
-""").render(methods=method_group)
-
-
 class GXHCodeGenerator(CodeGeneratorBase):
     def doc_sanitize(self, s):
         s = self.re_class.sub(r'\1', s)
@@ -236,8 +143,13 @@ class GXHCodeGenerator(CodeGeneratorBase):
         return s.replace('``', '')
 
     def __init__(self):
+        cur_dir = os.path.dirname(os.path.join(os.getcwd(), inspect.getfile(self.__class__)))
+        template_dirs = [ os.path.join(cur_dir, 'templates', 'gxc') ]
         super().__init__(constant_type=GXHConstant, define_type=GXHDefine, parameter_type=GXHParameter,
-                         method_type=GXHMethod, class_type=GXHClass)
+                         method_type=GXHMethod, class_type=GXHClass, template_dirs=template_dirs,
+                         line_statement_prefix=r'//***')
+        self.gxc_outdir = os.path.join(cur_dir, '..', 'gxc')
+        self.gxc_includes = os.path.join(self.gxc_outdir, 'include')
         self._remove_no_gxh_classes_and_methods()
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
 
@@ -249,12 +161,39 @@ class GXHCodeGenerator(CodeGeneratorBase):
             for g_k, methods in cl.method_groups.items():
                 cl.method_groups[g_k] = [m for m in methods if not m.no_gxh]
 
+    def _regen_all(self):
+        # put GEOSOFT first it has defines needed in other headers
+        classes = [ 'GEOSOFT' ]
+        classes.extend([c for c in self.classes.keys() if not c == 'GEOSOFT'])
+        self.regen_with_template(self.gxc_includes, 'all.gxh', classes=classes)
+
+    def _regen_version(self):
+        date = datetime.now().date()
+        datestamp = '{}{}{}'.format(date.year, str(date.month).zfill(2), str(date.day).zfill(2))
+        self.regen_with_template(self.gxc_includes, 'version.gxh', version=self.current_version, datestamp=datestamp)
+
+    def _regen_gxh(self, cl):
+        if not cl.name == 'GEO':
+            gxh_file = os.path.join(self.gxc_includes, '{}.gxh'.format(cl.name.lower()))
+            self.regen_with_editable_blocks('templates/gxc', 'class', 'gxh', gxh_file, cl=cl)
+
+    def _regen_md(self, cl):
+        if not cl.name == 'GEO':
+            rst_file = os.path.join(self.gxc_outdir, 'GX{}.md'.format(cl.name))
+            rst_template = self.get_template("class_generated.md")
+            self.refresh_file_contents(rst_file, rst_template.render(cl=cl))
+            
+    def _regen_classes(self):
+        for cl in self.classes.values():
+            self._regen_gxh(cl)
+            #self._regen_md(cl)
+
+    def generate(self):
+        gen._regen_version()
+        gen._regen_all()
+        gen._regen_classes()
+
 if __name__ == "__main__":
     gen = GXHCodeGenerator()
-
-    for cl_name, cl in gen.classes.items():
-        outputfile = "../gxdeveloper/gx/include/" + cl_name.lower() + ".gxh"
-        print("Generating {}".format(outputfile))
-        with open(outputfile, 'wb') as f:
-            output = os.linesep.join(cl.render().splitlines())
-            f.write(output.encode('UTF-8'))
+    gen.generate()
+    
