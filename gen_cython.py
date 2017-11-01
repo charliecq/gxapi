@@ -15,7 +15,6 @@ type_map = {
     'DB_SYMB': 'int32_t',
     'META_TOKEN': 'int32_t',
     'HANDLE': 'int32_t',
-    'GEO_BOOL': 'bool'
 }
 
 
@@ -109,7 +108,7 @@ class CythonParameter(Parameter):
     @property
     def is_ptr_type(self):
         return (self.type != Type.VOID and self.type != Type.DOUBLE and self.type != Type.INT32_T and 
-                self.type != Type.INT16_T and self.type != Type.STRING and 
+                self.type != Type.INT16_T and self.type != Type.STRING and self.type != Type.BOOL and 
                 not (self.type in type_map or self.type in self.generator.classes or self.type in self.generator.definitions))
 
             
@@ -353,7 +352,7 @@ class CythonCodeGenerator(CodeGeneratorBase):
             c_type = "void"
         elif type == Type.DOUBLE:
             c_type = "double"
-        elif type == Type.INT32_T:
+        elif type == Type.INT32_T or type == Type.BOOL:
             c_type = "int32_t"
         elif type == Type.INT16_T:
             c_type = "int16_t"

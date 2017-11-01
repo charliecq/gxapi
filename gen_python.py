@@ -122,14 +122,6 @@ class PythonParameter(Parameter):
         return self.type == Type.STRING and self.is_ref
 
 
-    @property
-    def is_ptr_type(self):
-        return (self.type != Type.VOID and self.type != Type.DOUBLE and self.type != Type.INT32_T and 
-                self.type != Type.INT16_T and self.type != Type.STRING and 
-                not (self.type in type_map or self.type in self.generator.classes or self.type in self.generator.definitions))
-
-            
-
 class PythonMethod(Method):
     _ref_string_params = None
     def __init__(self, other):
@@ -334,11 +326,25 @@ class PythonCodeGenerator(CodeGeneratorBase):
 
     def doc_sanitize(self, s, ref_class):
         s = self.re_class.sub(r'`GX\1 <geosoft.gxapi.GX\1>`', s)
-        s = self.re_def.sub(r'`\1`', s)
+        s = self.re_def.sub(lambda m: self._doc_sanitize_def(m.group(1)), s)
         s = self.re_func.sub(lambda m: self.methods[m.group(1)].py_doc_ref(ref_class), s)
-        s = self.re_def_val.sub(r'`\1 <geosoft.gxapi.\1>`', s)
+        s = self.re_def_val.sub(lambda m: self._doc_sanitize_def_val(m.group(1)), s)
         s = textwrap.dedent(s).strip()
         return s.replace('\\', '\\\\')
+
+    def _doc_sanitize_def(self, match):
+        if not match == 'GEO_BOOL':
+            return r':ref:`{}`'.format(match)
+        else:
+            return '``bool``'
+
+    def _doc_sanitize_def_val(self, match):
+        if match == 'GS_TRUE':
+            return '``True``'
+        elif match == 'GS_FALSE':
+            return '``False``'
+        else:
+            return r'`{} <geosoft.gxapi.{}>`'.format(match, match)
 
     def _remove_no_cpp_methods(self):
         for _, cl in self.classes.items():
@@ -360,6 +366,8 @@ class PythonCodeGenerator(CodeGeneratorBase):
             py_type = "float"
         elif type == Type.INT32_T:
             py_type = "int"
+        elif type == Type.BOOL:
+            py_type = "bool"
         elif type == Type.INT16_T:
             py_type = "int"
         elif type in type_map:
@@ -374,7 +382,7 @@ class PythonCodeGenerator(CodeGeneratorBase):
         else:
             return py_type
 
-    def _regen_py(self, template_prefix, output_file, **kwargs):
+    def _regen_with_editable_blocks(self, template_prefix, output_file, **kwargs):
         empty_template = 'templates/{}_empty.py'.format(template_prefix)
         cur_gen_template = 'templates/{}_cur.gen.py'.format(template_prefix)
         generated_template_name = '{}_generated.py'.format(template_prefix)
@@ -390,22 +398,29 @@ class PythonCodeGenerator(CodeGeneratorBase):
         final_template = self.get_template(os.path.split(generated_gen_template)[1])
         self.refresh_file_contents(output_file, final_template.render(**kwargs))
 
-    def regen_init(self):
+    def _regen_init(self):
         output_file = os.path.join(self.gxapi_outdir, '__init__.py')
-        self._regen_py('init', output_file, classes=self.classes)
+        self._regen_with_editable_blocks('init', output_file, classes=self.classes)
 
-    def regen_classes(self):
-        for key, cl in self.classes.items():
-            if not cl.no_cpp and not key == 'GEO':
-                py_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(key))
-                self._regen_py('class', py_file, cl=cl)
-                rst_file = os.path.join(self.gxapi_docs_outdir, 'GX{}.rst'.format(key))
-                rst_template = self.get_template("class_generated.rst")
-                self.refresh_file_contents(rst_file, rst_template.render(cl=cl))
+    def _regen_python_code(self, cl):
+        if not cl.no_cpp and not cl.name == 'GEO':
+            py_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(cl.name))
+            self._regen_with_editable_blocks('class', py_file, cl=cl)
 
+    def _regen_rst(self, cl):
+        if (not cl.no_cpp and not cl.name == 'GEO') or cl.name == 'GEOSOFT':
+            rst_file = os.path.join(self.gxapi_docs_outdir, 'GX{}.rst'.format(cl.name))
+            rst_template = self.get_template("class_generated.rst")
+            self.refresh_file_contents(rst_file, rst_template.render(cl=cl))
+            
+    def _regen_classes(self):
+        for cl in self.classes.values():
+            self._regen_python_code(cl)
+            self._regen_rst(cl)
+            
     def generate(self):
-        gen.regen_init()
-        gen.regen_classes()
+        gen._regen_init()
+        gen._regen_classes()
 
 
 if __name__ == "__main__":
