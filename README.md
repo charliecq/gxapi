@@ -6,7 +6,7 @@ Refer to the documentation for more information on using the GX API.
 
 [GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer)
 
-Also see the [Geosoft Inc . organization on Github](https://github.com/GeosoftInc) for the programming language specific repos.
+Also see the [Geosoft Inc. organization on Github](https://github.com/GeosoftInc) for the programming language specific repos.
 
 License
 -------
