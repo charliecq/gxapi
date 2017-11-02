@@ -5,7 +5,7 @@ gx_class = Class('VOX',
                  High Performance 3D Grid. Designed for accessing
                  3D grids quickly using slices. It designed arround
                  non-uniform multi-resolution  compressed storage.
-                 o sample a voxel at specific locations, use the :class:`VOXE` class.
+                 To sample a voxel at specific locations, use :class:`VOXE`.
                  """)
 
 
