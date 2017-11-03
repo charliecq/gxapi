@@ -162,7 +162,7 @@ gx_methods = {
                              doc="Handle of resource to track"),
                    Parameter('pinfo', type="void*",
                              doc="Info handle to pass to destructor"),
-                   Parameter('destr', type="void (_stdcall *param3)(void*)",
+                   Parameter('destr', type="void (_stdcall *destr)(void*)",
                              doc="Destructor function")
                ])
     ]
