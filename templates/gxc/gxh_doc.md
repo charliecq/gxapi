@@ -10,7 +10,7 @@
 {% else %}.. autoclass:: geosoft.gxapi.{{ class_name }}
    :members:{% endif %}
 
-{% for name, define in cl.defines.items() %}{% if not name == "GEO_BOOL" and not define.is_null_handle %}
+{% for name, define in cl.defines.items() %}{% if not define.is_null_handle %}
 .. _{{ name }}:
 
 {{ name }} constants

@@ -147,9 +147,9 @@ class GXHCodeGenerator(CodeGeneratorBase):
         template_dirs = [ os.path.join(cur_dir, 'templates', 'gxc') ]
         super().__init__(constant_type=GXHConstant, define_type=GXHDefine, parameter_type=GXHParameter,
                          method_type=GXHMethod, class_type=GXHClass, template_dirs=template_dirs,
-                         line_statement_prefix=r'//***')
+                         line_statement_prefix=r'<!--')
         self.gxc_outdir = os.path.join(cur_dir, '..', 'gxc')
-        self.gxc_includes = os.path.join(self.gxc_outdir, 'include')
+        self.gxc_docs = os.path.join(self.gxc_outdir, 'docs')
         self._remove_no_gxh_classes_and_methods()
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
 
@@ -168,22 +168,22 @@ class GXHCodeGenerator(CodeGeneratorBase):
         self.regen_with_template(self.gxc_includes, 'all.gxh', classes=classes)
 
     def _regen_version(self):
-        date = self.generation_time.date()
+        date = datetime.now().date()
         datestamp = '{}{}{}'.format(date.year, str(date.month).zfill(2), str(date.day).zfill(2))
         self.regen_with_template(self.gxc_includes, 'version.gxh', version=self.current_version, datestamp=datestamp)
 
-    def _regen_gxh(self, cl):
+    def _regen_md(self, cl):
         if not cl.name == 'GEO':
-            gxh_file = os.path.join(self.gxc_includes, '{}.gxh'.format(cl.name.lower()))
-            self.regen_with_editable_blocks('templates/gxc', 'class', 'gxh', gxh_file, cl=cl)
-
+            md_file = os.path.join(self.gxc_docs, '{}.md'.format(cl.name))
+            self.regen_with_editable_blocks('templates/gxc', 'class', 'md', md_file, cl=cl)
+            
     def _regen_classes(self):
         for cl in self.classes.values():
-            self._regen_gxh(cl)
+            self._regen_md(cl)
 
     def generate(self):
-        gen._regen_version()
-        gen._regen_all()
+        #gen._regen_version()
+        #gen._regen_all()
         gen._regen_classes()
 
 if __name__ == "__main__":

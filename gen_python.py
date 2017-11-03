@@ -17,8 +17,7 @@ type_map = {
     'DB_SELECT': 'int',
     'DB_SYMB': 'int',
     'META_TOKEN': 'int',
-    'HANDLE': 'int',
-    'GEO_BOOL': 'bool'
+    'HANDLE': 'int'
 }
 
 
@@ -332,10 +331,7 @@ class PythonCodeGenerator(CodeGeneratorBase):
         return s.replace('\\', '\\\\')
 
     def _doc_sanitize_def(self, match):
-        if not match == 'GEO_BOOL':
-            return r':ref:`{}`'.format(match)
-        else:
-            return '``bool``'
+        return r':ref:`{}`'.format(match)
 
     def _doc_sanitize_def_val(self, match):
         if match == 'GS_TRUE':

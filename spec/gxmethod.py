@@ -69,7 +69,19 @@ class Method(SpecBase):
     def returns_void(self):
         return self.return_type == Type.VOID
 
+    @property
+    def availability_info(self):
+        if self.availability == Availability.PUBLIC:
+            return '<a href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a>'
+        elif self.availability == Availability.EXTENSION:
+            return '<a href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended Desktop License</a>'
+        else:
+            return '<a href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft Desktop License</a>'
 
+    @property
+    def limitations_info(self):
+        return 'May not be available if running outside of a Oasis Montaj or from a command line program.' if self.is_app else None
+    
 
     @property
     def ext_method_name(self):

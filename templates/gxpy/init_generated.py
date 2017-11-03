@@ -9,7 +9,7 @@
 # GX{{ cl }} Constants
 # 
 
-{% for name, define in classes[cl].defines.items() %}{% if not name == "GEO_BOOL" and not define.is_null_handle %}
+{% for name, define in classes[cl].defines.items() %}{% if not define.is_null_handle %}
 {% if define.doc %}
 #
 # {{ define.name }} constants

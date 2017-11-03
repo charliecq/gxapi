@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>gen_gxh.py</StartupFile>
+    <StartupFile>gen_gxlib.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -25,11 +25,12 @@
     <Compile Include="gen\__init__.py" />
     <Compile Include="gen_cython.py" />
     <Compile Include="gen_gxh.py" />
+    <Compile Include="gen_gxh_docs.py" />
     <Compile Include="gen_gxlib.py" />
     <Compile Include="gen_python.py" />
     <Compile Include="spec\core\E3DV.py" />
+    <Compile Include="spec\core\MULTIVOXSET.py" />
     <Compile Include="spec\core\VECTOR3D.py" />
-    <Compile Include="spec\desk\MULTIVOXSET.py" />
     <Compile Include="templates\gxpy\class_cur.gen.py" />
     <Compile Include="templates\gxpy\class_empty.py" />
     <Compile Include="templates\gxpy\class_generated.gen.py" />
@@ -174,16 +175,25 @@
     <Folder Include="spec\desk" />
     <Folder Include="templates\gxc\" />
     <Folder Include="templates\gxpy\" />
+    <Folder Include="templates\gxcore\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="compile.bat" />
     <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
+    <Content Include="templates\gxcore\gxlib_cur.gen.h" />
+    <Content Include="templates\gxcore\gxlib_empty.h" />
+    <Content Include="templates\gxcore\gxlib_generated.gen.h" />
+    <Content Include="templates\gxcore\gxlib_generated.h" />
     <Content Include="templates\gxc\class_cur.gen.gxh" />
+    <Content Include="templates\gxc\class_cur.gen.md" />
     <Content Include="templates\gxc\class_empty.gxh" />
+    <Content Include="templates\gxc\class_empty.md" />
     <Content Include="templates\gxc\class_generated.gen.gxh" />
+    <Content Include="templates\gxc\class_generated.gen.md" />
     <Content Include="templates\gxc\class_generated.gxh" />
+    <Content Include="templates\gxc\class_generated.md" />
     <Content Include="templates\gxc\version.gxh" />
     <Content Include="version.json" />
     <Content Include="templates\gxc\all.gxh" />
