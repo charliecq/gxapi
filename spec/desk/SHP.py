@@ -305,7 +305,7 @@ gx_methods = {
                    Parameter('vv_y', type="VV",
                              doc="Y locations"),
                    Parameter('inclusive', type=Type.BOOL,
-                             doc="``True`` for outer ring polygon (inclusive/island), ``False` for inner ring (exclusive/hole)")
+                             doc="``True`` for outer ring polygon (inclusive/island), ``False`` for inner ring (exclusive/hole)")
                ]),
 
         Method('SetPolygonZ_SHP', module='geogxx', version='6.3.0',
@@ -323,7 +323,7 @@ gx_methods = {
                    Parameter('vv_z', type="VV",
                              doc="Z locations"),
                    Parameter('inclusive', type=Type.INT32_T,
-                             doc="``True`` for outer ring polygon (inclusive/island), ``False` for inner ring (exclusive/hole)")
+                             doc="``True`` for outer ring polygon (inclusive/island), ``False`` for inner ring (exclusive/hole)")
                ]),
 
         Method('SetReal_SHP', module='geogxx', version='6.3.0',

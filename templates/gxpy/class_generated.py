@@ -15,7 +15,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 ### block ClassImplementation
 {{ "### block ClassImplementation" }}
 # NOTICE: Do not edit anything here, it is generated code
-class {{ class_name }}:
+class {{ class_name }}(gxapi_cy.Wrap{{ cl.name }}):
     """
     {{ class_name }} class.
 
@@ -26,37 +26,28 @@ class {{ class_name }}:
     {{ cl.notes | doc_sanitize(cl.name) | indent }}{% endif %}
     """
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._wrapper = None
-
-    def __del__(self):
-        self._wrapper = None
-
-    def __init__(self, wrapper=None):
-        self._wrapper = wrapper if wrapper else gxapi_cy.Wrap{{ cl.name }}(GXContext._get_tls_geo(), 0)
+    def __init__(self, handle=0):
+        super().__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
         """
-        A null (undefined) instance of `{{ class_name }}`
+        A null (undefined) instance of `{{ class_name }} <geosoft.gxapi.{{ class_name }}>`
         
-        :returns: A null `{{ class_name }}`
+        :returns: A null `{{ class_name }} <geosoft.gxapi.{{ class_name }}>`
+        :rtype:   {{ class_name }}
         """
-        return cls()
+        return {{ class_name }}()
 
     def is_null(self):
         """
-        Check if the instance of `{{ class_name }}` is null (undefined)`
+        Check if this is a null (undefined) instance
         
-        :returns: True if this is a null (undefined) instance of `{{ class_name }}`, False otherwise.
+        :returns: True if this is a null (undefined) instance, False otherwise.
+        :rtype:   bool
         """
-        return self._wrapper.handle == 0
+        return self._internal_handle() == 0
 
-    def _internal_handle(self):
-        return self._wrapper.handle
 
 {% for key, method_group in cl.method_groups.items() %}
 # {{ key }}
@@ -73,11 +64,13 @@ class {{ class_name }}:
         :returns:   {{ method.return_indent_start }} {{ method.return_doc | doc_sanitize(cl.name) | indent(method.param_indent) }}{% endif %}
         :rtype:     {{ method.return_indent_start }} {{ method.py_return_type }}{% endif %}
 
-        .. versionadded:: {{ method.version }}{% if method.notes %}
+        .. versionadded:: {{ method.version }}
 
-        **Note:**
+        **License:** {{ method.availability_info_rst }}{% if method.limitations_info %}
 
-        {{ method.notes | doc_sanitize(cl.name) | indent(8) }}{% endif %}{% if method.see_also %}
+        **Limitations:** {{ method.limitations_info }}{% endif %}{% if method.notes %}
+
+        **Note:** {{ method.notes | doc_sanitize(cl.name) | indent(8) }}{% endif %}{% if method.see_also %}
 
         .. seealso::
 

@@ -128,12 +128,12 @@ cdef extern {{ method.c_return_type }} {{ method.exposed_name }}{{ method.render
             return ""
         else:
             return self.generator.parse_template("""{% if method.is_static %}    @classmethod{% endif %}
-    def {{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
+    def _{{ method.ext_method_name }}({{ method.wrap_first_parm }}{{ method.wrap_parameters }}):
 {{ method.wrap_declare_c }}
         try:
 {{ method.wrap_alloc }}
 {{ method.wrap_assign_c }}
-            {% if not method.returns_void %}_return_val = {% endif %}{% if method.returns_class %}Wrap{{ method.return_type }}(_geo, {% endif %}{{ method.exposed_name }}({{ method.passed_parameters }}){% if method.returns_class %}){% endif %}
+            {% if not method.returns_void %}_return_val = {% endif %}{{ method.exposed_name }}({{ method.passed_parameters }})
             _raise_on_gx_errors(_geo.p_geo)
             {{ method.wrap_return }}
         finally:
@@ -262,7 +262,10 @@ cdef class Wrap{{ cl.name }}:
     cdef int32_t _handle
     cdef WrapPGeo _geo;
     
-    def __cinit__(self, WrapPGeo geo, int32_t handle):
+    def __cinit__(self):
+        self._handle = 0
+
+    def __init__(self, WrapPGeo geo, int32_t handle):
         self._geo = geo
         self._handle = handle
     
@@ -271,8 +274,7 @@ cdef class Wrap{{ cl.name }}:
             {{ cl.default_destroy_method }}(self._geo.p_geo, &self._handle)
         self._geo = None
 
-    @property
-    def handle(self):
+    def _internal_handle(self):
         return self._handle
 
 """).render(cl=self)

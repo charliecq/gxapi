@@ -144,9 +144,9 @@ class PythonMethod(Method):
     @property
     def call_wrapper(self):
         if self.is_static:
-            return 'gxapi_cy.Wrap{}.{}'.format(self.parent.name, self.ext_method_name) 
+            return 'gxapi_cy.Wrap{}._{}'.format(self.parent.name, self.ext_method_name) 
         else:
-            return 'self._wrapper.{}'.format(self.ext_method_name)
+            return 'self._{}'.format(self.ext_method_name)
 
     @property
     def py_return(self):
@@ -190,8 +190,6 @@ class PythonMethod(Method):
             else:
                 if p.is_ref:
                     parameters.append("{}.value".format(p.name))
-                elif p.type in self.generator.classes:
-                    parameters.append("{}._wrapper".format(p.name))
                 else:
                     parameters.append(p.name)
         if not parameters:

@@ -70,7 +70,7 @@ class Method(SpecBase):
         return self.return_type == Type.VOID
 
     @property
-    def availability_info(self):
+    def availability_info_html(self):
         if self.availability == Availability.PUBLIC:
             return '<a href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a>'
         elif self.availability == Availability.EXTENSION:
@@ -79,8 +79,17 @@ class Method(SpecBase):
             return '<a href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft Desktop License</a>'
 
     @property
+    def availability_info_rst(self):
+        if self.availability == Availability.PUBLIC:
+            return '`Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_'
+        elif self.availability == Availability.EXTENSION:
+            return '`Geosoft Extended Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_'
+        else:
+            return '`Geosoft Desktop License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_'
+        
+    @property
     def limitations_info(self):
-        return 'May not be available if running outside of a Oasis Montaj or from a command line program.' if self.is_app else None
+        return 'May not be available while executing a command line program.' if self.is_app else None
     
 
     @property
