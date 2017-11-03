@@ -9,6 +9,7 @@ import inspect
 from shutil import copyfile
 from jinja2 import Environment, StrictUndefined, FileSystemLoader
 from distutils.version import StrictVersion
+from datetime import datetime
 
 from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
@@ -85,6 +86,8 @@ class CodeGeneratorBase:
         self.methods = {}
         self.constants = {}
         self.definitions = {}
+        self.generation_time = datetime.now()
+        
         
         loader = FileSystemLoader(template_dirs) if len(template_dirs) else None
         self.j2env = Environment(loader=loader, line_statement_prefix=line_statement_prefix)
