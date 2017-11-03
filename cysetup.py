@@ -13,8 +13,8 @@ setup(
             "gxapi_cy", 
             ['gxapi_cy.pyx', "windows_helper.cpp"], 
             libraries=['geogx_utf8', 'geodist', 'User32'],
-            library_dirs=['../gxdeveloper/lib'],
-            include_dirs = ['../gxdeveloper/include'],
+            library_dirs=['../gxcore/lib'],
+            include_dirs = ['../gxcore/include'],
             extra_compile_args=compile_args,
             extra_link_args=link_args
          ),
@@ -22,8 +22,8 @@ setup(
             "gxapi_cy_extend", 
             ['gxapi_cy_extend.pyx'], 
             libraries=['geogx_utf8', 'geodist'],
-            library_dirs=['../gxdeveloper/lib'],
-            include_dirs = ['../gxdeveloper/include'],
+            library_dirs=['../gxcore/lib'],
+            include_dirs = ['../gxcore/include'],
             extra_compile_args=compile_args,
             extra_link_args=link_args
          )])
