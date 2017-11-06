@@ -39,9 +39,12 @@
 //
 {%- endfor %}
 //===========================================================================================================
-{% for constant in define.constants %}
+
+{% if not define.is_null_handle %}{% for constant in define.constants %}
 #define {{ constant.name }} {{ constant.def_value }}
-{%- endfor %}
+{%- endfor %}{% else %}
+#define {{ define.name }} (({{ define.name.replace('_NULL', '') }})0)
+{% endif %}
 
 {% endfor %}
 
@@ -54,9 +57,9 @@
 //===========================================================================================================
 
 {% for method in method_group %}
-{% set name_len = method.exposed_name|length %} {% set ret_len = method.gxh_return_type|length %} {% set avail_len = method.availability_prefix|length %}
+{% set name_len = method.name|length %} {% set ret_len = method.gxh_return_type|length %} {% set avail_len = method.availability_prefix|length %}
 //-----------------------------------------------------------------------------------------------------------
-// {{ method.exposed_name }} {%if method.doc %}{{ method.doc | doc_sanitize | comment(extra_spaces=name_len+1) }}{% endif %}
+// {{ method.name }} {%if method.doc %}{{ method.doc | doc_sanitize | comment(extra_spaces=name_len+1) }}{% endif %}
 {% if method.return_doc %}//
 // Returns {{ ' ' * (name_len - 7) }}{{ method.return_doc | doc_sanitize | comment(extra_spaces=name_len+1) }}
 {% endif %}{% if method.notes %}//
@@ -67,7 +70,7 @@
 // Available {{ ' ' * (name_len - 9) }}{{ method.version }}
 //-----------------------------------------------------------------------------------------------------------
 
-{{ method.availability_prefix }} {{ method.gxh_return_type }} {{ method.exposed_name }}{{ method.render_parameters() | indent(avail_len+name_len + ret_len + 2) }}
+{{ method.availability_prefix }} {{ method.gxh_return_type }} {{ method.name }}{{ method.render_parameters() | indent(avail_len+name_len + ret_len + 2) }}
 {{ method.string_macro }}
 {% endfor %}
 {% endfor %}
@@ -77,3 +80,5 @@
 //*** endblock Generated
 
 #endif
+
+

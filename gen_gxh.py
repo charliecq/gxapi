@@ -74,10 +74,10 @@ class GXHMethod(Method):
 
     @property
     def string_macro(self):
-        method_name = self.exposed_name
+        method_name = self.name
         param_replacements = {p.size_of_param: p.name for p in self.parameters if p.size_of_param}
-        if len(param_replacements) > 0:
 
+        if len(param_replacements) > 0:
             if method_name.startswith('I') or method_name.startswith('_'):
                 macro_name = method_name[1:]
             elif method_name.startswith('iI'):
@@ -86,6 +86,7 @@ class GXHMethod(Method):
                 macro_name = 'Get{}'.format(method_name[2:])
             else:
                 macro_name = '_{}'.format(method_name)
+        
             macro_params = ''
             method_params = ''
 
@@ -100,6 +101,8 @@ class GXHMethod(Method):
                     macro_params += param.name
                     method_params += param.name
             return '#define {}({}) {}({})\n'.format(macro_name, macro_params, method_name, method_params)
+        elif method_name.startswith('_'):
+            return '#define {} {}\n'.format(method_name[1:], method_name)
         else:
             return ''
 
