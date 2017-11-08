@@ -139,8 +139,8 @@ gx_methods = {
                Voxel            List Voxels.
                VoxelInversion   List VOXI Documents.
                :class:`MXD`              List ArcGIS MXDs.
-               GMS3D            List GM-:class:`SYS` 3D Models.
-               GMS2D            List GM-:class:`SYS` 2D Models.
+               GMS3D            List GM-SYS 3D Models.
+               GMS2D            List GM-SYS 2D Models.
                All              Lists all files.
                """,
                return_type=Type.INT32_T,
@@ -164,8 +164,8 @@ gx_methods = {
                Voxel            List Voxels.
                VoxelInversion   List VOXI Documents.
                :class:`MXD`              List ArcGIS MXDs.
-               GMS3D            List GM-:class:`SYS` 3D Models.
-               GMS2D            List GM-:class:`SYS` 2D Models.
+               GMS3D            List GM-SYS 3D Models.
+               GMS2D            List GM-SYS 2D Models.
                All              Lists all files.
                """,
                return_type=Type.INT32_T,
