@@ -5,6 +5,7 @@ import textwrap
 import getopt
 import inspect
 
+
 type_map = {
     'HDC': 'int',
     'HWND': 'int',
@@ -34,11 +35,19 @@ class PythonConstant(Constant):
         if self.type == Type.STRING:
             return '\"{}\"'.format(val)
         else:
-            last_char = val[-1]
-            if 'U' == last_char or 'f' == last_char or 'L' == last_char:
-                return val[:-1]
+            if val.startswith('0x'):
+                if self.type == Type.UINT32_T: struct_type = 'I'
+                elif self.type == Type.INT32_T: struct_type = 'i'
+                elif self.type == Type.UINT64_T: struct_type = 'Q'
+                elif self.type == Type.INT64_T: struct_type = 'q'
+                else: raise 'Unsupported type for constant {} with hex value {}'.format(self.name, val)
+                return "struct.unpack('>{}', bytes.fromhex('{}'))[0]".format(struct_type, val[2:])
             else:
-                return val
+                last_char = val[-1]
+                if 'U' == last_char or 'f' == last_char or 'L' == last_char:
+                    return val[:-1]
+                else:
+                    return val
     @property
     def doc_name(self):
         name = self.name
