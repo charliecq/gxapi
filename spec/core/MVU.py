@@ -1547,7 +1547,7 @@ gx_methods = {
                See :func:`FlightPlot_MVU`.  This is the same except for the
                additional line gap parameter.
                """,
-               see_also="FlighPlot_MVU",
+               see_also=":func:`FlightPlot_MVU`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW",

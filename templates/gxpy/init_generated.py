@@ -3,6 +3,9 @@
 ### block Constants
 {{ "### block Constants" }}
 # NOTICE: Do not edit anything here, it is generated code
+
+import struct
+
 ### for cl in classes
 
 #
