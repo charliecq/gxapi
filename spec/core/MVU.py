@@ -222,7 +222,7 @@ gx_methods = {
     'Miscellaneous': [
 
         Method('Arrow_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw an arrow.",
                return_type=Type.VOID,
                parameters = [
@@ -245,7 +245,7 @@ gx_methods = {
                ]),
 
         Method('ArrowVectorVV_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw arrow vectors based on input VVs.",
                notes="""
                The locations are given in two VVs, and the directions
@@ -282,7 +282,7 @@ gx_methods = {
                ]),
 
         Method('BarChart_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot bar chart on a map.",
                return_type=Type.VOID,
                parameters = [
@@ -401,7 +401,7 @@ gx_methods = {
                ]),
 
         Method('ColorBar_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Color Bar in view",
                return_type=Type.VOID,
                parameters = [
@@ -424,7 +424,7 @@ gx_methods = {
                ]),
 
         Method('ColorBar2_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Color Bar from two :class:`ITR`",
                notes="""
                The secondary :class:`ITR` is used to blend horizontally with the
@@ -452,7 +452,7 @@ gx_methods = {
                ]),
 
         Method('ColorBar2Style_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Color Bar from two ITRs with style options",
                notes="""
                The secondary :class:`ITR` is used to blend horizontally with the
@@ -482,7 +482,7 @@ gx_methods = {
                ]),
 
         Method('ColorBarHor_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a horizontal color bar in view",
                notes="""
                The sign of the annotation offset determines whether labels are
@@ -514,7 +514,7 @@ gx_methods = {
                ]),
 
         Method('ColorBarHor2_MVU', module='geoengine.map', version='5.1.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Horizontal Color Bar from two ITRs",
                notes="""
                The secondary :class:`ITR` is used to blend horizontally with the
@@ -544,7 +544,7 @@ gx_methods = {
                ]),
 
         Method('ColorBarHor2Style_MVU', module='geoengine.map', version='5.1.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Horizontal Color Bar from two ITRs with style options",
                notes="""
                The secondary :class:`ITR` is used to blend horizontally with the
@@ -576,7 +576,7 @@ gx_methods = {
                ]),
 
         Method('ColorBarHorStyle_MVU', module='geoengine.map', version='5.1.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Horizontal Color Bar in view with style options",
                return_type=Type.VOID,
                parameters = [
@@ -603,7 +603,7 @@ gx_methods = {
                ]),
 
         Method('ColorBarStyle_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Color Bar in view with style options",
                return_type=Type.VOID,
                parameters = [
@@ -628,7 +628,7 @@ gx_methods = {
                ]),
 
         Method('ColorBarREG_MVU', module='geoengine.map', version='8.2',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a Color Bar in view",
                notes="""
                To allow for expansion, all parameters are passed inside the :class:`REG` object.
@@ -660,7 +660,7 @@ gx_methods = {
                ]),
 
         Method('Contour_MVU', module='geogxx', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a contour map.",
                return_type=Type.VOID,
                parameters = [
@@ -673,7 +673,7 @@ gx_methods = {
                ]),
 
         Method('ContourPLY_MVU', module='geogxx', version='5.1.6',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a contour map with clipped areas.",
                notes="""
                The clipping :class:`PLY` can include a surrounding inclusive polygon
@@ -694,7 +694,7 @@ gx_methods = {
                ]),
 
         Method('CSymbLegend_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot a legend for the classified color symbols.",
                notes="""
                If the symbol size, color, font etc are specified in
@@ -730,7 +730,7 @@ gx_methods = {
                ]),
 
         Method('DecayCurve_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot decay curves at survey locations",
                notes="""
                Box width and height are used to draw horizontal and vertical
@@ -783,7 +783,7 @@ gx_methods = {
                ]),
 
         Method('DirectionPlot_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot an arrow to indicate the direction of a flight line",
                notes="""
                An arrow will be drawn in the direction from the first valid
@@ -881,7 +881,7 @@ gx_methods = {
                ]),
 
         Method('ExportDXF3D_MVU', module='geoengine.interoperability', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export selected map groups in a map view to an AutoCAD 3D DXF file.",
                notes="Supported objects exported include lines, polygons, text.",
                see_also=":class:`LST` class",
@@ -920,7 +920,7 @@ gx_methods = {
                ]),
 
         Method('FlightPlot_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a flight line",
                notes="""
                Current line color, thickness and style are used to
@@ -969,7 +969,7 @@ gx_methods = {
                ]),
 
         Method('GenAreas_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Generate areas from an line group.",
                notes="""
                The specified line group will be used to create a new group that
@@ -994,7 +994,7 @@ gx_methods = {
                ]),
 
         Method('GetRangeGOCADSurface_MVU', module='geoengine.map', version='6.4.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Get the XYZ range of a GOCAD surface.",
                notes="""
                Required to set up a map view before doing the actual
@@ -1019,7 +1019,7 @@ gx_methods = {
                ]),
 
         Method('Histogram_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot the histogram on a map.",
                notes="""
                This function just calls :func:`Histogram2_MVU` with decimals set
@@ -1067,7 +1067,7 @@ gx_methods = {
                ]),
 
         Method('Histogram2_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot the histogram on a map.",
                notes="""
                A vertical line through from bottom to top horizontal axis is drawn
@@ -1126,7 +1126,7 @@ gx_methods = {
                ]),
 
         Method('Histogram3_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot the histogram on a map, specify decimals.",
                return_type=Type.VOID,
                parameters = [
@@ -1173,7 +1173,7 @@ gx_methods = {
                ]),
 
         Method('Histogram4_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="As :func:`Histogram3_MVU`, but allow probability scaling of percents.",
                return_type=Type.VOID,
                parameters = [
@@ -1222,7 +1222,7 @@ gx_methods = {
                ]),
 
         Method('Histogram5_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="As :func:`Histogram4_MVU`, but allow :class:`ITR` to color bars.",
                notes="The :class:`ITR` can be empty (but must still be a valid :class:`ITR` object).",
                return_type=Type.VOID,
@@ -1276,7 +1276,7 @@ gx_methods = {
                ]),
 
         Method('iExportableDXF3DGroupsLST_MVU', module='geoengine.interoperability', version='7.1.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Return a :class:`LST` of groups you can export using sExportDXF3D_MVU.",
                notes="""
                Returns a list of visible groups that the DXF 3D export can
@@ -1295,7 +1295,7 @@ gx_methods = {
                ]),
 
         Method('iMapsetTest_MVU', module='geoengine.map', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Test function to ensure parameters to :func:`Mapset_MVU` is sane",
                notes="""
                Use :func:`ShowError_SYS` to display errors that may have been encountered. This function can also be used
@@ -1335,7 +1335,7 @@ gx_methods = {
                ]),
 
         Method('iMapset2Test_MVU', module='geoengine.map', version='8.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Test function to ensure parameters to :func:`Mapset_MVU` is sane",
                notes="Same as :func:`iMapsetTest_MVU`, with vertical exaggeration.",
                return_type=Type.BOOL,
@@ -1374,7 +1374,7 @@ gx_methods = {
                ]),
 
         Method('ImportGOCADSurface_MVU', module='geoengine.map', version='6.4.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Import and plot a GOCAD surface model.",
                notes="""
                The vertex normals are not included in the
@@ -1541,7 +1541,7 @@ gx_methods = {
                ]),
 
         Method('PathPlot_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a flight line",
                notes="""
                See :func:`FlightPlot_MVU`.  This is the same except for the
@@ -1573,7 +1573,7 @@ gx_methods = {
                ]),
 
         Method('PathPlotEx_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a flight line",
                notes="This is the same except for the additional line compass parameter.",
                see_also=":func:`PathPlot_MVU`",
@@ -1604,7 +1604,7 @@ gx_methods = {
                ]),
 
         Method('PathPlotEx2_MVU', module='geoengine.map', version='5.0.8',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a flight line",
                notes="This is the same except for the additional line dummies parameter.",
                see_also=":func:`PathPlotEx_MVU`",
@@ -1637,7 +1637,7 @@ gx_methods = {
                ]),
 
         Method('PlotVoxelSurface_MVU', module='geoengine.map', version='6.4.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Extract an iso-surface from a voxel and plot it to a 2D or 3D view.",
                notes="""
                The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
@@ -1661,7 +1661,7 @@ gx_methods = {
                ]),
 
         Method('PlotVoxelSurface2_MVU', module='geoengine.map', version='7.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Extract an iso-surface from a voxel and plot it to a 2D or 3D view.",
                notes="""
                The Marching Cubes method of Lorensen and Cline, Computer Graphics, V21,
@@ -1689,7 +1689,7 @@ gx_methods = {
                ]),
 
         Method('GenerateSurfaceFromVoxel_MVU', module='geoengine.map', version='8.5.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="TODO...",
                notes="TODO... Move to :class:`VOX` method for surface generation only and use GeosurfaceD to display.",
                return_type=Type.VOID,
@@ -1717,7 +1717,7 @@ gx_methods = {
                ]),
 
         Method('Post_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Post values on a map.",
                return_type=Type.VOID,
                parameters = [
@@ -1744,7 +1744,7 @@ gx_methods = {
                ]),
 
         Method('PostEx_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Post values on a map with more paramters.",
                return_type=Type.VOID,
                parameters = [
@@ -1791,7 +1791,7 @@ gx_methods = {
                ]),
 
         Method('Probability_MVU', module='geoengine.map', version='5.1.8',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot a probability plot on a map.",
                notes="The :class:`ITR` can be empty (but must still be a valid :class:`ITR` object).",
                return_type=Type.VOID,
@@ -1835,7 +1835,7 @@ gx_methods = {
                ]),
 
         Method('ProfilePlot_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a profile along line trace",
                notes="Profiles will be drawn in the current line style.",
                return_type=Type.VOID,
@@ -1863,7 +1863,7 @@ gx_methods = {
                ]),
 
         Method('ProfilePlotEx_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a profile along line trace with more parameters",
                notes="Profiles will be drawn in the current line style.",
                return_type=Type.VOID,
@@ -1901,7 +1901,7 @@ gx_methods = {
                ]),
 
         Method('PropSymbLegend_MVU', module='geoengine.map', version='5.0.8',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a legend for proportional symbols.",
                notes="""
                All symbol attributes, except for the size, are assumed
@@ -1936,7 +1936,7 @@ gx_methods = {
                ]),
 
         Method('ReGenAreas_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Re-Generate from a line group and existing area group",
                notes="""
                The area group must exist and will be modified to match the current
@@ -1958,7 +1958,7 @@ gx_methods = {
                ]),
 
         Method('SymbOff_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draws symbols with an offset and against a flag channel",
                notes="""
                Symbols are not plotted for positions where the flag :class:`VV`
@@ -1981,7 +1981,7 @@ gx_methods = {
                ]),
 
         Method('TextBox_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw a wrapped text box",
                return_type=Type.VOID,
                parameters = [
@@ -2004,7 +2004,7 @@ gx_methods = {
                ]),
 
         Method('Tick_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Draw line ticks on a map.",
                return_type=Type.VOID,
                parameters = [
@@ -2027,7 +2027,7 @@ gx_methods = {
                ]),
 
         Method('TickEx_MVU', module='geoengine.map', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Same as :func:`Tick_MVU`, with gap allowance.",
                return_type=Type.VOID,
                parameters = [
@@ -2052,7 +2052,7 @@ gx_methods = {
                ]),
 
         Method('TrndPath_MVU', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Plot min and max trend lines.",
                notes="""
                Trend lines positions consist of X and Y VVs
@@ -2082,7 +2082,7 @@ gx_methods = {
     'Obsolete': [
 
         Method('PlotVoxelSurface3_MVU', module='geoengine.map', version='8.3.0',
-               availability=Availability.LICENSED, is_obsolete=True, 
+               availability=Availability.PUBLIC, is_obsolete=True, 
                doc="Extract an iso-surface from a voxel and plot it to a 2D or 3D view.",
                notes="Same as :func:`PlotVoxelSurface2_MVU` but with a couple more options.",
                return_type=Type.VOID,

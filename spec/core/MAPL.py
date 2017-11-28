@@ -17,7 +17,7 @@ gx_methods = {
     'Miscellaneous': [
 
         Method('Create_MAPL', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a :class:`MAPL`.",
                notes="""
                The default map groups will use the reference name with
@@ -36,7 +36,7 @@ gx_methods = {
                ]),
 
         Method('CreateREG_MAPL', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Create a :class:`MAPL` with :class:`REG`.",
                notes="""
                The default map groups will use the reference name with
@@ -65,7 +65,7 @@ gx_methods = {
                ]),
 
         Method('Process_MAPL', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Process a :class:`MAPL`",
                return_type=Type.VOID,
                parameters = [
@@ -75,7 +75,7 @@ gx_methods = {
                ]),
 
         Method('ReplaceString_MAPL', module='geoengine.map', version='5.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Adds a replacement string to a mapplot control file.",
                return_type=Type.VOID,
                parameters = [
