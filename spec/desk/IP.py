@@ -1779,6 +1779,39 @@ gx_methods = {
                              doc="String to place name into"),
                    Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
                              doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+               ]),
+
+        Method('LocateContributingElectrodes_IP', module='geogxx', version='9.4.0',
+               availability=Availability.EXTENSION, 
+               doc="Locate on a map electrodes selected in a database row.",
+               notes="""
+               Sets up an EXT object in the database that captures row/line change events and plots the
+               electrodes for the selected row on an accompanying map.
+               """,
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('db', type="DB",
+                             doc=":class:`DB` object"),
+                   Parameter('map', type=Type.STRING,
+                             doc='The current map'),
+                   Parameter('rx1x', type=Type.STRING,
+                             doc='Rx1 X channel'),
+                   Parameter('rx1y', type=Type.STRING,
+                             doc='Rx1 Y channel'),
+                   Parameter('rx2x', type=Type.STRING,
+                             doc='Rx2 X channel'),
+                   Parameter('rx2y', type=Type.STRING,
+                             doc='Rx2 Y channel'),
+                   Parameter('tx1x', type=Type.STRING,
+                             doc='Tx1 X channel'),
+                   Parameter('tx1y', type=Type.STRING,
+                             doc='Tx1 Y channel'),
+                   Parameter('tx2x', type=Type.STRING,
+                             doc='Tx2 X channel'),
+                   Parameter('tx2y', type=Type.STRING,
+                             doc='Tx2 Y channel'),
+                   Parameter('sym_size', type=Type.DOUBLE,
+                             doc='Symbol size (mm)'),
                ])
     ],
     'Obsolete': [

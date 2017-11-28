@@ -100,6 +100,17 @@ gx_methods = {
                              doc="Output Radial Spectrum file name string")
                ]),
 
+        Method('RadSpcAlt_FFT2', module='geogxx', version='9.4.0',
+               availability=Availability.EXTENSION, 
+               doc=":class:`FFT2` transform Radially averaged power spectrum - log before average and no normalization",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('im_gi', type="IMG",
+                             doc="Input image (Transform grid)"),
+                   Parameter('spc_fil', type=Type.STRING,
+                             doc="Output Radial Spectrum file name string")
+               ]),
+
         Method('RadSpc1_FFT2', module='geogxx', version='7.2.0',
                availability=Availability.PUBLIC, 
                doc=":class:`FFT2` transform Radially averaged power spectrum for one :class:`IMG`",

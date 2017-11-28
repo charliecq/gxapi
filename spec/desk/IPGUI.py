@@ -67,7 +67,22 @@ gx_methods = {
                doc="See if there is an IPQC Tool (Offset or Inline) already open.",
                notes="See if there is an IPQC Tool already open.",
                return_type=Type.INT32_T,
-               return_doc="0 if not open, 1 if open")
+               return_doc="0 if not open, 1 if open"),
+
+        Method('LaunchRemoveContributingElectrodesEXTTool_IPGUI', module='geoguilib', version='9.4.0',
+               availability=Availability.EXTENSION, 
+               doc="Launch the Remove Contributing Electrodes dialog.",
+               notes="""
+               This tool removes the :class:`EXT` object that allows the database-map linking between an IP data base 
+               and IP plan map for plotting contributing electrodes for a given database row of data.
+               """,
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('db', type=Type.STRING,
+                             doc="Database name"),
+                   Parameter('map', type=Type.STRING,
+                             doc="Current Map"),
+               ])
     ]
 }
 

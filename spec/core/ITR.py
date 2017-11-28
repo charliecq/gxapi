@@ -465,6 +465,13 @@ gx_methods = {
                              doc=":def:`ITR_COLOR_MODEL`")
                ]),
 
+        Method('iDefaultColorMethod_ITR', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Return the user-defined global default color method.",
+               return_type=Type.INT32_T,
+               return_doc="One of :def_val:`ITR_ZONE_EQUALAREA`, :def_val:`ITR_ZONE_LINEAR`, :def_val:`ITR_ZONE_NORMAL` or :def_val:`ITR_ZONE_LOGLINEAR`"
+               ),
+
         Method('SetDataLimits_ITR', module='geoengine.core', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Set :class:`ITR` max/min data limits.",
