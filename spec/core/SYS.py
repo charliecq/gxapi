@@ -1760,7 +1760,17 @@ gx_methods = {
                              doc="Company Name"),
                    Parameter('company_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
                              doc="Size of Company name")
-               ])
+               ]),
+        
+        Method('iIsSignedIn_SYS', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Check if signed in via Geosoft Connect",
+               return_type=Type.BOOL),
+
+        Method('SignIn_SYS', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Sign in via Geosoft Connect",
+               return_type=Type.VOID)
     ],
     'Lineage': [
 
