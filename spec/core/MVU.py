@@ -919,6 +919,19 @@ gx_methods = {
                              doc="Styles file to export to")
                ]),
 
+        Method('ExportMapGroupsToGDB_MVU', module='geoengine.map', version='9.4.0',
+               availability=Availability.LICENSED, 
+               doc="Export map group(s) to database line(s).",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('mview', type="MVIEW",
+                             doc="View"),
+                   Parameter('lst', type="LST",
+                             doc=":class:`LST` with group names in the name part of the :class:`LST`."),
+                   Parameter('db', type="DB",
+                             doc="Database"),
+               ]),
+
         Method('FlightPlot_MVU', module='geoengine.map', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Draw a flight line",
