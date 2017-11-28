@@ -18,8 +18,16 @@ gx_defines = [
                         doc="Random searches in a table."),
                Constant('TB_SEARCH_LINEAR', value='1', type=Type.INT32_T,
                         doc="Linear searches up or down a table (Default).")
-           ])]
-
+           ]),
+    Define('TB_SORT',
+           doc=":class:`TB` Sorting mode",
+           constants=[
+               Constant('TB_SORT_UNIQUE', value='0', type=Type.INT32_T,
+                        doc="Unique values only when sorting."),
+               Constant('TB_SORT_ALLOW_DUPLICATES', value='1', type=Type.INT32_T,
+                        doc="Allow duplicates when sorting.")
+           ])
+    ]
 
 gx_methods = {
     'Miscellaneous': [
@@ -38,6 +46,19 @@ gx_methods = {
                    Parameter('mode', type=Type.INT32_T,
                              doc=":def:`TB_SEARCH`")
                ]),
+
+
+        Method('SetSortMode_TB', module='geoengine.core', version='9.3.1',
+               availability=Availability.PUBLIC, 
+               doc="Set the sort mode of a table.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('tb', type="TB",
+                             doc="Table"),
+                   Parameter('mode', type=Type.INT32_T,
+                             doc=":def:`TB_SORT`")
+               ]),
+
 
         Method('Create_TB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
