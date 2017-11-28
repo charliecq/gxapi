@@ -3,19 +3,31 @@
 //*** block Header
 {{ "//*** block Header" }}
 //** NOTICE: Do not edit anything here, it is generated code
+
 /**
-* @file {{ cl.name.lower() }}.h
+* @file {{ cl.name.lower() }}_gxlib.h
 * @date {{ date.date().isoformat() }}
 * @brief File containing {{ cl.name }} GX C API constant and function declarations
-*
+*/
+
+/**
+* @defgroup {{ cl.name }}_Module {{ cl.name }}
 * {{ cl.doc | doc_sanitize | comment(prefix="* ") }}
 {% if cl.notes %}*
 * Notes:
 *
 * {{ cl.notes | doc_sanitize | comment(prefix="* ") }}
 *
-{% endif %}*/
+{% endif %}* @{
+*/
 
+#pragma once
+#ifndef H{{ cl.name }}_H_DEFINED
+#define H{{ cl.name }}_H_DEFINED
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 {{ "//*** endblock Header" }}
 //*** endblock Header
 
@@ -24,14 +36,7 @@
 {{ "//*** block Generated" }}
 //** NOTICE: Do not edit anything here, it is generated code
 
-/**
-* @defgroup {{ cl.name }}_Definitions {{ cl.name }} Definitions
-* @{
-*/
-
-{% for _, define in cl.defines.items() %}
-
-
+{% for _, define in cl.defines.items() %}{% if not define.is_null_handle %}
 /**
 * @name {{ define.name }} Definitions{% if define.doc %}
 * 
@@ -45,16 +50,18 @@
 * {{ constant.doc | doc_sanitize | comment(prefix="* ") }}{% endif %}
 */
 #define {{ constant.name }} {{ constant.def_value }}{%- endfor %}
-///@}{% endfor %}
-/** @} */
-
+///@}
+{% else %}
 /**
-* @defgroup {{ cl.name }}_Functions {{ cl.name }} Functions
-* @{
+* {{ define.name }}{% if define.doc %}
+*
+* {{ define.doc | doc_sanitize | comment(prefix="* ") }}{% endif %}
 */
+#define {{ define.name }} 0
+{% endif %}{% endfor %}
 {% for key, method_group in cl.method_groups.items() %}
 /**
-* @name {{ key }}
+* @name {{ key }} Functions 
 */
 ///@{
 {% for method in method_group %}
@@ -72,7 +79,7 @@
 *      {{ method.see_also | doc_sanitize | comment(prefix="* ", extra_spaces=5) }}
 *{% endif %}
 * @par License 
-*      {{ method.availability_info }}{% if method.limitations_info %}
+*      {{ method.availability_info_html }}{% if method.limitations_info %}
 * @par Limitations 
 *      {{ method.limitations_info }}
 {% endif %}
@@ -82,10 +89,18 @@ GX_EXPORT {{ method.c_return_type }} {{ method.exposed_name }}(void* p_geo{% for
 {% endfor %}
 ///@}
 {% endfor %}
-/** @} */
-
 
 {{ "//*** endblock Generated" }}
 //*** endblock Generated
 
+//*** block Footer
+{{ "//*** block Footer" }}
+#ifdef __cplusplus
+}
 #endif
+
+/** @} */
+
+#endif
+{{ "//*** endblock Footer" }}
+//*** endblock Footer
