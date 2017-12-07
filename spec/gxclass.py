@@ -47,7 +47,7 @@ class memoized(object):
 
 class Class(SpecBase):
     def __init__(self, name, handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
-                 doc=None, notes=None):
+                 doc=None, notes=None, see_also=None, branch=''):
         super().__init__()
 
         self.name = name
@@ -60,6 +60,8 @@ class Class(SpecBase):
         self.is_static = True
         self.default_destroy_method = "Destr_SYS"
         self.has_methods = False
+        self.see_also = see_also
+        self.branch = branch
 
 
     def _ext_method_name_camel(self, method):
