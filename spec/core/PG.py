@@ -382,7 +382,7 @@ gx_methods = {
     '3D Methods': [
 
         Method('CopySubset3D_PG', module='geoengine.core', version='8.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Copy a subset of data from one pager to another.",
                notes="2D Only",
                return_type=Type.VOID,
@@ -412,7 +412,7 @@ gx_methods = {
                ]),
 
         Method('Create3D_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Creates a Pager object",
                return_type="PG",
                return_doc=":class:`PG` Object",
@@ -428,7 +428,7 @@ gx_methods = {
                ]),
 
         Method('ReadCol3D_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read a set of elements in X (column) from pager into vv",
                return_type=Type.VOID,
                parameters = [
@@ -447,7 +447,7 @@ gx_methods = {
                ]),
 
         Method('ReadRow3D_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read a set of elements in Y (row) from pager into vv",
                return_type=Type.VOID,
                parameters = [
@@ -466,7 +466,7 @@ gx_methods = {
                ]),
 
         Method('ReadTrace3D_PG', module='geoengine.core', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read a set of elements in Z (trace) from pager into vv",
                return_type=Type.VOID,
                parameters = [
@@ -485,7 +485,7 @@ gx_methods = {
                ]),
 
         Method('ReAllocate3D_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Changes the size of 3D Pager",
                return_type=Type.VOID,
                parameters = [
@@ -500,7 +500,7 @@ gx_methods = {
                ]),
 
         Method('WriteCol3D_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write a set of elements in X (column) from vv into pager",
                return_type=Type.VOID,
                parameters = [
@@ -519,7 +519,7 @@ gx_methods = {
                ]),
 
         Method('WriteRow3D_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write a set of elements in Y (row) from vv into pager",
                return_type=Type.VOID,
                parameters = [
@@ -538,7 +538,7 @@ gx_methods = {
                ]),
 
         Method('WriteTrace3D_PG', module='geoengine.core', version='6.3.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write a set of elements in Z (trace) from pager into vv",
                return_type=Type.VOID,
                parameters = [
@@ -559,7 +559,7 @@ gx_methods = {
     'Utility Methods': [
 
         Method('ReadBF_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read the contents of a 2D or 3D pager to from a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
@@ -580,7 +580,7 @@ gx_methods = {
                ]),
 
         Method('ReadRA_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Read the contents of a 2D or 3D pager to from an :class:`RA`.",
                notes="Each line must hold only 1 value",
                return_type=Type.VOID,
@@ -602,7 +602,7 @@ gx_methods = {
                ]),
 
         Method('WriteBF_PG', module='geoengine.core', version='6.2.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write the contents of a 2D or 3D pager to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [
@@ -623,7 +623,7 @@ gx_methods = {
                ]),
 
         Method('WriteBFEx_PG', module='geoengine.core', version='9.3',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Write the contents of a 2D or 3D pager to a :class:`BF`.",
                return_type=Type.VOID,
                parameters = [

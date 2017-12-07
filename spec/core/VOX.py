@@ -236,7 +236,7 @@ gx_methods = {
                ]),
 
         Method('ExportSegY_VOX', module='geoengine.core', version='8.5',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Export a voxel to a depth SEG-Y file",
                return_type=Type.VOID,
                parameters = [
