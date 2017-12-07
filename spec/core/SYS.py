@@ -1770,7 +1770,27 @@ gx_methods = {
         Method('SignIn_SYS', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Sign in via Geosoft Connect",
-               return_type=Type.VOID)
+               return_type=Type.VOID),
+        
+        Method('GeosoftConnectAuthenticateAndNavigate_SYS', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Automatically authenticate and navigate to my.geosoft.com URL",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('url', type=Type.STRING, doc="URL")
+               ]),
+
+        Method('IGetProfileURL_SYS', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Get link to my.geosoft.com profile URL",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('url', type=Type.STRING, is_ref=True, size_of_param='url_size',
+                             doc="Returned URL"),
+                   Parameter('url_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                             doc="Size of URL")
+               ]),
+
     ],
     'Lineage': [
 
