@@ -10,6 +10,7 @@ from shutil import copyfile
 from jinja2 import Environment, StrictUndefined, FileSystemLoader
 from distutils.version import StrictVersion
 from datetime import datetime
+import tempfile
 
 from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 
@@ -32,7 +33,7 @@ _core_files = [
     #'E:\\ggit\\t\\gxapi\\spec\\desk\\GUI.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\desk\\SEMPLOT.py', 
     #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
-    'E:\\ggit\\t\\gxapi\spec\\core\\PG.py',
+    'E:\\ggit\\t\\gxapi\spec\\core\\GIS.py',
     ]
 _desk_files = []
 
@@ -187,15 +188,24 @@ class CodeGeneratorBase:
         return contents.replace('\r\n', '~~---NL~~---').replace('\n', '~~---NL~~---').replace('~~---NL~~---', '\r\n')
 
     def refresh_file_contents(self, file_name, contents):
-        contents = self.normalize_line_endings(contents)
-        cur_contents = None
-        if os.path.exists(file_name):
-            with open(file_name, 'r', newline='') as f:
-                cur_contents = f.read()
-        if contents != cur_contents:
-            if not file_name.startswith('templates/'): print('Updating {}'.format(file_name))
-            with open(file_name, 'wb') as f:
-                f.write(contents.encode('UTF-8'))
+        with tempfile.NamedTemporaryFile(delete=False) as tf:
+            tf.write(self.normalize_line_endings(contents).encode('UTF-8'))
+            temp_contents = tf.name
+        try:
+            with open(temp_contents, 'r', newline='') as f:
+                new_contents = f.read()
+
+            cur_contents = None
+            if os.path.exists(file_name):
+                with open(file_name, 'r', newline='') as f:
+                    cur_contents = f.read()
+
+            if new_contents != cur_contents:
+                if not file_name.startswith('templates/'): print('Updating {}'.format(file_name))
+                with open(file_name, 'wb') as f:
+                    f.write(new_contents.encode('UTF-8'))
+        finally:
+            os.unlink(temp_contents)
 
     def regen_with_template(self, output_dir, file_name, **kwargs):
         out_file = os.path.join(output_dir, file_name)
