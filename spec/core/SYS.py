@@ -1780,6 +1780,28 @@ gx_methods = {
                    Parameter('url', type=Type.STRING, doc="URL")
                ]),
 
+        Method('IGetGeosoftID_SYS', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Get the Geosoft ID (email) if signed in",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('id', type=Type.STRING, is_ref=True, size_of_param='id_size',
+                             doc="Returned ID"),
+                   Parameter('id_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                             doc="Size of ID")
+               ]),
+
+        Method('IGetProfileName_SYS', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Get the profile name as defined in My Geosoft (or email if not defined)",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('name', type=Type.STRING, is_ref=True, size_of_param='name_size',
+                             doc="Returned name"),
+                   Parameter('name_size', type=Type.INT32_T, default_length='STR_DEFAULT_LONG',
+                             doc="Size of name")
+               ]),
+
         Method('IGetProfileURL_SYS', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Get link to my.geosoft.com profile URL",
