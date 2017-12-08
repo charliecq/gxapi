@@ -190,6 +190,7 @@ class GXHCodeGenerator(CodeGeneratorBase):
         gen._regen_classes()
 
 if __name__ == "__main__":
+    # Test comment purely to test merging with internal repos
     gen = GXHCodeGenerator()
     gen.generate()
     
