@@ -181,6 +181,17 @@ gx_defines = [
                         doc="Same as :def_val:`STR_MULTI_FILE`")
            ]),
 
+    Define('GEO_BOOL',
+           doc="""
+           Boolean values
+           """,
+           constants=[
+               Constant('GS_FALSE', value='0', type=Type.INT32_T,
+                        doc="False"),
+               Constant('GS_TRUE', value='1', type=Type.INT32_T,
+                        doc="True")
+           ]),
+
     Define('GEO_VAR',
            doc="""
            Variable types.
