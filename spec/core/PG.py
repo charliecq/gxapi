@@ -666,9 +666,6 @@ gx_methods = {
                    Parameter('dummy', type=Type.STRING,
                              doc="Dummy")
                ])
-    ],
-    'Miscellaneous': [
-
     ]
 }
 
