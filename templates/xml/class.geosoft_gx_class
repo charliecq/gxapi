@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gxclass xmlns='http://www.geosoft.com/gxapi' name="{{ cl.name }}">{% if cl.see_also %}
+<gxclass xmlns='http://www.geosoft.com/gxapi' name="{{ cl.name }}"{% if cl.handle_name %} handlename="{{ cl.handle_name }}"{% endif %}>{% if cl.see_also %}
     <see_also>{{ cl.see_also | doc_sanitize }}</see_also>{% endif %}{% if cl.notes %}
     <notes>
         {{ cl.notes | doc_sanitize | indent(8) }}
     </notes>{% endif %}
     <description>
         {{ cl.doc | doc_sanitize | indent(8) }}
-    </description>{% if cl.defines|length > 0 %}
+    </description>
     <definitions>
 {%- for _, define in cl.defines.items() %}
         <definition name="{{ define.name }}"{% if define.is_constant %} constant="true"{% endif %}{% if define.is_single_constant %} single_constant="true"{% endif %}{% if define.is_null_handle %} null_handle="true"{% endif %}>{% if define.doc %}
-            <description>{{ define.doc | doc_sanitize }}</description>{% endif %}
+            <description>{{ define.doc | doc_sanitize }}</description>{% else %}
+            <description/>{% endif %}
 {%- for constant in define.constants %}
             <defined_value name="{{ constant.name }}" val="{{ constant.value }}" type="{{ constant.xml_type }}">{% if constant.doc %}
 		        <description>{{ constant.doc | doc_sanitize }}</description>{% endif %}
@@ -18,12 +19,12 @@
 {%- endfor %}
         </definition>
 {%- endfor %}    
-    </definitions>{% endif %}{% if cl.method_groups|length > 0 %}
+    </definitions>
     <methodgroups>
 {%- for key, method_group in cl.method_groups.items() %}
         <methodgroup name ="{{ key }}">
 {%- for method in method_group %}
-            <method name="{{ method.name }}"{% if not method.is_app %} module="{{ method.module }}"{% endif %} license="{{ method.availability_prefix }}" available="{{ method.version }}{% if method.is_obsolete %} obsolete=true{% endif %}">{% if method.see_also %}
+            <method{{ method.attributes }}>{% if method.see_also %}
                 <see_also>{{ method.see_also | doc_sanitize }}</see_also>{% endif %}{% if method.notes %}
                 <notes>{{ method.notes | doc_sanitize }}</notes>{% endif %}{%if method.doc %}
                 <description>{{ method.doc | doc_sanitize }}</description>{% endif %}
@@ -33,16 +34,17 @@
 {%- if method.parameters|length > 0 %}
                 <parameters>
 {%- for param in method.parameters %}
-                    <parameter type="{{ param.xml_type }}"{% if not param.doc %}/>{% else %}>
+                    <parameter{{ param.attributes }}{% if not param.doc %}/>{% else %}>
                         <description>{{ param.doc | doc_sanitize }}</description>
                     </parameter>{% endif %}
 {%- endfor %}
                 </parameters>
+{%- else %}                
+                <parameters/>
 {%- endif %}
             </method>
 {%- endfor %}
         </methodgroup>
 {%- endfor %}
     </methodgroups>
-{% endif %}
 </gxclass>

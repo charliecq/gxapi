@@ -5,7 +5,7 @@ from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
 from datetime import datetime 
 import pathlib
-
+from xml.sax.saxutils import escape
 
 class XMLConstant(Constant):
     def __init__(self, other):
@@ -49,7 +49,10 @@ class XMLConstant(Constant):
 class XMLDefine(Define):
     def __init__(self, other):
         super().construct_copy(other)
-
+        if self.is_null_handle:
+            type = self.name.replace("_NULL", "")
+            nullconst = Constant(name=self.name, type=type, value='(({})0)'.format(type))
+            self.constants.append(XMLConstant(nullconst))
     
 
 def get_xml_type(type):
@@ -73,6 +76,19 @@ class XMLParameter(Parameter):
         super().construct_copy(other)
 
     @property
+    def attributes(self):
+        attrs = ' type="{}"'.format(self.xml_type)
+        if self.size_of_param:
+            parameters = enumerate(self.parent.parameters)
+            index, size_param = next((i, p) for i, p in parameters if p.name == self.size_of_param)
+            attrs = attrs + ' size_of_param="{}"'.format(index)
+            if size_param.type == Type.INT32_T and size_param.is_val:
+                attrs = attrs + ' size_of_param_intval="true"'
+        if self.default_length:
+            attrs = attrs + ' defaultlength="{}"'.format(self.default_length)
+        return attrs
+
+    @property
     def xml_type(self):
         if self.is_ref:
             return 'var {}'.format(get_xml_type(self.type))
@@ -81,21 +97,6 @@ class XMLParameter(Parameter):
         else:
             return get_xml_type(self.type)
 
-    def render_xml_doc(self, indent_spaces):
-        if self.doc:
-            if not XMLParameter._parameter_template_doc:
-                XMLParameter._parameter_template_doc = self.generator.parse_template(
-                    '{% set type_len = param.xml_type|length %}{{ param.doc | doc_sanitize | comment(comment_first_line=True) | indent(indent_spaces-type_len, True) | indent(indent_spaces+1) }}'
-                    )
-            return XMLParameter._parameter_template_doc.render(param=self, indent_spaces=indent_spaces)
-        else:
-            if not XMLParameter._parameter_template:
-                XMLParameter._parameter_template = self.generator.parse_template(
-                    '{% set type_len = param.xml_type|length %}{{ "//" | indent(indent_spaces-type_len, True) }}'
-                    )
-            return XMLParameter._parameter_template.render(param=self, indent_spaces=indent_spaces)
-
-
 class XMLMethod(Method):
     _parameters_template = None
 
@@ -103,51 +104,30 @@ class XMLMethod(Method):
         super().construct_copy(other)
 
     @property
-    def string_macro(self):
-        method_name = self.name
-        param_replacements = {p.size_of_param: p.name for p in self.parameters if p.size_of_param}
-
-        if len(param_replacements) > 0:
-            if method_name.startswith('I') or method_name.startswith('_'):
-                macro_name = method_name[1:]
-            elif method_name.startswith('iI'):
-                macro_name = 'i{}'.format(method_name[2:])
-            elif method_name.startswith('Gt'):
-                macro_name = 'Get{}'.format(method_name[2:])
-            else:
-                macro_name = '_{}'.format(method_name)
-        
-            macro_params = ''
-            method_params = ''
-
-            for param in self.parameters:
-                if method_params:
-                    method_params += ', '
-                if param.name in param_replacements:
-                    method_params += 'sizeof({})'.format(param_replacements[param.name])
-                else:
-                    if macro_params:
-                        macro_params += ', '
-                    macro_params += param.name
-                    method_params += param.name
-            return '#define {}({}) {}({})\n'.format(macro_name, macro_params, method_name, method_params)
-        elif method_name.startswith('_'):
-            return '#define {} {}\n'.format(method_name[1:], method_name)
-        else:
-            return ''
-
-    def render_parameters(self):
-        if not XMLMethod._parameters_template:
-            XMLMethod._parameters_template = self.generator.parse_template("""{% for param in parameters %}{% if loop.first %}({% else %} {% endif %}{{ param.xml_type }}{% if not loop.last %}, {{ param.render_xml_doc(max_type_len + 2) }}
-{% else %});{{ param.render_xml_doc(max_type_len + 2) }}{% endif %}{% else %}();{% endfor %}""")
-        max_type_len = 0
-        for param in self.parameters:
-            max_type_len = max(max_type_len, len(param.xml_type))
-        return XMLMethod._parameters_template.render(parameters=self.parameters, max_type_len=max_type_len)
-
-    @property
     def xml_return_type(self):
         return get_xml_type(self.return_type)
+
+    @property
+    def attributes(self):
+        attrs = ' name="{}"'.format(self.name)
+        if not self.external_name == self.name:
+            attrs = attrs + ' externalname="{}"'.format(self.external_name)
+        if not self.is_app:
+            attrs = attrs + ' module="{}"'.format(self.module)
+        attrs = attrs + ' license="{}" available="{}"'.format(self.availability_prefix, self.version)
+        if self.is_gui:
+            attrs = attrs + ' guicall="true"'
+        if self.no_gxh:
+            attrs = attrs + ' nogxh="true"'
+        if self.no_csharp:
+            attrs = attrs + ' nocsharp="true"'
+        if self.no_cpp:
+            attrs = attrs + ' nocpp="true"'
+        if self.cpp_post:
+            attrs = attrs + ' cpp_post="{}"'.format(self.cpp_post)
+        if self.is_obsolete:
+            attrs = attrs + ' obsolete="true"'
+        return attrs
 
     @property
     def availability_prefix(self):
@@ -173,7 +153,7 @@ class XMLCodeGenerator(CodeGeneratorBase):
         s = self.re_func.sub(r'\1', s)
         s = self.re_def_val.sub(lambda m: self._doc_sanitize_def(m.group(1)), s)
         s = textwrap.dedent(s).strip()
-        return s.replace('``', '')
+        return escape(s.replace('``', ''))
 
     def _doc_sanitize_def(self, match):
         return r'&lt;define&gt;{}&lt;/define&gt;'.format(match)
@@ -184,8 +164,10 @@ class XMLCodeGenerator(CodeGeneratorBase):
         super().__init__(no_obsolete=False, constant_type=XMLConstant, define_type=XMLDefine, parameter_type=XMLParameter,
                          method_type=XMLMethod, class_type=XMLClass, template_dirs=template_dirs,
                          line_statement_prefix=r'//***')
-        self.xml_outdir = os.path.join(cur_dir, '..', 'api', 'build', 'gx', 'spec')
+        self.xml_outdir = os.path.join(cur_dir, '..', 'api', 'gx')
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
+
+        handle_name='FILTER',
 
     def _regen_xml(self, cl):
         out_dir = os.path.join(self.xml_outdir, cl.branch)

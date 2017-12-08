@@ -17,26 +17,27 @@ from spec import Type, Availability, Constant, Parameter, Method, Define, Class
 # only once per process execution for efficiency
 
 _core_files = [
-    'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py',
-    'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
-    'E:\\ggit\\t\\gxapi\\spec\\core\\E3DV.py',
-    'E:\\ggit\\t\\gxapi\\spec\\core\\VA.py', 
-    'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
-    'E:\\ggit\\t\\gxapi\\spec\\core\\MVIEW.py', 
+    #'E:\\ggit\\t\\gxapi\spec\\core\\GEOSOFT.py',
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\3DN.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\E3DV.py',
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\VA.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\VV.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\core\\MVIEW.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\DB.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\LTB.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\REG.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\STR.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\SYS.py', 
     #'E:\\ggit\\t\\gxapi\\spec\\core\\VA.py', 
-    'E:\\ggit\\t\\gxapi\\spec\\desk\\GUI.py', 
-    'E:\\ggit\\t\\gxapi\\spec\\desk\\SEMPLOT.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\desk\\GUI.py', 
+    #'E:\\ggit\\t\\gxapi\\spec\\desk\\SEMPLOT.py', 
     #'E:\\ggit\\t\\gxapi\spec\\core\\GEO.py',
+    'E:\\ggit\\t\\gxapi\spec\\core\\PG.py',
     ]
 _desk_files = []
 
-#_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
-#_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
+_core_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/core/*.py'))
+_desk_files = glob.glob(os.path.join(os.path.dirname(__file__), '../spec/desk/*.py'))
 
 
 with open(os.path.join(os.path.dirname(__file__), '../version.json')) as fp:
