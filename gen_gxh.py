@@ -185,13 +185,11 @@ class GXHCodeGenerator(CodeGeneratorBase):
             self._regen_gxh(cl)
 
     def generate(self):
-        #Test comment purely to test merging with internal repos
         gen._regen_version()
         gen._regen_all()
         gen._regen_classes()
 
 if __name__ == "__main__":
-    # Test comment purely to test merging with internal repos
     gen = GXHCodeGenerator()
     gen.generate()
     
