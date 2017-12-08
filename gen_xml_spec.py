@@ -5,6 +5,7 @@ from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
 from datetime import datetime 
 import pathlib
+import argparse
 from xml.sax.saxutils import escape
 
 class XMLConstant(Constant):
@@ -158,13 +159,13 @@ class XMLCodeGenerator(CodeGeneratorBase):
     def _doc_sanitize_def(self, match):
         return r'&lt;define&gt;{}&lt;/define&gt;'.format(match)
 
-    def __init__(self):
+    def __init__(self, xml_outdir):
         cur_dir = os.path.dirname(os.path.join(os.getcwd(), inspect.getfile(self.__class__)))
         template_dirs = [ os.path.join(cur_dir, 'templates', 'xml') ]
         super().__init__(no_obsolete=False, constant_type=XMLConstant, define_type=XMLDefine, parameter_type=XMLParameter,
                          method_type=XMLMethod, class_type=XMLClass, template_dirs=template_dirs,
                          line_statement_prefix=r'//***')
-        self.xml_outdir = os.path.join(cur_dir, '..', 'api', 'gx')
+        self.xml_outdir = os.path.join(cur_dir, '..', '..', 'api', 'gx')
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
 
         handle_name='FILTER',
@@ -183,7 +184,12 @@ class XMLCodeGenerator(CodeGeneratorBase):
     def generate(self):
         gen._regen_classes()
 
+
 if __name__ == "__main__":
-    gen = XMLCodeGenerator()
+    parser = argparse.ArgumentParser(description='Generate legacy GX API XML spec for legacy tools.')
+    parser.add_argument('output_dir', type=str, 
+                        help='Output directory')
+    args = parser.parse_args()
+    gen = XMLCodeGenerator(args.output_dir)
     gen.generate()
     
