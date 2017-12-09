@@ -386,12 +386,12 @@ class PythonCodeGenerator(CodeGeneratorBase):
 
     def _regen_init(self):
         output_file = os.path.join(self.gxapi_outdir, '__init__.py')
-        self.regen_with_editable_blocks('templates/gxpy', 'init', 'py', output_file, classes=self.classes)
+        self.regen_with_editable_blocks('templates/gxpy', 'init', 'py', output_file, output_file, classes=self.classes)
 
     def _regen_python_code(self, cl):
         if not cl.no_cpp and not cl.name == 'GEO':
             py_file = os.path.join(self.gxapi_outdir, 'GX{}.py'.format(cl.name))
-            self.regen_with_editable_blocks('templates/gxpy', 'class', 'py', py_file, cl=cl)
+            self.regen_with_editable_blocks('templates/gxpy', 'class', 'py', py_file, py_file, cl=cl)
 
     def _regen_rst(self, cl):
         if (not cl.no_cpp and not cl.name == 'GEO') or cl.name == 'GEOSOFT':

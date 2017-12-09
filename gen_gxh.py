@@ -4,6 +4,8 @@ from gen import CodeGeneratorBase
 from spec import Type, Availability, Constant, Define, Parameter, Method, Class
 import textwrap
 from datetime import datetime 
+import pathlib
+import argparse
 
 class GXHConstant(Constant):
     def __init__(self, other):
@@ -145,14 +147,16 @@ class GXHCodeGenerator(CodeGeneratorBase):
         s = textwrap.dedent(s).strip()
         return s.replace('``', '')
 
-    def __init__(self):
+    def __init__(self, out_dir):
         cur_dir = os.path.dirname(os.path.join(os.getcwd(), inspect.getfile(self.__class__)))
         template_dirs = [ os.path.join(cur_dir, 'templates', 'gxc') ]
         super().__init__(constant_type=GXHConstant, define_type=GXHDefine, parameter_type=GXHParameter,
                          method_type=GXHMethod, class_type=GXHClass, template_dirs=template_dirs,
                          line_statement_prefix=r'//***')
-        self.gxc_outdir = os.path.join(cur_dir, '..', 'gxc')
-        self.gxc_includes = os.path.join(self.gxc_outdir, 'include')
+        gxc_dir = os.path.join(cur_dir, '..', 'gxc')
+        pathlib.Path(out_dir).mkdir(parents=True, exist_ok=True)
+        self.gxh_outdir = out_dir
+        self.gxh_includes = os.path.join(cur_dir, '..', 'gxc', 'include')
         self._remove_no_gxh_classes_and_methods()
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
 
@@ -168,28 +172,35 @@ class GXHCodeGenerator(CodeGeneratorBase):
         # put GEOSOFT first it has defines needed in other headers
         classes = [ 'GEOSOFT' ]
         classes.extend([c for c in self.classes.keys() if not c == 'GEOSOFT'])
-        self.regen_with_template(self.gxc_includes, 'all.gxh', classes=classes)
+        self.regen_with_template(self.gxh_outdir, 'all.gxh', classes=classes)
 
     def _regen_version(self):
         date = self.generation_time.date()
         datestamp = '{}{}{}'.format(date.year, str(date.month).zfill(2), str(date.day).zfill(2))
-        self.regen_with_template(self.gxc_includes, 'version.gxh', version=self.current_version, datestamp=datestamp)
+        self.regen_with_template(self.gxh_outdir, 'version.gxh', version=self.current_version, datestamp=datestamp)
 
     def _regen_gxh(self, cl):
         if not cl.name == 'GEO':
-            gxh_file = os.path.join(self.gxc_includes, '{}.gxh'.format(cl.name.lower()))
-            self.regen_with_editable_blocks('templates/gxc', 'class', 'gxh', gxh_file, cl=cl)
+            gxh_file = '{}.gxh'.format(cl.name.lower())
+            gxh_in_file = os.path.join(self.gxh_includes, gxh_file)
+            gxh_out_file = os.path.join(self.gxh_outdir, gxh_file)
+            self.regen_with_editable_blocks('templates/gxc', 'class', 'gxh', gxh_in_file, gxh_out_file, cl=cl)
 
     def _regen_classes(self):
         for cl in self.classes.values():
             self._regen_gxh(cl)
 
     def generate(self):
-        gen._regen_version()
+        #gen._regen_version()
         gen._regen_all()
         gen._regen_classes()
 
 if __name__ == "__main__":
-    gen = GXHCodeGenerator()
+    parser = argparse.ArgumentParser(description='Generate GXH headers.')
+    parser.add_argument('output_dir', type=str, 
+                        help='Output directory')
+    args = parser.parse_args()
+
+    gen = GXHCodeGenerator(args.output_dir)
     gen.generate()
     

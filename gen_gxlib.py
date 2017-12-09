@@ -128,7 +128,7 @@ class GXLIBCodeGenerator(CodeGeneratorBase):
 
     def _regen_gxlib(self, cl):
         h_file = os.path.join(self.gxcore_includes, 'gxlib', '{}_gxlib.h'.format(cl.name.lower()))
-        self.regen_with_editable_blocks('templates/gxcore', 'gxlib', 'h', h_file, 
+        self.regen_with_editable_blocks('templates/gxcore', 'gxlib', 'h', h_file, h_file, 
                                         cl=cl, date=self.generation_time)
 
     def _regen_classes(self):

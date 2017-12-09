@@ -175,7 +175,7 @@ class GXHCodeGenerator(CodeGeneratorBase):
     def _regen_md(self, cl):
         if not cl.name == 'GEO':
             md_file = os.path.join(self.gxc_docs, '{}.md'.format(cl.name))
-            self.regen_with_editable_blocks('templates/gxc', 'class', 'md', md_file, cl=cl)
+            self.regen_with_editable_blocks('templates/gxc', 'class', 'md', md_file, md_file, cl=cl)
             
     def _regen_classes(self):
         for cl in self.classes.values():
