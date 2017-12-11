@@ -1604,7 +1604,7 @@ gx_methods = {
                ]),
 
         Method('Sync_VOX', module='geoengine.core', version='7.0.0',
-               availability=Availability.LICENSED, 
+               availability=Availability.PUBLIC, 
                doc="Syncronize the Metadata for this Voxel",
                return_type=Type.VOID,
                parameters = [
