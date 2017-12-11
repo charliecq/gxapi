@@ -97,8 +97,8 @@ cdef class GXMemMethods:
                 # GS_ULONG64
                 format = 'Q'
                 itemsize = 8
-
-            buff = malloc(rows*cols*itemsize*dim)
+        
+            buff = malloc(rows*cols*itemsize)
             arr = array(shape=(rows,cols), itemsize=itemsize, format=format, mode="c", allocate_buffer=False)
             arr.data = <char*>buff
             arr.callback_free_data = callback_free_data
@@ -114,9 +114,7 @@ cdef class GXMemMethods:
         cdef void* buff = NULL
         cdef array arr
         cdef size_t itemsize
-        cdef int dim
         try:
-            dim = 1
             if gs_type == 0:
                 # GS_BYTE
                 format = 'b'
@@ -157,33 +155,9 @@ cdef class GXMemMethods:
                 # GS_ULONG64
                 format = 'Q'
                 itemsize = 8
-            elif gs_type == 10:
-                # GS_FLOAT3D
-                format = 'f'
-                itemsize = 4
-                dim = 3
-            elif gs_type == 11:
-                # GS_DOUBLE3D
-                format = 'd'
-                itemsize = 8
-                dim = 3
-            elif gs_type == 12:
-                # GS_FLOAT2D
-                format = 'f'
-                itemsize = 4
-                dim = 2
-            elif gs_type == 13:
-                # GS_DOUBLE2D
-                format = 'd'
-                itemsize = 8
-                dim = 2
-
-            buff = malloc(elements*itemsize*dim)
-            if dim == 1:
-                shape = (elements,)
-            else:
-                shape = (elements, dim)
-            arr = array(shape=shape, itemsize=itemsize, format=format, mode="c", allocate_buffer=False)
+        
+            buff = malloc(elements*itemsize)
+            arr = array(shape=(elements,), itemsize=itemsize, format=format, mode="c", allocate_buffer=False)
             arr.data = <char*>buff
             arr.callback_free_data = callback_free_data
             buff = NULL
