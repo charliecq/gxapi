@@ -1787,6 +1787,9 @@ gx_methods = {
                notes="""
                Sets up an EXT object in the database that captures row/line change events and plots the
                electrodes for the selected row on an accompanying map.
+               The EXT object is removed by running LaunchRemoveContributingElectrodesEXTTool_IPGUI.
+               This EXT is not serialized, so it is also removed if the database is closed (since
+               this is not the normal behaviour expected from a database).
                """,
                return_type=Type.VOID,
                parameters = [

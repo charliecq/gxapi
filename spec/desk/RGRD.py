@@ -179,6 +179,23 @@ gx_methods = {
                              doc="RANGRID control file."),
                    Parameter('grd', type=Type.STRING,
                              doc="Output grid name")
+               ]),
+
+        Method('RunList_RGRD', module='geogxx', version='9.4.0',
+               availability=Availability.EXTENSION, 
+               doc="Executes the Rangrid program from a list of databases.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('dbs', type=Type.STRING,
+                             doc="List of databases (using | seperator)"),
+                   Parameter('zch', type=Type.STRING,
+                             doc="Z Channel"),
+                   Parameter('ipj', type="IPJ",
+                             doc="Projection to put into grid"),
+                   Parameter('ctl', type=Type.STRING,
+                             doc="RANGRID control file."),
+                   Parameter('grd', type=Type.STRING,
+                             doc="Output grid name")
                ])
     ]
 }

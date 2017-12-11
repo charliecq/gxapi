@@ -87,64 +87,6 @@ gx_methods = {
                              doc="sRefFil - reference file for boolean mask flag.")
                ]),
 
-        Method('DirectGriddingDAT_PGU', module='geogxx', version='7.3.0',
-               availability=Availability.LICENSED, 
-               doc="Direct-gridding method, :class:`DAT` version.",
-               notes="""
-               Grid cells take on the specified statistic of the values inside the
-               cell area. Grid cells containing no data values are set to dummy.
-               """,
-               return_type=Type.VOID,
-               parameters = [
-                   Parameter('pg', type="PG",
-                             doc="Input grid"),
-                   Parameter('xo', type=Type.DOUBLE,
-                             doc="X origin of grid"),
-                   Parameter('yo', type=Type.DOUBLE,
-                             doc="Y origin of grid"),
-                   Parameter('dx', type=Type.DOUBLE,
-                             doc="X cell size"),
-                   Parameter('dy', type=Type.DOUBLE,
-                             doc="Y cell size"),
-                   Parameter('rot', type=Type.DOUBLE,
-                             doc="Rotation angle (degrees CCW)."),
-                   Parameter('dat', type="DAT",
-                             doc=":class:`DAT` source"),
-                   Parameter('method', type=Type.INT32_T,
-                             doc=":def:`PGU_DIRECTGRID`")
-               ]),
-
-        Method('DirectGriddingDAT3D_PGU', module='geogxx', version='8.0.0',
-               availability=Availability.LICENSED, 
-               doc="Direct-gridding method, :class:`DAT` version, 3D.",
-               notes="""
-               3D grid cells take on the specified statistic of the values inside the
-               cell area. Grid cells containing no data values are set to dummy.
-               """,
-               return_type=Type.VOID,
-               parameters = [
-                   Parameter('pg', type="PG",
-                             doc="Input 3D :class:`PG`"),
-                   Parameter('xo', type=Type.DOUBLE,
-                             doc="X origin of 3D grid"),
-                   Parameter('yo', type=Type.DOUBLE,
-                             doc="Y origin of 3D grid"),
-                   Parameter('zo', type=Type.DOUBLE,
-                             doc="Z origin of 3D grid"),
-                   Parameter('dx', type=Type.DOUBLE,
-                             doc="X cell size"),
-                   Parameter('dy', type=Type.DOUBLE,
-                             doc="Y cell size"),
-                   Parameter('dz', type=Type.DOUBLE,
-                             doc="Z cell size"),
-                   Parameter('rot', type=Type.DOUBLE,
-                             doc="Rotation angle (degrees CCW, vertical axis only)."),
-                   Parameter('dat', type="DAT",
-                             doc="3D :class:`DAT` source"),
-                   Parameter('method', type=Type.INT32_T,
-                             doc=":def:`PGU_DIRECTGRID`")
-               ]),
-
         Method('DirectGriddingDB_PGU', module='geogxx', version='7.3.0',
                availability=Availability.LICENSED, 
                doc="Direct-gridding method, :class:`DB` version.",
