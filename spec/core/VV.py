@@ -298,11 +298,11 @@ gx_methods = {
                doc="Add two VVs: VV_A + VV_B = VV_C",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('vv_x', type="VV",
+                   Parameter('vv_a', type="VV",
                              doc=":class:`VV` A"),
-                   Parameter('vv_y', type="VV",
+                   Parameter('vv_b', type="VV",
                              doc=":class:`VV` B"),
-                   Parameter('vv_z', type="VV",
+                   Parameter('vv_c', type="VV",
                              doc=":class:`VV` C (returned), C = A + B")
                ]),
 
@@ -312,15 +312,15 @@ gx_methods = {
                notes="The multipliers must be defined and within the :def_val:`GS_R8MN` :def_val:`GS_R8MX` range.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('vv_x', type="VV",
+                   Parameter('vv_a', type="VV",
                              doc=":class:`VV` A"),
                    Parameter('f1', type=Type.DOUBLE,
                              doc="Multiplier f1 for A"),
-                   Parameter('vv_y', type="VV",
+                   Parameter('vv_b', type="VV",
                              doc=":class:`VV` B"),
                    Parameter('f2', type=Type.DOUBLE,
                              doc="Multiplier f2 for B"),
-                   Parameter('vv_z', type="VV",
+                   Parameter('vv_c', type="VV",
                              doc=":class:`VV` C (returned), C = A*f1 + B*f2")
                ]),
 
