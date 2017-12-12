@@ -1,7 +1,7 @@
-from enum import Enum
+from aenum import IntEnum
 import copy
 
-class Type(Enum):
+class Type(IntEnum):
     UNKNOWN = 0
     FLOAT = 1
     DOUBLE = 2
@@ -16,9 +16,13 @@ class Type(Enum):
     STRING = 11
     VOID = 12
     BOOL = 13
+    STD_STRING = 14
+    VECT_2D = 15
+    VECT_3D = 16
+    
 
 
-class Availability(Enum):
+class Availability(IntEnum):
     UNKNOWN = 0
     PUBLIC = 1
     LICENSED = 2
@@ -45,6 +49,25 @@ class Constant(SpecBase):
         self.value = value
         self.type = type
         self.doc = doc
+        self.parent = None
+
+    def validate(self):
+        if not isinstance(self.type, Type):
+            raise 'Unsupported type {} for constant {}'.format(self.type, self.name)
+
+        if self.value.startswith('0x') and not (self.type == Type.STRING or self.type == Type.STD_STRING) and not (
+            self.type == Type.UINT32_T or
+            self.type == Type.INT32_T or
+            self.type == Type.UINT64_T or
+            self.type == Type.INT64_T):
+            raise 'Unsupported type for constant {} with hex value {}'.format(self.name, self.value)
+
+        if self.parent:
+            if self.parent.parent:
+                if not self.parent.parent.next_gen and self.type > Type.BOOL:
+                    raise 'Unsupported type {} for constant {} in legacy class {}.'.format(self.type, self.name, self.parent.parent.name)
+
+            
 
 
 class Define(SpecBase):
@@ -58,3 +81,10 @@ class Define(SpecBase):
         self.is_null_handle = is_null_handle
         self.doc = doc
         self.constants = constants
+        self.parent = None
+
+        self.validate()
+
+    def validate(self):
+        for constant in self.constants:
+            constant.validate()

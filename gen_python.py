@@ -40,7 +40,6 @@ class PythonConstant(Constant):
                 elif self.type == Type.INT32_T: struct_type = 'i'
                 elif self.type == Type.UINT64_T: struct_type = 'Q'
                 elif self.type == Type.INT64_T: struct_type = 'q'
-                else: raise 'Unsupported type for constant {} with hex value {}'.format(self.name, val)
                 return "struct.unpack('>{}', bytes.fromhex('{}'))[0]".format(struct_type, val[2:])
             else:
                 last_char = val[-1]

@@ -6,6 +6,7 @@ import re
 import copy
 import itertools
 import inspect
+import codecs
 from shutil import copyfile
 from jinja2 import Environment, StrictUndefined, FileSystemLoader
 from distutils.version import StrictVersion
@@ -127,6 +128,7 @@ class CodeGeneratorBase:
                     gen_constants.append(gen_const)
                     self.constants[gen_const.name] = gen_const
                 define.constants = gen_constants
+                define.validate()
                 cl.defines[d.name] = define
                 self.definitions[d.name] = define
 
@@ -176,6 +178,7 @@ class CodeGeneratorBase:
                         self.methods[method.name] = method
                 if len(methods) > 0:
                     cl.method_groups[g_k] = methods
+            cl.validate()
             self.classes[c_name] = cl
 
     def parse_template(self, source, globals=None, template_class=None):
@@ -185,27 +188,18 @@ class CodeGeneratorBase:
         return self.j2env.get_template(name, parent=parent, globals=globals)
 
     def normalize_line_endings(self, contents):
-        return contents.replace('\r\n', '~~---NL~~---').replace('\n', '~~---NL~~---').replace('~~---NL~~---', '\r\n')
+        return contents.replace('\r\n', '~~---NL~~---').replace('\n', '~~---NL~~---').replace('~~---NL~~---', '\n')
 
     def refresh_file_contents(self, file_name, contents):
-        with tempfile.NamedTemporaryFile(delete=False) as tf:
-            tf.write(self.normalize_line_endings(contents).encode('UTF-8'))
-            temp_contents = tf.name
-        try:
-            with open(temp_contents, 'r', newline='') as f:
-                new_contents = f.read()
-
-            cur_contents = None
-            if os.path.exists(file_name):
-                with open(file_name, 'r', newline='') as f:
-                    cur_contents = f.read()
-
-            if new_contents != cur_contents:
-                if not file_name.startswith('templates/'): print('Updating {}'.format(file_name))
-                with open(file_name, 'wb') as f:
-                    f.write(new_contents.encode('UTF-8'))
-        finally:
-            os.unlink(temp_contents)
+        cur_contents = None
+        if os.path.exists(file_name):
+            with open(file_name, 'r', newline='', encoding='utf8') as f:
+                cur_contents = self.normalize_line_endings(f.read())
+        if contents != cur_contents:
+            if not 'templates/' in file_name: 
+                print('Updating {}'.format(file_name))
+            with open(file_name, 'w', encoding='utf8') as f:
+                f.write(self.normalize_line_endings(contents))
 
     def regen_with_template(self, output_dir, file_name, **kwargs):
         out_file = os.path.join(output_dir, file_name)

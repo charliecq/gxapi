@@ -14,9 +14,16 @@ class Parameter(SpecBase):
         self.default_length = default_length
         self.doc = doc
 
+        self.validate()
+
+    def validate(self):
+        pass
+
+
 
 class Method(SpecBase):
     _parameters = None
+    _ext_method_name = None
 
     def __init__(self, name, module=None, version=None, cpp_post=None, external_name=None, availability=Availability.UNKNOWN,
                  is_obsolete=False, is_app=False, is_gui=False, no_gxh=False, no_csharp=False, no_cpp=False,
@@ -47,6 +54,11 @@ class Method(SpecBase):
         
         self.exposed_name = external_name if external_name else 'App_{}'.format(self.name) if self.is_app else self.name
         
+        self.validate()
+
+    def validate(self):
+        for parameter in self.parameters:
+            parameter.validate()
 
     @property
     def parameters(self):
@@ -94,5 +106,9 @@ class Method(SpecBase):
 
     @property
     def ext_method_name(self):
-        #parent is assigned in code_generator.py
-        return self.parent._ext_method_name(self)
+        if not self._ext_method_name:
+            if not self.parent:
+                #parent is assigned in code_generator.py
+                raise 'ext_method_name property is not available until parent class is assigned ({})'.format(self.name)
+            self._ext_method_name = self.parent._ext_method_name(self)
+        return self._ext_method_name

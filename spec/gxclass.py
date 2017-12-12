@@ -5,6 +5,9 @@ from collections import namedtuple, OrderedDict, Hashable
 from .gxdefs import SpecBase
 
 def convert_camel_case(name):
+    '''
+    Converts legacy camel case identifiers to lowercase with underscores
+    '''
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
     s2 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
     if s2.endswith("3_d"):
@@ -19,38 +22,16 @@ def convert_camel_case(name):
     return s2
 
 
-class memoized(object):
-	'''Decorator. Caches a function's return value each time it is called.
-	If called later with the same arguments, the cached value is returned
-	(not reevaluated).
-	'''
-	def __init__(self, func):
-	   self.func = func
-	   self.cache = {}
-	def __call__(self, *args):
-		if not isinstance(args, Hashable): 
-			# uncacheable.  a list, for instance.
-			# better to not cache than blow up.
-			return self.func(*args)
-		if args in self.cache:
-			return self.cache[args]
-		else:
-			value = self.func(*args)
-			self.cache[args] = value
-			return value
-	def __repr__(self):
-		'''Return the function's docstring.'''
-		return self.func.__doc__
-	def __get__(self, obj, objtype):
-		'''Support instance methods.'''
-		return functools.partial(self.__call__, obj)
-
 class Class(SpecBase):
-    def __init__(self, name, handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
+    '''
+    GX API spec for class...
+    '''
+    def __init__(self, name, next_gen=False, handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
                  doc=None, notes=None, see_also=None, branch=''):
         super().__init__()
 
         self.name = name
+        self.next_gen = next_gen
         self.handle_name = handle_name
         self.no_gxh = no_gxh
         self.no_csharp = no_csharp
@@ -62,6 +43,12 @@ class Class(SpecBase):
         self.has_methods = False
         self.see_also = see_also
         self.branch = branch
+        self.method_groups = {}
+
+    def validate(self):
+        for _, method_group in self.method_groups.items():
+            for method in method_group:
+                method.validate()
 
 
     def _ext_method_name_camel(self, method):
@@ -88,7 +75,6 @@ class Class(SpecBase):
         else:
         	return method_name
 
-    @memoized
     def _ext_method_name(self, method):
         method_name = self._ext_method_name_no_polish(method)
         
