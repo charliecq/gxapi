@@ -209,6 +209,17 @@ gx_methods = {
                    Parameter('ipj', type="IPJ"),
                    Parameter('surface_file', type=Type.STRING,
                              doc="Geosurface file")
+               ]),
+
+        Method('DumpGeometryToTextFile_SURFACE', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Dump surface geometry to a text file.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('surface_filename', type=Type.STRING,
+                             doc="Geosurface file"),
+                   Parameter('text_filename', type=Type.STRING,
+                             doc="Text file")
                ])
     ]
 }
