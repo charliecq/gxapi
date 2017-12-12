@@ -16,6 +16,7 @@ gxapi_cy.pyx
 .Python
 env/
 build/
+_build/
 develop-eggs/
 dist/
 downloads/

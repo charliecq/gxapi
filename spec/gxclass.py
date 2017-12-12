@@ -4,10 +4,7 @@ from collections import namedtuple, OrderedDict, Hashable
 
 from .gxdefs import SpecBase
 
-def convert_camel_case(name):
-    '''
-    Converts legacy camel case identifiers to lowercase with underscores
-    '''
+def _convert_camel_case(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
     s2 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
     if s2.endswith("3_d"):
@@ -63,7 +60,7 @@ class Class(SpecBase):
         return method_name
 
     def _ext_method_name_no_camel(self, method):
-        return convert_camel_case(self._ext_method_name_camel(method))
+        return _convert_camel_case(self._ext_method_name_camel(method))
 
     def _ext_method_name_real_to_double(self, method):
         return self._ext_method_name_no_camel((method)).replace("_real", "_double")

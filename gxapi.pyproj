@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{16320e38-f2cc-45ae-93e2-02996be20870}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>gen_xml_spec.py</StartupFile>
+    <StartupFile>gen_gxh.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -13,6 +13,8 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId>Global|VisualStudio|Anaconda</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <CommandLineArguments>E:\ggit\a\gx\gxc\include</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -182,8 +184,12 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="compile.bat" />
+    <Content Include="gen_docs.bat">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
+    <Content Include="pydocmd.yml" />
     <Content Include="templates\gxcore\gxlib_cur.gen.h" />
     <Content Include="templates\gxcore\gxlib_empty.h" />
     <Content Include="templates\gxcore\gxlib_generated.gen.h" />
