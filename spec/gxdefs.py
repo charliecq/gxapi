@@ -53,19 +53,19 @@ class Constant(SpecBase):
 
     def validate(self):
         if not isinstance(self.type, Type):
-            raise 'Unsupported type {} for constant {}'.format(self.type, self.name)
+            raise RuntimeError('Unsupported type {} for constant {}'.format(self.type, self.name))
 
         if self.value.startswith('0x') and not (self.type == Type.STRING or self.type == Type.STD_STRING) and not (
             self.type == Type.UINT32_T or
             self.type == Type.INT32_T or
             self.type == Type.UINT64_T or
             self.type == Type.INT64_T):
-            raise 'Unsupported type for constant {} with hex value {}'.format(self.name, self.value)
+            raise RuntimeError('Unsupported type for constant {} with hex value {}'.format(self.name, self.value))
 
         if self.parent:
             if self.parent.parent:
                 if not self.parent.parent.next_gen and self.type > Type.BOOL:
-                    raise 'Unsupported type {} for constant {} in legacy class {}.'.format(self.type, self.name, self.parent.parent.name)
+                    raise RuntimeError('Unsupported type {} for constant {} in legacy class {}.'.format(self.type, self.name, self.parent.parent.name))
 
             
 
