@@ -21,12 +21,39 @@ def _convert_camel_case(name):
 
 class Class(SpecBase):
     '''
-    GX API spec for class...
-    '''
-    def __init__(self, name, next_gen=False, handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
-                 doc=None, notes=None, see_also=None, branch=''):
-        super().__init__()
+    API specification for a GX class. 
+    
+    A specification module should have at least one of these assigned to 
+    an attribute called __gx_class__.
 
+    # Arguments
+    name (str): Class name
+    doc (str): Doc string with class summary
+    notes (str): Doc string containing verbose notes (optional)
+    see_also (str): Doc string containing see-also type references (optional)
+    handle_name (str): GXC API variable type override (does not affect other languages)
+    no_gxh (bool): Not available in GXC API when 'True'
+    no_csharp (bool): Not available in .Net API when 'True' (nor Python)
+    no_cpp (bool): Not available in C++ API when 'True' (nor Python)
+    next_gen (bool): Not a legacy class. Implies __no_gxh__
+    
+    # Example
+    ```python
+    from .. import Class
+
+    # This is a very simple example class with only a doc string
+    gx_class = Class('GXSOMECLASS',
+                 doc="""
+                 This class' can be used to...
+                 It isdirectly related to the :class:`GXSOMEOTHERCLASS` class.
+                 """)
+    ```
+    See also: #spec.gxmethod
+    '''
+    def __init__(self, name, doc=None, notes=None, see_also=None, 
+                 handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
+                 next_gen=False):
+        super().__init__()
         self.name = name
         self.next_gen = next_gen
         self.handle_name = handle_name

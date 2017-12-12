@@ -7,8 +7,8 @@ site_name: "GXAPI Spec Documentation"
 generate:
 - SpecAnatomy.md:
   - spec:
-    - spec.gxdefs++
     - spec.gxclass++
+    - spec.gxdefs++
     - spec.gxmethod++
 
 # MkDocs pages configuration. The `<<` operator is sugar added by pydocmd
