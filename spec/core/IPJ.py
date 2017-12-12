@@ -1884,6 +1884,30 @@ gx_methods = {
                              doc="XML string to set")
                ]),
 
+        Method('SetFromBinaryAsString_IPJ', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Set :class:`IPJ` from binary-as-string",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('ipj', type="IPJ",
+                             doc=":class:`IPJ` object"),
+                   Parameter('str_val', type=Type.STRING,
+                             doc="Binary as string")
+               ]),
+
+        Method('GetFromBinaryAsString_IPJ', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Get :class:`IPJ` from binary-as-string",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('ipj', type="IPJ",
+                             doc=":class:`IPJ` object"),
+                   Parameter('str_val', type=Type.STRING, is_ref=True, size_of_param='size',
+                             doc="Binary as string returned"),
+                   Parameter('size', type=Type.INT32_T, default_length='STR_VERY_LONG',
+                             doc="Binary as string size")
+               ]),
+
         Method('Get3DMatrixOrientation_IPJ', module='geoengine.core', version='8.5.0',
                availability=Availability.PUBLIC, 
                doc="Gets the coefficients of a 3D matrix orientation.",
