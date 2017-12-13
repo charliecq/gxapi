@@ -184,9 +184,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="compile.bat" />
-    <Content Include="gen_docs.bat">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
     <Content Include="pydocmd.yml" />

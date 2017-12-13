@@ -2,26 +2,6 @@ from .gxdefs import Type, Availability, SpecBase
 from distutils.version import StrictVersion
 
 class Parameter(SpecBase):
-    '''
-    API specification for a parameter of a GX method. 
-    
-    # Arguments
-    name (str): Parameter name
-    type (#Type#): Type
-    doc (str): Doc string with parameter summary
-    is_ref (bool): Should parameter be passed by reference
-    is_val (bool): By default references (and const references if not is_ref) are used for parameters in the C GX API wrappers. Set this to true if the parameter will be passed by value.
-    size_of_param (str): If the parameter is a string and is_ref is True, this indicates the parameter name that contains the available string length.
-    default_length (str): If the parameter is a string and is_ref is True, this indicates a good maximum buffer length. Used to eliminate need to expose string length parameter in some language and keeps API simpler.
-    
-    # Attributes
-    All the arguments passed to the constructor are available as attributes on the instance.
-    The following attributes are mixed in by the code generation framework startup code and 
-    is used by the code generation scripts and templates.
-
-    parent (#Method#): Parent method
-    '''
-
     def __init__(self, name, type, is_ref=False, is_val=False,
                  size_of_param=None, default_length=None, doc=None):
         super().__init__(name)
@@ -41,64 +21,6 @@ class Parameter(SpecBase):
 _min_undocumented_obsolete_or_deprecated = StrictVersion("9.3")
 
 class Method(SpecBase):
-    '''
-    API specification for a GX method. 
-    
-    A specification module should have lists of these assigned as the values
-    for a dict attribute called **gx_methods**.
-
-    # Arguments
-    name (str): Method name
-    version (str): Version the method was introduced
-    availability (#Availability#): Availability
-    module (str): Name of binary module containing method (Not used if is_app==True)
-    doc (str): Doc string with method summary
-    notes (str): Doc string containing verbose notes (optional)
-    see_also (str): Doc string containing see-also type references (optional)
-    cpp_post (str): Postfix to add to name in C++ API generation
-    external_name (str): Defined if exported internal name should be different than name in exposed API (optional)
-
-    is_app (bool): "App" type method. I.e. dynamically loaded at runtime and might not be available to standalone programs
-    is_gui (bool): GUI type method. Parent window parameter and handler code could be generated into API to ensure correct modality.
-    no_gxh (bool): Not available in GXC API when 'True'
-    no_csharp (bool): Not available in .Net API when 'True'
-    no_cpp (bool): Not available in C++ API when 'True' (nor Python)
-    
-    return_type (#Type#): Return type
-    return_doc (str): Doc string for return value
-    parameters (list of #Parameter#): Parameters
-
-    is_deprecated (bool): Method has been deprecated (still available but will be marked as such)
-    deprecation_version (str): Version the method was deprecated
-    deprecation_doc (str): Deprecation doc
-
-    is_obsolete (bool): Method has been obsoleted (still available but will be marked as such)
-    obsoletion_version (str): Version the method was obsoleted
-    obsoletion_doc (str): Obsoletion doc
-
-    # Attributes
-    All the arguments passed to the constructor are available as attributes on the instance.
-    The following attributes are mixed in by the code generation framework startup code and 
-    is used by the code generation scripts and templates.
-
-    parent ([Class](#spec.gxclass.Class)): Parent class
-    is_static (bool): Is this a static method
-    is_destroy_method (bool): Is this method used to dispose of the instance
-    exposed_name (str): C and GXC APIs external name (influenced by is_app)
-
-    # Example
-    ```python
-    from .. import Class
-
-    # This is a very simple example class with only a doc string
-    gx_class = Class('GXSOMECLASS',
-                 doc="""
-                 This class' can be used to...
-                 It is directly related to the :class:`GXSOMEOTHERCLASS` class.
-                 """)
-    ```
-    '''
-
     _parameters = None
     _ext_method_name = None
 

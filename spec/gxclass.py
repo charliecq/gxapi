@@ -20,45 +20,6 @@ def _convert_camel_case(name):
 
 
 class Class(SpecBase):
-    '''
-    API specification for a GX class. 
-    
-    A specification module should have one of these assigned to 
-    an attribute called **gx_class**.
-
-    # Arguments
-    name (str): Class name
-    doc (str): Doc string with class summary
-    notes (str): Doc string containing verbose notes (optional)
-    see_also (str): Doc string containing see-also type references (optional)
-    handle_name (str): GXC API variable type override (does not affect other languages)
-    no_gxh (bool): Not available in GXC API when 'True'
-    no_csharp (bool): Not available in .Net API when 'True'
-    no_cpp (bool): Not available in C++ API when 'True' (nor Python)
-    next_gen (bool): Not a legacy class (support enhanced API types and callbacks). Implies __no_gxh__
-    
-    # Attributes
-    All the arguments passed to the constructor are available as attributes on the instance.
-    The following attributes are mixed in by the code generation framework startup code and 
-    is used by the code generation scripts and templates.
-
-    is_static (bool): Class is static and cannot be instantiated by any method
-    has_methods (bool): Class has no methods (i.e. just contains definitions)
-    branch (str): Branch folder containing the class
-    method_groups (dict of str: list of #Method#): Method group lists
-    defines (dict of str: list of #Method#): Defines
-
-    # Example
-    ```python
-    from .. import Class
-
-    gx_methods = {
-    'Miscellaneous': [
-
-        Method('...
-
-    ```
-    '''
     def __init__(self, name, doc=None, notes=None, see_also=None, 
                  handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
                  next_gen=False):

@@ -1,56 +1,3 @@
-'''
-API specification of types, availability and constant defines for a GX class. 
-
-# Types
-
-#Type# enumerations are used wherever a basic type needs to be specified. E.g.
-for a #Method# return value, #Parameter# or a #Constant#.
-
-The actual specific types supported by each programming language could be different.
-
-Supported basic types:
-
-    Type.FLOAT: Single precision floating point value (32-bit)
-    Type.DOUBLE: Double precision floating point value (64-bit)
-    Type.INT8_T: 8-bit signed integer
-    Type.UINT8_T: 8-bit unsigned integer
-    Type.INT16_T: 16-bit signed integer
-    Type.UINT16_T: 16-bit unsigned integer
-    Type.INT32_T: 32-bit signed integer
-    Type.UINT32_T: 32-bit unsigned integer
-    Type.INT64_T: 64-bit signed integer
-    Type.UINT64_T: 64-bit unsigned integer
-    Type.STRING: String
-    Type.VOID: Void (for method return type)
-    Type.BOOL: Boolean
-    Type.FLOAT_2D: Single precision floating point 2D vector
-    Type.FLOAT_3D: Single precision floating point 3D vector
-    Type.DOUBLE_2D: Double precision floating point 2D vector
-    Type.DOUBLE_3D: Double precision floating point 3D vector
-    Type.FLOAT_BBOX_2D: Single precision floating point 2D bounding box
-    Type.FLOAT_BBOX_3D: Single precision floating point 3D bounding box
-    Type.DOUBLE_BBOX_2D: Double precision floating point 2D bounding box
-    Type.DOUBLE_BBOX_3D: Double precision floating point 3D bounding box
-
-
-In some cases a Type will be defined using a string instead. In this case the type will either 
-be the name of a [Class](#spec.gxclass.Class), a #Define#, or some other known type understood 
-by the generation framework (e.g. "VV", "VV_ORDER" or "HDC").
-
-
-# Availability
-
-#Availability# is used to indicate under which license a specific #Method#
-is available.
-
-Supported values:
-
-    Availability.PUBLIC: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense
-    Availability.LICENSED: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense)
-    Availability.EXTENSION: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense)
-    
-'''
-
 from enum import IntEnum
 import copy
 
@@ -105,38 +52,6 @@ class SpecBase:
 
 
 class Constant(SpecBase):
-    '''
-    API specification for a GX constant
-    
-    # Arguments
-    name (str): Class name
-    value (str): Value
-    type (#Type#): Type
-    doc (str): Doc string with definition summary (optional but recommended)
-    
-    # Attributes
-    All the arguments passed to the constructor are available as attributes on the instance.
-    The following attributes are mixed in by the code generation framework startup code and 
-    is used by the code generation scripts and templates.
-
-    parent (#Define#): Parent define
-    
-    # Example
-    ```python
-    from .. import Define, Constant
-
-    gx_defines = [
-        Define('SOME_DEF',
-            doc="Def doc",
-            constants=[
-                Constant('SOME_CONST', value='24', type=Type.INT32_T,
-                        doc="This is 24"),
-                ...
-            ]),
-            ...
-    ```
-    '''
-
     def __init__(self, name, value, type, doc=None):
         super().__init__(name)
 
@@ -165,38 +80,6 @@ class Constant(SpecBase):
 
 
 class Define(SpecBase):
-    '''
-    API specification for a grouping GX constants in a definition. 
-    
-    A specification module could have a list of these assigned to 
-    an attribute called **gx_defines**.
-
-    # Arguments
-    name (str): Class name
-    doc (str): Doc string with definition summary
-    is_null_handle (bool): Constant acts as null instance of a class
-    constants (list of #Constant#): Constants
-    
-    # Attributes
-    All the arguments passed to the constructor are available as attributes on the instance.
-    The following attributes are mixed in by the code generation framework startup code and 
-    is used by the code generation scripts and templates.
-
-    parent ([Class](#spec.gxclass.Class)): Parent class
-    
-    # Example
-    ```python
-    from .. import Define, Constant
-
-    gx_defines = [
-        Define('SOME_DEF',
-            doc="Def doc",
-            constants=[
-                Constant(...
-            ]),
-            ...
-    ```
-    '''
     def __init__(self, name, doc, is_null_handle=False, constants=[]):
         super().__init__(name)
 
