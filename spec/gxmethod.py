@@ -115,11 +115,11 @@ class Method(SpecBase):
     @property
     def availability_info_rst(self):
         if self.availability == Availability.PUBLIC:
-            return '`Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense>`_'
+            return '`Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#open-lic>`_'
         elif self.availability == Availability.EXTENSION:
-            return '`Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense>`_'
+            return '`Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#ext-end-user-lic>`_'
         else:
-            return '`Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense>`_'
+            return '`Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#end-user-lic>`_'
         
     @property
     def limitations_info(self):
