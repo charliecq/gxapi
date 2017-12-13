@@ -215,9 +215,9 @@ gx_methods = {
                    Parameter('incr', type=Type.INT32_T,
                              doc="Increment in index"),
                    Parameter('num', type=Type.INT32_T,
-                             doc="Total number of grids (-1 or :def_val:`iDUMMY` for all)"),
+                             doc="Total number of grids (-1 or :const:`iDUMMY` for all)"),
                    Parameter('cell_size', type=Type.DOUBLE,
-                             doc="Cell size (can be :def_val:`GS_R8DM`)"),
+                             doc="Cell size (can be :const:`GS_R8DM`)"),
                    Parameter('interp', type=Type.INT32_T,
                              doc=":def:`VOX_SLICE_MODE`")
                ]),
@@ -245,7 +245,7 @@ gx_methods = {
                    Parameter('output_segy_filename', type=Type.STRING,
                              doc="SEG-Y filename to create"),
                    Parameter('sample_interval', type=Type.DOUBLE,
-                             doc="Sampling interval (can be :def_val:`GS_R8DM` if input voxel has constant Z cell size)")
+                             doc="Sampling interval (can be :const:`GS_R8DM` if input voxel has constant Z cell size)")
                ]),
 
         Method('ExportJIGsXML_VOX', module='geoengine.core', version='8.4',
@@ -290,7 +290,7 @@ gx_methods = {
                    Parameter('filter', type=Type.INT32_T,
                              doc=":def:`VOX_FILTER3D`"),
                    Parameter('filter_file', type=Type.STRING,
-                             doc="Filter file, if filter is :def_val:`VOX_FILTER3D_FILE`"),
+                             doc="Filter file, if filter is :const:`VOX_FILTER3D_FILE`"),
                    Parameter('n_passes', type=Type.INT32_T,
                              doc="Number of filter passes"),
                    Parameter('interpolate_dummies', type=Type.INT32_T,
@@ -330,9 +330,9 @@ gx_methods = {
                    Parameter('symb_z', type="DB_SYMB",
                              doc="Symbol to import Z, W or Declination data from"),
                    Parameter('inc', type=Type.DOUBLE,
-                             doc="Inclination value for :def_val:`VOX_VECTORVOX_UVW` (-90° to 90°)"),
+                             doc="Inclination value for :const:`VOX_VECTORVOX_UVW` (-90° to 90°)"),
                    Parameter('dec', type=Type.DOUBLE,
-                             doc="Declination value for :def_val:`VOX_VECTORVOX_UVW` (-180° to 180°)")
+                             doc="Declination value for :const:`VOX_VECTORVOX_UVW` (-180° to 180°)")
                ]),
 
         Method('GeneratePG_VOX', module='geoengine.core', version='6.2.0',
@@ -651,7 +651,7 @@ gx_methods = {
                doc="Get the range of indices with non-dummy data.",
                notes="""
                Find the non-dummy volume of a :class:`VOX` object. If the voxel is all dummies,
-               returns :def_val:`iMAX` for the minima, and :def_val:`iMIN` for the maxima.
+               returns :const:`iMAX` for the minima, and :const:`iMIN` for the maxima.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -680,7 +680,7 @@ gx_methods = {
                the true min and max X, Y and Z limits in the data.
                The bounds are the bounds for the voxel
                center points. If the voxel is all dummies,
-               returns :def_val:`rMAX` for the minima, and :def_val:`rMIN` for the maxima.
+               returns :const:`rMAX` for the minima, and :const:`rMIN` for the maxima.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -794,11 +794,11 @@ gx_methods = {
                    Parameter('origin_z', type=Type.DOUBLE, is_ref=True,
                              doc="Origin Z"),
                    Parameter('cell_x', type=Type.DOUBLE, is_ref=True,
-                             doc="Cell Sizes in X (:def_val:`rDUMMY` if not uniform)"),
+                             doc="Cell Sizes in X (:const:`rDUMMY` if not uniform)"),
                    Parameter('cell_y', type=Type.DOUBLE, is_ref=True,
-                             doc="Cell Sizes in Y (:def_val:`rDUMMY` if not uniform)"),
+                             doc="Cell Sizes in Y (:const:`rDUMMY` if not uniform)"),
                    Parameter('cell_z', type=Type.DOUBLE, is_ref=True,
-                             doc="Cell Sizes in Z (:def_val:`rDUMMY` if not uniform)")
+                             doc="Cell Sizes in Z (:const:`rDUMMY` if not uniform)")
                ]),
 
         Method('GetStats_VOX', module='geoengine.core', version='6.2.0',
@@ -1323,9 +1323,9 @@ gx_methods = {
                    Parameter('size_z', type=Type.INT32_T,
                              doc="Samples in Z"),
                    Parameter('min_z', type=Type.DOUBLE,
-                             doc="Minimum Z to resample (can be :def_val:`rDUMMY`)"),
+                             doc="Minimum Z to resample (can be :const:`rDUMMY`)"),
                    Parameter('max_z', type=Type.DOUBLE,
-                             doc="Maximum Z to resample (can be :def_val:`rDUMMY`)"),
+                             doc="Maximum Z to resample (can be :const:`rDUMMY`)"),
                    Parameter('interp', type=Type.INT32_T,
                              doc=":def:`VOX_SLICE_MODE`")
                ]),
@@ -1377,7 +1377,7 @@ gx_methods = {
                    Parameter('negative_depths_down', type=Type.INT32_T,
                              doc="Depths sign: 0 - positive down, 1 - negative down"),
                    Parameter('topo_ch', type=Type.INT32_T,
-                             doc="Elevation channel handle (can be :def_val:`NULLSYMB`)"),
+                             doc="Elevation channel handle (can be :const:`NULLSYMB`)"),
                    Parameter('mode', type=Type.INT32_T,
                              doc="Interpolation mode: 0 - linear, 1 - nearest"),
                    Parameter('out_ch', type=Type.STRING,
@@ -1506,11 +1506,11 @@ gx_methods = {
                    Parameter('origin_z', type=Type.DOUBLE,
                              doc="Origin Z"),
                    Parameter('cell_x', type=Type.DOUBLE,
-                             doc="Cell Sizes in X (:def_val:`rDUMMY` if not changed)"),
+                             doc="Cell Sizes in X (:const:`rDUMMY` if not changed)"),
                    Parameter('cell_y', type=Type.DOUBLE,
-                             doc="Cell Sizes in Y (:def_val:`rDUMMY` if not changed)"),
+                             doc="Cell Sizes in Y (:const:`rDUMMY` if not changed)"),
                    Parameter('cell_z', type=Type.DOUBLE,
-                             doc="Cell Sizes in Z (:def_val:`rDUMMY` if not changed)")
+                             doc="Cell Sizes in Z (:const:`rDUMMY` if not changed)")
                ]),
 
         Method('SetTPAT_VOX', module='geoengine.core', version='7.0.0',
@@ -1629,9 +1629,9 @@ gx_methods = {
                    Parameter('mask', type=Type.INT32_T,
                              doc="Mask (0: inside :class:`PLY`, 1: outside :class:`PLY`)"),
                    Parameter('min_z', type=Type.DOUBLE,
-                             doc="Minimum Z (optional, :def_val:`rDUMMY` for no minimum)"),
+                             doc="Minimum Z (optional, :const:`rDUMMY` for no minimum)"),
                    Parameter('max_z', type=Type.DOUBLE,
-                             doc="Maximum Z (optional, :def_val:`rDUMMY` for no maximun)"),
+                             doc="Maximum Z (optional, :const:`rDUMMY` for no maximun)"),
                    Parameter('output_vox', type=Type.STRING,
                              doc="Output voxel file name."),
                    Parameter('clip_dummies', type=Type.INT32_T,
@@ -1650,17 +1650,17 @@ gx_methods = {
                    Parameter('vox', type="VOX",
                              doc=":class:`VOX` object"),
                    Parameter('min_x', type=Type.DOUBLE,
-                             doc="Minimum X (optional, :def_val:`rDUMMY` for no minimum)"),
+                             doc="Minimum X (optional, :const:`rDUMMY` for no minimum)"),
                    Parameter('min_y', type=Type.DOUBLE,
-                             doc="Minimum Y (optional, :def_val:`rDUMMY` for no minimum)"),
+                             doc="Minimum Y (optional, :const:`rDUMMY` for no minimum)"),
                    Parameter('min_z', type=Type.DOUBLE,
-                             doc="Minimum Z (optional, :def_val:`rDUMMY` for no minimum)"),
+                             doc="Minimum Z (optional, :const:`rDUMMY` for no minimum)"),
                    Parameter('max_x', type=Type.DOUBLE,
-                             doc="Maximum X (optional, :def_val:`rDUMMY` for no maximun)"),
+                             doc="Maximum X (optional, :const:`rDUMMY` for no maximun)"),
                    Parameter('max_y', type=Type.DOUBLE,
-                             doc="Maximum Y (optional, :def_val:`rDUMMY` for no maximun)"),
+                             doc="Maximum Y (optional, :const:`rDUMMY` for no maximun)"),
                    Parameter('max_z', type=Type.DOUBLE,
-                             doc="Maximum Z (optional, :def_val:`rDUMMY` for no maximun)"),
+                             doc="Maximum Z (optional, :const:`rDUMMY` for no maximun)"),
                    Parameter('output_vox', type=Type.STRING,
                              doc="Output voxel file name."),
                    Parameter('clip_dummies', type=Type.INT32_T,
@@ -1825,8 +1825,8 @@ gx_methods = {
                SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
                BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))
                LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
-               LOG_BASE: One of :def_val:`VV_LOG_BASE_10` (default) or :def_val:`VV_LOG_BASE_E`
-               LOG_NEGATIVE: One of :def_val:`VV_LOG_NEGATIVE_NO` (default) or :def_val:`VV_LOG_NEGATIVE_YES`
+               LOG_BASE: One of :const:`VV_LOG_BASE_10` (default) or :const:`VV_LOG_BASE_E`
+               LOG_NEGATIVE: One of :const:`VV_LOG_NEGATIVE_NO` (default) or :const:`VV_LOG_NEGATIVE_YES`
                """,
                return_type=Type.VOID,
                parameters = [

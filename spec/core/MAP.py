@@ -443,7 +443,7 @@ gx_methods = {
                greatly increased the number of symbols that can be used. The only caveat
                of the new system is that text may appear corrupted (especially with GFN fonts) in
                versions prior to 6.2 that render maps created in version 6.2 and later.
-               The constant :def_val:`DUPMAP_COPY_PRE62` provides a way to create maps that can be
+               The constant :const:`DUPMAP_COPY_PRE62` provides a way to create maps that can be
                distributed to versions prior to 6.2.
                """,
                return_type=Type.VOID,
@@ -698,7 +698,7 @@ gx_methods = {
                doc="Resize a map to the extents of all views.",
                notes="""
                This is the same as :func:`ResizeAllEx_MAP` with
-               :def_val:`MVIEW_EXTENT_CLIP`.
+               :const:`MVIEW_EXTENT_CLIP`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -710,7 +710,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc=":func:`ResizeAll_MAP` with selection of view extent type selection.",
                notes="""
-               :def_val:`MVIEW_EXTENT_VISIBLE` gives a more "reasonable" map size, and won't
+               :const:`MVIEW_EXTENT_VISIBLE` gives a more "reasonable" map size, and won't
                clip off labels outside a graph window.
                """,
                return_type=Type.VOID,

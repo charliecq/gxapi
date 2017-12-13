@@ -107,9 +107,9 @@ gx_methods = {
                    Parameter('file_name', type=Type.STRING,
                              doc="Model data file name"),
                    Parameter('min', type=Type.DOUBLE, is_ref=True,
-                             doc="Minimum year  (:def_val:`rMAX` if none found)"),
+                             doc="Minimum year  (:const:`rMAX` if none found)"),
                    Parameter('max', type=Type.DOUBLE, is_ref=True,
-                             doc="Maximum year  (:def_val:`rMIN` if none found)")
+                             doc="Maximum year  (:const:`rMIN` if none found)")
                ]),
 
         Method('Destroy_IGRF', module='geoengine.core', version='5.0.0',

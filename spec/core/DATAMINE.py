@@ -46,7 +46,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Return a :class:`LST` containing the non-standard numeric fields in a Datamine file.",
                notes="""
-               At this time, only :def_val:`GIS_DMTYPE_BLOCKMODEL` files are supported.
+               At this time, only :const:`GIS_DMTYPE_BLOCKMODEL` files are supported.
                The field names go in the name part, and field indices (1 to N)
                in the value part.
                """,

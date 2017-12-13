@@ -59,7 +59,7 @@ Here is an example of one with each of the supported references:
 
 ```python
 ...
-    see_also="Class :class:`MVIEW` and :func:`GetXYZChanSymb_DB` and :const:`AGG_LAYER_ZONE_SHADE`"
+    see_also="Class :class:`MVIEW`, method :func:`GetXYZChanSymb_DB`, definition :def:`BF_SEEK` and constant :const:`AGG_LAYER_ZONE_SHADE`"
 ...
 ```
 

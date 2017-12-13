@@ -129,7 +129,7 @@ gx_defines = [
                         """),
                Constant('IPJ_ORIENT_SECTION_NORMAL', value='5', type=Type.INT32_T,
                         doc="""
-                        Same as :def_val:`IPJ_ORIENT_SECTION`, but the projection is perpendicular
+                        Same as :const:`IPJ_ORIENT_SECTION`, but the projection is perpendicular
                         to the section, not horizonatl, so elevatins are not preserved
                         on swung sections.
                         """),
@@ -590,16 +590,16 @@ gx_methods = {
                doc="Get :class:`IPJ` orientation parameters.",
                notes="""
                IPJ_ORIENT_TYPE:
-               :def_val:`IPJ_ORIENT_DEFAULT` - no special orientation - plan view.
-               This is equivalent to :def_val:`IPJ_ORIENT_PLAN` with
+               :const:`IPJ_ORIENT_DEFAULT` - no special orientation - plan view.
+               This is equivalent to :const:`IPJ_ORIENT_PLAN` with
                dXo = dYo = dZo = dRotation = 0.0.
                
-               :def_val:`IPJ_ORIENT_PLAN`      Azimuth = Rotation CCW degrees
+               :const:`IPJ_ORIENT_PLAN`      Azimuth = Rotation CCW degrees
                The plan differs from the default view in that
                a reference level is set, and the axes can be
                rotated and offset from the local X,Y.
                
-               :def_val:`IPJ_ORIENT_SECTION`   Azimuth - CW degrees from North
+               :const:`IPJ_ORIENT_SECTION`   Azimuth - CW degrees from North
                -360 <= azimuth <= 360
                Swing - degrees bottom towards viewer
                -90 < swing < 90
@@ -839,7 +839,7 @@ gx_methods = {
                doc="Store coordinate system in GXF style strings.",
                notes="""
                See GXF revision 3 for string descriptions
-               All strings must be the same length, 160 (:def_val:`STR_GXF`) recommended.
+               All strings must be the same length, 160 (:const:`STR_GXF`) recommended.
                Strings too short will be truncated.
                """,
                return_type=Type.VOID,
@@ -1067,11 +1067,11 @@ gx_methods = {
                
                The following orientations can be used to orient sections or section views:
                
-               :def_val:`IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
-               :def_val:`IPJ_ORIENT_SECTION_NORMAL` - Like :def_val:`IPJ_ORIENT_SECTION`, but Z projects
+               :const:`IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
+               :const:`IPJ_ORIENT_SECTION_NORMAL` - Like :const:`IPJ_ORIENT_SECTION`, but Z projects
                perpendicular to the secton plane.
-               :def_val:`IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
-               :def_val:`IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
+               :const:`IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
+               :const:`IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
                as the voxel can have any orientation in 3D.
                
                It is sometimes important to ignore the section orientation, for instance
@@ -1092,7 +1092,7 @@ gx_methods = {
                notes="""
                This function checks only the projected coordinated system
                in the :class:`IPJ` object, so should only be used with projections
-               of type :def_val:`IPJ_TYPE_PCS`.
+               of type :const:`IPJ_TYPE_PCS`.
                This function does not test the validity of datums or local
                datum transforms.
                """,
@@ -1311,7 +1311,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get projection method parameter",
                return_type=Type.DOUBLE,
-               return_doc="Parameter setting, :def_val:`rDUMMY` if dot used",
+               return_doc="Parameter setting, :const:`rDUMMY` if dot used",
                parameters = [
                    Parameter('ipj', type="IPJ",
                              doc=":class:`IPJ` object"),
@@ -1324,7 +1324,7 @@ gx_methods = {
                doc="Return the azimuth of geographic North at a point.",
                notes="""
                If the :class:`IPJ` is not a projected coordinate system
-               then the returned azimuth is :def_val:`GS_R8DM`;
+               then the returned azimuth is :const:`GS_R8DM`;
                """,
                return_type=Type.DOUBLE,
                return_doc="Azimuth (degrees CW) of geographic north from grid north at a location.",
@@ -2075,7 +2075,7 @@ gx_methods = {
                notes="""
                This function checks only the projected coordinated system
                in the :class:`IPJ` object, so should only be used with projections
-               of type :def_val:`IPJ_TYPE_PCS`.
+               of type :const:`IPJ_TYPE_PCS`.
                This function does not test the validity of datums or local
                datum transforms.
                """,

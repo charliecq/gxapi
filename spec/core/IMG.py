@@ -13,13 +13,13 @@ gx_class = Class('IMG',
                  formats.  The characteristics of a grid can be controlled using
                  decorations on a grid file name.  For example:
                  
-                 :func:`CreateNewFile_IMG`(:def_val:`GS_DOUBLE`,1,100,100,"mag.grd");
+                 :func:`CreateNewFile_IMG`(:const:`GS_DOUBLE`,1,100,100,"mag.grd");
                  -> creates a new grid file "mag.grd" with all defaults.
                  
-                 :func:`CreateNewFile_IMG`(:def_val:`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=none)");
+                 :func:`CreateNewFile_IMG`(:const:`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=none)");
                  -> creates a new grid file "mag.grd" with no compression.
                  
-                 :func:`CreateNewFile_IMG`(:def_val:`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=size;type=short");
+                 :func:`CreateNewFile_IMG`(:const:`GS_DOUBLE`,1,100,100,"mag.grd(GRD;comp=size;type=short");
                  -> creates a new grid file "mag.grd" compressed for size, numbers
                  stored as 2-byte integers..
                  
@@ -160,8 +160,8 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Creates an Image object tied to a grid file.",
                notes="""
-               When the :def_val:`GS_DOUBLE` data type is chosen the actual on-disk
-               type of the input image will be used instead of :def_val:`GS_DOUBLE`
+               When the :const:`GS_DOUBLE` data type is chosen the actual on-disk
+               type of the input image will be used instead of :const:`GS_DOUBLE`
                if the on-disk values represent color data as opposed
                to real numbers.
                """,
@@ -169,7 +169,7 @@ gx_methods = {
                return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('type', type=Type.INT32_T,
-                             doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT` to use native :class:`DAT` type."),
+                             doc="Data type, :def:`GS_TYPES` or :const:`GS_TYPE_DEFAULT` to use native :class:`DAT` type."),
                    Parameter('grid', type=Type.STRING,
                              doc="Name of the Grid to link to"),
                    Parameter('mode', type=Type.INT32_T,
@@ -214,7 +214,7 @@ gx_methods = {
                return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('type', type=Type.INT32_T,
-                             doc="Data type, :def:`GS_TYPES` Cannot be :def_val:`GS_TYPE_DEFAULT`"),
+                             doc="Data type, :def:`GS_TYPES` Cannot be :const:`GS_TYPE_DEFAULT`"),
                    Parameter('kx', type=Type.INT32_T,
                              doc="Grid orientation (KX): 1 (rows in X) -1 (rows in Y)"),
                    Parameter('width', type=Type.INT32_T,
@@ -229,8 +229,8 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Creates an output image file using input image info.",
                notes="""
-               When the :def_val:`GS_DOUBLE` data type is chosen the actual on-disk
-               type of the input image will be used instead of :def_val:`GS_DOUBLE`
+               When the :const:`GS_DOUBLE` data type is chosen the actual on-disk
+               type of the input image will be used instead of :const:`GS_DOUBLE`
                if the on-disk values represent color data as opposed
                to real numbers.
                """,
@@ -238,7 +238,7 @@ gx_methods = {
                return_doc=":class:`IMG` object",
                parameters = [
                    Parameter('type', type=Type.INT32_T,
-                             doc="Data type, :def:`GS_TYPES` or :def_val:`GS_TYPE_DEFAULT`"),
+                             doc="Data type, :def:`GS_TYPES` or :const:`GS_TYPE_DEFAULT`"),
                    Parameter('grid', type=Type.STRING,
                              doc="Name of the Grid to link to"),
                    Parameter('img', type="IMG",
@@ -266,7 +266,7 @@ gx_methods = {
                notes="""
                The :class:`IMG` now appears to be in the projected coordinate
                system space, with the specified cell size. If the cell
-               size is :def_val:`rDUMMY` (:def_val:`GS_R8DM`), one is automatically calculated,
+               size is :const:`rDUMMY` (:const:`GS_R8DM`), one is automatically calculated,
                as with :func:`CreateProjected_IMG`.
                """,
                return_type=Type.VOID,
@@ -285,7 +285,7 @@ gx_methods = {
                notes="""
                The :class:`IMG` now appears to be in the projected coordinate
                system space, with the specified cell size. If the cell
-               size is :def_val:`rDUMMY` (:def_val:`GS_R8DM`), one is automatically calculated,
+               size is :const:`rDUMMY` (:const:`GS_R8DM`), one is automatically calculated,
                as with :func:`CreateProjected_IMG`.
                The expansion percent expands the bounds of the projected grid
                in order to allow for the curving of bounding edges. Normally,
@@ -294,7 +294,7 @@ gx_methods = {
                and :func:`CreateProjected2_IMG` wrappers, and will generally create a
                white/dummy border around the new grid. This new method allows
                you to specify the expansion, or turn it off (by setting it to 0).
-               If the value is set to :def_val:`rDUMMY`, then expansion is left at 1.0,
+               If the value is set to :const:`rDUMMY`, then expansion is left at 1.0,
                the legacy behaviour.
                """,
                return_type=Type.VOID,
@@ -388,7 +388,7 @@ gx_methods = {
                notes="""
                Returns the cell size calculated by CreateProjected_PJIMG, or by
                :func:`CreateProjected2_IMG` when
-               :def_val:`GS_R8DM` is entered as the optional cell size. No inheritance
+               :const:`GS_R8DM` is entered as the optional cell size. No inheritance
                is actually performed to the input :class:`IMG`.
                """,
                return_type=Type.VOID,
@@ -495,7 +495,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Inherit a projection/new cell size on the :class:`IMG`.",
                notes="""
-               If cell size is :def_val:`GS_R8DM`, then "nice" values for the cell
+               If cell size is :const:`GS_R8DM`, then "nice" values for the cell
                size of the new projected grid will be determined so that
                the new grid has about the same number of cells as the old.
                If the cell size is specified, the inheritance will always
@@ -945,7 +945,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Store a real parameter in an :class:`IMG` object",
                return_type=Type.DOUBLE,
-               return_doc="Parameter value, :def_val:`rDUMMY` if not found.",
+               return_doc="Parameter value, :const:`rDUMMY` if not found.",
                parameters = [
                    Parameter('img', type="IMG",
                              doc=":class:`IMG` handle"),

@@ -24,7 +24,7 @@ gx_class = Class('ITR',
                  0.5 values between the integers. A general work-around is to make the
                  number of histogram bins much larger than the number of color zones.
                  
-                 The :def_val:`ITR_NULL` is used to hold a NULL handle to an :class:`ITR` class.
+                 The :const:`ITR_NULL` is used to hold a NULL handle to an :class:`ITR` class.
                  """)
 
 
@@ -145,7 +145,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Create an :class:`ITR` for an image.",
                notes="""
-               The :def_val:`ITR_ZONE_DEFAULT` model will ask the :class:`IMG` to provide
+               The :const:`ITR_ZONE_DEFAULT` model will ask the :class:`IMG` to provide
                a model if it can.
                
                If a shaded relief model is selected, a shaded image
@@ -162,7 +162,7 @@ gx_methods = {
                    Parameter('zone', type=Type.INT32_T,
                              doc=":def:`ITR_ZONE`"),
                    Parameter('contour', type=Type.DOUBLE,
-                             doc="Color contour interval or :def_val:`rDUMMY`")
+                             doc="Color contour interval or :const:`rDUMMY`")
                ]),
 
         Method('CreateMap_ITR', module='geoengine.map', version='5.0.0',
@@ -224,9 +224,9 @@ gx_methods = {
                parameters = [
                    Parameter('itr', type="ITR"),
                    Parameter('min', type=Type.DOUBLE, is_ref=True,
-                             doc="Data minimum value (or :def_val:`rDUMMY` if not set)"),
+                             doc="Data minimum value (or :const:`rDUMMY` if not set)"),
                    Parameter('max', type=Type.DOUBLE, is_ref=True,
-                             doc="Data maximum value (or :def_val:`rDUMMY` if not set)")
+                             doc="Data maximum value (or :const:`rDUMMY` if not set)")
                ]),
 
         Method('GetREG_ITR', module='geoengine.core', version='5.0.0',
@@ -469,7 +469,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Return the user-defined global default color method.",
                return_type=Type.INT32_T,
-               return_doc="One of :def_val:`ITR_ZONE_EQUALAREA`, :def_val:`ITR_ZONE_LINEAR`, :def_val:`ITR_ZONE_NORMAL` or :def_val:`ITR_ZONE_LOGLINEAR`"
+               return_doc="One of :const:`ITR_ZONE_EQUALAREA`, :const:`ITR_ZONE_LINEAR`, :const:`ITR_ZONE_NORMAL` or :const:`ITR_ZONE_LOGLINEAR`"
                ),
 
         Method('SetDataLimits_ITR', module='geoengine.core', version='6.3.0',

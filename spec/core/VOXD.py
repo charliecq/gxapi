@@ -27,7 +27,7 @@ gx_methods = {
                    Parameter('zone', type=Type.INT32_T,
                              doc=":def:`ITR_ZONE`"),
                    Parameter('contour', type=Type.DOUBLE,
-                             doc="Color contour interval or :def_val:`rDUMMY`")
+                             doc="Color contour interval or :const:`rDUMMY`")
                ]),
 
         Method('CreateITR_VOXD', module='geoengine.map', version='6.2.0',
@@ -175,9 +175,9 @@ gx_methods = {
                    Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
                    Parameter('min', type=Type.DOUBLE, is_ref=True,
-                             doc="Min Value (:def_val:`rDUMMY` for no limit)"),
+                             doc="Min Value (:const:`rDUMMY` for no limit)"),
                    Parameter('max', type=Type.DOUBLE, is_ref=True,
-                             doc="Max Value (:def_val:`rDUMMY` for no limit)")
+                             doc="Max Value (:const:`rDUMMY` for no limit)")
                ]),
 
         Method('SetDrawControls_VOXD', module='geoengine.map', version='6.2.0',
@@ -224,9 +224,9 @@ gx_methods = {
                    Parameter('voxd', type="VOXD",
                              doc=":class:`VOXD` object"),
                    Parameter('min', type=Type.DOUBLE,
-                             doc="Min Value (:def_val:`rDUMMY` for no limit)"),
+                             doc="Min Value (:const:`rDUMMY` for no limit)"),
                    Parameter('max', type=Type.DOUBLE,
-                             doc="Max Value (:def_val:`rDUMMY` for no limit)")
+                             doc="Max Value (:const:`rDUMMY` for no limit)")
                ])
     ]
 }

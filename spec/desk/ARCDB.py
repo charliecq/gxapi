@@ -65,7 +65,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method return a handle to the current table",
                return_type="ARCDB",
-               return_doc=":class:`ARCDB` Handle, :def_val:`ARCDB_NULL` if no table selected"),
+               return_doc=":class:`ARCDB` Handle, :const:`ARCDB_NULL` if no table selected"),
 
         Method('ExportToDB_ARCDB', module='geoarcgis', version='8.0.0',
                availability=Availability.PUBLIC, 
@@ -107,7 +107,7 @@ gx_methods = {
                doc="""
                This method attempts to make a table handle from an IUnknown pointer
                
-               Returns				 :class:`ARCDB` Handle, :def_val:`ARCDB_NULL` if not successful
+               Returns				 :class:`ARCDB` Handle, :const:`ARCDB_NULL` if not successful
                """,
                return_type="ARCDB",
                parameters = [
@@ -185,7 +185,7 @@ gx_methods = {
         Method('SelTblGUI_ARCDB', module='geoarcgis', version='8.0.0',
                availability=Availability.PUBLIC, 
                doc="Select table :class:`GUI`.",
-               notes="Terminates with Cancel on cancel, returns :def_val:`ARCDB_NULL` if there are no valid tables in current document.",
+               notes="Terminates with Cancel on cancel, returns :const:`ARCDB_NULL` if there are no valid tables in current document.",
                return_type="ARCDB",
                return_doc="Handle to the table")
     ]

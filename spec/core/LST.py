@@ -218,7 +218,7 @@ gx_methods = {
                    Parameter('lst2', type="LST",
                              doc="Items to search for"),
                    Parameter('vv', type="VV",
-                             doc=":def_val:`GS_LONG` :class:`VV` of returned indices into the first :class:`LST`.")
+                             doc=":const:`GS_LONG` :class:`VV` of returned indices into the first :class:`LST`.")
                ]),
 
         Method('GtItem_LST', module='geoengine.core', version='5.0.0',
@@ -334,7 +334,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get an integer item.",
                return_type=Type.INT32_T,
-               return_doc="Integer, :def_val:`iDUMMY` if conversion fails or string is empty.",
+               return_doc="Integer, :const:`iDUMMY` if conversion fails or string is empty.",
                parameters = [
                    Parameter('lst', type="LST",
                              doc="List object"),
@@ -440,7 +440,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get a real item.",
                return_type=Type.DOUBLE,
-               return_doc="Real, :def_val:`rDUMMY` if conversion fails or string is empty.",
+               return_doc="Real, :const:`rDUMMY` if conversion fails or string is empty.",
                parameters = [
                    Parameter('lst', type="LST",
                              doc="List object"),

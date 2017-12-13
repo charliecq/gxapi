@@ -377,7 +377,7 @@ gx_methods = {
                notes="""
                If the document is not loaded, nothing happens.
                The user can be prompted to save before unloading.
-               If :def_val:`EDOC_UNLOAD_NO_PROMPT`, data is always saved.
+               If :const:`EDOC_UNLOAD_NO_PROMPT`, data is always saved.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -400,8 +400,8 @@ gx_methods = {
                
                If the window is minimized, the max values will be
                equal to the min values. If the window is maximized
-               X Min and Y min will be :def_val:`iMIN` and X max and Y max
-               will be :def_val:`iMAX`.
+               X Min and Y min will be :const:`iMIN` and X max and Y max
+               will be :const:`iMAX`.
                
                NOTE: Now Obsolete. Use :func:`GetWindowPosition_EDOC`, which includes multi-monitor support.
                """,
@@ -426,8 +426,8 @@ gx_methods = {
                left corner Oasis montaj frame window.
                
                if the max values are equal or less than the min values
-               the window will be mimimized. If any Min values are :def_val:`iMIN`
-               or any Max values are :def_val:`iMAX`, the window is maximized.
+               the window will be mimimized. If any Min values are :const:`iMIN`
+               or any Max values are :const:`iMAX`, the window is maximized.
                
                NOTE: Now Obsolete. Use :func:`GetWindowPosition_EDOC`, which includes multi-monitor support.
                """,

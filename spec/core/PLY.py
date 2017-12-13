@@ -27,7 +27,7 @@ gx_defines = [
                Constant('PLY_LINE_CLIP_INSIDE', value='0', type=Type.INT32_T,
                         doc="The start point of the line is inside"),
                Constant('PLY_LINE_CLIP_NO_INTERSECT', value='0', type=Type.INT32_T,
-                        doc="This name is a misnomer - it should have been :def_val:`PLY_LINE_CLIP_INSIDE`, but is retained to support legacy code"),
+                        doc="This name is a misnomer - it should have been :const:`PLY_LINE_CLIP_INSIDE`, but is retained to support legacy code"),
                Constant('PLY_LINE_CLIP_OUTSIDE', value='1', type=Type.INT32_T,
                         doc="The start point of the line is outside"),
                Constant('PLY_LINE_CLIP_ERROR', value='2', type=Type.INT32_T)
@@ -203,15 +203,15 @@ gx_methods = {
         Method('iClipLineInt_PLY', module='geoengine.core', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="""
-               Clips a line in or out of the polygons for intersections (:def_val:`GS_DOUBLE`).
+               Clips a line in or out of the polygons for intersections (:const:`GS_DOUBLE`).
                Intersections are returned as fiducials down the line stored in :class:`VV`
                starting at the first point of the line.
                Examples:
-               No intersection: :def_val:`PLY_LINE_CLIP_OUTSIDE`, 0 intersections
-               Starts outside, ends inside: :def_val:`PLY_LINE_CLIP_OUTSIDE`, 1 intersection
-               Starts outside, intersects then ends inside or outside: :def_val:`PLY_LINE_CLIP_OUTSIDE`, 2 intersections
-               Starts inside, ends inside : :def_val:`PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
-               Starts inside, ends outside : :def_val:`PLY_LINE_CLIP_INSIDE`, 1 intersection
+               No intersection: :const:`PLY_LINE_CLIP_OUTSIDE`, 0 intersections
+               Starts outside, ends inside: :const:`PLY_LINE_CLIP_OUTSIDE`, 1 intersection
+               Starts outside, intersects then ends inside or outside: :const:`PLY_LINE_CLIP_OUTSIDE`, 2 intersections
+               Starts inside, ends inside : :const:`PLY_LINE_CLIP_INSIDE`, 1 intersection (gives end-of-line)
+               Starts inside, ends outside : :const:`PLY_LINE_CLIP_INSIDE`, 1 intersection
                """,
                return_type=Type.INT32_T,
                return_doc="0, Terminates on error (you can ignore this value)",

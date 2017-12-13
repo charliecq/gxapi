@@ -10,17 +10,17 @@ gx_defines = [
            constants=[
                Constant('WA_ENCODE_ANSI', value='0', type=Type.INT32_T,
                         doc="""
-                        Current Ansi Code Page (Conversion from UTF-8 data, if an exisiting BOM header found with :def_val:`WA_APPEND`,
-                        encoding will switch to :def_val:`WA_ENCODE_UTF8`)
+                        Current Ansi Code Page (Conversion from UTF-8 data, if an exisiting BOM header found with :const:`WA_APPEND`,
+                        encoding will switch to :const:`WA_ENCODE_UTF8`)
                         """),
                Constant('WA_ENCODE_RAW', value='1', type=Type.INT32_T,
                         doc="Write all data without any conversion check"),
                Constant('WA_ENCODE_UTF8', value='2', type=Type.INT32_T,
-                        doc=":def:`UTF8` (If no exisiting BOM header found with :def_val:`WA_APPEND`, encoding will switch to :def_val:`WA_ENCODE_ANSI`)"),
+                        doc=":def:`UTF8` (If no exisiting BOM header found with :const:`WA_APPEND`, encoding will switch to :const:`WA_ENCODE_ANSI`)"),
                Constant('WA_ENCODE_UTF8_NOHEADER', value='3', type=Type.INT32_T,
-                        doc=":def:`UTF8` w.o. header (will assume :def:`UTF8` encoding if :def_val:`WA_APPEND` is used)"),
+                        doc=":def:`UTF8` w.o. header (will assume :def:`UTF8` encoding if :const:`WA_APPEND` is used)"),
                Constant('WA_ENCODE_UTF16_NOHEADER', value='4', type=Type.INT32_T,
-                        doc="UTF16 w.o. header (will assume UTF16 encoding if :def_val:`WA_APPEND` is used)")
+                        doc="UTF16 w.o. header (will assume UTF16 encoding if :const:`WA_APPEND` is used)")
            ]),
 
     Define('WA_OPEN',

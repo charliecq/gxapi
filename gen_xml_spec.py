@@ -13,13 +13,6 @@ class XMLConstant(Constant):
         super().construct_copy(other)
 
     @property
-    def def_value(self):
-        if self.type == Type.STRING:
-            return '"{}"'.format(self.value)
-        else:
-            return self.value
-
-    @property
     def xml_type(self):
         if self.type == Type.DOUBLE:
             return "System.Double"
@@ -152,7 +145,7 @@ class XMLCodeGenerator(CodeGeneratorBase):
         s = self.re_class.sub(r'\1', s)
         s = self.re_def.sub(lambda m: self._doc_sanitize_def(m.group(1)), s)
         s = self.re_func.sub(r'\1', s)
-        s = self.re_def_val.sub(lambda m: self._doc_sanitize_def(m.group(1)), s)
+        s = self.re_const.sub(lambda m: self._doc_sanitize_def(m.group(1)), s)
         s = textwrap.dedent(s).strip()
         return escape(s.replace('``', ''))
 

@@ -40,7 +40,7 @@
 {%- endfor %}
 //===========================================================================================================
 {% for constant in define.constants %}
-#define {{ constant.name }} {{ constant.def_value }}
+#define {{ constant.name }} {{ constant.gxh_value }}
 {%- endfor %}
 
 {% endfor %}

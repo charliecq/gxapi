@@ -136,7 +136,7 @@ gx_methods = {
                    Parameter('size', type=Type.INT32_T,
                              doc="Number of bytes to CRC"),
                    Parameter('crc', type="CRC",
-                             doc="CRC start (use :def_val:`CRC_INIT_VALUE` for new)")
+                             doc="CRC start (use :const:`CRC_INIT_VALUE` for new)")
                ]),
 
         Method('Create_BF', module='geoengine.core', version='5.0.0',
@@ -182,7 +182,7 @@ gx_methods = {
         Method('Destroy_BF', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Destroy :class:`BF` handle.",
-               notes="The DestroyEx call implies :def_val:`BF_KEEP`",
+               notes="The DestroyEx call implies :const:`BF_KEEP`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('bf', type="BF",
@@ -273,7 +273,7 @@ gx_methods = {
                if required.  For example, to write out a real number 3.5
                with Most-Significant_Byte first (Mortorola) convention:
                
-               :func:`WriteReal_BF`(hBF,:def_val:`BF_BYTEORDER_MSB`+:def_val:`GS_REAL`,3.5).
+               :func:`WriteReal_BF`(hBF,:const:`BF_BYTEORDER_MSB`+:const:`GS_REAL`,3.5).
                
                If a byte order is not specified, the source is assumed to be
                in the native byte order of the reading/writing computer.
@@ -298,7 +298,7 @@ gx_methods = {
                if required.  For example, to write out a real number 3.5
                with Most-Significant_Byte first (Mortorola) convention:
                
-               :func:`WriteReal_BF`(hBF,:def_val:`BF_BYTEORDER_MSB`+:def_val:`GS_REAL`,3.5).
+               :func:`WriteReal_BF`(hBF,:const:`BF_BYTEORDER_MSB`+:const:`GS_REAL`,3.5).
                
                If a byte order is not specified, the source is assumed to be
                in the native byte order of the reading/writing computer.
@@ -323,7 +323,7 @@ gx_methods = {
                if required.  For example, to write out a real number 3.5
                with Most-Significant_Byte first (Mortorola) convention:
                
-               :func:`WriteReal_BF`(hBF,:def_val:`BF_BYTEORDER_MSB`+:def_val:`GS_REAL`,3.5).
+               :func:`WriteReal_BF`(hBF,:const:`BF_BYTEORDER_MSB`+:const:`GS_REAL`,3.5).
                
                If a byte order is not specified, the source is assumed to be
                in the native byte order of the reading/writing computer.
@@ -348,7 +348,7 @@ gx_methods = {
                if required.  For example, to write out a real number 3.5
                with Most-Significant_Byte first (Mortorola) convention:
                
-               :func:`WriteReal_BF`(hBF,:def_val:`BF_BYTEORDER_MSB`+:def_val:`GS_REAL`,3.5).
+               :func:`WriteReal_BF`(hBF,:const:`BF_BYTEORDER_MSB`+:const:`GS_REAL`,3.5).
                
                If a byte order is not specified, the source is assumed to be
                in the native byte order of the reading/writing computer.
@@ -498,7 +498,7 @@ gx_methods = {
                if required.  For example, to write out a real number 3.5
                with Most-Significant_Byte first (Mortorola) convention:
                
-               :func:`WriteReal_BF`(hBF,:def_val:`BF_BYTEORDER_MSB`+:def_val:`GS_REAL`,3.5).
+               :func:`WriteReal_BF`(hBF,:const:`BF_BYTEORDER_MSB`+:const:`GS_REAL`,3.5).
                
                If a byte order is not specified, the source is assumed to be
                in the native byte order of the reading/writing computer.

@@ -206,7 +206,7 @@ gx_methods = {
                    Parameter('img', type="IMG",
                              doc="Input image"),
                    Parameter('pul_crc', type="CRC",
-                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)")
+                             doc="Starting CRC (use :const:`CRC_INIT_VALUE` if none)")
                ]),
 
         Method('CRCGrid_IMU', module='geoengine.core', version='5.0.0',
@@ -218,7 +218,7 @@ gx_methods = {
                    Parameter('grid', type=Type.STRING,
                              doc="Grid"),
                    Parameter('pul_crc', type="CRC",
-                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)")
+                             doc="Starting CRC (use :const:`CRC_INIT_VALUE` if none)")
                ]),
 
         Method('CRCGridInexact_IMU', module='geoengine.core', version='5.0.0',
@@ -238,7 +238,7 @@ gx_methods = {
                    Parameter('grid', type=Type.STRING,
                              doc="Grid"),
                    Parameter('pul_crc', type="CRC",
-                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)"),
+                             doc="Starting CRC (use :const:`CRC_INIT_VALUE` if none)"),
                    Parameter('float_bits', type=Type.INT32_T,
                              doc=":def:`IMU_FLOAT_CRC_BITS`"),
                    Parameter('double_bits', type=Type.INT32_T,
@@ -262,7 +262,7 @@ gx_methods = {
                    Parameter('img', type="IMG",
                              doc="Input image"),
                    Parameter('pul_crc', type="CRC",
-                             doc="Starting CRC (use :def_val:`CRC_INIT_VALUE` if none)"),
+                             doc="Starting CRC (use :const:`CRC_INIT_VALUE` if none)"),
                    Parameter('float_bits', type=Type.INT32_T,
                              doc=":def:`IMU_FLOAT_CRC_BITS`"),
                    Parameter('double_bits', type=Type.INT32_T,
@@ -362,7 +362,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Adds two Grid images together point-by-point.",
                notes="""
-               The :class:`IMG` parameters MUST be of type :def_val:`GS_DOUBLE`!
+               The :class:`IMG` parameters MUST be of type :const:`GS_DOUBLE`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -383,7 +383,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Automatic Gain Compensation of a grid.",
                notes="""
-               The :class:`IMG` parameters MUST be of type :def_val:`GS_FLOAT`!
+               The :class:`IMG` parameters MUST be of type :const:`GS_FLOAT`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -407,7 +407,7 @@ gx_methods = {
                operations.
                """,
                notes="""
-               The :class:`IMG` parameters must be of type :def_val:`GS_DOUBLE`!
+               The :class:`IMG` parameters must be of type :const:`GS_DOUBLE`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -463,7 +463,7 @@ gx_methods = {
                beyond the original edges.
                """,
                notes="""
-               The :class:`IMG` parameter MUST be of type :def_val:`GS_FLOAT`!
+               The :class:`IMG` parameter MUST be of type :const:`GS_FLOAT`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -501,7 +501,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Interpolates to fill dummies, generates an output grid.",
                notes="""
-               The :class:`IMG` parameters MUST be of type :def_val:`GS_FLOAT`!
+               The :class:`IMG` parameters MUST be of type :const:`GS_FLOAT`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -537,7 +537,7 @@ gx_methods = {
                of passes.
                """,
                notes="""
-               The :class:`IMG` parameters MUST be of type :def_val:`GS_FLOAT`!
+               The :class:`IMG` parameters MUST be of type :const:`GS_FLOAT`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -604,7 +604,7 @@ gx_methods = {
                masking the polygon over an input grid.
                """,
                notes="""
-               The :class:`IMG` parameters MUST be of type :def_val:`GS_DOUBLE`!
+               The :class:`IMG` parameters MUST be of type :const:`GS_DOUBLE`!
                If not, the method will terminate.
                
                The :class:`PLY` will contain more than one polygon
@@ -752,7 +752,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Create a shadded relief image.",
                notes="""
-               Pass :def_val:`GS_R8DM` as parameters to obtain default values.
+               Pass :const:`GS_R8DM` as parameters to obtain default values.
                The default values are returned.
                """,
                return_type=Type.VOID,
@@ -1019,7 +1019,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Remove a trend surface from a grid.",
                notes="""
-               Both Images must be of type :def_val:`GS_DOUBLE`.
+               Both Images must be of type :const:`GS_DOUBLE`.
                The :class:`VM` parameter must be of type REAL,
                and be of size 10 at most.
                
@@ -1096,7 +1096,7 @@ gx_methods = {
                integers. A multiplier is applied to the final
                volume (to correct for units).
                
-               The :class:`IMG` parameters MUST be of type :def_val:`GS_FLOAT`!
+               The :class:`IMG` parameters MUST be of type :const:`GS_FLOAT`!
                If not, the method will terminate.
                """,
                return_type=Type.VOID,
@@ -1130,17 +1130,17 @@ gx_methods = {
                    Parameter('coord', type=Type.INT32_T,
                              doc=":def:`IMU_WIND_COORD`"),
                    Parameter('xmin', type=Type.DOUBLE,
-                             doc="Min. limit of window in X direction (can be :def_val:`rDUMMY`)"),
+                             doc="Min. limit of window in X direction (can be :const:`rDUMMY`)"),
                    Parameter('xmax', type=Type.DOUBLE,
-                             doc="Max. limit of window in X direction (can be :def_val:`rDUMMY`)"),
+                             doc="Max. limit of window in X direction (can be :const:`rDUMMY`)"),
                    Parameter('ymin', type=Type.DOUBLE,
-                             doc="Min. limit of window in Y direction (can be :def_val:`rDUMMY`)"),
+                             doc="Min. limit of window in Y direction (can be :const:`rDUMMY`)"),
                    Parameter('ymax', type=Type.DOUBLE,
-                             doc="Max. limit of window in Y direction (can be :def_val:`rDUMMY`)"),
+                             doc="Max. limit of window in Y direction (can be :const:`rDUMMY`)"),
                    Parameter('zmin', type=Type.DOUBLE,
-                             doc="Minimum Z data value in output grid (can be :def_val:`rDUMMY`)"),
+                             doc="Minimum Z data value in output grid (can be :const:`rDUMMY`)"),
                    Parameter('zmax', type=Type.DOUBLE,
-                             doc="Maximum Z data value in output grid (can be :def_val:`rDUMMY`)"),
+                             doc="Maximum Z data value in output grid (can be :const:`rDUMMY`)"),
                    Parameter('csize', type=Type.DOUBLE,
                              doc="New grid cell size"),
                    Parameter('clip', type=Type.INT32_T,
@@ -1168,17 +1168,17 @@ gx_methods = {
                    Parameter('out', type=Type.STRING,
                              doc="Name of output grid file"),
                    Parameter('xmin', type=Type.DOUBLE,
-                             doc="Minimum X, ground units (can be :def_val:`rDUMMY`)"),
+                             doc="Minimum X, ground units (can be :const:`rDUMMY`)"),
                    Parameter('xmax', type=Type.DOUBLE,
-                             doc="Maximum X (can be :def_val:`rDUMMY`)"),
+                             doc="Maximum X (can be :const:`rDUMMY`)"),
                    Parameter('ymin', type=Type.DOUBLE,
-                             doc="Minimum Y (can be :def_val:`rDUMMY`)"),
+                             doc="Minimum Y (can be :const:`rDUMMY`)"),
                    Parameter('ymax', type=Type.DOUBLE,
-                             doc="Maximum Y (can be :def_val:`rDUMMY`)"),
+                             doc="Maximum Y (can be :const:`rDUMMY`)"),
                    Parameter('zmin', type=Type.DOUBLE,
-                             doc="Minimum Z (can be :def_val:`rDUMMY`)"),
+                             doc="Minimum Z (can be :const:`rDUMMY`)"),
                    Parameter('zmax', type=Type.DOUBLE,
-                             doc="Maximum Z (can be :def_val:`rDUMMY`)"),
+                             doc="Maximum Z (can be :const:`rDUMMY`)"),
                    Parameter('clip', type=Type.INT32_T,
                              doc=":def:`IMU_WIND_DUMMIES`")
                ]),
@@ -1188,7 +1188,7 @@ gx_methods = {
                doc="Export a Grid image to an XYZ file.",
                notes="""
                The :class:`IMG` (image) of the grid to export must
-               be of type :def_val:`GS_FLOAT`. If not, this method will
+               be of type :const:`GS_FLOAT`. If not, this method will
                terminate with an error.
                """,
                return_type=Type.VOID,
@@ -1433,8 +1433,8 @@ gx_methods = {
                position at the start and end, and then determines the coordinates
                at those points.
                If the grid has no data, no :class:`IPJ` object, or if the Source Type of
-               the :class:`IPJ` is not :def_val:`IPJ_TYPE_PCS` (projected coordinate system), then the
-               returned values are dummies (:def_val:`GS_R8DM`).
+               the :class:`IPJ` is not :const:`IPJ_TYPE_PCS` (projected coordinate system), then the
+               returned values are dummies (:const:`GS_R8DM`).
                """,
                return_type=Type.VOID,
                parameters = [

@@ -332,14 +332,14 @@ class PythonCodeGenerator(CodeGeneratorBase):
         s = self.re_class.sub(r'`GX\1 <geosoft.gxapi.GX\1>`', s)
         s = self.re_def.sub(lambda m: self._doc_sanitize_def(m.group(1)), s)
         s = self.re_func.sub(lambda m: self.methods[m.group(1)].py_doc_ref(ref_class), s)
-        s = self.re_def_val.sub(lambda m: self._doc_sanitize_def_val(m.group(1)), s)
+        s = self.re_const.sub(lambda m: self._doc_sanitize_const(m.group(1)), s)
         s = textwrap.dedent(s).strip()
         return s.replace('\\', '\\\\')
 
     def _doc_sanitize_def(self, match):
         return r':ref:`{}`'.format(match)
 
-    def _doc_sanitize_def_val(self, match):
+    def _doc_sanitize_const(self, match):
         if match == 'GS_TRUE':
             return '``True``'
         elif match == 'GS_FALSE':

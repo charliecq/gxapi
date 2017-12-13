@@ -49,7 +49,7 @@ extern "C" {
 * 
 * {{ constant.doc | doc_sanitize | comment(prefix="* ") }}{% endif %}
 */
-#define {{ constant.name }} {{ constant.def_value }}{%- endfor %}
+#define {{ constant.name }} {{ constant.gxlib_value }}{%- endfor %}
 ///@}
 {% else %}
 /**

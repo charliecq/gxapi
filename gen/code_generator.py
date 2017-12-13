@@ -105,7 +105,7 @@ class CodeGeneratorBase:
         self.re_class = re.compile(':class:`(.*?)`')
         self.re_def = re.compile(':def:`(.*?)`')
         self.re_func = re.compile(':func:`(.*?)`')
-        self.re_def_val = re.compile(':def_val:`(.*?)`')
+        self.re_const = re.compile(':const:`(.*?)`')
 
         for c_name, c in _classes.items():
             cl = _opt_derive(c, class_type)

@@ -9,7 +9,7 @@ gx_class = Class('DB',
                  The following defines are not used by any methods but are
                  used by GX's:
                  
-                 :def_val:`DB_ACTIVITY_BLOB`
+                 :const:`DB_ACTIVITY_BLOB`
                  """)
 
 
@@ -53,7 +53,7 @@ gx_defines = [
                Constant('DB_CATEGORY_LINE_FLIGHT', value='100', type=Type.INT32_T),
                Constant('DB_CATEGORY_LINE_GROUP', value='200', type=Type.INT32_T),
                Constant('DB_CATEGORY_LINE_NORMAL', value='DB_CATEGORY_LINE_FLIGHT', type=Type.INT32_T,
-                        doc="Same as :def_val:`DB_CATEGORY_LINE_FLIGHT`")
+                        doc="Same as :const:`DB_CATEGORY_LINE_FLIGHT`")
            ]),
 
     Define('DB_CATEGORY_USER',
@@ -222,7 +222,7 @@ gx_defines = [
            doc="Size of Symbol Names",
            constants=[
                Constant('DB_SYMB_NAME_SIZE', value='STR_DB_SYMBOL', type=Type.INT32_T,
-                        doc="Same :def_val:`STR_DB_SYMBOL`")
+                        doc="Same :const:`STR_DB_SYMBOL`")
            ]),
 
     Define('DB_WAIT',
@@ -430,7 +430,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
+                             doc="Symbol, :const:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('reg', type="REG",
                              doc=":class:`REG` to copy data into")
                ]),
@@ -462,7 +462,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
+                             doc="Symbol, :const:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name"),
                    Parameter('setting', type=Type.STRING, is_ref=True, size_of_param='length',
@@ -558,7 +558,7 @@ gx_methods = {
                The channel label is stored in the "CLASS" parameter
                of the channel reg. If no class is defined, then an
                empty string is returned.
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -578,7 +578,7 @@ gx_methods = {
                This method gets a channel's number of digits displayed
                to the right of the decimal point.
                """,
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc="Number of digits displayed to right of decimal",
                parameters = [
@@ -596,7 +596,7 @@ gx_methods = {
                """,
                notes="""
                The returned format is one of the :def:`DB_CHAN_FORMAT`.
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.INT32_T,
                return_doc="Channel display format",
@@ -637,7 +637,7 @@ gx_methods = {
                The channel label is stored in the "LABEL" parameter
                of the channel reg.  If the setting is empty, the
                channel name is returned.
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -657,7 +657,7 @@ gx_methods = {
                This method Gets a channel's name for a
                given channel handle.
                """,
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -667,13 +667,13 @@ gx_methods = {
                    Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String to place name into"),
                    Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+                             doc="Maximum length of string, should be :const:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
         Method('iGetChanProtect_DB', module='geoengine.core', version='6.0.1',
                availability=Availability.PUBLIC, 
                doc="This method gets a channel's read-only protection status.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc=":def:`DB_CHAN_PROTECTION`",
                parameters = [
@@ -693,7 +693,7 @@ gx_methods = {
                The type returned is one of the :def:`DB_CATEGORY_CHAN`.
                Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL
                or string types.
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.INT32_T,
                return_doc="Channel type",
@@ -710,7 +710,7 @@ gx_methods = {
                notes="""
                The unit label is stored in the "UNITS" parameter
                of the channel reg.
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -730,7 +730,7 @@ gx_methods = {
                This method gets a channel's display width for a
                given channel handle.
                """,
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc="Channel display width",
                parameters = [
@@ -767,12 +767,12 @@ gx_methods = {
                setting is to be Get and or Set, use the :class:`REG` directly.
                """,
                return_type=Type.INT32_T,
-               return_doc="The setting, or :def_val:`iDUMMY` if not found or not convertable.",
+               return_doc="The setting, or :const:`iDUMMY` if not found or not convertable.",
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
+                             doc="Symbol, :const:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name")
                ]),
@@ -782,7 +782,7 @@ gx_methods = {
                doc="This method gets a symbol's name",
                notes="""
                See GetChanName_DB for more information
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -793,7 +793,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING, is_ref=True, size_of_param='length',
                              doc="String to place name into"),
                    Parameter('length', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+                             doc="Maximum length of string, should be :const:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
         Method('iHaveITR_DB', module='geoengine.core', version='5.0.0',
@@ -926,7 +926,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc=":class:`DB` handle"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Blob (:def_val:`DB_SYMB_BLOB`) to read into :class:`BF` from database"),
+                             doc="Blob (:const:`DB_SYMB_BLOB`) to read into :class:`BF` from database"),
                    Parameter('bf', type="BF",
                              doc="File to read blob from")
                ]),
@@ -966,12 +966,12 @@ gx_methods = {
                setting is to be Get and or Set, use the :class:`REG` directly.
                """,
                return_type=Type.DOUBLE,
-               return_doc="The setting, or :def_val:`rDUMMY` if not found or not convertable.",
+               return_doc="The setting, or :const:`rDUMMY` if not found or not convertable.",
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
+                             doc="Symbol, :const:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name")
                ]),
@@ -980,10 +980,10 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method sets all the channels' read-only protection status.",
                notes="""
-               Value to set must be either :def_val:`DB_CHAN_PROTECTED` or
-               :def_val:`DB_CHAN_UNPROTECTED`
+               Value to set must be either :const:`DB_CHAN_PROTECTED` or
+               :const:`DB_CHAN_UNPROTECTED`
                This method does its own channel locking/unlocking.
-               Channels already lock :def_val:`DB_LOCK_READONLY` are ignored.
+               Channels already lock :const:`DB_LOCK_READONLY` are ignored.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -999,7 +999,7 @@ gx_methods = {
                notes="""
                The channel class is stored in the "CLASS" parameter
                of the channel reg.
-               The channel must be locked :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1019,7 +1019,7 @@ gx_methods = {
                """,
                notes="""
                The number of display digits must be from 0 to 50.
-               The channel must be locked :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1034,7 +1034,7 @@ gx_methods = {
         Method('SetChanFormat_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a channel's display format.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -1072,7 +1072,7 @@ gx_methods = {
                notes="""
                The channel label is stored in the "LABEL" parameter
                of the channel reg.
-               The channel must be locked :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1087,7 +1087,7 @@ gx_methods = {
         Method('SetChanName_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a channel's name.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -1105,9 +1105,9 @@ gx_methods = {
                status.
                """,
                notes="""
-               Value to set must be either :def_val:`DB_CHAN_PROTECTED` or
-               :def_val:`DB_CHAN_UNPROTECTED`
-               The channel must be locked :def_val:`DB_LOCK_READWRITE`
+               Value to set must be either :const:`DB_CHAN_PROTECTED` or
+               :const:`DB_CHAN_UNPROTECTED`
+               The channel must be locked :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1167,7 +1167,7 @@ gx_methods = {
                This method sets a channel's unit for a
                given channel handle.
                """,
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -1183,7 +1183,7 @@ gx_methods = {
                doc="This method sets a channel's display width",
                notes="""
                The number of display digits must be from 0 to 50.
-               The channel must be locked :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READWRITE`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1213,7 +1213,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Set :class:`ITR` for a channel.",
                notes="""
-               Use :def_val:`ITR_NULL` to clear the channel :class:`ITR`.
+               Use :const:`ITR_NULL` to clear the channel :class:`ITR`.
                Channel must be locked for READONLY or READWRITE.
                """,
                return_type=Type.VOID,
@@ -1234,7 +1234,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
+                             doc="Symbol, :const:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('reg', type="REG",
                              doc=":class:`REG` to set into Blob")
                ]),
@@ -1266,7 +1266,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="Shared Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Symbol, :def_val:`NULLSYMB` for the database :class:`REG`"),
+                             doc="Symbol, :const:`NULLSYMB` for the database :class:`REG`"),
                    Parameter('name', type=Type.STRING,
                              doc=":class:`REG` entry name"),
                    Parameter('setting', type=Type.STRING,
@@ -1281,7 +1281,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc=":class:`DB` handle"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Blob (:def_val:`DB_SYMB_BLOB`) to write into database from file"),
+                             doc="Blob (:const:`DB_SYMB_BLOB`) to write into database from file"),
                    Parameter('bf', type="BF",
                              doc="File to write blob into")
                ])
@@ -1794,7 +1794,7 @@ gx_methods = {
         Method('GetLineMapFid_DB', module='geoengine.core', version='5.1.1',
                availability=Availability.PUBLIC, 
                doc="This method gets a line map clip fiducial.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -1900,9 +1900,9 @@ gx_methods = {
         Method('iLineCategory_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method returns the category (group, line) of a line.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
-               return_doc=":def:`DB_CATEGORY_LINE` or :def_val:`iDUMMY`.",
+               return_doc=":def:`DB_CATEGORY_LINE` or :const:`iDUMMY`.",
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database"),
@@ -1913,7 +1913,7 @@ gx_methods = {
         Method('iLineFlight_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method returns the flight number of a line.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc="Line Flight Number.",
                parameters = [
@@ -1956,7 +1956,7 @@ gx_methods = {
         Method('iLineNumber_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method returns the number of a line.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc="Line Number.",
                parameters = [
@@ -1969,7 +1969,7 @@ gx_methods = {
         Method('ILineNumber2_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Returns the string form of the line number (can be alphanumeric)",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -1985,7 +1985,7 @@ gx_methods = {
         Method('iLineType_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method returns the type of a line.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc=":def:`DB_LINE_TYPE`",
                parameters = [
@@ -1998,7 +1998,7 @@ gx_methods = {
         Method('iLineVersion_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method returns the version number of a line.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.INT32_T,
                return_doc="Line Number.",
                parameters = [
@@ -2088,18 +2088,18 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method returns the bearing of a line.",
                notes="""
-               The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`
                
                This function simply returns a value set using the :func:`SetLineBearing_DB`
-               function. It returns :def_val:`rDUMMY` for line categories other than
-               :def_val:`DB_CATEGORY_LINE_FLIGHT`.
+               function. It returns :const:`rDUMMY` for line categories other than
+               :const:`DB_CATEGORY_LINE_FLIGHT`.
                
                To calculate the line azimuth based on the first and
                last non-dummy locations, use the :func:`rDirection_DU` function.
                """,
                see_also=":func:`SetLineBearing_DB`, :func:`rDirection_DU`",
                return_type=Type.DOUBLE,
-               return_doc="Bearing value, :def_val:`rDUMMY` if not set.",
+               return_doc="Bearing value, :const:`rDUMMY` if not set.",
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database"),
@@ -2110,7 +2110,7 @@ gx_methods = {
         Method('rLineDate_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method returns the date of a line.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READONLY` or :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READONLY` or :const:`DB_LOCK_READWRITE`",
                return_type=Type.DOUBLE,
                return_doc="Date value.",
                parameters = [
@@ -2162,12 +2162,12 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Sets a line's bearing.",
                notes="""
-               The channel must be locked :def_val:`DB_LOCK_READWRITE`
+               The channel must be locked :const:`DB_LOCK_READWRITE`
                
                This function simply sets a value in the line's metadata
                that is retrieved using the :func:`rLineBearing_DB`
                function. It terminates for line categories other than
-               :def_val:`DB_CATEGORY_LINE_FLIGHT`.
+               :const:`DB_CATEGORY_LINE_FLIGHT`.
                """,
                see_also=":func:`rLineBearing_DB`, :func:`rDirection_DU`",
                return_type=Type.VOID,
@@ -2183,7 +2183,7 @@ gx_methods = {
         Method('SetLineDate_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a line's date.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -2197,7 +2197,7 @@ gx_methods = {
         Method('SetLineFlight_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a line's flight.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -2212,8 +2212,8 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method changes a line map clip fiducial.",
                notes="""
-               for full range, set Start Fid to :def_val:`rMIN` and End Fid to :def_val:`rMAX`.
-               for no data, set Start and End Fids to :def_val:`rDUMMY`.
+               for full range, set Start Fid to :const:`rMIN` and End Fid to :const:`rMAX`.
+               for no data, set Start and End Fids to :const:`rDUMMY`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -2230,7 +2230,7 @@ gx_methods = {
         Method('SetLineNum_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a line's number.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -2244,7 +2244,7 @@ gx_methods = {
         Method('SetLineType_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a line's type.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -2258,7 +2258,7 @@ gx_methods = {
         Method('SetLineVer_DB', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="This method sets a line's version.",
-               notes="The channel must be locked :def_val:`DB_LOCK_READWRITE`",
+               notes="The channel must be locked :const:`DB_LOCK_READWRITE`",
                return_type=Type.VOID,
                parameters = [
                    Parameter('db', type="DB",
@@ -2464,7 +2464,7 @@ gx_methods = {
                For instance, "-32" will create a string channel with
                32 characters per item.
                
-               Symbol name for :def_val:`DB_CATEGORY_LINE_FLIGHT` must conform to
+               Symbol name for :const:`DB_CATEGORY_LINE_FLIGHT` must conform to
                the following line naming syntax:
                
                [type][number.version:flight]
@@ -2499,7 +2499,7 @@ gx_methods = {
                    Parameter('category', type=Type.INT32_T,
                              doc=":def:`DB_CATEGORY_USER`, :def:`DB_CATEGORY_LINE`, :def:`DB_CATEGORY_CHAN`, :def:`DB_CATEGORY_BLOB`"),
                    Parameter('extra', type=Type.INT32_T,
-                             doc="Extra info, which depends on :def:`DB_SYMB_TYPE` :def_val:`DB_SYMB_CHAN` - element width for a :class:`VA` channel ignores for all other :def:`DB_SYMB_TYPE` types")
+                             doc="Extra info, which depends on :def:`DB_SYMB_TYPE` :const:`DB_SYMB_CHAN` - element width for a :class:`VA` channel ignores for all other :def:`DB_SYMB_TYPE` types")
                ]),
 
         Method('CSVChanLST_DB', module='geoengine.core', version='6.2.0',
@@ -2607,7 +2607,7 @@ gx_methods = {
                The new :func:`FindChan_DB` searches using the exact channel name.
                """,
                return_type="DB_SYMB",
-               return_doc="Channel Handle, :def_val:`NULLSYMB` if not defined",
+               return_doc="Channel Handle, :const:`NULLSYMB` if not defined",
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database"),
@@ -2628,9 +2628,9 @@ gx_methods = {
                :func:`GetXYZChanSymb_DB` function, the following behaviour has
                been introduced as of v5.1.3:  (also true for "Y").
                
-               :func:`FindSymb_DB`(hDB, "X", :def_val:`DB_SYMB_CHAN`) is now equivalent to:
+               :func:`FindSymb_DB`(hDB, "X", :const:`DB_SYMB_CHAN`) is now equivalent to:
                
-               :func:`GetXYZChanSymb_DB`(hDB, :def_val:`DB_CHAN_X`);
+               :func:`GetXYZChanSymb_DB`(hDB, :const:`DB_CHAN_X`);
                
                In other words, the current X or Y is searched for, not
                necessarily the literal "X" or "Y". This ensures that newer
@@ -2641,7 +2641,7 @@ gx_methods = {
                The new :func:`FindChan_DB` searches using the exact channel name.
                """,
                return_type="DB_SYMB",
-               return_doc="Symbol Handle, :def_val:`NULLSYMB` if not defined",
+               return_doc="Symbol Handle, :const:`NULLSYMB` if not defined",
                parameters = [
                    Parameter('db', type="DB",
                              doc="Database"),
@@ -2673,11 +2673,11 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                x - Symbol Handle
-               :def_val:`NULLSYMB` - Symbol not found
+               :const:`NULLSYMB` - Symbol not found
                
                searches for the "current" X, Y or Z channel.
                If none is defined, then looks for "X", "Y" or "Z" channel
-               If the channel is defined, but not present, returns :def_val:`NULLSYMB`.
+               If the channel is defined, but not present, returns :const:`NULLSYMB`.
                """,
                parameters = [
                    Parameter('db', type="DB",
@@ -2738,10 +2738,10 @@ gx_methods = {
                GetXYZChan_DB function, the following behaviour has
                been introduced as of v5.1.3:  (also true for "Y").
                
-               :func:`iExistSymb_DB`(hDB, "X", :def_val:`DB_SYMB_CHAN`) is now equivalent to:
+               :func:`iExistSymb_DB`(hDB, "X", :const:`DB_SYMB_CHAN`) is now equivalent to:
                
-               GetXYZChan_DB(hDB, :def_val:`DB_CHAN_X`, sXCh);
-               :func:`iExistSymb_DB`(hDB, sXCh, :def_val:`DB_SYMB_CHAN`);
+               GetXYZChan_DB(hDB, :const:`DB_CHAN_X`, sXCh);
+               :func:`iExistSymb_DB`(hDB, sXCh, :const:`DB_SYMB_CHAN`);
                
                In other words, the current X or Y is searched for, not
                necessarily the literal "X" or "Y". This ensures that newer
@@ -3240,7 +3240,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('base', type=Type.DOUBLE, is_ref=True,
                              doc="Base value (rDummy for none)"),
                    Parameter('range', type=Type.DOUBLE, is_ref=True,
@@ -3256,7 +3256,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('min_w', type=Type.INT32_T, is_ref=True,
                              doc="First window (0 to N-2, iDummy for default)"),
                    Parameter('max_w', type=Type.INT32_T, is_ref=True,
@@ -3272,7 +3272,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('domain', type=Type.INT32_T,
                              doc=":def:`DB_ARRAY_BASETYPE`"),
                    Parameter('base', type=Type.DOUBLE,
@@ -3294,7 +3294,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READONLY`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READONLY`)"),
                    Parameter('domain', type=Type.INT32_T, is_ref=True,
                              doc=":def:`DB_ARRAY_BASETYPE`"),
                    Parameter('base', type=Type.DOUBLE, is_ref=True,
@@ -3322,9 +3322,9 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Group line - :def_val:`DB_LOCK_READWRITE` or :def_val:`DB_LOCK_READONLY`"),
+                             doc="Group line - :const:`DB_LOCK_READWRITE` or :const:`DB_LOCK_READONLY`"),
                    Parameter('cl', type=Type.STRING, is_ref=True, size_of_param='size',
-                             doc="Returned class name - max size = :def_val:`DB_GROUP_CLASS_SIZE` - 1"),
+                             doc="Returned class name - max size = :const:`DB_GROUP_CLASS_SIZE` - 1"),
                    Parameter('size', type=Type.INT32_T, default_length='DB_GROUP_CLASS_SIZE',
                              doc="Buffer size")
                ]),
@@ -3350,7 +3350,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('file', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Zone file name, "" to clear.'),
                    Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
@@ -3365,7 +3365,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('option', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc='Option  "Profile", "Section" or "Section and Profile"'),
                    Parameter('size', type=Type.INT32_T, default_length='STR_DEFAULT',
@@ -3381,7 +3381,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('file', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="Zone file name"),
                    Parameter('size', type=Type.INT32_T, default_length='STR_FILE',
@@ -3460,9 +3460,9 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB - Shared Database"),
                    Parameter('symb', type="DB_SYMB",
-                             doc="Group line - :def_val:`DB_LOCK_READWRITE`"),
+                             doc="Group line - :const:`DB_LOCK_READWRITE`"),
                    Parameter('cl', type=Type.STRING,
-                             doc=":def_val:`DB_GROUP_CLASS_SIZE`")
+                             doc=":const:`DB_GROUP_CLASS_SIZE`")
                ]),
 
         Method('SetVAProfColorFile_DB', module='geoengine.core', version='5.1.5',
@@ -3512,7 +3512,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('file', type=Type.STRING,
                              doc='Zone file name, "" to clear.')
                ]),
@@ -3525,7 +3525,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('option', type=Type.STRING,
                              doc='Option  "Profile", "Section" or "Section and Profile"')
                ]),
@@ -3544,7 +3544,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('base', type=Type.DOUBLE,
                              doc="Base value (rDummy for none)"),
                    Parameter('range', type=Type.DOUBLE,
@@ -3563,7 +3563,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('file', type=Type.STRING,
                              doc="Zone file name")
                ]),
@@ -3580,7 +3580,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB"),
                    Parameter('ch', type="DB_SYMB",
-                             doc="Channel (Locked :def_val:`DB_LOCK_READWRITE`)"),
+                             doc="Channel (Locked :const:`DB_LOCK_READWRITE`)"),
                    Parameter('min_w', type=Type.INT32_T,
                              doc="First window (0 to N-1, iDummy for default)"),
                    Parameter('max_w', type=Type.INT32_T,
@@ -3613,7 +3613,7 @@ gx_methods = {
                    Parameter('category', type=Type.INT32_T,
                              doc=":def:`DB_CATEGORY_USER`, :def:`DB_CATEGORY_LINE`, :def:`DB_CATEGORY_CHAN`, :def:`DB_CATEGORY_BLOB`"),
                    Parameter('extra', type=Type.INT32_T,
-                             doc="Extra info, which depends on DB_SYMB_ :def_val:`DB_SYMB_CHAN` - element width for a :class:`VA` channel ignores for all other DB_SYMB types")
+                             doc="Extra info, which depends on DB_SYMB_ :const:`DB_SYMB_CHAN` - element width for a :class:`VA` channel ignores for all other DB_SYMB types")
                ]),
 
         Method('Current_DB', module='None', version='5.0.0',

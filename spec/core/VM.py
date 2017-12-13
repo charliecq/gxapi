@@ -70,7 +70,7 @@ gx_methods = {
                doc="Get an integer element from a :class:`VM`.",
                return_type=Type.INT32_T,
                return_doc="""
-               Element wanted, or :def_val:`iDUMMY`
+               Element wanted, or :const:`iDUMMY`
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
@@ -126,7 +126,7 @@ gx_methods = {
                doc="Get a real element from a :class:`VM`.",
                return_type=Type.DOUBLE,
                return_doc="""
-               Element wanted, or :def_val:`rDUMMY`
+               Element wanted, or :const:`rDUMMY`
                if the value is dummy or outside of the range of data.
                """,
                parameters = [

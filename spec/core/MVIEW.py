@@ -292,7 +292,7 @@ gx_defines = [
                         will be transformed to the view coordinate system.
                         """),
                Constant('MVIEW_PJ_ON', value='3', type=Type.INT32_T,
-                        doc="Mode before the last :def_val:`MVIEW_PJ_OFF`.")
+                        doc="Mode before the last :const:`MVIEW_PJ_OFF`.")
            ]),
 
     Define('MVIEW_RELOCATE',
@@ -346,13 +346,13 @@ gx_defines = [
            """,
            constants=[
                Constant('MVIEW_EXTENT_UNIT_VIEW', value='MVIEW_UNIT_VIEW', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_VIEW`"),
+                        doc=":const:`MVIEW_UNIT_VIEW`"),
                Constant('MVIEW_EXTENT_UNIT_PLOT', value='MVIEW_UNIT_PLOT', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_PLOT`"),
+                        doc=":const:`MVIEW_UNIT_PLOT`"),
                Constant('MVIEW_EXTENT_UNIT_MM', value='MVIEW_UNIT_MM', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_MM`"),
+                        doc=":const:`MVIEW_UNIT_MM`"),
                Constant('MVIEW_EXTENT_UNIT_VIEW_UNWARPED', value='MVIEW_UNIT_VIEW_UNWARPED', type=Type.INT32_T,
-                        doc=":def_val:`MVIEW_UNIT_VIEW_UNWARPED`")
+                        doc=":const:`MVIEW_UNIT_VIEW_UNWARPED`")
            ]),
 
     Define('TEXT_REF',
@@ -519,27 +519,27 @@ gx_methods = {
                    Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
                    Parameter('vert_v_vx', type="VV",
-                             doc="Vertices X (:def_val:`GS_REAL`)"),
+                             doc="Vertices X (:const:`GS_REAL`)"),
                    Parameter('vert_v_vy', type="VV",
-                             doc="Vertices Y (:def_val:`GS_REAL`)"),
+                             doc="Vertices Y (:const:`GS_REAL`)"),
                    Parameter('vert_v_vz', type="VV",
-                             doc="Vertices Z (:def_val:`GS_REAL`)"),
+                             doc="Vertices Z (:const:`GS_REAL`)"),
                    Parameter('norm_v_vx', type="VV",
-                             doc="Normals X (:def_val:`GS_REAL`)"),
+                             doc="Normals X (:const:`GS_REAL`)"),
                    Parameter('norm_v_vy', type="VV",
-                             doc="Normals Y (:def_val:`GS_REAL`)"),
+                             doc="Normals Y (:const:`GS_REAL`)"),
                    Parameter('norm_v_vz', type="VV",
-                             doc="Normals Z (:def_val:`GS_REAL`)"),
+                             doc="Normals Z (:const:`GS_REAL`)"),
                    Parameter('color_vv', type="VV",
-                             doc="Colors :class:`VV` (:def_val:`GS_INT`) [can be NULL]"),
+                             doc="Colors :class:`VV` (:const:`GS_INT`) [can be NULL]"),
                    Parameter('color', type=Type.INT32_T,
                              doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fill color]"),
                    Parameter('tri_vv_pt1', type="VV",
-                             doc="Triangles Point 1 (:def_val:`GS_INT`)"),
+                             doc="Triangles Point 1 (:const:`GS_INT`)"),
                    Parameter('tri_vv_pt2', type="VV",
-                             doc="Triangles Point 2 (:def_val:`GS_INT`)"),
+                             doc="Triangles Point 2 (:const:`GS_INT`)"),
                    Parameter('tri_vv_pt3', type="VV",
-                             doc="Triangles Point 3 (:def_val:`GS_INT`)"),
+                             doc="Triangles Point 3 (:const:`GS_INT`)"),
                    Parameter('ipj', type="IPJ",
                              doc="Native :class:`IPJ` of 3D object")
                ]),
@@ -571,7 +571,7 @@ gx_methods = {
                doc="Get the names of grid files stored in an :class:`AGG`.",
                notes="""
                The group must be an :class:`AGG` group. Check this using
-               :func:`iIsGroup_MVIEW` and :def_val:`MVIEW_IS_AGG`.
+               :func:`iIsGroup_MVIEW` and :const:`MVIEW_IS_AGG`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -580,7 +580,7 @@ gx_methods = {
                    Parameter('group', type=Type.STRING,
                              doc="Group name"),
                    Parameter('vv', type="VV",
-                             doc="Returned string :class:`VV` of type -:def_val:`STR_FILE`")
+                             doc="Returned string :class:`VV` of type -:const:`STR_FILE`")
                ]),
 
         Method('IGetMeta_MVIEW', module='geoengine.map', version='5.1.6',
@@ -872,11 +872,11 @@ gx_methods = {
                notes="""
                Section views are recognized because their projection contains one of the following orientations:
                
-               :def_val:`IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
-               :def_val:`IPJ_ORIENT_SECTION_NORMAL` - Like :def_val:`IPJ_ORIENT_SECTION`, but Z projects
+               :const:`IPJ_ORIENT_SECTION` - Target-type sections with Z projection horizontally
+               :const:`IPJ_ORIENT_SECTION_NORMAL` - Like :const:`IPJ_ORIENT_SECTION`, but Z projects
                perpendicular to the secton plane.
-               :def_val:`IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
-               :def_val:`IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
+               :const:`IPJ_ORIENT_SECTION_CROOKED` - Crooked sections
+               :const:`IPJ_ORIENT_3D` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
                as the voxel can have any orientation in 3D.
                """,
                return_type=Type.INT32_T,
@@ -988,7 +988,7 @@ gx_methods = {
 
         Method('Get3DPointOfView_MVIEW', module='geoengine.map', version='9.2.0',
                availability=Availability.PUBLIC, 
-               doc="Get 3D point of view (values are will be :def_val:`rDUMMY` if view for 2D views)",
+               doc="Get 3D point of view (values are will be :const:`rDUMMY` if view for 2D views)",
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW",
@@ -1670,7 +1670,7 @@ gx_methods = {
                The default value is 0.0.
                Setting an angle of -999 inititates the random angle
                feature, and each pattern tile is rotated to a different
-               angle. Using this along with PatStyle(View, :def_val:`MVIEW_TILE_RANDOM`)
+               angle. Using this along with PatStyle(View, :const:`MVIEW_TILE_RANDOM`)
                can give a "hand-drawn" effect to geological fills.
                
                See the IMPORTANT note for sPatNumber_MVIEW().
@@ -1747,7 +1747,7 @@ gx_methods = {
                doc="Sets the tiling method (i.e. rectangle, triangle)",
                notes="""
                Normally, the unit cell is duplicated across the fill area
-               like floor tiles (:def_val:`MVIEW_TILE_RECTANGULAR`).
+               like floor tiles (:const:`MVIEW_TILE_RECTANGULAR`).
                DIAGONAL tiling rotates the tiling positions (but not the tiles)
                by 45 degrees.
                TRIANGULAR tiling
@@ -2345,7 +2345,7 @@ gx_methods = {
                    Parameter('agg', type="AGG",
                              doc="Aggregate"),
                    Parameter('name', type=Type.STRING,
-                             doc="Aggregate name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
+                             doc="Aggregate name Maximum length is :const:`MVIEW_NAME_LENGTH`")
                ]),
 
         Method('GetAggregate_MVIEW', module='geoengine.map', version='9.2.0',
@@ -2366,7 +2366,7 @@ gx_methods = {
                doc="Change the specified line in a view.",
                notes="""
                The line name can be created by calling LineLabel_DB using
-               :def_val:`DB_LINE_LABEL_FORMAT_LINK`. This insures that the label is
+               :const:`DB_LINE_LABEL_FORMAT_LINK`. This insures that the label is
                created is the same way as used in the database.
                """,
                return_type=Type.VOID,
@@ -2411,7 +2411,7 @@ gx_methods = {
                              doc="View"),
                    Parameter('datalinkd', type="DATALINKD"),
                    Parameter('name', type=Type.STRING,
-                             doc="Name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
+                             doc="Name Maximum length is :const:`MVIEW_NAME_LENGTH`")
                ]),
 
         Method('GetDATALINKD_MVIEW', module='geoengine.map', version='9.2.0',
@@ -2538,7 +2538,7 @@ gx_methods = {
                              doc="View"),
                    Parameter('voxd', type="VOXD"),
                    Parameter('name', type=Type.STRING,
-                             doc="Name Maximum length is :def_val:`MVIEW_NAME_LENGTH`")
+                             doc="Name Maximum length is :const:`MVIEW_NAME_LENGTH`")
                ]),
 
         Method('GetVOXD_MVIEW', module='geoengine.map', version='8.2.0',
@@ -2565,7 +2565,7 @@ gx_methods = {
                              doc="View"),
                    Parameter('vox', type="VOX"),
                    Parameter('group', type=Type.STRING,
-                             doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
+                             doc="View group name Maximum length is :const:`MVIEW_NAME_LENGTH`"),
                    Parameter('itr', type="ITR",
                              doc="Image transform - must contain zones"),
                    Parameter('scale_factor', type=Type.DOUBLE,
@@ -2575,9 +2575,9 @@ gx_methods = {
                    Parameter('max_base_size_ratio', type=Type.DOUBLE,
                              doc="Ratio of maximum base size to minimum horizontal cell size (default 0.25)"),
                    Parameter('cutoff_value', type=Type.DOUBLE,
-                             doc="Cutoff value - do not plot vectors with amplitudes less than this value (:def_val:`rDUMMY` or 0 to plot all)"),
+                             doc="Cutoff value - do not plot vectors with amplitudes less than this value (:const:`rDUMMY` or 0 to plot all)"),
                    Parameter('max_vectors', type=Type.INT32_T,
-                             doc="Maximum number of vectors - decimate as required to reduce (:def_val:`iDUMMY` to plot all)")
+                             doc="Maximum number of vectors - decimate as required to reduce (:const:`iDUMMY` to plot all)")
                ]),
 
         Method('GetVECTOR3D_MVIEW', module='geoengine.map', version='9.3.0',
@@ -2602,7 +2602,7 @@ gx_methods = {
                    Parameter('mview', type="MVIEW",
                              doc="View"),
                    Parameter('group', type=Type.STRING,
-                             doc="View group name Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
+                             doc="View group name Maximum length is :const:`MVIEW_NAME_LENGTH`"),
                    Parameter('vv_x', type="VV",
                              doc="X locations"),
                    Parameter('vv_y', type="VV",
@@ -2860,7 +2860,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Group name"),
                    Parameter('crc', type="CRC",
-                             doc="CRC to start (use :def_val:`CRC_INIT_VALUE`)")
+                             doc="CRC to start (use :const:`CRC_INIT_VALUE`)")
                ]),
 
         Method('DeleteGroup_MVIEW', module='geoengine.map', version='5.1.8',
@@ -3056,7 +3056,7 @@ gx_methods = {
         Method('iRenderOrder_MVIEW', module='geoengine.map', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Query the view render order",
-               notes="Views with lower numbers should render first, :def_val:`iDUMMY` is undefined",
+               notes="Views with lower numbers should render first, :const:`iDUMMY` is undefined",
                return_type=Type.INT32_T,
                return_doc="Render order",
                parameters = [
@@ -3209,7 +3209,7 @@ gx_methods = {
         Method('SetRenderOrder_MVIEW', module='geoengine.map', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Set the view render order",
-               notes="Views with lower numbers should render first, :def_val:`iDUMMY` is undefined",
+               notes="Views with lower numbers should render first, :const:`iDUMMY` is undefined",
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW"),
@@ -3243,7 +3243,7 @@ gx_methods = {
                    Parameter('mview', type="MVIEW",
                              doc=":class:`MVIEW` handle"),
                    Parameter('name', type=Type.STRING,
-                             doc="Group name, can be NULL, Maximum length is :def_val:`MVIEW_NAME_LENGTH`"),
+                             doc="Group name, can be NULL, Maximum length is :const:`MVIEW_NAME_LENGTH`"),
                    Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_GROUP`")
                ]),
@@ -3364,7 +3364,7 @@ gx_methods = {
                doc="Returns North direction at center of view.",
                notes="""
                North is calculated from the :class:`IPJ` North direction.
-               It will be :def_val:`rDUMMY` if :class:`IPJ` is unknown.
+               It will be :const:`rDUMMY` if :class:`IPJ` is unknown.
                """,
                return_type=Type.DOUBLE,
                return_doc="North direction id deg. azimuth relative to view Y.",
@@ -3430,7 +3430,7 @@ gx_methods = {
 
         Method('_GetGroupFreezeScale_MVIEW', module='geoengine.map', version='7.2.0',
                availability=Availability.PUBLIC, 
-               doc="Get a scale freezing value for the group (:def_val:`rDUMMY` for disabled).",
+               doc="Get a scale freezing value for the group (:const:`rDUMMY` for disabled).",
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW",
@@ -3443,7 +3443,7 @@ gx_methods = {
 
         Method('_SetFreezeScale_MVIEW', module='geoengine.map', version='7.2.0',
                availability=Availability.PUBLIC, 
-               doc="Set a scale freezing value into stream (:def_val:`rDUMMY` for disabled).",
+               doc="Set a scale freezing value into stream (:const:`rDUMMY` for disabled).",
                notes="Objects written after this will override any scale freezing set for the group",
                return_type=Type.VOID,
                parameters = [
@@ -3455,7 +3455,7 @@ gx_methods = {
 
         Method('_SetGroupFreezeScale_MVIEW', module='geoengine.map', version='7.2.0',
                availability=Availability.PUBLIC, 
-               doc="Set a scale freezing value for the group (:def_val:`rDUMMY` for disabled).",
+               doc="Set a scale freezing value for the group (:const:`rDUMMY` for disabled).",
                return_type=Type.VOID,
                parameters = [
                    Parameter('mview', type="MVIEW",
@@ -3718,7 +3718,7 @@ gx_methods = {
                    Parameter('map', type="MAP",
                              doc=":class:`MAP` on which to place the view"),
                    Parameter('name', type=Type.STRING,
-                             doc="View name (maximum :def_val:`MVIEW_NAME_LENGTH`)"),
+                             doc="View name (maximum :const:`MVIEW_NAME_LENGTH`)"),
                    Parameter('mode', type=Type.INT32_T,
                              doc=":def:`MVIEW_OPEN`")
                ]),
@@ -3735,7 +3735,7 @@ gx_methods = {
                the crooked feature, beginning at zero on the left, but the
                status bar will show the true (X, Y, Z) location.
                
-               If the scale is set to :def_val:`rDUMMY`, then it will be calculated so that
+               If the scale is set to :const:`rDUMMY`, then it will be calculated so that
                the points will all fit horizontally.
                """,
                return_type="MVIEW",
@@ -3832,13 +3832,13 @@ gx_methods = {
                The CLIP region is the current view window or the limits
                of the current clip polygon.
                
-               If :def_val:`MVIEW_EXTENT_ALL` is requested and the view has no groups, the
+               If :const:`MVIEW_EXTENT_ALL` is requested and the view has no groups, the
                clip extents are returned.
                
                If clip extents are requested and there are no clip extents, an
                area 0.0,0.0 1.0,1.0 is returned.
                
-               The :def_val:`MVIEW_EXTENT_VISIBLE` flag will return the union of the :def_val:`MVIEW_EXTENT_CLIP` area and the
+               The :const:`MVIEW_EXTENT_VISIBLE` flag will return the union of the :const:`MVIEW_EXTENT_CLIP` area and the
                extents of all non-masked visible groups in the view.
                """,
                return_type=Type.VOID,
@@ -4402,7 +4402,7 @@ gx_methods = {
                    Parameter('pagg', type="PAGG",
                              doc="PolyAggregate"),
                    Parameter('name', type=Type.STRING,
-                             doc="PolyAggregate name (Maximum length is :def_val:`MVIEW_NAME_LENGTH`)")
+                             doc="PolyAggregate name (Maximum length is :const:`MVIEW_NAME_LENGTH`)")
                ]),
 
         Method('SetPlaneIPJ_MVIEW', module='geoengine.map', version='5.1.4',
@@ -4463,7 +4463,7 @@ gx_methods = {
                    Parameter('max_y', type=Type.DOUBLE,
                              doc="Max Y of location on map"),
                    Parameter('name', type=Type.STRING,
-                             doc="Surface name (Maximum length is :def_val:`MVIEW_NAME_LENGTH`)")
+                             doc="Surface name (Maximum length is :const:`MVIEW_NAME_LENGTH`)")
                ]),
 
         Method('DrawSurface3D_MVIEW', module='geoengine.map', version='7.0.0',
@@ -4479,27 +4479,27 @@ gx_methods = {
                    Parameter('group_name', type=Type.STRING,
                              doc="Group name"),
                    Parameter('vert_v_vx', type="VV",
-                             doc="Vertices X (:def_val:`GS_REAL`)"),
+                             doc="Vertices X (:const:`GS_REAL`)"),
                    Parameter('vert_v_vy', type="VV",
-                             doc="Vertices Y (:def_val:`GS_REAL`)"),
+                             doc="Vertices Y (:const:`GS_REAL`)"),
                    Parameter('vert_v_vz', type="VV",
-                             doc="Vertices Z (:def_val:`GS_REAL`)"),
+                             doc="Vertices Z (:const:`GS_REAL`)"),
                    Parameter('norm_v_vx', type="VV",
-                             doc="Normals X (:def_val:`GS_REAL`)"),
+                             doc="Normals X (:const:`GS_REAL`)"),
                    Parameter('norm_v_vy', type="VV",
-                             doc="Normals Y (:def_val:`GS_REAL`)"),
+                             doc="Normals Y (:const:`GS_REAL`)"),
                    Parameter('norm_v_vz', type="VV",
-                             doc="Normals Z (:def_val:`GS_REAL`)"),
+                             doc="Normals Z (:const:`GS_REAL`)"),
                    Parameter('color_vv', type="VV",
-                             doc="Colors :class:`VV` (:def_val:`GS_INT`) [can be NULL]"),
+                             doc="Colors :class:`VV` (:const:`GS_INT`) [can be NULL]"),
                    Parameter('color', type=Type.INT32_T,
                              doc="Color used if above :class:`VV` is NULL [0 for :class:`MVIEW`'s fill color]"),
                    Parameter('tri_vv_pt1', type="VV",
-                             doc="Triangles Point 1 (:def_val:`GS_INT`)"),
+                             doc="Triangles Point 1 (:const:`GS_INT`)"),
                    Parameter('tri_vv_pt2', type="VV",
-                             doc="Triangles Point 2 (:def_val:`GS_INT`)"),
+                             doc="Triangles Point 2 (:const:`GS_INT`)"),
                    Parameter('tri_vv_pt3', type="VV",
-                             doc="Triangles Point 3 (:def_val:`GS_INT`)")
+                             doc="Triangles Point 3 (:const:`GS_INT`)")
                ])
     ]
 }

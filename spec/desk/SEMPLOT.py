@@ -424,7 +424,7 @@ gx_methods = {
                     restore the data to the Min/Pos data
                     otherwise set the mask channel to 1.
                
-               Re-entry code. If not :def_val:`iDUMMY`, what to do inside the filter after
+               Re-entry code. If not :const:`iDUMMY`, what to do inside the filter after
                going back in. Returned on exit, used on next input.
                
                 0 - Nothing. Don't need to go back into this function again.
@@ -566,8 +566,8 @@ gx_methods = {
                doc="Create a new XYPlot or TriPlot template.",
                return_type=Type.INT32_T,
                return_doc="""
-               :def_val:`SEMPLOT_PLOT_XYPLOT` or
-               :def_val:`SEMPLOT_PLOT_TRIPLOT`
+               :const:`SEMPLOT_PLOT_XYPLOT` or
+               :const:`SEMPLOT_PLOT_TRIPLOT`
                Terminates if error.
                """,
                parameters = [
@@ -584,7 +584,7 @@ gx_methods = {
                view :class:`REG` for a value for "Components.Type", which will
                be either "XYPlot" or "TriPlot".
                If the view does not appear to be an XYPlot or a TriPlot view,
-               the function returns :def_val:`SEMPLOT_PLOT_UNKNOWN`.
+               the function returns :const:`SEMPLOT_PLOT_UNKNOWN`.
                """,
                return_type=Type.INT32_T,
                return_doc=":def:`SEMPLOT_PLOT`",

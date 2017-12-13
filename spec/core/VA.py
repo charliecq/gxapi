@@ -281,7 +281,7 @@ gx_methods = {
                """,
                return_type=Type.INT32_T,
                return_doc="""
-               Element wanted, :def_val:`rDUMMY`, :def_val:`iDUMMY` or blank string
+               Element wanted, :const:`rDUMMY`, :const:`iDUMMY` or blank string
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
@@ -297,7 +297,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Get a string element from a :class:`VA`.",
                notes="""
-               Returns element wanted, :def_val:`rDUMMY`, :def_val:`iDUMMY` or blank string
+               Returns element wanted, :const:`rDUMMY`, :const:`iDUMMY` or blank string
                if the value is dummy or outside of the range of data.
                
                Type conversions are performed if necessary.  Dummy values
@@ -428,7 +428,7 @@ gx_methods = {
                """,
                return_type=Type.DOUBLE,
                return_doc="""
-               Element wanted, :def_val:`rDUMMY`, :def_val:`iDUMMY` or blank string
+               Element wanted, :const:`rDUMMY`, :const:`iDUMMY` or blank string
                if the value is dummy or outside of the range of data.
                """,
                parameters = [

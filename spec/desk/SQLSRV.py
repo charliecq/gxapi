@@ -15,7 +15,7 @@ gx_defines = [
                Constant('MFCSQL_DRIVER_PROMPT', value='2', type=Type.INT32_T,
                         doc="Always show dialog box, with option to change parameter"),
                Constant('MFCSQL_DRIVER_COMPLETE_REQUIRED', value='3', type=Type.INT32_T,
-                        doc="Same as :def_val:`MFCSQL_DRIVER_COMPLETE` except only missing parameters are editable")
+                        doc="Same as :const:`MFCSQL_DRIVER_COMPLETE` except only missing parameters are editable")
            ])]
 
 

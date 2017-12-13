@@ -76,13 +76,13 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('cond_va', type="VA",
-                             doc="Conductivity :class:`VA`,:def_val:`GS_DOUBLE`"),
+                             doc="Conductivity :class:`VA`,:const:`GS_DOUBLE`"),
                    Parameter('depth_va', type="VA",
-                             doc="Depth :class:`VA`,:def_val:`GS_DOUBLE`"),
+                             doc="Depth :class:`VA`,:const:`GS_DOUBLE`"),
                    Parameter('section', type=Type.DOUBLE,
                              doc="Depth derive TEM section (same unit as Depth :class:`VA`)"),
                    Parameter('out_vv', type="VV",
-                             doc="Returned conductivity at given depth,:def_val:`GS_DOUBLE`")
+                             doc="Returned conductivity at given depth,:const:`GS_DOUBLE`")
                ]),
 
         Method('TotalVector_VAU', module='geogxx', version='5.0.0',

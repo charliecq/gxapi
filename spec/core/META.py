@@ -193,7 +193,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Class Name"),
                    Parameter('ph_class', type="META_TOKEN",
-                             doc="Parent class or :def_val:`META_CORE_CLASS_Base`")
+                             doc="Parent class or :const:`META_CORE_CLASS_Base`")
                ]),
 
         Method('DeleteClass_META', module='geoengine.core', version='5.1.6',
@@ -264,7 +264,7 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="""
                x  - Data Value
-               :def_val:`H_META_INVALID_TOKEN` - No
+               :const:`H_META_INVALID_TOKEN` - No
                """,
                parameters = [
                    Parameter('meta', type="META"),
@@ -430,7 +430,7 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="""
                x                    - Next Item
-               :def_val:`H_META_INVALID_TOKEN` - Error
+               :const:`H_META_INVALID_TOKEN` - Error
                """,
                parameters = [
                    Parameter('meta', type="META",
@@ -447,7 +447,7 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="""
                x                    - Next Item
-               :def_val:`H_META_INVALID_TOKEN` - No more items
+               :const:`H_META_INVALID_TOKEN` - No more items
                """,
                parameters = [
                    Parameter('meta', type="META",
@@ -455,7 +455,7 @@ gx_methods = {
                    Parameter('ph_class', type="META_TOKEN",
                              doc="Class"),
                    Parameter('ph_token', type="META_TOKEN",
-                             doc="Starting Item (must :def_val:`H_META_INVALID_TOKEN` for first item)")
+                             doc="Starting Item (must :const:`H_META_INVALID_TOKEN` for first item)")
                ])
     ],
     'Object': [
@@ -739,7 +739,7 @@ gx_methods = {
                return_type="META_TOKEN",
                return_doc="""
                x                    - Token
-               :def_val:`H_META_INVALID_TOKEN` - Not found
+               :const:`H_META_INVALID_TOKEN` - Not found
                """,
                parameters = [
                    Parameter('meta', type="META"),

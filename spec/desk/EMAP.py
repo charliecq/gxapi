@@ -21,7 +21,7 @@ gx_class = Class('EMAP',
                         map to redraw immediately use :func:`Redraw_EMAP` instead.
                      2. If the final GX calls :func:`Cancel_SYS`, the map redraw is not done. If you
                         need to force a redraw when the user hits cancel use the :func:`Redraw_EMAP` function.
-                     3. You can set the redraw flag to :def_val:`EMAP_REDRAW_YES` or :def_val:`EMAP_REDRAW_NO` at any
+                     3. You can set the redraw flag to :const:`EMAP_REDRAW_YES` or :const:`EMAP_REDRAW_NO` at any
                          time using :func:`SetRedrawFlag_EMAP`. This flag will only be looked at, when
                          the last call to :func:`UnLock_EMAP` occurs and is ignored on a :func:`Cancel_SYS`.
                      4. :func:`Redraw_EMAP` only works if the current map is not locked. It will do nothing
@@ -531,7 +531,7 @@ gx_methods = {
                doc="List all Windows and geosoft fonts.",
                notes="""
                To get TT and GFN fonts, call twice with the same list
-               and :def_val:`EMAP_FONT_TT`, then :def_val:`EMAP_FONT_GFN`, or vice-versa to
+               and :const:`EMAP_FONT_TT`, then :const:`EMAP_FONT_GFN`, or vice-versa to
                change order of listing.
                """,
                return_type=Type.VOID,
@@ -897,7 +897,7 @@ gx_methods = {
         Method('Lock_EMAP', module='None', version='5.0.0',
                availability=Availability.PUBLIC, is_app=True, 
                doc="This method locks the Edited map.",
-               notes="The Redraw flag is set to :def_val:`EMAP_REDRAW_YES` when this functions is called.",
+               notes="The Redraw flag is set to :const:`EMAP_REDRAW_YES` when this functions is called.",
                return_type="MAP",
                return_doc=":class:`EMAP` Object to map associated with edited map.",
                parameters = [
@@ -980,7 +980,7 @@ gx_methods = {
                made to the map.
                
                Typical usage would be to call :func:`Lock_EMAP` followed by
-               :func:`SetRedrawFlag_EMAP` (with def_val:`EMAP_REDRAW_NO`) prior
+               :func:`SetRedrawFlag_EMAP` (with :const:`EMAP_REDRAW_NO`) prior
                to querying information from the map. And then end with a call to
                :func:`UnLock_EMAP`.
                """,
@@ -1114,7 +1114,7 @@ gx_methods = {
                    Parameter('wa', type="WA",
                              doc=":class:`WA` in which to write digitized points"),
                    Parameter('img', type="IMG",
-                             doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
+                             doc=":class:`IMG` for Z value, or :const:`IMG_NULL` for no Z."),
                    Parameter('digits', type=Type.INT32_T,
                              doc="Number of significant digits to use, 0 for all."),
                    Parameter('prompt', type=Type.STRING,
@@ -1157,7 +1157,7 @@ gx_methods = {
                    Parameter('vvz', type="VV",
                              doc="Real Z :class:`VV`"),
                    Parameter('img', type="IMG",
-                             doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
+                             doc=":class:`IMG` for Z value, or :const:`IMG_NULL` for no Z."),
                    Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
                    Parameter('newline', type=Type.INT32_T,
@@ -1190,7 +1190,7 @@ gx_methods = {
                    Parameter('vvz', type="VV",
                              doc="Real Z :class:`VV`"),
                    Parameter('img', type="IMG",
-                             doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
+                             doc=":class:`IMG` for Z value, or :const:`IMG_NULL` for no Z."),
                    Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
                    Parameter('newline', type=Type.INT32_T,
@@ -1222,7 +1222,7 @@ gx_methods = {
                    Parameter('vvz', type="VV",
                              doc="Real Z :class:`VV`"),
                    Parameter('img', type="IMG",
-                             doc=":class:`IMG` for Z value, or :def_val:`IMG_NULL` for no Z."),
+                             doc=":class:`IMG` for Z value, or :const:`IMG_NULL` for no Z."),
                    Parameter('prompt', type=Type.STRING,
                              doc="Command line prompt string"),
                    Parameter('newline', type=Type.INT32_T,
@@ -1296,7 +1296,7 @@ gx_methods = {
                availability=Availability.PUBLIC, is_app=True, 
                doc="Position and size a grid on a map.",
                notes="""
-               If the input angle is :def_val:`rDUMMY`, an extra step is inserted
+               If the input angle is :const:`rDUMMY`, an extra step is inserted
                for the user to define the angle by drawing a line
                with the mouse.
                The output primary axis angle will always be in the
@@ -1879,8 +1879,8 @@ gx_methods = {
                
                If the window is minimized, the max values will be
                equal to the min values. If the window is maximized
-               X Min and Y min will be :def_val:`iMIN` and X max and Y max
-               will be :def_val:`iMAX`.
+               X Min and Y min will be :const:`iMIN` and X max and Y max
+               will be :const:`iMAX`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1904,8 +1904,8 @@ gx_methods = {
                left corner Oasis montaj frame window.
                
                if the max values are equal or less than the min values
-               the window will be mimimized. If any Min values are :def_val:`iMIN`
-               or any Max values are :def_val:`iMAX`, the window is maximized.
+               the window will be mimimized. If any Min values are :const:`iMIN`
+               or any Max values are :const:`iMAX`, the window is maximized.
                """,
                return_type=Type.VOID,
                parameters = [

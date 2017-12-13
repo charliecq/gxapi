@@ -171,9 +171,9 @@ gx_defines = [
                Constant('STR_MULTI_PATH', value='16384', type=Type.INT32_T,
                         doc="Multi-file path (16384)"),
                Constant('GS_MAX_PATH', value='STR_FILE', type=Type.INT32_T,
-                        doc="Same as :def_val:`STR_FILE`"),
+                        doc="Same as :const:`STR_FILE`"),
                Constant('GS_MULTI_PATH', value='STR_MULTI_FILE', type=Type.INT32_T,
-                        doc="Same as :def_val:`STR_MULTI_FILE`")
+                        doc="Same as :const:`STR_MULTI_FILE`")
            ]),
 
     Define('GEO_BOOL',
@@ -268,7 +268,7 @@ gx_defines = [
                Constant('GS_DOUBLE2D', value='13', type=Type.INT32_T,
                         doc="2 x 64-Bit floating point"),
                Constant('GS_MAXTYPE', value='13', type=Type.INT32_T,
-                        doc="Maximum supported type (:def_val:`GS_DOUBLE2D`)"),
+                        doc="Maximum supported type (:const:`GS_DOUBLE2D`)"),
                Constant('GS_TYPE_DEFAULT', value='-32767', type=Type.INT32_T,
                         doc="Default. Can be used only when a method specifically allows a default type.")
            ]),

@@ -249,7 +249,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                Currently channel symbol.
-               :def_val:`NULLSYMB` if the mark is not in a channel.
+               :const:`NULLSYMB` if the mark is not in a channel.
                """,
                parameters = [
                    Parameter('edb', type="EDB")
@@ -261,7 +261,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                Currently displayed line symbol.
-               :def_val:`NULLSYMB` if no line displayed.
+               :const:`NULLSYMB` if no line displayed.
                """,
                parameters = [
                    Parameter('edb', type="EDB")
@@ -316,7 +316,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                The next line symbol of currently displayed line.
-               :def_val:`NULLSYMB` if no line displayed.
+               :const:`NULLSYMB` if no line displayed.
                """,
                parameters = [
                    Parameter('edb', type="EDB")
@@ -328,7 +328,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                The previous line symbol of currently displayed line.
-               :def_val:`NULLSYMB` if no line displayed.
+               :const:`NULLSYMB` if no line displayed.
                """,
                parameters = [
                    Parameter('edb', type="EDB")
@@ -345,7 +345,7 @@ gx_methods = {
                    Parameter('max_x', type=Type.DOUBLE, is_ref=True,
                              doc="Maximum x"),
                    Parameter('ph_chan_x', type="DB_SYMB", is_ref=True,
-                             doc="X axis channel, :def_val:`NULLSYMB` if none")
+                             doc="X axis channel, :const:`NULLSYMB` if none")
                ]),
 
         Method('GetProfileRangeY_EDB', module='None', version='5.0.0',
@@ -355,7 +355,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`iWindowProfiles_EDB` which returns number of profiles in a window)"),
                    Parameter('min_y', type=Type.DOUBLE, is_ref=True,
@@ -433,7 +433,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('x', type=Type.INT32_T, is_ref=True,
                              doc="Window x size in pixels"),
                    Parameter('y', type=Type.INT32_T, is_ref=True,
@@ -600,7 +600,7 @@ gx_methods = {
                return_type=Type.INT32_T,
                return_doc="""
                Column number that contains a specific channel
-               :def_val:`iDUMMY` of channel not loaded
+               :const:`iDUMMY` of channel not loaded
                """,
                parameters = [
                    Parameter('edb', type="EDB",
@@ -812,7 +812,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
                    Parameter('parm', type=Type.INT32_T,
@@ -926,7 +926,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('state', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('chan', type=Type.STRING,
                              doc="Name of the channel")
                ]),
@@ -939,7 +939,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)")
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)")
                ]),
 
         Method('iWindowProfiles_EDB', module='None', version='5.0.0',
@@ -950,7 +950,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)")
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)")
                ]),
 
         Method('LaunchHistogram_EDB', module='geochimera', version='5.0.6',
@@ -1123,7 +1123,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)")
                ]),
@@ -1152,7 +1152,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
                    Parameter('parm', type=Type.INT32_T,
@@ -1236,7 +1236,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
                    Parameter('parm', type=Type.INT32_T,
@@ -1252,7 +1252,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('prof', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
                    Parameter('parm', type=Type.INT32_T,
@@ -1268,11 +1268,11 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('min_x', type=Type.DOUBLE,
-                             doc="Minimum x, :def_val:`rDUMMY` for data minimum"),
+                             doc="Minimum x, :const:`rDUMMY` for data minimum"),
                    Parameter('max_x', type=Type.DOUBLE,
-                             doc="Maximum x, :def_val:`rDUMMY` for data maximum"),
+                             doc="Maximum x, :const:`rDUMMY` for data maximum"),
                    Parameter('x_ch', type="DB_SYMB",
-                             doc="X axis channel, :def_val:`NULLSYMB` to use fids")
+                             doc="X axis channel, :const:`NULLSYMB` to use fids")
                ]),
 
         Method('SetProfileRangeY_EDB', module='None', version='5.0.0',
@@ -1286,7 +1286,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('min_x', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('max_x', type=Type.INT32_T,
                              doc="Profile number in window (see :func:`GetProfileRangeY_EDB`)"),
                    Parameter('min_y', type=Type.DOUBLE,
@@ -1334,7 +1334,7 @@ gx_methods = {
                enter "1,1,1", with a :class:`VV` of length 3, if you want 3 equal profile windows).
                
                :class:`VV` values beyond the maximum number of displayable
-               profiles (:def_val:`MAX_PROF_WND`) are ignored.
+               profiles (:const:`MAX_PROF_WND`) are ignored.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1375,7 +1375,7 @@ gx_methods = {
                parameters = [
                    Parameter('edb', type="EDB"),
                    Parameter('window', type=Type.INT32_T,
-                             doc="Profile window number (0 to :def_val:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
+                             doc="Profile window number (0 to :const:`MAX_PROF_WND`-1, see :func:`iProfileOpen_EDB`)"),
                    Parameter('symb', type="DB_SYMB",
                              doc="Channel symbol")
                ]),
@@ -1449,9 +1449,9 @@ gx_methods = {
                notes="""
                If the database is not loaded, nothing happens.
                The user can be prompted to save before unloading.
-               If :def_val:`EDB_UNLOAD_NO_PROMPT`, data is always saved.
+               If :const:`EDB_UNLOAD_NO_PROMPT`, data is always saved.
                EDB_UNLOAD_MULTIPROMPT is now obsolete and
-               is equivalent to :def_val:`EDB_UNLOAD_SINGLE_PROMPT`.
+               is equivalent to :const:`EDB_UNLOAD_SINGLE_PROMPT`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1538,7 +1538,7 @@ gx_methods = {
                doc="Retrieve view info from the database via a :class:`BF`.",
                notes="""
                Returns info on loaded channels and profiles for a given line.
-               You can use :def_val:`NULLSYMB` to get the line view info from normal lines,
+               You can use :const:`NULLSYMB` to get the line view info from normal lines,
                since the info is the same for all "regular" lines.
                A typical usage would be to call :func:`ReadDataViewBF_EDB` to get view
                info from one database, and then call :func:`WriteDataViewBF_EDB` to
@@ -1561,7 +1561,7 @@ gx_methods = {
                doc="Write the View info from a :class:`BF` into the database.",
                notes="""
                Set info on loaded channels and profiles for a given line.
-               You can use :def_val:`NULLSYMB` to get the line view info from normal lines,
+               You can use :const:`NULLSYMB` to get the line view info from normal lines,
                since the info is the same for all "regular" lines.
                A typical usage would be to call :func:`ReadDataViewBF_EDB` to get view
                info from one database, and then call :func:`WriteDataViewBF_EDB` to
@@ -1587,8 +1587,8 @@ gx_methods = {
                left corner Oasis montaj frame window.
                
                if the max values are equal or less than the min values
-               the window will be mimimized. If any Min values are :def_val:`iMIN`
-               or any Max values are :def_val:`iMAX`, the window is maximized.
+               the window will be mimimized. If any Min values are :const:`iMIN`
+               or any Max values are :const:`iMAX`, the window is maximized.
                
                NOTE: Now Obsolete. Use :func:`SetWindowPosition_EDB`, which includes multi-monitor support.
                """,
@@ -1614,8 +1614,8 @@ gx_methods = {
                
                If the window is minimized, the max values will be
                equal to the min values. If the window is maximized
-               X Min and Y min will be :def_val:`iMIN` and X max and Y max
-               will be :def_val:`iMAX`.
+               X Min and Y min will be :const:`iMIN` and X max and Y max
+               will be :const:`iMAX`.
                
                NOTE: Now Obsolete. Use :func:`GetWindowPosition_EDB`, which includes multi-monitor support.
                """,

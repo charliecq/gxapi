@@ -147,7 +147,7 @@ gx_methods = {
                return_doc="The number of documents listed in the :class:`VV`.",
                parameters = [
                    Parameter('gvv', type="VV",
-                             doc=":class:`VV` of type -:def_val:`STR_FILE`"),
+                             doc=":class:`VV` of type -:const:`STR_FILE`"),
                    Parameter('type', type=Type.STRING,
                              doc="Type of document to obtain")
                ]),
@@ -172,7 +172,7 @@ gx_methods = {
                return_doc="The number of loaded documents listed in the :class:`VV`.",
                parameters = [
                    Parameter('gvv', type="VV",
-                             doc=":class:`VV` of type -:def_val:`STR_FILE`>"),
+                             doc=":class:`VV` of type -:const:`STR_FILE`>"),
                    Parameter('type', type=Type.STRING,
                              doc="Type of document to obtain")
                ]),

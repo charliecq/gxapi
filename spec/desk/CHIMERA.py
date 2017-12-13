@@ -96,7 +96,7 @@ gx_methods = {
                    Parameter('vv_i', type="VV",
                              doc="Input data :class:`VV`.      (REAL)"),
                    Parameter('det_limit', type=Type.DOUBLE,
-                             doc="Detection limit (can be :def_val:`rDUMMY`)"),
+                             doc="Detection limit (can be :const:`rDUMMY`)"),
                    Parameter('vv_o', type="VV",
                              doc="Output (altered) :class:`VV`.(REAL)")
                ]),
@@ -111,7 +111,7 @@ gx_methods = {
                    are replaced by -0.5*value, and detection limit is ignored.
                
                2. If not auto-converting negatives, and the detection limit is not
-                  :def_val:`rDUMMY`, then values less than the detection limit are converted to
+                  :const:`rDUMMY`, then values less than the detection limit are converted to
                   one-half the detection limit.
                """,
                return_type=Type.VOID,
@@ -290,7 +290,7 @@ gx_methods = {
                    Parameter('lst', type="LST",
                              doc="[i] channels of data to get"),
                    Parameter('m_ch', type="DB_SYMB",
-                             doc="[i] mask channel (can be :def_val:`NULLSYMB`)"),
+                             doc="[i] mask channel (can be :const:`NULLSYMB`)"),
                    Parameter('vv_trans', type="VV",
                              doc="[i] transforms to apply"),
                    Parameter('remove_dummy_rows', type=Type.INT32_T,
@@ -508,7 +508,7 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="hDB - Database Object"),
                    Parameter('lst', type="LST",
-                             doc=":class:`LST` object to populate [recommended 2*:def_val:`STR_DB_SYMBOL`]")
+                             doc=":class:`LST` object to populate [recommended 2*:const:`STR_DB_SYMBOL`]")
                ]),
 
         Method('PiePlot_CHIMERA', module='geochimera', version='5.0.7',
@@ -579,7 +579,7 @@ gx_methods = {
                    Parameter('radius', type=Type.DOUBLE,
                              doc="Pie plot radius in data units."),
                    Parameter('start_angle', type=Type.DOUBLE,
-                             doc="Starting angle in degrees CCW from horizontal (:def_val:`rDUMMY` gives 0.0)")
+                             doc="Starting angle in degrees CCW from horizontal (:const:`rDUMMY` gives 0.0)")
                ]),
 
         Method('PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA', module='geochimera', version='8.0.1',
@@ -609,7 +609,7 @@ gx_methods = {
                doc="Return the atomic weight of a particular element.",
                notes="""
                If the input string is not an element symbol (elements in the range
-               1-92, "H" to "U"), then returns a dummy (:def_val:`GS_R8DM`).
+               1-92, "H" to "U"), then returns a dummy (:const:`GS_R8DM`).
                """,
                return_type=Type.DOUBLE,
                return_doc="The atomic weight of the given element.",
@@ -691,7 +691,7 @@ gx_methods = {
                    Parameter('offset_size', type=Type.DOUBLE,
                              doc="Offset symbol size"),
                    Parameter('start_angle', type=Type.DOUBLE,
-                             doc="Starting angle in degrees CCW from horizontal (:def_val:`rDUMMY` gives 0.0)")
+                             doc="Starting angle in degrees CCW from horizontal (:const:`rDUMMY` gives 0.0)")
                ]),
 
         Method('Scatter2_CHIMERA', module='geochimera', version='5.0.7',
@@ -738,7 +738,7 @@ gx_methods = {
                    Parameter('v_units', type=Type.STRING,
                              doc="Vertical channel units"),
                    Parameter('h_min', type=Type.DOUBLE,
-                             doc="Min. Horizontal value, :def_val:`rDUMMY` for default"),
+                             doc="Min. Horizontal value, :const:`rDUMMY` for default"),
                    Parameter('h_max', type=Type.DOUBLE,
                              doc="Max. Horizontal value"),
                    Parameter('v_min', type=Type.DOUBLE,
@@ -826,7 +826,7 @@ gx_methods = {
                    Parameter('y_units', type=Type.STRING,
                              doc="Vertical channel units"),
                    Parameter('x_min', type=Type.DOUBLE,
-                             doc="Min. Horizontal value, :def_val:`rDUMMY` for default"),
+                             doc="Min. Horizontal value, :const:`rDUMMY` for default"),
                    Parameter('x_max', type=Type.DOUBLE,
                              doc="Max. Horizontal value"),
                    Parameter('y_min', type=Type.DOUBLE,
@@ -906,7 +906,7 @@ gx_methods = {
                    Parameter('y_units', type=Type.STRING,
                              doc="Vertical channel units"),
                    Parameter('x_min', type=Type.DOUBLE,
-                             doc="Min. Horizontal value, :def_val:`rDUMMY` for default"),
+                             doc="Min. Horizontal value, :const:`rDUMMY` for default"),
                    Parameter('x_max', type=Type.DOUBLE,
                              doc="Max. Horizontal value"),
                    Parameter('y_min', type=Type.DOUBLE,
@@ -974,7 +974,7 @@ gx_methods = {
                    Parameter('y_units', type=Type.STRING,
                              doc="Vertical channel units"),
                    Parameter('x_min', type=Type.DOUBLE,
-                             doc="Min. Horizontal value, :def_val:`rDUMMY` for default"),
+                             doc="Min. Horizontal value, :const:`rDUMMY` for default"),
                    Parameter('x_max', type=Type.DOUBLE,
                              doc="Max. Horizontal value"),
                    Parameter('y_min', type=Type.DOUBLE,
@@ -1069,7 +1069,7 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Plot ASSAY Standard result in a graph window.",
                notes="""
-               If the tolerance is :def_val:`rDUMMY`, then the minimum and maximum
+               If the tolerance is :const:`rDUMMY`, then the minimum and maximum
                values are used, and must be specified.
                """,
                return_type=Type.VOID,
@@ -1617,7 +1617,7 @@ gx_methods = {
                    Parameter('p22', type=Type.STRING,
                              doc="Vertical channel units"),
                    Parameter('p23', type=Type.DOUBLE,
-                             doc="Min. Horizontal value, :def_val:`rDUMMY` for default"),
+                             doc="Min. Horizontal value, :const:`rDUMMY` for default"),
                    Parameter('p24', type=Type.DOUBLE,
                              doc="Max. Horizontal value"),
                    Parameter('p25', type=Type.DOUBLE,

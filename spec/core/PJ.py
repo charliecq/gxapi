@@ -231,7 +231,7 @@ gx_methods = {
                be in a file with extension .ll2 in the \\etc directory.  The geoid is the
                name of the geoid model which will be in a grid file with extension .grd
                in the \\etc directory.  If the geoid model is missing, this method will
-               return :def_val:`PJ_ELEVATION_NONE` and elevation coordinates will not be changed.
+               return :const:`PJ_ELEVATION_NONE` and elevation coordinates will not be changed.
                """,
                return_type=Type.INT32_T,
                return_doc=":def:`PJ_ELEVATION`",

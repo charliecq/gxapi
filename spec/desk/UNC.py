@@ -67,7 +67,7 @@ gx_methods = {
                High performance method to see if a set of symbols
                are valid in a particular font.
                """,
-               notes="Invalid symbols in the :class:`VV` will be set to -1 by this call. :class:`VV` has to be of type :def_val:`GS_LONG`.",
+               notes="Invalid symbols in the :class:`VV` will be set to -1 by this call. :class:`VV` has to be of type :const:`GS_LONG`.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv', type="VV",

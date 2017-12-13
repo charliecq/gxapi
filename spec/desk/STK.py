@@ -87,7 +87,7 @@ gx_methods = {
         Method('iGetAxisFormat_STK', module='geogxx', version='5.1.5',
                availability=Availability.LICENSED, 
                doc="Get axis number display format.",
-               notes="By default, :def_val:`DB_CHAN_FORMAT_NORMAL`",
+               notes="By default, :const:`DB_CHAN_FORMAT_NORMAL`",
                return_type=Type.INT32_T,
                return_doc="The current format - :def:`DB_CHAN_FORMAT`",
                parameters = [
@@ -509,8 +509,8 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Set axis number display format.",
                notes="""
-               By default, :def_val:`DB_CHAN_FORMAT_NORMAL` is used to display the values,
-               or for values > 1.e7, :def_val:`DB_CHAN_FORMAT_EXP`.
+               By default, :const:`DB_CHAN_FORMAT_NORMAL` is used to display the values,
+               or for values > 1.e7, :const:`DB_CHAN_FORMAT_EXP`.
                """,
                return_type=Type.VOID,
                parameters = [

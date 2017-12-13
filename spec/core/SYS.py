@@ -508,34 +508,34 @@ gx_defines = [
                Constant('TD_BUTTON_NONE', value='1', type=Type.INT32_T,
                         doc="No common buttons."),
                Constant('TD_BUTTON_OK', value='1', type=Type.INT32_T,
-                        doc="Button results in :def_val:`TD_ID_OK` return value."),
+                        doc="Button results in :const:`TD_ID_OK` return value."),
                Constant('TD_BUTTON_YES', value='2', type=Type.INT32_T,
-                        doc="Button results in :def_val:`TD_ID_YES` return value."),
+                        doc="Button results in :const:`TD_ID_YES` return value."),
                Constant('TD_BUTTON_NO', value='4', type=Type.INT32_T,
-                        doc="Button results in :def_val:`TD_ID_NO` return value."),
+                        doc="Button results in :const:`TD_ID_NO` return value."),
                Constant('TD_BUTTON_CANCEL', value='8', type=Type.INT32_T,
-                        doc="Button results in :def_val:`TD_ID_CANCEL` return value."),
+                        doc="Button results in :const:`TD_ID_CANCEL` return value."),
                Constant('TD_BUTTON_RETRY', value='16', type=Type.INT32_T,
-                        doc="Button results in :def_val:`TD_ID_RETRY` return value."),
+                        doc="Button results in :const:`TD_ID_RETRY` return value."),
                Constant('TD_BUTTON_CLOSE', value='32', type=Type.INT32_T,
-                        doc="Button results in :def_val:`TD_ID_CLOSE` return value.")
+                        doc="Button results in :const:`TD_ID_CLOSE` return value.")
            ]),
 
     Define('TD_ID',
            doc="TaskDialog Common Button Return Values",
            constants=[
                Constant('TD_ID_OK', value='1', type=Type.INT32_T,
-                        doc=":def_val:`TD_BUTTON_OK` pressed."),
+                        doc=":const:`TD_BUTTON_OK` pressed."),
                Constant('TD_ID_CANCEL', value='2', type=Type.INT32_T,
-                        doc=":def_val:`TD_BUTTON_CANCEL` pressed."),
+                        doc=":const:`TD_BUTTON_CANCEL` pressed."),
                Constant('TD_ID_RETRY', value='4', type=Type.INT32_T,
-                        doc=":def_val:`TD_BUTTON_RETRY` pressed."),
+                        doc=":const:`TD_BUTTON_RETRY` pressed."),
                Constant('TD_ID_YES', value='6', type=Type.INT32_T,
-                        doc=":def_val:`TD_BUTTON_YES` pressed."),
+                        doc=":const:`TD_BUTTON_YES` pressed."),
                Constant('TD_ID_NO', value='7', type=Type.INT32_T,
-                        doc=":def_val:`TD_BUTTON_NO` pressed."),
+                        doc=":const:`TD_BUTTON_NO` pressed."),
                Constant('TD_ID_CLOSE', value='8', type=Type.INT32_T,
-                        doc=":def_val:`TD_BUTTON_CLOSE` pressed.")
+                        doc=":const:`TD_BUTTON_CLOSE` pressed.")
            ])]
 
 
@@ -1539,7 +1539,7 @@ gx_methods = {
                to a string.
                """,
                return_type=Type.DOUBLE,
-               return_doc="Date in decimal years, :def_val:`rDUMMY` if the file does not exist.",
+               return_doc="Date in decimal years, :const:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File name")
@@ -1553,7 +1553,7 @@ gx_methods = {
                to a string.
                """,
                return_type=Type.DOUBLE,
-               return_doc="Date in decimal hours, :def_val:`rDUMMY` if the file does not exist.",
+               return_doc="Date in decimal hours, :const:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File name")
@@ -1567,7 +1567,7 @@ gx_methods = {
                to a string.
                """,
                return_type=Type.DOUBLE,
-               return_doc="Date in decimal years, :def_val:`rDUMMY` if the file does not exist.",
+               return_doc="Date in decimal years, :const:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File name")
@@ -1581,7 +1581,7 @@ gx_methods = {
                to a string.
                """,
                return_type=Type.DOUBLE,
-               return_doc="Date in decimal hours, :def_val:`rDUMMY` if the file does not exist.",
+               return_doc="Date in decimal hours, :const:`rDUMMY` if the file does not exist.",
                parameters = [
                    Parameter('file', type=Type.STRING,
                              doc="File name")
@@ -2090,7 +2090,7 @@ gx_methods = {
                doc="List all Windows and geosoft fonts.",
                notes="""
                To get TT and GFN fonts, call twice with the same list
-               and :def_val:`SYS_FONT_TT`, then :def_val:`SYS_FONT_GFN`, or vice-versa to
+               and :const:`SYS_FONT_TT`, then :const:`SYS_FONT_GFN`, or vice-versa to
                change order of listing.
                """,
                return_type=Type.VOID,
@@ -2274,7 +2274,7 @@ gx_methods = {
                Gets all the user-definable pattern parameters from
                a specified group. Parameters are:
                "PAT_NUMBER"    0 is solid fill (default)
-               "PAT_SIZE"      pattern tile size in mm. (can return :def_val:`iDUMMY`)
+               "PAT_SIZE"      pattern tile size in mm. (can return :const:`iDUMMY`)
                "PAT_THICKNESS" pattern line thickness in percent of the tile size.
                valid range is 0-100.
                "PAT_DENSITY"   Tile spacing. A value of 1 means tiles are laid with no overlap.
@@ -2382,7 +2382,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method returns an int from the parameter block.",
                return_type=Type.INT32_T,
-               return_doc="Int Value, :def_val:`iDUMMY` if the parameter is not set.",
+               return_doc="Int Value, :const:`iDUMMY` if the parameter is not set.",
                parameters = [
                    Parameter('group', type=Type.STRING,
                              doc="Group Name"),
@@ -2440,7 +2440,7 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="This method returns a real from the parameter block.",
                return_type=Type.DOUBLE,
-               return_doc="Real Value, :def_val:`rDUMMY` if parameter not set.",
+               return_doc="Real Value, :const:`rDUMMY` if parameter not set.",
                parameters = [
                    Parameter('group', type=Type.STRING,
                              doc="Group Name"),
@@ -2512,15 +2512,15 @@ gx_methods = {
                    Parameter('pat', type=Type.INT32_T,
                              doc="Pattern"),
                    Parameter('size', type=Type.DOUBLE,
-                             doc="Size. Input :def_val:`GS_R8DM` to use default"),
+                             doc="Size. Input :const:`GS_R8DM` to use default"),
                    Parameter('thick', type=Type.INT32_T,
-                             doc="Thickness (0-100).  Input :def_val:`GS_S4DM` to use default"),
+                             doc="Thickness (0-100).  Input :const:`GS_S4DM` to use default"),
                    Parameter('dense', type=Type.DOUBLE,
-                             doc="Density. Input :def_val:`GS_R8DM` to use default"),
+                             doc="Density. Input :const:`GS_R8DM` to use default"),
                    Parameter('col', type=Type.INT32_T,
                              doc="Pattern Color"),
                    Parameter('back_col', type=Type.INT32_T,
-                             doc="Background Color. Can be :def_val:`C_TRANSPARENT`")
+                             doc="Background Color. Can be :const:`C_TRANSPARENT`")
                ]),
 
         Method('SetReal_SYS', module='geoengine.core', version='5.0.0',
@@ -3291,7 +3291,7 @@ gx_methods = {
                return_doc="The number of documents listed in the :class:`VV`.",
                parameters = [
                    Parameter('gvv', type="VV",
-                             doc=":class:`VV` of type -:def_val:`STR_FILE`"),
+                             doc=":class:`VV` of type -:const:`STR_FILE`"),
                    Parameter('type', type=Type.INT32_T,
                              doc="DOCUMENT_TYPES")
                ]),

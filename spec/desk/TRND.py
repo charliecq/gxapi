@@ -82,13 +82,13 @@ gx_methods = {
                    Parameter('max_length', type=Type.DOUBLE,
                              doc="Longest join"),
                    Parameter('deflection', type=Type.DOUBLE,
-                             doc="Maximum deflection in join (can be :def_val:`rDUMMY`)"),
+                             doc="Maximum deflection in join (can be :const:`rDUMMY`)"),
                    Parameter('min_length', type=Type.DOUBLE,
-                             doc="Minimum length for trend lines (can be :def_val:`rDUMMY`)"),
+                             doc="Minimum length for trend lines (can be :const:`rDUMMY`)"),
                    Parameter('resample', type=Type.DOUBLE,
-                             doc="Resampling distance (can be :def_val:`rDUMMY`)"),
+                             doc="Resampling distance (can be :const:`rDUMMY`)"),
                    Parameter('br_angle', type=Type.DOUBLE,
-                             doc="Breaking angle, degrees CCW from X (can be :def_val:`rDUMMY`)")
+                             doc="Breaking angle, degrees CCW from X (can be :const:`rDUMMY`)")
                ])
     ]
 }

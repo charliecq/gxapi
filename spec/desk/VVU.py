@@ -29,7 +29,7 @@ gx_defines = [
            doc="Duplicate handling mode",
            constants=[
                Constant('VV_DUP_AVERAGE', value='0', type=Type.INT32_T,
-                        doc="Average numeric values (for strings, same as :def_val:`VV_DUP_1`)"),
+                        doc="Average numeric values (for strings, same as :const:`VV_DUP_1`)"),
                Constant('VV_DUP_1', value='1', type=Type.INT32_T,
                         doc="Use first value of the pair"),
                Constant('VV_DUP_2', value='2', type=Type.INT32_T,
@@ -315,9 +315,9 @@ gx_methods = {
                    Parameter('vv', type="VV",
                              doc=":class:`VV` to clip"),
                    Parameter('min', type=Type.DOUBLE,
-                             doc="Minimum value, :def_val:`rDUMMY` for no minimum clip"),
+                             doc="Minimum value, :const:`rDUMMY` for no minimum clip"),
                    Parameter('max', type=Type.DOUBLE,
-                             doc="Maximum value, :def_val:`rDUMMY` for no maximum clip"),
+                             doc="Maximum value, :const:`rDUMMY` for no maximum clip"),
                    Parameter('clip', type=Type.INT32_T,
                              doc=":def:`VVU_CLIP`")
                ]),
@@ -332,7 +332,7 @@ gx_methods = {
                    are replaced by -0.5*value, and detection limit is ignored.
                
                2. If not auto-converting negatives, and the detection limit is not
-                  :def_val:`rDUMMY`, then values less than the detection limit are converted to
+                  :const:`rDUMMY`, then values less than the detection limit are converted to
                   one-half the detection limit.
                
                This function is identical to :func:`ClipToDetectLimit_CHIMERA`.
@@ -412,7 +412,7 @@ gx_methods = {
                    Parameter('x2', type=Type.DOUBLE,
                              doc="X of 2nd point or line azimuth in degrees (North is 0 degree)"),
                    Parameter('y2', type=Type.DOUBLE,
-                             doc="Y of 2nd point or :def_val:`GS_R8DM` if line azimuth is defined"),
+                             doc="Y of 2nd point or :const:`GS_R8DM` if line azimuth is defined"),
                    Parameter('line', type=Type.INT32_T,
                              doc=":def:`VVU_LINE`")
                ]),
@@ -445,7 +445,7 @@ gx_methods = {
                distance element is the distance of the corresponding
                (X,Y) element and the previous element.
                """,
-               notes="The fist distace element is :def_val:`rDUMMY`.",
+               notes="The fist distace element is :const:`rDUMMY`.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv_x', type="VV",
@@ -643,7 +643,7 @@ gx_methods = {
                This is a much more efficient way of determining if items in
                one :class:`VV` are found in a second, than by searching
                repeatedly in a loop.
-               The returned :def_val:`GS_LONG` :class:`VV` contains the same number of items as
+               The returned :const:`GS_LONG` :class:`VV` contains the same number of items as
                the "search items" :class:`VV`, and contains -1 for items where the
                value is not found, and the index of items that are found.
                Comparisons are case-tolerant.
@@ -666,7 +666,7 @@ gx_methods = {
                    Parameter('pis_case_tolerant', type=Type.INT32_T,
                              doc="Case tolerance for string comparisons"),
                    Parameter('vv_i', type="VV",
-                             doc=":def_val:`GS_LONG` :class:`VV` of returned indices into the first :class:`LST`.")
+                             doc=":const:`GS_LONG` :class:`VV` of returned indices into the first :class:`LST`.")
                ]),
 
         Method('FractalFilter_VVU', module='geogxx', version='6.0.0',
@@ -870,13 +870,13 @@ gx_methods = {
                return_doc="1 if error, 0 if successful",
                parameters = [
                    Parameter('vvx', type="VV",
-                             doc="Input/output X :class:`VV` on which to operate Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input/output X :class:`VV` on which to operate Required in :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('vvy', type="VV",
-                             doc="Input/output Y :class:`VV` on which to operate In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input/output Y :class:`VV` on which to operate In :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('vvf', type="VV",
-                             doc="Input Flag :class:`VV` Required in :def_val:`GS_BYTE`"),
+                             doc="Input Flag :class:`VV` Required in :const:`GS_BYTE`"),
                    Parameter('vvd', type="VV",
-                             doc="Input Gap :class:`VV` to use for locating the fill inline segments In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input Gap :class:`VV` to use for locating the fill inline segments In :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('dist', type=Type.DOUBLE,
                              doc="Min segment length  (required)")
                ]),
@@ -889,7 +889,7 @@ gx_methods = {
                of the data. Returns index of first item matching
                the input string.
                If start index is -1 or dummy, then full :class:`VV` is searched.
-               Use :def_val:`VVU_MATCH_INPUT_LENGTH` to match the first part of a string.
+               Use :const:`VVU_MATCH_INPUT_LENGTH` to match the first part of a string.
                This is also recommended for matching numerical values, since
                the displayed value in the database may not be the same as the
                stored value.
@@ -985,9 +985,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv_i', type="VV",
-                             doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input :class:`VV` on which to apply quality control Required in :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('vv_f', type="VV",
-                             doc="Output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
+                             doc="Output flag :class:`VV` with result 0 and 1. Required in :const:`GS_BYTE`"),
                    Parameter('all_tol', type=Type.DOUBLE,
                              doc="Allowed deviation over a number of data points in input :class:`VV` (next parameter). Must be >= 0.0"),
                    Parameter('num', type=Type.INT32_T,
@@ -1014,9 +1014,9 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv_i', type="VV",
-                             doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input :class:`VV` on which to apply quality control Required in :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('vv_f', type="VV",
-                             doc="Output flag :class:`VV` with result 0 and 1. Required in :def_val:`GS_BYTE`"),
+                             doc="Output flag :class:`VV` with result 0 and 1. Required in :const:`GS_BYTE`"),
                    Parameter('vv_d', type="VV",
                              doc="Output maximum deviation :class:`VV`."),
                    Parameter('all_tol', type=Type.DOUBLE,
@@ -1163,7 +1163,7 @@ gx_methods = {
                    Parameter('azimuth', type=Type.DOUBLE,
                              doc="Offset azimuth (degrees counter-clockwise from straight ahead)"),
                    Parameter('interval', type=Type.DOUBLE,
-                             doc="Averaging interval - :def_val:`rDUMMY` for default"),
+                             doc="Averaging interval - :const:`rDUMMY` for default"),
                    Parameter('vv_xo', type="VV",
                              doc="Output X"),
                    Parameter('vv_yo', type="VV",
@@ -1216,7 +1216,7 @@ gx_methods = {
                    Parameter('z_off', type=Type.DOUBLE,
                              doc="Vertical Offset (+ve up)"),
                    Parameter('interval', type=Type.DOUBLE,
-                             doc="Sampling interval - :def_val:`rDUMMY` for default"),
+                             doc="Sampling interval - :const:`rDUMMY` for default"),
                    Parameter('v_vxo', type="VV",
                              doc="Output X"),
                    Parameter('v_vyo', type="VV",
@@ -1460,19 +1460,19 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv_i', type="VV",
-                             doc="Input :class:`VV` on which to apply quality control Required in :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Input :class:`VV` on which to apply quality control Required in :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('vv_d', type="VV",
-                             doc="Distance :class:`VV` (NULL if criterion #2 does not apply). In :def_val:`GS_DOUBLE` or :def_val:`GS_FLOAT`"),
+                             doc="Distance :class:`VV` (NULL if criterion #2 does not apply). In :const:`GS_DOUBLE` or :const:`GS_FLOAT`"),
                    Parameter('v_vf', type="VV",
-                             doc="Output flag :class:`VV` with result 0,1,2,3,-1,-2,-3. Required in :def_val:`GS_BYTE`"),
+                             doc="Output flag :class:`VV` with result 0,1,2,3,-1,-2,-3. Required in :const:`GS_BYTE`"),
                    Parameter('nominal', type=Type.DOUBLE,
-                             doc="Nominal reading  (required, must not be :def_val:`GS_R8DM`)"),
+                             doc="Nominal reading  (required, must not be :const:`GS_R8DM`)"),
                    Parameter('max_tol', type=Type.DOUBLE,
-                             doc="Maximum tolerance/deviation applied to a single reading (criterion #1). :def_val:`GS_R8DM` if criterion #1 does not apply. Otherwise, must be positive value including 0.0"),
+                             doc="Maximum tolerance/deviation applied to a single reading (criterion #1). :const:`GS_R8DM` if criterion #1 does not apply. Otherwise, must be positive value including 0.0"),
                    Parameter('all_tol', type=Type.DOUBLE,
-                             doc="Allowed tolerance/deviation over a given distance (next parameter) (criterion #2). :def_val:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value including 0.0"),
+                             doc="Allowed tolerance/deviation over a given distance (next parameter) (criterion #2). :const:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value including 0.0"),
                    Parameter('dist', type=Type.DOUBLE,
-                             doc="The specified distance. :def_val:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0"),
+                             doc="The specified distance. :const:`GS_R8DM` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0"),
                    Parameter('qc', type=Type.INT32_T,
                              doc=":def:`QC_CRITERION`")
                ]),
@@ -1942,7 +1942,7 @@ gx_methods = {
                    Parameter('azimuth', type=Type.DOUBLE,
                              doc="XYOffset azimuth (degrees clockwise from straight ahead)"),
                    Parameter('interval', type=Type.DOUBLE,
-                             doc="Averaging interval - :def_val:`rDUMMY` for default"),
+                             doc="Averaging interval - :const:`rDUMMY` for default"),
                    Parameter('vv_roll', type="VV",
                              doc="Roll"),
                    Parameter('vv_pitch', type="VV",

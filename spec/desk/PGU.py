@@ -220,7 +220,7 @@ gx_methods = {
                    Parameter('fl_roll_wt', type=Type.INT32_T,
                              doc="Roll off weighting option: 1 - linear, 2 - square"),
                    Parameter('fl_roll_base', type=Type.DOUBLE,
-                             doc="dRollBase - the value to roll off to, :def_val:`GS_R8DM` for roll off to mean value line by line."),
+                             doc="dRollBase - the value to roll off to, :const:`GS_R8DM` for roll off to mean value line by line."),
                    Parameter('fl_roll_dist', type=Type.INT32_T,
                              doc="lRollDist - (at unit of cell dist.) for roll-off. 0 for no roll of, -1 for the default: 2 times of min. dummy edge dim."),
                    Parameter('fl_mxf', type=Type.INT32_T,
@@ -291,7 +291,7 @@ gx_methods = {
                doc="Pick grid peaks.",
                notes="""
                Blakey test limit defines how grid peaks are to be found.
-               For example, with the :def_val:`BLAKEY_TEST_ONESIDE`, a grid
+               For example, with the :const:`BLAKEY_TEST_ONESIDE`, a grid
                point will be picked if its grid value is greater than
                the value of one or more of its four neighouring points.
                """,
@@ -358,8 +358,8 @@ gx_methods = {
                SEARCH_RADIUS: Distance weighting limit (default = 4 * SQRT(DX*DY))
                BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * SQRT(DX*DY))
                LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
-               LOG_BASE: One of :def_val:`VV_LOG_BASE_10` (default) or :def_val:`VV_LOG_BASE_E`
-               LOG_NEGATIVE: One of :def_val:`VV_LOG_NEGATIVE_NO` (default) or :def_val:`VV_LOG_NEGATIVE_YES`
+               LOG_BASE: One of :const:`VV_LOG_BASE_10` (default) or :const:`VV_LOG_BASE_E`
+               LOG_NEGATIVE: One of :const:`VV_LOG_NEGATIVE_NO` (default) or :const:`VV_LOG_NEGATIVE_YES`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -398,8 +398,8 @@ gx_methods = {
                SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
                BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))
                LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
-               LOG_BASE: One of :def_val:`VV_LOG_BASE_10` (default) or :def_val:`VV_LOG_BASE_E`
-               LOG_NEGATIVE: One of :def_val:`VV_LOG_NEGATIVE_NO` (default) or :def_val:`VV_LOG_NEGATIVE_YES`
+               LOG_BASE: One of :const:`VV_LOG_BASE_10` (default) or :const:`VV_LOG_BASE_E`
+               LOG_NEGATIVE: One of :const:`VV_LOG_NEGATIVE_NO` (default) or :const:`VV_LOG_NEGATIVE_YES`
                """,
                return_type=Type.VOID,
                parameters = [
@@ -576,7 +576,7 @@ gx_methods = {
                the output :class:`PG` using the indices in the index :class:`PG`.
                
                This function is useful when converting a thematic voxel, which is
-               type :def_val:`GS_LONG` and contains indices into its own internal :class:`TPAT`
+               type :const:`GS_LONG` and contains indices into its own internal :class:`TPAT`
                object, and you provide a numeric mapping :class:`VV`, calculated using
                SetupTranslateToNumericVV_TPAT.
                """,
@@ -680,7 +680,7 @@ gx_methods = {
                This is an "in-place" operation, and set up so that the input and
                output pagers may be the same handle. (If they are different, the
                input pager remains unchanged).
-               Pagers and VVs must be type :def_val:`GS_DOUBLE`.
+               Pagers and VVs must be type :const:`GS_DOUBLE`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -715,7 +715,7 @@ gx_methods = {
                of the matrix a
                The LU decomposition and the permutation vector are obtained
                from :func:`LUBackSub_PGU`.
-               Pagers and VVs must be type :def_val:`GS_DOUBLE` except for the permutation vector,
+               Pagers and VVs must be type :const:`GS_DOUBLE` except for the permutation vector,
                which should be INT
                """,
                return_type=Type.VOID,
@@ -743,7 +743,7 @@ gx_methods = {
                input pager remains unchanged).
                The LU decomposition, and the permutation vector are used for
                :func:`LUBackSub_PGU`.
-               Pagers must be type :def_val:`GS_DOUBLE` and the permutation vector type INT
+               Pagers must be type :const:`GS_DOUBLE` and the permutation vector type INT
                """,
                return_type=Type.VOID,
                parameters = [
@@ -786,12 +786,12 @@ gx_methods = {
                notes="""
                The matrix is input as an M rows (data) by N columns (variables) :class:`PG`.
                The vector must be of length N. The output :class:`VV` is set to length M.
-               The :class:`PG` and VVs must be type :def_val:`GS_DOUBLE`.
+               The :class:`PG` and VVs must be type :const:`GS_DOUBLE`.
                
                Terminates if: 
                
                     Matrices, :class:`VV` are not expected sizes (taken from U)
-                    PGs are not :def_val:`GS_DOUBLE`.
+                    PGs are not :const:`GS_DOUBLE`.
 
                Dummies are treated as 0 values.
                """,
@@ -816,13 +816,13 @@ gx_methods = {
                The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W :class:`VV`
                is set by sSVD_PGU to N.
                
-               The Pagers must be type :def_val:`GS_DOUBLE`.
+               The Pagers must be type :const:`GS_DOUBLE`.
                
                Terminates if: 
                
                     U is not M by N. (Taken from size of A)
                     V is not N by N. (Taken from #columns in A).
-                    PGs, VV are not :def_val:`GS_DOUBLE`
+                    PGs, VV are not :const:`GS_DOUBLE`
 
                """,
                return_type=Type.VOID,
@@ -847,13 +847,13 @@ gx_methods = {
                "A" :class:`PG` with rows of zero values.
                The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W :class:`VV`
                is set by sSVDecompose_PGU to N.
-               The Pagers must be type :def_val:`GS_DOUBLE`.
+               The Pagers must be type :const:`GS_DOUBLE`.
                
                Terminates if: 
                     
                     U is not M by N. (Taken from size of A)
                     V is not N by N. (Taken from #columns in A).
-                    PGs, VV are not :def_val:`GS_DOUBLE`.
+                    PGs, VV are not :const:`GS_DOUBLE`.
 
                Dummies are treated as 0 values.
                """,
@@ -879,7 +879,7 @@ gx_methods = {
                notes="""
                Calculate communalities (sums of the squares of the column
                values in each row)
-               Pagers and VVs must be type :def_val:`GS_DOUBLE`.
+               Pagers and VVs must be type :const:`GS_DOUBLE`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -900,7 +900,7 @@ gx_methods = {
                by descending eigenvalues, scaled by the square root of the
                eigenvalues. The returned pager must be sized the same as the
                input pager.
-               Correlations are performed using ":def_val:`PGU_CORR_SIMPLE`", so if you want
+               Correlations are performed using ":const:`PGU_CORR_SIMPLE`", so if you want
                Pearson correlations, or wish to use a modified correlation matrix,
                use :func:`PCLoadings2_PGU` and input the correlation matrix directly.
                """,
@@ -934,7 +934,7 @@ gx_methods = {
                principal component loadings (see :func:`PCLoadings_PGU`).
                The loadings must be input, and can be calculated by calling
                :func:`PCLoadings_PGU`.
-               Pagers and VVs must be type :def_val:`GS_DOUBLE`.
+               Pagers and VVs must be type :const:`GS_DOUBLE`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1022,7 +1022,7 @@ gx_methods = {
                scheme to move move each factor axis to positions so that
                projections from each variable on the factor axes are either
                near the extremities or near the origin.
-               Pagers must be type :def_val:`GS_DOUBLE`.
+               Pagers must be type :const:`GS_DOUBLE`.
                """,
                return_type=Type.VOID,
                parameters = [

@@ -158,7 +158,7 @@ gx_defines = [
                Constant('MVU_FLIGHT_DIRECTION', value='8', type=Type.INT32_T,
                         doc="""
                         To add '>' to label to indicate direction, for example:
-                        :def_val:`MVU_FLIGHT_LOCATE_END`+:def_val:`MVU_FLIGHT_DIRECTION`
+                        :const:`MVU_FLIGHT_LOCATE_END`+:const:`MVU_FLIGHT_DIRECTION`
                         """)
            ]),
 
@@ -250,9 +250,9 @@ gx_methods = {
                notes="""
                The locations are given in two VVs, and the directions
                in the two others. A wide range of sizes are available.
-               If the scaling is set to :def_val:`rDUMMY`, then arrows are automatically
+               If the scaling is set to :const:`rDUMMY`, then arrows are automatically
                scaled so the largest is 1cm in length.
-               If the line thickness is set to :def_val:`rDUMMY`, the line thickness scales
+               If the line thickness is set to :const:`rDUMMY`, the line thickness scales
                with the arrow size, and is 1/20 of the vector length.
                """,
                return_type=Type.VOID,
@@ -633,7 +633,7 @@ gx_methods = {
                notes="""
                To allow for expansion, all parameters are passed inside the :class:`REG` object.
                
-               BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = :def_val:`MVU_ORIENTATION_VERTICAL`)
+               BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = :const:`MVU_ORIENTATION_VERTICAL`)
                DECIMALS					decimals in plotted values (see sFormatStr_GS for rules) (DEFAULT = 1)
                ANNOFF						annotation offset from bar (+/- determines side of the bar left/right and below/above)
                BOX_SIZE               box height (mm) (width for horizontal color bar) (DEFAULT = 4)
@@ -645,7 +645,7 @@ gx_methods = {
                X								X location	(REQUIRED)
                Y								Y location	(REQUIRED)
                POST_MAXMIN            Post limit values at ends of the bar (0 or 1)? (DEFAULT = 0)
-               DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = :def_val:`MVU_DIVISION_STYLE_LINES`)
+               DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = :const:`MVU_DIVISION_STYLE_LINES`)
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1402,7 +1402,7 @@ gx_methods = {
                    Parameter('file', type=Type.STRING,
                              doc="GOCAD file name"),
                    Parameter('col', type=Type.INT32_T,
-                             doc="Color to plot (:def_val:`C_TRANSPARENT` to use file-defined color).")
+                             doc="Color to plot (:const:`C_TRANSPARENT` to use file-defined color).")
                ]),
 
         Method('LoadPlot_MVU', module='geoengine.map', version='5.0.0',
@@ -1776,7 +1776,7 @@ gx_methods = {
                    Parameter('base', type=Type.DOUBLE,
                              doc="Base to remove, default is 0.0"),
                    Parameter('min_detect', type=Type.DOUBLE,
-                             doc="Detection limit, can be :def_val:`GS_R8DM`"),
+                             doc="Detection limit, can be :const:`GS_R8DM`"),
                    Parameter('size', type=Type.INT32_T,
                              doc="Numb Size"),
                    Parameter('format', type=Type.INT32_T,
@@ -1868,7 +1868,7 @@ gx_methods = {
                    Parameter('gap', type=Type.DOUBLE,
                              doc="Maximum gap in data to span (view units)"),
                    Parameter('base', type=Type.DOUBLE,
-                             doc="Z profile base, :def_val:`rDUMMY` to use data minimum"),
+                             doc="Z profile base, :const:`rDUMMY` to use data minimum"),
                    Parameter('scale', type=Type.DOUBLE,
                              doc="Z scale in view units/Z unit"),
                    Parameter('join', type=Type.INT32_T,
@@ -1896,7 +1896,7 @@ gx_methods = {
                    Parameter('gap', type=Type.DOUBLE,
                              doc="Maximum gap in data to span (view units)"),
                    Parameter('base', type=Type.DOUBLE,
-                             doc="Z profile base, :def_val:`rDUMMY` to use data minimum"),
+                             doc="Z profile base, :const:`rDUMMY` to use data minimum"),
                    Parameter('scale', type=Type.DOUBLE,
                              doc="Z scale in view units/Z unit"),
                    Parameter('join', type=Type.INT32_T,
@@ -1975,7 +1975,7 @@ gx_methods = {
                doc="Draws symbols with an offset and against a flag channel",
                notes="""
                Symbols are not plotted for positions where the flag :class:`VV`
-               value is 0 or :def_val:`iDUMMY`.
+               value is 0 or :const:`iDUMMY`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -2061,7 +2061,7 @@ gx_methods = {
                    Parameter('mt_mod', type=Type.DOUBLE,
                              doc="Major tick modulus on station vv"),
                    Parameter('gap', type=Type.DOUBLE,
-                             doc="Maximum gap to span; set to 0 or :def_val:`rDUMMY` to ignore all gaps.")
+                             doc="Maximum gap to span; set to 0 or :const:`rDUMMY` to ignore all gaps.")
                ]),
 
         Method('TrndPath_MVU', module='geoengine.map', version='5.0.0',
@@ -2261,7 +2261,7 @@ gx_methods = {
                    Parameter('p17', type=Type.STRING,
                              doc="Vertical channel units"),
                    Parameter('p18', type=Type.DOUBLE,
-                             doc="Min. Horizontal value, :def_val:`rDUMMY` for default"),
+                             doc="Min. Horizontal value, :const:`rDUMMY` for default"),
                    Parameter('p19', type=Type.DOUBLE,
                              doc="Max. Horizontal value"),
                    Parameter('p20', type=Type.DOUBLE,

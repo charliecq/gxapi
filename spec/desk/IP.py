@@ -776,9 +776,9 @@ gx_methods = {
                    Parameter('wts', type=Type.STRING,
                              doc="The Fraser Filter weights"),
                    Parameter('stn1', type=Type.DOUBLE,
-                             doc="First Station position (:def_val:`rDUMMY` for default)"),
+                             doc="First Station position (:const:`rDUMMY` for default)"),
                    Parameter('stn2', type=Type.DOUBLE,
-                             doc="Last Station position  (:def_val:`rDUMMY` for default)"),
+                             doc="Last Station position  (:const:`rDUMMY` for default)"),
                    Parameter('max_n', type=Type.INT32_T,
                              doc="Maximum n spacing")
                ]),
@@ -808,9 +808,9 @@ gx_methods = {
                    Parameter('wts', type=Type.STRING,
                              doc="The Fraser Filter weights"),
                    Parameter('stn1', type=Type.DOUBLE,
-                             doc="First Station position (:def_val:`rDUMMY` for default)"),
+                             doc="First Station position (:const:`rDUMMY` for default)"),
                    Parameter('stn2', type=Type.DOUBLE,
-                             doc="Last Station position  (:def_val:`rDUMMY` for default)"),
+                             doc="Last Station position  (:const:`rDUMMY` for default)"),
                    Parameter('max_n', type=Type.INT32_T,
                              doc="Maximum n spacing"),
                    Parameter('dir', type=Type.STRING,
@@ -882,11 +882,11 @@ gx_methods = {
                    Parameter('line', type=Type.STRING,
                              doc="Line name"),
                    Parameter('x_min', type=Type.DOUBLE,
-                             doc='Starting "X" (station) value (:def_val:`rDUMMY` for default)'),
+                             doc='Starting "X" (station) value (:const:`rDUMMY` for default)'),
                    Parameter('x_max', type=Type.DOUBLE,
-                             doc='Ending "X" (station) value (:def_val:`rDUMMY` for default)'),
+                             doc='Ending "X" (station) value (:const:`rDUMMY` for default)'),
                    Parameter('x_inc', type=Type.DOUBLE,
-                             doc='"X" increment along the line (:def_val:`rDUMMY` for default = half "A" separation)'),
+                             doc='"X" increment along the line (:const:`rDUMMY` for default = half "A" separation)'),
                    Parameter('vv', type="VV",
                              doc="Returned topography values")
                ]),
@@ -1232,7 +1232,7 @@ gx_methods = {
                    Parameter('scale', type=Type.INT32_T,
                              doc=":def:`IP_STNSCALE`"),
                    Parameter('mult', type=Type.DOUBLE,
-                             doc="Line, station multiplier (for :def_val:`IP_STNSCALE_VALUE`)")
+                             doc="Line, station multiplier (for :const:`IP_STNSCALE_VALUE`)")
                ]),
 
         Method('ImportZongeFLD_IP', module='geogxx', version='5.0.0',
@@ -1254,7 +1254,7 @@ gx_methods = {
                    Parameter('scale', type=Type.INT32_T,
                              doc=":def:`IP_STNSCALE`"),
                    Parameter('mult', type=Type.DOUBLE,
-                             doc="Line, station multiplier (for :def_val:`IP_STNSCALE_VALUE`)")
+                             doc="Line, station multiplier (for :const:`IP_STNSCALE_VALUE`)")
                ]),
 
         Method('NewXYDatabase_IP', module='geogxx', version='5.0.0',
@@ -1636,7 +1636,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="""
                The A-Spacing value. If there are multiple A-Spacings, the base or smallest value.
-               				 This value could be :def_val:`rDUMMY` for some arrays (such as 3D) where no A-Spacing is explicitly defined.
+               				 This value could be :const:`rDUMMY` for some arrays (such as 3D) where no A-Spacing is explicitly defined.
                """,
                parameters = [
                    Parameter('ip', type="IP",
@@ -1710,7 +1710,7 @@ gx_methods = {
                    Parameter('v_vm2', type="VV",
                              doc='Resistivity QC channel values ("QC_RES")'),
                    Parameter('v_vlines', type="VV",
-                             doc="Line symbol values (:def_val:`GS_INT`)")
+                             doc="Line symbol values (:const:`GS_INT`)")
                ]),
 
         Method('SetElectrodeMaskValues_IP', module='geogxx', version='9.0.0',
@@ -1769,7 +1769,7 @@ gx_methods = {
                For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
                """,
                return_type="DB_SYMB",
-               return_doc="Channel handle,  :def_val:`NULLSYMB` if not found",
+               return_doc="Channel handle,  :const:`NULLSYMB` if not found",
                parameters = [
                    Parameter('db', type="DB",
                              doc=":class:`DB` object"),
@@ -1778,7 +1778,7 @@ gx_methods = {
                    Parameter('chan', type=Type.STRING, is_ref=True, size_of_param='size',
                              doc="String to place name into"),
                    Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
-                             doc="Maximum length of string, should be :def_val:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
+                             doc="Maximum length of string, should be :const:`DB_SYMB_NAME_SIZE` to hold all possible channel names.")
                ]),
 
         Method('LocateContributingElectrodes_IP', module='geogxx', version='9.4.0',

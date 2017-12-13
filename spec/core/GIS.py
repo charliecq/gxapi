@@ -73,7 +73,7 @@ gx_methods = {
                    Parameter('map', type=Type.STRING,
                              doc="Map name"),
                    Parameter('map_scale', type=Type.DOUBLE,
-                             doc="Map scale (can be :def_val:`rDUMMY`)"),
+                             doc="Map scale (can be :const:`rDUMMY`)"),
                    Parameter('ipj', type="IPJ",
                              doc="Projection (no orientation)"),
                    Parameter('map2_d', type=Type.INT32_T,
@@ -255,7 +255,7 @@ gx_methods = {
                doc="Returns TRUE if an ArcView :class:`SHP` file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ",
                notes="""
                :class:`SHP` files come in 2D and 3D forms.
-               Fails if not :def_val:`GIS_TYPE_ARCVIEW`.
+               Fails if not :const:`GIS_TYPE_ARCVIEW`.
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -270,7 +270,7 @@ gx_methods = {
         Method('iIsSHPFilePoint_GIS', module='geoengine.interoperability', version='7.1.0',
                availability=Availability.PUBLIC, 
                doc="Returns TRUE if an ArcView :class:`SHP` file is type POINT or POINTZ",
-               notes="Fails if not :def_val:`GIS_TYPE_ARCVIEW`.",
+               notes="Fails if not :const:`GIS_TYPE_ARCVIEW`.",
                return_type=Type.INT32_T,
                return_doc="""
                0 if the :class:`SHP` file is not points

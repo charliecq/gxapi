@@ -59,13 +59,13 @@ gx_methods = {
                
                Type                    Required geometry function.
                
-               :def_val:`SHP_GEOM_TYPE_POINT`     :func:`SetPoint_SHP`
-               :def_val:`SHP_GEOM_TYPE_ARC`       :func:`SetArc_SHP`
-               :def_val:`SHP_GEOM_TYPE_POLYGON`   :func:`SetPolygon_SHP`
+               :const:`SHP_GEOM_TYPE_POINT`     :func:`SetPoint_SHP`
+               :const:`SHP_GEOM_TYPE_ARC`       :func:`SetArc_SHP`
+               :const:`SHP_GEOM_TYPE_POLYGON`   :func:`SetPolygon_SHP`
                
-               :def_val:`SHP_GEOM_TYPE_POINTZ`    :func:`SetPointZ_SHP`
-               :def_val:`SHP_GEOM_TYPE_ARCZ`      :func:`SetArcZ_SHP`
-               :def_val:`SHP_GEOM_TYPE_POLYGONZ`  :func:`SetPolygonZ_SHP`
+               :const:`SHP_GEOM_TYPE_POINTZ`    :func:`SetPointZ_SHP`
+               :const:`SHP_GEOM_TYPE_ARCZ`      :func:`SetArcZ_SHP`
+               :const:`SHP_GEOM_TYPE_POLYGONZ`  :func:`SetPolygonZ_SHP`
                """,
                return_type="SHP",
                return_doc=":class:`SHP` object",
@@ -202,7 +202,7 @@ gx_methods = {
         Method('SetArc_SHP', module='geogxx', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Write an XY arc (polyline) item.",
-               notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_ARC` files.",
+               notes="Can ONLY be used for :const:`SHP_GEOM_TYPE_ARC` files.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('shp', type="SHP",
@@ -216,7 +216,7 @@ gx_methods = {
         Method('SetArcZ_SHP', module='geogxx', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Write an XYZ arc (polyline) item.",
-               notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_ARCZ` files.",
+               notes="Can ONLY be used for :const:`SHP_GEOM_TYPE_ARCZ` files.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('shp', type="SHP",
@@ -248,7 +248,7 @@ gx_methods = {
                doc="Set a :class:`SHP` object's projection.",
                notes="""
                If the :class:`SHP` object has a projection, and it
-               is not :def_val:`IPJ_TYPE_NONE`, then it will be output
+               is not :const:`IPJ_TYPE_NONE`, then it will be output
                to a file with the .prj extension when the
                first object is output.
                This function should be called BEFORE the first
@@ -265,7 +265,7 @@ gx_methods = {
         Method('SetPoint_SHP', module='geogxx', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Write an XY point item.",
-               notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POINT` files.",
+               notes="Can ONLY be used for :const:`SHP_GEOM_TYPE_POINT` files.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('shp', type="SHP",
@@ -279,7 +279,7 @@ gx_methods = {
         Method('SetPointZ_SHP', module='geogxx', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Write an XYZ point item.",
-               notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POINTZ` files.",
+               notes="Can ONLY be used for :const:`SHP_GEOM_TYPE_POINTZ` files.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('shp', type="SHP",
@@ -295,7 +295,7 @@ gx_methods = {
         Method('SetPolygon_SHP', module='geogxx', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Write an XY polygon item.",
-               notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POLYGON` files.",
+               notes="Can ONLY be used for :const:`SHP_GEOM_TYPE_POLYGON` files.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('shp', type="SHP",
@@ -311,7 +311,7 @@ gx_methods = {
         Method('SetPolygonZ_SHP', module='geogxx', version='6.3.0',
                availability=Availability.PUBLIC, 
                doc="Write an XYZ polygon item.",
-               notes="Can ONLY be used for :def_val:`SHP_GEOM_TYPE_POLYGONZ` files.",
+               notes="Can ONLY be used for :const:`SHP_GEOM_TYPE_POLYGONZ` files.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('shp', type="SHP",

@@ -91,7 +91,7 @@ gx_methods = {
         Method('GetInt_REG', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Gets an int for a specified parameter in the :class:`REG` object",
-               notes="If parameter is not present in :class:`REG`, :def_val:`iDUMMY` is returned.",
+               notes="If parameter is not present in :class:`REG`, :const:`iDUMMY` is returned.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('reg', type="REG",
@@ -124,7 +124,7 @@ gx_methods = {
         Method('GetReal_REG', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Gets an real for a specified parameter in the :class:`REG` object",
-               notes="If parameter is not present in :class:`REG`, :def_val:`rDUMMY` is returned.",
+               notes="If parameter is not present in :class:`REG`, :const:`rDUMMY` is returned.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('reg', type="REG",
@@ -218,9 +218,9 @@ gx_methods = {
                To remove a parameter completely, use one of the
                following:
                
-               :func:`SetInt_REG`(Reg, sParam, :def_val:`iDUMMY`);
+               :func:`SetInt_REG`(Reg, sParam, :const:`iDUMMY`);
                or
-               :func:`SetReal_REG`(Reg, sParam, :def_val:`rDUMMY`);
+               :func:`SetReal_REG`(Reg, sParam, :const:`rDUMMY`);
                """,
                return_type=Type.VOID,
                parameters = [
@@ -242,7 +242,7 @@ gx_methods = {
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('data', type=Type.INT32_T,
-                             doc="Int to set, :def_val:`iDUMMY` to remove the parameter")
+                             doc="Int to set, :const:`iDUMMY` to remove the parameter")
                ]),
 
         Method('SetReal_REG', module='geoengine.core', version='5.0.0',
@@ -255,7 +255,7 @@ gx_methods = {
                    Parameter('parm', type=Type.STRING,
                              doc="Name of the parameter"),
                    Parameter('p3', type=Type.DOUBLE,
-                             doc="Real to set, :def_val:`rDUMMY` to remove the parameter")
+                             doc="Real to set, :const:`rDUMMY` to remove the parameter")
                ])
     ]
 }

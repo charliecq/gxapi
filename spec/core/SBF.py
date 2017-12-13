@@ -57,8 +57,8 @@ gx_methods = {
                availability=Availability.PUBLIC, 
                doc="Fills an :class:`LST` with embedded storage names of an :class:`SBF`.",
                notes="""
-               Function will populate an :class:`LST` object with embedded files (:def_val:`SBF_TYPE_FILES`),
-               directories (:def_val:`SBF_TYPE_DIRS`), or both (pass :def_val:`SBF_TYPE_BOTH`) in an :class:`SBF`.
+               Function will populate an :class:`LST` object with embedded files (:const:`SBF_TYPE_FILES`),
+               directories (:const:`SBF_TYPE_DIRS`), or both (pass :const:`SBF_TYPE_BOTH`) in an :class:`SBF`.
                Along with the Name of the file or directory, a constant "dir" or "file" string is written
                to the :class:`LST` also.
                """,

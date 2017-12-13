@@ -41,7 +41,7 @@
 //===========================================================================================================
 
 {% if not define.is_null_handle %}{% for constant in define.constants %}
-#define {{ constant.name }} {{ constant.def_value }}
+#define {{ constant.name }} {{ constant.gxh_value }}
 {%- endfor %}{% else %}
 #define {{ define.name }} (({{ define.name.replace('_NULL', '') }})0)
 {% endif %}

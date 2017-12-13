@@ -112,7 +112,7 @@ gx_methods = {
                    Parameter('err', type=Type.INT32_T,
                              doc=":def:`EM_ERR`"),
                    Parameter('start_val', type=Type.DOUBLE,
-                             doc="Starting value for inversion (can be :def_val:`rDUMMY`)")
+                             doc="Starting value for inversion (can be :const:`rDUMMY`)")
                ]),
 
         Method('EMHalfSpaceVV_GU', module='geogxx', version='5.0.0',
@@ -257,7 +257,7 @@ gx_methods = {
                    Parameter('line', type=Type.STRING,
                              doc="Database line number. For output to log file only"),
                    Parameter('in_vv', type="VV",
-                             doc="Input :class:`VV`, :def_val:`GS_DOUBLE`"),
+                             doc="Input :class:`VV`, :const:`GS_DOUBLE`"),
                    Parameter('tol', type=Type.DOUBLE,
                              doc="Tolerance defined as percentage, say 50.0 means 50%. Must be >=0.0 Lower bound = (Normal Density) - (Normal Density)*Tolerance Upper bound = (Normal Density) + (Normal Density)*Tolerance"),
                    Parameter('min_coord', type=Type.DOUBLE,
@@ -265,9 +265,9 @@ gx_methods = {
                    Parameter('max_coord', type=Type.DOUBLE,
                              doc="Maximum coordinate (X or Y)"),
                    Parameter('out_vv', type="VV",
-                             doc="Output :class:`VV`, :def_val:`GS_DOUBLE`"),
+                             doc="Output :class:`VV`, :const:`GS_DOUBLE`"),
                    Parameter('flag_vv', type="VV",
-                             doc="Output Flag :class:`VV`, :def_val:`GS_LONG`")
+                             doc="Output Flag :class:`VV`, :const:`GS_LONG`")
                ]),
 
         Method('Geonics3138Dump2DB_GU', module='geogxx', version='5.0.0',
@@ -417,15 +417,15 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="Database"),
                    Parameter('grav_in', type="DB_SYMB",
-                             doc="Input gravity channel handle [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Input gravity channel handle [:const:`DB_LOCK_READONLY`]"),
                    Parameter('date', type="DB_SYMB",
-                             doc="Input date channel handle [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Input date channel handle [:const:`DB_LOCK_READONLY`]"),
                    Parameter('time', type="DB_SYMB",
-                             doc="Input time channel handle [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Input time channel handle [:const:`DB_LOCK_READONLY`]"),
                    Parameter('still', type=Type.STRING,
                              doc="Still readings file"),
                    Parameter('grav_out', type="DB_SYMB",
-                             doc="Output gravity channel handle [:def_val:`DB_LOCK_READWRITE`]")
+                             doc="Output gravity channel handle [:const:`DB_LOCK_READWRITE`]")
                ]),
 
         Method('iEMLayer_GU', module='geogxx', version='5.0.0',
@@ -491,9 +491,9 @@ gx_methods = {
                    Parameter('tx_orient', type=Type.INT32_T,
                              doc=":def:`EMPLATE_TX`"),
                    Parameter('tx_freq', type=Type.DOUBLE,
-                             doc="Tx frequency (for :def_val:`EMPLATE_TIME`)"),
+                             doc="Tx frequency (for :const:`EMPLATE_TIME`)"),
                    Parameter('tx_dt', type=Type.DOUBLE,
-                             doc="Tx time window spacing (for :def_val:`EMPLATE_TIME`)"),
+                             doc="Tx time window spacing (for :const:`EMPLATE_TIME`)"),
                    Parameter('params', type=Type.DOUBLE,
                              doc="The frequency/time parameters (SI units: f[Hz] or t[s])"),
                    Parameter('xivv', type="VV",
@@ -609,11 +609,11 @@ gx_methods = {
                return_type=Type.VOID,
                parameters = [
                    Parameter('mag_fid_vv', type="VV",
-                             doc="Mag fid values   (:def_val:`GS_DOUBLE`)"),
+                             doc="Mag fid values   (:const:`GS_DOUBLE`)"),
                    Parameter('mag_event_vv', type="VV",
-                             doc="Mag event values (:def_val:`GS_LONG`)"),
+                             doc="Mag event values (:const:`GS_LONG`)"),
                    Parameter('gps_fid_vv', type="VV",
-                             doc="GPS fid values (:def_val:`GS_DOUBLE`, altered on return)")
+                             doc="GPS fid values (:const:`GS_DOUBLE`, altered on return)")
                ]),
 
         Method('MaxwellPlateCorners_GU', module='geogxx', version='6.1.0',
@@ -693,9 +693,9 @@ gx_methods = {
                    Parameter('file', type=Type.STRING,
                              doc="File to import"),
                    Parameter('vv_type', type="VV",
-                             doc="8 Recognized types - :def_val:`GS_LONG`"),
+                             doc="8 Recognized types - :const:`GS_LONG`"),
                    Parameter('vv_items', type="VV",
-                             doc="8 Numbers of items - :def_val:`GS_LONG`")
+                             doc="8 Numbers of items - :const:`GS_LONG`")
                ]),
 
         Method('VVEuler_GU', module='geogxx', version='5.0.0',
@@ -705,7 +705,7 @@ gx_methods = {
                All VVs must be REAL
                
                The output X and Y values are the same as the inputs,
-               except if :def_val:`PEAKEULER_XY_FIT` is selected. All other
+               except if :const:`PEAKEULER_XY_FIT` is selected. All other
                output values are set to dummy if:
                     
                     a) The input X or Y is a dummy

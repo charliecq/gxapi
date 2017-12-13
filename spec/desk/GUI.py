@@ -489,8 +489,8 @@ gx_methods = {
                left corner of the Screen.
                
                if the max values are equal to or less than the min values
-               the window will be mimimized. If any Min values are :def_val:`GS_S4MN`
-               or any Max values are :def_val:`GS_S4MX`, the window is maximized.
+               the window will be mimimized. If any Min values are :const:`GS_S4MN`
+               or any Max values are :const:`GS_S4MX`, the window is maximized.
                
                See also :func:`GetClientWindowArea_GUI`.
                """,
@@ -549,14 +549,14 @@ gx_methods = {
                doc="Select a color.",
                notes="""
                Color value is set on input, and new value returned.
-               If the input color type is :def_val:`C_TRANSPARENT`, then the color
+               If the input color type is :const:`C_TRANSPARENT`, then the color
                is set to white, if any other type is input the output is
                guaranteed to be of the same type.
                
                If ``no_col`` is 1, then on exit, if white is
                selected, the user is prompted: 'Do you want white (Yes) or
                "None" (No) ?' and the color is converted as requested.
-               If this is not the case, the :def_val:`C_TRANSPARENT` is converted
+               If this is not the case, the :const:`C_TRANSPARENT` is converted
                to white (if "Ok" is selected) and no choice is offered.
                """,
                return_type=Type.INT32_T,
@@ -568,7 +568,7 @@ gx_methods = {
                    Parameter('col', type=Type.INT32_T, is_ref=True,
                              doc="Color (modified)"),
                    Parameter('no_col', type=Type.INT32_T,
-                             doc="Ask about :def_val:`C_TRANSPARENT` if white is selected (1: yes, 0: no)?")
+                             doc="Ask about :const:`C_TRANSPARENT` if white is selected (1: yes, 0: no)?")
                ]),
 
         Method('iColorTransform_GUI', module='None', version='5.0.0',
@@ -794,7 +794,7 @@ gx_methods = {
                doc="Return the FILE_FILTER_XXX value for a file filter string.",
                notes="""
                For example, if "Database (``*.gdb``)" is input,
-               then the :def_val:`FILE_FILTER_GDB` value is returned.
+               then the :const:`FILE_FILTER_GDB` value is returned.
                """,
                return_type=Type.INT32_T,
                return_doc=":def:`FILE_FILTER`, -1 if not found",
@@ -943,12 +943,12 @@ gx_methods = {
                doc="Return the defined filter, mask, extension and directory for an input filter.",
                notes="""
                Returns the four parts of the file filter;
-               e.g. for :def_val:`FILE_FILTER_GDB` it returns:
+               e.g. for :const:`FILE_FILTER_GDB` it returns:
                
                Filter:    "Database (``*.gdb``)"
                Mask:      "``*.gdb``"
                Extension: "gdb"
-               Directory: ":def_val:`GS_DIRECTORY_NONE`"
+               Directory: ":const:`GS_DIRECTORY_NONE`"
                
                This function is useful for constuction open/save dialog
                file filters, especially in GX.Net functions.
@@ -978,7 +978,7 @@ gx_methods = {
                doc="Return the directory path for value of :def:`GS_DIRECTORY`.",
                notes="""
                Works along with the :func:`IGetFileFilter_GUI` function. Note that
-               most values of FILE_FILTER_XXX will return :def_val:`GS_DIRECTORY_NONE`,
+               most values of FILE_FILTER_XXX will return :const:`GS_DIRECTORY_NONE`,
                and give the current workspace directory.
                
                This function is useful for constuction open/save dialog
@@ -1728,7 +1728,7 @@ gx_methods = {
                    Parameter('meta', type="META",
                              doc="Meta object"),
                    Parameter('root_token', type="META_TOKEN",
-                             doc="Root Token, :def_val:`H_META_INVALID_TOKEN` for root"),
+                             doc="Root Token, :const:`H_META_INVALID_TOKEN` for root"),
                    Parameter('schema', type=Type.INT32_T,
                              doc="Display schema information ?")
                ]),
@@ -1809,7 +1809,7 @@ gx_methods = {
                    Parameter('col', type=Type.INT32_T, is_ref=True,
                              doc="Current Pattern Color   // passed in and returned"),
                    Parameter('back_col', type=Type.INT32_T, is_ref=True,
-                             doc="Current Background Color  // passed in and returned; can be :def_val:`C_TRANSPARENT`")
+                             doc="Current Background Color  // passed in and returned; can be :const:`C_TRANSPARENT`")
                ]),
 
         Method('iLinePatternForm_GUI', module='None', version='8.1.0',
@@ -1845,8 +1845,8 @@ gx_methods = {
                Once the user has finalized the selections, the final selections
                are returned in the selection :class:`LST`.
                
-               Selections and display are based on the :def_val:`LST_ITEM_NAME` part of the
-               :class:`LST` item, but on export both the :def_val:`LST_ITEM_NAME` and :def_val:`LST_ITEM_VALUE`
+               Selections and display are based on the :const:`LST_ITEM_NAME` part of the
+               :class:`LST` item, but on export both the :const:`LST_ITEM_NAME` and :const:`LST_ITEM_VALUE`
                elements of the selected items from the first :class:`LST` are transferred
                to the second list for output.
                
@@ -1996,7 +1996,7 @@ gx_methods = {
                    Parameter('meta', type="META",
                              doc=":class:`META` Handle (holding tool configuration data)"),
                    Parameter('align', type=Type.INT32_T,
-                             doc=":def:`XTOOL_ALIGN` (can specify one or more or :def_val:`XTOOL_ALIGN_ANY`)"),
+                             doc=":def:`XTOOL_ALIGN` (can specify one or more or :const:`XTOOL_ALIGN_ANY`)"),
                    Parameter('dock', type=Type.INT32_T,
                              doc=":def:`XTOOL_DOCK`"),
                    Parameter('width', type=Type.INT32_T,
@@ -2017,7 +2017,7 @@ gx_methods = {
                    Parameter('meta', type="META",
                              doc=":class:`META` Handle (holding tool configuration data)"),
                    Parameter('align', type=Type.INT32_T,
-                             doc=":def:`XTOOL_ALIGN` (can specify one or more or :def_val:`XTOOL_ALIGN_ANY`)"),
+                             doc=":def:`XTOOL_ALIGN` (can specify one or more or :const:`XTOOL_ALIGN_ANY`)"),
                    Parameter('dock', type=Type.INT32_T,
                              doc=":def:`XTOOL_DOCK`"),
                    Parameter('width', type=Type.INT32_T,
@@ -2038,7 +2038,7 @@ gx_methods = {
                    Parameter('meta', type="META",
                              doc=":class:`META` Handle (holding tool configuration data)"),
                    Parameter('align', type=Type.INT32_T,
-                             doc=":def:`XTOOL_ALIGN` (can specify one or more or :def_val:`XTOOL_ALIGN_ANY`)"),
+                             doc=":def:`XTOOL_ALIGN` (can specify one or more or :const:`XTOOL_ALIGN_ANY`)"),
                    Parameter('dock', type=Type.INT32_T,
                              doc=":def:`XTOOL_DOCK`"),
                    Parameter('width', type=Type.INT32_T,
@@ -2055,7 +2055,7 @@ gx_methods = {
                    Parameter('meta', type="META",
                              doc="Meta object"),
                    Parameter('root_token', type="META_TOKEN",
-                             doc="Root token, :def_val:`H_META_INVALID_TOKEN` for root"),
+                             doc="Root token, :const:`H_META_INVALID_TOKEN` for root"),
                    Parameter('schema', type=Type.INT32_T,
                              doc="Display schema information ?")
                ]),
@@ -2088,15 +2088,15 @@ gx_methods = {
                    Parameter('pat', type=Type.INT32_T,
                              doc="Pattern number"),
                    Parameter('size', type=Type.DOUBLE,
-                             doc="Pattern size,           // input :def_val:`GS_R8DM` to use default"),
+                             doc="Pattern size,           // input :const:`GS_R8DM` to use default"),
                    Parameter('thick', type=Type.INT32_T,
-                             doc="Pattern thick (0-100)   // input :def_val:`GS_S4DM` to use default"),
+                             doc="Pattern thick (0-100)   // input :const:`GS_S4DM` to use default"),
                    Parameter('dense', type=Type.DOUBLE,
-                             doc="Pattern density,        // input :def_val:`GS_R8DM` to use default"),
+                             doc="Pattern density,        // input :const:`GS_R8DM` to use default"),
                    Parameter('col', type=Type.INT32_T,
-                             doc="Pattern color	  // input :def_val:`GS_S4DM` to use default"),
+                             doc="Pattern color	  // input :const:`GS_S4DM` to use default"),
                    Parameter('back_col', type=Type.INT32_T,
-                             doc="Pattern background color // input :def_val:`GS_S4DM` to use default; can be :def_val:`C_TRANSPARENT`"),
+                             doc="Pattern background color // input :const:`GS_S4DM` to use default; can be :const:`C_TRANSPARENT`"),
                    Parameter('is_enabled', type=Type.INT32_T,
                              doc="Is this window enabled?"),
                    Parameter('is_button', type=Type.INT32_T,
@@ -2185,8 +2185,8 @@ gx_methods = {
                
                If the window is minimized, the max values will be
                equal to the min values. If the window is maximized
-               X Min and Y min will be :def_val:`GS_S4MN` and X max and Y max
-               will be :def_val:`GS_S4MX`.
+               X Min and Y min will be :const:`GS_S4MN` and X max and Y max
+               will be :const:`GS_S4MX`.
                """,
                return_type=Type.VOID,
                parameters = [

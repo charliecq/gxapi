@@ -76,7 +76,7 @@ gx_methods = {
                return_type=Type.DOUBLE,
                return_doc="""
                Data you asked for
-               :def_val:`GS_R8DM` for none
+               :const:`GS_R8DM` for none
                """,
                parameters = [
                    Parameter('st2', type="ST2",

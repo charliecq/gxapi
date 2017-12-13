@@ -252,15 +252,15 @@ gx_methods = {
                """,
                notes="""
                The following can only be determined if the :class:`ST` has recorded
-               a histogram: :def_val:`ST_MEDIAN`, :def_val:`ST_MODE`
+               a histogram: :const:`ST_MEDIAN`, :const:`ST_MODE`
                
-               :def_val:`ST_MINPOS` can be used to retrieve the smallest value greater
+               :const:`ST_MINPOS` can be used to retrieve the smallest value greater
                than zero, but not from :class:`ST` objects recovered from serialized object.
                """,
                return_type=Type.DOUBLE,
                return_doc="""
                Data you asked for
-               :def_val:`GS_R8DM` for none
+               :const:`GS_R8DM` for none
                """,
                parameters = [
                    Parameter('st', type="ST",

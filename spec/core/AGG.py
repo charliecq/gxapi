@@ -18,7 +18,7 @@ gx_defines = [
                         If a color table with no color transform is passed
                         it will be used with the default zoning
                         method of the data, which is usually
-                        :def_val:`AGG_LAYER_ZONE_EQUALAREA`.
+                        :const:`AGG_LAYER_ZONE_EQUALAREA`.
                         """),
                Constant('AGG_LAYER_ZONE_LINEAR', value='1', type=Type.INT32_T,
                         doc="Linear Distribution"),
@@ -28,7 +28,7 @@ gx_defines = [
                         doc="Equal Area Distribution"),
                Constant('AGG_LAYER_ZONE_SHADE', value='4', type=Type.INT32_T,
                         doc="""
-                        If :def_val:`AGG_LAYER_ZONE_SHADE` is specified, a shaded relief
+                        If :const:`AGG_LAYER_ZONE_SHADE` is specified, a shaded relief
                         layer is created from the specified grid.  A new grid
                         file will also be created to hold the shaded relief
                         image data.  This file will have the same name as the
@@ -47,7 +47,7 @@ gx_defines = [
                         The last :class:`ITR` used to display this
                         data will be used if it exists.  If it
                         does not exist, the behaviour is the same
-                        as :def_val:`AGG_LAYER_ZONE_DEFAULT`.
+                        as :const:`AGG_LAYER_ZONE_DEFAULT`.
                         """)
            ]),
 
@@ -185,7 +185,7 @@ gx_methods = {
                    Parameter('agg', type="AGG",
                              doc=":class:`AGG` Handle"),
                    Parameter('gvv', type="VV",
-                             doc=":class:`VV` of type -:def_val:`STR_FILE`")
+                             doc=":class:`VV` of type -:const:`STR_FILE`")
                ]),
 
         Method('iNumLayers_AGG', module='geoengine.core', version='5.0.0',
@@ -211,7 +211,7 @@ gx_methods = {
                    Parameter('color', type=Type.STRING,
                              doc='Color table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
                    Parameter('cont', type=Type.DOUBLE,
-                             doc="Color contour interval or :def_val:`rDUMMY` for default")
+                             doc="Color contour interval or :const:`rDUMMY` for default")
                ]),
 
         Method('LayerIMGEx_AGG', module='geoengine.core', version='8.2',
@@ -228,11 +228,11 @@ gx_methods = {
                    Parameter('color', type=Type.STRING,
                              doc='Color table name, "" for default This can be a .TBL .ZON .:class:`ITR` or .:class:`AGG` file .TBL is the default'),
                    Parameter('min', type=Type.DOUBLE,
-                             doc="Minimum value or :def_val:`rDUMMY` for default"),
+                             doc="Minimum value or :const:`rDUMMY` for default"),
                    Parameter('max', type=Type.DOUBLE,
-                             doc="Maximum value or :def_val:`rDUMMY` for default"),
+                             doc="Maximum value or :const:`rDUMMY` for default"),
                    Parameter('cont', type=Type.DOUBLE,
-                             doc="Color contour interval or :def_val:`rDUMMY` for default")
+                             doc="Color contour interval or :const:`rDUMMY` for default")
                ]),
 
         Method('LayerShadeIMG_AGG', module='geoengine.core', version='5.0.0',
@@ -258,7 +258,7 @@ gx_methods = {
                    Parameter('dec', type=Type.DOUBLE,
                              doc="Declination"),
                    Parameter('scl', type=Type.DOUBLE, is_ref=True,
-                             doc="Scale (:def_val:`rDUMMY` for default, returns value used)")
+                             doc="Scale (:const:`rDUMMY` for default, returns value used)")
                ]),
 
         Method('rGetBrightness_AGG', module='geoengine.core', version='5.0.0',

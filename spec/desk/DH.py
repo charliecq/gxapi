@@ -8,7 +8,7 @@ gx_class = Class('DH',
                  """,
                  notes="""
                  The :class:`DH` class has some defines not used by any functions.
-                     :def_val:`DH_DEFINE_PLAN`
+                     :const:`DH_DEFINE_PLAN`
                      :def:`DH_DEFINE_SECT`
                  """)
 
@@ -228,7 +228,7 @@ gx_methods = {
                notes="""
                For the input :class:`LST` of holes, returns XYZ location of top or bottom
                contact with the input geology. Those selected holes which do NOT
-               have contacts, return :def_val:`rDUMMY` for the corresponding locations.
+               have contacts, return :const:`rDUMMY` for the corresponding locations.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -243,7 +243,7 @@ gx_methods = {
                    Parameter('surface', type=Type.INT32_T,
                              doc=":def:`DH_SURFACE` Surface selection (top or bottom)"),
                    Parameter('gap', type=Type.DOUBLE,
-                             doc="Max gap to skip when compositing (:def_val:`GS_R8DM` for none)"),
+                             doc="Max gap to skip when compositing (:const:`GS_R8DM` for none)"),
                    Parameter('vv_x', type="VV",
                              doc="X locations of the contact"),
                    Parameter('vv_y', type="VV",
@@ -333,7 +333,7 @@ gx_methods = {
                Input the hole index and an :class:`IMG` object. Returns XYZ location
                of the hole intersection with the DEM. Interpolation inside the DEM
                uses the native :class:`IMG` interp method. If no intersection is found the
-               returned XYZ locations are :def_val:`rDUMMY`.
+               returned XYZ locations are :const:`rDUMMY`.
                """,
                return_type=Type.INT32_T,
                return_doc="""
@@ -429,9 +429,9 @@ gx_methods = {
                    Parameter('vox', type=Type.STRING,
                              doc="Name of :class:`VOX` Persistent Storage file"),
                    Parameter('cell_size', type=Type.DOUBLE,
-                             doc="Cell Size (:def_val:`GS_R8DM` for automatic calculation)"),
+                             doc="Cell Size (:const:`GS_R8DM` for automatic calculation)"),
                    Parameter('gap', type=Type.DOUBLE,
-                             doc="Max gap to skip when compositing (:def_val:`GS_R8DM` for none)"),
+                             doc="Max gap to skip when compositing (:const:`GS_R8DM` for none)"),
                    Parameter('non_contact_radius', type=Type.DOUBLE,
                              doc="Non-contact radius."),
                    Parameter('gridding_type', type=Type.INT32_T,
@@ -550,7 +550,7 @@ gx_methods = {
                return_type="DB",
                return_doc="""
                x - :class:`DB`
-               :def_val:`DB_NULL` if no assay data (no error registered)
+               :const:`DB_NULL` if no assay data (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -566,7 +566,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                x - DB_SYMB
-               :def_val:`NULLSYMB` if no survey data for this hole (no error registered)
+               :const:`NULLSYMB` if no survey data for this hole (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -584,7 +584,7 @@ gx_methods = {
                return_type="DB",
                return_doc="""
                x - :class:`DB`
-               :def_val:`DB_NULL` if no collar table (no error registered)
+               :const:`DB_NULL` if no collar table (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -598,7 +598,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                x - DB_SYMB
-               :def_val:`NULLSYMB` if no collar table (no error registered)
+               :const:`NULLSYMB` if no collar table (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -612,7 +612,7 @@ gx_methods = {
                return_type="DB",
                return_doc="""
                x - :class:`DB`
-               :def_val:`DB_NULL` if no dip-azimuth survey data (no error registered)
+               :const:`DB_NULL` if no dip-azimuth survey data (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -626,7 +626,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                x - DB_SYMB
-               :def_val:`NULLSYMB` if no Dip-Azimuth survey data for this hole (no error registered)
+               :const:`NULLSYMB` if no Dip-Azimuth survey data for this hole (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -642,7 +642,7 @@ gx_methods = {
                return_type="DB",
                return_doc="""
                x - :class:`DB`
-               :def_val:`DB_NULL` if no East-North survey data (no error registered)
+               :const:`DB_NULL` if no East-North survey data (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -656,7 +656,7 @@ gx_methods = {
                return_type="DB_SYMB",
                return_doc="""
                x - DB_SYMB
-               :def_val:`NULLSYMB` if no EN survey data for this hole (no error registered)
+               :const:`NULLSYMB` if no EN survey data for this hole (no error registered)
                """,
                parameters = [
                    Parameter('dh', type="DH",
@@ -697,8 +697,8 @@ gx_methods = {
                availability=Availability.EXTENSION, 
                doc="Return the :class:`LST` of from-to and point assay datasets",
                notes="""
-               Assay dataset name is given as :def_val:`LST_ITEM_NAME`
-               Assay dataset number is given as :def_val:`LST_ITEM_VALUE`
+               Assay dataset name is given as :const:`LST_ITEM_NAME`
+               Assay dataset number is given as :const:`LST_ITEM_VALUE`
                Returns an empty :class:`LST` if no datasets.
                """,
                return_type=Type.VOID,
@@ -757,11 +757,11 @@ gx_methods = {
                    Parameter('wt_ch', type=Type.STRING,
                              doc="Name of Weight channel"),
                    Parameter('rej1_val', type=Type.DOUBLE,
-                             doc="dRej1Val for intervals short than, (:def_val:`GS_R8DM` for no action)"),
+                             doc="dRej1Val for intervals short than, (:const:`GS_R8DM` for no action)"),
                    Parameter('rej2_val', type=Type.DOUBLE,
-                             doc="dRej2Val for intervals gap greater than, (:def_val:`GS_R8DM` for no action)"),
+                             doc="dRej2Val for intervals gap greater than, (:const:`GS_R8DM` for no action)"),
                    Parameter('rej3_val', type=Type.DOUBLE,
-                             doc="dRej3Val for Rej3Ch with Rej3Op, (:def_val:`GS_R8DM` for no action)"),
+                             doc="dRej3Val for Rej3Ch with Rej3Op, (:const:`GS_R8DM` for no action)"),
                    Parameter('rej3_op', type=Type.INT32_T,
                              doc="dRej3Op: 0: >, 1: >=, 2: <, 3: <="),
                    Parameter('rej3_ch', type=Type.STRING,
@@ -1013,7 +1013,7 @@ gx_methods = {
                    Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('gvv', type="VV",
-                             doc=":class:`VV` of type -:def_val:`STR_FILE`")
+                             doc=":class:`VV` of type -:const:`STR_FILE`")
                ]),
 
         Method('GetDatabasesSortedVV_DH', module='geodh', version='8.2.0',
@@ -1024,13 +1024,13 @@ gx_methods = {
                    Parameter('dh', type="DH",
                              doc=":class:`DH` object"),
                    Parameter('gvv', type="VV",
-                             doc=":class:`VV` of type -:def_val:`STR_FILE`")
+                             doc=":class:`VV` of type -:const:`STR_FILE`")
                ]),
 
         Method('GetDataType_DH', module='geodh', version='5.1.3',
                availability=Availability.EXTENSION, 
                doc="Get the type of data in a Wholeplot database.",
-               notes="Returns :def_val:`DH_DATA_UNKNOWN` if it can't determine the type.",
+               notes="Returns :const:`DH_DATA_UNKNOWN` if it can't determine the type.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('dh', type="DH",
@@ -1173,7 +1173,7 @@ gx_methods = {
                doc="Return list of default channels by collar/assay/survey table type.",
                notes="""
                Fills a :class:`LST` with the default channel names created according to
-               type (Collar, Survey, Assay). Value is in the :def_val:`LST_ITEM_NAME` part.
+               type (Collar, Survey, Assay). Value is in the :const:`LST_ITEM_NAME` part.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -1428,11 +1428,11 @@ gx_methods = {
                The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
                is the name of the Wholeplot database table; e.g. Project_Assay.gdb
                in the above case. The DRILLTABLE is only included in the template
-               for :def_val:`DH_DATA_FROMTO` and :def_val:`DH_DATA_POINT`, but this function will
+               for :const:`DH_DATA_FROMTO` and :const:`DH_DATA_POINT`, but this function will
                return the appropriate table names (e.g. Collar, Survey, ENSurvey)
                for the other types.
                If the DRILLTYPE is NOT found in the template, a value of
-               :def_val:`DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
+               :const:`DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
                is not a new-style template produced by Wholeplot.
                """,
                return_type=Type.VOID,
@@ -1446,7 +1446,7 @@ gx_methods = {
                    Parameter('file_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name buffer size"),
                    Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table_size',
-                             doc="Table name (blank for :def_val:`DH_DATA_UNKNOWN`, or undefined)."),
+                             doc="Table name (blank for :const:`DH_DATA_UNKNOWN`, or undefined)."),
                    Parameter('table_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Table name buffer size")
                ]),
@@ -1467,11 +1467,11 @@ gx_methods = {
                The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
                is the name of the Wholeplot database table; e.g. Project_Assay.gdb
                in the above case. The DRILLTABLE is only included in the template
-               for :def_val:`DH_DATA_FROMTO` and :def_val:`DH_DATA_POINT`, but this function will
+               for :const:`DH_DATA_FROMTO` and :const:`DH_DATA_POINT`, but this function will
                return the appropriate table names (e.g. Collar, Survey, ENSurvey)
                for the other types.
                If the DRILLTYPE is NOT found in the template, a value of
-               :def_val:`DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
+               :const:`DH_DATA_UNKNOWN` is returned for the data type; likely an indication that this
                is not a new-style template produced by Wholeplot.
                This version also returns a list of the channels in the template checks can be made to
                see if the import will exceed the database channel limit.
@@ -1487,7 +1487,7 @@ gx_methods = {
                    Parameter('file_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="File name buffer size"),
                    Parameter('table', type=Type.STRING, is_ref=True, size_of_param='table_size',
-                             doc="Table name (blank for :def_val:`DH_DATA_UNKNOWN`, or undefined)."),
+                             doc="Table name (blank for :const:`DH_DATA_UNKNOWN`, or undefined)."),
                    Parameter('table_size', type=Type.INT32_T, default_length='STR_FILE',
                              doc="Table name buffer size"),
                    Parameter('lst', type="LST",
@@ -1683,7 +1683,7 @@ gx_methods = {
         Method('iModifyHoleTracesGUI2_DH', module='geodh', version='8.3.0',
                availability=Availability.EXTENSION, 
                doc="Modify parameters for a hole traces plot to a current plan or section view.",
-               notes="Currently supports :def_val:`DH_PLOT_PLAN` and :def_val:`DH_PLOT_SECTION`",
+               notes="Currently supports :const:`DH_PLOT_PLAN` and :const:`DH_PLOT_SECTION`",
                return_type=Type.INT32_T,
                return_doc="""
                0 - Ok
@@ -1695,7 +1695,7 @@ gx_methods = {
                    Parameter('ini', type=Type.STRING,
                              doc="Job Name"),
                    Parameter('plot_type', type=Type.INT32_T,
-                             doc=":def:`DH_PLOT` One of :def_val:`DH_PLOT_PLAN` or :def_val:`DH_PLOT_SECTION`"),
+                             doc=":def:`DH_PLOT` One of :const:`DH_PLOT_PLAN` or :const:`DH_PLOT_SECTION`"),
                    Parameter('page', type=Type.INT32_T, is_ref=True,
                              doc="Page to open :class:`GUI` on")
                ]),
@@ -2138,8 +2138,8 @@ gx_methods = {
                Data values inside the polygon area, and within the slice thickness
                have their mask channel values set to 1.
                If the specified mask channel does not exist, it is created.
-               :def_val:`DH_MASK_NEW` --- Mask is created new for each selected hole
-               :def_val:`DH_MASK_APPEND` --- Current selection is added to previous.
+               :const:`DH_MASK_NEW` --- Mask is created new for each selected hole
+               :const:`DH_MASK_APPEND` --- Current selection is added to previous.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -2150,7 +2150,7 @@ gx_methods = {
                    Parameter('ipj', type="IPJ",
                              doc="Projection from data to polygon coordinates"),
                    Parameter('tol', type=Type.DOUBLE,
-                             doc="Slice thickness - :def_val:`rDUMMY` for no limiting thickness"),
+                             doc="Slice thickness - :const:`rDUMMY` for no limiting thickness"),
                    Parameter('mask', type=Type.STRING,
                              doc="Name of mask channel"),
                    Parameter('select', type=Type.INT32_T,
@@ -2441,7 +2441,7 @@ gx_methods = {
                    Parameter('job', type=Type.STRING,
                              doc="Parameter (INI) name"),
                    Parameter('plot_type', type=Type.INT32_T,
-                             doc=":def:`DH_PLOT` Section plot type (:def_val:`DH_PLOT_SECTION` or :def_val:`DH_PLOT_SECTION_CROOKED`"),
+                             doc=":def:`DH_PLOT` Section plot type (:const:`DH_PLOT_SECTION` or :const:`DH_PLOT_SECTION_CROOKED`"),
                    Parameter('view', type=Type.STRING,
                              doc="View name")
                ]),

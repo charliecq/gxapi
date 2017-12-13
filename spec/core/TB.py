@@ -306,8 +306,8 @@ gx_methods = {
                doc="Sets an integer value into a table element.",
                notes="""
                The table field containing the element to be set MUST be
-               of type :def_val:`GS_BYTE`, :def_val:`GS_USHORT`, :def_val:`GS_SHORT`, or :def_val:`GS_LONG`.
-               If the field is :def_val:`GS_BYTE`, :def_val:`GS_USHORT`, or :def_val:`GS_LONG`, the new data
+               of type :const:`GS_BYTE`, :const:`GS_USHORT`, :const:`GS_SHORT`, or :const:`GS_LONG`.
+               If the field is :const:`GS_BYTE`, :const:`GS_USHORT`, or :const:`GS_LONG`, the new data
                value will cause an overflow if the value is out of range of
                the data type. The new element value will then be invalid.
                
@@ -336,8 +336,8 @@ gx_methods = {
                doc="Sets an real value into a table element.",
                notes="""
                The table field containing the element to be set MUST be
-               of type :def_val:`GS_FLOAT` or :def_val:`GS_DOUBLE`.
-               If the field is :def_val:`GS_FLOAT` the new data value will cause an
+               of type :const:`GS_FLOAT` or :const:`GS_DOUBLE`.
+               If the field is :const:`GS_FLOAT` the new data value will cause an
                overflow if the value is out of range of the data type.
                The new element value will then be invalid.
                

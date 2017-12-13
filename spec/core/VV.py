@@ -309,7 +309,7 @@ gx_methods = {
         Method('Add2_VV', module='geoengine.core', version='5.0.8',
                availability=Availability.PUBLIC, 
                doc="Add two VVs with linear factors: VV_A*f1 + VV_B*f2 = VV_C",
-               notes="The multipliers must be defined and within the :def_val:`GS_R8MN` :def_val:`GS_R8MX` range.",
+               notes="The multipliers must be defined and within the :const:`GS_R8MN` :const:`GS_R8MX` range.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv_a', type="VV",
@@ -369,7 +369,7 @@ gx_methods = {
                parameters = [
                    Parameter('vv', type="VV"),
                    Parameter('pul_crc', type="CRC",
-                             doc="Previous CRC :def_val:`CRC_INIT_VALUE`")
+                             doc="Previous CRC :const:`CRC_INIT_VALUE`")
                ]),
 
         Method('CRCInexact_VV', module='geoengine.core', version='5.0.0',
@@ -388,7 +388,7 @@ gx_methods = {
                parameters = [
                    Parameter('vv', type="VV"),
                    Parameter('pul_crc', type="CRC",
-                             doc="Previous CRC :def_val:`CRC_INIT_VALUE`"),
+                             doc="Previous CRC :const:`CRC_INIT_VALUE`"),
                    Parameter('float_bits', type=Type.INT32_T,
                              doc=":def:`VV_FLOAT_CRC_BITS`"),
                    Parameter('double_bits', type=Type.INT32_T,
@@ -427,7 +427,7 @@ gx_methods = {
                notes="""
                See :func:`Create_VV`
                
-               Do not use data type flags: :def_val:`GS_INT` or :def_val:`GS_REAL`,
+               Do not use data type flags: :const:`GS_INT` or :const:`GS_REAL`,
                this will result in a respective data type of unsigned byte or
                short for the :class:`VV`.
                """,
@@ -613,7 +613,7 @@ gx_methods = {
                doc="Get an integer element from a :class:`VV`.",
                return_type=Type.INT32_T,
                return_doc="""
-               Element wanted, or :def_val:`iDUMMY`
+               Element wanted, or :const:`iDUMMY`
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
@@ -651,12 +651,12 @@ gx_methods = {
                first is returned.
                """,
                return_type=Type.INT32_T,
-               return_doc="Index of the maximum value, :def_val:`iDUMMY` if no valid data.",
+               return_doc="Index of the maximum value, :const:`iDUMMY` if no valid data.",
                parameters = [
                    Parameter('vv', type="VV",
                              doc="Points :class:`VV` (must be one of the 4 supported types)"),
                    Parameter('max', type=Type.DOUBLE, is_ref=True,
-                             doc="Maximum value (:def_val:`rDUMMY` if all dummies or no data)")
+                             doc="Maximum value (:const:`rDUMMY` if all dummies or no data)")
                ]),
 
         Method('iLength_VV', module='geoengine.core', version='5.0.0',
@@ -777,7 +777,7 @@ gx_methods = {
                a special :class:`VV` where each element contains the start and end
                points of lines, (X_1, Y_1) and (X_2, Y_2).
                This GX dumps the individual X and Y values into individual
-               X and Y VVs of type :def_val:`GS_DOUBLE` (REAL). N lines produces 2*N
+               X and Y VVs of type :const:`GS_DOUBLE` (REAL). N lines produces 2*N
                X and Y values.
                """,
                return_type=Type.VOID,
@@ -785,9 +785,9 @@ gx_methods = {
                    Parameter('vv', type="VV",
                              doc="Input :class:`VV` of GS_D2LINE type (create with type -32)"),
                    Parameter('vv_x', type="VV",
-                             doc="Output :class:`VV` with X locations (:def_val:`GS_DOUBLE`)"),
+                             doc="Output :class:`VV` with X locations (:const:`GS_DOUBLE`)"),
                    Parameter('vv_y', type="VV",
-                             doc="Output :class:`VV` with Y locations (:def_val:`GS_DOUBLE`)")
+                             doc="Output :class:`VV` with Y locations (:const:`GS_DOUBLE`)")
                ]),
 
         Method('LookupIndex_VV', module='geoengine.core', version='5.0.0',
@@ -965,7 +965,7 @@ gx_methods = {
         Method('RangeDouble_VV', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
                doc="Get the min. and max. values of a :class:`VV` while ignoring dummies.",
-               notes="Minimum and maximum become :def_val:`GS_R8DM` if entire :class:`VV` is dummy.",
+               notes="Minimum and maximum become :const:`GS_R8DM` if entire :class:`VV` is dummy.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('vv', type="VV"),
@@ -1053,7 +1053,7 @@ gx_methods = {
                """,
                return_type=Type.DOUBLE,
                return_doc="""
-               Element wanted, or :def_val:`rDUMMY`
+               Element wanted, or :const:`rDUMMY`
                if the value is dummy or outside of the range of data.
                """,
                parameters = [
@@ -1278,7 +1278,7 @@ gx_methods = {
                and you want to calculate/estimate/interpolate the values ``hVVy2`` at a second set
                of times ``hVVt2``
                
-               Step 1: Create an index, ``hVVi``, type :def_val:`GS_DOUBLE`, and call :func:`SetupIndex_VV`.
+               Step 1: Create an index, ``hVVi``, type :const:`GS_DOUBLE`, and call :func:`SetupIndex_VV`.
                
                with: ``hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing``
                
@@ -1344,7 +1344,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Sort index :class:`VV` based on a data :class:`VV`.",
                notes="""
-               Create an Index :class:`VV` (of type :def_val:`GS_LONG`) based on a data :class:`VV`.
+               Create an Index :class:`VV` (of type :const:`GS_LONG`) based on a data :class:`VV`.
                This index vv can then be used by the IndexOrder method
                to order a group of :class:`VV`'s.
                """,
@@ -1360,7 +1360,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Sort index :class:`VV` based on 1 data :class:`VV` - set orders.",
                notes="""
-               Create an Index :class:`VV` (of type :def_val:`GS_LONG`) based on a data :class:`VV`.
+               Create an Index :class:`VV` (of type :const:`GS_LONG`) based on a data :class:`VV`.
                This index vv can then be used by the IndexOrder method
                to order a group of :class:`VV`'s. The individual VVs may be ordered
                in ascending or descending order.
@@ -1382,7 +1382,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Sort index :class:`VV` based on 2 data VVs - set orders.",
                notes="""
-               Create an Index :class:`VV` (of type :def_val:`GS_LONG`) based on a data :class:`VV`.
+               Create an Index :class:`VV` (of type :const:`GS_LONG`) based on a data :class:`VV`.
                This index vv can then be used by the IndexOrder method
                to order a group of :class:`VV`'s. The individual VVs may be ordered
                in ascending or descending order.
@@ -1408,7 +1408,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Sort index :class:`VV` based on 3 data VVs - set orders.",
                notes="""
-               Create an Index :class:`VV` (of type :def_val:`GS_LONG`) based on a data :class:`VV`.
+               Create an Index :class:`VV` (of type :const:`GS_LONG`) based on a data :class:`VV`.
                This index vv can then be used by the IndexOrder method
                to order a group of :class:`VV`'s. The individual VVs may be ordered
                in ascending or descending order.
@@ -1438,7 +1438,7 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Sort index :class:`VV` based on 4 data VVs - set orders.",
                notes="""
-               Create an Index :class:`VV` (of type :def_val:`GS_LONG`) based on a data :class:`VV`.
+               Create an Index :class:`VV` (of type :const:`GS_LONG`) based on a data :class:`VV`.
                This index vv can then be used by the IndexOrder method
                to order a group of :class:`VV`'s. The individual VVs may be ordered
                in ascending or descending order.

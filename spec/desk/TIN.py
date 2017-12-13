@@ -118,7 +118,7 @@ gx_methods = {
                    - The number :class:`VV` gives the number of adjacent nodes
                      for each node.
 
-               All VVs must be type :def_val:`GS_LONG`.
+               All VVs must be type :const:`GS_LONG`.
                """,
                return_type=Type.VOID,
                parameters = [
@@ -270,11 +270,11 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Interp TINned values using the natural neighbour method.",
                notes="""
-               The :class:`TIN` have been created using max length = :def_val:`rDUMMY` to
+               The :class:`TIN` have been created using max length = :const:`rDUMMY` to
                ensure that the :class:`TIN` has a convex hull (otherwise the
                routine that locates the triangle for a given location may fail).
                The :class:`TIN` must also have been created using the Z values.
-               Values located outside the convex hull are set to :def_val:`rDUMMY`.
+               Values located outside the convex hull are set to :const:`rDUMMY`.
                The method is based on the following paper:
                
                Sambridge, M., Braun, J., and McQueen, H., 1995,
@@ -287,11 +287,11 @@ gx_methods = {
                    Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
                    Parameter('vvx', type="VV",
-                             doc=":class:`VV` X locations to interpolate (:def_val:`GS_DOUBLE`)"),
+                             doc=":class:`VV` X locations to interpolate (:const:`GS_DOUBLE`)"),
                    Parameter('vvy', type="VV",
-                             doc=":class:`VV` Y locations to interpolate (:def_val:`GS_DOUBLE`)"),
+                             doc=":class:`VV` Y locations to interpolate (:const:`GS_DOUBLE`)"),
                    Parameter('vvz', type="VV",
-                             doc=":class:`VV` Interpolated Z values (:def_val:`GS_DOUBLE`)")
+                             doc=":class:`VV` Interpolated Z values (:const:`GS_DOUBLE`)")
                ]),
 
         Method('iTriangles_TIN', module='geogxx', version='5.0.0',
@@ -308,11 +308,11 @@ gx_methods = {
                availability=Availability.LICENSED, 
                doc="Interp TINned values using the linear interpolation",
                notes="""
-               The :class:`TIN` have been created using max length = :def_val:`rDUMMY` to
+               The :class:`TIN` have been created using max length = :const:`rDUMMY` to
                ensure that the :class:`TIN` has a convex hull (otherwise the
                routine that locates the triangle for a given location may fail).
                The :class:`TIN` must also have been created using the Z values.
-               Values located outside the convex hull are set to :def_val:`rDUMMY`.
+               Values located outside the convex hull are set to :const:`rDUMMY`.
                
                The values are set assuming that each :class:`TIN` triangle defines a
                plane.
@@ -322,22 +322,22 @@ gx_methods = {
                    Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
                    Parameter('vvx', type="VV",
-                             doc=":class:`VV` X locations to interpolate (:def_val:`GS_DOUBLE`)"),
+                             doc=":class:`VV` X locations to interpolate (:const:`GS_DOUBLE`)"),
                    Parameter('vvy', type="VV",
-                             doc=":class:`VV` Y locations to interpolate (:def_val:`GS_DOUBLE`)"),
+                             doc=":class:`VV` Y locations to interpolate (:const:`GS_DOUBLE`)"),
                    Parameter('vvz', type="VV",
-                             doc=":class:`VV` Interpolated Z values (:def_val:`GS_DOUBLE`)")
+                             doc=":class:`VV` Interpolated Z values (:const:`GS_DOUBLE`)")
                ]),
 
         Method('NearestVV_TIN', module='geogxx', version='6.0.0',
                availability=Availability.LICENSED, 
                doc="Interp TINned values using the nearest neighbour.",
                notes="""
-               The :class:`TIN` have been created using max length = :def_val:`rDUMMY` to
+               The :class:`TIN` have been created using max length = :const:`rDUMMY` to
                ensure that the :class:`TIN` has a convex hull (otherwise the
                routine that locates the triangle for a given location may fail).
                The :class:`TIN` must also have been created using the Z values.
-               Values located outside the convex hull are set to :def_val:`rDUMMY`.
+               Values located outside the convex hull are set to :const:`rDUMMY`.
                
                Within each voronoi triangle, the Z value of node closest to the input
                X,Y location is returned.
@@ -347,11 +347,11 @@ gx_methods = {
                    Parameter('tin', type="TIN",
                              doc=":class:`TIN` object"),
                    Parameter('vvx', type="VV",
-                             doc=":class:`VV` X locations to interpolate (:def_val:`GS_DOUBLE`)"),
+                             doc=":class:`VV` X locations to interpolate (:const:`GS_DOUBLE`)"),
                    Parameter('vvy', type="VV",
-                             doc=":class:`VV` Y locations to interpolate (:def_val:`GS_DOUBLE`)"),
+                             doc=":class:`VV` Y locations to interpolate (:const:`GS_DOUBLE`)"),
                    Parameter('vvz', type="VV",
-                             doc=":class:`VV` Interpolated Z values (:def_val:`GS_DOUBLE`)")
+                             doc=":class:`VV` Interpolated Z values (:const:`GS_DOUBLE`)")
                ]),
 
         Method('RangeXY_TIN', module='geogxx', version='5.0.0',

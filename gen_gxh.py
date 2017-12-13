@@ -12,7 +12,7 @@ class GXHConstant(Constant):
         super().construct_copy(other)
 
     @property
-    def def_value(self):
+    def gxh_value(self):
         if self.type == Type.STRING:
             return '"{}"'.format(self.value)
         else:
@@ -143,7 +143,7 @@ class GXHCodeGenerator(CodeGeneratorBase):
         s = self.re_class.sub(r'\1', s)
         s = self.re_def.sub(r'\1', s)
         s = self.re_func.sub(r'\1', s)
-        s = self.re_def_val.sub(r'\1', s)
+        s = self.re_const.sub(r'\1', s)
         s = textwrap.dedent(s).strip()
         return s.replace('``', '')
 

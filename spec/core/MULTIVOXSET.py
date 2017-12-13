@@ -233,9 +233,9 @@ gx_methods = {
                    Parameter('symb_z', type="DB_SYMB",
                              doc="Symbol to import Z, W or Declination data from"),
                    Parameter('inc', type=Type.DOUBLE,
-                             doc="Inclination value for :def_val:`VOX_VECTORVOX_UVW` (-90° to 90°)"),
+                             doc="Inclination value for :const:`VOX_VECTORVOX_UVW` (-90° to 90°)"),
                    Parameter('dec', type=Type.DOUBLE,
-                             doc="Declination value for :def_val:`VOX_VECTORVOX_UVW` (-180° to 180°)")
+                             doc="Declination value for :const:`VOX_VECTORVOX_UVW` (-180° to 180°)")
                ]),
 
         Method('ExportToSEGY_MULTIVOXSET', module='geoengine.core', version='9.3.0',
@@ -680,7 +680,7 @@ gx_methods = {
                    Parameter('filter', type=Type.INT32_T,
                              doc=":def:`FILTER3D`"),
                    Parameter('filter_file', type=Type.STRING,
-                             doc="Filter file, if filter is :def_val:`VOX_FILTER3D_FILE`"),
+                             doc="Filter file, if filter is :const:`VOX_FILTER3D_FILE`"),
                    Parameter('n_passes', type=Type.INT32_T,
                              doc="Number of filter passes"),
                    Parameter('interpolate_dummies', type=Type.INT32_T,
@@ -718,13 +718,13 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="Database"),
                    Parameter('x_channel', type="DB_SYMB",
-                             doc="X channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="X channel [:const:`DB_LOCK_READONLY`]"),
                    Parameter('y_channel', type="DB_SYMB",
-                             doc="Y channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Y channel [:const:`DB_LOCK_READONLY`]"),
                    Parameter('z_channel', type="DB_SYMB",
-                             doc="Z channel [:def_val:`DB_LOCK_READONLY`]"),
+                             doc="Z channel [:const:`DB_LOCK_READONLY`]"),
                    Parameter('data_channel', type="DB_SYMB",
-                             doc="Data channel [:def_val:`DB_LOCK_READONLY`]")
+                             doc="Data channel [:const:`DB_LOCK_READONLY`]")
                ])
     ]
 }
