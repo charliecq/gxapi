@@ -134,14 +134,6 @@ Supported basic types:
 - __Type.STRING__: String
 - __Type.VOID__: Void (for method return type)
 - __Type.BOOL__: Boolean
-- __Type.FLOAT_2D__: Single precision floating point 2D vector
-- __Type.FLOAT_3D__: Single precision floating point 3D vector
-- __Type.DOUBLE_2D__: Double precision floating point 2D vector
-- __Type.DOUBLE_3D__: Double precision floating point 3D vector
-- __Type.FLOAT_BBOX_2D__: Single precision floating point 2D bounding box
-- __Type.FLOAT_BBOX_3D__: Single precision floating point 3D bounding box
-- __Type.DOUBLE_BBOX_2D__: Double precision floating point 2D bounding box
-- __Type.DOUBLE_BBOX_3D__: Double precision floating point 3D bounding box
 
 In some cases a Type will be defined using a string instead. In this case the type will either 
 be the name of a [Class](#class), a [Define](#define), or some other known type understood 

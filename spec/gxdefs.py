@@ -16,14 +16,6 @@ class Type(IntEnum):
     STRING = 11
     VOID = 12
     BOOL = 13
-    FLOAT_2D = 14
-    FLOAT_3D = 15
-    DOUBLE_2D = 16
-    DOUBLE_3D = 17
-    FLOAT_BBOX_2D = 18
-    FLOAT_BBOX_3D = 19
-    DOUBLE_BBOX_2D = 20
-    DOUBLE_BBOX_3D = 21
 
 
 class Availability(IntEnum):
@@ -71,12 +63,6 @@ class Constant(SpecBase):
         if self.parent:
             if not isinstance(self.type, Type) and not self.parent.is_null_handle:
                 raise RuntimeError('Unsupported type {} for constant {}'.format(self.type, self))
-
-            if self.parent.parent:
-                if not isinstance(self.type, str) and not self.parent.parent.next_gen and self.type > Type.BOOL:
-                    raise RuntimeError('Unsupported type {} for constant {} in legacy class {}.'.format(self.type, self, self.parent.parent.name))
-
-            
 
 
 class Define(SpecBase):
