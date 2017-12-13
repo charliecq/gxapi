@@ -6,8 +6,6 @@ gx_class = Class('CHIMERA',
 
 gx_defines = [
     Define('CHIMERA_MAX_CHAN',
-           is_constant=True,
-           is_single_constant=True,
            doc="Maximum channels in Chimera database",
            constants=[
                Constant('CHIMERA_MAX_CHAN', value='128', type=Type.INT32_T)

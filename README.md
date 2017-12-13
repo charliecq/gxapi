@@ -1,6 +1,9 @@
 # Geosoft GX API Specification Repository
 
-This is the repository used to generate wrapper source code and documentation for the Geosoft Core GX libraries. At its heart the GX API is exposed as a low level C API that is version stable. The API specification files are used to define and document the signature of the API calls. 
+This is the repository used to generate wrapper source code and documentation for the public Geosoft GX APIs. 
+At its heart the GX API is exposed as a low level C/C++ API that is version stable. 
+The API specification files are used to define and document the signature of the API calls.
+
 
 Refer to the documentation for more information on using the GX API.
 

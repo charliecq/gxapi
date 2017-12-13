@@ -23,8 +23,8 @@ class Class(SpecBase):
     '''
     API specification for a GX class. 
     
-    A specification module should have at least one of these assigned to 
-    an attribute called __gx_class__.
+    A specification module should have one of these assigned to 
+    an attribute called **gx_class**.
 
     # Arguments
     name (str): Class name
@@ -33,31 +33,43 @@ class Class(SpecBase):
     see_also (str): Doc string containing see-also type references (optional)
     handle_name (str): GXC API variable type override (does not affect other languages)
     no_gxh (bool): Not available in GXC API when 'True'
-    no_csharp (bool): Not available in .Net API when 'True' (nor Python)
+    no_csharp (bool): Not available in .Net API when 'True'
     no_cpp (bool): Not available in C++ API when 'True' (nor Python)
-    next_gen (bool): Not a legacy class. Implies __no_gxh__
+    next_gen (bool): Not a legacy class (support enhanced API types and callbacks). Implies __no_gxh__
     
+    # Attributes
+    All the arguments passed to the constructor are available as attributes on the instance.
+    The following attributes are mixed in by the code generation framework startup code and 
+    is used by the code generation scripts and templates.
+
+                cl.is_static = True
+            cl.has_methods = False
+
+    is_static (bool): Class is static and cannot be instantiated by any method
+    has_methods (bool): Class has no methods (i.e. just contains definitions)
+    branch (str): Branch folder containing the class
+    method_groups (dict of str: list of #spec.gxmethods.Method): Method group lists
+    defines (dict of str: list of #spec.gxmethods.Method): Defines
+
     # Example
     ```python
     from .. import Class
 
-    # This is a very simple example class with only a doc string
-    gx_class = Class('GXSOMECLASS',
-                 doc="""
-                 This class' can be used to...
-                 It isdirectly related to the :class:`GXSOMEOTHERCLASS` class.
-                 """)
+    gx_methods = {
+    'Miscellaneous': [
+
+        Method('...
+
     ```
-    See also: #spec.gxmethod
     '''
     def __init__(self, name, doc=None, notes=None, see_also=None, 
                  handle_name=None, no_gxh=False, no_csharp=False, no_cpp=False,
                  next_gen=False):
-        super().__init__()
+        super().__init__(name)
         self.name = name
         self.next_gen = next_gen
         self.handle_name = handle_name
-        self.no_gxh = no_gxh
+        self.no_gxh = no_gxh or next_gen
         self.no_csharp = no_csharp
         self.no_cpp = no_cpp
         self.doc = doc
@@ -66,10 +78,13 @@ class Class(SpecBase):
         self.default_destroy_method = "Destr_SYS"
         self.has_methods = False
         self.see_also = see_also
-        self.branch = branch
+        self.branch = ''
         self.method_groups = {}
+        self.defines = {}
 
     def validate(self):
+        if not self.doc:
+            raise RuntimeError('Undocumented class {}'.format(self))
         for _, method_group in self.method_groups.items():
             for method in method_group:
                 method.validate()

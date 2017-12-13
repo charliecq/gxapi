@@ -15,8 +15,6 @@ gx_class = Class('DB',
 
 gx_defines = [
     Define('DB_ACTIVITY_BLOB',
-           is_constant=True,
-           is_single_constant=True,
            doc="Activity Blob",
            constants=[
                Constant('DB_ACTIVITY_BLOB', value='OE.DB_ACTIVITY_LOG', type=Type.STRING)
@@ -100,6 +98,7 @@ gx_defines = [
            ]),
 
     Define('DB_COORDPAIR',
+           doc="Used to indicate the matching coordinate pair of a channel.",
            constants=[
                Constant('DB_COORDPAIR_NONE', value='0', type=Type.INT32_T),
                Constant('DB_COORDPAIR_X', value='1', type=Type.INT32_T),
@@ -107,8 +106,6 @@ gx_defines = [
            ]),
 
     Define('DB_GROUP_CLASS_SIZE',
-           is_constant=True,
-           is_single_constant=True,
            doc="Class name max size",
            constants=[
                Constant('DB_GROUP_CLASS_SIZE', value='16', type=Type.INT32_T)
@@ -222,8 +219,6 @@ gx_defines = [
            ]),
 
     Define('DB_SYMB_NAME_SIZE',
-           is_constant=True,
-           is_single_constant=True,
            doc="Size of Symbol Names",
            constants=[
                Constant('DB_SYMB_NAME_SIZE', value='STR_DB_SYMBOL', type=Type.INT32_T,
@@ -238,6 +233,7 @@ gx_defines = [
            ]),
 
     Define('DB_ARRAY_BASETYPE',
+           doc="Array channel base coordinate type",
            constants=[
                Constant('DB_ARRAY_BASETYPE_NONE', value='0', type=Type.INT32_T),
                Constant('DB_ARRAY_BASETYPE_TIME_WINDOWS', value='1', type=Type.INT32_T),
@@ -250,8 +246,6 @@ gx_defines = [
            ]),
 
     Define('NULLSYMB',
-           is_constant=True,
-           is_single_constant=True,
            doc="Database Null",
            constants=[
                Constant('NULLSYMB', value='-1', type=Type.INT32_T)

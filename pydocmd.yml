@@ -8,9 +8,13 @@ generate:
 - SpecAnatomy.md:
   - spec:
     - spec.gxclass++
-    - spec.gxdefs++
-    - spec.gxmethod++
-
+    - spec.gxdefs:
+        - spec.gxdefs.Define+
+        - spec.gxdefs.Constant+
+    - spec.gxmethod:
+        - spec.gxmethod.Method+
+        - spec.gxmethod.Parameter+
+    
 # MkDocs pages configuration. The `<<` operator is sugar added by pydocmd
 # that allows you to use an external Markdown file (eg. your project's README)
 # in the documentation. The path must be relative to current working directory.

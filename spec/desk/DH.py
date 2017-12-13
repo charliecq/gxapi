@@ -15,7 +15,6 @@ gx_class = Class('DH',
 
 gx_defines = [
     Define('DH_DEFAULT_FILENAMES',
-           is_constant=True,
            doc="Default filenames",
            constants=[
                Constant('DH_DEFAULT_ROCKCODE_FILE', value='agso.csv', type=Type.STRING),
@@ -23,8 +22,6 @@ gx_defines = [
            ]),
 
     Define('STR_DH_HOLES',
-           is_constant=True,
-           is_single_constant=True,
            doc="""
            This declares the size of the string used in various
            :class:`DH` GXs to store all the currently selected holes, as input to the two-panel
@@ -76,15 +73,12 @@ gx_defines = [
            ]),
 
     Define('DH_DEFINE_PLAN',
-           is_constant=True,
-           is_single_constant=True,
            doc="Plans",
            constants=[
                Constant('DH_DEFINE_PLAN', value='1', type=Type.INT32_T)
            ]),
 
     Define('DH_DEFINE_SECT',
-           is_constant=True,
            doc="Types of Sections",
            constants=[
                Constant('DH_DEFINE_SECT_NS', value='1', type=Type.INT32_T),

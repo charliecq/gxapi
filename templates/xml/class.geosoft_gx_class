@@ -9,7 +9,7 @@
     </description>
     <definitions>
 {%- for _, define in cl.defines.items() %}
-        <definition name="{{ define.name }}"{% if define.is_constant %} constant="true"{% endif %}{% if define.is_single_constant %} single_constant="true"{% endif %}{% if define.is_null_handle %} null_handle="true"{% endif %}>{% if define.doc %}
+        <definition name="{{ define.name }}"{% if define.is_null_handle %} null_handle="true"{% endif %}>{% if define.doc %}
             <description>{{ define.doc | doc_sanitize }}</description>{% else %}
             <description/>{% endif %}
 {%- for constant in define.constants %}

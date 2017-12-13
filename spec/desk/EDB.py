@@ -16,8 +16,6 @@ gx_class = Class('EDB',
 
 gx_defines = [
     Define('MAX_PROF_WND',
-           is_constant=True,
-           is_single_constant=True,
            doc="The following value should be kept synchronized with the value defined in src\\geoguilib\\stdafx.h",
            constants=[
                Constant('MAX_PROF_WND', value='5', type=Type.INT32_T)

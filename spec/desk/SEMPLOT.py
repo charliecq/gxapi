@@ -6,8 +6,6 @@ gx_class = Class('SEMPLOT',
 
 gx_defines = [
     Define('SEMPLOT_GROUP_CLASS',
-           is_constant=True,
-           is_single_constant=True,
            doc=":class:`SEMPLOT` group class.",
            constants=[
                Constant('SEMPLOT_GROUP_CLASS', value='Semplot', type=Type.STRING)

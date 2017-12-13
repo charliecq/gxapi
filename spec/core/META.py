@@ -19,8 +19,6 @@ gx_class = Class('META',
 
 gx_defines = [
     Define('H_META_INVALID_TOKEN',
-           is_constant=True,
-           is_single_constant=True,
            doc=":class:`META` Invalid Token",
            constants=[
                Constant('H_META_INVALID_TOKEN', value='-1', type=Type.INT32_T)

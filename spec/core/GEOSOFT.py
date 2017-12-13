@@ -21,8 +21,6 @@ gx_class = Class('GEOSOFT',
 
 gx_defines = [
     Define('CRC_INIT_VALUE',
-           is_constant=True,
-           is_single_constant=True,
            doc="Initial value for starting a CRC",
            constants=[
                Constant('CRC_INIT_VALUE', value='4294967295', type=Type.UINT32_T,
@@ -41,7 +39,6 @@ gx_defines = [
            ]),
 
     Define('GEO_DUMMY',
-           is_constant=True,
            doc="Special numbers indicating NULLL",
            constants=[
                Constant('iDUMMY', value='-2147483647', type=Type.INT32_T,
@@ -51,7 +48,6 @@ gx_defines = [
            ]),
 
     Define('GEO_FULL_LIMITS',
-           is_constant=True,
            doc="Data ranges of all Geosoft types",
            constants=[
                Constant('GS_S1MX', value='127', type=Type.INT8_T,
@@ -124,7 +120,6 @@ gx_defines = [
            ]),
 
     Define('GEO_LIMITS',
-           is_constant=True,
            doc="Data ranges of numbers",
            constants=[
                Constant('iMIN', value='-2147483646', type=Type.INT32_T,
@@ -279,7 +274,6 @@ gx_defines = [
            ]),
 
     Define('SYS_CRYPT_KEY',
-           is_constant=True,
            doc="Special Encryption Keys",
            constants=[
                Constant('SYS_CRYPT_LICENSE_KEY', value='{***LICENSE_KEY***}', type=Type.STRING,

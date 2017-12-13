@@ -255,8 +255,6 @@ gx_defines = [
            ]),
 
     Define('MVIEW_NAME_LENGTH',
-           is_constant=True,
-           is_single_constant=True,
            doc="Maximum length for view and group names",
            constants=[
                Constant('MVIEW_NAME_LENGTH', value='1040', type=Type.INT32_T,

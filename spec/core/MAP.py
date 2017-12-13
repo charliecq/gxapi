@@ -42,7 +42,6 @@ gx_defines = [
            ]),
 
     Define('MAP_EXPORT_FORMAT',
-           is_constant=True,
            doc="""
            Export Formats
            Format   Description                  Type
@@ -83,7 +82,6 @@ gx_defines = [
            ]),
 
     Define('MAP_EXPORT_RASTER_FORMAT',
-           is_constant=True,
            doc="""
            Export Raster Formats
            .
