@@ -144,9 +144,9 @@ is available.
 
 Supported values:
 
-- __Availability.PUBLIC__: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftOpenLicense
-- __Availability.LICENSED__: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftDesktopLicense)
-- __Availability.EXTENSION__: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftExtendedDesktopLicense)
+- __Availability.PUBLIC__: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense)
+- __Availability.LICENSED__: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense)
+- __Availability.EXTENSION__: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense)
 
 
 Define
