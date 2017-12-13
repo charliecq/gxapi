@@ -144,10 +144,9 @@ is available.
 
 Supported values:
 
-- __Availability.PUBLIC__: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#open-lic)
-- __Availability.LICENSED__: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#end-user-lic)
-- __Availability.EXTENSION__: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#ext-end-user-lic)
-
+- __Availability.PUBLIC__: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic)
+- __Availability.LICENSED__: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#eLicense-end-user-lic)
+- __Availability.EXTENSION__: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic)
 
 Define
 ------
