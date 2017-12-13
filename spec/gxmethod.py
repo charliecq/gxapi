@@ -66,7 +66,7 @@ class Method(SpecBase):
     
     return_type (#spec.gxdefs.Type): Return type
     return_doc (str): Doc string for return value
-    parameters (list of #spec.gxmethods.Parameter): Parameters
+    parameters (list of #Parameter#): Parameters
 
     is_deprecated (bool): Method has been deprecated (still available but will be marked as such)
     deprecation_version (str): Version the method was deprecated

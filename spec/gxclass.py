@@ -42,14 +42,11 @@ class Class(SpecBase):
     The following attributes are mixed in by the code generation framework startup code and 
     is used by the code generation scripts and templates.
 
-                cl.is_static = True
-            cl.has_methods = False
-
     is_static (bool): Class is static and cannot be instantiated by any method
     has_methods (bool): Class has no methods (i.e. just contains definitions)
     branch (str): Branch folder containing the class
-    method_groups (dict of str: list of #spec.gxmethods.Method): Method group lists
-    defines (dict of str: list of #spec.gxmethods.Method): Defines
+    method_groups (dict of str: list of #Method#): Method group lists
+    defines (dict of str: list of #Method#): Defines
 
     # Example
     ```python

@@ -3,8 +3,8 @@ API specification of types, availability and constant defines for a GX class.
 
 # Types
 
-#spec.gxdefs.Type enumerations are used wherever a basic type needs to be specified. E.g.
-for a #spec.gxmethods.Method return value, #spec.gxmethods.Parameter or a #spec.gxdefs.Constant.
+#Type# enumerations are used wherever a basic type needs to be specified. E.g.
+for a #Method# return value, #Parameter# or a #Constant#.
 
 The actual specific types supported by each programming language could be different.
 
@@ -34,13 +34,13 @@ Supported basic types:
 
 
 In some cases a Type will be defined using a string instead. In this case the type will either 
-be the name of a #spec.gxclass.Class, a #spec.gxdefs.Define, or some other known type understood 
+be the name of a #Class#, a #Define#, or some other known type understood 
 by the generation framework (e.g. "VV", "VV_ORDER" or "HDC").
 
 
 # Availability
 
-#spec.gxdefs.Availability is used to indicate under which license a specific #spec.gxmethods.Method
+#Availability# is used to indicate under which license a specific #Method#
 is available.
 
 Supported values:
@@ -111,7 +111,7 @@ class Constant(SpecBase):
     # Arguments
     name (str): Class name
     value (str): Value
-    type (#spec.gxdefs.Type): Type
+    type (#Type#): Type
     doc (str): Doc string with definition summary (optional but recommended)
     
     # Attributes
@@ -119,7 +119,7 @@ class Constant(SpecBase):
     The following attributes are mixed in by the code generation framework startup code and 
     is used by the code generation scripts and templates.
 
-    parent (#spec.gxdefs.Define): Parent define
+    parent (#Define#): Parent define
     
     # Example
     ```python
@@ -175,14 +175,14 @@ class Define(SpecBase):
     name (str): Class name
     doc (str): Doc string with definition summary
     is_null_handle (bool): Constant acts as null instance of a class
-    constants (list of #spec.gxdefs.Constant): Constants
+    constants (list of #Constant#): Constants
     
     # Attributes
     All the arguments passed to the constructor are available as attributes on the instance.
     The following attributes are mixed in by the code generation framework startup code and 
     is used by the code generation scripts and templates.
 
-    parent (#spec.gxclass.Class): Parent class
+    parent (#Class#): Parent class
     
     # Example
     ```python

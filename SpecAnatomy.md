@@ -18,10 +18,10 @@ by Geosoft, while **desk** contains classes that might depend on implementations
 Geosoft Desktop internal APIs. 
 
 A specification module should have at the very least an attribute called **gx_class** of type
-`spec.gxclass.Class` that defines the class properties and documentation.
+`Class`# that defines the class properties and documentation.
 
-It can optionally also have a **gx_defines** attribute that should be a list of `spec.gxdefs.Define`
-and/or a **gx_methods** dict of lists containing `spec.gxmethods.Method` . The key of the dict
+It can optionally also have a **gx_defines** attribute that should be a list of `Define`#
+and/or a **gx_methods** dict of lists containing `Method```. The key of the dict
 is used to group related methods together in the documentation.
 
 __Example__
@@ -84,14 +84,11 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-            cl.is_static = True
-        cl.has_methods = False
-
 - `is_static (bool)`: Class is static and cannot be instantiated by any method
 - `has_methods (bool)`: Class has no methods (i.e. just contains definitions)
 - `branch (str)`: Branch folder containing the class
-- `method_groups (dict of str: list of `spec.gxmethods.Method`)`: Method group lists
-- `defines (dict of str: list of `spec.gxmethods.Method`)`: Defines
+- `method_groups (dict of str: list of `Method`#)`: Method group lists
+- `defines (dict of str: list of `Method`#)`: Defines
 
 __Example__
 
@@ -113,8 +110,8 @@ API specification of types, availability and constant defines for a GX class.
 __Types__
 
 
-`spec.gxdefs.Type` enumerations are used wherever a basic type needs to be specified. E.g.
-for a `spec.gxmethods.Method` return value, `spec.gxmethods.Parameter` or a `spec.gxdefs.Constant`.
+`Type`# enumerations are used wherever a basic type needs to be specified. E.g.
+for a `Method`# return value, `Parameter`# or a `Constant```.
 
 The actual specific types supported by each programming language could be different.
 
@@ -144,14 +141,14 @@ Supported basic types:
 
 
 In some cases a Type will be defined using a string instead. In this case the type will either 
-be the name of a `spec.gxclass.Class`, a `spec.gxdefs.Define`, or some other known type understood 
+be the name of a `Class`#, a `Define`#, or some other known type understood 
 by the generation framework (e.g. "VV", "VV_ORDER" or "HDC").
 
 
 __Availability__
 
 
-`spec.gxdefs.Availability` is used to indicate under which license a specific `spec.gxmethods.Method`
+`Availability`# is used to indicate under which license a specific `Method`#
 is available.
 
 Supported values:
@@ -177,7 +174,7 @@ __Arguments__
 - __name (str)__: Class name
 - __doc (str)__: Doc string with definition summary
 - __is_null_handle (bool)__: Constant acts as null instance of a class
-- __constants (list of `spec.gxdefs.Constant`)__: Constants
+- __constants (list of `Constant`#)__: Constants
 
 __Attributes__
 
@@ -185,7 +182,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent (`spec.gxclass.Class`)`: Parent class
+- `parent (`Class`#)`: Parent class
 
 __Example__
 
@@ -213,7 +210,7 @@ __Arguments__
 
 - __name (str)__: Class name
 - __value (str)__: Value
-- __type (`spec.gxdefs.Type`)__: Type
+- __type (`Type`#)__: Type
 - __doc (str)__: Doc string with definition summary (optional but recommended)
 
 __Attributes__
@@ -222,7 +219,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent (`spec.gxdefs.Define`)`: Parent define
+- `parent (`Define`#)`: Parent define
 
 __Example__
 
@@ -274,7 +271,7 @@ __Arguments__
 
 - __return_type (`spec.gxdefs.Type`)__: Return type
 - __return_doc (str)__: Doc string for return value
-- __parameters (list of `spec.gxmethods.Parameter`)__: Parameters
+- __parameters (list of `Parameter`#)__: Parameters
 
 - __is_deprecated (bool)__: Method has been deprecated (still available but will be marked as such)
 - __deprecation_version (str)__: Version the method was deprecated

@@ -15,10 +15,10 @@ by Geosoft, while **desk** contains classes that might depend on implementations
 Geosoft Desktop internal APIs. 
 
 A specification module should have at the very least an attribute called **gx_class** of type
-#spec.gxclass.Class that defines the class properties and documentation.
+#Class# that defines the class properties and documentation.
 
-It can optionally also have a **gx_defines** attribute that should be a list of #spec.gxdefs.Define
-and/or a **gx_methods** dict of lists containing #spec.gxmethods.Method . The key of the dict
+It can optionally also have a **gx_defines** attribute that should be a list of #Define#
+and/or a **gx_methods** dict of lists containing #Method#. The key of the dict
 is used to group related methods together in the documentation.
 
 # Example
