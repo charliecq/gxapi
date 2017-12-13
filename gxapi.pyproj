@@ -186,7 +186,6 @@
     <Content Include="compile.bat" />
     <Content Include="gxapi_cy_extend.pyx" />
     <Content Include="gxapi_cy.pyx" />
-    <Content Include="pydocmd.yml" />
     <Content Include="README.md" />
     <Content Include="templates\gxcore\gxlib_cur.gen.h" />
     <Content Include="templates\gxcore\gxlib_empty.h" />

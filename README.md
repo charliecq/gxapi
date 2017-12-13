@@ -51,6 +51,18 @@ gx_methods = {
 ...
 ```
 
+__Cross-referencing in Doc strings__
+
+Any doc string in the API specifications can contain cross-references to other API elements.
+
+Here is an example of one with each of the supported references:
+
+```python
+...
+    see_also="Class :class:`MVIEW` and :func:`GetXYZChanSymb_DB` and :const:`AGG_LAYER_ZONE_SHADE`"
+...
+```
+
 Class
 -----
 
