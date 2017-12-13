@@ -103,7 +103,7 @@ Type
 ----
 
 The **Type** enumeration is used wherever a basic type needs to be specified. E.g.
-for a [Method](#method) return value, [Parameter](#parameter) or a `Constant```.
+for a [Method](#method) return value, [Parameter](#parameter) or a [Constant](#constant).
 
 The actual specific types supported by each programming language could be different.
 
