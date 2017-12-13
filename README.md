@@ -17,14 +17,14 @@ Any source code found here are released under the [BSD 2-clause license](https:/
 # Anatomy of a GX API specification file
 
 The folders **spec/core** and **spec/desk** contains single Python modules for each class in the GX API. 
-**core** includes the classes considered to be part of the Geosoft Core internal APIs implemented
+The **core** folder contains the classes considered to be part of the Geosoft Core internal APIs implemented
 by Geosoft, while **desk** contains classes that might depend on implementations in the 
 Geosoft Desktop internal APIs. 
 
 A specification module should have at the very least an attribute called **gx_class** of type
-[Class](#Class) that defines the class properties and documentation.
+[Class](#class) that defines the class properties and documentation.
 
-It can optionally also have a **gx_defines** attribute that should be a list of [Define](#Define)
+It can optionally also have a **gx_defines** attribute that should be a list of [Define](#define)
 and/or a **gx_methods** dict of lists containing `Method```. The key of the dict
 is used to group related methods together in the documentation.
 
@@ -84,8 +84,8 @@ is used by the code generation scripts and templates.
 - `is_static (bool)`: Class is static and cannot be instantiated by any method
 - `has_methods (bool)`: Class has no methods (i.e. just contains definitions)
 - `branch (str)`: Branch folder containing the class
-- `method_groups (dict of str: list of [Method](#Method))`: Method group lists
-- `defines (dict of str: list of [Method](#Method))`: Defines
+- `method_groups (dict of str: list of [Method](#method))`: Method group lists
+- `defines (dict of str: list of [Method](#method))`: Defines
 
 __Example__
 
@@ -103,7 +103,7 @@ Type
 ----
 
 The **Type** enumeration is used wherever a basic type needs to be specified. E.g.
-for a [Method](#Method) return value, [Parameter](#Parameter) or a `Constant```.
+for a [Method](#method) return value, [Parameter](#parameter) or a `Constant```.
 
 The actual specific types supported by each programming language could be different.
 
@@ -133,14 +133,14 @@ Supported basic types:
 
 
 In some cases a Type will be defined using a string instead. In this case the type will either 
-be the name of a [Class](#Class), a [Define](#Define), or some other known type understood 
+be the name of a [Class](#class), a [Define](#define), or some other known type understood 
 by the generation framework (e.g. "VV", "VV_ORDER" or "HDC").
 
 
 Availability
 ------------
 
-The **Availability** enumeration is used to indicate under which license a specific [Method](#Method)
+The **Availability** enumeration is used to indicate under which license a specific [Method](#method)
 is available.
 
 Supported values:
@@ -167,7 +167,7 @@ __Arguments__
 - __name (str)__: Class name
 - __doc (str)__: Doc string with definition summary
 - __is_null_handle (bool)__: Constant acts as null instance of a class
-- __constants (list of [Constant](#Constant))__: Constants
+- __constants (list of [Constant](#constant))__: Constants
 
 __Attributes__
 
@@ -175,7 +175,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Class](#Class))`: Parent class
+- `parent ([Class](#class))`: Parent class
 
 __Example__
 
@@ -204,7 +204,7 @@ __Arguments__
 
 - __name (str)__: Class name
 - __value (str)__: Value
-- __type ([Type](#Type))__: Type
+- __type ([Type](#type))__: Type
 - __doc (str)__: Doc string with definition summary (optional but recommended)
 
 __Attributes__
@@ -213,7 +213,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Define](#Define))`: Parent define
+- `parent ([Define](#define))`: Parent define
 
 __Example__
 
@@ -247,7 +247,7 @@ __Arguments__
 
 - __name (str)__: Method name
 - __version (str)__: Version the method was introduced
-- __availability ([Availability](#Availability))__: Availability
+- __availability ([Availability](#availability))__: Availability
 - __module (str)__: Name of binary module containing method (Not used if is_app==True)
 - __doc (str)__: Doc string with method summary
 - __notes (str)__: Doc string containing verbose notes (optional)
@@ -261,9 +261,9 @@ __Arguments__
 - __no_csharp (bool)__: Not available in .Net API when 'True'
 - __no_cpp (bool)__: Not available in C++ API when 'True' (nor Python)
 
-- __return_type ([Type](#Type))__: Return type
+- __return_type ([Type](#type))__: Return type
 - __return_doc (str)__: Doc string for return value
-- __parameters (list of [Parameter](#Parameter))__: Parameters
+- __parameters (list of [Parameter](#parameter))__: Parameters
 
 - __is_deprecated (bool)__: Method has been deprecated (still available but will be marked as such)
 - __deprecation_version (str)__: Version the method was deprecated
@@ -279,7 +279,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Class](#Class))`: Parent class
+- `parent ([Class](#class))`: Parent class
 - `is_static (bool)`: Is this a static method
 - `is_destroy_method (bool)`: Is this method used to dispose of the instance
 - `exposed_name (str)`: C and GXC APIs external name (influenced by is_app)
@@ -309,7 +309,7 @@ API specification for a parameter of a GX method.
 __Arguments__
 
 - __name (str)__: Parameter name
-- __type ([Type](#Type))__: Type
+- __type ([Type](#type))__: Type
 - __doc (str)__: Doc string with parameter summary
 - __is_ref (bool)__: Should parameter be passed by reference
 - __is_val (bool)__: By default references (and const references if not is_ref) are used for parameters in the C GX API wrappers. Set this to true if the parameter will be passed by value.
@@ -322,6 +322,6 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Method](#Method))`: Parent method
+- `parent ([Method](#method))`: Parent method
 
 
