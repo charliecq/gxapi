@@ -81,11 +81,11 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `is_static (bool)`: Class is static and cannot be instantiated by any method
-- `has_methods (bool)`: Class has no methods (i.e. just contains definitions)
-- `branch (str)`: Branch folder containing the class
-- `method_groups (dict of str: list of [Method](#method))`: Method group lists
-- `defines (dict of str: list of [Method](#method))`: Defines
+- __is_static (bool)__: Class is static and cannot be instantiated by any method
+- __has_methods (bool)__: Class has no methods (i.e. just contains definitions)
+- __branch (str)__: Branch folder containing the class
+- __method_groups (dict of str: list of [Method](#method))__: Method group lists
+- __defines (dict of str: list of [Method](#method))__: Defines
 
 __Example__
 
@@ -175,7 +175,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Class](#class))`: Parent class
+- __parent ([Class](#class))__: Parent class
 
 __Example__
 
@@ -213,7 +213,7 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Define](#define))`: Parent define
+- __parent ([Define](#define))__: Parent define
 
 __Example__
 
@@ -279,10 +279,10 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Class](#class))`: Parent class
-- `is_static (bool)`: Is this a static method
-- `is_destroy_method (bool)`: Is this method used to dispose of the instance
-- `exposed_name (str)`: C and GXC APIs external name (influenced by is_app)
+- __parent ([Class](#class))__: Parent class
+- __is_static (bool)__: Is this a static method
+- __is_destroy_method (bool)__: Is this method used to dispose of the instance
+- __exposed_name (str)__: C and GXC APIs external name (influenced by is_app)
 
 __Example__
 
@@ -322,6 +322,6 @@ All the arguments passed to the constructor are available as attributes on the i
 The following attributes are mixed in by the code generation framework startup code and 
 is used by the code generation scripts and templates.
 
-- `parent ([Method](#method))`: Parent method
+- __parent ([Method](#method))__: Parent method
 
 
