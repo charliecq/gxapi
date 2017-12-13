@@ -109,28 +109,27 @@ The actual specific types supported by each programming language could be differ
 
 Supported basic types:
 
-    Type.FLOAT: Single precision floating point value (32-bit)
-    Type.DOUBLE: Double precision floating point value (64-bit)
-    Type.INT8_T: 8-bit signed integer
-    Type.UINT8_T: 8-bit unsigned integer
-    Type.INT16_T: 16-bit signed integer
-    Type.UINT16_T: 16-bit unsigned integer
-    Type.INT32_T: 32-bit signed integer
-    Type.UINT32_T: 32-bit unsigned integer
-    Type.INT64_T: 64-bit signed integer
-    Type.UINT64_T: 64-bit unsigned integer
-    Type.STRING: String
-    Type.VOID: Void (for method return type)
-    Type.BOOL: Boolean
-    Type.FLOAT_2D: Single precision floating point 2D vector
-    Type.FLOAT_3D: Single precision floating point 3D vector
-    Type.DOUBLE_2D: Double precision floating point 2D vector
-    Type.DOUBLE_3D: Double precision floating point 3D vector
-    Type.FLOAT_BBOX_2D: Single precision floating point 2D bounding box
-    Type.FLOAT_BBOX_3D: Single precision floating point 3D bounding box
-    Type.DOUBLE_BBOX_2D: Double precision floating point 2D bounding box
-    Type.DOUBLE_BBOX_3D: Double precision floating point 3D bounding box
-
+- __Type.FLOAT__: Single precision floating point value (32-bit)
+- __Type.DOUBLE__: Double precision floating point value (64-bit)
+- __Type.INT8_T__: 8-bit signed integer
+- __Type.UINT8_T__: 8-bit unsigned integer
+- __Type.INT16_T__: 16-bit signed integer
+- __Type.UINT16_T__: 16-bit unsigned integer
+- __Type.INT32_T__: 32-bit signed integer
+- __Type.UINT32_T__: 32-bit unsigned integer
+- __Type.INT64_T__: 64-bit signed integer
+- __Type.UINT64_T__: 64-bit unsigned integer
+- __Type.STRING__: String
+- __Type.VOID__: Void (for method return type)
+- __Type.BOOL__: Boolean
+- __Type.FLOAT_2D__: Single precision floating point 2D vector
+- __Type.FLOAT_3D__: Single precision floating point 3D vector
+- __Type.DOUBLE_2D__: Double precision floating point 2D vector
+- __Type.DOUBLE_3D__: Double precision floating point 3D vector
+- __Type.FLOAT_BBOX_2D__: Single precision floating point 2D bounding box
+- __Type.FLOAT_BBOX_3D__: Single precision floating point 3D bounding box
+- __Type.DOUBLE_BBOX_2D__: Double precision floating point 2D bounding box
+- __Type.DOUBLE_BBOX_3D__: Double precision floating point 3D bounding box
 
 In some cases a Type will be defined using a string instead. In this case the type will either 
 be the name of a [Class](#class), a [Define](#define), or some other known type understood 
@@ -145,9 +144,9 @@ is available.
 
 Supported values:
 
-    Availability.PUBLIC: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftOpenLicense
-    Availability.LICENSED: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftDesktopLicense)
-    Availability.EXTENSION: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftExtendedDesktopLicense)
+- __Availability.PUBLIC__: Available under [Geosoft Open License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftOpenLicense
+- __Availability.LICENSED__: Available under [Geosoft End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftDesktopLicense)
+- __Availability.EXTENSION__: Available under [Geosoft Extended End-User License](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License`License`-GeosoftExtendedDesktopLicense)
 
 
 Define
