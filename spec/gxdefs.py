@@ -34,7 +34,7 @@ Supported basic types:
 
 
 In some cases a Type will be defined using a string instead. In this case the type will either 
-be the name of a #Class#, a #Define#, or some other known type understood 
+be the name of a [Class](#spec.gxclass.Class), a #Define#, or some other known type understood 
 by the generation framework (e.g. "VV", "VV_ORDER" or "HDC").
 
 
@@ -182,7 +182,7 @@ class Define(SpecBase):
     The following attributes are mixed in by the code generation framework startup code and 
     is used by the code generation scripts and templates.
 
-    parent (#Class#): Parent class
+    parent ([Class](#spec.gxclass.Class)): Parent class
     
     # Example
     ```python

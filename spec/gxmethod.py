@@ -7,7 +7,7 @@ class Parameter(SpecBase):
     
     # Arguments
     name (str): Parameter name
-    type (#spec.gxdefs.Type): Type
+    type (#Type#): Type
     doc (str): Doc string with parameter summary
     is_ref (bool): Should parameter be passed by reference
     is_val (bool): By default references (and const references if not is_ref) are used for parameters in the C GX API wrappers. Set this to true if the parameter will be passed by value.
@@ -19,7 +19,7 @@ class Parameter(SpecBase):
     The following attributes are mixed in by the code generation framework startup code and 
     is used by the code generation scripts and templates.
 
-    parent (#spec.gxmethod.Method): Parent method
+    parent (#Method#): Parent method
     '''
 
     def __init__(self, name, type, is_ref=False, is_val=False,
@@ -50,7 +50,7 @@ class Method(SpecBase):
     # Arguments
     name (str): Method name
     version (str): Version the method was introduced
-    availability (#spec.gxdefs.Availability): Availability
+    availability (#Availability#): Availability
     module (str): Name of binary module containing method (Not used if is_app==True)
     doc (str): Doc string with method summary
     notes (str): Doc string containing verbose notes (optional)
@@ -64,7 +64,7 @@ class Method(SpecBase):
     no_csharp (bool): Not available in .Net API when 'True'
     no_cpp (bool): Not available in C++ API when 'True' (nor Python)
     
-    return_type (#spec.gxdefs.Type): Return type
+    return_type (#Type#): Return type
     return_doc (str): Doc string for return value
     parameters (list of #Parameter#): Parameters
 
@@ -81,7 +81,7 @@ class Method(SpecBase):
     The following attributes are mixed in by the code generation framework startup code and 
     is used by the code generation scripts and templates.
 
-    parent (#spec.gxclass.Class): Parent class
+    parent ([Class](#spec.gxclass.Class)): Parent class
     is_static (bool): Is this a static method
     is_destroy_method (bool): Is this method used to dispose of the instance
     exposed_name (str): C and GXC APIs external name (influenced by is_app)
