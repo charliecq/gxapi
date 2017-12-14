@@ -16,7 +16,7 @@ Any source code found here are released under the [BSD 2-clause license](https:/
 
 # Anatomy of a GX API specification file
 
-The folders **spec/core** and **spec/desk** contains single Python modules for each class in the GX API. 
+The folders **spec/core** and **spec/desk** contain single Python modules for each class in the GX API. 
 The **core** folder contains the classes considered to be part of the Geosoft Core internal APIs implemented
 by Geosoft, while **desk** contains classes that might depend on implementations in the 
 Geosoft Desktop internal APIs. 
@@ -25,7 +25,7 @@ A specification module should have at the very least an attribute called **gx_cl
 [Class](#class) that defines the class properties and documentation.
 
 It can optionally also have a **gx_defines** attribute that should be a list of [Define](#define)
-and/or a **gx_methods** dict of lists containing `Method```. The key of the dict
+and/or a **gx_methods** dict of lists containing ```Method```. The key of the dict
 is used to group related methods together in the documentation.
 
 __Example__
