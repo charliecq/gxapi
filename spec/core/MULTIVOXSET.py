@@ -730,6 +730,21 @@ gx_methods = {
                              doc="(1: interpolate dummies)")
                ]),
 
+        Method('GenerateRBF_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+               availability=Availability.LICENSED, 
+               doc="Creates a VOXEL from an database using RBF.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('db', type="DB",
+                             doc="Handle to a database"),
+                   Parameter('output_file', type=Type.STRING,
+                             doc="Name of the output voxel"),
+				   Parameter('data_channel', type=Type.STRING,
+                             doc="Channel to grid`"),
+                   Parameter('cel_size', type=Type.DOUBLE,
+                             doc="Cell size")
+				]),
+
         Method('GridDirectFromGDB_MULTIVOXSET', module='geoengine.core', version='9.3.0',
                availability=Availability.LICENSED, 
                doc="Create a voxel using direct gridding.",
