@@ -208,13 +208,14 @@ class CodeGeneratorBase:
 
     def regen_with_editable_blocks(self, template_gen_dir, template_prefix, extension, input_file, output_file, **kwargs):
         empty_template = '{}/{}_empty.{}'.format(template_gen_dir, template_prefix, extension)
+        empty_template_path = os.path.join(os.path.dirname(__file__), '..', empty_template)
         cur_gen_template = '{}/{}_cur.gen.{}'.format(template_gen_dir, template_prefix, extension)
         cur_gen_template_path = os.path.join(os.path.dirname(__file__), '..', cur_gen_template)
         generated_template_name = '{}_generated.{}'.format(template_prefix, extension)
         generated_gen_template = '{}/{}_generated.gen.{}'.format(template_gen_dir, template_prefix, extension)
         generated_gen_template_path = os.path.join(os.path.dirname(__file__), '..', generated_gen_template)
         if not os.path.exists(input_file):
-            copyfile(empty_template, cur_gen_template_path)
+            copyfile(empty_template_path, cur_gen_template_path)
         else:
             copyfile(input_file, cur_gen_template_path)
 
