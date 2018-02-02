@@ -2472,6 +2472,20 @@ gx_methods = {
                    Parameter('data', type=Type.STRING,
                              doc="Gravity data file")
                ]),
+ 
+        Method('LoadGravityCG6_DU', module='geogxx', version='9.3.1',
+               availability=Availability.LICENSED, 
+               doc="Load a CG-6 gravity survey file.",
+               notes="""
+               Has its own format - space-delimited columns of data
+               """,
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('db', type="DB",
+                             doc="Database"),
+                   Parameter('data', type=Type.STRING,
+                             doc="Gravity data file")
+               ]),
 
         Method('LoadLTB_DU', module='geogxx', version='5.0.0',
                availability=Availability.LICENSED, 
