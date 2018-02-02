@@ -2473,7 +2473,7 @@ gx_methods = {
                              doc="Gravity data file")
                ]),
  
-        Method('LoadGravityCG6_DU', module='geogxx', version='9.4.0',
+        Method('LoadGravityCG6_DU', module='geogxx', version='9.3.1',
                availability=Availability.LICENSED, 
                doc="Load a CG-6 gravity survey file.",
                notes="""
