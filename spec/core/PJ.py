@@ -417,7 +417,28 @@ gx_methods = {
                parameters = [
                    Parameter('pj', type="PJ",
                              doc="Projection")
-               ])
+               ]),
+
+		Method('ProjectBoundingVolume_PJ', module='geoengine.core', version='6.0.0',
+               availability=Availability.PUBLIC, 
+               doc="Project a bounding volume.",
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('pj', type="PJ",
+                             doc=":class:`PJ` to use"),
+                   Parameter('min_x', type=Type.DOUBLE, is_ref=True,
+                             doc="Min X"),
+                   Parameter('min_y', type=Type.DOUBLE, is_ref=True,
+                             doc="Min Y"),
+                   Parameter('min_z', type=Type.DOUBLE, is_ref=True,
+                             doc="Min Z"),
+                   Parameter('max_x', type=Type.DOUBLE, is_ref=True,
+                             doc="Max X"),
+                   Parameter('max_y', type=Type.DOUBLE, is_ref=True,
+                             doc="Max Y"),
+                   Parameter('max_z', type=Type.DOUBLE, is_ref=True,
+                             doc="Max Z")      
+               ]),			   
     ]
 }
 

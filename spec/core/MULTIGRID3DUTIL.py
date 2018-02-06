@@ -1,83 +1,16 @@
-from .. import Availability, Class, Constant, Define, Method, Parameter, Type
+﻿from .. import Availability, Class, Constant, Define, Method, Parameter, Type
 
-gx_class = Class('MULTIVOXSET',
+gx_class = Class('MULTIGRID3DUTIL',
                  doc="High Performance 3D Grid.")
 
 
-gx_defines = [
-    Define('DIRECTION3D',
-           doc="Direction in 3D",
-           constants=[
-               Constant('DIRECTION3D_XYZ', value='0', type=Type.INT32_T,
-                        doc="XYZ"),
-               Constant('DIRECTION3D_YXZ', value='1', type=Type.INT32_T,
-                        doc="YXZ"),
-               Constant('DIRECTION3D_XZY', value='2', type=Type.INT32_T,
-                        doc="XZY"),
-               Constant('DIRECTION3D_YZX', value='3', type=Type.INT32_T,
-                        doc="YZX"),
-               Constant('DIRECTION3D_ZXY', value='4', type=Type.INT32_T,
-                        doc="ZXY"),
-               Constant('DIRECTION3D_ZYX', value='5', type=Type.INT32_T,
-                        doc="ZYX")
-           ]),
-
-    Define('GOCAD_ORIENTATION',
-           doc="GOCAD Orientations",
-           constants=[
-               Constant('GOCAD_ORIENTATIONS_NORMAL', value='0', type=Type.INT32_T,
-                        doc="Normal"),
-               Constant('GOCAD_ORIENTATIONS_INVERTED', value='1', type=Type.INT32_T,
-                        doc="Inverted (Z)"),
-               Constant('GOCAD_ORIENTATIONS_NORMAL_ZFIRST', value='2', type=Type.INT32_T,
-                        doc="Normal (ZFirst)"),
-               Constant('GOCAD_ORIENTATIONS_INVERTED_ZFIRST', value='3', type=Type.INT32_T,
-                        doc="Inverted (Z) (ZFirst)")
-           ]),
-
-    Define('VECTOR_IMPORT',
-           doc="Vector voxel import direction",
-           constants=[
-               Constant('VECTOR_IMPORT_XYZ', value='0', type=Type.INT32_T,
-                        doc="X, Y and Z"),
-               Constant('VECTOR_IMPORT_UVW', value='1', type=Type.INT32_T,
-                        doc="U, V and W"),
-               Constant('VECTOR_IMPORT_AID', value='2', type=Type.INT32_T,
-                        doc="Amplitude, Inclination and Declination")
-           ]),
-
-    Define('FILTER3D',
-           doc="Voxel filter type",
-           constants=[
-               Constant('FILTER3D_FILE', value='0', type=Type.INT32_T,
-                        doc="Specify a file containing the 27-point filter"),
-               Constant('FILTER3D_SMOOTHING', value='1', type=Type.INT32_T,
-                        doc="Smoothing filter"),
-               Constant('FILTER3D_LAPLACE', value='2', type=Type.INT32_T,
-                        doc="Laplace filter"),
-               Constant('FILTER3D_X_GRADIENT', value='3', type=Type.INT32_T,
-                        doc="X-Gradient filter"),
-               Constant('FILTER3D_Y_GRADIENT', value='4', type=Type.INT32_T,
-                        doc="Y-Gradient filter"),
-               Constant('FILTER3D_Z_GRADIENT', value='5', type=Type.INT32_T,
-                        doc="Z-Gradient filter"),
-               Constant('FILTER3D_TOTAL_GRADIENT', value='6', type=Type.INT32_T,
-                        doc="Total-Gradient filter")
-           ]),
-
-    Define('MULTIVOXSET_DIRECTGRID_METHOD',
-           doc="How to calculate the cell values for direct gridding.",
-           constants=[
-               Constant('MULTIVOXSET_DIRECTGRID_MIN', value='0', type=Type.INT32_T),
-               Constant('MULTIVOXSET_DIRECTGRID_MAX', value='1', type=Type.INT32_T),
-               Constant('MULTIVOXSET_DIRECTGRID_MEAN', value='2', type=Type.INT32_T)
-           ])]
+gx_defines = []
 
 
 gx_methods = {
-    'Miscellaneous': [
+    'Miscellaneous': [	
 
-        Method('ImportFromXYZ_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ImportFromXYZ_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Import XYZ file into a Multi-Voxset",
                return_type=Type.VOID,
@@ -92,12 +25,12 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('ExportToXYZ_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToXYZ_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
-               doc="Export a :class:`MULTIVOXSET` to an XYZ File",
+               doc="Export a :class:`MULTIGRID3D` to an XYZ File",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Input Voxel file"),
                    Parameter('xyz', type=Type.STRING,
                              doc="File Name"),
@@ -113,12 +46,12 @@ gx_methods = {
                              doc="Write Dummies?")
                ]),
 
-        Method('ExportToBinary_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToBinary_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.LICENSED, 
-               doc="Export contents of :class:`MULTIVOXSET` to a Binary File.",
+               doc="Export contents of :class:`MULTIGRID3D` to a Binary File.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Input Voxel file"),
                    Parameter('binary_file', type=Type.STRING,
                              doc="Binary file to write to"),
@@ -136,29 +69,29 @@ gx_methods = {
                              doc="Output Type (Geosoft Type)")
                ]),
 
-        Method('ExportToXML_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToXML_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
-               doc="Export a :class:`MULTIVOXSET` to XML",
+               doc="Export a :class:`MULTIGRID3D` to XML",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Voxel file"),
                    Parameter('xml_file', type=Type.STRING,
                              doc="XML file")
                ]),
 
-        Method('CheckEqualToLegacyVoxel_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CheckEqualToLegacyVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
-               doc="Compare :class:`MULTIVOXSET` to Legacy Voxel",
+               doc="Compare :class:`MULTIGRID3D` to Legacy Voxel",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Voxel file"),
-                   Parameter('legacy_voxel_file', type=Type.STRING,
+                   Parameter('legacy_grid3d_file', type=Type.STRING,
                              doc="Legacy Voxel file")
                ]),
 
-        Method('ImportFromUBC_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ImportFromUBC_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Import UBC file into a MultiVoxset",
                return_type=Type.VOID,
@@ -175,7 +108,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('ImportFromGOCAD_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ImportFromGOCAD_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Imports a MultiVoxset from a GOCAD File",
                return_type=Type.VOID,
@@ -191,7 +124,7 @@ gx_methods = {
                              doc=":def:`GOCAD_ORIENTATION`")
                ]),
 
-        Method('ListPropertiesGOCAD_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ListPropertiesGOCAD_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="List all the properties available in this GOCAD file.",
                return_type=Type.VOID,
@@ -202,12 +135,12 @@ gx_methods = {
                              doc="List object to populate")
                ]),
 
-        Method('ImportFromGDB_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ImportFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Imports from a Geosoft Database",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Name of output Voxel file"),
                    Parameter('db', type="DB",
                              doc=":class:`DB` To import from"),
@@ -215,12 +148,12 @@ gx_methods = {
                              doc="Symbol to import data from")
                ]),
 
-        Method('ImportFromVectorGDB_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ImportFromVectorGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Imports from a Vector Geosoft Database",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Voxel Name"),
                    Parameter('db', type="DB",
                              doc=":class:`DB` To import from"),
@@ -238,14 +171,14 @@ gx_methods = {
                              doc="Declination value for :const:`VOX_VECTORVOX_UVW` (-180° to 180°)")
                ]),
 
-        Method('ExportToSEGY_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToSEGY_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Export To SEGY",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Input Voxel file"),
-                   Parameter('voxel_name', type=Type.STRING,
+                   Parameter('grid3d_name', type=Type.STRING,
                              doc="Voxel Name"),
                    Parameter('output_segy_filename', type=Type.STRING,
                              doc="Output Segy file"),
@@ -253,12 +186,12 @@ gx_methods = {
                              doc="Sampling Internal")
                ]),
 
-        Method('ExportToGDB_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Export To GDB",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Input Voxel file"),
                    Parameter('db', type="DB",
                              doc="Database"),
@@ -276,7 +209,7 @@ gx_methods = {
                              doc="Write Dummies?")
                ]),
 
-        Method('ExportToWA_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToWA_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Export To GDB",
                return_type=Type.VOID,
@@ -297,7 +230,7 @@ gx_methods = {
                              doc="The Dummy string to write")
                ]),
 
-        Method('ConvertDoubleToVector_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ConvertDoubleToVector_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Convert 3 Double Voxels to a Vector Voxel",
                return_type=Type.VOID,
@@ -318,7 +251,7 @@ gx_methods = {
                              doc="Rotated?")
                ]),
 
-        Method('ConvertVectorToDouble_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ConvertVectorToDouble_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Convert a Vector Voxel to 3 double Voxels",
                return_type=Type.VOID,
@@ -335,41 +268,41 @@ gx_methods = {
                              doc="Rotated?")
                ]),
 
-        Method('ConvertThematicToDouble_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+        Method('ConvertThematicToDouble_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Convert Thematic MultiVoxset to Double MultiVoxset",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('input_voxel_filename', type=Type.STRING,
-                             doc="Input voxel filename"),
+                   Parameter('input_grid3d_filename', type=Type.STRING,
+                             doc="Input grid3d filename"),
                    Parameter('translate_vv', type="VV",
                              doc="Translation VV handle"),
-                   Parameter('output_voxel_filename', type=Type.STRING,
-                             doc="Output voxel filename")
+                   Parameter('output_grid3d_filename', type=Type.STRING,
+                             doc="Output grid3d filename")
                ]),
 
-        Method('ConvertDoubleToThematic_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+        Method('ConvertDoubleToThematic_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Convert Double MultiVoxset to Thematic MultiVoxset",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('input_voxel_filename', type=Type.STRING,
-                             doc="Input voxel filename"),
+                   Parameter('input_grid3d_filename', type=Type.STRING,
+                             doc="Input grid3d filename"),
                    Parameter('translate_vv', type="VV",
                              doc="Translation VV handle"),
-                   Parameter('output_voxel_filename', type=Type.STRING,
-                             doc="Output voxel filename")
+                   Parameter('output_grid3d_filename', type=Type.STRING,
+                             doc="Output grid3d filename")
                ]),
 
-        Method('ConvertVelocityToDensity_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+        Method('ConvertVelocityToDensity_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Convert Velocity MultiVoxset to Density MultiVoxset",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('input_voxel_filename', type=Type.STRING,
-                             doc="Input voxel filename"),
+                   Parameter('input_grid3d_filename', type=Type.STRING,
+                             doc="Input grid3d filename"),
                    Parameter('input_scaling_factor', type=Type.DOUBLE,
-                             doc="1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second."),
+                             doc="1.0, if this grid3d is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second."),
                    Parameter('input_lower_bound', type=Type.DOUBLE,
                              doc="Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY."),
                    Parameter('input_upper_bound', type=Type.DOUBLE,
@@ -387,20 +320,20 @@ gx_methods = {
                    Parameter('a0', type=Type.DOUBLE,
                              doc="Constant offset of output."),
                    Parameter('output_scaling_factor', type=Type.DOUBLE,
-                             doc="1.0, to produce an output voxel that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output voxel cell."),
-                   Parameter('output_voxel_filename', type=Type.STRING,
-                             doc="Output voxel filename")
+                             doc="1.0, to produce an output grid3d that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output grid3d cell."),
+                   Parameter('output_grid3d_filename', type=Type.STRING,
+                             doc="Output grid3d filename")
                ]),
 
-        Method('ConvertDensityToVelocity_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+        Method('ConvertDensityToVelocity_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Convert Density MultiVoxset to Velocity MultiVoxset",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('input_voxel_filename', type=Type.STRING,
-                             doc="Input voxel filename"),
+                   Parameter('input_grid3d_filename', type=Type.STRING,
+                             doc="Input grid3d filename"),
                    Parameter('input_scaling_factor', type=Type.DOUBLE,
-                             doc="1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second."),
+                             doc="1.0, if this grid3d is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second."),
                    Parameter('input_lower_bound', type=Type.DOUBLE,
                              doc="Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY."),
                    Parameter('input_upper_bound', type=Type.DOUBLE,
@@ -418,18 +351,18 @@ gx_methods = {
                    Parameter('a0', type=Type.DOUBLE,
                              doc="Constant offset of output."),
                    Parameter('output_scaling_factor', type=Type.DOUBLE,
-                             doc="1.0, to produce an output voxel that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output voxel cell."),
-                   Parameter('output_voxel_filename', type=Type.STRING,
-                             doc="Output voxel filename")
+                             doc="1.0, to produce an output grid3d that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output grid3d cell."),
+                   Parameter('output_grid3d_filename', type=Type.STRING,
+                             doc="Output grid3d filename")
                ]),
 
-        Method('GetGOCADLocation_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+        Method('GetGOCADLocation_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
-               doc="Get the location of a voxel with origin and scaled xyz vectors for use with GOCAD.",
+               doc="Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('input_voxel_filename', type=Type.STRING,
-                             doc="Input voxel filename"),
+                   Parameter('input_grid3d_filename', type=Type.STRING,
+                             doc="Input grid3d filename"),
                    Parameter('origin_x', type=Type.DOUBLE, is_ref=True,
                              doc="Origin X"),
                    Parameter('origin_y', type=Type.DOUBLE, is_ref=True,
@@ -456,17 +389,7 @@ gx_methods = {
                              doc="VectZ Z")
                ]),
 
-        Method('ConvertToPG_MULTIVOXSET', module='geoengine.core', version='9.4.0',
-               availability=Availability.PUBLIC, 
-               doc="Convert MultiVoxset to PG",
-               return_type="PG",
-               return_doc=":class:`PG` Object",
-               parameters = [
-                   Parameter('input_voxel_filename', type=Type.STRING,
-                             doc="Input voxel filename")
-               ]),
-
-        Method('CreateDoubleConstant_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CreateDoubleConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value",
                return_type=Type.VOID,
@@ -474,7 +397,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Name of output Voxel File"),
                    Parameter('value', type=Type.DOUBLE,
-                             doc="Constant Value to use - DUMMY for a trully sparse voxel"),
+                             doc="Constant Value to use - DUMMY for a trully sparse grid3d"),
                    Parameter('ox', type=Type.DOUBLE,
                              doc="Origin X"),
                    Parameter('oy', type=Type.DOUBLE,
@@ -497,7 +420,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateThematicConstant_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CreateThematicConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value",
                return_type=Type.VOID,
@@ -505,7 +428,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Name of output Voxel File"),
                    Parameter('value', type=Type.INT32_T,
-                             doc="Constant Value to use - DUMMY for a trully sparse voxel"),
+                             doc="Constant Value to use - DUMMY for a trully sparse grid3d"),
                    Parameter('ox', type=Type.DOUBLE,
                              doc="Origin X"),
                    Parameter('oy', type=Type.DOUBLE,
@@ -528,7 +451,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateVectorConstant_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CreateVectorConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value",
                return_type=Type.VOID,
@@ -536,11 +459,11 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Name of output Voxel File"),
                    Parameter('value_x', type=Type.DOUBLE,
-                             doc="X Constant Value to use - DUMMY for a trully sparse voxel"),
+                             doc="X Constant Value to use - DUMMY for a trully sparse grid3d"),
                    Parameter('value_y', type=Type.DOUBLE,
-                             doc="Y Constant Value to use - DUMMY for a trully sparse voxel"),
+                             doc="Y Constant Value to use - DUMMY for a trully sparse grid3d"),
                    Parameter('value_z', type=Type.DOUBLE,
-                             doc="Z Constant Value to use - DUMMY for a trully sparse voxel"),
+                             doc="Z Constant Value to use - DUMMY for a trully sparse grid3d"),
                    Parameter('ox', type=Type.DOUBLE,
                              doc="Origin X"),
                    Parameter('oy', type=Type.DOUBLE,
@@ -563,7 +486,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateDoubleConstantVV_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CreateDoubleConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value and non-uniform cell sizes",
                return_type=Type.VOID,
@@ -571,7 +494,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Name of output Voxel"),
                    Parameter('value', type=Type.DOUBLE,
-                             doc="The contant Value to fill with - DUMMY for a trully sparse voxel"),
+                             doc="The contant Value to fill with - DUMMY for a trully sparse grid3d"),
                    Parameter('ox', type=Type.DOUBLE,
                              doc="Origin X"),
                    Parameter('oy', type=Type.DOUBLE,
@@ -588,7 +511,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateThematicConstantVV_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CreateThematicConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value and non-uniform cell sizes",
                return_type=Type.VOID,
@@ -596,7 +519,7 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Name of output Voxel"),
                    Parameter('value', type=Type.INT32_T,
-                             doc="The contant Value to fill with - DUMMY for a trully sparse voxel"),
+                             doc="The contant Value to fill with - DUMMY for a trully sparse grid3d"),
                    Parameter('ox', type=Type.DOUBLE,
                              doc="Origin X"),
                    Parameter('oy', type=Type.DOUBLE,
@@ -613,7 +536,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateVectorConstantVV_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('CreateVectorConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value and non-uniform cell sizes",
                return_type=Type.VOID,
@@ -621,11 +544,11 @@ gx_methods = {
                    Parameter('name', type=Type.STRING,
                              doc="Name of output Voxel"),
                    Parameter('x_value', type=Type.DOUBLE,
-                             doc="The X contant Value to fill with - DUMMY for a trully sparse voxel"),
+                             doc="The X contant Value to fill with - DUMMY for a trully sparse grid3d"),
                    Parameter('y_value', type=Type.DOUBLE,
-                             doc="The Y contant Value to fill with - DUMMY for a trully sparse voxel"),
+                             doc="The Y contant Value to fill with - DUMMY for a trully sparse grid3d"),
                    Parameter('z_value', type=Type.DOUBLE,
-                             doc="The Z contant Value to fill with - DUMMY for a trully sparse voxel"),
+                             doc="The Z contant Value to fill with - DUMMY for a trully sparse grid3d"),
                    Parameter('ox', type=Type.DOUBLE,
                              doc="Origin X"),
                    Parameter('oy', type=Type.DOUBLE,
@@ -642,7 +565,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('ExportToVoxel_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ExportToVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Exports a Multi-Voxset into a Voxel",
                return_type=Type.VOID,
@@ -653,18 +576,18 @@ gx_methods = {
                              doc="Multi-Voxset UUID"),
                    Parameter('multi_voxset_attribute', type=Type.STRING,
                              doc="Multi-Voxset attribute"),
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Output Voxel file")
                ]),
 
-        Method('ImportFromVoxel_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('ImportFromVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.PUBLIC, 
                doc="Import a Voxel directly into a Multi-Voxset",
                return_type=Type.VOID,
                parameters = [
                    Parameter('project_file', type=Type.STRING,
                              doc="Project file"),
-                   Parameter('voxel_file', type=Type.STRING,
+                   Parameter('grid3d_file', type=Type.STRING,
                              doc="Input Voxel file"),
                    Parameter('multi_voxset_attribute', type=Type.STRING,
                              doc="Multi-Voxset attribute"),
@@ -674,7 +597,7 @@ gx_methods = {
                              doc="Size of UUID string")
                ]),
 
-        Method('ImportFromDATAMINE_MULTIVOXSET', module='geoengine.interoperability', version='9.3.0',
+        Method('ImportFromDATAMINE_MULTIGRID3DUTIL', module='geoengine.interoperability', version='9.3.0',
                availability=Availability.LICENSED, 
                doc="Create a Geosoft Voxel file from a Datamine block model file.",
                notes="Create a Geosoft Voxel file from a Datamine block model file.",
@@ -686,14 +609,14 @@ gx_methods = {
                              doc="Field to use for data"),
                    Parameter('ipj', type="IPJ",
                              doc="Projection to set"),
-                   Parameter('voxel', type=Type.STRING,
-                             doc="Output voxel file name")
+                   Parameter('grid3d', type=Type.STRING,
+                             doc="Output grid3d file name")
                ]),
 
-        Method('rComputeDefaultCellSize_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('rComputeDefaultCellSize_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.LICENSED, 
                doc="Used if the user does not provide a default cell size.",
-               notes="Compute a default cell size for a voxel given a data range.",
+               notes="Compute a default cell size for a grid3d given a data range.",
                return_type=Type.DOUBLE,
                return_doc="Default Cell Size",
                parameters = [
@@ -711,15 +634,15 @@ gx_methods = {
                              doc="MaxZ")
                ]),
 
-        Method('Filter_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('Filter_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.LICENSED, 
-               doc="Apply a 3D filter to a voxel.",
+               doc="Apply a 3D filter to a grid3d.",
                return_type=Type.VOID,
                parameters = [
                    Parameter('input_file', type=Type.STRING,
-                             doc="Name of the input voxel"),
+                             doc="Name of the input grid3d"),
                    Parameter('output_file', type=Type.STRING,
-                             doc="Name of the output voxel"),
+                             doc="Name of the output grid3d"),
                    Parameter('filter', type=Type.INT32_T,
                              doc=":def:`FILTER3D`"),
                    Parameter('filter_file', type=Type.STRING,
@@ -730,7 +653,7 @@ gx_methods = {
                              doc="(1: interpolate dummies)")
                ]),
 
-        Method('GenerateRBF_MULTIVOXSET', module='geoengine.core', version='9.4.0',
+        Method('GenerateRBF_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Creates a VOXEL from an database using RBF.",
                return_type=Type.VOID,
@@ -738,21 +661,21 @@ gx_methods = {
                    Parameter('db', type="DB",
                              doc="Handle to a database"),
                    Parameter('output_file', type=Type.STRING,
-                             doc="Name of the output voxel"),
+                             doc="Name of the output grid3d"),
 				   Parameter('data_channel', type=Type.STRING,
                              doc="Channel to grid`"),
                    Parameter('cel_size', type=Type.DOUBLE,
                              doc="Cell size")
 				]),
 
-        Method('GridDirectFromGDB_MULTIVOXSET', module='geoengine.core', version='9.3.0',
+        Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
                availability=Availability.LICENSED, 
-               doc="Create a voxel using direct gridding.",
+               doc="Create a grid3d using direct gridding.",
                notes="The Z and Data channels may be array channels. If they are, the array sizes must match.",
                return_type=Type.VOID,
                parameters = [
-                   Parameter('output_voxel_filename', type=Type.STRING,
-                             doc="Output voxel filename"),
+                   Parameter('output_grid3d_filename', type=Type.STRING,
+                             doc="Output grid3d filename"),
                    Parameter('origin_x', type=Type.DOUBLE,
                              doc="Voxel origin X"),
                    Parameter('origin_y', type=Type.DOUBLE,
@@ -772,7 +695,7 @@ gx_methods = {
                    Parameter('cell_size_z', type=Type.DOUBLE,
                              doc="Voxel cell size Z"),
                    Parameter('method', type=Type.INT32_T,
-                             doc=":def:`MULTIVOXSET_DIRECTGRID_METHOD`"),
+                             doc=":def:`MULTIGRID3D_DIRECTGRID_METHOD`"),
                    Parameter('db', type="DB",
                              doc="Database"),
                    Parameter('x_channel', type="DB_SYMB",
@@ -783,7 +706,9 @@ gx_methods = {
                              doc="Z channel [:const:`DB_LOCK_READONLY`]"),
                    Parameter('data_channel', type="DB_SYMB",
                              doc="Data channel [:const:`DB_LOCK_READONLY`]")
-               ])
+               ]),
+
+
     ]
 }
 

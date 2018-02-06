@@ -32,7 +32,9 @@
     <Compile Include="gen_python.py" />
     <Compile Include="gen_xml_spec.py" />
     <Compile Include="spec\core\E3DV.py" />
-    <Compile Include="spec\core\MULTIVOXSET.py" />
+    <Compile Include="spec\core\MULTIGRID3DUTIL.py" />
+    <Compile Include="spec\core\MULTIGRID3D.py" />
+    <Compile Include="spec\core\GRID3D.py" />
     <Compile Include="spec\core\VECTOR3D.py" />
     <Compile Include="templates\gxpy\class_cur.gen.py" />
     <Compile Include="templates\gxpy\class_empty.py" />
