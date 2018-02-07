@@ -160,8 +160,8 @@ class XMLCodeGenerator(CodeGeneratorBase):
                          line_statement_prefix=r'//***')
         self.xml_outdir = os.path.join(cur_dir, '..', '..', 'api', 'gx')
         self.j2env.filters['doc_sanitize'] = self.doc_sanitize
-
-        handle_name='FILTER',
+        for branch in self.branches:
+            self.delete_gen_files_with_no_class(os.path.join(self.xml_outdir, branch), 'geosoft_gx_class')
 
     def _regen_xml(self, cl):
         out_dir = os.path.join(self.xml_outdir, cl.branch)

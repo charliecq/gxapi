@@ -90,6 +90,7 @@ class CodeGeneratorBase:
 
         self.current_version = StrictVersion("{}{}".format(_version['version'], _version['pre-release']))
         self.classes = {}
+        self.branches = set()
         self.methods = {}
         self.constants = {}
         self.definitions = {}
@@ -180,6 +181,7 @@ class CodeGeneratorBase:
                     cl.method_groups[g_k] = methods
             cl.validate()
             self.classes[c_name] = cl
+            self.branches.add(cl.branch)
 
     def parse_template(self, source, globals=None, template_class=None):
         return self.j2env.from_string(source, globals=globals, template_class=template_class)
@@ -205,6 +207,20 @@ class CodeGeneratorBase:
         out_file = os.path.join(output_dir, file_name)
         template = self.get_template(file_name)       
         self.refresh_file_contents(out_file, template.render(**kwargs))
+
+    _prevent_delete_set = { 
+        'ALL',
+        'PREDEF_ALL',
+        'PRECOMP_ALL', 
+        'VERSION',
+        }
+    def delete_gen_files_with_no_class(self, output_dir, extension):
+        existing_files = glob.glob(os.path.join(output_dir, '*.{}'.format(extension)))
+        for file in existing_files: 
+            file_part = os.path.split(file)[1].split('.')[0].upper();
+            if file_part not in _classes and file_part not in self._prevent_delete_set:
+                print('Deleting {}'.format(file))
+                os.remove(file)
 
     def regen_with_editable_blocks(self, template_gen_dir, template_prefix, extension, input_file, output_file, **kwargs):
         empty_template = '{}/{}_empty.{}'.format(template_gen_dir, template_prefix, extension)

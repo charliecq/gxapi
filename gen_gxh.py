@@ -187,6 +187,7 @@ class GXHCodeGenerator(CodeGeneratorBase):
             self.regen_with_editable_blocks('templates/gxc', 'class', 'gxh', gxh_in_file, gxh_out_file, cl=cl)
 
     def _regen_classes(self):
+        self.delete_gen_files_with_no_class(self.gxh_outdir, 'gxh')
         for cl in self.classes.values():
             self._regen_gxh(cl)
 
