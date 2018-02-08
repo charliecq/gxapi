@@ -388,9 +388,9 @@ gx_methods = {
                              doc="minz"),
 					Parameter('max_x', type=Type.DOUBLE,is_ref=True,
                              doc="maxx"),
-					Parameter('min_y', type=Type.DOUBLE,is_ref=True,
+					Parameter('max_y', type=Type.DOUBLE,is_ref=True,
                              doc="maxy"),
-					Parameter('min_z', type=Type.DOUBLE,is_ref=True,
+					Parameter('max_z', type=Type.DOUBLE,is_ref=True,
                              doc="maxz"),
                ]),
 
