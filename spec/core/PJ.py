@@ -419,7 +419,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-		Method('ProjectBoundingVolume_PJ', module='geoengine.core', version='6.0.0',
+		Method('ProjectBoundingVolume_PJ', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Project a bounding volume.",
                return_type=Type.VOID,

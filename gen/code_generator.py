@@ -213,6 +213,7 @@ class CodeGeneratorBase:
         'PREDEF_ALL',
         'PRECOMP_ALL', 
         'VERSION',
+        '__INIT__'
         }
     def delete_gen_files_with_no_class(self, output_dir, extension):
         existing_files = glob.glob(os.path.join(output_dir, '*.{}'.format(extension)))
