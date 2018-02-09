@@ -665,7 +665,9 @@ gx_methods = {
 				   Parameter('data_channel', type=Type.STRING,
                              doc="Channel to grid`"),
                    Parameter('cel_size', type=Type.DOUBLE,
-                             doc="Cell size")
+                             doc="Cell size"),
+                  Parameter('error_tolerance', type=Type.DOUBLE,
+                             doc="Error Tolerance")
 				]),
 
         Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
