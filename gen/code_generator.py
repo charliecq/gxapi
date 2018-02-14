@@ -236,6 +236,10 @@ class CodeGeneratorBase:
         else:
             copyfile(input_file, cur_gen_template_path)
 
+        # Ensure file time change to ensure jinja reloads it even if the previous source had exactly the same modified
+        # time. This occasionally happens on fast systems with git checkouts where sources are not generated in-place
+        os.utime(cur_gen_template_path, None)
+
         gen_template = self.get_template(generated_template_name)
         self.refresh_file_contents(generated_gen_template_path, gen_template.render(**kwargs))
 
