@@ -666,8 +666,10 @@ gx_methods = {
                              doc="Channel to grid`"),
                    Parameter('cel_size', type=Type.DOUBLE,
                              doc="Cell size"),
-                  Parameter('error_tolerance', type=Type.DOUBLE,
-                             doc="Error Tolerance")
+                   Parameter('error_tolerance', type=Type.DOUBLE,
+                             doc="Error Tolerance"),
+				   Parameter('max_iterations', type=Type.INT32_T,
+                             doc="Maximum number of iterations (>0)")
 				]),
 
         Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
