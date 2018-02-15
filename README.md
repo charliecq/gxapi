@@ -1,14 +1,17 @@
 # Geosoft Public API (GXAPI) Specification Repository
 
-This repository supports work to expose Geosoft's Public API to the geoscience development community via Geosoft's GX Developer subscription. Within GX Developer, the Public API is referred to as the GXAPI, and it is exposed via Python, C++ and C# (plus other CLI compliant languages). At its heart, the GX API is exposed as a low level C/C++ API that is version stable.
+This repository supports work to expose Geosoft's Public API to the geoscience development community via Geosoft's GX Developer subscription. Within GX Developer, the Public API is referred to as the GXAPI, which is exposed via Python, Geosoft GXC, C/C++ and .NET (C# and other CLI compliant languages).
 
-The API specification files are used to define and document the signature of the API calls.
+At its heart, the GX API is exposed as a low level C/C++ API that is version stable. The API specification files in this repository are used to define and document the signature of the API calls.
 
-Refer to the documentation for more information on using the GX API.
+Developers should work from the language-specific repositories, which all build from this GXAPI:
 
-[GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer)
+* Python developers use https://github.com/GeosoftInc/gxpy
+* C/C++ developers use https://github.com/GeosoftInc/gxcore
+* .NET developers use https://github.com/GeosoftInc/gxdotnet
+* Geosoft GXC developers use https://github.com/GeosoftInc/gxc
 
-Also see the [Geosoft Inc. organization on Github](https://github.com/GeosoftInc) for the programming language specific repos.
+Refer to the [GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer) for more information on using the GX API.
 
 License
 -------
