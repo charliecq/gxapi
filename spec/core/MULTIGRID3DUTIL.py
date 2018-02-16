@@ -669,7 +669,9 @@ gx_methods = {
                    Parameter('error_tolerance', type=Type.DOUBLE,
                              doc="Error Tolerance"),
 				   Parameter('max_iterations', type=Type.INT32_T,
-                             doc="Maximum number of iterations (>0)")
+                             doc="Maximum number of iterations (>0)"),
+				   Parameter('desample', type=Type.INT32_T,
+                             doc="Desample data (1) or use as is (0)")
 				]),
 
         Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
