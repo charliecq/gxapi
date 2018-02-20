@@ -1,0 +1,161 @@
+
+
+GEOSOFT PROGRAM TERMINATION
+
+Please E-Mail to support@geosoft.com
+Also note what the program was doing at the time of failure.
+------------------------------------------------------------
+  CURRENT COMPUTER PROFILE
+
+         Operating System: Windows 10
+                 CPU Type: 64 Bit CPU
+           Number of CPUs: 8
+           CPU Extentions: MMX SIMD SSE2 
+       Memory Utilization: 20%
+    Total Physical Memory:   32706.48 MB
+Available Physical Memory:   25872.59 MB
+     Total Virtual Memory: 134217727.88 MB
+ Available Virtual Memory: 134217515.44 MB
+      Maximum Paging Size:   37570.48 MB
+      Current Paging Size:   29365.71 MB
+------------------------------------------------------------
+  PROGRAM DETAILS
+
+            Date: 2018/02/20, Time: 07:42:02
+             Program Name: Desktop Applications
+                  Version: Version 9.3.1 (20180109.141)  
+------------------------------------------------------------
+
+  MODULE VERSIONS
+
+   Areva Explorer Components        9.3.1.141
+   BP - Custom Tools                9.3.1.141
+   CGG                              9.3.1.141
+   Core CS System                   9.3.1.141
+   DeBeers System                   9.3.1.141
+   Gore System                      9.3.1.141
+   GPX - Profile Plot               9.3.1.141
+   Gravity Gradiometry              9.3.1.141
+   Help Files Core                  9.3.1.141
+   HEM System                       9.3.1.141
+   Hudbay - Custom                  9.3.1.141
+   Modelling                        9.3.1.141
+   MTA - Crust Thickness            9.3.1.141
+   Multi Channel Profile Plotting   9.3.1.141
+   OM-AA                            9.3.1.141
+   OM-RTE                           9.3.1.141
+   RTX - Custom Services Components 9.3.1.141
+   Sagax System                     9.3.1.141
+   Seafloor Mapping                 9.3.1.141
+   Shaw - Interpretation            9.3.1.141
+   Shell - Custom                   9.3.1.141
+   Tetra Tech Custom UXO Tools      9.3.1.141
+   UIT - Full                       9.3.1.141
+   USGS - Interpretation            9.3.1.141
+   Uxo                              9.3.1.141
+   Voxi                             9.3.1.141
+   YPF - Custom Tools               9.3.1.141
+
+------------------------------------------------------------
+
+Assertion Failed - C:\ProgramData\Anaconda3\python.exe "C:/Development/github/gxapi/issues/issue 16/bug.py"
+
+m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\img\baseimg.c {1919}
+
+Call Stack
+[.Net Stack Trace]
+   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at pcGetDotNetStack()
+
+
+[Thread 0] (Current)
+
+GridVD_IMU 	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\imu\gxx_imu.c	{2839}
+sGridVD_IMU	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\imu\grdvdimu.c	{113}
+lNV_IMG    	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\img\img.c	{1293}
+lNV_BASEIMG	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\img\baseimg.c	{1912}
+
+AbortCode=9WBHR2P
+
+
+[Thread 1]
+
+AbortNowThreadSYS	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\stacksys.c	{948}
+
+AbortCode=HAW51M5
+
+
+[Thread 2]
+
+ExecuteTHREADAP	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\ap\threadap.c	{71}
+
+AbortCode=PN8T4X5
+
+
+[Thread 3]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 4]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 5]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 6]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 7]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 8]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 9]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Thread 10]
+
+SMPThread	m:\jobs\fullbuild-release0-get\core\source\geoengine.core\geoengine.core\sys\smpsys.c	{214}
+
+AbortCode=NHX9M3X
+
+
+[Other Unknown Threads: 7]
+
+
+Error Stack
+(Error)
+
+Session Log
+OM Is Elevated: No
+
+
