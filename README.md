@@ -1,5 +1,9 @@
 # Geosoft Public API (GXAPI) Specification Repository
 
+[![license shield][]](./LICENSE)
+[![pypi package version][]](https://pypi.python.org/pypi/geosoft)
+[![python supported shield][]](https://pypi.python.org/pypi/pythonnet)
+
 This repository supports work to expose Geosoft's Public API to the geoscience development community via Geosoft's GX Developer subscription. Within GX Developer, the Public API is referred to as the GXAPI, which is exposed via Python, Geosoft GXC, C/C++ and .NET (C# and other CLI compliant languages).
 
 At its heart, the GX API is exposed as a low level C/C++ API that is version stable. The API specification files in this repository are used to define and document the signature of the API calls.
