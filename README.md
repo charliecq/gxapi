@@ -1,5 +1,10 @@
 # Geosoft Public API (GXAPI) Specification Repository
 
+[![reference](https://img.shields.io/badge/reference-docs-green.svg)](https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview?mode=global)
+[![Python](https://img.shields.io/badge/Python-docs-green.svg)](https://geosoftinc.github.io/gxpy/9.3.1/python/geosoft.gxapi.classes.html)
+[![dotnet](https://img.shields.io/badge/dotnet-docs-green.svg)](https://geosoftinc.github.io/gxpy/9.3.1/dotnet/GXNet/html/welcome.htm)
+[![dotnetx](https://img.shields.io/badge/dotnetx-docs-green.svg)](https://geosoftinc.github.io/gxpy/9.3.1/dotnet/GXNetX/html/welcome.htm)
+[![C-C++](https://img.shields.io/badge/C-docs-green.svg)](https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78119004/C+C+Development)
 [![PyPi](http://img.shields.io/pypi/v/geosoft.svg?style=flat-square)](https://pypi.python.org/pypi/geosoft/9.3.1)
 [![license](https://img.shields.io/badge/license-BSD--2-green.svg)](https://github.com/GeosoftInc/gxpy/blob/master/LICENSE)
 
