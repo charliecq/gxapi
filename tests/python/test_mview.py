@@ -14,6 +14,7 @@ class Test(GXAPITest):
     def setUpClass(cls):
         cls.setUpGXAPITest()
 
+    @unittest.skip('WIP – see issue #13 https://github.com/GeosoftInc/gxapi/issues/13')
     def test_draw_surface_3d(self):
 
         verts = np.array([[0, 0, 0],

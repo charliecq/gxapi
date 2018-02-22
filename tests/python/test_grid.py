@@ -11,6 +11,7 @@ class Test(GXAPITest):
     def setUpClass(cls):
         cls.setUpGXAPITest()
 
+    @unittest.skip('WIP – see issue #16 https://github.com/GeosoftInc/gxapi/issues/16')
     def test_gximu_grid_vd_from_memory_grid(self):
         self.start()
 
