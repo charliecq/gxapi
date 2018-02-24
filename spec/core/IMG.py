@@ -195,21 +195,7 @@ gx_methods = {
 
         Method('CreateNewFile_IMG', module='geoengine.core', version='5.0.0',
                availability=Availability.PUBLIC, 
-               doc="Creates an output image file using User defined info.",
-               notes="""
-               Special Note for developers who use this function and
-               related functions to output ERMapper image (ERS, ECW) files:
-               
-               This function internally called ERMapper plugin to create ERS header
-               files. To find the location of ERMapper plugin library, a registry setting
-               needs to set. The key in the registry is HKEY_LOCAL_MACHINE\\SOFTWARE\\"MyProgram(libversion7.0)"
-               and in that key register a string BASE_PATH = D:\\Oasismontaj\\plugins\\er_mapper.
-               MyProgram is the name of your application and D:\\Oasismontaj\\plugins\\er_mapper
-               is the location of ERMapper library.
-               
-               It is recommended that this registry key is set during the installation
-               of your application.
-               """,
+               doc="Creates a new image file",
                return_type="IMG",
                return_doc=":class:`IMG` object",
                parameters = [

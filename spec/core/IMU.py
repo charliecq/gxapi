@@ -1029,12 +1029,15 @@ gx_methods = {
                number of coefficients which should
                be present for a given order
                
-               Order            Number of Coefficients
-               -----            ----------------------
-               0                 1
-               1                 3
-               2                 6
-               3                 10
+               ===== ======================
+               Order Number of Coefficients
+               ----- ----------------------
+               0      1
+               1      3
+               2      6
+               3      10
+               ===== ======================
+               
                """,
                return_type=Type.VOID,
                parameters = [
