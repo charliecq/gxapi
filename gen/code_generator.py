@@ -5,6 +5,7 @@ import os
 import re
 import copy
 import itertools
+import time
 import inspect
 import codecs
 from shutil import copyfile
@@ -238,6 +239,7 @@ class CodeGeneratorBase:
 
         # Ensure file time change to ensure jinja reloads it even if the previous source had exactly the same modified
         # time. This occasionally happens on fast systems with git checkouts where sources are not generated in-place
+        time.sleep(0.001)
         os.utime(cur_gen_template_path, None)
 
         gen_template = self.get_template(generated_template_name)
