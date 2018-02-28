@@ -10,7 +10,7 @@ gx_defines = []
 gx_methods = {
     'Miscellaneous': [	
 
-        Method('ImportFromXYZ_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ImportFromXYZ_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Import XYZ file into a Multi-Voxset",
                return_type=Type.VOID,
@@ -25,7 +25,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('ExportToXYZ_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToXYZ_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export a :class:`MULTIGRID3D` to an XYZ File",
                return_type=Type.VOID,
@@ -46,7 +46,7 @@ gx_methods = {
                              doc="Write Dummies?")
                ]),
 
-        Method('ExportToBinary_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToBinary_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Export contents of :class:`MULTIGRID3D` to a Binary File.",
                return_type=Type.VOID,
@@ -69,7 +69,7 @@ gx_methods = {
                              doc="Output Type (Geosoft Type)")
                ]),
 
-        Method('ExportToXML_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToXML_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export a :class:`MULTIGRID3D` to XML",
                return_type=Type.VOID,
@@ -80,7 +80,7 @@ gx_methods = {
                              doc="XML file")
                ]),
 
-        Method('CheckEqualToLegacyVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CheckEqualToLegacyVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Compare :class:`MULTIGRID3D` to Legacy Voxel",
                return_type=Type.VOID,
@@ -91,7 +91,7 @@ gx_methods = {
                              doc="Legacy Voxel file")
                ]),
 
-        Method('ImportFromUBC_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ImportFromUBC_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Import UBC file into a MultiVoxset",
                return_type=Type.VOID,
@@ -108,7 +108,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('ImportFromGOCAD_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ImportFromGOCAD_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Imports a MultiVoxset from a GOCAD File",
                return_type=Type.VOID,
@@ -124,7 +124,7 @@ gx_methods = {
                              doc=":def:`GOCAD_ORIENTATION`")
                ]),
 
-        Method('ListPropertiesGOCAD_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ListPropertiesGOCAD_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="List all the properties available in this GOCAD file.",
                return_type=Type.VOID,
@@ -135,7 +135,7 @@ gx_methods = {
                              doc="List object to populate")
                ]),
 
-        Method('ImportFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ImportFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Imports from a Geosoft Database",
                return_type=Type.VOID,
@@ -148,7 +148,7 @@ gx_methods = {
                              doc="Symbol to import data from")
                ]),
 
-        Method('ImportFromVectorGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ImportFromVectorGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Imports from a Vector Geosoft Database",
                return_type=Type.VOID,
@@ -171,7 +171,7 @@ gx_methods = {
                              doc="Declination value for :const:`VOX_VECTORVOX_UVW` (-180° to 180°)")
                ]),
 
-        Method('ExportToSEGY_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToSEGY_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export To SEGY",
                return_type=Type.VOID,
@@ -186,7 +186,7 @@ gx_methods = {
                              doc="Sampling Internal")
                ]),
 
-        Method('ExportToGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export To GDB",
                return_type=Type.VOID,
@@ -209,7 +209,7 @@ gx_methods = {
                              doc="Write Dummies?")
                ]),
 
-        Method('ExportToWA_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToWA_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export To GDB",
                return_type=Type.VOID,
@@ -230,7 +230,7 @@ gx_methods = {
                              doc="The Dummy string to write")
                ]),
 
-        Method('ConvertDoubleToVector_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ConvertDoubleToVector_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Convert 3 Double Voxels to a Vector Voxel",
                return_type=Type.VOID,
@@ -251,7 +251,7 @@ gx_methods = {
                              doc="Rotated?")
                ]),
 
-        Method('ConvertVectorToDouble_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ConvertVectorToDouble_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Convert a Vector Voxel to 3 double Voxels",
                return_type=Type.VOID,
@@ -389,7 +389,7 @@ gx_methods = {
                              doc="VectZ Z")
                ]),
 
-        Method('CreateDoubleConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CreateDoubleConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value",
                return_type=Type.VOID,
@@ -420,7 +420,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateThematicConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CreateThematicConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value",
                return_type=Type.VOID,
@@ -451,7 +451,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateVectorConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CreateVectorConstant_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value",
                return_type=Type.VOID,
@@ -486,7 +486,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateDoubleConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CreateDoubleConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value and non-uniform cell sizes",
                return_type=Type.VOID,
@@ -511,7 +511,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateThematicConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CreateThematicConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value and non-uniform cell sizes",
                return_type=Type.VOID,
@@ -536,7 +536,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('CreateVectorConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('CreateVectorConstantVV_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Generate a double MultiVoxset with a constant value and non-uniform cell sizes",
                return_type=Type.VOID,
@@ -565,7 +565,7 @@ gx_methods = {
                              doc="Projection")
                ]),
 
-        Method('ExportToVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ExportToVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Exports a Multi-Voxset into a Voxel",
                return_type=Type.VOID,
@@ -580,7 +580,7 @@ gx_methods = {
                              doc="Output Voxel file")
                ]),
 
-        Method('ImportFromVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('ImportFromVoxel_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Import a Voxel directly into a Multi-Voxset",
                return_type=Type.VOID,
@@ -597,7 +597,7 @@ gx_methods = {
                              doc="Size of UUID string")
                ]),
 
-        Method('ImportFromDATAMINE_MULTIGRID3DUTIL', module='geoengine.interoperability', version='9.3.0',
+        Method('ImportFromDATAMINE_MULTIGRID3DUTIL', module='geoengine.interoperability', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Create a Geosoft Voxel file from a Datamine block model file.",
                notes="Create a Geosoft Voxel file from a Datamine block model file.",
@@ -613,7 +613,7 @@ gx_methods = {
                              doc="Output grid3d file name")
                ]),
 
-        Method('rComputeDefaultCellSize_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('rComputeDefaultCellSize_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Used if the user does not provide a default cell size.",
                notes="Compute a default cell size for a grid3d given a data range.",
@@ -634,7 +634,7 @@ gx_methods = {
                              doc="MaxZ")
                ]),
 
-        Method('Filter_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('Filter_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Apply a 3D filter to a grid3d.",
                return_type=Type.VOID,
@@ -674,7 +674,7 @@ gx_methods = {
                              doc="Desample data (1) or use as is (0)")
 				]),
 
-        Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.3.0',
+        Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Create a grid3d using direct gridding.",
                notes="The Z and Data channels may be array channels. If they are, the array sizes must match.",

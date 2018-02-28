@@ -535,7 +535,7 @@ gx_methods = {
                              doc=":class:`IPJ` object")
                ]),
 
-		Method('ExportToXYZ_MULTIGRID3D', module='geoengine.core', version='9.3.0',
+		Method('ExportToXYZ_MULTIGRID3D', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export a :class:`MULTIGRID3D` to an XYZ File",
                return_type=Type.VOID,
@@ -556,7 +556,7 @@ gx_methods = {
                              doc="Write Dummies?")
                ]),
 
-		Method('ExportToBinary_MULTIGRID3D', module='geoengine.core', version='9.3.0',
+		Method('ExportToBinary_MULTIGRID3D', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
                doc="Export contents of :class:`MULTIGRID3D` to a Binary File.",
                return_type=Type.VOID,
@@ -579,7 +579,7 @@ gx_methods = {
                              doc="Output Type (Geosoft Type)")
                ]),
 
-        Method('ExportToXML_MULTIGRID3D', module='geoengine.core', version='9.3.0',
+        Method('ExportToXML_MULTIGRID3D', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export a :class:`MULTIGRID3D` to XML",
                return_type=Type.VOID,
@@ -590,7 +590,7 @@ gx_methods = {
                              doc="XML file")
                ]),		
 
-		Method('ExportToWA_MULTIGRID3D', module='geoengine.core', version='9.3.0',
+		Method('ExportToWA_MULTIGRID3D', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export To GDB",
                return_type=Type.VOID,
@@ -611,7 +611,7 @@ gx_methods = {
                              doc="The Dummy string to write")
                ]),
 
-		Method('ExportToGDB_MULTIGRID3D', module='geoengine.core', version='9.3.0',
+		Method('ExportToGDB_MULTIGRID3D', module='geoengine.core', version='9.4.0',
                availability=Availability.PUBLIC, 
                doc="Export To GDB",
                return_type=Type.VOID,
