@@ -749,8 +749,8 @@ gx_methods = {
                ]),
 
         Method('GridShad_IMU', module='geoengine.core', version='5.0.0',
-               availability=Availability.LICENSED, 
-               doc="Create a shadded relief image.",
+               availability=Availability.PUBLIC, # TODO Check if we can make these generally available
+               doc="Create a shaded relief image.",
                notes="""
                Pass :const:`GS_R8DM` as parameters to obtain default values.
                The default values are returned.
@@ -761,6 +761,27 @@ gx_methods = {
                              doc="Input image name"),
                    Parameter('sh_grid', type=Type.STRING,
                              doc="Output new shaded image"),
+                   Parameter('inc', type=Type.DOUBLE, is_ref=True,
+                             doc="Inclination 0-90 degrees (def. 45)"),
+                   Parameter('dec', type=Type.DOUBLE, is_ref=True,
+                             doc="Declination 0-360 degrees azimuth (def. 45)"),
+                   Parameter('scl', type=Type.DOUBLE, is_ref=True,
+                             doc="Vertical scale factor (distance/z unit)")
+               ]),
+
+        Method('RefreshShad_IMU', module='geoengine.core', version='9.4.0',
+               availability=Availability.PUBLIC, # TODO Check if we can make these generally available
+               doc="Refresh a shaded relief image ",
+               notes="""
+       Pass :const:`GS_R8DM` as parameters to obtain default values.
+       The default values are returned.
+       """,
+               return_type=Type.VOID,
+               parameters=[
+                   Parameter('in_img', type="IMG",
+                             doc="Input grid object"),
+                   Parameter('sh_img', type="IMG",
+                             doc="Output shaded grid object"),
                    Parameter('inc', type=Type.DOUBLE, is_ref=True,
                              doc="Inclination 0-90 degrees (def. 45)"),
                    Parameter('dec', type=Type.DOUBLE, is_ref=True,
