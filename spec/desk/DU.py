@@ -3949,6 +3949,171 @@ gx_methods = {
                    Parameter('pb_replace_zeroes_with_dummy', type=Type.BOOL,
                              doc="Replace zero values in output with DUMMY?")
                ])
-    ]
+    ],
+
+	 'EM Tau Calculation': [
+
+         Method('iEMTauAutomatic_DU', module='geogxx', version='9.4',
+					availability=Availability.LICENSED, 
+					doc="Automatic fitting EM Tau",
+					notes="",
+					return_type=Type.INT32_T,
+					return_doc="""
+						0 - OK
+						1 - if error
+						""",
+					parameters = [
+						 Parameter('hVVobs', type="VV",
+										doc="Observed EM				[READONLY]"),
+						 Parameter('hVVtime', type="VV",
+										doc="Time						[READONLY]"),
+						 Parameter('hVVnoise', type="VV",
+										doc="Noise						[READONLY]"),
+						 Parameter('lWindow', type=Type.INT32_T,
+										doc="Time window				[READONLY]"),
+						 Parameter('dTau0', type=Type.DOUBLE,
+										doc="Starting Tau			[READONLY]"),
+						 Parameter('dA0', type=Type.DOUBLE,
+										doc="Starting coeff. A		[READONLY]"),
+						 Parameter('dItrTol', type=Type.DOUBLE,
+										doc="Iterarion tolerance	[READONLY]"),              
+						 Parameter('lItrMax', type=Type.INT32_T,
+										doc="Maximum iteration		[READONLY]"),              
+						 Parameter('plItr', type=Type.INT32_T, is_ref=True,
+										doc="Number of iterations"),            
+						 Parameter('pdTau', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated Tau"),              
+						 Parameter('pdA',  type=Type.DOUBLE, is_ref=True,
+										doc="Calculated coeff. A"),              
+						 Parameter('pdMisfit', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated misfit"),              
+						 Parameter('iError', type=Type.INT32_T, is_ref=True,
+										doc="Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)"),              
+						 Parameter('hVVcalcVV', type="VV",
+										doc="Calculated EM")
+					]),
+
+         Method('iEMTauCalc_DU', module='geogxx', version='9.4',
+					availability=Availability.LICENSED, 
+					doc="Fitting  f(t) = A * e^(-t/Tau) = e^s0 * e^(-s1*t), where s0=lnA, s1=1/Tau",
+					notes="",
+					return_type=Type.INT32_T,
+					return_doc="""
+						0 - OK
+						1 - if error
+						""",
+					parameters = [
+						 Parameter('hVVobs', type="VV",
+										doc="Observed EM				[READONLY]"),
+						 Parameter('hVVtime', type="VV",
+										doc="Time						[READONLY]"),
+						 Parameter('dTau0', type=Type.DOUBLE,
+										doc="Starting Tau			[READONLY]"),
+						 Parameter('dA0', type=Type.DOUBLE,
+										doc="Starting coeff. A		[READONLY]"),
+						 Parameter('dItrTol', type=Type.DOUBLE,
+										doc="Iterarion tolerance	[READONLY]"),              
+						 Parameter('lItrMax', type=Type.INT32_T,
+										doc="Maximum iteration		[READONLY]"),              
+						 Parameter('plItr', type=Type.INT32_T, is_ref=True,
+										doc="Number of iterations"),            
+						 Parameter('pdTau', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated Tau"),              
+						 Parameter('pdA',  type=Type.DOUBLE, is_ref=True,
+										doc="Calculated coeff. A"),              
+						 Parameter('pdMisfit', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated misfit"),              
+						 Parameter('iError', type=Type.INT32_T, is_ref=True,
+										doc="Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)"),              
+						 Parameter('hVVcalcVV', type="VV",
+										doc="Calculated EM")
+					]),
+         
+			Method('iEMTauLateTime_DU', module='geogxx', version='9.4',
+					availability=Availability.LICENSED, 
+					doc="Automatic fitting EM Tau",
+					notes="",
+					return_type=Type.INT32_T,
+					return_doc="""
+						0 - OK
+						1 - if error
+						""",
+					parameters = [
+						 Parameter('hVVobs', type="VV",
+										doc="Observed EM				[READONLY]"),
+						 Parameter('hVVtime', type="VV",
+										doc="Time						[READONLY]"),
+						 Parameter('hVVnoise', type="VV",
+										doc="Noise						[READONLY]"),
+						 Parameter('lWindow', type=Type.INT32_T,
+										doc="Time window				[READONLY]"),
+						 Parameter('TauProcess', type=Type.INT32_T,
+										doc="1-TauProcess: 2-MoveWindow		[READONLY]"),
+						 Parameter('dMaxTau', type=Type.DOUBLE,
+										doc="Max Tau					[READONLY]"),
+						 Parameter('dTau0', type=Type.DOUBLE,
+										doc="Starting Tau				[READONLY]"),
+						 Parameter('dA0', type=Type.DOUBLE,
+										doc="Starting coeff. A		[READONLY]"),
+						 Parameter('dItrTol', type=Type.DOUBLE,
+										doc="Iterarion tolerance	[READONLY]"),              
+						 Parameter('lItrMax', type=Type.INT32_T,
+										doc="Maximum iteration		[READONLY]"),              
+						 Parameter('plItr', type=Type.INT32_T, is_ref=True,
+										doc="Number of iterations"),            
+						 Parameter('pdTau', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated Tau"),              
+						 Parameter('pdA',  type=Type.DOUBLE, is_ref=True,
+										doc="Calculated coeff. A"),              
+						 Parameter('pdMisfit', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated misfit"),              
+						 Parameter('iError', type=Type.INT32_T, is_ref=True,
+										doc="Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)"),              
+						 Parameter('hVVcalcVV', type="VV",
+										doc="Calculated EM")
+					]),
+
+			Method('iEMTauManual_DU', module='geogxx', version='9.4',
+					availability=Availability.LICENSED, 
+					doc="Automatic fitting EM Tau",
+					notes="",
+					return_type=Type.INT32_T,
+					return_doc="""
+						0 - OK
+						1 - if error
+						""",
+					parameters = [
+						 Parameter('hVVobs', type="VV",
+										doc="Observed EM				[READONLY]"),
+						 Parameter('hVVtime', type="VV",
+										doc="Time						[READONLY]"),
+						 Parameter('hVVnoise', type="VV",
+										doc="Noise						[READONLY]"),
+						 Parameter('dMinTime', type=Type.DOUBLE,
+										doc="Minimum time				[READONLY]"),
+						 Parameter('dMaxTime', type=Type.DOUBLE,
+										doc="Maximum time				[READONLY]"),
+						 Parameter('dTau0', type=Type.DOUBLE,
+										doc="Starting Tau				[READONLY]"),
+						 Parameter('dA0', type=Type.DOUBLE,
+										doc="Starting coeff. A		[READONLY]"),
+						 Parameter('dItrTol', type=Type.DOUBLE,
+										doc="Iterarion tolerance	[READONLY]"),              
+						 Parameter('lItrMax', type=Type.INT32_T,
+										doc="Maximum iteration		[READONLY]"),              
+						 Parameter('plItr', type=Type.INT32_T, is_ref=True,
+										doc="Number of iterations"),            
+						 Parameter('pdTau', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated Tau"),              
+						 Parameter('pdA',  type=Type.DOUBLE, is_ref=True,
+										doc="Calculated coeff. A"),              
+						 Parameter('pdMisfit', type=Type.DOUBLE, is_ref=True,
+										doc="Calculated misfit"),              
+						 Parameter('iError', type=Type.INT32_T, is_ref=True,
+										doc="Error message code 0 (No error), 1 (Insufficient points above noise threshold) 2 (No convergence in 30 svdcmp iterations)"),              
+						 Parameter('hVVcalcVV', type="VV",
+										doc="Calculated EM")
+					])
+	 ]
 }
 
