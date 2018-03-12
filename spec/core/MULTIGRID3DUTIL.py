@@ -4,7 +4,18 @@ gx_class = Class('MULTIGRID3DUTIL',
                  doc="High Performance 3D Grid.")
 
 
-gx_defines = []
+gx_defines = [
+	Define('RBFKERNEL',
+           doc="Math kernel to use in the RBF Computation",
+           constants=[
+               Constant('RBFKERNEL_DISTANCE', value='0', type=Type.INT32_T,
+                        doc="Distance"),
+               Constant('RBFKERNEL_GUASSIAN', value='1', type=Type.INT32_T,
+                        doc="Guassian"),
+               Constant('RBFKERNEL_MULTIQUADRATIC', value='2', type=Type.INT32_T,
+                        doc="Multiquadratic"),
+           ])
+]
 
 
 gx_methods = {
@@ -671,7 +682,9 @@ gx_methods = {
 				   Parameter('max_iterations', type=Type.INT32_T,
                              doc="Maximum number of iterations (>0)"),
 				   Parameter('desample', type=Type.INT32_T,
-                             doc="Desample data (1) or use as is (0)")
+                             doc="Desample data (1) or use as is (0)"),
+				   Parameter('kernel', type=Type.INT32_T,
+                             doc=":def:`RBFKERNEL`")
 				]),
 
         Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
