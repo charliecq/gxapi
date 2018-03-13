@@ -675,7 +675,7 @@ gx_methods = {
                              doc="Name of the output grid3d"),
 				   Parameter('data_channel', type=Type.STRING,
                              doc="Channel to grid`"),
-                   Parameter('cel_size', type=Type.DOUBLE,
+                   Parameter('cell_size', type=Type.DOUBLE,
                              doc="Cell size"),
                    Parameter('error_tolerance', type=Type.DOUBLE,
                              doc="Error Tolerance"),
@@ -684,7 +684,9 @@ gx_methods = {
 				   Parameter('desample', type=Type.INT32_T,
                              doc="Desample data (1) or use as is (0)"),
 				   Parameter('kernel', type=Type.INT32_T,
-                             doc=":def:`RBFKERNEL`")
+                             doc=":def:`RBFKERNEL`"),
+                   Parameter('kernel_epsilon', type=Type.DOUBLE,
+                             doc="Kernel Epsilon")
 				]),
 
         Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
