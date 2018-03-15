@@ -2272,6 +2272,31 @@ gx_methods = {
                              doc="Title"),
                    Parameter('o3dv', type=Type.STRING,
                              doc="3D View name (.geosoft_3dv)")
+               ]),
+
+			Method('iMultipleArrayChannelProfileViewer_GUI', module='None', version='9.4.0',
+               availability=Availability.LICENSED, is_app=True, 
+               doc="""
+               View up to 3 array channel profiles. The first channel's array base properties are
+					used for all three (scaling, array base properties for the X-axis).
+               """,
+               return_type=Type.INT32_T,
+               return_doc="""
+               0 - OK
+               -1 - Cancel
+               """,               parameters = [
+                   Parameter('db', type="DB",
+                             doc=":class:`DB` obj"),
+                   Parameter('line', type=Type.STRING, is_ref=True, size_of_param='size',
+                             doc="Selected line"),
+                   Parameter('chan1', type=Type.STRING, is_ref=True, size_of_param='size',
+                             doc="Master array channel (can be empty on input)"),
+                   Parameter('chan2', type=Type.STRING, is_ref=True, size_of_param='size',
+                             doc="Second array channel (optional)"),
+                   Parameter('chan3', type=Type.STRING, is_ref=True, size_of_param='size',
+                             doc="Third array channel (optional)"),
+                   Parameter('size', type=Type.INT32_T, default_length='STR_DB_SYMBOL',
+                             doc="Size of line and channel buffers")
                ])
     ],
     'Obsolete': [
