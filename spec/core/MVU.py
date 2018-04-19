@@ -1716,9 +1716,11 @@ gx_methods = {
                    Parameter('option', type=Type.INT32_T,
                              doc=":def:`MVU_VOX_SURFACE_OPTION`"),
                    Parameter('min_value', type=Type.DOUBLE,
-                             doc="TODO"),
+                             doc="Iso-surface value"),
                    Parameter('max_value', type=Type.DOUBLE,
-                             doc="TODO"),
+                             doc="For closed surfaces: close between the selected value and this value (set equal to "
+                                 "the Iso-surface to close within nearest values below, DUMMY to close within nearest "
+                                 "value above)"),
                    Parameter('col', type=Type.INT32_T,
                              doc="Drawing color"),
                    Parameter('line_thick', type=Type.DOUBLE,
