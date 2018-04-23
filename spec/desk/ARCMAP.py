@@ -280,6 +280,19 @@ gx_methods = {
                              doc="File Name")
                ]),
 
+        Method('LoadRasterEx_ARCMAP', module='geoarcgis', version='9.4.0',
+               availability=Availability.PUBLIC, 
+               doc="Load a raster file to the current data frame and create associated files",
+               notes="""
+               Loads any file type recognized as "raster" formats by ARC :class:`GIS`.
+               This includes geosoft GRD files.
+               """,
+               return_type=Type.VOID,
+               parameters = [
+                   Parameter('file', type=Type.STRING,
+                             doc="File Name")
+               ]),
+
         Method('LoadShape_ARCMAP', module='geoarcgis', version='8.0.0',
                availability=Availability.PUBLIC, 
                doc="Load a :class:`SHP` file to the current data frame",
