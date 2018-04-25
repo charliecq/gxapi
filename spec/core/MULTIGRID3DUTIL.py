@@ -5,16 +5,6 @@ gx_class = Class('MULTIGRID3DUTIL',
 
 
 gx_defines = [
-	Define('RBFKERNEL',
-           doc="Math kernel to use in the RBF Computation",
-           constants=[
-               Constant('RBFKERNEL_DISTANCE', value='0', type=Type.INT32_T,
-                        doc="Distance"),
-               Constant('RBFKERNEL_GUASSIAN', value='1', type=Type.INT32_T,
-                        doc="Guassian"),
-               Constant('RBFKERNEL_MULTIQUADRATIC', value='2', type=Type.INT32_T,
-                        doc="Multiquadratic"),
-           ])
 ]
 
 
@@ -663,31 +653,6 @@ gx_methods = {
                    Parameter('interpolate_dummies', type=Type.INT32_T,
                              doc="(1: interpolate dummies)")
                ]),
-
-        Method('GenerateRBF_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
-               availability=Availability.LICENSED, 
-               doc="Creates a VOXEL from an database using RBF.",
-               return_type=Type.VOID,
-               parameters = [
-                   Parameter('db', type="DB",
-                             doc="Handle to a database"),
-                   Parameter('output_file', type=Type.STRING,
-                             doc="Name of the output grid3d"),
-				   Parameter('data_channel', type=Type.STRING,
-                             doc="Channel to grid`"),
-                   Parameter('cell_size', type=Type.DOUBLE,
-                             doc="Cell size"),
-                   Parameter('error_tolerance', type=Type.DOUBLE,
-                             doc="Error Tolerance"),
-				   Parameter('max_iterations', type=Type.INT32_T,
-                             doc="Maximum number of iterations (>0)"),
-				   Parameter('desample', type=Type.INT32_T,
-                             doc="Desample data (1) or use as is (0)"),
-				   Parameter('kernel', type=Type.INT32_T,
-                             doc=":def:`RBFKERNEL`"),
-                   Parameter('kernel_epsilon', type=Type.DOUBLE,
-                             doc="Kernel Epsilon")
-				]),
 
         Method('GridDirectFromGDB_MULTIGRID3DUTIL', module='geoengine.core', version='9.4.0',
                availability=Availability.LICENSED, 
