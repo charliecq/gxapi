@@ -397,7 +397,7 @@ cdef extern int32_t iCheckTerminate_SYS(void*, int32_t* p1);
 cdef extern int16_t sGetError_GEO(void*, char*, int32_t, char*, int32_t, int32_t*);
 cdef extern HWND hGetMainWnd_GEO();
 cdef extern HWND hGetActiveMainWnd_GEO();
-cdef extern EnableApplicationWindows_GEO(bool);
+cdef extern void EnableApplicationWindows_GEO(bool);
 
 cdef extern void init_console();
 cdef extern bint has_ui_console();
